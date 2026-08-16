@@ -1,0 +1,24 @@
+﻿# Safety guard：默认忽略全部，只允许上传下面四个目录
+*
+!/docs/
+!/docs/**
+!/scripts/
+!/scripts/**
+!/tools/
+!/tools/**
+!/AI_Codex_Skills/
+!/AI_Codex_Skills/**
+
+# 不上传 Python 临时缓存
+**/__pycache__/
+*.pyc
+
+# 暂时排除敏感信息检查命中的文件
+/docs/superpowers/plans/2026-06-23-xy-ui-toolkit-phase1-build-verifier.md
+/docs/superpowers/specs/2026-06-23-xy-ui-toolkit-design.md
+/scripts/apply_king_nations_ab.py
+/tools/deploy_execution_dress_known_armor_probe.py
+/tools/patch_execution_visual_setitemshape.py
+/tools/retire_execution_visual_effect.py
+/tools/verify_execution_heavy_armor_stage.py
+/tools/verify_execution_victim_visual_message.py
