@@ -1,0 +1,87 @@
+{
+  "schema_version": 1,
+  "id": "xy.optional.bag.function-service",
+  "version": "1.0.0-candidate.1",
+  "display_name": "背包功能服务（掉落信息开关）",
+  "status": "candidate",
+  "engine": "LFM2",
+  "residency": "optional",
+  "bundle": "utility",
+  "dependencies": [
+    "xy.optional.recycle.drop-filter"
+  ],
+  "parameters": {},
+  "claims": {
+    "labels": [
+      "XY_BAG_FUNCTION_SERVICE_PANEL"
+    ],
+    "variables": [],
+    "maps": [],
+    "npcs": []
+  },
+  "operations": [
+    {
+      "type": "ensure_event_label",
+      "target": "Mir200/Envir/Market_Def/QFunction-0.txt",
+      "label": "CustomButtonClick",
+      "target_encoding": "gb18030"
+    },
+    {
+      "type": "event_hook",
+      "target": "Mir200/Envir/Market_Def/QFunction-0.txt",
+      "label": "CustomButtonClick",
+      "content": "#IF\nEQUAL <$CustomButtonID> 23\n#ACT\nGOTO @XY_BAG_FUNCTION_SERVICE_PANEL\nBREAK",
+      "target_encoding": "gb18030"
+    },
+    {
+      "type": "managed_block",
+      "target": "Mir200/Envir/Market_Def/QFunction-0.txt",
+      "content": "[@XY_BAG_FUNCTION_SERVICE_PANEL]\n#SAY\n<背包功能服务/SCOLOR=250>\\\n请选择需要执行的功能。\\ \\\n<开启屏蔽掉落信息/@XY_RECYCLE_DROP_FILTER_ENABLE>    <关闭屏蔽掉落信息/@XY_RECYCLE_DROP_FILTER_DISABLE>\\ \\\n<退出/@EXIT>",
+      "target_encoding": "gb18030"
+    }
+  ],
+  "preflight_checks": [
+    {
+      "type": "file_exists",
+      "path": "Mir200/Envir/Market_Def/QFunction-0.txt"
+    }
+  ],
+  "post_checks": [
+    {
+      "type": "label_exists",
+      "path": "Mir200/Envir/Market_Def/QFunction-0.txt",
+      "label": "CustomButtonClick"
+    },
+    {
+      "type": "label_exists",
+      "path": "Mir200/Envir/Market_Def/QFunction-0.txt",
+      "label": "XY_BAG_FUNCTION_SERVICE_PANEL"
+    },
+    {
+      "type": "text_contains",
+      "path": "Mir200/Envir/Market_Def/QFunction-0.txt",
+      "text": "EQUAL <$CustomButtonID> 23"
+    },
+    {
+      "type": "text_contains",
+      "path": "Mir200/Envir/Market_Def/QFunction-0.txt",
+      "text": "GOTO @XY_BAG_FUNCTION_SERVICE_PANEL"
+    },
+    {
+      "type": "text_contains",
+      "path": "Mir200/Envir/Market_Def/QFunction-0.txt",
+      "text": "@XY_RECYCLE_DROP_FILTER_ENABLE"
+    },
+    {
+      "type": "text_contains",
+      "path": "Mir200/Envir/Market_Def/QFunction-0.txt",
+      "text": "@XY_RECYCLE_DROP_FILTER_DISABLE"
+    }
+  ],
+  "evidence": [
+    "static:backpack-dbagcustombutton4-is-button-23",
+    "static:current-qfunction-button-23-unoccupied",
+    "dependency:drop-filter-public-enable-disable-labels",
+    "game:pending-backpack-function-service-click"
+  ]
+}

@@ -1,0 +1,150 @@
+{
+  "schema_version": 1,
+  "id": "xy.optional.rage.core",
+  "version": "3.2.0-candidate.1",
+  "display_name": "狂暴系统（单一NPC入口，可迁移地图）",
+  "status": "candidate",
+  "engine": "LFM2",
+  "residency": "optional",
+  "bundle": "ops-single-entry",
+  "dependencies": ["xy.combat.drop"],
+  "parameters": {
+    "rage_npc_script": {"type": "string", "required": true, "default": "玄渊运营/狂暴之力"},
+    "rage_npc_display": {"type": "string", "required": true, "default": "狂暴之力"},
+    "rage_npc_map": {"type": "string", "required": true, "default": "0"},
+    "rage_npc_x": {"type": "integer", "required": true, "default": 322},
+    "rage_npc_y": {"type": "integer", "required": true, "default": 272},
+    "rage_appearance": {"type": "integer", "required": true, "default": 15},
+    "rage_cost": {"type": "integer", "required": true, "default": 100},
+    "rage_cost_threshold": {"type": "integer", "required": true, "default": 99},
+    "rage_killer_reward": {"type": "integer", "required": true, "default": 50}
+  },
+  "claims": {
+    "labels": ["XY_RAGE_COMMAND"],
+    "variables": [],
+    "maps": [],
+    "npcs": ["玄渊运营/狂暴之力"]
+  },
+  "operations": [
+    {
+      "type": "sqlite_upsert",
+      "target": "Mud2/DB/ApexM2.DB",
+      "table": "StdItems",
+      "unique_key": ["Name"],
+      "conflict_keys": [["StdMode", "Shape"]],
+      "values": {
+        "Name": "狂暴之力", "StdMode": 70, "Shape": 0, "Weight": 0, "Anicount": 1,
+        "Source": 0, "Reserved": 0, "Looks": 0, "DuraMax": 0,
+        "Ac": 0, "Ac2": 0, "Mac": 0, "Mac2": 0,
+        "Dc": 50, "Dc2": 50, "Mc": 50, "Mc2": 50, "Sc": 50, "Sc2": 50,
+        "Need": 0, "NeedLevel": 0, "Price": 0, "Stock": 0, "Color": 251,
+        "OverLap": 0, "HP": 10000, "MP": 0, "Light": 0, "Horse": 0
+      },
+      "allocate": {"Idx": "max_plus_one"},
+      "on_conflict": "error"
+    },
+    {
+      "type": "render",
+      "source": "payload/狂暴NPC接口.txt",
+      "target": "Mir200/Envir/QuestDiary/玄渊功能/狂暴/狂暴NPC接口.txt",
+      "source_encoding": "utf-8",
+      "target_encoding": "gb18030",
+      "newline": "\r\n"
+    },
+    {
+      "type": "ensure_callable_label",
+      "target": "Mir200/Envir/QuestDiary/玄渊功能/狂暴/狂暴界面刷新接口.txt",
+      "label": "XY_RAGE_UI_REFRESH",
+      "target_encoding": "gb18030"
+    },
+    {
+      "type": "render",
+      "source": "payload/狂暴NPC入口.txt",
+      "target": "Mir200/Envir/Market_Def/{rage_npc_script}-{rage_npc_map}.txt",
+      "source_encoding": "utf-8",
+      "target_encoding": "gb18030",
+      "newline": "\r\n"
+    },
+    {
+      "type": "managed_block",
+      "target": "Mir200/Envir/Market_Def/QFunction-0.txt",
+      "legacy_package_ids": ["xy.optional.rage.command"],
+      "content": "[@XY_RAGE_COMMAND]\n#IF\n#ACT\n#CALL [\\玄渊功能\\狂暴\\狂暴NPC接口.txt] @XY_RAGE_NPC_MAIN\nBREAK"
+    },
+    {
+      "type": "remove_event_hook",
+      "target": "Mir200/Envir/Market_Def/QFunction-0.txt",
+      "owner_package_id": "xy.optional.rage.core",
+      "label": "AttackDamage",
+      "accepted_current_hashes": ["13b1d75ffdec116bc1338eb7a935bcfd3b9633e21c8c217a0b31facebc9c154a"]
+    },
+    {
+      "type": "remove_event_hook",
+      "target": "Mir200/Envir/Market_Def/QFunction-0.txt",
+      "owner_package_id": "xy.optional.rage.core",
+      "label": "PlayOffLine",
+      "accepted_current_hashes": ["1b335973fe8f405051de7b73f82f782245410b9354234408de757fc7f0150e26"]
+    },
+    {
+      "type": "remove_event_hook",
+      "target": "Mir200/Envir/Market_Def/QFunction-0.txt",
+      "owner_package_id": "xy.ops.rage-title",
+      "label": "PlayDie",
+      "accepted_current_hashes": ["d9bb44ec7fc2c03f216882deadb92fa33d1d367f9363b9aabc29a048affa85cf"]
+    },
+    {
+      "type": "ensure_event_label",
+      "target": "Mir200/Envir/Market_Def/QFunction-0.txt",
+      "label": "PlayDie"
+    },
+    {
+      "type": "event_hook",
+      "target": "Mir200/Envir/Market_Def/QFunction-0.txt",
+      "label": "PlayDie",
+      "content": "#IF\nCHECKFENGHAO 狂暴之力\nKillByHum\n#ACT\nRECYCFENGHAO 狂暴之力\n<$KILLER>.GAMEDIAMOND + {rage_killer_reward}\n#CALL [\\玄渊功能\\狂暴\\狂暴界面刷新接口.txt] @XY_RAGE_UI_REFRESH\nSENDMSG 6 [狂暴] 你被玩家<$KILLER>击杀，狂暴称号已关闭；对方获得账户金刚石{rage_killer_reward}。"
+    },
+    {
+      "type": "managed_anchor_hook",
+      "target": "Mir200/Envir/Market_Def/QFunction-0.txt",
+      "anchor": "XY_EQUIP_MAKER_DROP_ANCHOR",
+      "legacy_package_ids": ["xy.ops.rage-title"],
+      "content": "#IF\nCHECKFENGHAO 狂暴之力\n#ACT\nINC N$XY_最终爆率 300\nINC N$XY_最大爆率 5"
+    },
+    {
+      "type": "managed_anchor_hook",
+      "target": "Mir200/Envir/Market_Def/QFunction-0.txt",
+      "anchor": "XY_EQUIP_MAKER_RUNTIME_DROP_ANCHOR",
+      "legacy_package_ids": ["xy.ops.rage-title"],
+      "content": "#IF\nCHECKFENGHAO 狂暴之力\n#ACT\nINC N$XY_RT_Drop 300"
+    },
+    {
+      "type": "managed_anchor_hook",
+      "target": "Mir200/Envir/Market_Def/QFunction-0.txt",
+      "anchor": "XY_EQUIP_MAKER_RUNTIME_DROP_MAX_ANCHOR",
+      "legacy_package_ids": ["xy.ops.rage-title"],
+      "content": "#IF\nCHECKFENGHAO 狂暴之力\n#ACT\nINC N$XY_RT_DropMax 5"
+    },
+    {
+      "type": "exclusive_unique_line",
+      "target": "Mir200/Envir/MerChant.txt",
+      "line": "{rage_npc_script}\t{rage_npc_map}\t{rage_npc_x}\t{rage_npc_y}\t{rage_npc_display}\t0\t{rage_appearance}\t0",
+      "key_fields": [0]
+    }
+  ],
+  "preflight_checks": [
+    {"type": "file_exists", "path": "Mud2/DB/ApexM2.DB"}
+  ],
+  "post_checks": [
+    {"type": "file_exists", "path": "Mir200/Envir/QuestDiary/玄渊功能/狂暴/狂暴NPC接口.txt"},
+    {"type": "file_exists", "path": "Mir200/Envir/QuestDiary/玄渊功能/狂暴/狂暴界面刷新接口.txt"},
+    {"type": "file_exists", "path": "Mir200/Envir/Market_Def/{rage_npc_script}-{rage_npc_map}.txt"},
+    {"type": "label_exists", "path": "Mir200/Envir/Market_Def/QFunction-0.txt", "label": "XY_RAGE_COMMAND"}
+  ],
+  "evidence": [
+    "static:evidence/20260726_map0_npc_single_source.md",
+    "static:evidence/20260726_callable_refresh_label_fix.md",
+    "static:evidence/20260730_native_lingfu_gamegird.md",
+    "game-validation:required",
+    "rollback:required"
+  ]
+}

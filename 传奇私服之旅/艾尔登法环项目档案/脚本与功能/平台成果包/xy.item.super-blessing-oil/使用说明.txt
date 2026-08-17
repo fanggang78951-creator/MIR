@@ -1,0 +1,18 @@
+超级祝福油独立候选成果包
+
+功能：
+1. 双击后检查武器位1。
+2. 未佩戴武器时返还本瓶，不改变任何装备。
+3. 武器幸运达到7时返还本瓶，不继续增加。
+4. 武器幸运低于7时执行 UPGRADEITEMEX 1 3 1 1 0，必定增加1点幸运。
+
+数据库契约：
+StdMode=31、Shape=0、AniCount=82、Looks=26、DuraMax=1。
+Idx由目标服按MAX(Idx)+1分配，不复制旧服固定编号。
+
+本包只修改：
+Mud2\DB\ApexM2.DB
+Mir200\Envir\Market_Def\QFunction-0.txt
+
+不会复制客户端补丁；Looks=26复用目标服普通祝福油图标。
+当前保持candidate，需在游戏内验证无武器、幸运0、幸运6、幸运7四种情况后再晋级verified。

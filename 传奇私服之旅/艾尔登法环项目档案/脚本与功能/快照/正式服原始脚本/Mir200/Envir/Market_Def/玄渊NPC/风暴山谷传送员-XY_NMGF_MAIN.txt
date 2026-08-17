@@ -1,0 +1,11 @@
+[@Main]
+#SAY
+这里通往风暴山谷。\ \
+<前往风暴山谷/@Go>
+<关闭/@exit>
+
+[@Go]
+#IF
+#ACT
+MAPMOVE XX248 72 82
+BREAK

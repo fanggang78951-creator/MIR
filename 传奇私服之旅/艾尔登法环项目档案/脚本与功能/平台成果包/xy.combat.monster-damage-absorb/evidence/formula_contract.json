@@ -1,0 +1,14 @@
+{
+  "raw_property": "对怪伤害吸收",
+  "cap_property": "伤害吸收上限",
+  "default_cap_percent": 60,
+  "cap_bonus_max_percent": 25,
+  "absolute_max_percent": 85,
+  "formula": "min(raw_absorb, 60 + min(cap_bonus, 25))",
+  "engine_command": "StruckDamageAbsorb * 100 <final> 300",
+  "clear_probe": "StruckDamageAbsorb * 100 1 1",
+  "refresh_seconds": 240,
+  "effect_seconds": 300,
+  "pvp_affected": false,
+  "pets_affected": false
+}

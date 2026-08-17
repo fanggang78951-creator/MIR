@@ -1,0 +1,57 @@
+[@Main]
+#IF
+CHECKFENGHAO 风暴断誓者
+#ACT
+GOTO @XY_SOUL_STORM_DONE
+BREAK
+#ELSEACT
+GOTO @XY_SOUL_STORM_QUEST
+BREAK
+
+[@XY_SOUL_STORM_QUEST]
+#SAY
+<风暴遗誓/FCOLOR=250>\
+断崖上的雷霆并非天灾，而是战死者未能履行的誓言。\
+我曾是守卫断崖的骑士，如今只能守着残破的兵刃。\
+击败逐雷者、裂岩者、执刑官与古龙，让风暴中的旧誓彻底消散。\ \
+<需要：逐雷魂印×1、裂岩之心×1/FCOLOR=146>\
+<　　　执刑官残魂×1、古龙逆鳞×1/FCOLOR=146>\
+<奖励：风暴断誓者；韧性+20；攻魔道30-30/FCOLOR=251>\ \
+<提交四件魂魄信物/@XY_SOUL_STORM_SUBMIT>　<离开/@exit>
+
+[@XY_SOUL_STORM_SUBMIT]
+#IF
+CHECKITEM 逐雷魂印 1
+CHECKITEM 裂岩之心 1
+CHECKITEM 执刑官残魂 1
+CHECKITEM 古龙逆鳞 1
+#ACT
+GIVEFENGHAO 风暴断誓者 1
+GOTO @XY_SOUL_STORM_CONFIRM
+BREAK
+#ELSEACT
+MESSAGEBOX 材料不足：需要逐雷魂印、裂岩之心、执刑官残魂、古龙逆鳞各1个。
+BREAK
+
+[@XY_SOUL_STORM_CONFIRM]
+#IF
+CHECKFENGHAO 风暴断誓者
+#ACT
+TAKE 逐雷魂印 1
+TAKE 裂岩之心 1
+TAKE 执刑官残魂 1
+TAKE 古龙逆鳞 1
+SENDMSG 6 [风暴遗誓] 任务完成，获得称号“风暴断誓者”。
+GOTO @XY_SOUL_STORM_DONE
+BREAK
+#ELSEACT
+MESSAGEBOX 称号授予失败，所有魂魄材料均未扣除，请联系管理员。
+BREAK
+
+[@XY_SOUL_STORM_DONE]
+#SAY
+<风暴遗誓/FCOLOR=250>\
+旧誓已经消散。你已完成本地图魂魄任务。\
+<称号：风暴断誓者/FCOLOR=251>\
+<奖励：韧性+20；攻击、魔法、道术30-30/FCOLOR=251>\ \
+<离开/@exit>

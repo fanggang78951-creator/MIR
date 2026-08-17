@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "status": "static_pass_game_pending",
+  "verified_at": "2026-08-08T19:43:47",
+  "root_cause": "ordinary Text coordinates are relative offsets; absolute canvas layout requires &Text",
+  "official_help": "Npc对话框绝对坐标.htm",
+  "itembox_first_element": true,
+  "absolute_text_only": true,
+  "inherited_client_resource": {
+    "effect_index": 12,
+    "width": 640,
+    "height": 360,
+    "wzl_sha256": "70A2A24D7F4D675E8C1E1DE4CFD3C9ECBBFAE6C83BE7BAFDE281BF56805C46A0",
+    "wzx_sha256": "7F1443FB46506C5DCB36F7A2699608C93ECD3ADFDDC69A6525DA8AEA5E2ECC2A"
+  },
+  "unchanged_business_logic": true,
+  "scripts": [
+    {
+      "path": "D:\\XuanYuanDevPlatform\\labs\\equipment_wash\\candidate.6\\generated\\server\\Mir200\\Envir\\Market_Def\\玄渊实验室\\装备洗练-XY_NMGF_MAIN.txt",
+      "bytes": 32180,
+      "sha256": "D51CA2D0828AC7D8C07A771B1E1AC68CC93F6EF4E8E2A543B49F3B603E95A0BD",
+      "labels": 13,
+      "refs": 95
+    },
+    {
+      "path": "D:\\XuanYuanDevPlatform\\labs\\equipment_wash\\candidate.6\\generated\\server\\Mir200\\Envir\\Market_Def\\玄渊实验室\\装备开光-XY_NMGF_MAIN.txt",
+      "bytes": 39288,
+      "sha256": "8BB71E8B6FA85562C9612C7BA5D64352C4D21978293BA455FA0696B5383DCAA2",
+      "labels": 15,
+      "refs": 140
+    }
+  ],
+  "backup": "D:\\XuanYuanDevPlatform\\backups\\equipment_workbench_candidate6_20260808_194347",
+  "game_acceptance_required": true
+}

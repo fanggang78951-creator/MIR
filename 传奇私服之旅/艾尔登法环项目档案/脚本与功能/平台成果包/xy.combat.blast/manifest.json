@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "id": "xy.combat.blast",
+  "version": "1.1.1",
+  "display_name": "暴击伤害重算",
+  "status": "verified",
+  "engine": "LFM2",
+  "residency": "resident",
+  "bundle": "combat-suite",
+  "dependencies": [
+    "xy.combat.core",
+    "xy.combat.runtime-refresh"
+  ],
+  "parameters": {},
+  "claims": {
+    "labels": [
+      "XYDP_RecalcBlast"
+    ],
+    "variables": [
+      "N$XY_最终爆伤",
+      "N$XY_Bind31Point",
+      "N$XY_Bind31Rate"
+    ],
+    "maps": [],
+    "npcs": []
+  },
+  "operations": [
+    {
+      "type": "managed_block",
+      "target": "Mir200/Envir/Market_Def/QFunction-0.txt",
+      "content": "[@XYDP_RecalcBlast]\n#IF\n#ACT\nMOV N$XY_最终爆伤 100\nMOV N$XY_Bind31Point 0\nMOV N$XY_Bind31Rate 0\nGetAllCustomItemValue 31 N$XY_Bind31Point N$XY_Bind31Rate\nINC N$XY_最终爆伤 <$STR(N$XY_Bind31Point)>\nINC N$XY_最终爆伤 <$STR(N$XY_Bind31Rate)>\n; XYDP-EXTENSION-BEGIN EQUIP_BLAST\n; XY_EQUIP_MAKER_BLAST_ANCHOR\n; XYDP-EXTENSION-END EQUIP_BLAST\nSetBlastHitRate <$STR(N$XY_最终爆伤)> 0\nBREAK"
+    },
+    {
+      "type": "event_hook",
+      "target": "Mir200/Envir/Market_Def/QFunction-0.txt",
+      "label": "PlayLogin",
+      "content": "#IF\n#ACT\nDELAYGOTO 2 @XYDP_RecalcBlast"
+    },
+    {
+      "type": "event_hook",
+      "target": "Mir200/Envir/Market_Def/QFunction-0.txt",
+      "label": "TakeOnEx",
+      "content": "#IF\n#ACT\nDELAYGOTO 2 @XYDP_RecalcBlast"
+    },
+    {
+      "type": "event_hook",
+      "target": "Mir200/Envir/Market_Def/QFunction-0.txt",
+      "label": "TakeOffEx",
+      "content": "#IF\n#ACT\nDELAYGOTO 2 @XYDP_RecalcBlast"
+    }
+  ],
+  "preflight_checks": [],
+  "post_checks": [],
+  "evidence": [
+    "game:../xy.combat.runtime-refresh/evidence/20260711_game_acceptance.md",
+    "runtime:D:/MirServer/Mir200/Envir/QuestDiary/玄渊验收/events.txt",
+    "source:XY-SKILL-017"
+  ]
+}

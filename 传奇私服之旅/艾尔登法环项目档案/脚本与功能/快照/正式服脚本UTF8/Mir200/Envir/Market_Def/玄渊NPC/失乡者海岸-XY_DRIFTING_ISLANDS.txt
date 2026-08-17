@@ -1,0 +1,11 @@
+[@Main]
+#SAY
+失乡者海岸已响应。\ \
+<进入失乡者海岸/@Enter>
+<关闭/@exit>
+
+[@Enter]
+#IF
+#ACT
+MAPMOVE XX113 117 108
+BREAK

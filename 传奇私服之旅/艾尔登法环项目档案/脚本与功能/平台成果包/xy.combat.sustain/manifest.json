@@ -1,0 +1,103 @@
+{
+  "schema_version": 1,
+  "id": "xy.combat.sustain",
+  "version": "1.2.0-candidate.1",
+  "display_name": "百分比吸血与每秒回血",
+  "status": "candidate",
+  "engine": "LFM2",
+  "residency": "resident",
+  "bundle": "combat-suite",
+  "dependencies": [],
+  "parameters": {},
+  "claims": {
+    "labels": [
+      "XYDP_RecalcSustain",
+      "OnTimer19"
+    ],
+    "variables": [
+      "N$XY_SUS_LifeSteal",
+      "N$XY_SUS_LifeStealHeal",
+      "N$XY_SUS_HPActive"
+    ],
+    "maps": [],
+    "npcs": []
+  },
+  "operations": [
+    {
+      "type": "managed_block",
+      "target": "Mir200/Envir/Market_Def/QFunction-0.txt",
+      "retired_equipment_anchors": [
+        "XY_EQUIP_MAKER_HP_REGEN_ANCHOR"
+      ],
+      "content": "[@XYDP_RecalcSustain]\n#IF\n#ACT\nMOV N$XY_SUS_LifeSteal 0\nMOV N$XY_SUS_LifeStealHeal 0\nMOV N$XY_SUS_HPActive 0\n; XYDP-EXTENSION-BEGIN EQUIP_LIFESTEAL\n; XY_EQUIP_MAKER_LIFESTEAL_ANCHOR\n; XYDP-EXTENSION-END EQUIP_LIFESTEAL\n; XYDP-EXTENSION-BEGIN EQUIP_HP_REGEN_ACTIVE\n; XY_EQUIP_MAKER_HP_REGEN_ACTIVE_ANCHOR\n; XYDP-EXTENSION-END EQUIP_HP_REGEN_ACTIVE\n#IF\nEQUAL N$XY_SUS_HPActive 1\n#ACT\nSetOnTimer 19 1\nBREAK\n#IF\nEQUAL N$XY_SUS_HPActive 0\n#ACT\nSetOffTimer 19\nBREAK"
+    },
+    {
+      "type": "managed_block",
+      "target": "Mir200/Envir/MapQuest_Def/QManage.txt",
+      "content": "[@OnTimer19]\n; XYDP-EXTENSION-BEGIN EQUIP_HP_REGEN_TICK\n; XY_EQUIP_MAKER_HP_REGEN_TICK_ANCHOR\n; XYDP-EXTENSION-END EQUIP_HP_REGEN_TICK\n#IF\nEQUAL N$XY_SUS_HPActive 0\n#ACT\nSetOffTimer 19\nBREAK"
+    },
+    {
+      "type": "ensure_event_label",
+      "target": "Mir200/Envir/Market_Def/QFunction-0.txt",
+      "label": "PlayLogin"
+    },
+    {
+      "type": "ensure_event_label",
+      "target": "Mir200/Envir/Market_Def/QFunction-0.txt",
+      "label": "TakeOnEx"
+    },
+    {
+      "type": "ensure_event_label",
+      "target": "Mir200/Envir/Market_Def/QFunction-0.txt",
+      "label": "TakeOffEx"
+    },
+    {
+      "type": "ensure_event_label",
+      "target": "Mir200/Envir/Market_Def/QFunction-0.txt",
+      "label": "Attack"
+    },
+    {
+      "type": "event_hook",
+      "target": "Mir200/Envir/Market_Def/QFunction-0.txt",
+      "label": "PlayLogin",
+      "content": "#IF\n#ACT\nSetOnTimer 19 1\nDELAYGOTO 4 @XYDP_RecalcSustain"
+    },
+    {
+      "type": "event_hook",
+      "target": "Mir200/Envir/Market_Def/QFunction-0.txt",
+      "label": "TakeOnEx",
+      "content": "#IF\n#ACT\nSetOnTimer 19 1\nDELAYGOTO 4 @XYDP_RecalcSustain"
+    },
+    {
+      "type": "event_hook",
+      "target": "Mir200/Envir/Market_Def/QFunction-0.txt",
+      "label": "TakeOffEx",
+      "content": "#IF\n#ACT\nSetOnTimer 19 1\nDELAYGOTO 4 @XYDP_RecalcSustain"
+    },
+    {
+      "type": "event_hook",
+      "target": "Mir200/Envir/Market_Def/QFunction-0.txt",
+      "label": "Attack",
+      "content": "#IF\nNOT CHECKCURRTARGETRACE = 0\nLARGE N$XY_SUS_LifeSteal 0\nCHECKHPPER < 100\n#ACT\nCALCPERCENT <$PKPOWER> <$STR(N$XY_SUS_LifeSteal)> N$XY_SUS_LifeStealHeal\nHUMANHP + <$STR(N$XY_SUS_LifeStealHeal)>"
+    }
+  ],
+  "preflight_checks": [
+    {
+      "type": "label_available",
+      "path": "Mir200/Envir/MapQuest_Def/QManage.txt",
+      "label": "OnTimer19",
+      "owner_package_id": "xy.combat.sustain"
+    }
+  ],
+  "post_checks": [],
+  "evidence": [
+    "reference:mingyue-Attack-pve-PKPOWER-CalcPercent-HumanHP",
+    "engine:Attack-CHECKCURRTARGETRACE-PKPOWER-CalcPercent-HumanHP",
+    "engine:SetOnTimer-0-255-seconds",
+    "engine:HumanHP-fixed-heal",
+    "static:equipment-sustain-contract",
+    "game:golden-relic-lv8-direct-regen-passed",
+    "evidence:game_acceptance_20260729.json",
+    "pending:generic-regression-and-lifesteal-acceptance"
+  ]
+}

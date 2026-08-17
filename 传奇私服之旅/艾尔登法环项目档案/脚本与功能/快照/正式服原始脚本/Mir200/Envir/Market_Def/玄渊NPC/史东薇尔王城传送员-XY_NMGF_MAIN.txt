@@ -1,0 +1,11 @@
+[@Main]
+#SAY
+这里通往史东薇尔王城。\ \
+<前往史东薇尔王城/@Go>
+<关闭/@exit>
+
+[@Go]
+#IF
+#ACT
+MAPMOVE XX144 94 33
+BREAK

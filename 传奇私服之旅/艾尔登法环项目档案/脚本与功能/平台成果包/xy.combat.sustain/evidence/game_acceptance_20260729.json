@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "package_id": "xy.combat.sustain",
+  "package_version": "1.1.0-candidate.2",
+  "date": "2026-07-29",
+  "confirmed_game_result": {
+    "equipment": "黄金圣物LV8",
+    "xlsx_value": 1200,
+    "route": "QManage OnTimer19 -> CHECKITEMW -> HumanHP + 1200",
+    "result": "用户确认自动回血"
+  },
+  "platform_upgrade": {
+    "server": "D:\\MirServer",
+    "package_transaction": "20260729_233101_e5bc3404",
+    "equipment_transaction": "20260729_233116_59f7fb02",
+    "master_workbook": "D:\\XuanYuanDevPlatform\\做装备\\templates\\XuanYuanItems.xlsx",
+    "migrated_equipment_count": 10,
+    "qfunction_sha256": "A750BB72EA7747C3A3E5B79314BE468400F49191967BD86D253C5FF57FEAECE4",
+    "qmanage_sha256": "219C09D81B4324CAB8B0DC36C7832AD2C4C2352FABB494BE396411C366D503D6",
+    "active_blocks": 10,
+    "fixed_tick_blocks": 10,
+    "old_dynamic_route_occurrences": 0,
+    "m2_restart_pid": 308,
+    "m2_startup_ascii_script_errors": 0
+  },
+  "remaining_game_acceptance": [
+    "升级后的平台通用链再次确认黄金圣物LV8每秒恢复1200",
+    "黄金圣物LV8脱下后停止回血",
+    "两件不同名称回血装备叠加",
+    "重登后自动恢复回血",
+    "百分比吸血实效"
+  ],
+  "status": "candidate_partial_game_acceptance"
+}

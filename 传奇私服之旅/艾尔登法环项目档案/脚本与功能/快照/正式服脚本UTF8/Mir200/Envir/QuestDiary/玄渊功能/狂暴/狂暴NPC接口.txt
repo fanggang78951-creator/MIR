@@ -1,0 +1,33 @@
+; 狂暴唯一业务入口。地图0物理NPC、QFunction命令和屏幕图标必须共同调用本文件。
+; 禁止在图标或其他NPC中复制扣费、称号、属性或状态逻辑。
+
+[@XY_RAGE_NPC_MAIN]
+{
+#SAY
+开启消耗原生灵符100。\
+原生灵符余额：<$GAMEGIRD>。\
+【狂暴之力】称号属性：暴击+10%，爆率+300，最大爆率+5，生命+10000，攻魔道+50-50。\
+被玩家击杀后称号关闭，击杀者获得账户金刚石50。\
+<开启狂暴/@XY_RAGE_NPC_ON> <关闭/@exit>
+
+[@XY_RAGE_NPC_ON]
+#IF
+CHECKFENGHAO 狂暴之力
+#ACT
+MESSAGEBOX 狂暴称号已经开启，请勿重复开启。
+#CALL [\玄渊功能\狂暴\狂暴界面刷新接口.txt] @XY_RAGE_UI_REFRESH
+BREAK
+
+#IF
+CHECKGAMEGIRD > 99
+#ACT
+GAMEGIRD - 100
+GIVEFENGHAO 狂暴之力 1
+SetNewFengHaoValue 狂暴之力 0 = 10
+#CALL [\玄渊功能\狂暴\狂暴界面刷新接口.txt] @XY_RAGE_UI_REFRESH
+SENDMSG 6 [狂暴] 称号已开启：暴击+10%，爆率+300，最大爆率+5。
+BREAK
+#ELSEACT
+MESSAGEBOX 原生灵符不足100。
+BREAK
+}

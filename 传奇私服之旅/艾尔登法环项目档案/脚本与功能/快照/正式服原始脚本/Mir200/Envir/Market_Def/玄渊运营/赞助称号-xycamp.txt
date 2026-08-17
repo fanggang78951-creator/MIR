@@ -1,0 +1,129 @@
+[@Main]
+#SAY
+【赞助称号】高级称号会覆盖低级称号。\
+赞助1档：处决5%、韧性20、基础爆率100%、最大爆率3%、伤害系数5%。\
+赞助2档：处决6%、韧性30、基础爆率200%、最大爆率3%、伤害系数6%。\
+赞助3档：处决8%、韧性40、基础爆率300%、最大爆率5%、伤害系数10%。\
+赞助4档：处决10%、韧性50、基础爆率500%、最大爆率10%、伤害系数15%。\
+<升级赞助1档（1000灵符）/@XY_SPONSOR_1> \
+<升级赞助2档（2000灵符）/@XY_SPONSOR_2> \
+<升级赞助3档（3000灵符）/@XY_SPONSOR_3> \
+<升级赞助4档（4000灵符）/@XY_SPONSOR_4> \
+<查看当前赞助属性/@XY_SPONSOR_STATUS> <关闭/@exit>
+
+[@XY_SPONSOR_1]
+#IF
+NOT CHECKFENGHAO 赞助1档
+CHECKGAMEGIRD > 999
+#ACT
+GIVEFENGHAO 赞助1档 1
+
+#IF
+CHECKFENGHAO 赞助1档
+#ACT
+GAMEGIRD - 1000
+SENDMSG 6 [赞助称号] 已升级为赞助1档；低级称号已回收。
+#CALL [\玄渊功能\非常驻\属性总览\玄渊三属性按钮.txt] @XY_UI_STATUS_REFRESH
+SENDMSG 6 属性总览已刷新；为确保爆率与韧性完整重算，请重新登录一次。
+BREAK
+#ELSEACT
+MESSAGEBOX 称号授予失败，未扣除材料，原称号保持不变。
+BREAK
+
+[@XY_SPONSOR_2]
+#IF
+CHECKFENGHAO 赞助1档
+CHECKGAMEGIRD > 1999
+#ACT
+GIVEFENGHAO 赞助2档 1
+
+#IF
+CHECKFENGHAO 赞助2档
+#ACT
+GAMEGIRD - 2000
+RECYCFENGHAO 赞助1档
+SENDMSG 6 [赞助称号] 已升级为赞助2档；低级称号已回收。
+#CALL [\玄渊功能\非常驻\属性总览\玄渊三属性按钮.txt] @XY_UI_STATUS_REFRESH
+SENDMSG 6 属性总览已刷新；为确保爆率与韧性完整重算，请重新登录一次。
+BREAK
+#ELSEACT
+MESSAGEBOX 称号授予失败，未扣除材料，原称号保持不变。
+BREAK
+
+[@XY_SPONSOR_3]
+#IF
+CHECKFENGHAO 赞助2档
+CHECKGAMEGIRD > 2999
+#ACT
+GIVEFENGHAO 赞助3档 1
+
+#IF
+CHECKFENGHAO 赞助3档
+#ACT
+GAMEGIRD - 3000
+RECYCFENGHAO 赞助2档
+SENDMSG 6 [赞助称号] 已升级为赞助3档；低级称号已回收。
+#CALL [\玄渊功能\非常驻\属性总览\玄渊三属性按钮.txt] @XY_UI_STATUS_REFRESH
+SENDMSG 6 属性总览已刷新；为确保爆率与韧性完整重算，请重新登录一次。
+BREAK
+#ELSEACT
+MESSAGEBOX 称号授予失败，未扣除材料，原称号保持不变。
+BREAK
+
+[@XY_SPONSOR_4]
+#IF
+CHECKFENGHAO 赞助3档
+CHECKGAMEGIRD > 3999
+#ACT
+GIVEFENGHAO 赞助4档 1
+
+#IF
+CHECKFENGHAO 赞助4档
+#ACT
+GAMEGIRD - 4000
+RECYCFENGHAO 赞助3档
+SENDMSG 6 [赞助称号] 已升级为赞助4档；低级称号已回收。
+#CALL [\玄渊功能\非常驻\属性总览\玄渊三属性按钮.txt] @XY_UI_STATUS_REFRESH
+SENDMSG 6 属性总览已刷新；为确保爆率与韧性完整重算，请重新登录一次。
+BREAK
+#ELSEACT
+MESSAGEBOX 称号授予失败，未扣除材料，原称号保持不变。
+BREAK
+[@XY_SPONSOR_STATUS]
+#IF
+CHECKFENGHAO 赞助4档
+#SAY
+当前持有：赞助4档。\
+处决概率+10%、韧性+50、基础爆率+500%、最大爆率+10%、伤害系数+15%。\
+<返回/@Main>
+BREAK
+
+#IF
+CHECKFENGHAO 赞助3档
+#SAY
+当前持有：赞助3档。\
+处决概率+8%、韧性+40、基础爆率+300%、最大爆率+5%、伤害系数+10%。\
+<返回/@Main>
+BREAK
+
+#IF
+CHECKFENGHAO 赞助2档
+#SAY
+当前持有：赞助2档。\
+处决概率+6%、韧性+30、基础爆率+200%、最大爆率+3%、伤害系数+6%。\
+<返回/@Main>
+BREAK
+
+#IF
+CHECKFENGHAO 赞助1档
+#SAY
+当前持有：赞助1档。\
+处决概率+5%、韧性+20、基础爆率+100%、最大爆率+3%、伤害系数+5%。\
+<返回/@Main>
+BREAK
+
+#IF
+#SAY
+当前未检测到赞助1档至赞助4档称号。\
+<返回/@Main>
+BREAK

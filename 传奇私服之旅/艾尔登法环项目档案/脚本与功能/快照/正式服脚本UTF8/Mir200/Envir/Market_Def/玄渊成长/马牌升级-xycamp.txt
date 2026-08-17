@@ -1,0 +1,392 @@
+[@Main]
+#IF
+CHECKITEM 圣律之剑LV10 1
+#ACT
+GOTO @XY_HORSE_FULL
+BREAK
+
+#IF
+CHECKITEM 圣律之剑LV9 1
+#ACT
+GOTO @XY_HORSE_VIEW_9
+BREAK
+
+#IF
+CHECKITEM 圣律之剑LV8 1
+#ACT
+GOTO @XY_HORSE_VIEW_8
+BREAK
+
+#IF
+CHECKITEM 圣律之剑LV7 1
+#ACT
+GOTO @XY_HORSE_VIEW_7
+BREAK
+
+#IF
+CHECKITEM 圣律之剑LV6 1
+#ACT
+GOTO @XY_HORSE_VIEW_6
+BREAK
+
+#IF
+CHECKITEM 圣律之剑LV5 1
+#ACT
+GOTO @XY_HORSE_VIEW_5
+BREAK
+
+#IF
+CHECKITEM 圣律之剑LV4 1
+#ACT
+GOTO @XY_HORSE_VIEW_4
+BREAK
+
+#IF
+CHECKITEM 圣律之剑LV3 1
+#ACT
+GOTO @XY_HORSE_VIEW_3
+BREAK
+
+#IF
+CHECKITEM 圣律之剑LV2 1
+#ACT
+GOTO @XY_HORSE_VIEW_2
+BREAK
+
+#IF
+CHECKITEM 圣律之剑LV1 1
+#ACT
+GOTO @XY_HORSE_VIEW_1
+BREAK
+
+#IF
+#ACT
+GOTO @XY_HORSE_NONE
+BREAK
+
+[@XY_HORSE_VIEW_1]
+#IF
+#SAY
+< /FCOLOR=250>\
+<> <圣律之剑进阶：/FCOLOR=158> <只显示当前可升级的下一件/FCOLOR=218>\
+<> <---------------------------------------------------------------/FCOLOR=10>\
+<> <当前装备:/FCOLOR=161>{圣律之剑LV1/SCOLOR=249}\
+<> <下一装备:/FCOLOR=161>{圣律之剑LV2/SCOLOR=253}\
+<> <升级消耗:/FCOLOR=161>{金币×50000/SCOLOR=251}\
+<> <将鼠标移到图标查看下一装备的完整属性。/FCOLOR=147>\
+<> <---------------------------------------------------------------/FCOLOR=10>\
+<ItemShow:534:0:260:-90:1>　【<确认升级/@XY_HORSE_1>】　<关闭/@exit>\
+
+[@XY_HORSE_1]
+#IF
+CHECKBAGSIZE 1
+CHECKITEM 圣律之剑LV1 1
+NOT CHECKITEM 圣律之剑LV2 1
+NOT CHECKITEM 圣律之剑LV3 1
+NOT CHECKITEM 圣律之剑LV4 1
+NOT CHECKITEM 圣律之剑LV5 1
+NOT CHECKITEM 圣律之剑LV6 1
+NOT CHECKITEM 圣律之剑LV7 1
+NOT CHECKITEM 圣律之剑LV8 1
+NOT CHECKITEM 圣律之剑LV9 1
+NOT CHECKITEM 圣律之剑LV10 1
+CHECKGOLD 50000
+#ACT
+TAKE 圣律之剑LV1 1
+GOLDCOUNT - 50000
+GIVE 圣律之剑LV2 1
+SENDMSG 6 [圣律之剑] 已将圣律之剑LV1升级为圣律之剑LV2。
+GOTO @Main
+BREAK
+#ELSEACT
+MESSAGEBOX 当前装备不是背包内最高档，或材料、货币、背包空间不满足。
+BREAK
+
+[@XY_HORSE_VIEW_2]
+#IF
+#SAY
+< /FCOLOR=250>\
+<> <圣律之剑进阶：/FCOLOR=158> <只显示当前可升级的下一件/FCOLOR=218>\
+<> <---------------------------------------------------------------/FCOLOR=10>\
+<> <当前装备:/FCOLOR=161>{圣律之剑LV2/SCOLOR=249}\
+<> <下一装备:/FCOLOR=161>{圣律之剑LV3/SCOLOR=253}\
+<> <升级消耗:/FCOLOR=161>{金币×100000/SCOLOR=251}\
+<> <将鼠标移到图标查看下一装备的完整属性。/FCOLOR=147>\
+<> <---------------------------------------------------------------/FCOLOR=10>\
+<ItemShow:535:0:260:-90:1>　【<确认升级/@XY_HORSE_2>】　<关闭/@exit>\
+
+[@XY_HORSE_2]
+#IF
+CHECKBAGSIZE 1
+CHECKITEM 圣律之剑LV2 1
+NOT CHECKITEM 圣律之剑LV3 1
+NOT CHECKITEM 圣律之剑LV4 1
+NOT CHECKITEM 圣律之剑LV5 1
+NOT CHECKITEM 圣律之剑LV6 1
+NOT CHECKITEM 圣律之剑LV7 1
+NOT CHECKITEM 圣律之剑LV8 1
+NOT CHECKITEM 圣律之剑LV9 1
+NOT CHECKITEM 圣律之剑LV10 1
+CHECKGOLD 100000
+#ACT
+TAKE 圣律之剑LV2 1
+GOLDCOUNT - 100000
+GIVE 圣律之剑LV3 1
+SENDMSG 6 [圣律之剑] 已将圣律之剑LV2升级为圣律之剑LV3。
+GOTO @Main
+BREAK
+#ELSEACT
+MESSAGEBOX 当前装备不是背包内最高档，或材料、货币、背包空间不满足。
+BREAK
+
+[@XY_HORSE_VIEW_3]
+#IF
+#SAY
+< /FCOLOR=250>\
+<> <圣律之剑进阶：/FCOLOR=158> <只显示当前可升级的下一件/FCOLOR=218>\
+<> <---------------------------------------------------------------/FCOLOR=10>\
+<> <当前装备:/FCOLOR=161>{圣律之剑LV3/SCOLOR=249}\
+<> <下一装备:/FCOLOR=161>{圣律之剑LV4/SCOLOR=253}\
+<> <升级消耗:/FCOLOR=161>{金币×150000/SCOLOR=251}\
+<> <将鼠标移到图标查看下一装备的完整属性。/FCOLOR=147>\
+<> <---------------------------------------------------------------/FCOLOR=10>\
+<ItemShow:536:0:260:-90:1>　【<确认升级/@XY_HORSE_3>】　<关闭/@exit>\
+
+[@XY_HORSE_3]
+#IF
+CHECKBAGSIZE 1
+CHECKITEM 圣律之剑LV3 1
+NOT CHECKITEM 圣律之剑LV4 1
+NOT CHECKITEM 圣律之剑LV5 1
+NOT CHECKITEM 圣律之剑LV6 1
+NOT CHECKITEM 圣律之剑LV7 1
+NOT CHECKITEM 圣律之剑LV8 1
+NOT CHECKITEM 圣律之剑LV9 1
+NOT CHECKITEM 圣律之剑LV10 1
+CHECKGOLD 150000
+#ACT
+TAKE 圣律之剑LV3 1
+GOLDCOUNT - 150000
+GIVE 圣律之剑LV4 1
+SENDMSG 6 [圣律之剑] 已将圣律之剑LV3升级为圣律之剑LV4。
+GOTO @Main
+BREAK
+#ELSEACT
+MESSAGEBOX 当前装备不是背包内最高档，或材料、货币、背包空间不满足。
+BREAK
+
+[@XY_HORSE_VIEW_4]
+#IF
+#SAY
+< /FCOLOR=250>\
+<> <圣律之剑进阶：/FCOLOR=158> <只显示当前可升级的下一件/FCOLOR=218>\
+<> <---------------------------------------------------------------/FCOLOR=10>\
+<> <当前装备:/FCOLOR=161>{圣律之剑LV4/SCOLOR=249}\
+<> <下一装备:/FCOLOR=161>{圣律之剑LV5/SCOLOR=253}\
+<> <升级消耗:/FCOLOR=161>{金币×200000/SCOLOR=251}\
+<> <将鼠标移到图标查看下一装备的完整属性。/FCOLOR=147>\
+<> <---------------------------------------------------------------/FCOLOR=10>\
+<ItemShow:537:0:260:-90:1>　【<确认升级/@XY_HORSE_4>】　<关闭/@exit>\
+
+[@XY_HORSE_4]
+#IF
+CHECKBAGSIZE 1
+CHECKITEM 圣律之剑LV4 1
+NOT CHECKITEM 圣律之剑LV5 1
+NOT CHECKITEM 圣律之剑LV6 1
+NOT CHECKITEM 圣律之剑LV7 1
+NOT CHECKITEM 圣律之剑LV8 1
+NOT CHECKITEM 圣律之剑LV9 1
+NOT CHECKITEM 圣律之剑LV10 1
+CHECKGOLD 200000
+#ACT
+TAKE 圣律之剑LV4 1
+GOLDCOUNT - 200000
+GIVE 圣律之剑LV5 1
+SENDMSG 6 [圣律之剑] 已将圣律之剑LV4升级为圣律之剑LV5。
+GOTO @Main
+BREAK
+#ELSEACT
+MESSAGEBOX 当前装备不是背包内最高档，或材料、货币、背包空间不满足。
+BREAK
+
+[@XY_HORSE_VIEW_5]
+#IF
+#SAY
+< /FCOLOR=250>\
+<> <圣律之剑进阶：/FCOLOR=158> <只显示当前可升级的下一件/FCOLOR=218>\
+<> <---------------------------------------------------------------/FCOLOR=10>\
+<> <当前装备:/FCOLOR=161>{圣律之剑LV5/SCOLOR=249}\
+<> <下一装备:/FCOLOR=161>{圣律之剑LV6/SCOLOR=253}\
+<> <升级消耗:/FCOLOR=161>{金币×500000/SCOLOR=251}\
+<> <将鼠标移到图标查看下一装备的完整属性。/FCOLOR=147>\
+<> <---------------------------------------------------------------/FCOLOR=10>\
+<ItemShow:538:0:260:-90:1>　【<确认升级/@XY_HORSE_5>】　<关闭/@exit>\
+
+[@XY_HORSE_5]
+#IF
+CHECKBAGSIZE 1
+CHECKITEM 圣律之剑LV5 1
+NOT CHECKITEM 圣律之剑LV6 1
+NOT CHECKITEM 圣律之剑LV7 1
+NOT CHECKITEM 圣律之剑LV8 1
+NOT CHECKITEM 圣律之剑LV9 1
+NOT CHECKITEM 圣律之剑LV10 1
+CHECKGOLD 500000
+#ACT
+TAKE 圣律之剑LV5 1
+GOLDCOUNT - 500000
+GIVE 圣律之剑LV6 1
+SENDMSG 6 [圣律之剑] 已将圣律之剑LV5升级为圣律之剑LV6。
+GOTO @Main
+BREAK
+#ELSEACT
+MESSAGEBOX 当前装备不是背包内最高档，或材料、货币、背包空间不满足。
+BREAK
+
+[@XY_HORSE_VIEW_6]
+#IF
+#SAY
+< /FCOLOR=250>\
+<> <圣律之剑进阶：/FCOLOR=158> <只显示当前可升级的下一件/FCOLOR=218>\
+<> <---------------------------------------------------------------/FCOLOR=10>\
+<> <当前装备:/FCOLOR=161>{圣律之剑LV6/SCOLOR=249}\
+<> <下一装备:/FCOLOR=161>{圣律之剑LV7/SCOLOR=253}\
+<> <升级消耗:/FCOLOR=161>{金币×800000/SCOLOR=251}\
+<> <将鼠标移到图标查看下一装备的完整属性。/FCOLOR=147>\
+<> <---------------------------------------------------------------/FCOLOR=10>\
+<ItemShow:539:0:260:-90:1>　【<确认升级/@XY_HORSE_6>】　<关闭/@exit>\
+
+[@XY_HORSE_6]
+#IF
+CHECKBAGSIZE 1
+CHECKITEM 圣律之剑LV6 1
+NOT CHECKITEM 圣律之剑LV7 1
+NOT CHECKITEM 圣律之剑LV8 1
+NOT CHECKITEM 圣律之剑LV9 1
+NOT CHECKITEM 圣律之剑LV10 1
+CHECKGOLD 800000
+#ACT
+TAKE 圣律之剑LV6 1
+GOLDCOUNT - 800000
+GIVE 圣律之剑LV7 1
+SENDMSG 6 [圣律之剑] 已将圣律之剑LV6升级为圣律之剑LV7。
+GOTO @Main
+BREAK
+#ELSEACT
+MESSAGEBOX 当前装备不是背包内最高档，或材料、货币、背包空间不满足。
+BREAK
+
+[@XY_HORSE_VIEW_7]
+#IF
+#SAY
+< /FCOLOR=250>\
+<> <圣律之剑进阶：/FCOLOR=158> <只显示当前可升级的下一件/FCOLOR=218>\
+<> <---------------------------------------------------------------/FCOLOR=10>\
+<> <当前装备:/FCOLOR=161>{圣律之剑LV7/SCOLOR=249}\
+<> <下一装备:/FCOLOR=161>{圣律之剑LV8/SCOLOR=253}\
+<> <升级消耗:/FCOLOR=161>{金币×1000000/SCOLOR=251}\
+<> <将鼠标移到图标查看下一装备的完整属性。/FCOLOR=147>\
+<> <---------------------------------------------------------------/FCOLOR=10>\
+<ItemShow:540:0:260:-90:1>　【<确认升级/@XY_HORSE_7>】　<关闭/@exit>\
+
+[@XY_HORSE_7]
+#IF
+CHECKBAGSIZE 1
+CHECKITEM 圣律之剑LV7 1
+NOT CHECKITEM 圣律之剑LV8 1
+NOT CHECKITEM 圣律之剑LV9 1
+NOT CHECKITEM 圣律之剑LV10 1
+CHECKGOLD 1000000
+#ACT
+TAKE 圣律之剑LV7 1
+GOLDCOUNT - 1000000
+GIVE 圣律之剑LV8 1
+SENDMSG 6 [圣律之剑] 已将圣律之剑LV7升级为圣律之剑LV8。
+GOTO @Main
+BREAK
+#ELSEACT
+MESSAGEBOX 当前装备不是背包内最高档，或材料、货币、背包空间不满足。
+BREAK
+
+[@XY_HORSE_VIEW_8]
+#IF
+#SAY
+< /FCOLOR=250>\
+<> <圣律之剑进阶：/FCOLOR=158> <只显示当前可升级的下一件/FCOLOR=218>\
+<> <---------------------------------------------------------------/FCOLOR=10>\
+<> <当前装备:/FCOLOR=161>{圣律之剑LV8/SCOLOR=249}\
+<> <下一装备:/FCOLOR=161>{圣律之剑LV9/SCOLOR=253}\
+<> <升级消耗:/FCOLOR=161>{金币×1500000/SCOLOR=251}\
+<> <将鼠标移到图标查看下一装备的完整属性。/FCOLOR=147>\
+<> <---------------------------------------------------------------/FCOLOR=10>\
+<ItemShow:541:0:260:-90:1>　【<确认升级/@XY_HORSE_8>】　<关闭/@exit>\
+
+[@XY_HORSE_8]
+#IF
+CHECKBAGSIZE 1
+CHECKITEM 圣律之剑LV8 1
+NOT CHECKITEM 圣律之剑LV9 1
+NOT CHECKITEM 圣律之剑LV10 1
+CHECKGOLD 1500000
+#ACT
+TAKE 圣律之剑LV8 1
+GOLDCOUNT - 1500000
+GIVE 圣律之剑LV9 1
+SENDMSG 6 [圣律之剑] 已将圣律之剑LV8升级为圣律之剑LV9。
+GOTO @Main
+BREAK
+#ELSEACT
+MESSAGEBOX 当前装备不是背包内最高档，或材料、货币、背包空间不满足。
+BREAK
+
+[@XY_HORSE_VIEW_9]
+#IF
+#SAY
+< /FCOLOR=250>\
+<> <圣律之剑进阶：/FCOLOR=158> <只显示当前可升级的下一件/FCOLOR=218>\
+<> <---------------------------------------------------------------/FCOLOR=10>\
+<> <当前装备:/FCOLOR=161>{圣律之剑LV9/SCOLOR=249}\
+<> <下一装备:/FCOLOR=161>{圣律之剑LV10/SCOLOR=253}\
+<> <升级消耗:/FCOLOR=161>{金币×2000000/SCOLOR=251}\
+<> <将鼠标移到图标查看下一装备的完整属性。/FCOLOR=147>\
+<> <---------------------------------------------------------------/FCOLOR=10>\
+<ItemShow:542:0:260:-90:1>　【<确认升级/@XY_HORSE_9>】　<关闭/@exit>\
+
+[@XY_HORSE_9]
+#IF
+CHECKBAGSIZE 1
+CHECKITEM 圣律之剑LV9 1
+NOT CHECKITEM 圣律之剑LV10 1
+CHECKGOLD 2000000
+#ACT
+TAKE 圣律之剑LV9 1
+GOLDCOUNT - 2000000
+GIVE 圣律之剑LV10 1
+SENDMSG 6 [圣律之剑] 已将圣律之剑LV9升级为圣律之剑LV10。
+GOTO @Main
+BREAK
+#ELSEACT
+MESSAGEBOX 当前装备不是背包内最高档，或材料、货币、背包空间不满足。
+BREAK
+
+[@XY_HORSE_NONE]
+#IF
+#SAY
+< /FCOLOR=250>\
+<> <圣律之剑进阶：/FCOLOR=158> <未找到可升级装备/FCOLOR=218>\
+<> <---------------------------------------------------------------/FCOLOR=10>\
+<> <请先将圣律之剑放入背包；穿戴中的装备不参与识别。/FCOLOR=251>\
+<> <---------------------------------------------------------------/FCOLOR=10>\
+<> <关闭/@exit>\
+
+[@XY_HORSE_FULL]
+#IF
+#SAY
+< /FCOLOR=250>\
+<> <圣律之剑进阶：/FCOLOR=158> <当前装备已经达到最高档/FCOLOR=218>\
+<> <---------------------------------------------------------------/FCOLOR=10>\
+<> <当前装备:/FCOLOR=161>{圣律之剑LV10/SCOLOR=249}\
+<> <状态:/FCOLOR=161>{已满级/SCOLOR=253}\
+<> <---------------------------------------------------------------/FCOLOR=10>\
+<> <关闭/@exit>\

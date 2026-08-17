@@ -1,0 +1,245 @@
+玄渊平台——玩家命令、NPC、任务与菜单公共接口
+
+一、玩家聊天命令
+
+1. 快捷回收（已验证）
+
+成果包：xy.optional.recycle.core 1.0.2，verified / optional
+玩家输入：
+
+@快捷回收
+
+平台登记：UserCmd.txt 中“快捷回收<TAB>31”，进入 QFunction 的 [@UserCmd31]。
+用途：打开 12 项精确白名单回收确认页。
+规则：玩家取消时零扣除；确认后才进入 @XY_RECYCLE_APPLY。
+
+禁止：
+- 不要再登记另一个“快捷回收”编号。
+- 不要让 NPC 使用外部 #CALL 调用回收核心；当前服已经实证 load fail。
+- 不要把 120 段回收业务复制到 NPC 文件。
+
+2. 宁姆格福临时测试命令（禁止正式使用）
+
+历史候选包曾登记：@测试解锁宁姆格福 -> UserCmd90。
+当前该包仍指向旧标签 @XY_WORLD_MAP_GRANT_NIMUGEFU，而现行世界地图使用 @XY_WORLD_MAP_NMGF_MAIN_GRANT。
+结论：只作为历史测试占用记录，禁止安装到正式服，禁止作为新接口模板。
+
+二、狂暴系统
+
+成果包：xy.optional.rage.core 3.2.0-candidate.1，candidate / optional
+唯一业务状态：“狂暴之力”称号。
+
+1. 调用者位于 QFunction-0.txt 时
+
+GOTO @XY_RAGE_COMMAND
+
+2. 调用者是独立 NPC/QuestDiary 脚本时
+
+#CALL [\玄渊功能\狂暴\狂暴NPC接口.txt] @XY_RAGE_NPC_MAIN
+
+3. 狂暴状态改变后刷新左上图标
+
+#CALL [\玄渊功能\狂暴\狂暴界面刷新接口.txt] @XY_RAGE_UI_REFRESH
+
+第 3 项是 UI 扩展钩子，正常业务入口不需要自行调用；当前狂暴成功开启、死亡清理和登录链已负责刷新。
+
+调用边界：
+- NPC、图标和命令必须进入同一个 @XY_RAGE_NPC_MAIN。
+- 调用者不得复制 CHECKGAMEGIRD、扣款、GIVEFENGHAO、属性或死亡清理。
+- 唯一核心必须保留可调用标签外层花括号；100灵符余额门槛使用 CHECKGAMEGIRD > 99，扣除使用 GAMEGIRD - 100。
+- 不使用 N$XY_RAGE_ACTIVE，不使用另一套 POWERRATE 后台。
+- 图标彩色状态只认 CHECKFENGHAO 狂暴之力。
+
+三、沙城捐献
+
+成果包：xy.optional.donate.core 2.3.1-candidate.1，candidate / optional（正式母版仍为旧累计版；一次性规则验收前禁止用平台覆盖当前服候选）
+
+1. 调用者位于 QFunction-0.txt 时
+
+GOTO @XY_DONATE_COMMAND
+
+2. 调用者是独立 NPC/QuestDiary 脚本时
+
+#CALL [\玄渊功能\捐献\捐献核心.txt] @XY_DONATE_TRIGGER
+
+NPC 示例：
+
+[@Main]
+#SAY
+<我要捐献/@我要捐献>
+
+[@我要捐献]
+#ACT
+#CALL [\玄渊功能\捐献\捐献核心.txt] @XY_DONATE_TRIGGER
+
+调用边界：
+- NPC、图标和任务只负责进入接口。
+- 捐献核心负责“是否已有称号、原生灵符是否足够、称号授予回读、扣费和属性同步”的完整事务。
+- 当前业务固定为每个角色仅可激活一次：消耗300原生灵符，获得唯一“沙城捐献”称号。
+- 不再使用人物累计、全服累计、榜一、封榜或榜一奖励；外围NPC不得另写第二套扣费或授予逻辑。
+- 捐献核心包不自动创建 NPC 或图标。
+
+捐献成功状态：N$XY_DONATE_LAST_SUCCESS
+含义：每次进入 @XY_DONATE_TRIGGER 先清零；只有称号授予回读成功并扣除300原生灵符后才写1。称号由核心授予，外部称号壳不得再次GIVEFENGHAO。
+
+一次性安全顺序：
+- 已拥有“沙城捐献”称号时立即阻止，不扣费、不重复授予。
+- 原生灵符不足300时立即阻止，不授予称号、不扣费。
+- 首次激活先授予称号并用CHECKFENGHAO回读；回读成功后才扣除300原生灵符。
+- 授予失败时提示失败，必须保持零扣费。
+
+原生灵符规则：
+- 表格或配置中的“灵符”“账户灵符”“原生灵符”均表示 `<$GAMEGIRD>`。
+- 检查使用 `CHECKGAMEGIRD > 消耗数量减1`，扣除使用 `GAMEGIRD - 数量`。
+- 禁止生成或手写 `CHECKITEM 灵符`、`TAKE 灵符`；旧“材料+灵符”配置由核心兼容为原生GAMEGIRD。
+
+旧持久状态文件：
+- 固定路径：`Mir200\Envir\QuestDiary\玄渊数据\xy_donate\捐献状态.txt`。
+- 一次性称号规则不再读取或写入此文件。
+- 旧服中的文件仅为历史审计数据，保留但停用；不得据此恢复累计、榜一或封榜逻辑。
+
+初始之地称号属性：
+- 唯一来源：`D:\XuanYuanDevPlatform\所需材料表格汇总\02_捐献.xlsx`。
+- 当前母表：攻/魔/道99-99、原生暴击10%、基础爆率100%、最大爆率5%。
+- 暴击写入`SetNewFengHaoValue 沙城捐献 0 = 表格值`；两类爆率进入统一静态与攻击前重算锚点。
+- 历史`xy.ops.donate-title`的打怪伤害+50、最大爆率+20钩子不再是当前定义；只有旧块哈希完整时平台才安全接管清理。
+
+四、快捷回收公共入口
+
+成果包：xy.optional.recycle.core 1.0.2，verified / optional
+
+GOTO @XY_RECYCLE_COMMAND
+用途：打开正式回收说明和确认页，适合 QFunction 的按钮分支。
+
+GOTO @XY_RECYCLE_APPLY
+用途：直接执行正式 12 项白名单回收。
+限制：只能由已经完成确认的受管流程或增强/自动回收包调用，不能直接做成玩家误触按钮。
+
+QFunction 按钮示例：
+
+#IF
+EQUAL <$CustomButtonID> 21
+#ACT
+GOTO @XY_RECYCLE_COMMAND
+BREAK
+
+五、回收金币加成
+
+成果包：xy.optional.recycle.bonus 1.0.0-candidate.1，candidate / optional
+
+GOTO @XY_RECYCLE_ENHANCED_COMMAND
+打开带当前金币加成的回收确认页。
+
+GOTO @XY_RECYCLE_ENHANCED_APPLY
+直接执行正式回收并按实际基础金币差额计算加成。只允许自动回收或已确认入口调用。
+
+GOTO @XY_RECYCLE_BONUS_DEFAULT
+把当前人物的加成恢复为安装参数默认值。
+
+GOTO @XY_RECYCLE_BONUS_DISABLE
+把当前人物加成设为 0。
+
+状态变量：N$XY_RecycleBonusPercent
+含义：当前人物回收金币加成百分比。称号、会员或活动可以在自身验收后写入该变量，再进入增强回收入口。
+
+六、自动回收
+
+成果包：xy.optional.recycle.auto 1.0.0-candidate.1，candidate / optional
+
+GOTO @XY_RECYCLE_AUTO_COMMAND
+切换开启/关闭。
+
+GOTO @XY_RECYCLE_AUTO_ENABLE
+明确开启。
+
+GOTO @XY_RECYCLE_AUTO_DISABLE
+明确关闭。
+
+状态变量：N$XY_RecycleAutoEnabled，1=开启，0=关闭。
+
+触发条件：玩家已开启，并在 PickUpItemEX 拾取事件中检测到背包空余不足 40 格。
+注意：空余正好 40 格不触发；怪物掉落直接入包若不触发 PickUpItemEX，不能保证自动回收。
+
+七、屏蔽/恢复全服掉落提示
+
+成果包：xy.optional.recycle.drop-filter 1.0.0-candidate.1，candidate / optional
+
+GOTO @XY_RECYCLE_DROP_FILTER_COMMAND
+切换屏蔽/恢复。
+
+GOTO @XY_RECYCLE_DROP_FILTER_ENABLE
+明确屏蔽掉落提示。
+
+GOTO @XY_RECYCLE_DROP_FILTER_DISABLE
+明确恢复掉落提示。
+
+状态变量：N$XY_RecycleDropFilterEnabled。
+底层命令：FILTERGLOBALMSG 1 1 为屏蔽，FILTERGLOBALMSG 1 0 为恢复。
+该功能只影响提示，不改变掉率、地面物品、拾取或回收表。
+
+八、背包功能服务菜单
+
+成果包：xy.optional.bag.function-service 1.0.0-candidate.1，candidate / optional
+
+GOTO @XY_BAG_FUNCTION_SERVICE_PANEL
+
+用途：打开背包第四个按钮对应的公共功能菜单。
+当前菜单只提供掉落提示的明确开启与关闭。以后扩展背包服务，应升级这一个菜单，不要再次占用 CustomButtonID 23。
+
+九、属性图标立即刷新
+
+成果包：xy.ui.attr-overview 2.0.5-candidate.1，candidate / optional
+
+GOTO @XYDP_ShowAttrBuff
+
+用途：新业务脚本已经更新最终属性变量后，要求左上 A/B/C 属性悬浮面板立即重算并重画。
+限制：它只刷新显示，不计算伤害，不应替代战斗成果包的实效逻辑。
+
+GOTO @XYDP_ClearAttrBuff
+
+用途：清理本包绘制的属性 Buff/按钮。
+等级：内部维护接口，只用于卸载、重绘或明确的 UI 生命周期，不做玩家菜单。
+
+十、无限仓库
+
+成果包：xy.optional.storage.bag-entry 1.0.0-candidate.1，candidate / optional
+
+OpenStorageView 1
+
+用途：打开翎风原生无限可视仓库。
+前置：M2 功能设置中已经开启无限仓库并设置容量。
+禁止：OpenStorageView 0 是普通可视仓库，不能替代参数 1。
+
+十一、没有通用玩家/NPC命令的成果
+
+- 首爆：只通过 PickUpItemEX 自动触发。
+- 技能强化：只通过技能面板升级按钮触发。
+- 初始背包 200 格：只在登录脚本执行。
+- 自动三级基础技能：只在登录和升级事件执行。
+- 国王模式：使用成果包生成的报名 NPC 和 GM 管理 NPC，不开放通用玩家命令。
+
+十二、初始之地七NPC
+
+平台功能ID：xy.initial-camp.seven-npcs 1.4.0-candidate.1。
+GUI入口：NPC编辑 -> 初始之地七NPC。
+配置目录：D:\XuanYuanDevPlatform\所需材料表格汇总。
+
+公共调用：
+- 狂暴：#CALL [\玄渊功能\狂暴\狂暴NPC接口.txt] @XY_RAGE_NPC_MAIN
+- 捐献：#CALL [\玄渊功能\捐献\捐献核心.txt] @XY_DONATE_TRIGGER
+
+称号与转生规则：
+- 赞助以称号为进度和属性载体；转生称号只作翎风原生转生等级的显示镜像。不得用 ChangeHumAbilityEX 永久增量代替两者。
+- 赞助先检查材料并授予称号，确认成功后才扣材料和回收低级称号。转生还必须执行并确认RENEWLEVEL成功后才扣材料。
+- 转生必须按CHECKRENEWLEVEL逐级；高级显示称号覆盖低级称号，低级称号不得继续保留。
+- 待配置档位只显示提示，不执行 TAKE、扣货币、GIVEFENGHAO 或属性修改。
+- 赞助称号编号11至14、转生称号编号30至39来自XLSX并映射到StdItems Shape；Looks固定为Shape乘5。名称、编号或数据库占用不唯一时预检阻止。
+- 赞助的处决、韧性、基础爆率、最大爆率和伤害系数只从03表生成受管锚点；转生神力只从原生转生等级生成静态与攻击前双重算，不读取称号字段。
+
+圣律之剑、黄金圣物与新手礼包规则：
+- NPC显示名、当前装备、下一装备、材料、货币、礼包码和奖励只认七份XLSX，不从平台源码读取默认名称。
+- 圣律之剑/黄金圣物属性完全读取目标服StdItems；生成脚本不得写任何装备属性。
+- 05表和06表分别逐行收取当前装备并发放下一装备。
+- 07表用礼包码888888，每个角色限领一次，同时发放绑定的圣律之剑LV1与黄金圣物LV1。
+- 详细契约见08_初始之地七NPC材料表与装备兑换接口.txt。
+

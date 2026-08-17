@@ -1,0 +1,1943 @@
+[@main]
+#ACT
+OPENMERCHANTBIGDLG 12 0 1 4 0 0 1 618 8 1
+#SAY
+<ITEMBOX:27:12:1:158:140:76:76:15,19,22,23,24,26,64,62,53,63,51,28:放入需要洗练的装备>
+<&Text:装备洗练:24:10{FCOLOR=253}>
+<&Text:请将需要洗练的装备放入左侧法阵。:382:64{FCOLOR=250}>
+<&Text:每次消耗：100元宝:382:108{FCOLOR=243}>
+<&Text:洗练会覆盖装备原有洗练词条。:382:152{FCOLOR=146}>
+<&Text:天赐、神佑装备洗练后需要开光。:382:196{FCOLOR=161}>
+<&Text:放入装备:167:266{FCOLOR=250}>
+<&Text:确认洗练:420:315{FCOLOR=243}/@XYEW_WASH_EXEC>
+<&Text:关闭:540:315{FCOLOR=161}/@exit>
+
+[@ItemIntoBox27]
+#IF
+#ACT
+BREAK
+
+[@XYEW_WASH_EXEC]
+
+
+#if
+equal <$BOXITEM[27].NAME>
+#act
+messagebox 请先放入装备在洗练!
+break
+
+
+
+
+
+
+
+#if
+not checkgamegold > 99
+#act
+UNALLOWITEMINTOBOX 
+messagebox 洗练装备需要100元宝
+break
+
+#IF
+EQUAL N$XYEW_W_洗练CD 1
+#ACT
+BREAK
+
+
+#IF
+EQUAL N$XYEW_W_洗练CD 0
+#ACT
+MOV N$XYEW_W_洗练CD 1
+
+#if
+#ACT
+gamegold - 100
+mov N$XYEW_W_装备防御 0
+mov N$XYEW_W_装备魔御 0
+mov N$XYEW_W_装备攻击 0
+mov N$XYEW_W_装备魔法 0
+mov N$XYEW_W_装备道术 0
+mov N$XYEW_W_装备生命 0
+mov N$XYEW_W_装备魔力 0
+mov N$XYEW_W_暴击伤害 0
+mov N$XYEW_W_致命一击 0
+mov N$XYEW_W_攻击伤害 0
+mov N$XYEW_W_神圣一击 0
+mov N$XYEW_W_真实一击 0
+mov N$XYEW_W_麻痹一击 0
+mov N$XYEW_W_冰冻一击 0
+mov N$XYEW_W_攻击速度 0
+SetUpgradeItem 27
+SetCustomItemValue boxitem27 0 = 0
+SetCustomItemValue boxitem27 1 = 0
+SetCustomItemValue boxitem27 2 = 0
+SetCustomItemValue boxitem27 3 = 0
+SetCustomItemValue boxitem27 4 = 0
+SetCustomItemValue boxitem27 5 = 0
+SetCustomItemValue boxitem27 6 = 0
+SetCustomItemValue boxitem27 7 = 0
+SetCustomItemValue boxitem27 8 = 0
+SetCustomItemValue boxitem27 9 = 0
+SetNewItemValue boxitem27 0 = 0
+SetNewItemValue boxitem27 1 = 0
+SetNewItemValue boxitem27 2 = 0
+SetNewItemValue boxitem27 3 = 0
+SetNewItemValue boxitem27 4 = 0
+SetNewItemValue boxitem27 5 = 0
+SetNewItemValue boxitem27 6 = 0
+SetNewItemValue boxitem27 7 = 0
+SetNewItemValue boxitem27 8 = 0
+SetNewItemValue boxitem27 9 = 0
+SetNewItemValue boxitem27 10 = 0
+SetNewItemValue boxitem27 11 = 0
+ChangeItemUpgradeCount boxitem27 = 0
+UpdateItem boxitem27
+SENDMSG 7 提示：洗练成功，请移动装备上查看属性！！！
+goto @区分级别洗练
+break
+
+[@区分级别洗练]
+#if
+#act
+mov N$XYEW_W_百分一 0
+mov N$XYEW_W_百分二 0
+mov N$XYEW_W_百分三 0
+mov N$XYEW_W_百分四 0
+mov N$XYEW_W_百分五 0
+mov N$XYEW_W_百分六 0
+mov N$XYEW_W_百分七 0
+mov N$XYEW_W_百分八 0
+mov N$XYEW_W_属性值一 0
+mov N$XYEW_W_属性值二 0
+mov N$XYEW_W_属性值三 0
+mov N$XYEW_W_属性值四 0
+mov N$XYEW_W_属性值五 0
+mov N$XYEW_W_属性值六 0
+mov N$XYEW_W_属性值七 0
+mov N$XYEW_W_属性值八 0
+
+
+#if
+RANDOM 350
+#act
+SetUpgradeItem 27
+SetCustomItemText boxitem27 [装备品质:神佑未开光]
+SetCustomItemTextColor boxitem27 125
+ChangeItemUpgradeCount boxitem27 = 8
+UpdateItem boxitem27
+MOV N$XYEW_W_洗练CD 0
+ReturnBoxItem 27
+messagebox 您得到了天神的庇佑，获得了神佑属性。
+break
+
+#if
+RANDOM 300
+#act
+SetUpgradeItem 27
+SetCustomItemText boxitem27 [装备品质:天赐未开光]
+SetCustomItemTextColor boxitem27 31
+ChangeItemUpgradeCount boxitem27 = 7
+UpdateItem boxitem27
+MOV N$XYEW_W_洗练CD 0
+ReturnBoxItem 27
+messagebox 您得到了天神的赐福，获得了天赐属性。
+break
+
+#if
+RANDOM 250
+#act
+#CALL [\玄渊实验室\装备洗练\圣级直出.txt] @圣级特殊
+break
+
+#if
+RANDOM 150
+#act
+#CALL [\玄渊实验室\装备洗练\仙级直出.txt] @仙级特殊
+break
+
+#if
+#act
+mov S$XYEW_W_装备词缀 普通
+
+#if
+random 3
+#act
+mov S$XYEW_W_装备词缀 灵级
+movr N$XYEW_W_属性条数 1 3
+
+
+#if
+random 5
+#act
+mov S$XYEW_W_装备词缀 上古
+movr N$XYEW_W_属性条数 2 4
+
+#if
+random 10
+#act
+mov S$XYEW_W_装备词缀 传说
+movr N$XYEW_W_属性条数 2 5
+
+
+#if
+equal S$XYEW_W_装备词缀 传说
+equal N$XYEW_W_属性条数 2
+#act
+goto @获取属性一
+DELAYGOTO 50 @获取属性二
+mov S$XYEW_W_词缀颜色 70
+mov N$XYEW_W_洗练星星 4
+DELAYGOTO 500 @洗练给予属性
+break
+
+#if
+equal S$XYEW_W_装备词缀 传说
+equal N$XYEW_W_属性条数 3
+#act
+goto @获取属性一
+DELAYGOTO 50 @获取属性二
+DELAYGOTO 100 @获取属性三
+mov S$XYEW_W_词缀颜色 70
+mov N$XYEW_W_洗练星星 4
+DELAYGOTO 500 @洗练给予属性
+break
+
+#if
+equal S$XYEW_W_装备词缀 传说
+equal N$XYEW_W_属性条数 4
+#act
+goto @获取属性一
+DELAYGOTO 50 @获取属性二
+DELAYGOTO 100 @获取属性三
+DELAYGOTO 150 @获取属性四
+mov S$XYEW_W_词缀颜色 70
+mov N$XYEW_W_洗练星星 4
+DELAYGOTO 500 @洗练给予属性
+break
+
+
+#if
+equal S$XYEW_W_装备词缀 上古
+equal N$XYEW_W_属性条数 2
+#act
+goto @获取属性一
+DELAYGOTO 50 @获取属性二
+mov S$XYEW_W_词缀颜色 253
+mov N$XYEW_W_洗练星星 3
+DELAYGOTO 500 @洗练给予属性
+break
+
+#if
+equal S$XYEW_W_装备词缀 上古
+equal N$XYEW_W_属性条数 3
+#act
+goto @获取属性一
+DELAYGOTO 50 @获取属性二
+DELAYGOTO 100 @获取属性三
+mov S$XYEW_W_词缀颜色 253
+mov N$XYEW_W_洗练星星 3
+DELAYGOTO 500 @洗练给予属性
+break
+
+#if
+equal S$XYEW_W_装备词缀 灵级
+equal N$XYEW_W_属性条数 1
+#act
+goto @获取属性一
+mov S$XYEW_W_词缀颜色 215
+mov N$XYEW_W_洗练星星 2
+DELAYGOTO 500 @洗练给予属性
+break
+
+#if
+equal S$XYEW_W_装备词缀 灵级
+equal N$XYEW_W_属性条数 2
+#act
+goto @获取属性一
+DELAYGOTO 50 @获取属性二
+mov S$XYEW_W_词缀颜色 215
+mov N$XYEW_W_洗练星星 2
+DELAYGOTO 500 @洗练给予属性
+break
+
+#if
+equal S$XYEW_W_装备词缀 普通
+#act
+goto @获取属性一
+mov S$XYEW_W_词缀颜色 151
+mov N$XYEW_W_洗练星星 1
+DELAYGOTO 500 @洗练给予属性
+break
+
+[@洗练给予属性]
+#if
+NOT EQUAL N$XYEW_W_绑定属性1 1
+NOT EQUAL N$XYEW_W_绑定属性1 2
+NOT EQUAL N$XYEW_W_绑定属性1 3
+NOT EQUAL N$XYEW_W_绑定属性1 4
+NOT EQUAL N$XYEW_W_绑定属性1 5
+NOT EQUAL N$XYEW_W_绑定属性1 6
+NOT EQUAL N$XYEW_W_绑定属性1 7
+NOT EQUAL N$XYEW_W_绑定属性1 8
+NOT EQUAL N$XYEW_W_绑定属性1 11
+NOT EQUAL N$XYEW_W_绑定属性1 12
+large N$XYEW_W_属性值一 2
+#act
+mov N$XYEW_W_属性值一 2
+
+
+#if
+NOT EQUAL N$XYEW_W_绑定属性2 1
+NOT EQUAL N$XYEW_W_绑定属性2 2
+NOT EQUAL N$XYEW_W_绑定属性2 3
+NOT EQUAL N$XYEW_W_绑定属性2 4
+NOT EQUAL N$XYEW_W_绑定属性2 5
+NOT EQUAL N$XYEW_W_绑定属性2 6
+NOT EQUAL N$XYEW_W_绑定属性2 7
+NOT EQUAL N$XYEW_W_绑定属性2 8
+NOT EQUAL N$XYEW_W_绑定属性2 11
+NOT EQUAL N$XYEW_W_绑定属性2 12
+large N$XYEW_W_属性值二 2
+#act
+mov N$XYEW_W_属性值二 2
+
+#if
+NOT EQUAL N$XYEW_W_绑定属性3 1
+NOT EQUAL N$XYEW_W_绑定属性3 2
+NOT EQUAL N$XYEW_W_绑定属性3 3
+NOT EQUAL N$XYEW_W_绑定属性3 4
+NOT EQUAL N$XYEW_W_绑定属性3 5
+NOT EQUAL N$XYEW_W_绑定属性3 6
+NOT EQUAL N$XYEW_W_绑定属性3 7
+NOT EQUAL N$XYEW_W_绑定属性3 8
+NOT EQUAL N$XYEW_W_绑定属性3 11
+NOT EQUAL N$XYEW_W_绑定属性3 12
+large N$XYEW_W_属性值三 2
+#act
+mov N$XYEW_W_属性值三 2
+
+#if
+NOT EQUAL N$XYEW_W_绑定属性4 1
+NOT EQUAL N$XYEW_W_绑定属性4 2
+NOT EQUAL N$XYEW_W_绑定属性4 3
+NOT EQUAL N$XYEW_W_绑定属性4 4
+NOT EQUAL N$XYEW_W_绑定属性4 5
+NOT EQUAL N$XYEW_W_绑定属性4 6
+NOT EQUAL N$XYEW_W_绑定属性4 7
+NOT EQUAL N$XYEW_W_绑定属性4 8
+NOT EQUAL N$XYEW_W_绑定属性4 11
+NOT EQUAL N$XYEW_W_绑定属性4 12
+large N$XYEW_W_属性值四 2
+#act
+mov N$XYEW_W_属性值四 2
+
+
+#if
+#act
+SetUpgradeItem 27
+SetCustomItemText boxitem27 [装备品质:<$str(S$XYEW_W_装备词缀)>]
+SetCustomItemTextColor boxitem27 <$str(S$XYEW_W_词缀颜色)>
+SetCustomItemAbil boxitem27 0 1 <$STR(N$XYEW_W_绑定属性1)> 
+SetCustomItemAbil boxitem27 0 2 0
+SetCustomItemAbil boxitem27 0 0 <$str(S$XYEW_W_词缀颜色)>
+SetCustomItemAbil boxitem27 0 3 <$STR(N$XYEW_W_百分一)>
+SetCustomItemValue boxitem27 0 = <$STR(N$XYEW_W_属性值一)>
+
+SetCustomItemAbil boxitem27 1 1 <$STR(N$XYEW_W_绑定属性2)> 
+SetCustomItemAbil boxitem27 1 2 1
+SetCustomItemAbil boxitem27 1 0 <$str(S$XYEW_W_词缀颜色)>
+SetCustomItemAbil boxitem27 1 3 <$STR(N$XYEW_W_百分二)>
+SetCustomItemValue boxitem27 1 = <$STR(N$XYEW_W_属性值二)>
+
+SetCustomItemAbil boxitem27 2 1 <$STR(N$XYEW_W_绑定属性3)> 
+SetCustomItemAbil boxitem27 2 2 2
+SetCustomItemAbil boxitem27 2 0 <$str(S$XYEW_W_词缀颜色)>
+SetCustomItemAbil boxitem27 2 3 <$STR(N$XYEW_W_百分三)>
+SetCustomItemValue boxitem27 2 = <$STR(N$XYEW_W_属性值三)>
+
+SetCustomItemAbil boxitem27 3 1 <$STR(N$XYEW_W_绑定属性4)> 
+SetCustomItemAbil boxitem27 3 2 3
+SetCustomItemAbil boxitem27 3 0 <$str(S$XYEW_W_词缀颜色)>
+SetCustomItemAbil boxitem27 3 3 <$STR(N$XYEW_W_百分四)>
+SetCustomItemValue boxitem27 3 = <$STR(N$XYEW_W_属性值四)>
+
+SetCustomItemAbil boxitem27 4 1 <$STR(N$XYEW_W_绑定属性5)> 
+SetCustomItemAbil boxitem27 4 2 4
+SetCustomItemAbil boxitem27 4 0 <$str(S$XYEW_W_词缀颜色)>
+SetCustomItemAbil boxitem27 4 3 <$STR(N$XYEW_W_百分五)>
+SetCustomItemValue boxitem27 4 = <$STR(N$XYEW_W_属性值五)>
+
+SetCustomItemAbil boxitem27 5 1 <$STR(N$XYEW_W_绑定属性6)> 
+SetCustomItemAbil boxitem27 5 2 5
+SetCustomItemAbil boxitem27 5 0 <$str(S$XYEW_W_词缀颜色)>
+SetCustomItemAbil boxitem27 5 3 <$STR(N$XYEW_W_百分六)>
+SetCustomItemValue boxitem27 5 = <$STR(N$XYEW_W_属性值六)>
+
+SetCustomItemAbil boxitem27 6 1 <$STR(N$XYEW_W_绑定属性7)> 
+SetCustomItemAbil boxitem27 6 2 6
+SetCustomItemAbil boxitem27 6 0 <$str(S$XYEW_W_词缀颜色)>
+SetCustomItemAbil boxitem27 6 3 <$STR(N$XYEW_W_百分七)>
+SetCustomItemValue boxitem27 6 = <$STR(N$XYEW_W_属性值七)>
+
+SetCustomItemAbil boxitem27 7 1 <$STR(N$XYEW_W_绑定属性8)> 
+SetCustomItemAbil boxitem27 7 2 7
+SetCustomItemAbil boxitem27 7 0 <$str(S$XYEW_W_词缀颜色)>
+SetCustomItemAbil boxitem27 7 3 <$STR(N$XYEW_W_百分八)>
+SetCustomItemValue boxitem27 7 = <$STR(N$XYEW_W_属性值八)>
+ChangeItemUpgradeCount boxitem27 = <$str(N$XYEW_W_洗练星星)>
+MOV N$XYEW_W_洗练CD 0
+UpdateItem boxitem27
+break
+
+
+
+[@获取属性一]
+#if
+#act
+movr N$XYEW_W_绑定属性1 3 16
+
+
+#if
+equal N$XYEW_W_绑定属性1 1
+#act
+INC N$XYEW_W_装备防御 1
+MOVR N$XYEW_W_属性值一 1 <$BOXITEM[27].HAC>
+
+
+#if
+equal N$XYEW_W_绑定属性1 2
+#act
+INC N$XYEW_W_装备魔御 1
+MOVR N$XYEW_W_属性值一 1 <$BOXITEM[27].HMAC>
+
+#if
+equal N$XYEW_W_绑定属性1 3
+#act
+INC N$XYEW_W_装备攻击 1
+MOVR N$XYEW_W_属性值一 1 <$BOXITEM[27].HDC>
+
+#if
+equal N$XYEW_W_绑定属性1 4
+#act
+INC N$XYEW_W_装备魔法 1
+MOVR N$XYEW_W_属性值一 1 <$BOXITEM[27].HMC>
+
+#if
+equal N$XYEW_W_绑定属性1 5
+#act
+INC N$XYEW_W_装备道术 1
+MOVR N$XYEW_W_属性值一 1 <$BOXITEM[27].HSC>
+
+#if
+equal N$XYEW_W_绑定属性1 6
+#act
+INC N$XYEW_W_装备生命 1
+MOVR N$XYEW_W_属性值一 1 <$BOXITEM[27].HP>
+
+#if
+equal N$XYEW_W_绑定属性1 7
+#act
+INC N$XYEW_W_装备魔力 1
+MOVR N$XYEW_W_属性值一 1 <$BOXITEM[27].MP>
+
+#if
+equal N$XYEW_W_绑定属性1 8
+#act
+INC N$XYEW_W_暴击伤害 1
+mov N$XYEW_W_百分一 1
+MOVR N$XYEW_W_属性值一 1 9
+
+#if
+equal N$XYEW_W_绑定属性1 9
+#act
+INC N$XYEW_W_致命一击 1
+MOVR N$XYEW_W_属性值一 1 3
+mov N$XYEW_W_百分一 1
+SetNewItemValue boxitem27 0 + <$STR(N$XYEW_W_属性值一)>
+
+#if
+equal N$XYEW_W_绑定属性1 10
+#act
+INC N$XYEW_W_攻击伤害 1
+MOVR N$XYEW_W_属性值一 1 4
+mov N$XYEW_W_百分一 1
+SetNewItemValue boxitem27 1 + <$STR(N$XYEW_W_属性值一)>
+
+#if
+equal N$XYEW_W_绑定属性1 11
+#act
+INC N$XYEW_W_神圣一击 1
+MOVR N$XYEW_W_属性值一 1 6
+
+#if
+equal N$XYEW_W_绑定属性1 12
+#act
+INC N$XYEW_W_真实一击 1
+MOVR N$XYEW_W_属性值一 1 100
+
+#if
+equal N$XYEW_W_绑定属性1 13
+#act
+INC N$XYEW_W_麻痹一击 1
+MOVR N$XYEW_W_属性值一 1 3
+
+#if
+equal N$XYEW_W_绑定属性1 14
+#act
+INC N$XYEW_W_冰冻一击 1
+MOVR N$XYEW_W_属性值一 1 3
+
+#if
+equal N$XYEW_W_绑定属性1 15
+#act
+INC N$XYEW_W_攻击速度 1
+MOVR N$XYEW_W_属性值一 1 3
+
+#if
+equal N$XYEW_W_属性值一 0
+#act
+mov N$XYEW_W_属性值一 1
+
+
+
+
+
+
+[@获取属性二]
+#if
+#act
+movr N$XYEW_W_绑定属性2 3 16
+
+#if
+equal N$XYEW_W_绑定属性2 8
+large N$XYEW_W_暴击伤害 0
+#act
+goto @获取属性二
+break
+
+
+#if
+equal N$XYEW_W_绑定属性2 1
+#act
+INC N$XYEW_W_装备防御 1
+MOVR N$XYEW_W_属性值二 1 <$BOXITEM[27].HAC>
+
+
+#if
+equal N$XYEW_W_绑定属性2 2
+#act
+INC N$XYEW_W_装备魔御 1
+MOVR N$XYEW_W_属性值二 1 <$BOXITEM[27].HMAC>
+
+#if
+equal N$XYEW_W_绑定属性2 3
+#act
+INC N$XYEW_W_装备攻击 1
+MOVR N$XYEW_W_属性值二 1 <$BOXITEM[27].HDC>
+
+#if
+equal N$XYEW_W_绑定属性2 4
+#act
+INC N$XYEW_W_装备魔法 1
+MOVR N$XYEW_W_属性值二 1 <$BOXITEM[27].HMC>
+
+#if
+equal N$XYEW_W_绑定属性2 5
+#act
+INC N$XYEW_W_装备道术 1
+MOVR N$XYEW_W_属性值二 1 <$BOXITEM[27].HSC>
+
+#if
+equal N$XYEW_W_绑定属性2 6
+#act
+INC N$XYEW_W_装备生命 1
+MOVR N$XYEW_W_属性值二 1 <$BOXITEM[27].HP>
+
+#if
+equal N$XYEW_W_绑定属性2 7
+#act
+INC N$XYEW_W_装备魔力 1
+MOVR N$XYEW_W_属性值二 1 <$BOXITEM[27].MP>
+
+#if
+equal N$XYEW_W_绑定属性2 8
+#act
+INC N$XYEW_W_暴击伤害 1
+mov N$XYEW_W_百分二 1
+MOVR N$XYEW_W_属性值二 1 9
+
+#if
+equal N$XYEW_W_绑定属性2 9
+#act
+INC N$XYEW_W_致命一击 1
+MOVR N$XYEW_W_属性值二 1 3
+mov N$XYEW_W_百分二 1
+SetNewItemValue boxitem27 0 + <$STR(N$XYEW_W_属性值二)>
+
+#if
+equal N$XYEW_W_绑定属性2 10
+#act
+INC N$XYEW_W_攻击伤害 1
+MOVR N$XYEW_W_属性值二 1 4
+mov N$XYEW_W_百分二 1
+SetNewItemValue boxitem27 1 + <$STR(N$XYEW_W_属性值二)>
+
+#if
+equal N$XYEW_W_绑定属性2 11
+#act
+INC N$XYEW_W_神圣一击 1
+MOVR N$XYEW_W_属性值二 1 6
+
+#if
+equal N$XYEW_W_绑定属性2 12
+#act
+INC N$XYEW_W_真实一击 1
+MOVR N$XYEW_W_属性值二 1 100
+
+#if
+equal N$XYEW_W_绑定属性2 13
+#act
+INC N$XYEW_W_麻痹一击 1
+MOVR N$XYEW_W_属性值二 1 3
+
+#if
+equal N$XYEW_W_绑定属性2 14
+#act
+INC N$XYEW_W_冰冻一击 1
+MOVR N$XYEW_W_属性值二 1 3
+
+#if
+equal N$XYEW_W_绑定属性2 15
+#act
+INC N$XYEW_W_攻击速度 1
+MOVR N$XYEW_W_属性值二 1 3
+
+#if
+equal N$XYEW_W_属性值二 0
+#act
+mov N$XYEW_W_属性值二 1
+
+
+
+
+
+
+
+
+
+[@获取属性三]
+#if
+#act
+movr N$XYEW_W_绑定属性3 3 16
+
+#if
+equal N$XYEW_W_绑定属性3 8
+large N$XYEW_W_暴击伤害 0
+#act
+goto @获取属性三
+break
+
+
+
+#if
+equal N$XYEW_W_绑定属性3 9
+large N$XYEW_W_致命一击 1
+#act
+goto @获取属性三
+break
+
+
+#if
+equal N$XYEW_W_绑定属性3 10
+large N$XYEW_W_攻击伤害 1
+#act
+goto @获取属性三
+break
+
+#if
+equal N$XYEW_W_绑定属性3 11
+large N$XYEW_W_神圣一击 1
+#act
+goto @获取属性三
+break
+
+#if
+equal N$XYEW_W_绑定属性3 12
+large N$XYEW_W_真实一击 1
+#act
+goto @获取属性三
+break
+
+#if
+equal N$XYEW_W_绑定属性3 13
+large N$XYEW_W_麻痹一击 1
+#act
+goto @获取属性三
+break
+
+#if
+equal N$XYEW_W_绑定属性3 14
+large N$XYEW_W_冰冻一击 1
+#act
+goto @获取属性三
+break
+
+#if
+equal N$XYEW_W_绑定属性3 15
+large N$XYEW_W_攻击速度 1
+#act
+goto @获取属性三
+break
+
+
+
+#if
+equal N$XYEW_W_绑定属性3 1
+#act
+INC N$XYEW_W_装备防御 1
+MOVR N$XYEW_W_属性值三 1 <$BOXITEM[27].HAC>
+
+
+#if
+equal N$XYEW_W_绑定属性3 2
+#act
+INC N$XYEW_W_装备魔御 1
+MOVR N$XYEW_W_属性值三 1 <$BOXITEM[27].HMAC>
+
+#if
+equal N$XYEW_W_绑定属性3 3
+#act
+INC N$XYEW_W_装备攻击 1
+MOVR N$XYEW_W_属性值三 1 <$BOXITEM[27].HDC>
+
+#if
+equal N$XYEW_W_绑定属性3 4
+#act
+INC N$XYEW_W_装备魔法 1
+MOVR N$XYEW_W_属性值三 1 <$BOXITEM[27].HMC>
+
+#if
+equal N$XYEW_W_绑定属性3 5
+#act
+INC N$XYEW_W_装备道术 1
+MOVR N$XYEW_W_属性值三 1 <$BOXITEM[27].HSC>
+
+#if
+equal N$XYEW_W_绑定属性3 6
+#act
+INC N$XYEW_W_装备生命 1
+MOVR N$XYEW_W_属性值三 1 <$BOXITEM[27].HP>
+
+#if
+equal N$XYEW_W_绑定属性3 7
+#act
+INC N$XYEW_W_装备魔力 1
+MOVR N$XYEW_W_属性值三 1 <$BOXITEM[27].MP>
+
+#if
+equal N$XYEW_W_绑定属性3 8
+#act
+INC N$XYEW_W_暴击伤害 1
+mov N$XYEW_W_百分三 1
+MOVR N$XYEW_W_属性值三 1 9
+
+#if
+equal N$XYEW_W_绑定属性3 9
+#act
+INC N$XYEW_W_致命一击 1
+MOVR N$XYEW_W_属性值三 1 3
+mov N$XYEW_W_百分三 1
+SetNewItemValue boxitem27 0 + <$STR(N$XYEW_W_属性值三)>
+
+#if
+equal N$XYEW_W_绑定属性3 10
+#act
+INC N$XYEW_W_攻击伤害 1
+MOVR N$XYEW_W_属性值三 1 4
+mov N$XYEW_W_百分三 1
+SetNewItemValue boxitem27 1 + <$STR(N$XYEW_W_属性值三)>
+
+#if
+equal N$XYEW_W_绑定属性3 11
+#act
+INC N$XYEW_W_神圣一击 1
+MOVR N$XYEW_W_属性值三 1 6
+
+#if
+equal N$XYEW_W_绑定属性3 12
+#act
+INC N$XYEW_W_真实一击 1
+MOVR N$XYEW_W_属性值三 1 100
+
+#if
+equal N$XYEW_W_绑定属性3 13
+#act
+INC N$XYEW_W_麻痹一击 1
+MOVR N$XYEW_W_属性值三 1 3
+
+#if
+equal N$XYEW_W_绑定属性3 14
+#act
+INC N$XYEW_W_冰冻一击 1
+MOVR N$XYEW_W_属性值三 1 3
+
+#if
+equal N$XYEW_W_绑定属性3 15
+#act
+INC N$XYEW_W_攻击速度 1
+MOVR N$XYEW_W_属性值三 1 3
+
+#if
+equal N$XYEW_W_属性值三 0
+#act
+mov N$XYEW_W_属性值三 1
+
+
+
+
+
+
+
+
+
+[@获取属性四]
+#if
+#act
+movr N$XYEW_W_绑定属性4 3 16
+
+#if
+equal N$XYEW_W_绑定属性4 8
+large N$XYEW_W_暴击伤害 0
+#act
+goto @获取属性四
+break
+
+#if
+equal N$XYEW_W_绑定属性4 1
+large N$XYEW_W_装备防御 2
+#act
+goto @获取属性四
+break
+
+
+#if
+equal N$XYEW_W_绑定属性4 2
+large N$XYEW_W_装备魔御 2
+#act
+goto @获取属性四
+break
+
+
+#if
+equal N$XYEW_W_绑定属性4 3
+large N$XYEW_W_装备攻击 1
+#act
+goto @获取属性四
+break
+
+
+#if
+equal N$XYEW_W_绑定属性4 4
+large N$XYEW_W_装备魔法 2
+#act
+goto @获取属性四
+break
+
+
+#if
+equal N$XYEW_W_绑定属性4 5
+large N$XYEW_W_装备道术 2
+#act
+goto @获取属性四
+break
+
+
+
+#if
+equal N$XYEW_W_绑定属性4 6
+large N$XYEW_W_装备生命 2
+#act
+goto @获取属性四
+break
+
+
+#if
+equal N$XYEW_W_绑定属性4 7
+large N$XYEW_W_装备魔力 2
+#act
+goto @获取属性四
+break
+
+
+#if
+equal N$XYEW_W_绑定属性4 9
+large N$XYEW_W_致命一击 1
+#act
+goto @获取属性四
+break
+
+
+#if
+equal N$XYEW_W_绑定属性4 10
+large N$XYEW_W_攻击伤害 1
+#act
+goto @获取属性四
+break
+
+#if
+equal N$XYEW_W_绑定属性4 11
+large N$XYEW_W_神圣一击 1
+#act
+goto @获取属性四
+break
+
+#if
+equal N$XYEW_W_绑定属性4 12
+large N$XYEW_W_真实一击 1
+#act
+goto @获取属性四
+break
+
+#if
+equal N$XYEW_W_绑定属性4 13
+large N$XYEW_W_麻痹一击 1
+#act
+goto @获取属性四
+break
+
+#if
+equal N$XYEW_W_绑定属性4 14
+large N$XYEW_W_冰冻一击 1
+#act
+goto @获取属性四
+break
+
+#if
+equal N$XYEW_W_绑定属性4 15
+large N$XYEW_W_攻击速度 1
+#act
+goto @获取属性四
+break
+
+
+
+
+#if
+equal N$XYEW_W_绑定属性4 1
+#act
+INC N$XYEW_W_装备防御 1
+MOVR N$XYEW_W_属性值四 1 <$BOXITEM[27].HAC>
+
+
+#if
+equal N$XYEW_W_绑定属性4 2
+#act
+INC N$XYEW_W_装备魔御 1
+MOVR N$XYEW_W_属性值四 1 <$BOXITEM[27].HMAC>
+
+#if
+equal N$XYEW_W_绑定属性4 3
+#act
+INC N$XYEW_W_装备攻击 1
+MOVR N$XYEW_W_属性值四 1 <$BOXITEM[27].HDC>
+
+#if
+equal N$XYEW_W_绑定属性4 4
+#act
+INC N$XYEW_W_装备魔法 1
+MOVR N$XYEW_W_属性值四 1 <$BOXITEM[27].HMC>
+
+#if
+equal N$XYEW_W_绑定属性4 5
+#act
+INC N$XYEW_W_装备道术 1
+MOVR N$XYEW_W_属性值四 1 <$BOXITEM[27].HSC>
+
+#if
+equal N$XYEW_W_绑定属性4 6
+#act
+INC N$XYEW_W_装备生命 1
+MOVR N$XYEW_W_属性值四 1 <$BOXITEM[27].HP>
+
+#if
+equal N$XYEW_W_绑定属性4 7
+#act
+INC N$XYEW_W_装备魔力 1
+MOVR N$XYEW_W_属性值四 1 <$BOXITEM[27].MP>
+
+#if
+equal N$XYEW_W_绑定属性4 8
+#act
+INC N$XYEW_W_暴击伤害 1
+mov N$XYEW_W_百分四 1
+MOVR N$XYEW_W_属性值四 1 9
+
+#if
+equal N$XYEW_W_绑定属性4 9
+#act
+INC N$XYEW_W_致命一击 1
+MOVR N$XYEW_W_属性值四 1 3
+mov N$XYEW_W_百分四 1
+SetNewItemValue boxitem27 0 + <$STR(N$XYEW_W_属性值四)>
+
+#if
+equal N$XYEW_W_绑定属性4 10
+#act
+INC N$XYEW_W_攻击伤害 1
+MOVR N$XYEW_W_属性值四 1 4
+mov N$XYEW_W_百分四 1
+SetNewItemValue boxitem27 1 + <$STR(N$XYEW_W_属性值四)>
+
+#if
+equal N$XYEW_W_绑定属性4 11
+#act
+INC N$XYEW_W_神圣一击 1
+MOVR N$XYEW_W_属性值四 1 6
+
+#if
+equal N$XYEW_W_绑定属性4 12
+#act
+INC N$XYEW_W_真实一击 1
+MOVR N$XYEW_W_属性值四 1 100
+
+#if
+equal N$XYEW_W_绑定属性4 13
+#act
+INC N$XYEW_W_麻痹一击 1
+MOVR N$XYEW_W_属性值四 1 3
+
+#if
+equal N$XYEW_W_绑定属性4 14
+#act
+INC N$XYEW_W_冰冻一击 1
+MOVR N$XYEW_W_属性值四 1 3
+
+#if
+equal N$XYEW_W_绑定属性4 15
+#act
+INC N$XYEW_W_攻击速度 1
+MOVR N$XYEW_W_属性值四 1 3
+
+#if
+equal N$XYEW_W_属性值四 0
+#act
+mov N$XYEW_W_属性值四 1
+
+
+
+
+
+
+[@获取属性五]
+#if
+#act
+movr N$XYEW_W_绑定属性5 3 16
+
+
+#if
+equal N$XYEW_W_绑定属性5 8
+large N$XYEW_W_暴击伤害 0
+#act
+goto @获取属性五
+break
+
+#if
+equal N$XYEW_W_绑定属性5 1
+large N$XYEW_W_装备防御 2
+#act
+goto @获取属性五
+break
+
+
+#if
+equal N$XYEW_W_绑定属性5 2
+large N$XYEW_W_装备魔御 2
+#act
+goto @获取属性五
+break
+
+
+#if
+equal N$XYEW_W_绑定属性5 3
+large N$XYEW_W_装备攻击 1
+#act
+goto @获取属性五
+break
+
+
+#if
+equal N$XYEW_W_绑定属性5 4
+large N$XYEW_W_装备魔法 2
+#act
+goto @获取属性五
+break
+
+
+#if
+equal N$XYEW_W_绑定属性5 5
+large N$XYEW_W_装备道术 2
+#act
+goto @获取属性五
+break
+
+
+
+#if
+equal N$XYEW_W_绑定属性5 6
+large N$XYEW_W_装备生命 2
+#act
+goto @获取属性五
+break
+
+
+#if
+equal N$XYEW_W_绑定属性5 7
+large N$XYEW_W_装备魔力 2
+#act
+goto @获取属性五
+break
+
+
+#if
+equal N$XYEW_W_绑定属性5 9
+large N$XYEW_W_致命一击 1
+#act
+goto @获取属性五
+break
+
+
+#if
+equal N$XYEW_W_绑定属性5 10
+large N$XYEW_W_攻击伤害 1
+#act
+goto @获取属性五
+break
+
+#if
+equal N$XYEW_W_绑定属性5 11
+large N$XYEW_W_神圣一击 1
+#act
+goto @获取属性五
+break
+
+#if
+equal N$XYEW_W_绑定属性5 12
+large N$XYEW_W_真实一击 1
+#act
+goto @获取属性五
+break
+
+#if
+equal N$XYEW_W_绑定属性5 13
+large N$XYEW_W_麻痹一击 1
+#act
+goto @获取属性五
+break
+
+#if
+equal N$XYEW_W_绑定属性5 14
+large N$XYEW_W_冰冻一击 1
+#act
+goto @获取属性五
+break
+
+#if
+equal N$XYEW_W_绑定属性5 15
+large N$XYEW_W_攻击速度 1
+#act
+goto @获取属性五
+break
+
+
+
+#if
+equal N$XYEW_W_绑定属性5 1
+#act
+INC N$XYEW_W_装备防御 1
+MOVR N$XYEW_W_属性值五 1 <$BOXITEM[27].HAC>
+
+
+#if
+equal N$XYEW_W_绑定属性5 2
+#act
+INC N$XYEW_W_装备魔御 1
+MOVR N$XYEW_W_属性值五 1 <$BOXITEM[27].HMAC>
+
+#if
+equal N$XYEW_W_绑定属性5 3
+#act
+INC N$XYEW_W_装备攻击 1
+MOVR N$XYEW_W_属性值五 1 <$BOXITEM[27].HDC>
+
+#if
+equal N$XYEW_W_绑定属性5 4
+#act
+INC N$XYEW_W_装备魔法 1
+MOVR N$XYEW_W_属性值五 1 <$BOXITEM[27].HMC>
+
+#if
+equal N$XYEW_W_绑定属性5 5
+#act
+INC N$XYEW_W_装备道术 1
+MOVR N$XYEW_W_属性值五 1 <$BOXITEM[27].HSC>
+
+#if
+equal N$XYEW_W_绑定属性5 6
+#act
+INC N$XYEW_W_装备生命 1
+MOVR N$XYEW_W_属性值五 1 <$BOXITEM[27].HP>
+
+#if
+equal N$XYEW_W_绑定属性5 7
+#act
+INC N$XYEW_W_装备魔力 1
+MOVR N$XYEW_W_属性值五 1 <$BOXITEM[27].MP>
+
+#if
+equal N$XYEW_W_绑定属性5 8
+#act
+INC N$XYEW_W_暴击伤害 1
+mov N$XYEW_W_百分五 1
+MOVR N$XYEW_W_属性值五 1 9
+
+#if
+equal N$XYEW_W_绑定属性5 9
+#act
+INC N$XYEW_W_致命一击 1
+MOVR N$XYEW_W_属性值五 1 3
+mov N$XYEW_W_百分五 1
+SetNewItemValue boxitem27 0 + <$STR(N$XYEW_W_属性值五)>
+
+#if
+equal N$XYEW_W_绑定属性5 10
+#act
+INC N$XYEW_W_攻击伤害 1
+MOVR N$XYEW_W_属性值五 1 4
+mov N$XYEW_W_百分五 1
+SetNewItemValue boxitem27 1 + <$STR(N$XYEW_W_属性值五)>
+
+#if
+equal N$XYEW_W_绑定属性5 11
+#act
+INC N$XYEW_W_神圣一击 1
+MOVR N$XYEW_W_属性值五 1 6
+
+#if
+equal N$XYEW_W_绑定属性5 12
+#act
+INC N$XYEW_W_真实一击 1
+MOVR N$XYEW_W_属性值五 1 100
+
+#if
+equal N$XYEW_W_绑定属性5 13
+#act
+INC N$XYEW_W_麻痹一击 1
+MOVR N$XYEW_W_属性值五 1 3
+
+#if
+equal N$XYEW_W_绑定属性5 14
+#act
+INC N$XYEW_W_冰冻一击 1
+MOVR N$XYEW_W_属性值五 1 3
+
+#if
+equal N$XYEW_W_绑定属性5 15
+#act
+INC N$XYEW_W_攻击速度 1
+MOVR N$XYEW_W_属性值五 1 3
+
+#if
+equal N$XYEW_W_属性值五 0
+#act
+mov N$XYEW_W_属性值五 1
+
+
+
+
+
+
+
+[@获取属性六]
+#if
+#act
+movr N$XYEW_W_绑定属性6 3 16
+
+
+#if
+equal N$XYEW_W_绑定属性6 8
+large N$XYEW_W_暴击伤害 0
+#act
+goto @获取属性六
+break
+
+#if
+equal N$XYEW_W_绑定属性6 1
+large N$XYEW_W_装备防御 2
+#act
+goto @获取属性六
+break
+
+
+#if
+equal N$XYEW_W_绑定属性6 2
+large N$XYEW_W_装备魔御 2
+#act
+goto @获取属性六
+break
+
+
+#if
+equal N$XYEW_W_绑定属性6 3
+large N$XYEW_W_装备攻击 1
+#act
+goto @获取属性六
+break
+
+
+#if
+equal N$XYEW_W_绑定属性6 4
+large N$XYEW_W_装备魔法 2
+#act
+goto @获取属性六
+break
+
+
+#if
+equal N$XYEW_W_绑定属性6 5
+large N$XYEW_W_装备道术 2
+#act
+goto @获取属性六
+break
+
+
+
+#if
+equal N$XYEW_W_绑定属性6 6
+large N$XYEW_W_装备生命 2
+#act
+goto @获取属性六
+break
+
+
+#if
+equal N$XYEW_W_绑定属性6 7
+large N$XYEW_W_装备魔力 2
+#act
+goto @获取属性六
+break
+
+
+#if
+equal N$XYEW_W_绑定属性6 9
+large N$XYEW_W_致命一击 1
+#act
+goto @获取属性六
+break
+
+
+#if
+equal N$XYEW_W_绑定属性6 10
+large N$XYEW_W_攻击伤害 1
+#act
+goto @获取属性六
+break
+
+#if
+equal N$XYEW_W_绑定属性6 11
+large N$XYEW_W_神圣一击 1
+#act
+goto @获取属性六
+break
+
+#if
+equal N$XYEW_W_绑定属性6 12
+large N$XYEW_W_真实一击 1
+#act
+goto @获取属性六
+break
+
+#if
+equal N$XYEW_W_绑定属性6 13
+large N$XYEW_W_麻痹一击 1
+#act
+goto @获取属性六
+break
+
+#if
+equal N$XYEW_W_绑定属性6 14
+large N$XYEW_W_冰冻一击 1
+#act
+goto @获取属性六
+break
+
+#if
+equal N$XYEW_W_绑定属性6 15
+large N$XYEW_W_攻击速度 1
+#act
+goto @获取属性六
+break
+
+
+
+#if
+equal N$XYEW_W_绑定属性6 1
+#act
+INC N$XYEW_W_装备防御 1
+MOVR N$XYEW_W_属性值六 1 <$BOXITEM[27].HAC>
+
+
+#if
+equal N$XYEW_W_绑定属性6 2
+#act
+INC N$XYEW_W_装备魔御 1
+MOVR N$XYEW_W_属性值六 1 <$BOXITEM[27].HMAC>
+
+#if
+equal N$XYEW_W_绑定属性6 3
+#act
+INC N$XYEW_W_装备攻击 1
+MOVR N$XYEW_W_属性值六 1 <$BOXITEM[27].HDC>
+
+#if
+equal N$XYEW_W_绑定属性6 4
+#act
+INC N$XYEW_W_装备魔法 1
+MOVR N$XYEW_W_属性值六 1 <$BOXITEM[27].HMC>
+
+#if
+equal N$XYEW_W_绑定属性6 5
+#act
+INC N$XYEW_W_装备道术 1
+MOVR N$XYEW_W_属性值六 1 <$BOXITEM[27].HSC>
+
+#if
+equal N$XYEW_W_绑定属性6 6
+#act
+INC N$XYEW_W_装备生命 1
+MOVR N$XYEW_W_属性值六 1 <$BOXITEM[27].HP>
+
+#if
+equal N$XYEW_W_绑定属性6 7
+#act
+INC N$XYEW_W_装备魔力 1
+MOVR N$XYEW_W_属性值六 1 <$BOXITEM[27].MP>
+
+#if
+equal N$XYEW_W_绑定属性6 8
+#act
+INC N$XYEW_W_暴击伤害 1
+mov N$XYEW_W_百分六 1
+MOVR N$XYEW_W_属性值六 1 9
+
+#if
+equal N$XYEW_W_绑定属性6 9
+#act
+INC N$XYEW_W_致命一击 1
+MOVR N$XYEW_W_属性值六 1 3
+mov N$XYEW_W_百分六 1
+SetNewItemValue boxitem27 0 + <$STR(N$XYEW_W_属性值六)>
+
+#if
+equal N$XYEW_W_绑定属性6 10
+#act
+INC N$XYEW_W_攻击伤害 1
+MOVR N$XYEW_W_属性值六 1 4
+mov N$XYEW_W_百分六 1
+SetNewItemValue boxitem27 1 + <$STR(N$XYEW_W_属性值六)>
+
+#if
+equal N$XYEW_W_绑定属性6 11
+#act
+INC N$XYEW_W_神圣一击 1
+MOVR N$XYEW_W_属性值六 1 6
+
+#if
+equal N$XYEW_W_绑定属性6 12
+#act
+INC N$XYEW_W_真实一击 1
+MOVR N$XYEW_W_属性值六 1 100
+
+#if
+equal N$XYEW_W_绑定属性6 13
+#act
+INC N$XYEW_W_麻痹一击 1
+MOVR N$XYEW_W_属性值六 1 3
+
+#if
+equal N$XYEW_W_绑定属性6 14
+#act
+INC N$XYEW_W_冰冻一击 1
+MOVR N$XYEW_W_属性值六 1 3
+
+#if
+equal N$XYEW_W_绑定属性6 15
+#act
+INC N$XYEW_W_攻击速度 1
+MOVR N$XYEW_W_属性值六 1 3
+
+#if
+equal N$XYEW_W_属性值六 0
+#act
+mov N$XYEW_W_属性值六 1
+
+
+
+
+
+
+
+[@获取属性七]
+#if
+#act
+movr N$XYEW_W_绑定属性7 3 16
+
+
+
+#if
+equal N$XYEW_W_绑定属性7 8
+large N$XYEW_W_暴击伤害 0
+#act
+goto @获取属性七
+break
+
+#if
+equal N$XYEW_W_绑定属性7 1
+large N$XYEW_W_装备防御 2
+#act
+goto @获取属性七
+break
+
+
+#if
+equal N$XYEW_W_绑定属性7 2
+large N$XYEW_W_装备魔御 2
+#act
+goto @获取属性七
+break
+
+
+#if
+equal N$XYEW_W_绑定属性7 3
+large N$XYEW_W_装备攻击 1
+#act
+goto @获取属性七
+break
+
+
+#if
+equal N$XYEW_W_绑定属性7 4
+large N$XYEW_W_装备魔法 2
+#act
+goto @获取属性七
+break
+
+
+#if
+equal N$XYEW_W_绑定属性7 5
+large N$XYEW_W_装备道术 2
+#act
+goto @获取属性七
+break
+
+
+
+#if
+equal N$XYEW_W_绑定属性7 6
+large N$XYEW_W_装备生命 2
+#act
+goto @获取属性七
+break
+
+
+#if
+equal N$XYEW_W_绑定属性7 7
+large N$XYEW_W_装备魔力 2
+#act
+goto @获取属性七
+break
+
+
+#if
+equal N$XYEW_W_绑定属性7 9
+large N$XYEW_W_致命一击 1
+#act
+goto @获取属性七
+break
+
+
+#if
+equal N$XYEW_W_绑定属性7 10
+large N$XYEW_W_攻击伤害 1
+#act
+goto @获取属性七
+break
+
+#if
+equal N$XYEW_W_绑定属性7 11
+large N$XYEW_W_神圣一击 1
+#act
+goto @获取属性七
+break
+
+#if
+equal N$XYEW_W_绑定属性7 12
+large N$XYEW_W_真实一击 1
+#act
+goto @获取属性七
+break
+
+#if
+equal N$XYEW_W_绑定属性7 13
+large N$XYEW_W_麻痹一击 1
+#act
+goto @获取属性七
+break
+
+#if
+equal N$XYEW_W_绑定属性7 14
+large N$XYEW_W_冰冻一击 1
+#act
+goto @获取属性七
+break
+
+#if
+equal N$XYEW_W_绑定属性7 15
+large N$XYEW_W_攻击速度 1
+#act
+goto @获取属性七
+break
+
+
+
+
+#if
+equal N$XYEW_W_绑定属性7 1
+#act
+INC N$XYEW_W_装备防御 1
+MOVR N$XYEW_W_属性值七 1 <$BOXITEM[27].HAC>
+
+
+#if
+equal N$XYEW_W_绑定属性7 2
+#act
+INC N$XYEW_W_装备魔御 1
+MOVR N$XYEW_W_属性值七 1 <$BOXITEM[27].HMAC>
+
+#if
+equal N$XYEW_W_绑定属性7 3
+#act
+INC N$XYEW_W_装备攻击 1
+MOVR N$XYEW_W_属性值七 1 <$BOXITEM[27].HDC>
+
+#if
+equal N$XYEW_W_绑定属性7 4
+#act
+INC N$XYEW_W_装备魔法 1
+MOVR N$XYEW_W_属性值七 1 <$BOXITEM[27].HMC>
+
+#if
+equal N$XYEW_W_绑定属性7 5
+#act
+INC N$XYEW_W_装备道术 1
+MOVR N$XYEW_W_属性值七 1 <$BOXITEM[27].HSC>
+
+#if
+equal N$XYEW_W_绑定属性7 6
+#act
+INC N$XYEW_W_装备生命 1
+MOVR N$XYEW_W_属性值七 1 <$BOXITEM[27].HP>
+
+#if
+equal N$XYEW_W_绑定属性7 7
+#act
+INC N$XYEW_W_装备魔力 1
+MOVR N$XYEW_W_属性值七 1 <$BOXITEM[27].MP>
+
+#if
+equal N$XYEW_W_绑定属性7 8
+#act
+INC N$XYEW_W_暴击伤害 1
+mov N$XYEW_W_百分七 1
+MOVR N$XYEW_W_属性值七 1 9
+
+#if
+equal N$XYEW_W_绑定属性7 9
+#act
+INC N$XYEW_W_致命一击 1
+MOVR N$XYEW_W_属性值七 1 3
+mov N$XYEW_W_百分七 1
+SetNewItemValue boxitem27 0 + <$STR(N$XYEW_W_属性值七)>
+
+#if
+equal N$XYEW_W_绑定属性7 10
+#act
+INC N$XYEW_W_攻击伤害 1
+MOVR N$XYEW_W_属性值七 1 4
+mov N$XYEW_W_百分七 1
+SetNewItemValue boxitem27 1 + <$STR(N$XYEW_W_属性值七)>
+
+#if
+equal N$XYEW_W_绑定属性7 11
+#act
+INC N$XYEW_W_神圣一击 1
+MOVR N$XYEW_W_属性值七 1 6
+
+#if
+equal N$XYEW_W_绑定属性7 12
+#act
+INC N$XYEW_W_真实一击 1
+MOVR N$XYEW_W_属性值七 1 100
+
+#if
+equal N$XYEW_W_绑定属性7 13
+#act
+INC N$XYEW_W_麻痹一击 1
+MOVR N$XYEW_W_属性值七 1 3
+
+#if
+equal N$XYEW_W_绑定属性7 14
+#act
+INC N$XYEW_W_冰冻一击 1
+MOVR N$XYEW_W_属性值七 1 3
+
+#if
+equal N$XYEW_W_绑定属性7 15
+#act
+INC N$XYEW_W_攻击速度 1
+MOVR N$XYEW_W_属性值七 1 3
+
+#if
+equal N$XYEW_W_属性值七 0
+#act
+mov N$XYEW_W_属性值七 1
+
+
+
+
+
+
+
+[@获取属性八]
+#if
+#act
+movr N$XYEW_W_绑定属性8 3 16
+
+
+
+#if
+equal N$XYEW_W_绑定属性8 8
+large N$XYEW_W_暴击伤害 0
+#act
+goto @获取属性八
+break
+
+#if
+equal N$XYEW_W_绑定属性8 1
+large N$XYEW_W_装备防御 2
+#act
+goto @获取属性八
+break
+
+
+#if
+equal N$XYEW_W_绑定属性8 2
+large N$XYEW_W_装备魔御 2
+#act
+goto @获取属性八
+break
+
+
+#if
+equal N$XYEW_W_绑定属性8 3
+large N$XYEW_W_装备攻击 1
+#act
+goto @获取属性八
+break
+
+
+#if
+equal N$XYEW_W_绑定属性8 4
+large N$XYEW_W_装备魔法 2
+#act
+goto @获取属性八
+break
+
+
+#if
+equal N$XYEW_W_绑定属性8 5
+large N$XYEW_W_装备道术 2
+#act
+goto @获取属性八
+break
+
+
+
+#if
+equal N$XYEW_W_绑定属性8 6
+large N$XYEW_W_装备生命 2
+#act
+goto @获取属性八
+break
+
+
+#if
+equal N$XYEW_W_绑定属性8 7
+large N$XYEW_W_装备魔力 2
+#act
+goto @获取属性八
+break
+
+
+#if
+equal N$XYEW_W_绑定属性8 9
+large N$XYEW_W_致命一击 1
+#act
+goto @获取属性八
+break
+
+
+#if
+equal N$XYEW_W_绑定属性8 10
+large N$XYEW_W_攻击伤害 1
+#act
+goto @获取属性八
+break
+
+#if
+equal N$XYEW_W_绑定属性8 11
+large N$XYEW_W_神圣一击 1
+#act
+goto @获取属性八
+break
+
+#if
+equal N$XYEW_W_绑定属性8 12
+large N$XYEW_W_真实一击 1
+#act
+goto @获取属性八
+break
+
+#if
+equal N$XYEW_W_绑定属性8 13
+large N$XYEW_W_麻痹一击 1
+#act
+goto @获取属性八
+break
+
+#if
+equal N$XYEW_W_绑定属性8 14
+large N$XYEW_W_冰冻一击 1
+#act
+goto @获取属性八
+break
+
+#if
+equal N$XYEW_W_绑定属性8 15
+large N$XYEW_W_攻击速度 1
+#act
+goto @获取属性八
+break
+
+
+
+#if
+equal N$XYEW_W_绑定属性8 1
+#act
+INC N$XYEW_W_装备防御 1
+MOVR N$XYEW_W_属性值八 1 <$BOXITEM[27].HAC>
+
+
+#if
+equal N$XYEW_W_绑定属性8 2
+#act
+INC N$XYEW_W_装备魔御 1
+MOVR N$XYEW_W_属性值八 1 <$BOXITEM[27].HMAC>
+
+#if
+equal N$XYEW_W_绑定属性8 3
+#act
+INC N$XYEW_W_装备攻击 1
+MOVR N$XYEW_W_属性值八 1 <$BOXITEM[27].HDC>
+
+#if
+equal N$XYEW_W_绑定属性8 4
+#act
+INC N$XYEW_W_装备魔法 1
+MOVR N$XYEW_W_属性值八 1 <$BOXITEM[27].HMC>
+
+#if
+equal N$XYEW_W_绑定属性8 5
+#act
+INC N$XYEW_W_装备道术 1
+MOVR N$XYEW_W_属性值八 1 <$BOXITEM[27].HSC>
+
+#if
+equal N$XYEW_W_绑定属性8 6
+#act
+INC N$XYEW_W_装备生命 1
+MOVR N$XYEW_W_属性值八 1 <$BOXITEM[27].HP>
+
+#if
+equal N$XYEW_W_绑定属性8 7
+#act
+INC N$XYEW_W_装备魔力 1
+MOVR N$XYEW_W_属性值八 1 <$BOXITEM[27].MP>
+
+#if
+equal N$XYEW_W_绑定属性8 8
+#act
+INC N$XYEW_W_暴击伤害 1
+mov N$XYEW_W_百分八 1
+MOVR N$XYEW_W_属性值八 1 9
+
+#if
+equal N$XYEW_W_绑定属性8 9
+#act
+INC N$XYEW_W_致命一击 1
+MOVR N$XYEW_W_属性值八 1 3
+mov N$XYEW_W_百分八 1
+SetNewItemValue boxitem27 0 + <$STR(N$XYEW_W_属性值八)>
+
+#if
+equal N$XYEW_W_绑定属性8 10
+#act
+INC N$XYEW_W_攻击伤害 1
+MOVR N$XYEW_W_属性值八 1 4
+mov N$XYEW_W_百分八 1
+SetNewItemValue boxitem27 1 + <$STR(N$XYEW_W_属性值八)>
+
+#if
+equal N$XYEW_W_绑定属性8 11
+#act
+INC N$XYEW_W_神圣一击 1
+MOVR N$XYEW_W_属性值八 1 6
+
+#if
+equal N$XYEW_W_绑定属性8 12
+#act
+INC N$XYEW_W_真实一击 1
+MOVR N$XYEW_W_属性值八 1 100
+
+#if
+equal N$XYEW_W_绑定属性8 13
+#act
+INC N$XYEW_W_麻痹一击 1
+MOVR N$XYEW_W_属性值八 1 3
+
+#if
+equal N$XYEW_W_绑定属性8 14
+#act
+INC N$XYEW_W_冰冻一击 1
+MOVR N$XYEW_W_属性值八 1 3
+
+#if
+equal N$XYEW_W_绑定属性8 15
+#act
+INC N$XYEW_W_攻击速度 1
+MOVR N$XYEW_W_属性值八 1 3
+
+#if
+equal N$XYEW_W_属性值八 0
+#act
+mov N$XYEW_W_属性值八 1

@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "id": "xy.combat.corpse",
+  "version": "1.0.0",
+  "display_name": "鞭尸概率",
+  "status": "candidate",
+  "engine": "LFM2",
+  "residency": "resident",
+  "bundle": "combat-suite",
+  "dependencies": [
+    "xy.combat.core"
+  ],
+  "parameters": {},
+  "claims": {
+    "labels": [],
+    "variables": [
+      "N$XY_CorpsePoint",
+      "N$XY_CorpseRate",
+      "N$XY_CorpseRoll"
+    ],
+    "maps": [],
+    "npcs": []
+  },
+  "operations": [
+    {
+      "type": "event_hook",
+      "target": "Mir200/Envir/Market_Def/QFunction-0.txt",
+      "label": "KillMon",
+      "content": "#IF\n#ACT\nMOV N$XY_CorpsePoint 0\nMOV N$XY_CorpseRate 0\nGetAllCustomItemValue 13 N$XY_CorpsePoint N$XY_CorpseRate\n; XYDP-EXTENSION-BEGIN EQUIP_CORPSE\n; XY_EQUIP_MAKER_CORPSE_ANCHOR\n; XYDP-EXTENSION-END EQUIP_CORPSE\n#IF\nLARGE N$XY_CorpseRate 0\n#ACT\nMOVR N$XY_CorpseRoll 0 99\n#IF\nLARGE N$XY_CorpseRate <$STR(N$XY_CorpseRoll)>\n#ACT\nScatterMonItems <$KILLMONNAME>\nSENDMSG 6 [玄渊鞭尸] 已触发尸体额外掉落。\nBREAK"
+    }
+  ],
+  "preflight_checks": [],
+  "post_checks": [],
+  "evidence": [
+    "tool-test:20260703_1541",
+    "game-validation:required"
+  ]
+}

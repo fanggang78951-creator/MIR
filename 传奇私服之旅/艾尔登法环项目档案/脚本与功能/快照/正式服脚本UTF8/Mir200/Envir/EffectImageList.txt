@@ -1,0 +1,15 @@
+Icon.wil
+Items.wil
+DnItems.wil
+Prguse.wil
+Prguse2.wil
+Prguse3.wil
+Items1.wil
+DoItems1.wil
+XY_Weixiao_Title.wz
+XY_WorldMap.wz
+XY_ItemHint.wzl
+XY_FloorPortal.wzl
+XY_EquipmentWorkbench.wz
+XY_StarMon10.wzl
+XY_EquipmentCollection.wz

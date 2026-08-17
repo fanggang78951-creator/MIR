@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "status": "pass",
+  "verified_at": "2026-08-08T20:14:00",
+  "package_id": "xy.optional.equipment-wash-opening",
+  "package_version": "1.0.0",
+  "checks": {
+    "source_validate_package": "pass",
+    "frozen_cli_validate_package": "pass",
+    "focused_package_tests": {
+      "status": "pass",
+      "count": 4
+    },
+    "platform_regression_excluding_known_unrelated_modules": {
+      "status": "pass",
+      "count": 277,
+      "excluded_modules": [
+        "test_initial_camp",
+        "test_monster_workbook"
+      ]
+    },
+    "isolated_install": "pass",
+    "idempotent_preflight": "pass",
+    "missing_client_block": "pass",
+    "server_client_byte_exact_rollback": "pass"
+  },
+  "known_unrelated_full_suite_results": {
+    "total": 301,
+    "failures": 4,
+    "errors": 3,
+    "reasons": [
+      "当前捐献材料表与旧initial_camp测试夹具不一致，产生6项既有失败或错误",
+      "系统Python未安装openpyxl，test_monster_workbook导入失败"
+    ],
+    "package_related_failures": 0
+  },
+  "notes": [
+    "render模板中的M2字面花括号已转义为双花括号，安装输出仍与验收脚本逐字一致",
+    "正式包不携带可执行文件或路径链接",
+    "当前真实服务端未由本轮成果包安装流程改写"
+  ]
+}

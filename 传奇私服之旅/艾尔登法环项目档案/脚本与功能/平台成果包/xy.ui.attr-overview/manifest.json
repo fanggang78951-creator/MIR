@@ -1,0 +1,870 @@
+{
+  "schema_version": 1,
+  "id": "xy.ui.attr-overview",
+  "version": "2.0.6-candidate.1",
+  "display_name": "玄渊左上五图标：狂暴、按佩戴数复活与三组战斗属性",
+  "status": "candidate",
+  "engine": "LFM2",
+  "residency": "optional",
+  "bundle": "ui-status",
+  "dependencies": [
+    "xy.optional.rage.core"
+  ],
+  "parameters": {
+    "icon_wil_index": {
+      "type": "integer",
+      "required": true,
+      "default": 17
+    },
+    "rage_button_id": {
+      "type": "integer",
+      "required": true,
+      "default": 89
+    },
+    "revive_button_id": {
+      "type": "integer",
+      "required": true,
+      "default": 90
+    },
+    "panel_a_button_id": {
+      "type": "integer",
+      "required": true,
+      "default": 91
+    },
+    "panel_b_button_id": {
+      "type": "integer",
+      "required": true,
+      "default": 92
+    },
+    "panel_c_button_id": {
+      "type": "integer",
+      "required": true,
+      "default": 93
+    },
+    "revive_buff_id": {
+      "type": "integer",
+      "required": true,
+      "default": 190
+    },
+    "rage_active_normal": {
+      "type": "integer",
+      "required": true,
+      "default": 1776
+    },
+    "rage_active_hover": {
+      "type": "integer",
+      "required": true,
+      "default": 1777
+    },
+    "rage_active_pressed": {
+      "type": "integer",
+      "required": true,
+      "default": 1778
+    },
+    "rage_inactive_normal": {
+      "type": "integer",
+      "required": true,
+      "default": 1779
+    },
+    "rage_inactive_hover": {
+      "type": "integer",
+      "required": true,
+      "default": 1780
+    },
+    "rage_inactive_pressed": {
+      "type": "integer",
+      "required": true,
+      "default": 1781
+    },
+    "revive_active_normal": {
+      "type": "integer",
+      "required": true,
+      "default": 1782
+    },
+    "revive_active_hover": {
+      "type": "integer",
+      "required": true,
+      "default": 1783
+    },
+    "revive_active_pressed": {
+      "type": "integer",
+      "required": true,
+      "default": 1784
+    },
+    "revive_inactive_normal": {
+      "type": "integer",
+      "required": true,
+      "default": 1785
+    },
+    "revive_inactive_hover": {
+      "type": "integer",
+      "required": true,
+      "default": 1786
+    },
+    "revive_inactive_pressed": {
+      "type": "integer",
+      "required": true,
+      "default": 1787
+    },
+    "panel_a_icon_normal": {
+      "type": "integer",
+      "required": true,
+      "default": 1772
+    },
+    "panel_a_icon_hover": {
+      "type": "integer",
+      "required": true,
+      "default": 1773
+    },
+    "panel_a_icon_pressed": {
+      "type": "integer",
+      "required": true,
+      "default": 1774
+    },
+    "panel_b_icon_normal": {
+      "type": "integer",
+      "required": true,
+      "default": 1791
+    },
+    "panel_b_icon_hover": {
+      "type": "integer",
+      "required": true,
+      "default": 1792
+    },
+    "panel_b_icon_pressed": {
+      "type": "integer",
+      "required": true,
+      "default": 1793
+    },
+    "panel_c_icon_normal": {
+      "type": "integer",
+      "required": true,
+      "default": 1794
+    },
+    "panel_c_icon_hover": {
+      "type": "integer",
+      "required": true,
+      "default": 1795
+    },
+    "panel_c_icon_pressed": {
+      "type": "integer",
+      "required": true,
+      "default": 1796
+    },
+    "rage_x": {
+      "type": "integer",
+      "required": true,
+      "default": 46
+    },
+    "rage_y": {
+      "type": "integer",
+      "required": true,
+      "default": 17
+    },
+    "revive_x": {
+      "type": "integer",
+      "required": true,
+      "default": 146
+    },
+    "revive_y": {
+      "type": "integer",
+      "required": true,
+      "default": 17
+    },
+    "panel_a_x": {
+      "type": "integer",
+      "required": true,
+      "default": 246
+    },
+    "panel_a_y": {
+      "type": "integer",
+      "required": true,
+      "default": 17
+    },
+    "panel_b_x": {
+      "type": "integer",
+      "required": true,
+      "default": 350
+    },
+    "panel_b_y": {
+      "type": "integer",
+      "required": true,
+      "default": 18
+    },
+    "panel_c_x": {
+      "type": "integer",
+      "required": true,
+      "default": 446
+    },
+    "panel_c_y": {
+      "type": "integer",
+      "required": true,
+      "default": 17
+    },
+    "panel_a_reserved_button_id": {
+      "type": "integer",
+      "required": true,
+      "default": 2
+    },
+    "rage_reserved_button_id": {
+      "type": "integer",
+      "required": true,
+      "default": 3
+    },
+    "world_map_reserved_button_id": {
+      "type": "integer",
+      "required": true,
+      "default": 5
+    },
+    "revive_reserved_button_id": {
+      "type": "integer",
+      "required": true,
+      "default": 4
+    },
+    "panel_b_reserved_button_id": {
+      "type": "integer",
+      "required": true,
+      "default": 6
+    },
+    "panel_c_reserved_button_id": {
+      "type": "integer",
+      "required": true,
+      "default": 7
+    },
+    "panel_a": {
+      "type": "attribute_panel",
+      "required": true,
+      "default": {
+        "title": "攻击属性A",
+        "title_color": 250,
+        "namespace": "A",
+        "items": [
+          {
+            "label": "神力倍攻",
+            "source": "N$倍攻",
+            "read_mode": "source",
+            "offset": 100,
+            "prefix": "+",
+            "suffix": "%",
+            "color": 251,
+            "clamp_min": 0,
+            "bind_type": 40
+          },
+          {
+            "label": "伤害系数",
+            "source": "N$XY_RT_DamageCoeff",
+            "read_mode": "bind",
+            "offset": 0,
+            "prefix": "+",
+            "suffix": "%",
+            "color": 254,
+            "clamp_min": 0,
+            "bind_type": 53,
+            "title_additions": [
+              {"name": "赞助1档", "amount": 5},
+              {"name": "赞助2档", "amount": 6},
+              {"name": "赞助3档", "amount": 10},
+              {"name": "赞助4档", "amount": 15}
+            ]
+          },
+          {
+            "label": "暴击伤害",
+            "source": "N$XY_最终爆伤",
+            "read_mode": "bind",
+            "offset": 0,
+            "prefix": "+",
+            "suffix": "%",
+            "color": 250,
+            "clamp_min": 0,
+            "bind_type": 42
+          },
+          {
+            "label": "打怪伤害",
+            "source": "N$XY_PVE",
+            "read_mode": "source",
+            "offset": 100,
+            "prefix": "+",
+            "suffix": "%",
+            "color": 251,
+            "clamp_min": 0,
+            "bind_type": 41
+          }
+        ]
+      }
+    },
+    "panel_b": {
+      "type": "attribute_panel",
+      "required": true,
+      "default": {
+        "title": "攻击属性B",
+        "title_color": 250,
+        "namespace": "B",
+        "items": [
+          {
+            "label": "首刀斩杀",
+            "source": "N$XY_FirstKillRate",
+            "read_mode": "zero",
+            "equipment_additions": [
+              {
+                "name": "测试鞋子",
+                "amount": 10
+              },
+              {
+                "name": "尾刀盾牌1",
+                "amount": 50
+              },
+              {
+                "name": "尾刀盾牌",
+                "amount": 50
+              }
+            ],
+            "offset": 0,
+            "prefix": "+",
+            "suffix": "%",
+            "color": 251,
+            "clamp_min": 0,
+            "bind_type": 46
+          },
+          {
+            "label": "尾刀斩杀",
+            "source": "N$XY_TailKillRate",
+            "read_mode": "zero",
+            "equipment_additions": [
+              {
+                "name": "测试鞋子",
+                "amount": 10
+              },
+              {
+                "name": "首刀马牌1",
+                "amount": 50
+              },
+              {
+                "name": "首刀马牌",
+                "amount": 50
+              }
+            ],
+            "offset": 0,
+            "prefix": "+",
+            "suffix": "%",
+            "color": 254,
+            "clamp_min": 0,
+            "bind_type": 47
+          },
+          {
+            "label": "鞭尸概率",
+            "source": "N$XY_CorpseRate",
+            "read_mode": "bind",
+            "equipment_additions": [
+              {
+                "name": "测试鞋子",
+                "amount": 10
+              },
+              {
+                "name": "鞭尸灵玉1",
+                "amount": 100
+              },
+              {
+                "name": "鞭尸灵玉",
+                "amount": 100
+              }
+            ],
+            "offset": 0,
+            "prefix": "+",
+            "suffix": "%",
+            "color": 250,
+            "clamp_min": 0,
+            "bind_type": 13
+          },
+          {
+            "label": "对怪吸收",
+            "source": "N$XY_MDA_Final",
+            "read_mode": "zero",
+            "equipment_additions": [
+              {
+                "name": "测试腰带",
+                "amount": 10
+              }
+            ],
+            "offset": 0,
+            "prefix": "+",
+            "suffix": "%",
+            "color": 251,
+            "clamp_min": 0
+          }
+        ]
+      }
+    },
+    "panel_c": {
+      "type": "attribute_panel",
+      "required": true,
+      "default": {
+        "title": "处决与韧性",
+        "title_color": 250,
+        "namespace": "C",
+        "items": [
+          {
+            "label": "韧性",
+            "source": "N$XY_EXEC_Toughness",
+            "offset": 0,
+            "prefix": "+",
+            "suffix": "",
+            "color": 251,
+            "clamp_min": 0,
+            "bind_type": 50,
+            "title_additions": [
+              {"name": "赞助1档", "amount": 20},
+              {"name": "赞助2档", "amount": 30},
+              {"name": "赞助3档", "amount": 40},
+              {"name": "赞助4档", "amount": 50}
+            ]
+          },
+          {
+            "label": "处决概率",
+            "source": "N$XY_EXEC_ChanceBP",
+            "offset": 0,
+            "divisor": 1,
+            "prefix": "+",
+            "suffix": "%",
+            "color": 254,
+            "clamp_min": 0,
+            "bind_type": 49,
+            "title_additions": [
+              {"name": "赞助1档", "amount": 5},
+              {"name": "赞助2档", "amount": 6},
+              {"name": "赞助3档", "amount": 8},
+              {"name": "赞助4档", "amount": 10}
+            ]
+          },
+          {
+            "label": "处决时间",
+            "source": "N$XY_EXEC_PVEEquipDurationMs",
+            "offset": 0,
+            "divisor": 1,
+            "prefix": "+",
+            "suffix": "秒",
+            "color": 250,
+            "clamp_min": 0,
+            "bind_type": 52
+          },
+          {
+            "label": "处决倍数",
+            "source": "N$XY_EXEC_PVEEquipBonusPercent",
+            "offset": 0,
+            "prefix": "+",
+            "suffix": "%",
+            "color": 251,
+            "clamp_min": 0,
+            "bind_type": 51
+          }
+        ]
+      }
+    }
+  },
+  "claims": {
+    "labels": [
+      "XYDP_ShowAttrBuff",
+      "XYDP_ClearAttrBuff",
+      "XYDP_ATTR_RECALC_LOGIN",
+      "XYDP_ATTR_BUTTON_LOGIN",
+      "XY_UI_STATUS_REFRESH",
+      "XY_UI_STATUS_EQUIP_CHANGED",
+      "XY_UI_AFTER_NATIVE_REVIVAL",
+      "XY_UI_AFTER_EXTRA_REVIVAL",
+      "XY_UI_REVIVE_WINDOW_END",
+      "XY_UI_QF_STATUS_REFRESH",
+      "XY_UI_QF_EQUIP_REFRESH",
+      "XY_UI_QF_AFTER_NATIVE_REVIVAL",
+      "XY_UI_QF_AFTER_EXTRA_REVIVAL",
+      "XY_UI_QF_REVIVE_WINDOW_END",
+      "XY_UI_DRAW_RAGE",
+      "XY_UI_DRAW_REVIVE",
+      "XY_UI_CHECK_REVIVE_ITEM",
+      "XY_UI_CLEAR_ALL",
+      "XY_UI_NOOP",
+      "ButtonClick89",
+      "ButtonClick90",
+      "ButtonClick91",
+      "ButtonClick92",
+      "ButtonClick93",
+      "CloseClientBuff190",
+      "ClientBuffClick190",
+      "XY_UI_RAGE_PANEL"
+    ],
+    "variables": [
+      "N$XY_UI_REVIVE_OWNED",
+      "N$XY_UI_REVIVE_ELIGIBLE",
+      "N$XY_UI_REVIVE_EQUIP_COUNT",
+      "N$XY_UI_REVIVE_WINDOW",
+      "N$XY_UI_REVIVE_COUNTDOWN",
+      "N$XY_UI_PENDING_COMBAT_REFRESH",
+      "N$XY_UI_PENDING_KILL_REFRESH",
+      "S$XY_UI_REVIVE_ITEM1",
+      "S$XY_UI_REVIVE_ITEM2",
+      "S$XY_UI_REVIVE_ITEM3",
+      "S$XY_UI_REVIVE_ITEM4",
+      "S$XY_UI_REVIVE_ITEM5",
+      "S$XY_UI_REVIVE_ITEM6",
+      "S$XY_UI_REVIVE_ITEM7",
+      "S$XY_UI_REVIVE_ITEM8",
+      "N$XY_UI_A_Value01",
+      "N$XY_UI_A_Value02",
+      "N$XY_UI_A_Value03",
+      "N$XY_UI_A_Value04",
+      "N$XY_UI_B_Value01",
+      "N$XY_UI_B_Value02",
+      "N$XY_UI_B_Value03",
+      "N$XY_UI_B_Value04",
+      "N$XY_UI_C_Value01",
+      "N$XY_UI_C_Value02",
+      "N$XY_UI_C_Value03",
+      "N$XY_UI_C_Value04",
+      "N$XY_UI_A_Value01_BindPoint",
+      "N$XY_UI_A_Value01_BindRate",
+      "N$XY_UI_A_Value02_BindPoint",
+      "N$XY_UI_A_Value02_BindRate",
+      "N$XY_UI_A_Value03_BindPoint",
+      "N$XY_UI_A_Value03_BindRate",
+      "N$XY_UI_A_Value04_BindPoint",
+      "N$XY_UI_A_Value04_BindRate",
+      "N$XY_UI_B_Value01_BindPoint",
+      "N$XY_UI_B_Value01_BindRate",
+      "N$XY_UI_B_Value02_BindPoint",
+      "N$XY_UI_B_Value02_BindRate",
+      "N$XY_UI_B_Value03_BindPoint",
+      "N$XY_UI_B_Value03_BindRate",
+      "N$XY_UI_C_Value01_BindPoint",
+      "N$XY_UI_C_Value01_BindRate",
+      "N$XY_UI_C_Value02_BindPoint",
+      "N$XY_UI_C_Value02_BindRate",
+      "N$XY_UI_C_Value03_BindPoint",
+      "N$XY_UI_C_Value03_BindRate",
+      "N$XY_UI_C_Value04_BindPoint",
+      "N$XY_UI_C_Value04_BindRate"
+    ],
+    "maps": [],
+    "npcs": []
+  },
+  "operations": [
+    {
+      "type": "transcode_copy",
+      "source": "payload/玄渊三属性登录重算.txt",
+      "target": "Mir200/Envir/QuestDiary/玄渊功能/非常驻/属性总览/玄渊三属性登录重算.txt",
+      "source_encoding": "utf-8",
+      "target_encoding": "gb18030",
+      "newline": "\r\n"
+    },
+    {
+      "type": "render",
+      "source": "payload/玄渊三属性按钮.txt",
+      "target": "Mir200/Envir/QuestDiary/玄渊功能/非常驻/属性总览/玄渊三属性按钮.txt",
+      "source_encoding": "utf-8",
+      "target_encoding": "gb18030",
+      "newline": "\r\n"
+    },
+    {
+      "type": "render",
+      "source": "payload/复活图标配置.txt",
+      "user_document": "16_复活图标装备名单.txt",
+      "target": "Mir200/Envir/QuestDiary/玄渊配置/复活图标配置.txt",
+      "source_encoding": "utf-8",
+      "target_encoding": "gb18030",
+      "newline": "\r\n",
+      "preserve_existing": true
+    },
+    {
+      "type": "ensure_event_label",
+      "target": "Mir200/Envir/MapQuest_Def/QManage.txt",
+      "label": "MAIN1",
+      "target_encoding": "gb18030"
+    },
+    {
+      "type": "event_hook",
+      "target": "Mir200/Envir/MapQuest_Def/QManage.txt",
+      "label": "MAIN1",
+      "content": "#IF\n#ACT\n#CALL [\\玄渊功能\\非常驻\\属性总览\\玄渊三属性按钮.txt] @XYDP_ATTR_BUTTON_LOGIN",
+      "target_encoding": "gb18030"
+    },
+    {
+      "type": "managed_block",
+      "target": "Mir200/Envir/Market_Def/QFunction-0.txt",
+      "accepted_current_hashes": [
+        "9d8bd0e40bfae67b8da28bae4308226ad9f05c1ded224f98152c3b98b5a2b6b1"
+      ],
+    "content": "[@XYDP_ShowAttrBuff]\n#IF\n#ACT\n#CALL [\\玄渊功能\\非常驻\\属性总览\\玄渊三属性按钮.txt] @XY_UI_STATUS_REFRESH\nBREAK\n\n[@XYDP_ClearAttrBuff]\n#IF\n#ACT\n#CALL [\\玄渊功能\\非常驻\\属性总览\\玄渊三属性按钮.txt] @XY_UI_CLEAR_ALL\nBREAK\n\n[@XY_UI_QF_STATUS_REFRESH]\n#IF\n#ACT\n#CALL [\\玄渊功能\\非常驻\\属性总览\\玄渊三属性按钮.txt] @XY_UI_STATUS_REFRESH\nBREAK\n\n[@XY_UI_QF_EQUIP_REFRESH]\n#IF\n#ACT\n#CALL [\\玄渊功能\\非常驻\\属性总览\\玄渊三属性按钮.txt] @XY_UI_STATUS_EQUIP_CHANGED\nBREAK\n\n[@XY_UI_QF_AFTER_NATIVE_REVIVAL]\n#IF\n#ACT\n#CALL [\\玄渊功能\\非常驻\\属性总览\\玄渊三属性按钮.txt] @XY_UI_AFTER_NATIVE_REVIVAL\nBREAK\n\n[@XY_UI_QF_AFTER_EXTRA_REVIVAL]\n#IF\n#ACT\n#CALL [\\玄渊功能\\非常驻\\属性总览\\玄渊三属性按钮.txt] @XY_UI_AFTER_EXTRA_REVIVAL\nBREAK\n\n[@XY_UI_QF_REVIVE_WINDOW_END]\n#IF\n#ACT\n#CALL [\\玄渊功能\\非常驻\\属性总览\\玄渊三属性按钮.txt] @XY_UI_REVIVE_WINDOW_END\nBREAK\n\n[@XY_UI_RAGE_PANEL]\n#IF\n#ACT\n#CALL [\\玄渊功能\\狂暴\\狂暴NPC接口.txt] @XY_RAGE_NPC_MAIN\nBREAK"
+  },
+  {
+    "type": "event_hook",
+    "target": "Mir200/Envir/QuestDiary/玄渊功能/狂暴/狂暴界面刷新接口.txt",
+    "label": "XY_RAGE_UI_REFRESH",
+    "content": "#IF\n#ACT\n#CALL [\\玄渊功能\\非常驻\\属性总览\\玄渊三属性按钮.txt] @XY_UI_DRAW_RAGE"
+  },
+    {
+      "type": "ensure_event_label",
+      "target": "Mir200/Envir/Market_Def/QFunction-0.txt",
+      "label": "PlayLogin",
+      "target_encoding": "gb18030"
+    },
+    {
+      "type": "event_hook",
+      "target": "Mir200/Envir/Market_Def/QFunction-0.txt",
+      "label": "PlayLogin",
+      "content": "#IF\n#ACT\nMOV N$XY_UI_REVIVE_OWNED 0\nMOV N$XY_UI_PENDING_COMBAT_REFRESH 0\nMOV N$XY_UI_PENDING_KILL_REFRESH 0\n#CALL [\\玄渊功能\\非常驻\\属性总览\\玄渊三属性按钮.txt] @XY_UI_STATUS_REFRESH",
+      "target_encoding": "gb18030"
+    },
+    {
+      "type": "ensure_event_label",
+      "target": "Mir200/Envir/Market_Def/QFunction-0.txt",
+      "label": "TakeOnEx",
+      "target_encoding": "gb18030"
+    },
+    {
+      "type": "event_hook",
+      "target": "Mir200/Envir/Market_Def/QFunction-0.txt",
+      "label": "TakeOnEx",
+      "content": "#IF\n#ACT\nMOV N$XY_UI_PENDING_COMBAT_REFRESH 0\nMOV N$XY_UI_PENDING_KILL_REFRESH 0\n#CALL [\\玄渊功能\\非常驻\\属性总览\\玄渊三属性按钮.txt] @XY_UI_STATUS_EQUIP_CHANGED",
+      "target_encoding": "gb18030"
+    },
+    {
+      "type": "ensure_event_label",
+      "target": "Mir200/Envir/Market_Def/QFunction-0.txt",
+      "label": "TakeOffEx",
+      "target_encoding": "gb18030"
+    },
+    {
+      "type": "event_hook",
+      "target": "Mir200/Envir/Market_Def/QFunction-0.txt",
+      "label": "TakeOffEx",
+      "content": "#IF\n#ACT\nMOV N$XY_UI_PENDING_COMBAT_REFRESH 0\nMOV N$XY_UI_PENDING_KILL_REFRESH 0\n#CALL [\\玄渊功能\\非常驻\\属性总览\\玄渊三属性按钮.txt] @XY_UI_STATUS_EQUIP_CHANGED",
+      "target_encoding": "gb18030"
+    },
+    {
+      "type": "ensure_event_label",
+      "target": "Mir200/Envir/Market_Def/QFunction-0.txt",
+      "label": "PlayDie",
+      "target_encoding": "gb18030"
+    },
+    {
+      "type": "event_hook",
+      "target": "Mir200/Envir/Market_Def/QFunction-0.txt",
+      "label": "PlayDie",
+      "content": "#IF\n#ACT\nDELAYGOTO 1 @XY_UI_QF_STATUS_REFRESH",
+      "target_encoding": "gb18030"
+    },
+    {
+      "type": "ensure_event_label",
+      "target": "Mir200/Envir/Market_Def/QFunction-0.txt",
+      "label": "AttackDamage",
+      "target_encoding": "gb18030"
+    },
+    {
+      "type": "event_hook",
+      "target": "Mir200/Envir/Market_Def/QFunction-0.txt",
+      "label": "AttackDamage",
+      "content": "#IF\nEQUAL N$XY_UI_PENDING_COMBAT_REFRESH 1\n#ACT\nMOV N$XY_UI_PENDING_COMBAT_REFRESH 0\nDELAYGOTO 1 @XY_UI_QF_STATUS_REFRESH",
+      "target_encoding": "gb18030"
+    },
+    {
+      "type": "ensure_event_label",
+      "target": "Mir200/Envir/Market_Def/QFunction-0.txt",
+      "label": "KillMon",
+      "target_encoding": "gb18030"
+    },
+    {
+      "type": "event_hook",
+      "target": "Mir200/Envir/Market_Def/QFunction-0.txt",
+      "label": "KillMon",
+      "content": "#IF\nEQUAL N$XY_UI_PENDING_KILL_REFRESH 1\n#ACT\nMOV N$XY_UI_PENDING_KILL_REFRESH 0\nDELAYGOTO 1 @XY_UI_QF_STATUS_REFRESH",
+      "target_encoding": "gb18030"
+    },
+    {
+      "type": "ensure_event_label",
+      "target": "Mir200/Envir/Market_Def/QFunction-0.txt",
+      "label": "Revival",
+      "target_encoding": "gb18030"
+    },
+    {
+      "type": "event_hook",
+      "target": "Mir200/Envir/Market_Def/QFunction-0.txt",
+      "label": "Revival",
+      "content": "#IF\n#ACT\nDELAYGOTO 1 @XY_UI_QF_AFTER_NATIVE_REVIVAL",
+      "target_encoding": "gb18030"
+    },
+    {
+      "type": "ensure_event_label",
+      "target": "Mir200/Envir/Market_Def/QFunction-0.txt",
+      "label": "NpcRevival",
+      "target_encoding": "gb18030"
+    },
+    {
+      "type": "event_hook",
+      "target": "Mir200/Envir/Market_Def/QFunction-0.txt",
+      "label": "NpcRevival",
+      "content": "#IF\n#ACT\nDELAYGOTO 1 @XY_UI_QF_AFTER_EXTRA_REVIVAL",
+      "target_encoding": "gb18030"
+    },
+    {
+      "type": "ensure_event_label",
+      "target": "Mir200/Envir/Market_Def/QFunction-0.txt",
+      "label": "CustomButtonClick",
+      "target_encoding": "gb18030"
+    },
+    {
+      "type": "event_hook",
+      "target": "Mir200/Envir/Market_Def/QFunction-0.txt",
+      "label": "CustomButtonClick",
+      "content": "#IF\nEQUAL <$CustomButtonID> {rage_reserved_button_id}\n#ACT\nGOTO @XY_UI_RAGE_PANEL\nBREAK\n#IF\nEQUAL <$CustomButtonID> {world_map_reserved_button_id}\n#ACT\nGOTO @ButtonClick88\nBREAK",
+      "target_encoding": "gb18030"
+    },
+    {
+      "type": "ensure_event_label",
+      "target": "Mir200/Envir/Market_Def/QFunction-0.txt",
+      "label": "ButtonClick89",
+      "target_encoding": "gb18030"
+    },
+    {
+      "type": "event_hook",
+      "target": "Mir200/Envir/Market_Def/QFunction-0.txt",
+      "label": "ButtonClick89",
+      "content": "#IF\n#ACT\nBREAK",
+      "target_encoding": "gb18030"
+    },
+    {
+      "type": "ensure_event_label",
+      "target": "Mir200/Envir/Market_Def/QFunction-0.txt",
+      "label": "ButtonClick90",
+      "target_encoding": "gb18030"
+    },
+    {
+      "type": "event_hook",
+      "target": "Mir200/Envir/Market_Def/QFunction-0.txt",
+      "label": "ButtonClick90",
+      "content": "#IF\n#ACT\nBREAK",
+      "target_encoding": "gb18030"
+    },
+    {
+      "type": "ensure_event_label",
+      "target": "Mir200/Envir/Market_Def/QFunction-0.txt",
+      "label": "ButtonClick91",
+      "target_encoding": "gb18030"
+    },
+    {
+      "type": "event_hook",
+      "target": "Mir200/Envir/Market_Def/QFunction-0.txt",
+      "label": "ButtonClick91",
+      "content": "#IF\n#ACT\nBREAK",
+      "target_encoding": "gb18030"
+    },
+    {
+      "type": "ensure_event_label",
+      "target": "Mir200/Envir/Market_Def/QFunction-0.txt",
+      "label": "ButtonClick92",
+      "target_encoding": "gb18030"
+    },
+    {
+      "type": "event_hook",
+      "target": "Mir200/Envir/Market_Def/QFunction-0.txt",
+      "label": "ButtonClick92",
+      "content": "#IF\n#ACT\nBREAK",
+      "target_encoding": "gb18030"
+    },
+    {
+      "type": "ensure_event_label",
+      "target": "Mir200/Envir/Market_Def/QFunction-0.txt",
+      "label": "ButtonClick93",
+      "target_encoding": "gb18030"
+    },
+    {
+      "type": "event_hook",
+      "target": "Mir200/Envir/Market_Def/QFunction-0.txt",
+      "label": "ButtonClick93",
+      "content": "#IF\n#ACT\nBREAK",
+      "target_encoding": "gb18030"
+    },
+    {
+      "type": "ensure_event_label",
+      "target": "Mir200/Envir/Market_Def/QFunction-0.txt",
+      "label": "CloseClientBuff190",
+      "target_encoding": "gb18030"
+    },
+    {
+      "type": "event_hook",
+      "target": "Mir200/Envir/Market_Def/QFunction-0.txt",
+      "label": "CloseClientBuff190",
+      "content": "#IF\n#ACT\nDELAYGOTO 1 @XY_UI_QF_REVIVE_WINDOW_END",
+      "target_encoding": "gb18030"
+    },
+    {
+      "type": "ensure_event_label",
+      "target": "Mir200/Envir/Market_Def/QFunction-0.txt",
+      "label": "ClientBuffClick190",
+      "target_encoding": "gb18030"
+    },
+    {
+      "type": "event_hook",
+      "target": "Mir200/Envir/Market_Def/QFunction-0.txt",
+      "label": "ClientBuffClick190",
+      "content": "#IF\n#ACT\nBREAK",
+      "target_encoding": "gb18030"
+    }
+  ],
+  "preflight_checks": [
+    {
+      "type": "file_exists",
+      "path": "Mir200/Envir/Market_Def/QFunction-0.txt"
+    },
+    {
+      "type": "file_exists",
+      "path": "Mir200/Envir/MapQuest_Def/QManage.txt"
+    },
+    {
+      "type": "text_contains",
+      "path": "Mir200/!setup.txt",
+      "text": "RevivalTime=60000"
+    }
+  ],
+  "post_checks": [
+    {
+      "type": "label_exists",
+      "path": "Mir200/Envir/Market_Def/QFunction-0.txt",
+      "label": "XY_UI_QF_STATUS_REFRESH"
+    },
+    {
+      "type": "label_exists",
+      "path": "Mir200/Envir/Market_Def/QFunction-0.txt",
+      "label": "Revival"
+    },
+    {
+      "type": "label_exists",
+      "path": "Mir200/Envir/Market_Def/QFunction-0.txt",
+      "label": "NpcRevival"
+    },
+    {
+      "type": "file_exists",
+      "path": "Mir200/Envir/QuestDiary/玄渊功能/非常驻/属性总览/玄渊三属性按钮.txt"
+    },
+    {
+      "type": "file_exists",
+      "path": "Mir200/Envir/QuestDiary/玄渊配置/复活图标配置.txt"
+    },
+    {
+      "type": "text_contains",
+      "path": "Mir200/Envir/QuestDiary/玄渊功能/非常驻/属性总览/玄渊三属性按钮.txt",
+      "text": "SetReborn 1 <$STR(N$XY_UI_REVIVE_WINDOW)>"
+    },
+    {
+      "type": "text_contains",
+      "path": "Mir200/Envir/QuestDiary/玄渊功能/非常驻/属性总览/玄渊三属性按钮.txt",
+      "text": "ADDBUTTON {icon_wil_index} {panel_a_button_id}"
+    }
+  ],
+  "evidence": [
+    "local-official:LFM2-20260707-CHM:SetReborn",
+    "local-official:LFM2-20260707-CHM:SetClientBuff",
+    "reference:MirServer明月/复活图标.txt",
+    "ui-resource:Prguse.wzl-1772-1796",
+    "static-contract:evidence/20260725_shared_revive_contract.md",
+    "runtime-fix:evidence/20260725_runtime_bridge_fix.md",
+    "game-validation-current-server:evidence/20260726_final_attribute_read_contract.md",
+    "game-validation-sponsor-title:evidence/20260730_sponsor_title_display_accepted.md"
+  ]
+}

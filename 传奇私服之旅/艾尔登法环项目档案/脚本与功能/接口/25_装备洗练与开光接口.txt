@@ -1,0 +1,24 @@
+装备洗练与开光接口（正式 verified 1.0.0）
+
+正式成果包：xy.optional.equipment-wash-opening
+
+NPC入口：
+- 装备洗练：默认XY_NMGF_MAIN 104,75，脚本[@main]。
+- 装备开光：默认XY_NMGF_MAIN 104,77，脚本[@main]。
+- 名称、脚本路径、地图、坐标和外观均由成果包安装参数决定，不写死到平台核心。
+
+实例与执行入口：
+- 洗练ITEMBOX 27 / boxitem27，执行@XYEW_WASH_EXEC。
+- 开光ITEMBOX 28 / boxitem28，执行@XYEW_OPEN_EXEC。
+
+资源与布局：
+- OPENMERCHANTBIGDLG 12 0 1 4 0 0 1 618 8 1。
+- EffectImageList：XY_EquipmentWorkbench.wz，索引按唯一行合并后的实际位置读取；当前验收服为12。
+- 主框640x360，帧0；不透明装备槽76x76，帧1。
+- ITEMBOX必须为#SAY首元素；所有文字和按钮必须使用<&Text>绝对坐标。
+- @ItemIntoBox27/28只BREAK，不重开、不重画。
+
+业务：
+- 洗练默认100元宝；概率和词条读取正式包内四个核心脚本。
+- 天赐/神佑首次开光免费；重复开光50个失色锻造石。
+- 2026-08-08用户游戏验收通过，candidate.6为唯一正式母版。

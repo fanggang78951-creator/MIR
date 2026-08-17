@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "operation": "equipment-workbench-candidate6-absolute-layout",
+  "status": "candidate_pending_game_acceptance",
+  "installed_at": "2026-08-08T19:43:47",
+  "backup": "D:\\XuanYuanDevPlatform\\backups\\equipment_workbench_candidate6_20260808_194347",
+  "client_resource_changed": false,
+  "inherited_resource": "candidate.5",
+  "files": [
+    {
+      "path": "D:\\MirServer\\Mir200\\Envir\\Market_Def\\玄渊实验室\\装备洗练-XY_NMGF_MAIN.txt",
+      "sha256": "D51CA2D0828AC7D8C07A771B1E1AC68CC93F6EF4E8E2A543B49F3B603E95A0BD"
+    },
+    {
+      "path": "D:\\MirServer\\Mir200\\Envir\\Market_Def\\玄渊实验室\\装备开光-XY_NMGF_MAIN.txt",
+      "sha256": "8BB71E8B6FA85562C9612C7BA5D64352C4D21978293BA455FA0696B5383DCAA2"
+    },
+    {
+      "path": "D:\\XuanYuanDevPlatform\\接口\\25_装备洗练与开光接口.txt",
+      "sha256": "E76FFEA904BCD73502FFA3CF2DA8B7B8E1B117DC823129D91CCD66A3A6479131"
+    },
+    {
+      "path": "D:\\XuanYuanDevPlatform\\接口\\26_可拖动装备操作台接口.txt",
+      "sha256": "EF65F6344EE174932A8B5DA5B3BE15E5AFEE556ED16E17502F8E6295B9D60EF0"
+    }
+  ]
+}

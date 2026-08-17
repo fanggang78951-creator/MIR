@@ -8,6 +8,8 @@
 !/tools/**
 !/AI_Codex_Skills/
 !/AI_Codex_Skills/**
+!/传奇私服之旅/
+!/传奇私服之旅/**
 
 # 不上传 Python 临时缓存
 **/__pycache__/

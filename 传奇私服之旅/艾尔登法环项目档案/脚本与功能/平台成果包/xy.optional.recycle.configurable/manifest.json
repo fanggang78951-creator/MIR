@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "id": "xy.optional.recycle.configurable",
+  "version": "1.0.0-candidate.6",
+  "display_name": "表格驱动装备自动回收",
+  "status": "candidate",
+  "engine": "LFM2",
+  "residency": "optional",
+  "bundle": "recycle",
+  "install_route": "recycle-config",
+  "dependencies": [],
+  "parameters": {},
+  "claims": {
+    "labels": [
+      "UserCmd31",
+      "XY_RECYCLE_COMMAND",
+      "XY_RECYCLE_PANEL_MAIN",
+      "XY_RECYCLE_PANEL_APPLY",
+      "XY_RECYCLE_SELECTED_APPLY",
+      "XY_RECYCLE_AUTO_COMMAND",
+      "XY_RECYCLE_AUTO_ENABLE",
+      "XY_RECYCLE_AUTO_DISABLE",
+      "OnTimer20"
+    ],
+    "variables": [
+      "N$XY_RecycleBatchBefore",
+      "N$XY_RecycleBatchAfter",
+      "N$XY_RecycleBatchRemoved",
+      "N$XY_RecycleBatchReward",
+      "N$XY_RecycleEquipBonus",
+      "N$XY_RecycleBatchBonusReward"
+    ],
+    "maps": [],
+    "npcs": []
+  },
+  "operations": [],
+  "preflight_checks": [],
+  "post_checks": [],
+  "evidence": [
+    "game:2026-08-06-candidate.9-three-category-panel-and-batch-recycle-accepted",
+    "static:workbook-schema-and-target-StdItems-validation",
+    "static:pipe-and-in-cell-newline-multi-item-expansion-with-exact-validation",
+    "static:primary-and-extra-reward-pay-after-one-item-removal",
+    "static:unconditional-per-item-count-reset-before-presence-check-prevents-stale-reward",
+    "game:2026-08-09-candidate.6-stale-count-and-empty-bag-fix-accepted",
+    "static:equipment-workbook-recycle-bonus-recalculated-before-manual-and-auto-reward",
+    "static:managed-equipment-recycle-bonus-branches-preserved-on-recycle-config-upgrade",
+    "static:three-categories-per-page-and-stable-flag-allocation",
+    "transaction:preflight-hash-gate-atomic-install-byte-rollback",
+    "game:pending-generated-multi-category-package"
+  ]
+}

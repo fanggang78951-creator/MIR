@@ -1,0 +1,95 @@
+[@Main]
+#IF
+#ACT
+#SAY
+<处决独立测试面板/SCOLOR=250>\
+当前测试概率：<$STR(N$XY_EXEC_TestChanceBP)>基点（100基点=1%）\
+当前测试韧性：<$STR(N$XY_EXEC_TestToughness)>\ \
+<处决概率1%/@XY_EXEC_TEST_CHANCE_1>  <处决概率4%/@XY_EXEC_TEST_CHANCE_4>\
+<处决概率10%/@XY_EXEC_TEST_CHANCE_10>  <处决概率100%/@XY_EXEC_TEST_CHANCE_100>\ \
+<韧性0/@XY_EXEC_TEST_TOUGH_0>  <韧性60/@XY_EXEC_TEST_TOUGH_60>\
+<韧性100/@XY_EXEC_TEST_TOUGH_100>  <韧性1000/@XY_EXEC_TEST_TOUGH_1000>\ \
+<全部清零/@XY_EXEC_TEST_RESET>  <关闭/@EXIT>
+
+[@XY_EXEC_TEST_CHANCE_1]
+#IF
+#ACT
+MOV N$XY_EXEC_TestChanceBP 100
+SENDMSG 6 处决测试概率已设为1%。
+GOTO @Main
+
+[@XY_EXEC_TEST_CHANCE_4]
+#IF
+#ACT
+MOV N$XY_EXEC_TestChanceBP 400
+SENDMSG 6 处决测试概率已设为4%。
+GOTO @Main
+
+[@XY_EXEC_TEST_CHANCE_10]
+#IF
+#ACT
+MOV N$XY_EXEC_TestChanceBP 1000
+SENDMSG 6 处决测试概率已设为10%。
+GOTO @Main
+
+[@XY_EXEC_TEST_CHANCE_100]
+#IF
+#ACT
+MOV N$XY_EXEC_TestChanceBP 10000
+SENDMSG 6 处决测试概率已设为100%。
+GOTO @Main
+
+[@XY_EXEC_TEST_TOUGH_0]
+#IF
+#ACT
+MOV N$XY_EXEC_TestToughness 0
+MOV N$XY_EXEC_Toughness 0
+SENDMSG 6 处决测试韧性已设为0。
+GOTO @Main
+
+[@XY_EXEC_TEST_TOUGH_60]
+#IF
+#ACT
+MOV N$XY_EXEC_TestToughness 60
+MOV N$XY_EXEC_Toughness 60
+SENDMSG 6 处决测试韧性已设为60。
+GOTO @Main
+
+[@XY_EXEC_TEST_TOUGH_100]
+#IF
+#ACT
+MOV N$XY_EXEC_TestToughness 100
+MOV N$XY_EXEC_Toughness 100
+SENDMSG 6 处决测试韧性已设为100。
+GOTO @Main
+
+[@XY_EXEC_TEST_TOUGH_1000]
+#IF
+#ACT
+MOV N$XY_EXEC_TestToughness 1000
+MOV N$XY_EXEC_Toughness 1000
+SENDMSG 6 处决测试韧性已设为1000。
+GOTO @Main
+
+[@XY_EXEC_TEST_RESET]
+#IF
+EQUAL N$XY_EXEC_SlowActive 1
+#ACT
+ChangeSpeed 1 0
+#IF
+#ACT
+MOV N$XY_EXEC_TestChanceBP 0
+MOV N$XY_EXEC_TestToughness 0
+MOV N$XY_EXEC_Toughness 0
+MOV N$XY_EXEC_PVPActive 0
+MOV N$XY_EXEC_PVPBonusPercent 0
+MOV S$XY_EXEC_PVPTarget 0
+MOV S$XY_EXEC_PVPCurrentTarget 0
+MOV N$XY_EXEC_PVEActive 0
+MOV N$XY_EXEC_PVEBonusPercent 0
+MOV N$XY_EXEC_SlowActive 0
+MOV N$XY_EXEC_SlowDurationMs 0
+MOV N$XY_EXEC_Triggered 0
+MOV S$XY_EXEC_PVETarget 0
+SENDMSG 6 处决测试变量已全部清零，恢复人物基础1%概率。
+GOTO @Main

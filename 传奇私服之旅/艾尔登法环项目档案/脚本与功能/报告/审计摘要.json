@@ -1,0 +1,29 @@
+{
+  "generated_at": "2026-08-17T16:56:41+08:00",
+  "scope": "仅脚本类与功能类；不含地图、客户端地图资源、装备来源编号和装备内容",
+  "sources": {
+    "server": "D:\\MirServer",
+    "platform": "E:\\XuanYuanDevPlatform",
+    "receipt": "D:\\MirServer\\.xydp\\installed.json"
+  },
+  "counts": {
+    "functions": 36,
+    "installed_in_scope": 31,
+    "version_drift": 6,
+    "server_script_files": 65,
+    "managed_blocks": 89,
+    "static_issues": 0,
+    "interfaces": 27,
+    "configs": 19,
+    "package_files": 122,
+    "handoff_evidence_topics": 17
+  },
+  "issue_types": {},
+  "excluded": [
+    "地图台账",
+    "地图号与坐标",
+    "客户端MAP资源",
+    "装备来源编号",
+    "装备内容与数据库"
+  ]
+}

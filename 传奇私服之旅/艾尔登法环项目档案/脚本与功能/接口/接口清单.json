@@ -1,0 +1,942 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-08-08T15:40:00+08:00",
+  "engine": "LFM2",
+  "platform_root": "D:\\XuanYuanDevPlatform",
+  "source_priority": [
+    "active package manifest.json",
+    "same-package README or usage guide",
+    "same-package evidence",
+    "labs are test-only; legacy_archive/testbeds/backups are not authorities"
+  ],
+  "interfaces": [
+    {
+      "interface_id": "player.recycle.quick",
+      "name": "快捷回收玩家命令",
+      "classification": "public",
+      "invocation": "@快捷回收",
+      "context": "player_chat",
+      "package_id": "xy.optional.recycle.configurable",
+      "package_version": "1.0.0-candidate.3",
+      "package_status": "candidate",
+      "residency": "optional",
+      "notes": "UserCmd 31; opens the workbook-generated dynamic category panel"
+    },
+    {
+      "interface_id": "rage.qfunction.command",
+      "name": "狂暴QFunction入口",
+      "classification": "public",
+      "invocation": "GOTO @XY_RAGE_COMMAND",
+      "context": "qfunction",
+      "package_id": "xy.optional.rage.core",
+      "package_version": "3.2.0-candidate.1",
+      "package_status": "candidate",
+      "residency": "optional",
+      "notes": "Routes to the single map-0 rage NPC business source"
+    },
+    {
+      "interface_id": "rage.external.npc",
+      "name": "狂暴外部NPC入口",
+      "classification": "public",
+      "invocation": "#CALL [\\玄渊功能\\狂暴\\狂暴NPC接口.txt] @XY_RAGE_NPC_MAIN",
+      "context": "questdiary_or_npc",
+      "package_id": "xy.optional.rage.core",
+      "package_version": "3.2.0-candidate.1",
+      "package_status": "candidate",
+      "residency": "optional",
+      "notes": "Do not duplicate payment, title, stats or death cleanup"
+    },
+    {
+      "interface_id": "rage.ui.refresh",
+      "name": "狂暴UI刷新钩子",
+      "classification": "internal_extension",
+      "invocation": "#CALL [\\玄渊功能\\狂暴\\狂暴界面刷新接口.txt] @XY_RAGE_UI_REFRESH",
+      "context": "rage_lifecycle_or_ui_package",
+      "package_id": "xy.optional.rage.core",
+      "package_version": "3.2.0-candidate.1",
+      "package_status": "candidate",
+      "residency": "optional"
+    },
+    {
+      "interface_id": "donate.qfunction.command",
+      "name": "捐献QFunction入口",
+      "classification": "public",
+      "invocation": "GOTO @XY_DONATE_COMMAND",
+      "context": "qfunction",
+      "package_id": "xy.optional.donate.core",
+      "package_version": "2.3.1-candidate.1",
+      "package_status": "candidate",
+      "residency": "optional",
+      "business_contract": "one_title_once_300_native_gamegird",
+      "grant_owner": "donate_core"
+    },
+    {
+      "interface_id": "donate.external.trigger",
+      "name": "捐献外部脚本入口",
+      "classification": "public",
+      "invocation": "#CALL [\\玄渊功能\\捐献\\捐献核心.txt] @XY_DONATE_TRIGGER",
+      "context": "questdiary_or_npc",
+      "package_id": "xy.optional.donate.core",
+      "package_version": "2.3.1-candidate.1",
+      "package_status": "candidate",
+      "residency": "optional",
+      "business_contract": "one_title_once_300_native_gamegird",
+      "grant_owner": "donate_core"
+    },
+    {
+      "interface_id": "donate.state.file",
+      "name": "旧捐献持久状态文件（停用保留）",
+      "classification": "retired_data",
+      "invocation": "Mir200/Envir/QuestDiary/玄渊数据/xy_donate/捐献状态.txt",
+      "context": "legacy_audit_only_not_read_or_written_by_one_time_contract",
+      "package_id": "xy.optional.donate.core",
+      "package_version": "2.3.1-candidate.1",
+      "package_status": "candidate",
+      "residency": "optional",
+      "preserve_existing": true
+    },
+    {
+      "interface_id": "recycle.qfunction.command",
+      "name": "表格驱动动态回收面板入口",
+      "classification": "public_restricted",
+      "invocation": "GOTO @XY_RECYCLE_COMMAND",
+      "context": "qfunction",
+      "package_id": "xy.optional.recycle.configurable",
+      "package_version": "1.0.0-candidate.3",
+      "package_status": "candidate",
+      "residency": "optional"
+    },
+    {
+      "interface_id": "recycle.qfunction.apply",
+      "name": "回收业务执行出口（仅受管流）",
+      "classification": "internal_restricted",
+      "invocation": "GOTO @XY_RECYCLE_SELECTED_APPLY",
+      "context": "confirmed_managed_flow_only",
+      "package_id": "xy.optional.recycle.configurable",
+      "package_version": "1.0.0-candidate.3",
+      "package_status": "candidate",
+      "residency": "optional"
+    },
+    {
+      "interface_id": "recycle.auto",
+      "name": "动态回收页面与清空勾选接口组",
+      "classification": "public",
+      "invocations": [
+        "GOTO @XY_RECYCLE_AUTO_COMMAND",
+        "GOTO @XY_RECYCLE_AUTO_ENABLE",
+        "GOTO @XY_RECYCLE_AUTO_DISABLE"
+      ],
+      "state_variable": "人物分类标志位由平台安全分配并写入XY-RECYCLE-CATEGORY注释",
+      "context": "qfunction",
+      "package_id": "xy.optional.recycle.configurable",
+      "package_version": "1.0.0-candidate.3",
+      "package_status": "candidate",
+      "residency": "optional",
+      "workbook": "D:\\XuanYuanDevPlatform\\所需材料表格汇总\\19_装备回收配置.xlsx",
+      "custom_button_id": 21,
+      "timer_id": 20,
+      "categories_per_page": 3
+    },
+    {
+      "interface_id": "recycle.drop_filter",
+      "name": "掉落提示开关接口组",
+      "classification": "public",
+      "invocations": [
+        "GOTO @XY_RECYCLE_DROP_FILTER_COMMAND",
+        "GOTO @XY_RECYCLE_DROP_FILTER_ENABLE",
+        "GOTO @XY_RECYCLE_DROP_FILTER_DISABLE"
+      ],
+      "state_variable": "N$XY_RecycleDropFilterEnabled",
+      "context": "qfunction",
+      "package_id": "xy.optional.recycle.drop-filter",
+      "package_version": "1.0.0-candidate.1",
+      "package_status": "candidate",
+      "residency": "optional"
+    },
+    {
+      "interface_id": "bag.function_service",
+      "name": "背包功能服务菜单",
+      "classification": "public",
+      "invocation": "GOTO @XY_BAG_FUNCTION_SERVICE_PANEL",
+      "context": "qfunction",
+      "custom_button_id": 23,
+      "package_id": "xy.optional.bag.function-service",
+      "package_version": "1.0.0-candidate.1",
+      "package_status": "candidate",
+      "residency": "optional"
+    },
+    {
+      "interface_id": "storage.infinite_view",
+      "name": "无限可视仓库",
+      "classification": "public_engine_command",
+      "invocation": "OpenStorageView 1",
+      "context": "qfunction_custom_button",
+      "custom_button_id": 20,
+      "package_id": "xy.optional.storage.bag-entry",
+      "package_version": "1.0.0-candidate.1",
+      "package_status": "candidate",
+      "residency": "optional"
+    },
+    {
+      "interface_id": "ui.attribute.refresh",
+      "name": "左上属性图标刷新",
+      "classification": "public_restricted",
+      "invocation": "GOTO @XYDP_ShowAttrBuff",
+      "context": "qfunction_after_business_value_change",
+      "package_id": "xy.ui.attr-overview",
+      "package_version": "2.0.6-candidate.1",
+      "package_status": "candidate",
+      "residency": "optional",
+      "notes": "Display refresh only; never replaces combat calculations"
+    },
+    {
+      "interface_id": "sponsor.status.internal",
+      "name": "赞助称号当前档位查询",
+      "classification": "internal_npc_label",
+      "invocation": "@XY_SPONSOR_STATUS",
+      "context": "generated_sponsor_npc_only",
+      "package_id": "xy.initial-camp.seven-npcs",
+      "package_version": "1.8.0-candidate.1",
+      "package_status": "candidate",
+      "notes": "Checks sponsor titles from highest to lowest; all values are generated from 03_赞助称号.xlsx"
+    },
+    {
+      "interface_id": "ui.custom_buttons",
+      "name": "UI按钮号占用",
+      "classification": "reservation",
+      "context": "qfunction_CustomButtonClick",
+      "reservations": {
+        "3": "rage static entry",
+        "5": "world map static entry",
+        "20": "portable infinite storage",
+        "21": "equipment recycle",
+        "22": "material recycle reserved",
+        "23": "bag function service",
+        "24": "reserved",
+        "89": "rage colored dynamic icon",
+        "90": "revival status icon",
+        "91": "attribute panel A",
+        "92": "attribute panel B",
+        "93": "attribute panel C"
+      },
+      "buff_reservations": {
+        "190": "revival shared cooldown countdown"
+      }
+    },
+    {
+      "interface_id": "world_map.entry",
+      "name": "世界地图主入口",
+      "classification": "public_restricted",
+      "invocation": "GOTO @ButtonClick88",
+      "context": "qfunction_custom_button_id_5",
+      "package_id": "xy.ui.world-map",
+      "package_version": "1.0.0-candidate.21",
+      "package_status": "candidate",
+      "residency": "optional"
+    },
+    {
+      "interface_id": "world_map.regions",
+      "name": "世界地图十三地区接口模板",
+      "classification": "public_restricted",
+      "click_template": "GOTO @XY_WORLD_MAP_<TOKEN>",
+      "grant_template": "GOTO @XY_WORLD_MAP_<TOKEN>_GRANT",
+      "revoke_template": "GOTO @XY_WORLD_MAP_<TOKEN>_REVOKE",
+      "npc_grant_template": [
+        "CALCVAR HUMAN XY_WORLD_MAP_<TOKEN>_ACCESS = 1",
+        "SAVEVAR HUMAN XY_WORLD_MAP_<TOKEN>_ACCESS XY_WorldMap_<TOKEN>_Access.txt"
+      ],
+      "tokens": [
+        "NMGF_WEST",
+        "NMGF_MAIN",
+        "LYNYA_SEA",
+        "LYNYA_LAKE",
+        "GAELID",
+        "GIANT_TOP",
+        "FARUM",
+        "SNOWFIELD",
+        "ALTUS",
+        "LEYNDELL",
+        "HALIGTREE",
+        "ETERNAL_CITY",
+        "DRIFTING_ISLANDS"
+      ],
+      "context": "qfunction_or_npc_as_documented",
+      "package_id": "xy.ui.world-map",
+      "package_version": "1.0.0-candidate.21",
+      "package_status": "candidate",
+      "residency": "optional"
+    },
+    {
+      "interface_id": "event.first_pick",
+      "name": "首爆拾取处理",
+      "classification": "internal_event",
+      "invocation": "#CALL [\\首爆脚本\\首爆处理.txt] @首爆拾取处理",
+      "context": "QFunction_PickUpItemEX_after_LINKPICKUPITEM",
+      "package_id": "xy.ops.first-pick",
+      "package_version": "1.0.3",
+      "package_status": "verified",
+      "residency": "optional"
+    },
+    {
+      "interface_id": "event.auto_basic_skills",
+      "name": "自动三级基础技能",
+      "classification": "internal_event",
+      "invocation": "#CALL [\\玄渊功能\\常驻基础\\升级自动三级基础技能.txt] @XYDP_AUTO_BASIC_SKILLS",
+      "context": "QManage_MAIN1_and_QFunction_PLAYLEVELUP",
+      "package_id": "xy.native.auto-basic-skills",
+      "package_version": "1.0.0-candidate.1",
+      "package_status": "candidate",
+      "residency": "resident"
+    },
+    {
+      "interface_id": "event.skill_upgrade_7",
+      "name": "攻杀剑术强化事件",
+      "classification": "engine_event",
+      "invocation": "[@SkillLevelEx7]",
+      "context": "skill_panel_upgrade_button_only",
+      "package_id": "xy.optional.skill-upgrade.warrior.gongsha-kaitian",
+      "package_version": "1.0.0",
+      "package_status": "verified",
+      "residency": "optional",
+      "notes": "No NPC or chat command interface"
+    },
+    {
+      "interface_id": "event.initial_bag_200",
+      "name": "登录背包200格契约",
+      "classification": "internal_login_contract",
+      "invocations": [
+        "ExtBagPageCount = 4",
+        "ExtBagOpenItemCount + 160"
+      ],
+      "context": "QuestDiary_game_login_登陆设置",
+      "package_id": "xy.native.initial-bag-200",
+      "package_version": "2.0.0-candidate.1",
+      "package_status": "candidate",
+      "residency": "resident"
+    },
+    {
+      "interface_id": "combat.recalc",
+      "name": "战斗重算标签组",
+      "classification": "internal_managed",
+      "invocations": [
+        "GOTO @XYDP_RecalcPower",
+        "GOTO @XYDP_RecalcBlast",
+        "GOTO @XYDP_RecalcDrop",
+        "GOTO @XYDP_RecalcMonsterAbsorb",
+        "GOTO @XYDP_RecalcSustain"
+      ],
+      "context": "platform_managed_event_or_equipment_integration"
+    },
+    {
+      "interface_id": "equipment.anchors",
+      "name": "正式做装备锚点组",
+      "classification": "internal_anchor",
+      "anchors": [
+        "XY_EQUIP_MAKER_POWER_ANCHOR",
+        "XY_EQUIP_MAKER_ATTACK_ANCHOR",
+        "XY_EQUIP_MAKER_BLAST_ANCHOR",
+        "XY_EQUIP_MAKER_DROP_ANCHOR",
+        "XY_EQUIP_MAKER_CORPSE_ANCHOR",
+        "XY_EQUIP_MAKER_MONSTER_ABSORB_ANCHOR",
+        "XY_EQUIP_MAKER_MONSTER_ABSORB_CAP_ANCHOR",
+        "XY_EQUIP_MAKER_RUNTIME_POWER_ANCHOR",
+        "XY_EQUIP_MAKER_RUNTIME_BLAST_ANCHOR",
+        "XY_EQUIP_MAKER_RUNTIME_DROP_ANCHOR",
+        "XY_EQUIP_MAKER_RUNTIME_DROP_MAX_ANCHOR",
+        "XY_EQUIP_MAKER_RUNTIME_DAMAGE_COEFFICIENT_ANCHOR",
+        "XY_EQUIP_MAKER_LIFESTEAL_ANCHOR",
+        "XY_EQUIP_MAKER_HP_REGEN_ACTIVE_ANCHOR",
+        "XY_EQUIP_MAKER_HP_REGEN_TICK_ANCHOR"
+      ],
+      "context": "equipment_generator_only"
+    },
+    {
+      "interface_id": "combat.sustain",
+      "name": "百分比吸血与每秒回血内部接口",
+      "classification": "internal_managed",
+      "invocations": [
+        "GOTO @XYDP_RecalcSustain",
+        "QFunction [@Attack] managed PVE lifesteal hook",
+        "SetOnTimer 19 1",
+        "QManage [@OnTimer19]"
+      ],
+      "anchors": [
+        "XY_EQUIP_MAKER_LIFESTEAL_ANCHOR",
+        "XY_EQUIP_MAKER_HP_REGEN_ACTIVE_ANCHOR",
+        "XY_EQUIP_MAKER_HP_REGEN_TICK_ANCHOR"
+      ],
+      "context": "platform_managed_event_or_equipment_integration",
+      "package_id": "xy.combat.sustain",
+      "package_version": "1.2.0-candidate.1",
+      "package_status": "candidate",
+      "residency": "resident"
+    },
+    {
+      "interface_id": "equipment.execution_lab_anchors",
+      "name": "处决实验室做装备锚点组",
+      "classification": "lab_only_anchor",
+      "anchors": [
+        "XY_EXECUTION_LAB_CHANCE_ANCHOR",
+        "XY_EXECUTION_LAB_TOUGHNESS_ANCHOR",
+        "XY_EXECUTION_LAB_PVE_BONUS_ANCHOR",
+        "XY_EXECUTION_LAB_PVE_DURATION_ANCHOR"
+      ],
+      "context": "only_when_xy.lab.execution_host_is_installed",
+      "package_id": "xy.lab.execution",
+      "package_status": "candidate",
+      "source_scope": "labs_only"
+    },
+    {
+      "interface_id": "king_mode.namespace",
+      "name": "国王模式内部命名空间",
+      "classification": "internal_reservation",
+      "patterns": [
+        "XY_KING_*",
+        "XY_KING_FLOW_*",
+        "N$XY_KING_*",
+        "S$XY_KING_*",
+        "G120-G139"
+      ],
+      "context": "king_mode_packages_only",
+      "package_id": "xy.optional.king-mode.complete",
+      "package_version": "2.1.1",
+      "package_status": "verified",
+      "residency": "optional"
+    },
+    {
+      "interface_id": "initial_camp.seven_npcs",
+      "name": "初始之地七NPC一键导入",
+      "classification": "platform_transaction",
+      "invocations": [
+        "GUI: NPC编辑 -> 初始之地七NPC",
+        "CLI: initial-camp-preflight",
+        "CLI: initial-camp-install --yes",
+        "CLI: initial-camp-rollback --yes"
+      ],
+      "public_calls": [
+        "#CALL [\\玄渊功能\\狂暴\\狂暴NPC接口.txt] @XY_RAGE_NPC_MAIN",
+        "#CALL [\\玄渊功能\\捐献\\捐献核心.txt] @XY_DONATE_TRIGGER",
+        "#CALL [\\玄渊功能\\非常驻\\属性总览\\玄渊三属性按钮.txt] @XY_UI_STATUS_REFRESH"
+      ],
+      "reservations": [
+        "XY_CAMP_*",
+        "XY_SPONSOR_*",
+        "XY_REBIRTH_*",
+        "XY_HORSE_*",
+        "XY_RELIC_*",
+        "XY_GIFT_CLAIM",
+        "N$XY_DONATE_LAST_SUCCESS",
+        "N$XY_REBIRTH_PowerBonus"
+      ],
+      "title_chain_rule": "Sponsor grants and verifies the higher title before revoking the lower title; rebirth uses native CHECKRENEWLEVEL and RENEWLEVEL, with titles as display mirrors only",
+      "xlsx_source_of_truth": {
+        "npc_display_name": "NPC名称",
+        "equipment_exchange": [
+          "当前装备",
+          "下一装备",
+          "材料A/B",
+          "货币A/B"
+        ],
+        "sword_workbook": "05_圣律之剑.xlsx",
+        "relic_workbook": "06_黄金圣物.xlsx",
+        "sponsor_workbook": "03_赞助称号.xlsx controls NPC text, hooks, ItemDescList, fenghao.dat and title_additions",
+        "gift_workbook": "07_新手礼包.xlsx",
+        "newbie_gift": {
+          "code": "礼包码",
+          "reward_a": "奖励装备A",
+          "reward_b": "奖励装备B",
+          "once_per_character": true,
+          "bound": true
+        },
+        "equipment_attributes": "Read only from target StdItems; ignored in sword/relic XLSX"
+      },
+      "package_id": "xy.initial-camp.seven-npcs",
+      "package_version": "1.8.0-candidate.1",
+      "transaction_scopes": [
+        "server",
+        "client"
+      ],
+      "currency_rule": "灵符/账户灵符/原生灵符 always map to native GAMEGIRD; never CHECKITEM/TAKE",
+      "package_status": "candidate",
+      "residency": "optional"
+    },
+    {
+      "interface_id": "platform.config_sync.selected_document",
+      "name": "主动选择已登记配置文件同步",
+      "classification": "platform_transaction",
+      "invocations": [
+        "GUI: 脚本配置同步 -> 选择配置文件 -> 预检所选文件 -> 确认植入",
+        "CLI: config-sync-preflight --server <path> --file <registered-file>",
+        "CLI: config-sync-install --server <path> --file <registered-file> --yes",
+        "CLI: config-sync-rollback --server <path> --transaction <id> --route <route> --yes"
+      ],
+      "registry": "D:\\XuanYuanDevPlatform\\所需材料表格汇总\\00_填写文档注册表.json",
+      "allowed_extensions": [
+        ".xlsx",
+        ".txt",
+        ".csv"
+      ],
+      "routes": [
+        "initial-camp-selected",
+        "package-documents",
+        "king-mode-config"
+      ],
+      "operation_type": "config-sync",
+      "source_hash_recheck": true,
+      "folder_scan": false,
+      "package_status": "platform",
+      "residency": "platform"
+    },
+    {
+      "interface_id": "maps.layered_workbook.transaction",
+      "name": "地图外显与多层传送XLSX事务",
+      "classification": "platform_transaction",
+      "invocations": [
+        "GUI: 地图库 -> 地图外显与多层传送 -> 读取并严格预检",
+        "GUI: 地图库 -> 地图外显与多层传送 -> 确认一键部署",
+        "GUI: 地图库 -> 地图外显与多层传送 -> 回滚最近部署"
+      ],
+      "electron_bridges": [
+        "inspectLayeredMapWorkbook",
+        "deployLayeredMapWorkbook",
+        "rollbackLatestLayeredMapWorkbook"
+      ],
+      "workbook": "D:\\XuanYuanDevPlatform\\所需材料表格汇总\\08_地图外显与多层传送.xlsx",
+      "authorization": "AUTHORIZED_LAYERED_MAP_WORKBOOK_DEPLOYMENT",
+      "package_status": "candidate",
+      "residency": "platform",
+      "notes": "External names, bidirectional MapInfo links, per-series MapEffect scripts, manifest-driven effect reuse, transaction rollback; no NPC or map resource migration"
+    },
+    {
+      "interface_id": "necklace_luck.external.main",
+      "name": "项链幸运强化主界面",
+      "classification": "public_candidate",
+      "invocation": "#CALL [\\玄渊实验室\\项链幸运\\项链幸运核心.txt] @XY_NECK_LUCK_MAIN",
+      "context": "npc_or_questdiary_external_script",
+      "package_id": "xy.lab.necklace-luck",
+      "package_status": "candidate",
+      "residency": "optional",
+      "source_scope": "labs_only_until_game_acceptance"
+    },
+    {
+      "interface_id": "necklace_luck.internal",
+      "name": "项链幸运强化内部接口与变量",
+      "classification": "lab_internal_managed",
+      "invocations": [
+        "@XY_NECK_LUCK_UPGRADE",
+        "#CALL [\\玄渊实验室\\项链幸运\\项链幸运核心.txt] @XY_NECK_LUCK_SYNC",
+        "#CALL [\\玄渊实验室\\项链幸运\\项链幸运核心.txt] @XY_NECK_LUCK_TAKEOFF"
+      ],
+      "variables": [
+        "U90",
+        "U91",
+        "U92",
+        "U93"
+      ],
+      "anchors": [
+        "XY_EQUIP_MAKER_RUNTIME_DAMAGE_COEFFICIENT_ANCHOR",
+        "XY_EXECUTION_LAB_CHANCE_ANCHOR"
+      ],
+      "context": "managed_PlayLogin_TakeOnEx_TakeOffEx_and_combat_anchors_only",
+      "package_id": "xy.lab.necklace-luck",
+      "package_status": "candidate",
+      "residency": "optional",
+      "source_scope": "labs_only_until_game_acceptance"
+    },
+    {
+      "interface_id": "test_monitor.player_commands",
+      "name": "测试后台玩家控制命令",
+      "classification": "developer_test_public",
+      "invocations": [
+        "@验收开启",
+        "@验收状态",
+        "@验收关闭"
+      ],
+      "user_cmd_ids": {
+        "47": "验收开启",
+        "48": "验收关闭",
+        "49": "验收状态"
+      },
+      "state_variable": "N$XY_VERIFY_ON",
+      "event_file": "Mir200/Envir/QuestDiary/玄渊验收/events.txt",
+      "context": "candidate_game_test_only",
+      "package_status": "platform_tool",
+      "residency": "platform"
+    },
+    {
+      "interface_id": "test_monitor.xy_verify_event",
+      "name": "XY_VERIFY结构化测试事件",
+      "classification": "developer_test_event_contract",
+      "invocation_template": "AddTextListEx ..\\QuestDiary\\玄渊验收\\events.txt [XY_VERIFY]|EVENT|key=value 0",
+      "reader": "D:\\XuanYuanDevPlatform\\测试后台监视\\xy_test_monitor.py",
+      "current_events": [
+        "ON",
+        "OFF",
+        "STATUS",
+        "TAKEON",
+        "TAKEOFF",
+        "NECK_LUCK_TRY",
+        "NECK_LUCK_RESULT"
+      ],
+      "context": "candidate_instrumentation_only",
+      "notes": "Observation only; never participate in business state, probability, payment, rewards or damage"
+    },
+    {
+      "interface_id": "item.super_blessing_oil.stdmodefunc82",
+      "name": "超级祝福油双击事件",
+      "classification": "engine_internal_item_event",
+      "package_id": "xy.item.super-blessing-oil",
+      "package_version": "1.0.0-candidate.1",
+      "database_contract": {
+        "Name": "超级祝福油",
+        "StdMode": 31,
+        "Shape": 0,
+        "Anicount": 82,
+        "Looks": 26
+      },
+      "invocation": "[@StdModeFunc82]",
+      "execution": "Engine enters StdModeFunc82 when the player double-clicks the item; return the item without a weapon or at luck 7, otherwise run UPGRADEITEMEX 1 3 1 1 0",
+      "test_acquire": "@make 超级祝福油 1",
+      "residency": "optional_candidate",
+      "notes": "AniCount 82 and StdModeFunc82 are exclusively occupied by this package; this is not a player/NPC command interface"
+    },
+    {
+      "interface_id": "forbidden.world_map_old_grant",
+      "name": "旧宁姆格福测试授权标签",
+      "classification": "forbidden",
+      "invocation": "@XY_WORLD_MAP_GRANT_NIMUGEFU",
+      "reason": "Not present in current world-map candidate.21; use @XY_WORLD_MAP_NMGF_MAIN_GRANT"
+    },
+    {
+      "interface_id": "forbidden.recycle_external_call",
+      "name": "回收外部脚本调用路线",
+      "classification": "forbidden",
+      "reason": "Current LFM2 server produced load fail for both single and split external recycle scripts"
+    },
+    {
+      "interface_id": "forbidden.lab_user_commands",
+      "name": "已完成实验的测试命令",
+      "classification": "forbidden_in_production",
+      "invocations": [
+        "@UserCmd91",
+        "@UserCmd92"
+      ],
+      "reason": "Damage coefficient and monster absorb production packages exist; lab commands must not remain in production"
+    },
+    {
+      "interface_id": "execution.map_monster_rules",
+      "name": "地图怪物处决与地图怪物韧性规则",
+      "classification": "lab_managed_config",
+      "configuration": "D:\\XuanYuanDevPlatform\\所需材料表格汇总\\13_地图怪物处决规则.csv",
+      "compiler": "D:\\XuanYuanDevPlatform\\labs\\execution\\monster_map0_pilot\\tools\\apply_map_rules_to_test_server.py",
+      "fields": [
+        "map_id",
+        "enabled",
+        "required_toughness",
+        "base_chance_bp",
+        "monster_execution_toughness",
+        "中文说明"
+      ],
+      "internal_label": "@XYDP_ExecutionLoadMapRule",
+      "managed_blocks": [
+        "xy.lab.execution.monster-map0",
+        "xy.lab.execution.map-monster-toughness"
+      ],
+      "context": "candidate_test_server_only",
+      "package_status": "lab_candidate",
+      "residency": "optional",
+      "notes": "required_toughness/base_chance_bp control monster-to-player; monster_execution_toughness only reduces player-to-monster PVE execution chance and tier"
+    },
+    {
+      "interface_id": "visual.monster_batch_migration",
+      "name": "多只怪物客户端外观与动作帧批量迁移",
+      "classification": "client_visual_only",
+      "ipc": "effects:build-monster-pack",
+      "contract": "D:\\XuanYuanDevPlatform\\接口\\14_怪物视觉与动作帧批量迁移接口.txt",
+      "input": "多只怪物、多动作区间、来源图库ID、成对WZL/WZX",
+      "output": "独立版本化WZL/WZX、manifest.json、monster-migration.md",
+      "dedupe": "按来源图库ID、WZL/WZX路径和原始帧编号跨怪物去重",
+      "forbidden": [
+        "怪物属性",
+        "掉落",
+        "技能",
+        "脚本",
+        "服务端怪物数据库"
+      ],
+      "context": "isolated_candidate_only",
+      "package_status": "platform_tool",
+      "residency": "platform"
+    },
+    {
+      "interface_id": "forbidden.monster_visual_library_v1",
+      "name": "错误怪物外观库V1",
+      "classification": "forbidden",
+      "contract": "D:\\XuanYuanDevPlatform\\接口\\15_怪物外观本地库与一键植入接口.txt",
+      "forbidden_mapping": "library_no=Appr//10",
+      "reason": "Game verification proved Appr1230 reads Mon124, not Mon123; V1 also omitted Monster database rows"
+    },
+    {
+      "interface_id": "monster.local_library_v2",
+      "name": "怪物资料与正确补丁本地库一键植入",
+      "classification": "server_client_transaction",
+      "contract": "D:\\XuanYuanDevPlatform\\接口\\19_怪物资料与补丁本地库一键植入接口.txt",
+      "invocations": [
+        "GUI: 怪物库 -> 扫描明月并重建怪物库",
+        "GUI: 怪物库 -> 预检选中 -> 一键植入",
+        "GUI: 怪物库 -> 逐字节回滚",
+        "CLI: monster-library-scan",
+        "CLI: monster-library-preflight --monster-id <id>",
+        "CLI: monster-library-apply --monster-id <id> --yes",
+        "CLI: monster-library-rollback --yes"
+      ],
+      "catalog": "D:\\XuanYuanDevPlatform\\怪物库\\catalog.sqlite",
+      "catalog_schema": 2,
+      "appearance_mapping": "library_no=Appr//10+1; slot_no=Appr%10",
+      "resource_contract": "self-contained full PAK with stored password, or paired WZL/WZX",
+      "monster_contract": "preserve and insert all 26 Monster columns",
+      "preview_bridge": "玄渊界面施工台 *.sidecar.json; preview only",
+      "dedupe": "skip target Monster rows by exact name; same Appr with a different name is allowed",
+      "target_scopes": [
+        "server Mud2/DB/ApexM2.DB Monster row",
+        "client data complete Mon resource",
+        "server 登录器/pak.txt when PAK is selected",
+        "actual MakeGameLogin pak.txt missing Mon rules"
+      ],
+      "generator_policy": "GUI auto-detects D:\\素材文件夹\\LFM2[20260707]\\登录器, transactionally appends only missing Mon rules, and blocks password conflicts",
+      "forbidden": [
+        "overwrite same-name Monster row",
+        "drop tables",
+        "MonGen spawn rules",
+        "map scripts",
+        "AI or skill scripts"
+      ],
+      "m2_gate": "M2Server.exe must be stopped before preflight and install",
+      "package_status": "candidate",
+      "residency": "platform"
+    },
+    {
+      "interface_id": "monster.workbook_create",
+      "name": "怪物批量生成表一键植入",
+      "classification": "server_client_transaction",
+      "contract": "D:\\XuanYuanDevPlatform\\接口\\20_怪物批量生成表一键植入接口.txt",
+      "workbook": "D:\\XuanYuanDevPlatform\\所需材料表格汇总\\20_怪物批量生成.xlsx",
+      "invocations": [
+        "GUI: 怪物库 -> 一键同步怪物 -> 确认 -> 自动打开生成器后点击生成登录器",
+        "GUI: 怪物库 -> 预检（可选）",
+        "CLI: monster-workbook-inspect",
+        "CLI: monster-workbook-preflight",
+        "CLI: monster-workbook-apply --yes",
+        "CLI: monster-library-rollback --yes"
+      ],
+      "model_policy": "new name: optional library id, else stable random from target-compatible V2 models; existing name: blank preserves current visual, explicit id changes visual",
+      "random_seed": "workbook SHA-256 + source row + monster name + mode",
+      "inherits": "new rows inherit model fields and complete Mon resource; existing rows with blank model preserve all target model and behavior fields",
+      "overrides": "upsert by unique case-insensitive name; user-entered combat fields update on every apply",
+      "name_color_policy": "optional workbook color column: yellow=151, blue=154, purple=242, red=249, orange=70, green=250, cyan=254, pink=245; blank in new workbook defaults yellow; existing MonGen 7/8/9-column rows only, preserve concentration field",
+      "idempotence": "rows and MonGen name colors already matching the workbook are unchanged and do not rewrite target files",
+      "automatic_conflict_policy": "auto-selected incompatible resources are stably reselected from compatible models; explicit model conflicts block",
+      "source_gate": "workbook SHA-256 must remain unchanged after preflight",
+      "generator_policy": "one-click always reruns preflight; actual MakeGameLogin pak.txt joins the rollback transaction; generator opens automatically only when model resources are involved",
+      "forbidden": [
+        "update ambiguous duplicate same-name Monster rows",
+        "drop tables",
+        "drop rates",
+        "add or delete MonGen spawn rows",
+        "change MonGen map, coordinates, range, quantity, interval, or concentration probability",
+        "map scripts",
+        "AI or skill scripts"
+      ],
+      "m2_gate": "M2Server.exe must be stopped before preflight and install",
+      "package_status": "candidate",
+      "acceptance_gate": "launcher regeneration plus in-game idle/walk/attack/hit/death verification",
+      "residency": "platform"
+    },
+    {
+      "interface_id": "initial_camp.rebirth_power",
+      "name": "引擎原生转生与神力双重算",
+      "classification": "managed_combat_extension",
+      "contract": "D:\\XuanYuanDevPlatform\\接口\\21_转生神力重算候选接口.txt",
+      "configuration": "D:\\XuanYuanDevPlatform\\所需材料表格汇总\\04_转生.xlsx",
+      "managed_owner": "xy.initial-camp.seven-npcs",
+      "anchors": [
+        "XY_EQUIP_MAKER_POWER_ANCHOR",
+        "XY_EQUIP_MAKER_RUNTIME_POWER_ANCHOR"
+      ],
+      "variables": [
+        "N$倍攻",
+        "N$XY_RT_Power",
+        "N$XY_REBIRTH_PowerBonus"
+      ],
+      "native_progress_check": "CHECKRENEWLEVEL",
+      "native_advance_command": "RENEWLEVEL 1",
+      "title_role": "display mirror only",
+      "level_mapping": "native engine rebirth level; cumulative 5 percent per tier; tier 1 to 10 => 5 to 50",
+      "context": "formal_initial_camp_generator_and_current_server",
+      "package_status": "candidate_game_accepted_current_server",
+      "platform_generator_updated": true,
+      "residency": "optional"
+    },
+    {
+      "interface_id": "autoplay.inner.native",
+      "name": "翎风原生在线内挂启动与停止",
+      "classification": "engine_event_candidate",
+      "invocations": [
+        "CTRL+ALT+X",
+        "F12 client auto-play button",
+        "engine event @StartAutoOnline",
+        "engine event @StopAutoOnline"
+      ],
+      "start_command": "StartAutoPlayGame",
+      "stop_command": "StopAutoPlayGame",
+      "context": "current_server_candidate_only",
+      "package_status": "game_validation_pending",
+      "residency": "optional_after_acceptance",
+      "contract": "D:\\XuanYuanDevPlatform\\接口\\26_自动挂机与四点巡航候选接口.txt"
+    },
+    {
+      "interface_id": "autoplay.patrol.four_points",
+      "name": "四点挂机巡航玩家入口",
+      "classification": "public_candidate",
+      "invocation": "@挂机巡航",
+      "context": "player_chat",
+      "usercmd_id": 91,
+      "qfunction_entry": "GOTO @XY_PATROL_MAIN",
+      "timer_id": 98,
+      "idle_attack_seconds": 60,
+      "point_count": 4,
+      "point_persistence": "current_online_session_only",
+      "mingyue_business_conditions_copied": false,
+      "package_status": "game_validation_pending",
+      "residency": "optional_after_acceptance",
+      "contract": "D:\\XuanYuanDevPlatform\\接口\\26_自动挂机与四点巡航候选接口.txt"
+    },
+    {
+      "interface_id": "equipment.material.incremental_create",
+      "name": "材料增量添加",
+      "classification": "platform_transaction",
+      "invocations": [
+        "GUI: 批量做装备 -> 预检材料 -> 确认添加材料",
+        "CLI: equipment-material-preflight",
+        "CLI: equipment-material-apply --yes"
+      ],
+      "workbook": "D:\\XuanYuanDevPlatform\\所需材料表格汇总\\11_材料批量生成.xlsx",
+      "existing_policy": "skip exact-name StdMode=46 materials without overwriting",
+      "conflict_policy": "block exact-name non-material items and duplicate source rows",
+      "plan_fields": [
+        "equipment_names",
+        "skipped_existing",
+        "changes"
+      ],
+      "fixed_contract": {
+        "StdMode": 46,
+        "Shape": 1,
+        "OverLap": 2,
+        "DuraMax": 99999
+      },
+      "client_libraries": [
+        "Items.wzl/wzx"
+      ],
+      "all_existing_result": "successful no_changes receipt with zero target writes",
+      "contract": "D:\\XuanYuanDevPlatform\\接口\\27_材料增量添加接口.txt",
+      "package_status": "platform",
+      "residency": "platform"
+    },
+    {
+      "interface_id": "seal_title.two_npc",
+      "name": "神印基础属性与称号晋升双NPC",
+      "classification": "public_candidate",
+      "invocations": [
+        "#CALL [\\玄渊成长\\神印与称号\\神印基础核心.txt] @XY_SEAL_BASE_MAIN",
+        "#CALL [\\玄渊成长\\神印与称号\\称号晋升核心.txt] @XY_TITLE_ADVANCE_MAIN",
+        "GUI: NPC编辑 -> 神印与称号双NPC",
+        "CLI: seal-title-preflight/install/rollback"
+      ],
+      "workbooks": [
+        "D:\\XuanYuanDevPlatform\\所需材料表格汇总\\21_神印基础属性.xlsx",
+        "D:\\XuanYuanDevPlatform\\所需材料表格汇总\\22_称号晋升.xlsx"
+      ],
+      "seal_level_variable": "N$XY_SEAL_BASE_LEVEL",
+      "seal_ability_commands": "ChangeHumAbilityEX 5-11",
+      "title_state": "pending_shape_and_mp",
+      "package_status": "game_validation_pending",
+      "residency": "candidate_not_in_resident_base",
+      "contract": "D:\\XuanYuanDevPlatform\\接口\\28_神印基础与称号晋升接口.txt"
+    },
+    {
+      "interface_id": "growth_equipment.continent_stage",
+      "name": "成长装备大陆分段NPC",
+      "classification": "platform_candidate",
+      "invocations": [
+        "GUI: 脚本配置同步 -> 选择配置文件 -> 23/24号XLSX -> 预检并植入",
+        "CLI: config-sync-preflight/config-sync-install"
+      ],
+      "workbooks": [
+        "D:\\XuanYuanDevPlatform\\所需材料表格汇总\\23_宁姆格福_圣律之剑.xlsx",
+        "D:\\XuanYuanDevPlatform\\所需材料表格汇总\\24_宁姆格福_黄金圣物.xlsx"
+      ],
+      "stage_boundary": "initial camp LV1-LV10; NMGF starts from LV10 and ends at last configured row",
+      "script_prefixes": [
+        "XY_NMGF_SWORD",
+        "XY_NMGF_RELIC"
+      ],
+      "database_authority": "Mud2/DB/ApexM2.DB StdItems unique names and Idx",
+      "equipment_state": "highest configured matching item in backpack only",
+      "package_status": "candidate",
+      "contract": "D:\\XuanYuanDevPlatform\\接口\\31_成长装备大陆分段NPC接口.txt"
+    },
+    {
+      "interface_id": "platform.temp_cleaner.safe",
+      "name": "平台临时文件安全清理",
+      "classification": "platform_maintenance",
+      "invocations": [
+        "GUI: D:\\XuanYuanDevPlatform\\bin\\XuanYuanTempCleaner.exe",
+        "CLI: run_cleaner.py scan/quarantine/restore"
+      ],
+      "default_policy": "scan_only_and_select_only_expired_regenerable_caches",
+      "review_only": [
+        "build children",
+        "tmp children",
+        "failed transaction remnants"
+      ],
+      "quarantine_root": "D:\\XuanYuanDevPlatform\\backups\\cleanup_quarantine",
+      "permanent_delete_supported": false,
+      "restore_policy": "receipt_required_and_never_overwrite_existing_path",
+      "contract": "D:\\XuanYuanDevPlatform\\接口\\32_平台临时文件安全清理接口.txt",
+      "package_status": "platform",
+      "residency": "platform"
+    },
+    {
+      "interface_id": "equipment_collection.player.command",
+      "name": "装备收集图鉴玩家命令",
+      "classification": "public_candidate",
+      "invocation": "@装备收集",
+      "context": "player_chat",
+      "usercmd_number": 92,
+      "qfunction_entry": "GOTO @XY_COLLECTION_COMMAND",
+      "workbook": "D:\\XuanYuanDevPlatform\\所需材料表格汇总\\33_装备收集图鉴.xlsx",
+      "appearance_contract": "exact target StdItems.Name -> unique target Idx -> ItemShow target Idx",
+      "item_flags": "400-599",
+      "group_flags": "600-639",
+      "package_id": "xy.optional.equipment-collection",
+      "package_version": "1.0.0-candidate.1",
+      "package_status": "candidate",
+      "residency": "optional",
+      "contract": "D:\\XuanYuanDevPlatform\\接口\\33_装备收集图鉴接口.txt"
+    },
+    {
+      "interface_id": "map.type2.raw_library_remap",
+      "name": "type2地图独立图库换号部署",
+      "classification": "platform_internal",
+      "invocations": [
+        "node .\\scripts\\deploy-star-registered-remap.mjs",
+        "node .\\scripts\\deploy-star-registered-remap.mjs --apply"
+      ],
+      "scope": "type2 MAP library-id remap plus original PAK/WZL rename",
+      "preserves": "image indexes and PAK password tokens",
+      "excludes": "type0 fixed base Tiles/SmTiles",
+      "requires_client_regeneration": true,
+      "package_status": "game_validation_pending",
+      "contract": "D:\\XuanYuanDevPlatform\\接口\\34_星辰地图独立图库换号接口.txt"
+    }
+  ]
+}

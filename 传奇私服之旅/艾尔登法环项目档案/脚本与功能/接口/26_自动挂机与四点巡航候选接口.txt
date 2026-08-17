@@ -1,0 +1,101 @@
+玄渊自动挂机与四点巡航候选接口
+
+当前状态：已部署到 D:\MirServer，待游戏验证；尚未沉淀为平台成果包。
+来源依据：翎风原生内挂触发 + D:\MirServer明月 的四点巡航逻辑。
+
+一、玩家入口
+
+普通自动挂机：
+- 点击客户端 F12 内挂中的挂机按钮；或使用快捷键 CTRL+ALT+X。
+- 引擎触发 QFunction 的 [@StartAutoOnline]，执行 StartAutoPlayGame。
+- 再次停止时触发 [@StopAutoOnline]，执行 StopAutoPlayGame。
+
+四点挂机巡航：
+- 玩家聊天框输入：@挂机巡航
+- UserCmd 编号：91
+- QFunction 内部入口：GOTO @XY_PATROL_MAIN
+
+二、玩家操作顺序
+
+1. 先在 F12 挂机设置中配置职业技能、捡物、挂机范围等内挂参数。
+2. 依次到四个希望巡航的位置，输入 @挂机巡航，点击对应的“记录当前位置”。
+3. 四个点都记录完成后，点击“开启四点巡航”。
+4. 角色立即启动原生自动挂机。
+5. 连续60秒没有产生攻击事件时，依次前往一、二、三、四号点并循环。
+6. 切图后等待个人定时器下一次触发，再自动恢复挂机。
+7. 输入 @挂机巡航 后点击“停止挂机巡航”，或按 CTRL+ALT+X 停止。
+
+三、当前行为约定
+
+- 复制的是明月的挂机与巡航机制，不复制“充值积分、明月捐献、仙人祝福”等收费条件。
+- 巡航点使用玩家当前所在逻辑地图号与可走坐标。
+- 当前四点配置只在本次角色在线会话中保存；重新登录后需要重新记录。这与明月使用临时 T 变量的语义一致。
+- 巡航只负责切换记录点和重新启动原生挂机；具体技能、捡物、挂机点生成仍由客户端 F12 内挂设置负责。
+- 普通挂机不自动开启巡航。只有在巡航面板点击“开启四点巡航”后才启用四点轮换。
+- 停止普通挂机时会同步关闭巡航定时器，避免玩家停止后又被自动拉起。
+
+四、内部占用
+
+个人定时器：98（候选独占）
+玩家命令：UserCmd 91
+
+变量：
+- N$XY_PATROL_INIT
+- N$XY_PATROL_ACTIVE
+- N$XY_PATROL_INDEX
+- N$XY_PATROL_CD
+- N$XY_PATROL_RESTART
+- S$XY_PATROL_MAP1～S$XY_PATROL_MAP4
+- N$XY_PATROL_X1～N$XY_PATROL_X4
+- N$XY_PATROL_Y1～N$XY_PATROL_Y4
+
+事件标签：
+- @StartAutoOnline
+- @StopAutoOnline
+- @Attack
+- @OnTimer98
+- @UserCmd91
+- @XY_PATROL_MAIN
+
+五、已修改文件
+
+- D:\MirServer\Mir200\Envir\Market_Def\QFunction-0.txt
+- D:\MirServer\Mir200\Envir\MapQuest_def\QManage.txt
+- D:\MirServer\Mir200\Envir\UserCmd.txt
+
+受管块：
+- XY-AUTOPLAY-PATROL-CANDIDATE-V1
+- XY-AUTOPLAY-PATROL-TIMER-CANDIDATE-V1
+
+六、调用限制
+
+- @XY_PATROL_MAIN 是当前 QFunction 内部 GOTO 入口，不是跨文件 #CALL 接口。
+- NPC、外部 QuestDiary 文件或屏幕按钮不得复制巡航核心；如需新增入口，应在 QFunction 唯一入口内受管接线。
+- 定时器98和UserCmd 91在该候选存在期间禁止其他功能复用。
+- 禁止同时再建立第二套 [@StartAutoOnline]、[@StopAutoOnline] 或 [@Attack] 标签。
+- 新版挂机 OpenAutoPlayGame/StartNewAutoPlayGame 尚未接入，不要与本候选混装。
+
+七、备份与回滚
+
+逐字节备份：
+D:\XuanYuanDevPlatform\backups\20260806_224919_autoplay_patrol_before
+
+回滚脚本：
+D:\XuanYuanDevPlatform\backups\20260806_224919_autoplay_patrol_before\rollback.ps1
+
+回滚脚本只接受当前候选三文件哈希；如果候选部署后又有其他脚本改动，会保护性停止，禁止覆盖后续成果。
+
+八、游戏验收
+
+1. 重载或重启 M2 后重新登录。
+2. 按 CTRL+ALT+X，确认出现“自动挂机已开启”，人物开始原生挂机。
+3. 再按一次，确认挂机停止。
+4. 输入 @挂机巡航，确认面板打开。
+5. 分别记录四个不同地图或坐标，并确认页面显示正确。
+6. 开启巡航，攻击怪物时等待时间应持续被重置。
+7. 停止攻击60秒，确认依次前往四个点，落地后自动继续挂机。
+8. 运行中打开面板应显示“运行中”和当前倒计时。
+9. 点击停止后等待超过60秒，不得再次传送或重新挂机。
+10. 检查 M2 无重复标签、未知命令、MAPMOVE或定时器脚本错误。
+
+只有上述游戏验收通过后，才允许整理为非常驻成果包并加入平台正式安装流程。

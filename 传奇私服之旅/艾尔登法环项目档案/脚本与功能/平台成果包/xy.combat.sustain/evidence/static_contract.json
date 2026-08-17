@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "package_id": "xy.combat.sustain",
+  "package_version": "1.2.0-candidate.1",
+  "status": "candidate",
+  "engine_contracts": {
+    "life_steal": "QFunction [@Attack] -> PVE target check -> CalcPercent <$PKPOWER> <percent> -> HumanHP + result",
+    "life_steal_scope": "PVE only",
+    "life_steal_state_timer": "none",
+    "regen": "HumanHP + <fixed_value>",
+    "tick": "SetOnTimer 19 1 -> QManage [@OnTimer19]",
+    "timer_index": 19,
+    "timer_interval_seconds": 1,
+    "regen_value_route": "XLSX fixed value -> QManage HumanHP + literal"
+  },
+  "equipment_contracts": {
+    "吸血": {
+      "bind_type": 54,
+      "anchor": "XY_EQUIP_MAKER_LIFESTEAL_ANCHOR",
+      "unit": "%"
+    },
+    "每秒回血": {
+      "bind_type": 55,
+      "anchors": [
+        "XY_EQUIP_MAKER_HP_REGEN_ACTIVE_ANCHOR",
+        "XY_EQUIP_MAKER_HP_REGEN_TICK_ANCHOR"
+      ],
+      "unit": "fixed_hp_per_second"
+    }
+  },
+  "automated_evidence": [
+    "tests/test_sustain_package.py",
+    "做装备/tests/test_equipment_preflight.py",
+    "做装备/tests/test_equipment_transaction.py",
+    "做装备/tests/test_legacy_contract.py"
+  ],
+  "automated_results": {
+    "sustain_tests": 7,
+    "related_platform_tests": 59,
+    "platform_tests_total": 321,
+    "platform_known_unrelated_failures": 5,
+    "platform_known_unrelated_errors": 3,
+    "equipment_tests": 122,
+    "status": "passed_without_new_regressions"
+  },
+  "portable_verification": {
+    "package_validation": "passed",
+    "isolated_upgrade_from_live_snapshot": "passed_transaction_20260809_091102_c6d74000",
+    "isolated_equipment_update_from_master_xlsx": "passed_without_blockers",
+    "isolated_package_idempotence_after_equipment_blocks": "passed_zero_changes",
+    "isolated_package_byte_rollback": "passed_qfunction_and_qmanage_restored",
+    "formal_gui_sha256_unchanged": "C5AF7FB3BE5B4C8C36EE84DB8C8973A5865CF31686BDD24616BBB10F8553FA90",
+    "formal_cli_sha256_unchanged": "4828844791DB18015B2A9C32C58339BC77FCE2D94F08D0459770EC50390E0AE8",
+    "source_cli_package_validation": "passed",
+    "portable_cli_idempotent_preflight": "passed_zero_changes",
+    "live_install_transaction": "20260809_091155_2dc540c1",
+    "live_qfunction_sha256": "B1DFFEF0F8B156E3E54121A228FFF3475287C8CADAAE61F3B849CCC6D1F92AB9",
+    "publish_state": "source_candidate_installed_formal_bin_remains_r49.9"
+  },
+  "game_acceptance": {
+    "golden_relic_lv8_direct_regen_1200_per_second": "passed",
+    "generic_platform_chain": "pending_in_game_regression",
+    "life_steal": "pending_in_game_regression"
+  }
+}

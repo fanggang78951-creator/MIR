@@ -1,0 +1,100 @@
+{
+  "passed": true,
+  "checks": [
+    {
+      "检查": "核心档案:README.md",
+      "通过": true,
+      "详情": "C:\\Users\\Administrator\\Documents\\做传奇\\传奇私服之旅\\艾尔登法环项目档案\\README.md"
+    },
+    {
+      "检查": "核心档案:00_项目总纲.md",
+      "通过": true,
+      "详情": "C:\\Users\\Administrator\\Documents\\做传奇\\传奇私服之旅\\艾尔登法环项目档案\\00_项目总纲.md"
+    },
+    {
+      "检查": "核心档案:01_当前任务指针.txt",
+      "通过": true,
+      "详情": "C:\\Users\\Administrator\\Documents\\做传奇\\传奇私服之旅\\艾尔登法环项目档案\\01_当前任务指针.txt"
+    },
+    {
+      "检查": "核心档案:02_已确认规则与数值.xlsx",
+      "通过": true,
+      "详情": "C:\\Users\\Administrator\\Documents\\做传奇\\传奇私服之旅\\艾尔登法环项目档案\\02_已确认规则与数值.xlsx"
+    },
+    {
+      "检查": "核心档案:03_变更记录.md",
+      "通过": true,
+      "详情": "C:\\Users\\Administrator\\Documents\\做传奇\\传奇私服之旅\\艾尔登法环项目档案\\03_变更记录.md"
+    },
+    {
+      "检查": "核心档案:04_每日设计更新.md",
+      "通过": true,
+      "详情": "C:\\Users\\Administrator\\Documents\\做传奇\\传奇私服之旅\\艾尔登法环项目档案\\04_每日设计更新.md"
+    },
+    {
+      "检查": "核心档案:05_当前有效游戏设计总档.md",
+      "通过": true,
+      "详情": "C:\\Users\\Administrator\\Documents\\做传奇\\传奇私服之旅\\艾尔登法环项目档案\\05_当前有效游戏设计总档.md"
+    },
+    {
+      "检查": "核心档案:06_脚本功能总台账.xlsx",
+      "通过": true,
+      "详情": "C:\\Users\\Administrator\\Documents\\做传奇\\传奇私服之旅\\艾尔登法环项目档案\\06_脚本功能总台账.xlsx"
+    },
+    {
+      "检查": "功能台账数量",
+      "通过": true,
+      "详情": 36
+    },
+    {
+      "检查": "正式服收据范围数量",
+      "通过": true,
+      "详情": 31
+    },
+    {
+      "检查": "明确版本漂移数量",
+      "通过": true,
+      "详情": [
+        "xy.native.initial-bag-200",
+        "xy.ops.first-pick",
+        "xy.optional.donate.core",
+        "xy.optional.item-synthesis",
+        "xy.optional.rage.core",
+        "xy.ui.attr-overview"
+      ]
+    },
+    {
+      "检查": "脚本静态问题为零",
+      "通过": true,
+      "详情": 0
+    },
+    {
+      "检查": "正式服脚本数量",
+      "通过": true,
+      "详情": 65
+    },
+    {
+      "检查": "无地图/装备内容包混入",
+      "通过": true,
+      "详情": []
+    },
+    {
+      "检查": "地图核心表未生成",
+      "通过": true,
+      "详情": "用户最终排除"
+    },
+    {
+      "检查": "原始/UTF8脚本副本数量",
+      "通过": true,
+      "详情": [
+        65,
+        65
+      ]
+    },
+    {
+      "检查": "XLSX公式错误",
+      "通过": true,
+      "详情": []
+    }
+  ]
+}

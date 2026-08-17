@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "id": "xy.combat.monster-damage-absorb",
+  "version": "1.0.0",
+  "display_name": "对怪伤害吸收与上限",
+  "status": "verified",
+  "engine": "LFM2",
+  "residency": "resident",
+  "bundle": "combat-suite",
+  "dependencies": [
+    "xy.combat.core"
+  ],
+  "parameters": {},
+  "claims": {
+    "labels": [
+      "XYDP_RecalcMonsterAbsorb",
+      "XYDP_MonsterAbsorbTick"
+    ],
+    "variables": [
+      "N$XY_MDA_Raw",
+      "N$XY_MDA_CapBonus",
+      "N$XY_MDA_Cap",
+      "N$XY_MDA_Final",
+      "N$XY_MDA_TimerActive",
+      "N$XY_MDA_TimerLoop"
+    ],
+    "maps": [],
+    "npcs": []
+  },
+  "operations": [
+    {
+      "type": "managed_block",
+      "target": "Mir200/Envir/Market_Def/QFunction-0.txt",
+      "content": "[@XYDP_RecalcMonsterAbsorb]\n#IF\n#ACT\nMOV N$XY_MDA_Raw 0\nMOV N$XY_MDA_CapBonus 0\nMOV N$XY_MDA_Cap 60\nMOV N$XY_MDA_Final 0\n; XYDP-EXTENSION-BEGIN EQUIP_MONSTER_ABSORB\n; XY_EQUIP_MAKER_MONSTER_ABSORB_ANCHOR\n; XYDP-EXTENSION-END EQUIP_MONSTER_ABSORB\n; XYDP-EXTENSION-BEGIN EQUIP_MONSTER_ABSORB_CAP\n; XY_EQUIP_MAKER_MONSTER_ABSORB_CAP_ANCHOR\n; XYDP-EXTENSION-END EQUIP_MONSTER_ABSORB_CAP\n#IF\nLARGE N$XY_MDA_CapBonus 25\n#ACT\nMOV N$XY_MDA_CapBonus 25\n#IF\n#ACT\nINC N$XY_MDA_Cap <$STR(N$XY_MDA_CapBonus)>\nMOV N$XY_MDA_Final <$STR(N$XY_MDA_Raw)>\n#IF\nLARGE N$XY_MDA_Final <$STR(N$XY_MDA_Cap)>\n#ACT\nMOV N$XY_MDA_Final <$STR(N$XY_MDA_Cap)>\n#IF\nEQUAL N$XY_MDA_Final 0\n#ACT\nStruckDamageAbsorb * 100 1 1\nMOV N$XY_MDA_TimerActive 0\nBREAK\n#IF\nLARGE N$XY_MDA_Final 0\n#ACT\nStruckDamageAbsorb * 100 <$STR(N$XY_MDA_Final)> 300\nMOV N$XY_MDA_TimerActive 1\n#IF\nEQUAL N$XY_MDA_TimerLoop 0\n#ACT\nMOV N$XY_MDA_TimerLoop 1\nDELAYGOTO 240 @XYDP_MonsterAbsorbTick\nBREAK\n\n[@XYDP_MonsterAbsorbTick]\n#IF\nEQUAL N$XY_MDA_TimerActive 1\n#ACT\nDELAYGOTO 1 @XYDP_RecalcMonsterAbsorb\nDELAYGOTO 240 @XYDP_MonsterAbsorbTick\nBREAK\n#IF\nEQUAL N$XY_MDA_TimerActive 0\n#ACT\nMOV N$XY_MDA_TimerLoop 0\nBREAK"
+    },
+    {
+      "type": "event_hook",
+      "target": "Mir200/Envir/Market_Def/QFunction-0.txt",
+      "label": "PlayLogin",
+      "content": "#IF\n#ACT\nMOV N$XY_MDA_TimerActive 0\nMOV N$XY_MDA_TimerLoop 0\nDELAYGOTO 4 @XYDP_RecalcMonsterAbsorb"
+    },
+    {
+      "type": "event_hook",
+      "target": "Mir200/Envir/Market_Def/QFunction-0.txt",
+      "label": "TakeOnEx",
+      "content": "#IF\n#ACT\nDELAYGOTO 4 @XYDP_RecalcMonsterAbsorb"
+    },
+    {
+      "type": "event_hook",
+      "target": "Mir200/Envir/Market_Def/QFunction-0.txt",
+      "label": "TakeOffEx",
+      "content": "#IF\n#ACT\nDELAYGOTO 4 @XYDP_RecalcMonsterAbsorb"
+    }
+  ],
+  "preflight_checks": [],
+  "post_checks": [],
+  "evidence": [
+    "game:evidence/20260725_game_acceptance.md",
+    "formula:min(raw,60+min(cap_bonus,25))",
+    "engine:StruckDamageAbsorb-monster-only",
+    "probe:one-percent-one-second-clears-previous-state"
+  ]
+}

@@ -1,0 +1,15 @@
+# 正式服原始脚本必须逐字节保存，禁止Git换行转换。
+传奇私服之旅/艾尔登法环项目档案/脚本与功能/快照/正式服原始脚本/** -text whitespace=-blank-at-eol,-blank-at-eof
+
+# UTF-8可读副本仍是脚本证据，保留脚本语义需要的原有尾随空格。
+传奇私服之旅/艾尔登法环项目档案/脚本与功能/快照/正式服脚本UTF8/** whitespace=-blank-at-eol,-blank-at-eof
+
+# 平台成果包是现状证据副本；保留其中脚本原有行尾空格，不做格式化改写。
+传奇私服之旅/艾尔登法环项目档案/脚本与功能/平台成果包/** whitespace=-blank-at-eol,-blank-at-eof
+
+# 接口和配置母表同样是外部现状证据，不在归档时重排原文件格式。
+传奇私服之旅/艾尔登法环项目档案/脚本与功能/接口/** whitespace=-blank-at-eol,-blank-at-eof
+传奇私服之旅/艾尔登法环项目档案/脚本与功能/配置母表/** whitespace=-blank-at-eol,-blank-at-eof
+
+# 二进制工作簿按原始字节存储。
+*.xlsx binary

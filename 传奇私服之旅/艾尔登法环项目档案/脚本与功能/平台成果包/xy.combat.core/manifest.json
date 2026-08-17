@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "id": "xy.combat.core",
+  "version": "1.2.0",
+  "display_name": "战斗附加属性公共契约",
+  "status": "verified",
+  "engine": "LFM2",
+  "residency": "resident",
+  "bundle": "combat-suite",
+  "dependencies": [],
+  "parameters": {},
+  "claims": {
+    "labels": [],
+    "variables": [],
+    "maps": [],
+    "npcs": []
+  },
+  "operations": [
+    {
+      "type": "ensure_event_label",
+      "target": "Mir200/Envir/Market_Def/QFunction-0.txt",
+      "label": "PlayLogin"
+    },
+    {
+      "type": "ensure_event_label",
+      "target": "Mir200/Envir/Market_Def/QFunction-0.txt",
+      "label": "TakeOnEx"
+    },
+    {
+      "type": "ensure_event_label",
+      "target": "Mir200/Envir/Market_Def/QFunction-0.txt",
+      "label": "TakeOffEx"
+    },
+    {
+      "type": "ensure_event_label",
+      "target": "Mir200/Envir/Market_Def/QFunction-0.txt",
+      "label": "AttackDamage"
+    },
+    {
+      "type": "ensure_event_label",
+      "target": "Mir200/Envir/Market_Def/QFunction-0.txt",
+      "label": "KillMon"
+    },
+    {
+      "type": "config_set",
+      "target": "Mir200/!setup.txt",
+      "values": {
+        "SendItemDescList": "1",
+        "SendTzItemDescList": "1"
+      },
+      "target_encoding": "gb18030"
+    }
+  ],
+  "preflight_checks": [],
+  "post_checks": [],
+  "evidence": [
+    "static:equipment_contract",
+    "source:XY-SKILL-028",
+    "platform:event-bootstrap-contract"
+  ]
+}

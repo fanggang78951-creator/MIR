@@ -1,0 +1,9 @@
+状态：平台验证通过。
+成果包：xy.optional.equipment-wash-opening 1.0.0 verified。
+源码validate-package：通过。
+冻结xydp-cli validate-package：通过。
+专项测试：4/4通过，覆盖清单、正确绝对坐标、独立安装、幂等、缺客户端阻止和逐字节回滚。
+其余平台回归：排除已知无关的initial_camp与monster_workbook后，277/277通过。
+全量301项中4失败3错误均与本包无关：当前捐献母表和旧夹具不一致6项；系统Python缺少openpyxl 1项。
+成果包模板已将M2的字面花括号转义，安装生成脚本与游戏验收版逐字一致。
+本轮没有通过成果包安装流程修改当前真实服务端。

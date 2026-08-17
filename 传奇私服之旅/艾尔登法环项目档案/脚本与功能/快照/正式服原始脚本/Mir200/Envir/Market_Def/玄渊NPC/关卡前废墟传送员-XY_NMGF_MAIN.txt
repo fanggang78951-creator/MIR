@@ -1,0 +1,11 @@
+[@Main]
+#SAY
+这里通往关卡前废墟。\ \
+<前往关卡前废墟/@Go>
+<关闭/@exit>
+
+[@Go]
+#IF
+#ACT
+MAPMOVE XX125 83 87
+BREAK

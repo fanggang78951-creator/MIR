@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "id": "xy.combat.execute",
+  "version": "1.0.1-candidate.1",
+  "display_name": "首刀与尾刀累计斩杀",
+  "status": "candidate",
+  "engine": "LFM2",
+  "residency": "resident",
+  "bundle": "combat-suite",
+  "dependencies": [
+    "xy.combat.core",
+    "xy.combat.pve"
+  ],
+  "parameters": {},
+  "claims": {
+    "labels": [],
+    "variables": [],
+    "maps": [],
+    "npcs": []
+  },
+  "operations": [
+    {
+      "type": "event_hook",
+      "target": "Mir200/Envir/Market_Def/QFunction-0.txt",
+      "label": "AttackDamage",
+      "content": "#IF\nLARGE N$XY_TailKillRate 0\nM.CheckHpPer < <$STR(N$XY_TailKillRate)>\nNOT CHECKTEXTLIST ..\\QuestDiary\\玄渊临时\\XYDP_尾刀记录.txt <$ATTACKMONSTER_NAMEEX>|<$ATTACKMONSTER_XEX>|<$ATTACKMONSTER_YEX>\n#ACT\nM.AddhpPer - 100\nAddTextListEx ..\\QuestDiary\\玄渊临时\\XYDP_尾刀记录.txt <$ATTACKMONSTER_NAMEEX>|<$ATTACKMONSTER_XEX>|<$ATTACKMONSTER_YEX> 0\nBREAK\n#IF\nLARGE N$XY_FirstKillRate 0\nNOT CHECKTEXTLIST ..\\QuestDiary\\玄渊临时\\XYDP_首刀记录.txt <$ATTACKMONSTER_NAMEEX>|<$ATTACKMONSTER_XEX>|<$ATTACKMONSTER_YEX>\n#ACT\nM.AddhpPer - <$STR(N$XY_FirstKillRate)>\nAddTextListEx ..\\QuestDiary\\玄渊临时\\XYDP_首刀记录.txt <$ATTACKMONSTER_NAMEEX>|<$ATTACKMONSTER_XEX>|<$ATTACKMONSTER_YEX> 0"
+    }
+  ],
+  "preflight_checks": [],
+  "post_checks": [],
+  "evidence": [
+    "tool-test:20260703_1636",
+    "game-validation:required"
+  ]
+}

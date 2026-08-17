@@ -1,0 +1,59 @@
+[@Main]
+#IF
+CHECKFENGHAO 沉王终结者
+#ACT
+GOTO @XY_SOUL_KING_DONE
+BREAK
+#ELSEACT
+GOTO @XY_SOUL_KING_QUEST
+BREAK
+
+[@XY_SOUL_KING_QUEST]
+#SAY
+<沉王终曲/FCOLOR=250>\
+王庭沉入深海后，我仍在记录每一位失去姓名的王族与祭司。\
+只要沉没之王的魂核尚存，王庭就会不断唤醒旧日的禁卫与亡魂。\
+集齐最后五件魂魄信物，终结奥德里安的统治，为漂流群岛写下结局。\ \
+<需要：失冠徽记×1、沉默祷文×1、亲卫长残魂×1/FCOLOR=146>\
+<　　　深潮祭冠×1、沉王魂核×1/FCOLOR=146>\
+<奖励：沉王终结者；韧性+20；攻魔道30-30/FCOLOR=251>\ \
+<提交五件魂魄信物/@XY_SOUL_KING_SUBMIT>　<离开/@exit>
+
+[@XY_SOUL_KING_SUBMIT]
+#IF
+CHECKITEM 失冠徽记 1
+CHECKITEM 沉默祷文 1
+CHECKITEM 亲卫长残魂 1
+CHECKITEM 深潮祭冠 1
+CHECKITEM 沉王魂核 1
+#ACT
+GIVEFENGHAO 沉王终结者 1
+GOTO @XY_SOUL_KING_CONFIRM
+BREAK
+#ELSEACT
+MESSAGEBOX 材料不足：需要失冠徽记、沉默祷文、亲卫长残魂、深潮祭冠、沉王魂核各1个。
+BREAK
+
+[@XY_SOUL_KING_CONFIRM]
+#IF
+CHECKFENGHAO 沉王终结者
+#ACT
+TAKE 失冠徽记 1
+TAKE 沉默祷文 1
+TAKE 亲卫长残魂 1
+TAKE 深潮祭冠 1
+TAKE 沉王魂核 1
+SENDMSG 6 [沉王终曲] 任务完成，获得称号“沉王终结者”。
+GOTO @XY_SOUL_KING_DONE
+BREAK
+#ELSEACT
+MESSAGEBOX 称号授予失败，所有魂魄材料均未扣除，请联系管理员。
+BREAK
+
+[@XY_SOUL_KING_DONE]
+#SAY
+<沉王终曲/FCOLOR=250>\
+沉王的统治已经终结。你已完成本地图魂魄任务。\
+<称号：沉王终结者/FCOLOR=251>\
+<奖励：韧性+20；攻击、魔法、道术30-30/FCOLOR=251>\ \
+<离开/@exit>

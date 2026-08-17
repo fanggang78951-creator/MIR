@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "package_id": "xy.optional.equipment-collection",
+  "version": "1.0.0-candidate.10",
+  "status": "candidate",
+  "install_route": "equipment-collection",
+  "source_of_truth": {
+    "compiler": "D:\\XuanYuanDevPlatform\\src\\xydp\\equipment_collection.py",
+    "workbook": "D:\\XuanYuanDevPlatform\\所需材料表格汇总\\33_装备收集图鉴.xlsx",
+    "interface": "D:\\XuanYuanDevPlatform\\接口\\33_装备收集图鉴接口.txt",
+    "assets": "D:\\XuanYuanDevPlatform\\labs\\equipment_collection\\graphical_candidate\\build"
+  },
+  "sha256": {
+    "compiler": "553b55f52251f196da30972487b845d8e3c48afca8164f04872735d6c7ffd068",
+    "workbook": "f6042c41eb6674a654b9649d36d4e30ba4774459c2df4a807341b4e0dd372876",
+    "interface": "d120e90c22d2cb26d2bce9b0eda30143e2eea7631962e837319fa5e2f09b417e",
+    "wzl": "81a6229e3e8b1a00914cc0fd2996eb288b09d14d6a6c4b022e5473641cb3bd96",
+    "wzx": "bb0ac9eba56450cf0441b24759ae250a80156bd46b5fadded78a2e11956c88bc"
+  },
+  "static_verification": {
+    "targeted_tests_passed": 22,
+    "compileall": "passed",
+    "repository_discovery": "passed",
+    "generic_install_guard": "passed",
+    "specialized_config_route": "passed",
+    "full_suite": "352项中345通过；5失败2错误均为既有initial_camp/growth_stage业务表漂移基线，不属于本包"
+  },
+  "portable_build": {
+    "output": "D:\\XuanYuanDevPlatform\\outputs\\equipment_collection_package_20260815_0818",
+    "gui_sha256": "5b4a079d96403a1d59df8b3086a76a0efee7f2c7874a4f356aee0655eff878e1",
+    "cli_sha256": "1b32ebd67853991836c9b4ca9093477d6e52bd427604d3977e3f303b7d432227",
+    "formal_bin_matches_build": true,
+    "frozen_cli_package_discovery": "passed",
+    "frozen_cli_validate_package": "passed",
+    "formal_gui_hidden_smoke": "运行6秒保持存活，测试后平台进程残留0"
+  },
+  "state_contract": {
+    "collection_items": "400-599",
+    "collection_groups": "600-639",
+    "default_user_command": 92
+  },
+  "transactions": {
+    "candidate_10_install": "20260814_211109_ef99a920",
+    "candidate_10_rollback_evidence": "20260814_211109_ef99a920"
+  },
+  "game_acceptance": {
+    "single_item_activation_and_rewards": "passed",
+    "all_items_group_reward": "passed",
+    "duplicate_activation_guard": "passed",
+    "continent_dynamic_hover": "pending",
+    "current_page_batch_collection": "pending"
+  },
+  "design_decision": "不保存某一服务端生成的QFunction或Idx；每次植入必须从33号母表和目标服StdItems重新编译。"
+}

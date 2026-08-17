@@ -1,0 +1,251 @@
+{
+  "schema_version": 1,
+  "id": "xy.optional.equipment-wash-opening",
+  "version": "1.0.0",
+  "display_name": "装备洗练与开光（可拖动绝对坐标操作台）",
+  "status": "verified",
+  "engine": "LFM2",
+  "residency": "optional",
+  "bundle": "equipment-service",
+  "dependencies": [],
+  "parameters": {
+    "wash_npc_script": {
+      "type": "string",
+      "required": true,
+      "default": "玄渊实验室/装备洗练"
+    },
+    "wash_npc_display": {
+      "type": "string",
+      "required": true,
+      "default": "装备洗练"
+    },
+    "wash_npc_map": {
+      "type": "string",
+      "required": true,
+      "default": "XY_NMGF_MAIN"
+    },
+    "wash_npc_x": {
+      "type": "integer",
+      "required": true,
+      "default": 104
+    },
+    "wash_npc_y": {
+      "type": "integer",
+      "required": true,
+      "default": 75
+    },
+    "wash_npc_appearance": {
+      "type": "integer",
+      "required": true,
+      "default": 220
+    },
+    "open_npc_script": {
+      "type": "string",
+      "required": true,
+      "default": "玄渊实验室/装备开光"
+    },
+    "open_npc_display": {
+      "type": "string",
+      "required": true,
+      "default": "装备开光"
+    },
+    "open_npc_map": {
+      "type": "string",
+      "required": true,
+      "default": "XY_NMGF_MAIN"
+    },
+    "open_npc_x": {
+      "type": "integer",
+      "required": true,
+      "default": 104
+    },
+    "open_npc_y": {
+      "type": "integer",
+      "required": true,
+      "default": 77
+    },
+    "open_npc_appearance": {
+      "type": "integer",
+      "required": true,
+      "default": 221
+    }
+  },
+  "claims": {
+    "labels": [],
+    "variables": [],
+    "maps": [],
+    "npcs": [
+      "装备洗练",
+      "装备开光"
+    ]
+  },
+  "operations": [
+    {
+      "type": "unique_line",
+      "target": "Mir200/Envir/EffectImageList.txt",
+      "line": "XY_EquipmentWorkbench.wz",
+      "key_fields": [
+        0
+      ]
+    },
+    {
+      "type": "copy",
+      "source": "payload/server/core/仙级直出.txt",
+      "target": "Mir200/Envir/QuestDiary/玄渊实验室/装备洗练/仙级直出.txt"
+    },
+    {
+      "type": "copy",
+      "source": "payload/server/core/圣级直出.txt",
+      "target": "Mir200/Envir/QuestDiary/玄渊实验室/装备洗练/圣级直出.txt"
+    },
+    {
+      "type": "copy",
+      "source": "payload/server/core/天赐开光.txt",
+      "target": "Mir200/Envir/QuestDiary/玄渊实验室/装备洗练/天赐开光.txt"
+    },
+    {
+      "type": "copy",
+      "source": "payload/server/core/神佑开光.txt",
+      "target": "Mir200/Envir/QuestDiary/玄渊实验室/装备洗练/神佑开光.txt"
+    },
+    {
+      "type": "render",
+      "source": "payload/server/npc/装备洗练.txt",
+      "target": "Mir200/Envir/Market_Def/{wash_npc_script}-{wash_npc_map}.txt",
+      "source_encoding": "utf-8",
+      "target_encoding": "gb18030",
+      "newline": "\r\n"
+    },
+    {
+      "type": "render",
+      "source": "payload/server/npc/装备开光.txt",
+      "target": "Mir200/Envir/Market_Def/{open_npc_script}-{open_npc_map}.txt",
+      "source_encoding": "utf-8",
+      "target_encoding": "gb18030",
+      "newline": "\r\n"
+    },
+    {
+      "type": "exclusive_unique_line",
+      "target": "Mir200/Envir/MerChant.txt",
+      "target_encoding": "gb18030",
+      "line": "{wash_npc_script}\t{wash_npc_map}\t{wash_npc_x}\t{wash_npc_y}\t{wash_npc_display}\t0\t{wash_npc_appearance}\t0",
+      "key_fields": [
+        0
+      ]
+    },
+    {
+      "type": "exclusive_unique_line",
+      "target": "Mir200/Envir/MerChant.txt",
+      "target_encoding": "gb18030",
+      "line": "{open_npc_script}\t{open_npc_map}\t{open_npc_x}\t{open_npc_y}\t{open_npc_display}\t0\t{open_npc_appearance}\t0",
+      "key_fields": [
+        0
+      ]
+    },
+    {
+      "type": "binary_copy",
+      "source": "payload/client/XY_EquipmentWorkbench.wzl",
+      "target": "data/XY_EquipmentWorkbench.wzl",
+      "scope": "client"
+    },
+    {
+      "type": "binary_copy",
+      "source": "payload/client/XY_EquipmentWorkbench.wzx",
+      "target": "data/XY_EquipmentWorkbench.wzx",
+      "scope": "client"
+    }
+  ],
+  "preflight_checks": [
+    {
+      "type": "file_exists",
+      "path": "Mir200/Envir/MerChant.txt"
+    },
+    {
+      "type": "file_exists",
+      "path": "Mir200/Envir/EffectImageList.txt"
+    },
+    {
+      "type": "file_exists",
+      "path": "Mir200/Envir/MapInfo.txt"
+    },
+    {
+      "type": "text_contains",
+      "path": "Mir200/Envir/MapInfo.txt",
+      "text": "[{wash_npc_map}"
+    },
+    {
+      "type": "text_contains",
+      "path": "Mir200/Envir/MapInfo.txt",
+      "text": "[{open_npc_map}"
+    }
+  ],
+  "post_checks": [
+    {
+      "type": "sha256",
+      "path": "Mir200/Envir/Market_Def/{wash_npc_script}-{wash_npc_map}.txt",
+      "value": "D51CA2D0828AC7D8C07A771B1E1AC68CC93F6EF4E8E2A543B49F3B603E95A0BD"
+    },
+    {
+      "type": "sha256",
+      "path": "Mir200/Envir/Market_Def/{open_npc_script}-{open_npc_map}.txt",
+      "value": "8BB71E8B6FA85562C9612C7BA5D64352C4D21978293BA455FA0696B5383DCAA2"
+    },
+    {
+      "type": "sha256",
+      "path": "Mir200/Envir/QuestDiary/玄渊实验室/装备洗练/仙级直出.txt",
+      "value": "04CA49BB6CD51BA3C06EF3F846B81BC21A2DBE3D2183ABB886EB80DA92428F9E"
+    },
+    {
+      "type": "sha256",
+      "path": "Mir200/Envir/QuestDiary/玄渊实验室/装备洗练/圣级直出.txt",
+      "value": "608598D30E668194724EB321B05CBD57839A722AED71D3E48F3310A97FB12CEE"
+    },
+    {
+      "type": "sha256",
+      "path": "Mir200/Envir/QuestDiary/玄渊实验室/装备洗练/天赐开光.txt",
+      "value": "5A2F0AC58C1991689CF8A71BCB1FC2563AF7BADF5B53672D1D68E9A06C77F9F5"
+    },
+    {
+      "type": "sha256",
+      "path": "Mir200/Envir/QuestDiary/玄渊实验室/装备洗练/神佑开光.txt",
+      "value": "33408AAC3D668384DE180B185E8702EDC3B0D0748F14FB6C0DB81B229F9B5B0D"
+    },
+    {
+      "type": "text_contains",
+      "path": "Mir200/Envir/EffectImageList.txt",
+      "text": "XY_EquipmentWorkbench.wz"
+    },
+    {
+      "type": "text_contains",
+      "path": "Mir200/Envir/MerChant.txt",
+      "text": "{wash_npc_script}\t{wash_npc_map}\t{wash_npc_x}\t{wash_npc_y}\t{wash_npc_display}\t0\t{wash_npc_appearance}\t0"
+    },
+    {
+      "type": "text_contains",
+      "path": "Mir200/Envir/MerChant.txt",
+      "text": "{open_npc_script}\t{open_npc_map}\t{open_npc_x}\t{open_npc_y}\t{open_npc_display}\t0\t{open_npc_appearance}\t0"
+    },
+    {
+      "type": "sha256",
+      "path": "data/XY_EquipmentWorkbench.wzl",
+      "scope": "client",
+      "value": "70A2A24D7F4D675E8C1E1DE4CFD3C9ECBBFAE6C83BE7BAFDE281BF56805C46A0"
+    },
+    {
+      "type": "sha256",
+      "path": "data/XY_EquipmentWorkbench.wzx",
+      "scope": "client",
+      "value": "7F1443FB46506C5DCB36F7A2699608C93ECD3ADFDDC69A6525DA8AEA5E2ECC2A"
+    }
+  ],
+  "evidence": [
+    "game:evidence/game_acceptance_20260808.md",
+    "static:evidence/static_verification.json",
+    "platform:evidence/platform_verification_20260808.json",
+    "source:evidence/source_install_receipt.json",
+    "resource:effect-image-list-index-12",
+    "resource:independent-wzl-wzx-two-frame-provider-readback",
+    "layout:itembox-first-and-absolute-text",
+    "rollback:required"
+  ]
+}

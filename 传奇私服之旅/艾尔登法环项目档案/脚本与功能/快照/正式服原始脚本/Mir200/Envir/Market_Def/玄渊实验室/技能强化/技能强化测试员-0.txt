@@ -1,0 +1,38 @@
+[@main]
+#SAY
+技能强化测试员：只服务当前实验室，不属于正式运营系统。\
+测试规则：攻杀剑术普通3级后逐级强化，强化9领悟开天斩3级。\
+<补满攻杀剑术3级并领取完整测试资源/@XY_WSU_TEST_GRANT>\
+<只重置攻杀剑术强化等级为0/@XY_WSU_TEST_RESET>\
+<关闭/@exit>
+
+[@XY_WSU_TEST_GRANT]
+#IF
+NOT CheckMagicName 攻杀剑术
+#ACT
+ADDSKILL 攻杀剑术 3
+GOTO @XY_WSU_TEST_GIVE
+
+#IF
+CheckMagicName 攻杀剑术
+CHECKSKILL 攻杀剑术 < 3 0
+#ACT
+SKILLLEVEL 攻杀剑术 = 3 0
+GOTO @XY_WSU_TEST_GIVE
+#ELSEACT
+GOTO @XY_WSU_TEST_GIVE
+
+[@XY_WSU_TEST_GIVE]
+#ACT
+GIVE 金刚石 50
+GIVE 血剑碎片 50
+GAMEGOLD + 455
+GAMEDIAMOND + 50
+SENDMSG 6 已领取测试资源：金刚石×50、血剑碎片×50、元宝×455、账户金刚石×50。
+GOTO @main
+
+[@XY_WSU_TEST_RESET]
+#ACT
+SKILLLEVEL 攻杀剑术 = 0 1
+SENDMSG 6 攻杀剑术强化等级已重置为0；不会删除已经学会的开天斩。
+GOTO @main

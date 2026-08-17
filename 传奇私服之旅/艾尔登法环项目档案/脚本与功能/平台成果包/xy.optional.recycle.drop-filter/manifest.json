@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "id": "xy.optional.recycle.drop-filter",
+  "version": "1.0.0-candidate.1",
+  "display_name": "玄渊掉落信息屏蔽（玩家开关）",
+  "status": "candidate",
+  "engine": "LFM2",
+  "residency": "optional",
+  "bundle": "recycle",
+  "dependencies": [],
+  "parameters": {},
+  "claims": {
+    "labels": [
+      "XY_RECYCLE_DROP_FILTER_COMMAND",
+      "XY_RECYCLE_DROP_FILTER_ENABLE",
+      "XY_RECYCLE_DROP_FILTER_DISABLE"
+    ],
+    "variables": [
+      "N$XY_RecycleDropFilterEnabled"
+    ],
+    "maps": [],
+    "npcs": []
+  },
+  "operations": [
+    {
+      "type": "managed_block",
+      "target": "Mir200/Envir/Market_Def/QFunction-0.txt",
+      "content": "[@XY_RECYCLE_DROP_FILTER_COMMAND]\n#IF\nEQUAL N$XY_RecycleDropFilterEnabled 0\n#ACT\nGOTO @XY_RECYCLE_DROP_FILTER_ENABLE\nBREAK\n#ELSEACT\nGOTO @XY_RECYCLE_DROP_FILTER_DISABLE\nBREAK\n\n[@XY_RECYCLE_DROP_FILTER_ENABLE]\n#IF\n#ACT\nFILTERGLOBALMSG 1 1\nMOV N$XY_RecycleDropFilterEnabled 1\nSENDMSG 6 全服掉落提示信息已屏蔽。\nBREAK\n\n[@XY_RECYCLE_DROP_FILTER_DISABLE]\n#IF\n#ACT\nFILTERGLOBALMSG 1 0\nMOV N$XY_RecycleDropFilterEnabled 0\nSENDMSG 6 全服掉落提示信息已恢复。\nBREAK",
+      "target_encoding": "gb18030"
+    }
+  ],
+  "preflight_checks": [
+    {
+      "type": "file_exists",
+      "path": "Mir200/Envir/Market_Def/QFunction-0.txt"
+    }
+  ],
+  "post_checks": [
+    {
+      "type": "label_exists",
+      "path": "Mir200/Envir/Market_Def/QFunction-0.txt",
+      "label": "XY_RECYCLE_DROP_FILTER_COMMAND"
+    },
+    {
+      "type": "text_contains",
+      "path": "Mir200/Envir/Market_Def/QFunction-0.txt",
+      "text": "FILTERGLOBALMSG 1 1"
+    },
+    {
+      "type": "text_contains",
+      "path": "Mir200/Envir/Market_Def/QFunction-0.txt",
+      "text": "FILTERGLOBALMSG 1 0"
+    }
+  ],
+  "evidence": [
+    "official-engine:FILTERGLOBALMSG-type-1",
+    "reference:Mirserver11-player-toggle",
+    "static:on-off-pair-present",
+    "game:pending-isolated-server"
+  ]
+}

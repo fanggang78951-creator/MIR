@@ -1,0 +1,135 @@
+{
+  "schema_version": 1,
+  "id": "xy.optional.skill-upgrade.warrior.gongsha-kaitian",
+  "version": "1.0.0",
+  "display_name": "战士技能强化：攻杀剑术→开天斩",
+  "status": "verified",
+  "engine": "LFM2",
+  "residency": "optional",
+  "bundle": "skill-upgrade",
+  "dependencies": [],
+  "parameters": {},
+  "claims": {
+    "labels": [
+      "SkillLevelEx7",
+      "XY_WSU_7_DISPATCH",
+      "XY_WSU_7_L1_CONFIRM",
+      "XY_WSU_7_L2_CONFIRM",
+      "XY_WSU_7_L3_CONFIRM",
+      "XY_WSU_7_L4_CONFIRM",
+      "XY_WSU_7_L5_CONFIRM",
+      "XY_WSU_7_L6_CONFIRM",
+      "XY_WSU_7_L7_CONFIRM",
+      "XY_WSU_7_L8_CONFIRM",
+      "XY_WSU_7_L9_CONFIRM",
+      "XY_WSU_7_UNLOCK",
+      "XY_WSU_LOGIN_BACKFILL",
+      "XY_WSU_BACKFILL_1",
+      "XY_WSU_BACKFILL_NEXT_1"
+    ],
+    "variables": [],
+    "maps": [],
+    "npcs": []
+  },
+  "operations": [
+    {
+      "type": "sqlite_magic_skill_update",
+      "target": "Mud2/DB/ApexM2.DB",
+      "match": {
+        "MagID": 7,
+        "MagName": "攻杀剑术",
+        "Job": 0
+      },
+      "values": {
+        "CanUpgrade": 1,
+        "MaxUpgradeLv": 9
+      }
+    },
+    {
+      "type": "managed_block",
+      "target": "Mir200/Envir/Market_Def/QFunction-0.txt",
+      "target_encoding": "gb18030",
+      "content": "[@SkillLevelEx7]\n#IF\nCHECKSKILL 攻杀剑术 = 3 0\n#ACT\nGOTO @XY_WSU_7_DISPATCH\nBREAK\n#ELSEACT\nMESSAGEBOX 攻杀剑术必须先达到普通3级，才能进行强化。\nBREAK\n\n[@XY_WSU_7_DISPATCH]\n#IF\nCHECKSKILL 攻杀剑术 > 8 1\n#ACT\nMESSAGEBOX 攻杀剑术已经达到强化9。\nBREAK\n\n#IF\nCHECKSKILL 攻杀剑术 = 0 1\n#ACT\nMESSAGEBOX 强化1需要：金刚石×1、血剑碎片×1、元宝×10、账户金刚石×1。是否继续？ @XY_WSU_7_L1_CONFIRM @取消\nBREAK\n\n#IF\nCHECKSKILL 攻杀剑术 = 1 1\n#ACT\nMESSAGEBOX 强化2需要：金刚石×2、血剑碎片×2、元宝×20、账户金刚石×2。是否继续？ @XY_WSU_7_L2_CONFIRM @取消\nBREAK\n\n#IF\nCHECKSKILL 攻杀剑术 = 2 1\n#ACT\nMESSAGEBOX 强化3需要：金刚石×3、血剑碎片×3、元宝×30、账户金刚石×3。是否继续？ @XY_WSU_7_L3_CONFIRM @取消\nBREAK\n\n#IF\nCHECKSKILL 攻杀剑术 = 3 1\n#ACT\nMESSAGEBOX 强化4需要：金刚石×4、血剑碎片×4、元宝×40、账户金刚石×4。是否继续？ @XY_WSU_7_L4_CONFIRM @取消\nBREAK\n\n#IF\nCHECKSKILL 攻杀剑术 = 4 1\n#ACT\nMESSAGEBOX 强化5需要：金刚石×5、血剑碎片×5、元宝×50、账户金刚石×5。是否继续？ @XY_WSU_7_L5_CONFIRM @取消\nBREAK\n\n#IF\nCHECKSKILL 攻杀剑术 = 5 1\n#ACT\nMESSAGEBOX 强化6需要：金刚石×6、血剑碎片×6、元宝×60、账户金刚石×6。是否继续？ @XY_WSU_7_L6_CONFIRM @取消\nBREAK\n\n#IF\nCHECKSKILL 攻杀剑术 = 6 1\n#ACT\nMESSAGEBOX 强化7需要：金刚石×7、血剑碎片×7、元宝×70、账户金刚石×7。是否继续？ @XY_WSU_7_L7_CONFIRM @取消\nBREAK\n\n#IF\nCHECKSKILL 攻杀剑术 = 7 1\n#ACT\nMESSAGEBOX 强化8需要：金刚石×8、血剑碎片×8、元宝×80、账户金刚石×8。是否继续？ @XY_WSU_7_L8_CONFIRM @取消\nBREAK\n\n#IF\nCHECKSKILL 攻杀剑术 = 8 1\n#ACT\nMESSAGEBOX 强化9需要：金刚石×9、血剑碎片×9、元宝×90、账户金刚石×9。是否继续？ @XY_WSU_7_L9_CONFIRM @取消\nBREAK\n\nMESSAGEBOX 当前技能状态异常，请重新打开技能界面后再试。\nBREAK\n\n[@XY_WSU_7_L1_CONFIRM]\n#IF\nCHECKSKILL 攻杀剑术 = 3 0\nCHECKSKILL 攻杀剑术 = 0 1\nCHECKITEM 金刚石 1\nCHECKITEM 血剑碎片 1\nCHECKGAMEGOLD > 9\nCHECKGAMEDIAMOND 1\n#ACT\nTAKE 金刚石 1\nTAKE 血剑碎片 1\nGAMEGOLD - 10\nGAMEDIAMOND - 1\nSKILLLEVEL 攻杀剑术 = 1 1\nSENDMSG 6 攻杀剑术已强化至强化1。\nBREAK\n#ELSEACT\nMESSAGEBOX 强化所需的物品或货币不足，请备齐后再来。\nBREAK\n\n[@XY_WSU_7_L2_CONFIRM]\n#IF\nCHECKSKILL 攻杀剑术 = 3 0\nCHECKSKILL 攻杀剑术 = 1 1\nCHECKITEM 金刚石 2\nCHECKITEM 血剑碎片 2\nCHECKGAMEGOLD > 19\nCHECKGAMEDIAMOND 2\n#ACT\nTAKE 金刚石 2\nTAKE 血剑碎片 2\nGAMEGOLD - 20\nGAMEDIAMOND - 2\nSKILLLEVEL 攻杀剑术 = 2 1\nSENDMSG 6 攻杀剑术已强化至强化2。\nBREAK\n#ELSEACT\nMESSAGEBOX 强化所需的物品或货币不足，请备齐后再来。\nBREAK\n\n[@XY_WSU_7_L3_CONFIRM]\n#IF\nCHECKSKILL 攻杀剑术 = 3 0\nCHECKSKILL 攻杀剑术 = 2 1\nCHECKITEM 金刚石 3\nCHECKITEM 血剑碎片 3\nCHECKGAMEGOLD > 29\nCHECKGAMEDIAMOND 3\n#ACT\nTAKE 金刚石 3\nTAKE 血剑碎片 3\nGAMEGOLD - 30\nGAMEDIAMOND - 3\nSKILLLEVEL 攻杀剑术 = 3 1\nSENDMSG 6 攻杀剑术已强化至强化3。\nBREAK\n#ELSEACT\nMESSAGEBOX 强化所需的物品或货币不足，请备齐后再来。\nBREAK\n\n[@XY_WSU_7_L4_CONFIRM]\n#IF\nCHECKSKILL 攻杀剑术 = 3 0\nCHECKSKILL 攻杀剑术 = 3 1\nCHECKITEM 金刚石 4\nCHECKITEM 血剑碎片 4\nCHECKGAMEGOLD > 39\nCHECKGAMEDIAMOND 4\n#ACT\nTAKE 金刚石 4\nTAKE 血剑碎片 4\nGAMEGOLD - 40\nGAMEDIAMOND - 4\nSKILLLEVEL 攻杀剑术 = 4 1\nSENDMSG 6 攻杀剑术已强化至强化4。\nBREAK\n#ELSEACT\nMESSAGEBOX 强化所需的物品或货币不足，请备齐后再来。\nBREAK\n\n[@XY_WSU_7_L5_CONFIRM]\n#IF\nCHECKSKILL 攻杀剑术 = 3 0\nCHECKSKILL 攻杀剑术 = 4 1\nCHECKITEM 金刚石 5\nCHECKITEM 血剑碎片 5\nCHECKGAMEGOLD > 49\nCHECKGAMEDIAMOND 5\n#ACT\nTAKE 金刚石 5\nTAKE 血剑碎片 5\nGAMEGOLD - 50\nGAMEDIAMOND - 5\nSKILLLEVEL 攻杀剑术 = 5 1\nSENDMSG 6 攻杀剑术已强化至强化5。\nBREAK\n#ELSEACT\nMESSAGEBOX 强化所需的物品或货币不足，请备齐后再来。\nBREAK\n\n[@XY_WSU_7_L6_CONFIRM]\n#IF\nCHECKSKILL 攻杀剑术 = 3 0\nCHECKSKILL 攻杀剑术 = 5 1\nCHECKITEM 金刚石 6\nCHECKITEM 血剑碎片 6\nCHECKGAMEGOLD > 59\nCHECKGAMEDIAMOND 6\n#ACT\nTAKE 金刚石 6\nTAKE 血剑碎片 6\nGAMEGOLD - 60\nGAMEDIAMOND - 6\nSKILLLEVEL 攻杀剑术 = 6 1\nSENDMSG 6 攻杀剑术已强化至强化6。\nBREAK\n#ELSEACT\nMESSAGEBOX 强化所需的物品或货币不足，请备齐后再来。\nBREAK\n\n[@XY_WSU_7_L7_CONFIRM]\n#IF\nCHECKSKILL 攻杀剑术 = 3 0\nCHECKSKILL 攻杀剑术 = 6 1\nCHECKITEM 金刚石 7\nCHECKITEM 血剑碎片 7\nCHECKGAMEGOLD > 69\nCHECKGAMEDIAMOND 7\n#ACT\nTAKE 金刚石 7\nTAKE 血剑碎片 7\nGAMEGOLD - 70\nGAMEDIAMOND - 7\nSKILLLEVEL 攻杀剑术 = 7 1\nSENDMSG 6 攻杀剑术已强化至强化7。\nBREAK\n#ELSEACT\nMESSAGEBOX 强化所需的物品或货币不足，请备齐后再来。\nBREAK\n\n[@XY_WSU_7_L8_CONFIRM]\n#IF\nCHECKSKILL 攻杀剑术 = 3 0\nCHECKSKILL 攻杀剑术 = 7 1\nCHECKITEM 金刚石 8\nCHECKITEM 血剑碎片 8\nCHECKGAMEGOLD > 79\nCHECKGAMEDIAMOND 8\n#ACT\nTAKE 金刚石 8\nTAKE 血剑碎片 8\nGAMEGOLD - 80\nGAMEDIAMOND - 8\nSKILLLEVEL 攻杀剑术 = 8 1\nSENDMSG 6 攻杀剑术已强化至强化8。\nBREAK\n#ELSEACT\nMESSAGEBOX 强化所需的物品或货币不足，请备齐后再来。\nBREAK\n\n[@XY_WSU_7_L9_CONFIRM]\n#IF\nCHECKSKILL 攻杀剑术 = 3 0\nCHECKSKILL 攻杀剑术 = 8 1\nCHECKITEM 金刚石 9\nCHECKITEM 血剑碎片 9\nCHECKGAMEGOLD > 89\nCHECKGAMEDIAMOND 9\n#ACT\nTAKE 金刚石 9\nTAKE 血剑碎片 9\nGAMEGOLD - 90\nGAMEDIAMOND - 9\nSKILLLEVEL 攻杀剑术 = 9 1\nGOTO @XY_WSU_7_UNLOCK\nBREAK\n#ELSEACT\nMESSAGEBOX 强化所需的物品或货币不足，请备齐后再来。\nBREAK\n\n[@XY_WSU_7_UNLOCK]\n#IF\nNOT CheckMagicName 开天斩\n#ACT\nADDSKILL 开天斩 3\nSENDMSG 6 攻杀剑术达到强化9，已领悟3级开天斩。\nBREAK\n\n#IF\nCheckMagicName 开天斩\nCHECKSKILL 开天斩 < 3 0\n#ACT\nSKILLLEVEL 开天斩 = 3 0\nSENDMSG 6 开天斩已补至普通3级。\nBREAK\n\nSENDMSG 6 攻杀剑术已强化，并保留已学会的开天斩。\nBREAK"
+    },
+    {
+      "type": "managed_block",
+      "target": "Mir200/Envir/QuestDiary/玄渊功能/技能强化/攻杀开天登录补写.txt",
+      "target_encoding": "gb18030",
+      "content": "[@XY_WSU_LOGIN_BACKFILL]\n{{\n; 登录补写：仅补目标普通3级，不修改原技能强化等级\n\n#IF\nCHECKSKILL 攻杀剑术 > 8 1\n#ACT\nGOTO @XY_WSU_BACKFILL_1\n#ELSEACT\nGOTO @XY_WSU_BACKFILL_NEXT_1\n\n[@XY_WSU_BACKFILL_1]\n#IF\nNOT CheckMagicName 开天斩\n#ACT\nADDSKILL 开天斩 3\nGOTO @XY_WSU_BACKFILL_NEXT_1\n\n#IF\nCheckMagicName 开天斩\nCHECKSKILL 开天斩 < 3 0\n#ACT\nSKILLLEVEL 开天斩 = 3 0\nGOTO @XY_WSU_BACKFILL_NEXT_1\n\nGOTO @XY_WSU_BACKFILL_NEXT_1\n\n[@XY_WSU_BACKFILL_NEXT_1]\n\nBREAK\n}}"
+    },
+    {
+      "type": "ensure_event_label",
+      "target": "Mir200/Envir/MapQuest_Def/QManage.txt",
+      "label": "MAIN1",
+      "target_encoding": "gb18030"
+    },
+    {
+      "type": "event_hook",
+      "target": "Mir200/Envir/MapQuest_Def/QManage.txt",
+      "label": "MAIN1",
+      "target_encoding": "gb18030",
+      "content": "#IF\n#ACT\n#CALL [\\玄渊功能\\技能强化\\攻杀开天登录补写.txt] @XY_WSU_LOGIN_BACKFILL"
+    },
+    {
+      "type": "managed_block",
+      "scope": "client",
+      "target": "SkillUpgradeDesc.Dat",
+      "target_encoding": "gb18030",
+      "content": "普通技能,攻杀剑术,1,强化1\n普通技能,攻杀剑术,2,强化2\n普通技能,攻杀剑术,3,强化3\n普通技能,攻杀剑术,4,强化4\n普通技能,攻杀剑术,5,强化5\n普通技能,攻杀剑术,6,强化6\n普通技能,攻杀剑术,7,强化7\n普通技能,攻杀剑术,8,强化8\n普通技能,攻杀剑术,9,强化9；达到强化9后领悟3级开天斩"
+    }
+  ],
+  "preflight_checks": [
+    {
+      "type": "file_exists",
+      "path": "Mud2/DB/ApexM2.DB"
+    },
+    {
+      "type": "file_exists",
+      "path": "Mir200/Envir/Market_Def/QFunction-0.txt"
+    },
+    {
+      "type": "file_exists",
+      "path": "Mir200/Envir/MapQuest_Def/QManage.txt"
+    },
+    {
+      "type": "file_exists",
+      "scope": "client",
+      "path": "SkillUpgradeDesc.Dat"
+    }
+  ],
+  "post_checks": [
+    {
+      "type": "label_exists",
+      "path": "Mir200/Envir/Market_Def/QFunction-0.txt",
+      "label": "SkillLevelEx7"
+    },
+    {
+      "type": "label_exists",
+      "path": "Mir200/Envir/Market_Def/QFunction-0.txt",
+      "label": "XY_WSU_7_UNLOCK"
+    },
+    {
+      "type": "label_exists",
+      "path": "Mir200/Envir/QuestDiary/玄渊功能/技能强化/攻杀开天登录补写.txt",
+      "label": "XY_WSU_LOGIN_BACKFILL"
+    },
+    {
+      "type": "text_contains",
+      "path": "Mir200/Envir/MapQuest_Def/QManage.txt",
+      "text": "@XY_WSU_LOGIN_BACKFILL"
+    },
+    {
+      "type": "text_contains",
+      "scope": "client",
+      "path": "SkillUpgradeDesc.Dat",
+      "text": "普通技能,攻杀剑术,9,强化9；达到强化9后领悟3级开天斩"
+    }
+  ],
+  "evidence": [
+    "static:evidence/01_来源与静态验收.md",
+    "m2:evidence/02_M2与游戏验收.md",
+    "game:user-confirmed-2026-07-24",
+    "rollback:isolated-byte-exact",
+    "config:evidence/03_正式费用与接口.md"
+  ]
+}

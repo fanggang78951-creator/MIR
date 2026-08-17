@@ -1,0 +1,54 @@
+玄渊 NPC 自定义对话框背景接口
+整理日期：2026-08-06
+接口等级：[公开命令 / 资源登记受限]
+状态：预览阶段，尚未登记 XY_NPCDialog 生产资源
+
+一、用途
+
+用于让指定 NPC 使用独立 WZL/WZX 背景，不用于全局覆盖 MakeGameLogin 大画布，也不修改 NPC 奖励、扣费、属性和传送业务。
+
+二、官方命令
+
+OPENMERCHANTBIGDLG WIL资源序号 图片序号 是否可移动 显示位置 X微调 Y微调 是否显示关闭按钮 关闭按钮X 关闭按钮Y 是否本NPC持续使用
+
+OpenBigDialogBox WIL资源序号 图片序号 是否可移动 显示位置 X微调 Y微调 是否显示关闭按钮 关闭按钮X 关闭按钮Y
+
+CloseBigDialogBox
+
+显示位置：0左上、1右上、2左下、3右下、4屏幕中央。
+
+三、绝对坐标元素
+
+脚本元素前加 & 使用背景内绝对坐标。常用元素：
+
+&Text、&Img、&PlayImg、&ImgEx、&ItemShow、&UserItem、&InputNum、&InputText、&Progressbar、&Looks、&StateItem、&CountDown、&Layout。
+
+四、资源契约
+
+1. 生产资源必须是独立成对 WZL/WZX，暂定名称 XY_NPCDialog.wzl/wzx。
+2. EffectImageList 资源号必须在施工时重新扫描，禁止提前写死。
+3. WZL 图片序号与 EffectImageList 资源号是两个编号空间。
+4. 预览 PNG 不得进入生产资源；生产源图和 WZL/WZX 必须回读验证。
+5. 新增资源后必须同步客户端；是否重新生成登录器由当前客户端资源封装方式决定。
+
+五、调用模板
+
+[@main]
+OPENMERCHANTBIGDLG <资源序号> <图片序号> 1 4 0 0 1 <关闭X> <关闭Y> 1
+<>&Text(正文,20,20,249)
+<关闭/@exit>
+
+[@exit]
+CloseBigDialogBox
+
+六、施工入口
+
+完整流程：
+D:\XuanYuanDevPlatform\玄渊界面施工台\使用手册\04_NPC对话框背景替换流程.md
+
+预览：
+D:\XuanYuanDevPlatform\玄渊界面施工台\artifacts\npc-dialog-backgrounds\20260806_preview\XY_NPCDialog_BlackGold_ABC_preview_sheet.png
+
+七、安全要求
+
+正式施工前必须备份 EffectImageList.txt、目标 NPC 脚本和目标客户端 WZL/WZX；首次只迁移一个低风险 NPC，游戏验证通过后再批量应用。

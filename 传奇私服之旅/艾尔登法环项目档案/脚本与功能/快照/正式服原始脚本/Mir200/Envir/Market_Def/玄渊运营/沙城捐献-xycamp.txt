@@ -1,0 +1,24 @@
+[@Main]
+#IF
+CHECKFENGHAO 沙城捐献
+#ACT
+SetNewFengHaoValue 沙城捐献 0 = 10
+GOTO @XY_CAMP_DONATE_ALREADY
+
+#IF
+#SAY
+【沙城捐献】每个角色只能激活一次。\
+消耗：300原生灵符。\
+奖励：沙城捐献称号。\
+属性：攻/魔/道+99、暴击+10%、基础爆率+100%、最大爆率+5%。\
+<确认激活/@XY_CAMP_DONATE> <关闭/@exit>
+
+[@XY_CAMP_DONATE_ALREADY]
+#SAY
+【沙城捐献】你已经激活该称号，不能重复捐献，也不会再次扣除灵符。\
+<关闭/@exit>
+
+[@XY_CAMP_DONATE]
+#IF
+#ACT
+#CALL [\玄渊功能\捐献\捐献核心.txt] @XY_DONATE_TRIGGER

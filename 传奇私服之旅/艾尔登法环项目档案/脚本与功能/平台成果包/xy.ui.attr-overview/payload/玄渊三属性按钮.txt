@@ -1,0 +1,317 @@
+; 玄渊左上五图标状态入口（兼容保留旧文件名）
+; 图标A/B/C只显示属性，不承担业务计算；狂暴状态只认“狂暴之力”称号；复活次数由有效装备数量决定，最多两次。
+
+[@XYDP_ATTR_BUTTON_LOGIN]
+{{
+#IF
+#ACT
+MOV N$XY_UI_REVIVE_OWNED 0
+#CALL [\玄渊功能\非常驻\属性总览\玄渊三属性按钮.txt] @XY_UI_STATUS_REFRESH
+DELAYGOTO 5 @XY_UI_STATUS_REFRESH
+BREAK
+}}
+
+[@XY_UI_STATUS_REFRESH]
+{{
+#IF
+#ACT
+ShowCustomButton {panel_a_reserved_button_id} 0
+ShowCustomButton {revive_reserved_button_id} 0
+ShowCustomButton {panel_b_reserved_button_id} 0
+ShowCustomButton {panel_c_reserved_button_id} 0
+DELBUTTON {panel_a_button_id}
+DELBUTTON {panel_b_button_id}
+DELBUTTON {panel_c_button_id}
+DELBUTTON 88
+{panel_a_setup}
+#IF
+#ACT
+ADDBUTTON {icon_wil_index} {panel_a_button_id} {panel_a_icon_normal} {panel_a_icon_hover} {panel_a_icon_pressed} {panel_a_x} {panel_a_y} 0 -1 {panel_a_tooltip}
+{panel_b_setup}
+#IF
+#ACT
+ADDBUTTON {icon_wil_index} {panel_b_button_id} {panel_b_icon_normal} {panel_b_icon_hover} {panel_b_icon_pressed} {panel_b_x} {panel_b_y} 0 -1 {panel_b_tooltip}
+{panel_c_setup}
+#IF
+#ACT
+ADDBUTTON {icon_wil_index} {panel_c_button_id} {panel_c_icon_normal} {panel_c_icon_hover} {panel_c_icon_pressed} {panel_c_x} {panel_c_y} 0 -1 {panel_c_tooltip}
+#CALL [\玄渊功能\非常驻\属性总览\玄渊三属性按钮.txt] @XY_UI_DRAW_RAGE
+#CALL [\玄渊功能\非常驻\属性总览\玄渊三属性按钮.txt] @XY_UI_DRAW_REVIVE
+BREAK
+}}
+
+[@XY_UI_DRAW_RAGE]
+{{
+#IF
+#ACT
+DELBUTTON {rage_button_id}
+#IF
+CHECKFENGHAO 狂暴之力
+#ACT
+ShowCustomButton {rage_reserved_button_id} 0
+ADDBUTTON {icon_wil_index} {rage_button_id} {rage_active_normal} {rage_active_hover} {rage_active_pressed} {rage_x} {rage_y} 0 -1 250#狂暴状态\251#当前:已激活\254#点击打开狂暴NPC
+BREAK
+#IF
+#ACT
+ShowCustomButton {rage_reserved_button_id} 1
+BREAK
+}}
+
+[@XY_UI_CHECK_REVIVE_ITEM]
+{{
+#IF
+#ACT
+MOV N$XY_UI_REVIVE_ELIGIBLE 0
+MOV N$XY_UI_REVIVE_EQUIP_COUNT 0
+MOV S$XY_UI_REVIVE_ITEM1 无
+MOV S$XY_UI_REVIVE_ITEM2 无
+MOV S$XY_UI_REVIVE_ITEM3 无
+MOV S$XY_UI_REVIVE_ITEM4 无
+MOV S$XY_UI_REVIVE_ITEM5 无
+MOV S$XY_UI_REVIVE_ITEM6 无
+MOV S$XY_UI_REVIVE_ITEM7 无
+MOV S$XY_UI_REVIVE_ITEM8 无
+ReadConfigFileItem ..\QuestDiary\玄渊配置\复活图标配置.txt 复活装备 装备1 S$XY_UI_REVIVE_ITEM1
+ReadConfigFileItem ..\QuestDiary\玄渊配置\复活图标配置.txt 复活装备 装备2 S$XY_UI_REVIVE_ITEM2
+ReadConfigFileItem ..\QuestDiary\玄渊配置\复活图标配置.txt 复活装备 装备3 S$XY_UI_REVIVE_ITEM3
+ReadConfigFileItem ..\QuestDiary\玄渊配置\复活图标配置.txt 复活装备 装备4 S$XY_UI_REVIVE_ITEM4
+ReadConfigFileItem ..\QuestDiary\玄渊配置\复活图标配置.txt 复活装备 装备5 S$XY_UI_REVIVE_ITEM5
+ReadConfigFileItem ..\QuestDiary\玄渊配置\复活图标配置.txt 复活装备 装备6 S$XY_UI_REVIVE_ITEM6
+ReadConfigFileItem ..\QuestDiary\玄渊配置\复活图标配置.txt 复活装备 装备7 S$XY_UI_REVIVE_ITEM7
+ReadConfigFileItem ..\QuestDiary\玄渊配置\复活图标配置.txt 复活装备 装备8 S$XY_UI_REVIVE_ITEM8
+#IF
+SMALL N$XY_UI_REVIVE_EQUIP_COUNT 2
+NOT EQUAL S$XY_UI_REVIVE_ITEM1 无
+CHECKITEMW <$STR(S$XY_UI_REVIVE_ITEM1)> 2
+#ACT
+MOV N$XY_UI_REVIVE_EQUIP_COUNT 2
+#IF
+SMALL N$XY_UI_REVIVE_EQUIP_COUNT 2
+NOT EQUAL S$XY_UI_REVIVE_ITEM1 无
+CHECKITEMW <$STR(S$XY_UI_REVIVE_ITEM1)> 1
+#ACT
+INC N$XY_UI_REVIVE_EQUIP_COUNT 1
+#IF
+SMALL N$XY_UI_REVIVE_EQUIP_COUNT 2
+NOT EQUAL S$XY_UI_REVIVE_ITEM2 无
+CHECKITEMW <$STR(S$XY_UI_REVIVE_ITEM2)> 2
+#ACT
+MOV N$XY_UI_REVIVE_EQUIP_COUNT 2
+#IF
+SMALL N$XY_UI_REVIVE_EQUIP_COUNT 2
+NOT EQUAL S$XY_UI_REVIVE_ITEM2 无
+CHECKITEMW <$STR(S$XY_UI_REVIVE_ITEM2)> 1
+#ACT
+INC N$XY_UI_REVIVE_EQUIP_COUNT 1
+#IF
+SMALL N$XY_UI_REVIVE_EQUIP_COUNT 2
+NOT EQUAL S$XY_UI_REVIVE_ITEM3 无
+CHECKITEMW <$STR(S$XY_UI_REVIVE_ITEM3)> 2
+#ACT
+MOV N$XY_UI_REVIVE_EQUIP_COUNT 2
+#IF
+SMALL N$XY_UI_REVIVE_EQUIP_COUNT 2
+NOT EQUAL S$XY_UI_REVIVE_ITEM3 无
+CHECKITEMW <$STR(S$XY_UI_REVIVE_ITEM3)> 1
+#ACT
+INC N$XY_UI_REVIVE_EQUIP_COUNT 1
+#IF
+SMALL N$XY_UI_REVIVE_EQUIP_COUNT 2
+NOT EQUAL S$XY_UI_REVIVE_ITEM4 无
+CHECKITEMW <$STR(S$XY_UI_REVIVE_ITEM4)> 2
+#ACT
+MOV N$XY_UI_REVIVE_EQUIP_COUNT 2
+#IF
+SMALL N$XY_UI_REVIVE_EQUIP_COUNT 2
+NOT EQUAL S$XY_UI_REVIVE_ITEM4 无
+CHECKITEMW <$STR(S$XY_UI_REVIVE_ITEM4)> 1
+#ACT
+INC N$XY_UI_REVIVE_EQUIP_COUNT 1
+#IF
+SMALL N$XY_UI_REVIVE_EQUIP_COUNT 2
+NOT EQUAL S$XY_UI_REVIVE_ITEM5 无
+CHECKITEMW <$STR(S$XY_UI_REVIVE_ITEM5)> 2
+#ACT
+MOV N$XY_UI_REVIVE_EQUIP_COUNT 2
+#IF
+SMALL N$XY_UI_REVIVE_EQUIP_COUNT 2
+NOT EQUAL S$XY_UI_REVIVE_ITEM5 无
+CHECKITEMW <$STR(S$XY_UI_REVIVE_ITEM5)> 1
+#ACT
+INC N$XY_UI_REVIVE_EQUIP_COUNT 1
+#IF
+SMALL N$XY_UI_REVIVE_EQUIP_COUNT 2
+NOT EQUAL S$XY_UI_REVIVE_ITEM6 无
+CHECKITEMW <$STR(S$XY_UI_REVIVE_ITEM6)> 2
+#ACT
+MOV N$XY_UI_REVIVE_EQUIP_COUNT 2
+#IF
+SMALL N$XY_UI_REVIVE_EQUIP_COUNT 2
+NOT EQUAL S$XY_UI_REVIVE_ITEM6 无
+CHECKITEMW <$STR(S$XY_UI_REVIVE_ITEM6)> 1
+#ACT
+INC N$XY_UI_REVIVE_EQUIP_COUNT 1
+#IF
+SMALL N$XY_UI_REVIVE_EQUIP_COUNT 2
+NOT EQUAL S$XY_UI_REVIVE_ITEM7 无
+CHECKITEMW <$STR(S$XY_UI_REVIVE_ITEM7)> 2
+#ACT
+MOV N$XY_UI_REVIVE_EQUIP_COUNT 2
+#IF
+SMALL N$XY_UI_REVIVE_EQUIP_COUNT 2
+NOT EQUAL S$XY_UI_REVIVE_ITEM7 无
+CHECKITEMW <$STR(S$XY_UI_REVIVE_ITEM7)> 1
+#ACT
+INC N$XY_UI_REVIVE_EQUIP_COUNT 1
+#IF
+SMALL N$XY_UI_REVIVE_EQUIP_COUNT 2
+NOT EQUAL S$XY_UI_REVIVE_ITEM8 无
+CHECKITEMW <$STR(S$XY_UI_REVIVE_ITEM8)> 2
+#ACT
+MOV N$XY_UI_REVIVE_EQUIP_COUNT 2
+#IF
+SMALL N$XY_UI_REVIVE_EQUIP_COUNT 2
+NOT EQUAL S$XY_UI_REVIVE_ITEM8 无
+CHECKITEMW <$STR(S$XY_UI_REVIVE_ITEM8)> 1
+#ACT
+INC N$XY_UI_REVIVE_EQUIP_COUNT 1
+#IF
+#ACT
+MOV N$XY_UI_REVIVE_ELIGIBLE <$STR(N$XY_UI_REVIVE_EQUIP_COUNT)>
+BREAK
+}}
+
+[@XY_UI_DRAW_REVIVE]
+{{
+#IF
+#ACT
+CloseClientBuff {revive_buff_id}
+DELBUTTON {revive_button_id}
+#CALL [\玄渊功能\非常驻\属性总览\玄渊三属性按钮.txt] @XY_UI_CHECK_REVIVE_ITEM
+#IF
+EQUAL N$XY_UI_REVIVE_EQUIP_COUNT 0
+#ACT
+ADDBUTTON {icon_wil_index} {revive_button_id} {revive_inactive_normal} {revive_inactive_hover} {revive_inactive_pressed} {revive_x} {revive_y} 0 -1 249#复活状态\249#未佩戴有效复活装备\249#剩余复活机会:0
+BREAK
+#IF
+EQUAL N$XY_UI_REVIVE_OWNED 1
+LARGE <$NpcRebornCount> 0
+#ACT
+ADDBUTTON {icon_wil_index} {revive_button_id} {revive_active_normal} {revive_active_hover} {revive_active_pressed} {revive_x} {revive_y} 0 -1 250#复活状态\251#剩余复活机会:1\254#与原生冷却共用同一窗口
+BREAK
+#IF
+EQUAL <$REVIVALTIME> 0
+EQUAL N$XY_UI_REVIVE_EQUIP_COUNT 2
+#ACT
+ADDBUTTON {icon_wil_index} {revive_button_id} {revive_active_normal} {revive_active_hover} {revive_active_pressed} {revive_x} {revive_y} 0 -1 250#复活状态\251#剩余复活机会:2\254#复活已就绪
+BREAK
+#IF
+EQUAL <$REVIVALTIME> 0
+EQUAL N$XY_UI_REVIVE_EQUIP_COUNT 1
+#ACT
+ADDBUTTON {icon_wil_index} {revive_button_id} {revive_active_normal} {revive_active_hover} {revive_active_pressed} {revive_x} {revive_y} 0 -1 250#复活状态\251#剩余复活机会:1\254#复活已就绪
+BREAK
+#IF
+LARGE <$REVIVALTIME> 0
+#ACT
+MOV N$XY_UI_REVIVE_COUNTDOWN <$REVIVALTIME>
+INC N$XY_UI_REVIVE_COUNTDOWN 1
+SetClientBuff {icon_wil_index} {revive_buff_id} {revive_inactive_normal} <$STR(N$XY_UI_REVIVE_COUNTDOWN)> {revive_x} {revive_y} 250/复活冷却↓
+BREAK
+}}
+
+[@XY_UI_AFTER_NATIVE_REVIVAL]
+{{
+#IF
+#ACT
+#CALL [\玄渊功能\非常驻\属性总览\玄渊三属性按钮.txt] @XY_UI_CHECK_REVIVE_ITEM
+#IF
+SMALL N$XY_UI_REVIVE_EQUIP_COUNT 2
+#ACT
+MOV N$XY_UI_REVIVE_OWNED 0
+#CALL [\玄渊功能\非常驻\属性总览\玄渊三属性按钮.txt] @XY_UI_DRAW_REVIVE
+BREAK
+#IF
+#ACT
+MOV N$XY_UI_REVIVE_WINDOW <$REVIVALTIME>
+#IF
+SMALL N$XY_UI_REVIVE_WINDOW 1
+#ACT
+MOV N$XY_UI_REVIVE_WINDOW 60
+#IF
+#ACT
+SetReborn 1 <$STR(N$XY_UI_REVIVE_WINDOW)>
+MOV N$XY_UI_REVIVE_OWNED 1
+DELAYGOTO 61 @XY_UI_REVIVE_WINDOW_END
+#CALL [\玄渊功能\非常驻\属性总览\玄渊三属性按钮.txt] @XY_UI_DRAW_REVIVE
+BREAK
+}}
+
+[@XY_UI_AFTER_EXTRA_REVIVAL]
+{{
+#IF
+EQUAL N$XY_UI_REVIVE_OWNED 1
+#ACT
+MOV N$XY_UI_REVIVE_OWNED 0
+#CALL [\玄渊功能\非常驻\属性总览\玄渊三属性按钮.txt] @XY_UI_DRAW_REVIVE
+BREAK
+#IF
+#ACT
+BREAK
+}}
+
+[@XY_UI_REVIVE_WINDOW_END]
+{{
+#IF
+LARGE <$REVIVALTIME> 0
+#ACT
+BREAK
+#IF
+#ACT
+MOV N$XY_UI_REVIVE_OWNED 0
+#CALL [\玄渊功能\非常驻\属性总览\玄渊三属性按钮.txt] @XY_UI_DRAW_REVIVE
+BREAK
+}}
+
+[@XY_UI_STATUS_EQUIP_CHANGED]
+{{
+#IF
+#ACT
+#CALL [\玄渊功能\非常驻\属性总览\玄渊三属性按钮.txt] @XY_UI_CHECK_REVIVE_ITEM
+#IF
+SMALL N$XY_UI_REVIVE_EQUIP_COUNT 2
+EQUAL N$XY_UI_REVIVE_OWNED 1
+#ACT
+SetReborn 0 0
+MOV N$XY_UI_REVIVE_OWNED 0
+#IF
+#ACT
+#CALL [\玄渊功能\非常驻\属性总览\玄渊三属性按钮.txt] @XY_UI_STATUS_REFRESH
+DELAYGOTO 5 @XY_UI_STATUS_REFRESH
+BREAK
+}}
+
+[@XY_UI_CLEAR_ALL]
+{{
+#IF
+#ACT
+CloseClientBuff {revive_buff_id}
+DELBUTTON {rage_button_id}
+DELBUTTON {revive_button_id}
+DELBUTTON {panel_a_button_id}
+DELBUTTON {panel_b_button_id}
+DELBUTTON {panel_c_button_id}
+ShowCustomButton {panel_a_reserved_button_id} 1
+ShowCustomButton {rage_reserved_button_id} 1
+ShowCustomButton {revive_reserved_button_id} 1
+ShowCustomButton {panel_b_reserved_button_id} 1
+ShowCustomButton {panel_c_reserved_button_id} 1
+BREAK
+}}
+
+[@XY_UI_NOOP]
+{{
+#IF
+#ACT
+BREAK
+}}

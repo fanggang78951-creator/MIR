@@ -1,0 +1,153 @@
+玄渊平台——事件接入、自动功能与内部标签占用
+
+一、为什么要单列本文件
+
+下列标签大多不是玩家命令。它们属于引擎事件、成果包之间的调用链或变量/标签占用。新成果包必须避开同名占用，并通过平台 event_hook/managed_block 接入，不能整段覆盖事件。
+
+二、战斗公共事件
+
+xy.combat.core 保证以下 QFunction 事件存在：
+
+[@PlayLogin]   登录后战斗重算
+[@TakeOnEx]    穿戴装备后重算
+[@TakeOffEx]   脱下装备后重算
+[@AttackDamage] 攻击伤害链
+[@KillMon]     击杀怪物链
+
+这些是共享事件标签，不属于任何单一功能。新成果只能插入受管调用，不能新建第二个同名标签，也不能在自己的分支提前吞掉其他钩子。
+
+续航候选包 `xy.combat.sustain 1.2.0-candidate.1` 在 PlayLogin、TakeOnEx、TakeOffEx 中先执行 `SetOnTimer 19 1`，再受管延时调用 `@XYDP_RecalcSustain`。该包自行确保共享 `[@Attack]` 标签存在：已有标签正文不改，缺失才创建，重复标签阻止。QFunction重算百分比吸血汇总和回血装备启停标记；`[@Attack]` 中的受管钩子仅对怪按本次实际伤害 `<$PKPOWER>` 经 `CALCPERCENT` 计算后执行 `HumanHP +`，不带BREAK、不进入PVP、不使用持续时间状态。QManage独占个人定时器事件 `[@OnTimer19]`，每1秒按XLSX为每件装备生成的固定`HumanHP + 数值`直接回血。它不占用OnTimerEx 0-9，不新增玩家命令，不接NPC，也不接AttackDamage手算伤害。
+
+三、首爆首次拾取
+
+成果包：xy.ops.first-pick 1.0.3，verified / optional
+
+共享事件：[@PickUpItemEX]
+受管调用：
+
+LINKPICKUPITEM
+#CALL [\首爆脚本\首爆处理.txt] @首爆拾取处理
+
+内部标签：@首爆拾取处理、@首爆成功。
+对外结论：没有手动领取命令；奖励只由首次拾取事件和配置表驱动。
+
+四、自动三级基础技能
+
+成果包：xy.native.auto-basic-skills 1.0.0-candidate.1，candidate / resident
+
+登录事件 QManage [@MAIN1] 和升级事件 QFunction [@PLAYLEVELUP] 都调用：
+
+#CALL [\玄渊功能\常驻基础\升级自动三级基础技能.txt] @XYDP_AUTO_BASIC_SKILLS
+
+@XYDP_AUTO_BASIC_SKILLS 是自动生命周期接口，不做玩家/NPC菜单。
+
+五、初始背包200格
+
+成果包：xy.native.initial-bag-200 2.0.0-candidate.1，candidate / resident
+
+只在 QuestDiary\游戏登陆\登陆脚本.txt 的 [@登陆设置] 事件插入：
+
+ExtBagPageCount = 4
+ExtBagOpenItemCount + 160
+
+含义：基础40格加开160格，合计200格。
+这不是命令标签，不得改成 EXTBAGOPENITEMCOUNT = 200，也不得在 QManage 重复执行。
+
+六、战士技能强化：攻杀剑术到开天斩
+
+成果包：xy.optional.skill-upgrade.warrior.gongsha-kaitian 1.0.0，verified / optional
+
+唯一玩家入口：人物技能面板中攻杀剑术右侧升级按钮。
+引擎事件：[@SkillLevelEx7]
+内部派发：@XY_WSU_7_DISPATCH
+强化确认：@XY_WSU_7_L1_CONFIRM 至 @XY_WSU_7_L9_CONFIRM
+强化9解锁：@XY_WSU_7_UNLOCK
+登录补写外部接口：@XY_WSU_LOGIN_BACKFILL
+
+限制：
+- 本包没有 NPC 命令接口。
+- @XY_WSU_* 是本包内部标签，不得用于另一技能。
+- 新技能强化必须使用新的事件号、命名空间、清单占用和独立验收。
+
+七、左上状态图标内部标签占用
+
+成果包：xy.ui.attr-overview 2.0.5-candidate.1
+
+QFunction桥接占用：
+@XY_UI_QF_STATUS_REFRESH
+@XY_UI_QF_EQUIP_REFRESH
+@XY_UI_QF_AFTER_NATIVE_REVIVAL
+@XY_UI_QF_AFTER_EXTRA_REVIVAL
+@XY_UI_QF_REVIVE_WINDOW_END
+@XY_UI_RAGE_PANEL
+
+外部UI脚本占用：
+@XY_UI_STATUS_REFRESH
+@XY_UI_STATUS_EQUIP_CHANGED
+@XY_UI_DRAW_RAGE
+@XY_UI_AFTER_NATIVE_REVIVAL
+@XY_UI_AFTER_EXTRA_REVIVAL
+@XY_UI_REVIVE_WINDOW_END
+@XY_UI_CLEAR_ALL
+
+兼容公开刷新：@XYDP_ShowAttrBuff。
+兼容内部清理：@XYDP_ClearAttrBuff。
+
+命名规则：QFunction桥接只用 XY_UI_QF_*；外部脚本只用 XY_UI_*。二者不得同名。
+
+八、国王模式内部占用
+
+国王模式完整成果包：xy.optional.king-mode.complete 2.1.1，verified / optional。
+它通过专用报名 NPC、GM NPC和完整安装入口运行，不提供通用玩家命令。
+
+以下命名空间属于国王模式，其他成果包不得复用：
+- XY_KING_JOIN_A / XY_KING_JOIN_B
+- XY_KING_SET_A / XY_KING_SET_B
+- XY_KING_START / XY_KING_END / XY_KING_RESET
+- XY_KING_ATTACK_GUARD / XY_KING_PLAY_DIE / XY_KING_KING_REWARD / XY_KING_REVIVAL
+- XY_KING_APPLY_TITLE / XY_KING_CLEAR_TITLE
+- XY_KING_FLOW_*
+- XY_TITLE_VISUAL_SYNC、ActiveTitle_2、UnactiveTitle_2
+- 变量 G120-G139、N$XY_KING_*、S$XY_KING_*
+
+使用标准：报名、指定国王、开始、结束和重置必须走该模式的 NPC/管理脚本，不允许从无权限的公共按钮直跳内部标签。
+
+九、共享事件接入规范
+
+1. 先 ensure_event_label，再 event_hook；发现重复标签时阻止。
+2. QManage登录入口统一使用 [@MAIN1]；不要因为功能新增而创建第二个 MAIN1。
+3. QFunction共享的 PlayLogin、TakeOnEx、TakeOffEx、AttackDamage、KillMon、PickUpItemEX、CustomButtonClick 等只能增添受管分支。
+4. 外部 #CALL 文件必须有翎风要求的可调用大括号边界；没有经过当前引擎实测的多层 #CALL 不得发布。
+5. 事件内使用 BREAK 前必须确认不会吞掉同事件后续功能。
+6. 每个标签、变量、UserCmd号、按钮号、Buff ID 都要写入成果包 claims 或明确占用文档。 
+
+十、初始之地七NPC内部占用
+
+平台事务：xy.initial-camp.seven-npcs 1.8.0-candidate.1。
+NPC脚本路径占用：
+- 玄渊运营/狂暴之力
+- 玄渊运营/沙城捐献
+- 玄渊运营/赞助称号
+- 玄渊成长/转生
+- 玄渊成长/马牌升级
+- 玄渊成长/军鼓升级
+- 玄渊新手/新手礼包
+
+内部标签命名空间：XY_CAMP_*、XY_SPONSOR_*、XY_REBIRTH_*、XY_HORSE_*、XY_RELIC_*、XY_GIFT_CLAIM。
+捐献成功状态变量：N$XY_DONATE_LAST_SUCCESS；只有首次授予称号回读成功并扣除300原生灵符后才为1，已有称号或余额不足时必须为0。
+捐献称号原生暴击槽：`SetNewFengHaoValue 沙城捐献 0`，数值只读02_捐献.xlsx。
+捐献爆率受管锚点：XY_EQUIP_MAKER_DROP_ANCHOR、XY_EQUIP_MAKER_RUNTIME_DROP_ANCHOR、XY_EQUIP_MAKER_RUNTIME_DROP_MAX_ANCHOR。
+捐献旧持久文件：Mir200/Envir/QuestDiary/玄渊数据/xy_donate/捐献状态.txt；一次性称号规则不再读写，旧文件只保留审计，不得恢复累计、榜一或封榜。
+以上标签和变量不得被其他包复用。七个NPC注册按脚本路径独占迁移，同一路径旧地图注册会被替换，避免地图0与xycamp同时出现第二个入口。
+
+十一、超级祝福油脚本物品接口
+
+成果包：xy.item.super-blessing-oil 1.0.0-candidate.1，candidate / optional。
+
+引擎内部触发标签：[@StdModeFunc82]
+触发方式：StdItems 中物品“超级祝福油”必须使用 StdMode=31、Shape=0、AniCount=82；玩家双击物品后由引擎进入该标签，不是玩家命令或NPC按钮。
+执行方式：未佩戴武器或武器幸运达到7时 GIVE 超级祝福油 1 返还；幸运低于7时执行 UPGRADEITEMEX 1 3 1 1 0，使武器幸运必定增加1。
+外观方式：Looks=26，只复用当前端普通祝福油图标，不需要客户端补丁。
+内部占用：AniCount 82 与标签 StdModeFunc82 由本包独占；其他脚本物品不得复用。
+测试获取：权限10角色可使用 `@make 超级祝福油 1`，这只是验收取物方式，不是功能接口。
+

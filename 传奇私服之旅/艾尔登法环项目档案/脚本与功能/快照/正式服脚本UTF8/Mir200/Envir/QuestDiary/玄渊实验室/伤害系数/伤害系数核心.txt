@@ -1,0 +1,59 @@
+; 玄渊实验室：伤害系数独立乘区（与神力合成后统一走type0）
+; 状态：candidate，游戏验收前禁止加入正式成果包或常驻基础
+; 数值规则：测试加成50表示伤害系数+50%，最终系数为150，即1.50倍
+; 合成规则：最终POWERRATE=神力倍率×伤害系数÷100，避免type1/type2覆盖神力
+
+[@XY_DC_LOGIN]
+{
+#IF
+#ACT
+MOV N$XY_DC_TestBonus 0
+MOV N$XY_RT_DamageCoeff 100
+MOV N$XY_DC_FinalPower 100
+; 清理旧实验版本遗留的type1/type2状态；新版本不再用它们承载伤害系数
+POWERRATE 100 0 0 0 1
+POWERRATE 100 0 0 0 2
+BREAK
+
+[@XY_DC_RUNTIME_REFRESH]
+#IF
+#ACT
+MOV N$XY_RT_DamageCoeff 100
+INC N$XY_RT_DamageCoeff <$STR(N$XY_DC_TestBonus)>
+; XY_DAMAGE_COEFF_EQUIP_ANCHOR
+#IF
+#ACT
+MOV N$XY_DC_FinalPower 100
+CalcPercent <$STR(N$XY_RT_Power)> <$STR(N$XY_RT_DamageCoeff)> N$XY_DC_FinalPower
+POWERRATE <$STR(N$XY_DC_FinalPower)> 0 0 1 0
+BREAK
+
+[@XY_DC_PANEL]
+#SAY
+<伤害系数独立乘区测试/SCOLOR=250>\
+当前测试加成：<$STR(N$XY_DC_TestBonus)>%\
+当前伤害系数：<$STR(N$XY_RT_DamageCoeff)>%\ \
+<恢复0%/@XY_DC_SET_0>    <设置+50%/@XY_DC_SET_50>    <设置+100%/@XY_DC_SET_100>\ \
+<关闭/@EXIT>
+
+[@XY_DC_SET_0]
+#IF
+#ACT
+MOV N$XY_DC_TestBonus 0
+SENDMSG 6 [伤害系数] 已恢复为100%，下一次攻击生效。
+BREAK
+
+[@XY_DC_SET_50]
+#IF
+#ACT
+MOV N$XY_DC_TestBonus 50
+SENDMSG 6 [伤害系数] 已设置为150%，下一次攻击生效。
+BREAK
+
+[@XY_DC_SET_100]
+#IF
+#ACT
+MOV N$XY_DC_TestBonus 100
+SENDMSG 6 [伤害系数] 已设置为200%，下一次攻击生效。
+BREAK
+}

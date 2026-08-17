@@ -1,0 +1,88 @@
+{
+  "schema_version": 1,
+  "id": "xy.optional.recycle.core",
+  "version": "1.0.2",
+  "display_name": "玄渊快捷回收（12项精确白名单）",
+  "status": "verified",
+  "engine": "LFM2",
+  "residency": "optional",
+  "bundle": "recycle",
+  "dependencies": [],
+  "parameters": {},
+  "claims": {
+    "labels": [
+      "UserCmd31",
+      "XY_RECYCLE_COMMAND",
+      "XY_RECYCLE_PAGE",
+      "XY_RECYCLE_CONFIRM",
+      "XY_RECYCLE_APPLY"
+    ],
+    "variables": [],
+    "maps": [],
+    "npcs": []
+  },
+  "operations": [
+    {
+      "type": "unique_line",
+      "target": "Mir200/Envir/UserCmd.txt",
+      "line": "快捷回收\t31",
+      "key_fields": [
+        0
+      ],
+      "target_encoding": "gb18030"
+    },
+    {
+      "type": "managed_block",
+      "target": "Mir200/Envir/Market_Def/QFunction-0.txt",
+      "content": "[@UserCmd31]\n#IF\n#ACT\nGOTO @XY_RECYCLE_COMMAND\nBREAK\n\n[@XY_RECYCLE_COMMAND]\n#IF\n#ACT\nGOTO @XY_RECYCLE_PAGE\nBREAK\n\n[@XY_RECYCLE_PAGE]\n#SAY\n<玄渊快捷回收/SCOLOR=250>\\ \\\n<只处理12项低阶装备白名单，每种最多10件。/SCOLOR=146>\\\n<每件回收奖励1000金币；其他物品绝不处理。/SCOLOR=146>\\ \\\n<确认回收/@XY_RECYCLE_CONFIRM>    <取消/@EXIT>\n\n[@XY_RECYCLE_CONFIRM]\n#IF\n#ACT\nGOTO @XY_RECYCLE_APPLY\nBREAK\n\n[@XY_RECYCLE_APPLY]\n#IF\n#ACT\nSENDMSG 6 开始快捷回收：只处理12项低阶装备白名单，每种最多10件。\n\n#IF\nCHECKITEM 木剑 1\n#ACT\nTAKE 木剑 1\nGIVE 金币 1000\nSENDMSG 6 快捷回收：木剑，获得金币1000。\n\n#IF\nCHECKITEM 木剑 1\n#ACT\nTAKE 木剑 1\nGIVE 金币 1000\nSENDMSG 6 快捷回收：木剑，获得金币1000。\n\n#IF\nCHECKITEM 木剑 1\n#ACT\nTAKE 木剑 1\nGIVE 金币 1000\nSENDMSG 6 快捷回收：木剑，获得金币1000。\n\n#IF\nCHECKITEM 木剑 1\n#ACT\nTAKE 木剑 1\nGIVE 金币 1000\nSENDMSG 6 快捷回收：木剑，获得金币1000。\n\n#IF\nCHECKITEM 木剑 1\n#ACT\nTAKE 木剑 1\nGIVE 金币 1000\nSENDMSG 6 快捷回收：木剑，获得金币1000。\n\n#IF\nCHECKITEM 木剑 1\n#ACT\nTAKE 木剑 1\nGIVE 金币 1000\nSENDMSG 6 快捷回收：木剑，获得金币1000。\n\n#IF\nCHECKITEM 木剑 1\n#ACT\nTAKE 木剑 1\nGIVE 金币 1000\nSENDMSG 6 快捷回收：木剑，获得金币1000。\n\n#IF\nCHECKITEM 木剑 1\n#ACT\nTAKE 木剑 1\nGIVE 金币 1000\nSENDMSG 6 快捷回收：木剑，获得金币1000。\n\n#IF\nCHECKITEM 木剑 1\n#ACT\nTAKE 木剑 1\nGIVE 金币 1000\nSENDMSG 6 快捷回收：木剑，获得金币1000。\n\n#IF\nCHECKITEM 木剑 1\n#ACT\nTAKE 木剑 1\nGIVE 金币 1000\nSENDMSG 6 快捷回收：木剑，获得金币1000。\n\n#IF\nCHECKITEM 铁剑 1\n#ACT\nTAKE 铁剑 1\nGIVE 金币 1000\nSENDMSG 6 快捷回收：铁剑，获得金币1000。\n\n#IF\nCHECKITEM 铁剑 1\n#ACT\nTAKE 铁剑 1\nGIVE 金币 1000\nSENDMSG 6 快捷回收：铁剑，获得金币1000。\n\n#IF\nCHECKITEM 铁剑 1\n#ACT\nTAKE 铁剑 1\nGIVE 金币 1000\nSENDMSG 6 快捷回收：铁剑，获得金币1000。\n\n#IF\nCHECKITEM 铁剑 1\n#ACT\nTAKE 铁剑 1\nGIVE 金币 1000\nSENDMSG 6 快捷回收：铁剑，获得金币1000。\n\n#IF\nCHECKITEM 铁剑 1\n#ACT\nTAKE 铁剑 1\nGIVE 金币 1000\nSENDMSG 6 快捷回收：铁剑，获得金币1000。\n\n#IF\nCHECKITEM 铁剑 1\n#ACT\nTAKE 铁剑 1\nGIVE 金币 1000\nSENDMSG 6 快捷回收：铁剑，获得金币1000。\n\n#IF\nCHECKITEM 铁剑 1\n#ACT\nTAKE 铁剑 1\nGIVE 金币 1000\nSENDMSG 6 快捷回收：铁剑，获得金币1000。\n\n#IF\nCHECKITEM 铁剑 1\n#ACT\nTAKE 铁剑 1\nGIVE 金币 1000\nSENDMSG 6 快捷回收：铁剑，获得金币1000。\n\n#IF\nCHECKITEM 铁剑 1\n#ACT\nTAKE 铁剑 1\nGIVE 金币 1000\nSENDMSG 6 快捷回收：铁剑，获得金币1000。\n\n#IF\nCHECKITEM 铁剑 1\n#ACT\nTAKE 铁剑 1\nGIVE 金币 1000\nSENDMSG 6 快捷回收：铁剑，获得金币1000。\n\n#IF\nCHECKITEM 青铜剑 1\n#ACT\nTAKE 青铜剑 1\nGIVE 金币 1000\nSENDMSG 6 快捷回收：青铜剑，获得金币1000。\n\n#IF\nCHECKITEM 青铜剑 1\n#ACT\nTAKE 青铜剑 1\nGIVE 金币 1000\nSENDMSG 6 快捷回收：青铜剑，获得金币1000。\n\n#IF\nCHECKITEM 青铜剑 1\n#ACT\nTAKE 青铜剑 1\nGIVE 金币 1000\nSENDMSG 6 快捷回收：青铜剑，获得金币1000。\n\n#IF\nCHECKITEM 青铜剑 1\n#ACT\nTAKE 青铜剑 1\nGIVE 金币 1000\nSENDMSG 6 快捷回收：青铜剑，获得金币1000。\n\n#IF\nCHECKITEM 青铜剑 1\n#ACT\nTAKE 青铜剑 1\nGIVE 金币 1000\nSENDMSG 6 快捷回收：青铜剑，获得金币1000。\n\n#IF\nCHECKITEM 青铜剑 1\n#ACT\nTAKE 青铜剑 1\nGIVE 金币 1000\nSENDMSG 6 快捷回收：青铜剑，获得金币1000。\n\n#IF\nCHECKITEM 青铜剑 1\n#ACT\nTAKE 青铜剑 1\nGIVE 金币 1000\nSENDMSG 6 快捷回收：青铜剑，获得金币1000。\n\n#IF\nCHECKITEM 青铜剑 1\n#ACT\nTAKE 青铜剑 1\nGIVE 金币 1000\nSENDMSG 6 快捷回收：青铜剑，获得金币1000。\n\n#IF\nCHECKITEM 青铜剑 1\n#ACT\nTAKE 青铜剑 1\nGIVE 金币 1000\nSENDMSG 6 快捷回收：青铜剑，获得金币1000。\n\n#IF\nCHECKITEM 青铜剑 1\n#ACT\nTAKE 青铜剑 1\nGIVE 金币 1000\nSENDMSG 6 快捷回收：青铜剑，获得金币1000。\n\n#IF\nCHECKITEM 短剑 1\n#ACT\nTAKE 短剑 1\nGIVE 金币 1000\nSENDMSG 6 快捷回收：短剑，获得金币1000。\n\n#IF\nCHECKITEM 短剑 1\n#ACT\nTAKE 短剑 1\nGIVE 金币 1000\nSENDMSG 6 快捷回收：短剑，获得金币1000。\n\n#IF\nCHECKITEM 短剑 1\n#ACT\nTAKE 短剑 1\nGIVE 金币 1000\nSENDMSG 6 快捷回收：短剑，获得金币1000。\n\n#IF\nCHECKITEM 短剑 1\n#ACT\nTAKE 短剑 1\nGIVE 金币 1000\nSENDMSG 6 快捷回收：短剑，获得金币1000。\n\n#IF\nCHECKITEM 短剑 1\n#ACT\nTAKE 短剑 1\nGIVE 金币 1000\nSENDMSG 6 快捷回收：短剑，获得金币1000。\n\n#IF\nCHECKITEM 短剑 1\n#ACT\nTAKE 短剑 1\nGIVE 金币 1000\nSENDMSG 6 快捷回收：短剑，获得金币1000。\n\n#IF\nCHECKITEM 短剑 1\n#ACT\nTAKE 短剑 1\nGIVE 金币 1000\nSENDMSG 6 快捷回收：短剑，获得金币1000。\n\n#IF\nCHECKITEM 短剑 1\n#ACT\nTAKE 短剑 1\nGIVE 金币 1000\nSENDMSG 6 快捷回收：短剑，获得金币1000。\n\n#IF\nCHECKITEM 短剑 1\n#ACT\nTAKE 短剑 1\nGIVE 金币 1000\nSENDMSG 6 快捷回收：短剑，获得金币1000。\n\n#IF\nCHECKITEM 短剑 1\n#ACT\nTAKE 短剑 1\nGIVE 金币 1000\nSENDMSG 6 快捷回收：短剑，获得金币1000。\n\n#IF\nCHECKITEM 匕首 1\n#ACT\nTAKE 匕首 1\nGIVE 金币 1000\nSENDMSG 6 快捷回收：匕首，获得金币1000。\n\n#IF\nCHECKITEM 匕首 1\n#ACT\nTAKE 匕首 1\nGIVE 金币 1000\nSENDMSG 6 快捷回收：匕首，获得金币1000。\n\n#IF\nCHECKITEM 匕首 1\n#ACT\nTAKE 匕首 1\nGIVE 金币 1000\nSENDMSG 6 快捷回收：匕首，获得金币1000。\n\n#IF\nCHECKITEM 匕首 1\n#ACT\nTAKE 匕首 1\nGIVE 金币 1000\nSENDMSG 6 快捷回收：匕首，获得金币1000。\n\n#IF\nCHECKITEM 匕首 1\n#ACT\nTAKE 匕首 1\nGIVE 金币 1000\nSENDMSG 6 快捷回收：匕首，获得金币1000。\n\n#IF\nCHECKITEM 匕首 1\n#ACT\nTAKE 匕首 1\nGIVE 金币 1000\nSENDMSG 6 快捷回收：匕首，获得金币1000。\n\n#IF\nCHECKITEM 匕首 1\n#ACT\nTAKE 匕首 1\nGIVE 金币 1000\nSENDMSG 6 快捷回收：匕首，获得金币1000。\n\n#IF\nCHECKITEM 匕首 1\n#ACT\nTAKE 匕首 1\nGIVE 金币 1000\nSENDMSG 6 快捷回收：匕首，获得金币1000。\n\n#IF\nCHECKITEM 匕首 1\n#ACT\nTAKE 匕首 1\nGIVE 金币 1000\nSENDMSG 6 快捷回收：匕首，获得金币1000。\n\n#IF\nCHECKITEM 匕首 1\n#ACT\nTAKE 匕首 1\nGIVE 金币 1000\nSENDMSG 6 快捷回收：匕首，获得金币1000。\n\n#IF\nCHECKITEM 布衣(男) 1\n#ACT\nTAKE 布衣(男) 1\nGIVE 金币 1000\nSENDMSG 6 快捷回收：布衣(男)，获得金币1000。\n\n#IF\nCHECKITEM 布衣(男) 1\n#ACT\nTAKE 布衣(男) 1\nGIVE 金币 1000\nSENDMSG 6 快捷回收：布衣(男)，获得金币1000。\n\n#IF\nCHECKITEM 布衣(男) 1\n#ACT\nTAKE 布衣(男) 1\nGIVE 金币 1000\nSENDMSG 6 快捷回收：布衣(男)，获得金币1000。\n\n#IF\nCHECKITEM 布衣(男) 1\n#ACT\nTAKE 布衣(男) 1\nGIVE 金币 1000\nSENDMSG 6 快捷回收：布衣(男)，获得金币1000。\n\n#IF\nCHECKITEM 布衣(男) 1\n#ACT\nTAKE 布衣(男) 1\nGIVE 金币 1000\nSENDMSG 6 快捷回收：布衣(男)，获得金币1000。\n\n#IF\nCHECKITEM 布衣(男) 1\n#ACT\nTAKE 布衣(男) 1\nGIVE 金币 1000\nSENDMSG 6 快捷回收：布衣(男)，获得金币1000。\n\n#IF\nCHECKITEM 布衣(男) 1\n#ACT\nTAKE 布衣(男) 1\nGIVE 金币 1000\nSENDMSG 6 快捷回收：布衣(男)，获得金币1000。\n\n#IF\nCHECKITEM 布衣(男) 1\n#ACT\nTAKE 布衣(男) 1\nGIVE 金币 1000\nSENDMSG 6 快捷回收：布衣(男)，获得金币1000。\n\n#IF\nCHECKITEM 布衣(男) 1\n#ACT\nTAKE 布衣(男) 1\nGIVE 金币 1000\nSENDMSG 6 快捷回收：布衣(男)，获得金币1000。\n\n#IF\nCHECKITEM 布衣(男) 1\n#ACT\nTAKE 布衣(男) 1\nGIVE 金币 1000\nSENDMSG 6 快捷回收：布衣(男)，获得金币1000。\n\n#IF\nCHECKITEM 布衣(女) 1\n#ACT\nTAKE 布衣(女) 1\nGIVE 金币 1000\nSENDMSG 6 快捷回收：布衣(女)，获得金币1000。\n\n#IF\nCHECKITEM 布衣(女) 1\n#ACT\nTAKE 布衣(女) 1\nGIVE 金币 1000\nSENDMSG 6 快捷回收：布衣(女)，获得金币1000。\n\n#IF\nCHECKITEM 布衣(女) 1\n#ACT\nTAKE 布衣(女) 1\nGIVE 金币 1000\nSENDMSG 6 快捷回收：布衣(女)，获得金币1000。\n\n#IF\nCHECKITEM 布衣(女) 1\n#ACT\nTAKE 布衣(女) 1\nGIVE 金币 1000\nSENDMSG 6 快捷回收：布衣(女)，获得金币1000。\n\n#IF\nCHECKITEM 布衣(女) 1\n#ACT\nTAKE 布衣(女) 1\nGIVE 金币 1000\nSENDMSG 6 快捷回收：布衣(女)，获得金币1000。\n\n#IF\nCHECKITEM 布衣(女) 1\n#ACT\nTAKE 布衣(女) 1\nGIVE 金币 1000\nSENDMSG 6 快捷回收：布衣(女)，获得金币1000。\n\n#IF\nCHECKITEM 布衣(女) 1\n#ACT\nTAKE 布衣(女) 1\nGIVE 金币 1000\nSENDMSG 6 快捷回收：布衣(女)，获得金币1000。\n\n#IF\nCHECKITEM 布衣(女) 1\n#ACT\nTAKE 布衣(女) 1\nGIVE 金币 1000\nSENDMSG 6 快捷回收：布衣(女)，获得金币1000。\n\n#IF\nCHECKITEM 布衣(女) 1\n#ACT\nTAKE 布衣(女) 1\nGIVE 金币 1000\nSENDMSG 6 快捷回收：布衣(女)，获得金币1000。\n\n#IF\nCHECKITEM 布衣(女) 1\n#ACT\nTAKE 布衣(女) 1\nGIVE 金币 1000\nSENDMSG 6 快捷回收：布衣(女)，获得金币1000。\n\n#IF\nCHECKITEM 轻型盔甲(男) 1\n#ACT\nTAKE 轻型盔甲(男) 1\nGIVE 金币 1000\nSENDMSG 6 快捷回收：轻型盔甲(男)，获得金币1000。\n\n#IF\nCHECKITEM 轻型盔甲(男) 1\n#ACT\nTAKE 轻型盔甲(男) 1\nGIVE 金币 1000\nSENDMSG 6 快捷回收：轻型盔甲(男)，获得金币1000。\n\n#IF\nCHECKITEM 轻型盔甲(男) 1\n#ACT\nTAKE 轻型盔甲(男) 1\nGIVE 金币 1000\nSENDMSG 6 快捷回收：轻型盔甲(男)，获得金币1000。\n\n#IF\nCHECKITEM 轻型盔甲(男) 1\n#ACT\nTAKE 轻型盔甲(男) 1\nGIVE 金币 1000\nSENDMSG 6 快捷回收：轻型盔甲(男)，获得金币1000。\n\n#IF\nCHECKITEM 轻型盔甲(男) 1\n#ACT\nTAKE 轻型盔甲(男) 1\nGIVE 金币 1000\nSENDMSG 6 快捷回收：轻型盔甲(男)，获得金币1000。\n\n#IF\nCHECKITEM 轻型盔甲(男) 1\n#ACT\nTAKE 轻型盔甲(男) 1\nGIVE 金币 1000\nSENDMSG 6 快捷回收：轻型盔甲(男)，获得金币1000。\n\n#IF\nCHECKITEM 轻型盔甲(男) 1\n#ACT\nTAKE 轻型盔甲(男) 1\nGIVE 金币 1000\nSENDMSG 6 快捷回收：轻型盔甲(男)，获得金币1000。\n\n#IF\nCHECKITEM 轻型盔甲(男) 1\n#ACT\nTAKE 轻型盔甲(男) 1\nGIVE 金币 1000\nSENDMSG 6 快捷回收：轻型盔甲(男)，获得金币1000。\n\n#IF\nCHECKITEM 轻型盔甲(男) 1\n#ACT\nTAKE 轻型盔甲(男) 1\nGIVE 金币 1000\nSENDMSG 6 快捷回收：轻型盔甲(男)，获得金币1000。\n\n#IF\nCHECKITEM 轻型盔甲(男) 1\n#ACT\nTAKE 轻型盔甲(男) 1\nGIVE 金币 1000\nSENDMSG 6 快捷回收：轻型盔甲(男)，获得金币1000。\n\n#IF\nCHECKITEM 轻型盔甲(女) 1\n#ACT\nTAKE 轻型盔甲(女) 1\nGIVE 金币 1000\nSENDMSG 6 快捷回收：轻型盔甲(女)，获得金币1000。\n\n#IF\nCHECKITEM 轻型盔甲(女) 1\n#ACT\nTAKE 轻型盔甲(女) 1\nGIVE 金币 1000\nSENDMSG 6 快捷回收：轻型盔甲(女)，获得金币1000。\n\n#IF\nCHECKITEM 轻型盔甲(女) 1\n#ACT\nTAKE 轻型盔甲(女) 1\nGIVE 金币 1000\nSENDMSG 6 快捷回收：轻型盔甲(女)，获得金币1000。\n\n#IF\nCHECKITEM 轻型盔甲(女) 1\n#ACT\nTAKE 轻型盔甲(女) 1\nGIVE 金币 1000\nSENDMSG 6 快捷回收：轻型盔甲(女)，获得金币1000。\n\n#IF\nCHECKITEM 轻型盔甲(女) 1\n#ACT\nTAKE 轻型盔甲(女) 1\nGIVE 金币 1000\nSENDMSG 6 快捷回收：轻型盔甲(女)，获得金币1000。\n\n#IF\nCHECKITEM 轻型盔甲(女) 1\n#ACT\nTAKE 轻型盔甲(女) 1\nGIVE 金币 1000\nSENDMSG 6 快捷回收：轻型盔甲(女)，获得金币1000。\n\n#IF\nCHECKITEM 轻型盔甲(女) 1\n#ACT\nTAKE 轻型盔甲(女) 1\nGIVE 金币 1000\nSENDMSG 6 快捷回收：轻型盔甲(女)，获得金币1000。\n\n#IF\nCHECKITEM 轻型盔甲(女) 1\n#ACT\nTAKE 轻型盔甲(女) 1\nGIVE 金币 1000\nSENDMSG 6 快捷回收：轻型盔甲(女)，获得金币1000。\n\n#IF\nCHECKITEM 轻型盔甲(女) 1\n#ACT\nTAKE 轻型盔甲(女) 1\nGIVE 金币 1000\nSENDMSG 6 快捷回收：轻型盔甲(女)，获得金币1000。\n\n#IF\nCHECKITEM 轻型盔甲(女) 1\n#ACT\nTAKE 轻型盔甲(女) 1\nGIVE 金币 1000\nSENDMSG 6 快捷回收：轻型盔甲(女)，获得金币1000。\n\n#IF\nCHECKITEM 古铜戒指 1\n#ACT\nTAKE 古铜戒指 1\nGIVE 金币 1000\nSENDMSG 6 快捷回收：古铜戒指，获得金币1000。\n\n#IF\nCHECKITEM 古铜戒指 1\n#ACT\nTAKE 古铜戒指 1\nGIVE 金币 1000\nSENDMSG 6 快捷回收：古铜戒指，获得金币1000。\n\n#IF\nCHECKITEM 古铜戒指 1\n#ACT\nTAKE 古铜戒指 1\nGIVE 金币 1000\nSENDMSG 6 快捷回收：古铜戒指，获得金币1000。\n\n#IF\nCHECKITEM 古铜戒指 1\n#ACT\nTAKE 古铜戒指 1\nGIVE 金币 1000\nSENDMSG 6 快捷回收：古铜戒指，获得金币1000。\n\n#IF\nCHECKITEM 古铜戒指 1\n#ACT\nTAKE 古铜戒指 1\nGIVE 金币 1000\nSENDMSG 6 快捷回收：古铜戒指，获得金币1000。\n\n#IF\nCHECKITEM 古铜戒指 1\n#ACT\nTAKE 古铜戒指 1\nGIVE 金币 1000\nSENDMSG 6 快捷回收：古铜戒指，获得金币1000。\n\n#IF\nCHECKITEM 古铜戒指 1\n#ACT\nTAKE 古铜戒指 1\nGIVE 金币 1000\nSENDMSG 6 快捷回收：古铜戒指，获得金币1000。\n\n#IF\nCHECKITEM 古铜戒指 1\n#ACT\nTAKE 古铜戒指 1\nGIVE 金币 1000\nSENDMSG 6 快捷回收：古铜戒指，获得金币1000。\n\n#IF\nCHECKITEM 古铜戒指 1\n#ACT\nTAKE 古铜戒指 1\nGIVE 金币 1000\nSENDMSG 6 快捷回收：古铜戒指，获得金币1000。\n\n#IF\nCHECKITEM 古铜戒指 1\n#ACT\nTAKE 古铜戒指 1\nGIVE 金币 1000\nSENDMSG 6 快捷回收：古铜戒指，获得金币1000。\n\n#IF\nCHECKITEM 铁手镯 1\n#ACT\nTAKE 铁手镯 1\nGIVE 金币 1000\nSENDMSG 6 快捷回收：铁手镯，获得金币1000。\n\n#IF\nCHECKITEM 铁手镯 1\n#ACT\nTAKE 铁手镯 1\nGIVE 金币 1000\nSENDMSG 6 快捷回收：铁手镯，获得金币1000。\n\n#IF\nCHECKITEM 铁手镯 1\n#ACT\nTAKE 铁手镯 1\nGIVE 金币 1000\nSENDMSG 6 快捷回收：铁手镯，获得金币1000。\n\n#IF\nCHECKITEM 铁手镯 1\n#ACT\nTAKE 铁手镯 1\nGIVE 金币 1000\nSENDMSG 6 快捷回收：铁手镯，获得金币1000。\n\n#IF\nCHECKITEM 铁手镯 1\n#ACT\nTAKE 铁手镯 1\nGIVE 金币 1000\nSENDMSG 6 快捷回收：铁手镯，获得金币1000。\n\n#IF\nCHECKITEM 铁手镯 1\n#ACT\nTAKE 铁手镯 1\nGIVE 金币 1000\nSENDMSG 6 快捷回收：铁手镯，获得金币1000。\n\n#IF\nCHECKITEM 铁手镯 1\n#ACT\nTAKE 铁手镯 1\nGIVE 金币 1000\nSENDMSG 6 快捷回收：铁手镯，获得金币1000。\n\n#IF\nCHECKITEM 铁手镯 1\n#ACT\nTAKE 铁手镯 1\nGIVE 金币 1000\nSENDMSG 6 快捷回收：铁手镯，获得金币1000。\n\n#IF\nCHECKITEM 铁手镯 1\n#ACT\nTAKE 铁手镯 1\nGIVE 金币 1000\nSENDMSG 6 快捷回收：铁手镯，获得金币1000。\n\n#IF\nCHECKITEM 铁手镯 1\n#ACT\nTAKE 铁手镯 1\nGIVE 金币 1000\nSENDMSG 6 快捷回收：铁手镯，获得金币1000。\n\n#IF\nCHECKITEM 金项链 1\n#ACT\nTAKE 金项链 1\nGIVE 金币 1000\nSENDMSG 6 快捷回收：金项链，获得金币1000。\n\n#IF\nCHECKITEM 金项链 1\n#ACT\nTAKE 金项链 1\nGIVE 金币 1000\nSENDMSG 6 快捷回收：金项链，获得金币1000。\n\n#IF\nCHECKITEM 金项链 1\n#ACT\nTAKE 金项链 1\nGIVE 金币 1000\nSENDMSG 6 快捷回收：金项链，获得金币1000。\n\n#IF\nCHECKITEM 金项链 1\n#ACT\nTAKE 金项链 1\nGIVE 金币 1000\nSENDMSG 6 快捷回收：金项链，获得金币1000。\n\n#IF\nCHECKITEM 金项链 1\n#ACT\nTAKE 金项链 1\nGIVE 金币 1000\nSENDMSG 6 快捷回收：金项链，获得金币1000。\n\n#IF\nCHECKITEM 金项链 1\n#ACT\nTAKE 金项链 1\nGIVE 金币 1000\nSENDMSG 6 快捷回收：金项链，获得金币1000。\n\n#IF\nCHECKITEM 金项链 1\n#ACT\nTAKE 金项链 1\nGIVE 金币 1000\nSENDMSG 6 快捷回收：金项链，获得金币1000。\n\n#IF\nCHECKITEM 金项链 1\n#ACT\nTAKE 金项链 1\nGIVE 金币 1000\nSENDMSG 6 快捷回收：金项链，获得金币1000。\n\n#IF\nCHECKITEM 金项链 1\n#ACT\nTAKE 金项链 1\nGIVE 金币 1000\nSENDMSG 6 快捷回收：金项链，获得金币1000。\n\n#IF\nCHECKITEM 金项链 1\n#ACT\nTAKE 金项链 1\nGIVE 金币 1000\nSENDMSG 6 快捷回收：金项链，获得金币1000。\n\n#IF\n#ACT\nSENDMSG 6 快捷回收完成：白名单以外物品未处理。\nBREAK",
+      "target_encoding": "gb18030"
+    }
+  ],
+  "preflight_checks": [
+    {
+      "type": "file_exists",
+      "path": "Mir200/Envir/UserCmd.txt"
+    },
+    {
+      "type": "file_exists",
+      "path": "Mir200/Envir/Market_Def/QFunction-0.txt"
+    },
+    {
+      "type": "file_exists",
+      "path": "Mud2/DB/StdItems.DB"
+    }
+  ],
+  "post_checks": [
+    {
+      "type": "text_contains",
+      "path": "Mir200/Envir/UserCmd.txt",
+      "text": "快捷回收\t31"
+    },
+    {
+      "type": "label_exists",
+      "path": "Mir200/Envir/Market_Def/QFunction-0.txt",
+      "label": "XY_RECYCLE_COMMAND"
+    },
+    {
+      "type": "label_exists",
+      "path": "Mir200/Envir/Market_Def/QFunction-0.txt",
+      "label": "XY_RECYCLE_CONFIRM"
+    },
+    {
+      "type": "label_exists",
+      "path": "Mir200/Envir/Market_Def/QFunction-0.txt",
+      "label": "XY_RECYCLE_APPLY"
+    }
+  ],
+  "evidence": [
+    "source-audit:evidence/source_audit.json",
+    "source:XY-SKILL-008",
+    "source:XY-SKILL-021",
+    "static:exact-12-item-whitelist",
+    "static:confirmation-before-apply",
+    "fix:evidence/20260720_M2外部脚本加载失败修复.md",
+    "static:inline-qfunction-no-external-call",
+    "game:evidence/20260720_当前服游戏验收.md",
+    "rollback:isolated-byte-restore-and-live-transaction-rollback"
+  ]
+}

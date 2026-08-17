@@ -1,0 +1,97 @@
+; 玄渊首爆脚本 - 首次拾取处理脚本
+; 运行目录约定：本文件最终放在 Mir200\Envir\QuestDiary\首爆脚本\
+; 本文件不包含任何真实物品名称。
+
+[@首爆拾取处理]
+{
+
+; 每次拾取先清空临时变量，避免未配置物品复用上一次拾取的数据。
+#IF
+#ACT
+MOV <$STR(S$首爆原始数据)>
+MOV <$STR(S$首爆数量)>
+MOV <$STR(S$首爆状态)>
+MOV <$STR(S$首爆剩余)>
+MOV <$STR(S$首爆类型)>
+MOV N$首爆当前奖励 0
+
+; 已领取记录是第一道全服永久去重门。
+#IF
+CheckTextList ..\QuestDiary\首爆脚本\已领取奖励.txt <$PICKDROPITEMNAME>
+#ACT
+break
+
+; 只读取配置文件中存在的物品；不存在则不产生任何奖励。
+#IF
+#ACT
+ReadConfigFileItem ..\QuestDiary\首爆脚本\首爆奖励配置.txt 首爆奖励 <$PICKDROPITEMNAME> <$STR(S$首爆原始数据)>
+
+#IF
+NOT EQUAL <$STR(S$首爆原始数据)>
+#ACT
+EXTRACTSTRING = <$STR(S$首爆原始数据)> S$首爆数量 S$首爆状态 S$首爆剩余 S$首爆类型
+
+; 只有“未领取 + 1次”才允许首爆。
+#IF
+NOT EQUAL <$STR(S$首爆原始数据)>
+EQUAL <$STR(S$首爆状态)> 未领取
+EQUAL <$STR(S$首爆剩余)> 1
+EQUAL <$STR(S$首爆类型)> 元宝
+#ACT
+MOV N$首爆当前奖励 <$STR(S$首爆数量)>
+GAMEGOLD + <$STR(N$首爆当前奖励)>
+GOTO @首爆成功
+
+#IF
+NOT EQUAL <$STR(S$首爆原始数据)>
+EQUAL <$STR(S$首爆状态)> 未领取
+EQUAL <$STR(S$首爆剩余)> 1
+EQUAL <$STR(S$首爆类型)> 金币
+#ACT
+MOV N$首爆当前奖励 <$STR(S$首爆数量)>
+GOLDCOUNT + <$STR(N$首爆当前奖励)>
+GOTO @首爆成功
+
+#IF
+NOT EQUAL <$STR(S$首爆原始数据)>
+EQUAL <$STR(S$首爆状态)> 未领取
+EQUAL <$STR(S$首爆剩余)> 1
+EQUAL <$STR(S$首爆类型)> 金刚石
+#ACT
+MOV N$首爆当前奖励 <$STR(S$首爆数量)>
+GAMEDIAMOND + <$STR(N$首爆当前奖励)>
+GOTO @首爆成功
+
+; 第一个参考端把“沉默币”映射到 GAMEDIAMOND，保留为兼容别名。
+#IF
+NOT EQUAL <$STR(S$首爆原始数据)>
+EQUAL <$STR(S$首爆状态)> 未领取
+EQUAL <$STR(S$首爆剩余)> 1
+EQUAL <$STR(S$首爆类型)> 沉默币
+#ACT
+MOV N$首爆当前奖励 <$STR(S$首爆数量)>
+GAMEDIAMOND + <$STR(N$首爆当前奖励)>
+GOTO @首爆成功
+
+; 配置存在但奖励类型不在首版映射内时，不记录、不发奖。
+#IF
+NOT EQUAL <$STR(S$首爆原始数据)>
+EQUAL <$STR(S$首爆状态)> 未领取
+EQUAL <$STR(S$首爆剩余)> 1
+#ACT
+SENDMSG 7 首爆配置的奖励类型暂不支持，请检查首爆奖励配置.txt
+break
+
+[@首爆成功]
+#IF
+#ACT
+; 先把状态更新为已领取，再追加独立记录，跨重启保留。
+WriteConfigFileItem ..\QuestDiary\首爆脚本\首爆奖励配置.txt 首爆奖励 <$PICKDROPITEMNAME> <$STR(N$首爆当前奖励)>=<$USERNAME>=0=<$STR(S$首爆类型)>
+AddTextListEx ..\QuestDiary\首爆脚本\已领取奖励.txt <$PICKDROPITEMNAME> 0
+SceneShake 0 1
+MOVR <$STR(N$首爆公告坐标)> 50 200
+SENDMOVEMSG 0 254 0 <$STR(N$首爆公告坐标)> 1 [系统]:恭喜玩家{[<$USERNAME>]/SCOLOR=151}首次拾取物品{[<$PICKDROPITEMNAME>]/SCOLOR=222}，获得{<$STR(S$首爆类型)>/SCOLOR=253}：{<$STR(N$首爆当前奖励)>/SCOLOR=251} 15 2 30
+MessageBox 恭喜你首次拾取[<$PICKDROPITEMNAME>]，获得<$STR(S$首爆类型)>：<$STR(N$首爆当前奖励)>
+break
+
+}

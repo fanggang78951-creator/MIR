@@ -1,0 +1,57 @@
+[@Main]
+#IF
+CHECKFENGHAO 海岸拾魂者
+#ACT
+GOTO @XY_SOUL_COAST_DONE
+BREAK
+#ELSEACT
+GOTO @XY_SOUL_COAST_QUEST
+BREAK
+
+[@XY_SOUL_COAST_QUEST]
+#SAY
+<海岸亡魂/FCOLOR=250>\
+漂流群岛的海水从不归还完整的尸骨，只把亡者的执念冲上海岸。\
+我常年替失乡者收殓残骸，却发现四股强大的魂魄仍被困在怨念之中。\
+请带回它们，让海岸上的亡者得到最后的安息。\ \
+<需要：锈锚魂魄×1、沉金魂魄×1/FCOLOR=146>\
+<　　　船长残魂×1、吞岸王魂×1/FCOLOR=146>\
+<奖励：海岸拾魂者；韧性+20；攻魔道30-30/FCOLOR=251>\ \
+<提交四种魂魄/@XY_SOUL_COAST_SUBMIT>　<离开/@exit>
+
+[@XY_SOUL_COAST_SUBMIT]
+#IF
+CHECKITEM 锈锚魂魄 1
+CHECKITEM 沉金魂魄 1
+CHECKITEM 船长残魂 1
+CHECKITEM 吞岸王魂 1
+#ACT
+GIVEFENGHAO 海岸拾魂者 1
+GOTO @XY_SOUL_COAST_CONFIRM
+BREAK
+#ELSEACT
+MESSAGEBOX 材料不足：需要锈锚魂魄、沉金魂魄、船长残魂、吞岸王魂各1个。
+BREAK
+
+[@XY_SOUL_COAST_CONFIRM]
+#IF
+CHECKFENGHAO 海岸拾魂者
+#ACT
+TAKE 锈锚魂魄 1
+TAKE 沉金魂魄 1
+TAKE 船长残魂 1
+TAKE 吞岸王魂 1
+SENDMSG 6 [海岸亡魂] 任务完成，获得称号“海岸拾魂者”。
+GOTO @XY_SOUL_COAST_DONE
+BREAK
+#ELSEACT
+MESSAGEBOX 称号授予失败，所有魂魄材料均未扣除，请联系管理员。
+BREAK
+
+[@XY_SOUL_COAST_DONE]
+#SAY
+<海岸亡魂/FCOLOR=250>\
+亡者已经安息。你已完成本地图魂魄任务。\
+<称号：海岸拾魂者/FCOLOR=251>\
+<奖励：韧性+20；攻击、魔法、道术30-30/FCOLOR=251>\ \
+<离开/@exit>

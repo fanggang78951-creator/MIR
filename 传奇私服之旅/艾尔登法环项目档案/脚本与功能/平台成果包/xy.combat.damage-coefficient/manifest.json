@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "id": "xy.combat.damage-coefficient",
+  "version": "1.0.0",
+  "display_name": "伤害系数独立乘区",
+  "status": "verified",
+  "engine": "LFM2",
+  "residency": "resident",
+  "bundle": "combat-suite",
+  "dependencies": [
+    "xy.combat.runtime-refresh"
+  ],
+  "parameters": {},
+  "claims": {
+    "labels": [],
+    "variables": [
+      "N$XY_RT_DamageCoeff",
+      "N$XY_DC_FinalPower"
+    ],
+    "maps": [],
+    "npcs": []
+  },
+  "operations": [
+    {
+      "type": "managed_anchor_hook",
+      "target": "Mir200/Envir/Market_Def/QFunction-0.txt",
+      "anchor": "XY_DAMAGE_COEFFICIENT_PACKAGE_ANCHOR",
+      "content": "#IF\n#ACT\nMOV N$XY_RT_DamageCoeff 100\n; XY_EQUIP_MAKER_RUNTIME_DAMAGE_COEFFICIENT_ANCHOR\n#IF\n#ACT\nMOV N$XY_DC_FinalPower 100\nCalcPercent <$STR(N$XY_RT_Power)> <$STR(N$XY_RT_DamageCoeff)> N$XY_DC_FinalPower\nMOV N$XY_RT_Power <$STR(N$XY_DC_FinalPower)>"
+    }
+  ],
+  "preflight_checks": [],
+  "post_checks": [],
+  "evidence": [
+    "game:evidence/20260725_game_acceptance.md",
+    "formula:power-times-damage-coefficient-div-100",
+    "rejected:powerrate-type1-type2-overwrites-power"
+  ]
+}

@@ -1,0 +1,12 @@
+; 狂暴核心始终调用此接口。未安装图标包时它是安全空接口；图标包只在此处追加刷新钩子。
+[@XY_RAGE_UI_REFRESH]
+{
+; XYDP-HOOK-BEGIN xy.ui.attr-overview XY_RAGE_UI_REFRESH SHA256=6beaf55aaac3f6dd2a37ab23147ee5b3137de489ea14d2f767a3245033fb97cc
+#IF
+#ACT
+#CALL [\玄渊功能\非常驻\属性总览\玄渊三属性按钮.txt] @XY_UI_DRAW_RAGE
+; XYDP-HOOK-END xy.ui.attr-overview XY_RAGE_UI_REFRESH
+#IF
+#ACT
+BREAK
+}

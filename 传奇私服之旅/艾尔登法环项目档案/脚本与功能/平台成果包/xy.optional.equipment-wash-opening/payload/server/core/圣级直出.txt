@@ -1,0 +1,1860 @@
+[@圣级特殊]
+{
+
+#if
+#act
+mov N$XYEW_W_装备防御 0
+mov N$XYEW_W_装备魔御 0
+mov N$XYEW_W_装备攻击 0
+mov N$XYEW_W_装备魔法 0
+mov N$XYEW_W_装备道术 0
+mov N$XYEW_W_装备生命 0
+mov N$XYEW_W_装备魔力 0
+mov N$XYEW_W_暴击伤害 0
+mov N$XYEW_W_致命一击 0
+mov N$XYEW_W_攻击伤害 0
+mov N$XYEW_W_神圣一击 0
+mov N$XYEW_W_真实一击 0
+mov N$XYEW_W_麻痹一击 0
+mov N$XYEW_W_冰冻一击 0
+mov N$XYEW_W_攻击速度 0
+#if
+#act
+GOTO @特殊圣级一属性
+GOTO @特殊圣级二属性
+GOTO @特殊圣级三属性
+GOTO @特殊圣级四属性
+GOTO @特殊圣级五属性
+GOTO @特殊圣级六属性
+DELAYGOTO 1 @特殊圣级六星
+break
+
+
+
+#if
+RANDOM 10
+#act
+GOTO @特殊圣级一属性
+GOTO @特殊圣级二属性
+GOTO @特殊圣级三属性
+GOTO @特殊圣级四属性
+GOTO @特殊圣级五属性
+DELAYGOTO 1 @特殊圣级五星
+break
+
+
+
+#if
+RANDOM 5
+#act
+GOTO @特殊圣级一属性
+GOTO @特殊圣级二属性
+GOTO @特殊圣级三属性
+GOTO @特殊圣级四属性
+DELAYGOTO 1 @特殊圣级四星
+break
+
+#if
+#act
+GOTO @特殊圣级一属性
+GOTO @特殊圣级二属性
+GOTO @特殊圣级三属性
+DELAYGOTO 1 @特殊圣级三星
+break
+
+
+
+
+
+
+[@特殊圣级六星]
+
+#if
+equal M100 0
+#act
+mov M100 1
+
+#if
+equal M62 0
+#act
+mov M62 1
+
+#if
+equal M64 0
+#act
+mov M64 1
+
+#if
+equal M66 0
+#act
+mov M66 1
+
+#if
+equal M60 0
+#act
+mov M60 1
+
+#if
+equal M68 0
+#act
+mov M68 1
+
+
+
+#if
+NOT EQUAL P60 1
+NOT EQUAL P60 2
+NOT EQUAL P60 3
+NOT EQUAL P60 4
+NOT EQUAL P60 5
+NOT EQUAL P60 6
+NOT EQUAL P60 7
+NOT EQUAL P60 8
+NOT EQUAL P60 11
+NOT EQUAL P60 12
+large M60 2
+#act
+mov M60 2
+
+
+#if
+NOT EQUAL P61 1
+NOT EQUAL P61 2
+NOT EQUAL P61 3
+NOT EQUAL P61 4
+NOT EQUAL P61 5
+NOT EQUAL P61 6
+NOT EQUAL P61 7
+NOT EQUAL P61 8
+NOT EQUAL P61 11
+NOT EQUAL P61 12
+large M62 2
+#act
+mov M62 2
+
+#if
+NOT EQUAL P62 1
+NOT EQUAL P62 2
+NOT EQUAL P62 3
+NOT EQUAL P62 4
+NOT EQUAL P62 5
+NOT EQUAL P62 6
+NOT EQUAL P62 7
+NOT EQUAL P62 8
+NOT EQUAL P62 11
+NOT EQUAL P62 12
+large M64 2
+#act
+mov M64 2
+
+#if
+NOT EQUAL P63 1
+NOT EQUAL P63 2
+NOT EQUAL P63 3
+NOT EQUAL P63 4
+NOT EQUAL P63 5
+NOT EQUAL P63 6
+NOT EQUAL P63 7
+NOT EQUAL P63 8
+NOT EQUAL P63 11
+NOT EQUAL P63 12
+large M66 2
+#act
+mov M66 2
+
+#if
+NOT EQUAL P64 1
+NOT EQUAL P64 2
+NOT EQUAL P64 3
+NOT EQUAL P64 4
+NOT EQUAL P64 5
+NOT EQUAL P64 6
+NOT EQUAL P64 7
+NOT EQUAL P64 8
+NOT EQUAL P64 11
+NOT EQUAL P64 12
+large M68 2
+#act
+mov M68 2
+
+
+#if
+NOT EQUAL P65 1
+NOT EQUAL P65 2
+NOT EQUAL P65 3
+NOT EQUAL P65 4
+NOT EQUAL P65 5
+NOT EQUAL P65 6
+NOT EQUAL P65 7
+NOT EQUAL P65 8
+NOT EQUAL P65 11
+NOT EQUAL P65 12
+large M100 2
+#act
+mov M100 2
+
+#if
+#act
+SetUpgradeItem 27
+SetCustomItemText boxitem27 [装备品质:圣级]
+SetCustomItemTextColor boxitem27 249
+SetCustomItemAbil boxitem27 0 1 <$STR(P60)> 
+SetCustomItemAbil boxitem27 0 2 0
+SetCustomItemAbil boxitem27 0 0 249
+SetCustomItemAbil boxitem27 0 3 <$STR(S$XYEW_W_百分一)>
+SetCustomItemValue boxitem27 0 = <$STR(M60)>
+SetCustomItemAbil boxitem27 1 1 <$STR(P61)> 
+SetCustomItemAbil boxitem27 1 2 1
+SetCustomItemAbil boxitem27 1 0 249
+SetCustomItemAbil boxitem27 1 3 <$STR(S$XYEW_W_百分二)>
+SetCustomItemValue boxitem27 1 = <$STR(M62)>
+SetCustomItemAbil boxitem27 2 1 <$STR(P62)> 
+SetCustomItemAbil boxitem27 2 2 2
+SetCustomItemAbil boxitem27 2 0 249
+SetCustomItemAbil boxitem27 2 3 <$STR(S$XYEW_W_百分三)>
+SetCustomItemValue boxitem27 2 = <$STR(M64)>
+SetCustomItemAbil boxitem27 3 1 <$STR(P63)> 
+SetCustomItemAbil boxitem27 3 2 3
+SetCustomItemAbil boxitem27 3 0 249
+SetCustomItemAbil boxitem27 3 3 <$STR(S$XYEW_W_百分四)>
+SetCustomItemValue boxitem27 3 = <$STR(M66)>
+SetCustomItemAbil boxitem27 4 1 <$STR(P64)> 
+SetCustomItemAbil boxitem27 4 2 4
+SetCustomItemAbil boxitem27 4 0 249
+SetCustomItemAbil boxitem27 4 3 <$STR(S$XYEW_W_百分五)>
+SetCustomItemValue boxitem27 4 = <$STR(M68)>
+SetCustomItemAbil boxitem27 5 1 <$STR(P65)> 
+SetCustomItemAbil boxitem27 5 2 5
+SetCustomItemAbil boxitem27 5 0 249
+SetCustomItemAbil boxitem27 5 3 <$STR(S$XYEW_W_百分六)>
+SetCustomItemValue boxitem27 5 = <$STR(M100)>
+ChangeItemUpgradeCount boxitem27 = 6
+UpdateItem boxitem27
+MOV N$XYEW_W_洗练CD 0
+close
+messagebox 洗练成功，获得了圣级属性。
+break
+
+
+
+
+
+
+[@特殊圣级一星]
+
+
+#if
+equal M60 0
+#act
+mov M60 1
+
+#if
+NOT EQUAL P60 1
+NOT EQUAL P60 2
+NOT EQUAL P60 3
+NOT EQUAL P60 4
+NOT EQUAL P60 5
+NOT EQUAL P60 6
+NOT EQUAL P60 7
+NOT EQUAL P60 8
+NOT EQUAL P60 11
+NOT EQUAL P60 12
+large M60 2
+#act
+mov M60 2
+
+
+#if
+#act
+SetUpgradeItem 27
+SetCustomItemText boxitem27 [装备品质:圣级]
+SetCustomItemTextColor boxitem27 249
+SetCustomItemAbil boxitem27 0 1 <$STR(P60)> 
+SetCustomItemAbil boxitem27 0 2 0
+SetCustomItemAbil boxitem27 0 0 249
+SetCustomItemAbil boxitem27 0 3 <$STR(S$XYEW_W_百分一)>
+SetCustomItemValue boxitem27 0 = <$STR(M60)>
+ChangeItemUpgradeCount boxitem27 = 6
+UpdateItem boxitem27
+MOV N$XYEW_W_洗练CD 0
+close
+messagebox 洗练成功，获得了圣级属性。
+break
+
+
+[@特殊圣级二星]
+#if
+equal M62 0
+#act
+mov M62 1
+
+
+#if
+equal M60 0
+#act
+mov M60 1
+
+
+#if
+NOT EQUAL P60 1
+NOT EQUAL P60 2
+NOT EQUAL P60 3
+NOT EQUAL P60 4
+NOT EQUAL P60 5
+NOT EQUAL P60 6
+NOT EQUAL P60 7
+NOT EQUAL P60 8
+NOT EQUAL P60 11
+NOT EQUAL P60 12
+large M60 2
+#act
+mov M60 2
+
+
+#if
+NOT EQUAL P61 1
+NOT EQUAL P61 2
+NOT EQUAL P61 3
+NOT EQUAL P61 4
+NOT EQUAL P61 5
+NOT EQUAL P61 6
+NOT EQUAL P61 7
+NOT EQUAL P61 8
+NOT EQUAL P61 11
+NOT EQUAL P61 12
+large M62 2
+#act
+mov M62 2
+
+
+
+#if
+#act
+SetUpgradeItem 27
+SetCustomItemText boxitem27 [装备品质:圣级]
+SetCustomItemTextColor boxitem27 249
+SetCustomItemAbil boxitem27 0 1 <$STR(P60)> 
+SetCustomItemAbil boxitem27 0 2 0
+SetCustomItemAbil boxitem27 0 0 249
+SetCustomItemAbil boxitem27 0 3 <$STR(S$XYEW_W_百分一)>
+SetCustomItemValue boxitem27 0 = <$STR(M60)>
+SetCustomItemAbil boxitem27 1 1 <$STR(P61)> 
+SetCustomItemAbil boxitem27 1 2 1
+SetCustomItemAbil boxitem27 1 0 249
+SetCustomItemAbil boxitem27 1 3 <$STR(S$XYEW_W_百分二)>
+SetCustomItemValue boxitem27 1 = <$STR(M62)>
+ChangeItemUpgradeCount boxitem27 = 6
+UpdateItem boxitem27
+MOV N$XYEW_W_洗练CD 0
+close
+messagebox 洗练成功，获得了圣级属性。
+break
+
+
+[@特殊圣级三星]
+#if
+equal M62 0
+#act
+mov M62 1
+
+#if
+equal M64 0
+#act
+mov M64 1
+
+
+#if
+equal M60 0
+#act
+mov M60 1
+
+#if
+NOT EQUAL P60 1
+NOT EQUAL P60 2
+NOT EQUAL P60 3
+NOT EQUAL P60 4
+NOT EQUAL P60 5
+NOT EQUAL P60 6
+NOT EQUAL P60 7
+NOT EQUAL P60 8
+NOT EQUAL P60 11
+NOT EQUAL P60 12
+large M60 2
+#act
+mov M60 2
+
+
+#if
+NOT EQUAL P61 1
+NOT EQUAL P61 2
+NOT EQUAL P61 3
+NOT EQUAL P61 4
+NOT EQUAL P61 5
+NOT EQUAL P61 6
+NOT EQUAL P61 7
+NOT EQUAL P61 8
+NOT EQUAL P61 11
+NOT EQUAL P61 12
+large M62 2
+#act
+mov M62 2
+
+#if
+NOT EQUAL P62 1
+NOT EQUAL P62 2
+NOT EQUAL P62 3
+NOT EQUAL P62 4
+NOT EQUAL P62 5
+NOT EQUAL P62 6
+NOT EQUAL P62 7
+NOT EQUAL P62 8
+NOT EQUAL P62 11
+NOT EQUAL P62 12
+large M64 2
+#act
+mov M64 2
+
+#if
+#act
+SetUpgradeItem 27
+SetCustomItemText boxitem27 [装备品质:圣级]
+SetCustomItemTextColor boxitem27 249
+SetCustomItemAbil boxitem27 0 1 <$STR(P60)> 
+SetCustomItemAbil boxitem27 0 2 0
+SetCustomItemAbil boxitem27 0 0 249
+SetCustomItemAbil boxitem27 0 3 <$STR(S$XYEW_W_百分一)>
+SetCustomItemValue boxitem27 0 = <$STR(M60)>
+SetCustomItemAbil boxitem27 1 1 <$STR(P61)> 
+SetCustomItemAbil boxitem27 1 2 1
+SetCustomItemAbil boxitem27 1 0 249
+SetCustomItemAbil boxitem27 1 3 <$STR(S$XYEW_W_百分二)>
+SetCustomItemValue boxitem27 1 = <$STR(M62)>
+SetCustomItemAbil boxitem27 2 1 <$STR(P62)> 
+SetCustomItemAbil boxitem27 2 2 2
+SetCustomItemAbil boxitem27 2 0 249
+SetCustomItemAbil boxitem27 2 3 <$STR(S$XYEW_W_百分三)>
+SetCustomItemValue boxitem27 2 = <$STR(M64)>
+ChangeItemUpgradeCount boxitem27 = 6
+UpdateItem boxitem27
+MOV N$XYEW_W_洗练CD 0
+close
+messagebox 洗练成功，获得了圣级属性。
+break
+
+
+
+[@特殊圣级五星]
+#if
+equal M62 0
+#act
+mov M62 1
+
+#if
+equal M64 0
+#act
+mov M64 1
+
+#if
+equal M66 0
+#act
+mov M66 1
+
+#if
+equal M60 0
+#act
+mov M60 1
+
+#if
+equal M68 0
+#act
+mov M68 1
+
+#if
+NOT EQUAL P60 1
+NOT EQUAL P60 2
+NOT EQUAL P60 3
+NOT EQUAL P60 4
+NOT EQUAL P60 5
+NOT EQUAL P60 6
+NOT EQUAL P60 7
+NOT EQUAL P60 8
+NOT EQUAL P60 11
+NOT EQUAL P60 12
+large M60 2
+#act
+mov M60 2
+
+
+#if
+NOT EQUAL P61 1
+NOT EQUAL P61 2
+NOT EQUAL P61 3
+NOT EQUAL P61 4
+NOT EQUAL P61 5
+NOT EQUAL P61 6
+NOT EQUAL P61 7
+NOT EQUAL P61 8
+NOT EQUAL P61 11
+NOT EQUAL P61 12
+large M62 2
+#act
+mov M62 2
+
+#if
+NOT EQUAL P62 1
+NOT EQUAL P62 2
+NOT EQUAL P62 3
+NOT EQUAL P62 4
+NOT EQUAL P62 5
+NOT EQUAL P62 6
+NOT EQUAL P62 7
+NOT EQUAL P62 8
+NOT EQUAL P62 11
+NOT EQUAL P62 12
+large M64 2
+#act
+mov M64 2
+
+#if
+NOT EQUAL P63 1
+NOT EQUAL P63 2
+NOT EQUAL P63 3
+NOT EQUAL P63 4
+NOT EQUAL P63 5
+NOT EQUAL P63 6
+NOT EQUAL P63 7
+NOT EQUAL P63 8
+NOT EQUAL P63 11
+NOT EQUAL P63 12
+large M66 2
+#act
+mov M66 2
+
+#if
+NOT EQUAL P64 1
+NOT EQUAL P64 2
+NOT EQUAL P64 3
+NOT EQUAL P64 4
+NOT EQUAL P64 5
+NOT EQUAL P64 6
+NOT EQUAL P64 7
+NOT EQUAL P64 8
+NOT EQUAL P64 11
+NOT EQUAL P64 12
+large M68 2
+#act
+mov M68 2
+
+
+#if
+#act
+SetUpgradeItem 27
+SetCustomItemText boxitem27 [装备品质:圣级]
+SetCustomItemTextColor boxitem27 249
+SetCustomItemAbil boxitem27 0 1 <$STR(P60)> 
+SetCustomItemAbil boxitem27 0 2 0
+SetCustomItemAbil boxitem27 0 0 249
+SetCustomItemAbil boxitem27 0 3 <$STR(S$XYEW_W_百分一)>
+SetCustomItemValue boxitem27 0 = <$STR(M60)>
+SetCustomItemAbil boxitem27 1 1 <$STR(P61)> 
+SetCustomItemAbil boxitem27 1 2 1
+SetCustomItemAbil boxitem27 1 0 249
+SetCustomItemAbil boxitem27 1 3 <$STR(S$XYEW_W_百分二)>
+SetCustomItemValue boxitem27 1 = <$STR(M62)>
+SetCustomItemAbil boxitem27 2 1 <$STR(P62)> 
+SetCustomItemAbil boxitem27 2 2 2
+SetCustomItemAbil boxitem27 2 0 249
+SetCustomItemAbil boxitem27 2 3 <$STR(S$XYEW_W_百分三)>
+SetCustomItemValue boxitem27 2 = <$STR(M64)>
+SetCustomItemAbil boxitem27 3 1 <$STR(P63)> 
+SetCustomItemAbil boxitem27 3 2 3
+SetCustomItemAbil boxitem27 3 0 249
+SetCustomItemAbil boxitem27 3 3 <$STR(S$XYEW_W_百分四)>
+SetCustomItemValue boxitem27 3 = <$STR(M66)>
+SetCustomItemAbil boxitem27 4 1 <$STR(P64)> 
+SetCustomItemAbil boxitem27 4 2 4
+SetCustomItemAbil boxitem27 4 0 249
+SetCustomItemAbil boxitem27 4 3 <$STR(S$XYEW_W_百分五)>
+SetCustomItemValue boxitem27 4 = <$STR(M68)>
+ChangeItemUpgradeCount boxitem27 = 6
+UpdateItem boxitem27
+MOV N$XYEW_W_洗练CD 0
+close
+messagebox 洗练成功，获得了圣级属性。
+break
+
+
+
+[@特殊圣级四星]
+#if
+equal M62 0
+#act
+mov M62 1
+
+#if
+equal M64 0
+#act
+mov M64 1
+
+#if
+equal M66 0
+#act
+mov M66 1
+
+#if
+equal M60 0
+#act
+mov M60 1
+
+
+#if
+NOT EQUAL P60 1
+NOT EQUAL P60 2
+NOT EQUAL P60 3
+NOT EQUAL P60 4
+NOT EQUAL P60 5
+NOT EQUAL P60 6
+NOT EQUAL P60 7
+NOT EQUAL P60 8
+NOT EQUAL P60 11
+NOT EQUAL P60 12
+large M60 2
+#act
+mov M60 2
+
+
+#if
+NOT EQUAL P61 1
+NOT EQUAL P61 2
+NOT EQUAL P61 3
+NOT EQUAL P61 4
+NOT EQUAL P61 5
+NOT EQUAL P61 6
+NOT EQUAL P61 7
+NOT EQUAL P61 8
+NOT EQUAL P61 11
+NOT EQUAL P61 12
+large M62 2
+#act
+mov M62 2
+
+#if
+NOT EQUAL P62 1
+NOT EQUAL P62 2
+NOT EQUAL P62 3
+NOT EQUAL P62 4
+NOT EQUAL P62 5
+NOT EQUAL P62 6
+NOT EQUAL P62 7
+NOT EQUAL P62 8
+NOT EQUAL P62 11
+NOT EQUAL P62 12
+large M64 2
+#act
+mov M64 2
+
+#if
+NOT EQUAL P63 1
+NOT EQUAL P63 2
+NOT EQUAL P63 3
+NOT EQUAL P63 4
+NOT EQUAL P63 5
+NOT EQUAL P63 6
+NOT EQUAL P63 7
+NOT EQUAL P63 8
+NOT EQUAL P63 11
+NOT EQUAL P63 12
+large M66 2
+#act
+mov M66 2
+
+
+
+#if
+#act
+SetUpgradeItem 27
+SetCustomItemText boxitem27 [装备品质:圣级]
+SetCustomItemTextColor boxitem27 249
+SetCustomItemAbil boxitem27 0 1 <$STR(P60)> 
+SetCustomItemAbil boxitem27 0 2 0
+SetCustomItemAbil boxitem27 0 0 249
+SetCustomItemAbil boxitem27 0 3 <$STR(S$XYEW_W_百分一)>
+SetCustomItemValue boxitem27 0 = <$STR(M60)>
+SetCustomItemAbil boxitem27 1 1 <$STR(P61)> 
+SetCustomItemAbil boxitem27 1 2 1
+SetCustomItemAbil boxitem27 1 0 249
+SetCustomItemAbil boxitem27 1 3 <$STR(S$XYEW_W_百分二)>
+SetCustomItemValue boxitem27 1 = <$STR(M62)>
+SetCustomItemAbil boxitem27 2 1 <$STR(P62)> 
+SetCustomItemAbil boxitem27 2 2 2
+SetCustomItemAbil boxitem27 2 0 249
+SetCustomItemAbil boxitem27 2 3 <$STR(S$XYEW_W_百分三)>
+SetCustomItemValue boxitem27 2 = <$STR(M64)>
+SetCustomItemAbil boxitem27 3 1 <$STR(P63)> 
+SetCustomItemAbil boxitem27 3 2 3
+SetCustomItemAbil boxitem27 3 0 249
+SetCustomItemAbil boxitem27 3 3 <$STR(S$XYEW_W_百分四)>
+SetCustomItemValue boxitem27 3 = <$STR(M66)>
+ChangeItemUpgradeCount boxitem27 = 6
+UpdateItem boxitem27
+MOV N$XYEW_W_洗练CD 0
+close
+messagebox 洗练成功，获得了圣级属性。
+break
+
+
+[@特殊圣级一属性]
+#if
+#act
+MOVR P60  3  16
+
+
+#if
+equal P60 1
+#act
+GetDBItemFieldValue <$BOXITEM[27].NAME> AC2 <$STR(M61)>
+INC N$XYEW_W_装备防御 1
+mov S$XYEW_W_百分一 0
+mul N$XYEW_W_临时防御 <$STR(M61)> 7
+DIV N$XYEW_W_计算防御 <$STR(N$XYEW_W_临时防御)> 5
+MOVR M60 1 <$STR(M61)>
+
+
+
+#if
+equal P60 2
+#act
+GetDBItemFieldValue <$BOXITEM[27].NAME> MAC2 <$STR(M61)>
+INC N$XYEW_W_装备魔御 2
+mov S$XYEW_W_百分一 0
+mul N$XYEW_W_临时魔御 <$STR(M61)> 7
+DIV N$XYEW_W_计算魔御 <$STR(N$XYEW_W_临时魔御)> 5
+MOVR M60 1 <$STR(M61)>
+
+
+
+#if
+equal P60 3
+#act
+GetDBItemFieldValue <$BOXITEM[27].NAME> DC2 <$STR(M61)>
+INC N$XYEW_W_装备攻击 1
+mov S$XYEW_W_百分一 0
+mul N$XYEW_W_临时攻击 <$STR(M61)> 7
+DIV N$XYEW_W_计算攻击 <$STR(N$XYEW_W_临时攻击)> 5
+MOVR M60 1 <$STR(M61)>
+#if
+equal P60 4
+#act
+GetDBItemFieldValue <$BOXITEM[27].NAME> MC2 <$STR(M61)>
+INC N$XYEW_W_装备魔法 1
+mov S$XYEW_W_百分一 0
+mul N$XYEW_W_临时魔法 <$STR(M61)> 7
+DIV N$XYEW_W_计算魔法 <$STR(N$XYEW_W_临时魔法)> 5
+MOVR M60 1 <$STR(M61)>
+
+#if
+equal P60 5
+#act
+GetDBItemFieldValue <$BOXITEM[27].NAME> SC2 <$STR(M61)>
+INC N$XYEW_W_装备道术 1
+mov S$XYEW_W_百分一 0
+mul N$XYEW_W_临时道术 <$STR(M61)> 7
+DIV N$XYEW_W_计算道术 <$STR(N$XYEW_W_临时道术)> 5
+MOVR M60 1 <$STR(M61)>
+
+#if
+equal P60 6
+#act
+GetDBItemFieldValue <$BOXITEM[27].NAME> HP <$STR(M61)>
+INC N$XYEW_W_装备生命 1
+mov S$XYEW_W_百分一 0
+mul N$XYEW_W_临时生命 <$STR(M61)> 11
+DIV N$XYEW_W_计算生命 <$STR(N$XYEW_W_临时生命)> 5
+MOVR M60 1 <$STR(M61)>
+
+#if
+equal P60 7
+#act
+GetDBItemFieldValue <$BOXITEM[27].NAME> MP <$STR(M61)>
+INC N$XYEW_W_装备魔力 1
+mov S$XYEW_W_百分一 0
+mul N$XYEW_W_临时魔力 <$STR(M101)> 11
+DIV N$XYEW_W_计算魔力 <$STR(N$XYEW_W_临时魔力)> 5
+MOVR M60 1 <$STR(M61)>
+
+#if
+equal P60 8
+#act
+INC N$XYEW_W_暴击伤害 1
+mov S$XYEW_W_百分一 1
+MOVR M60 1 9
+
+#if
+equal P60 9
+#act
+INC N$XYEW_W_致命一击 1
+MOVR M60 1 3
+mov S$XYEW_W_百分一 1
+SetNewItemValue boxitem27 0 + <$STR(M60)>
+
+#if
+equal P60 10
+#act
+INC N$XYEW_W_攻击伤害 1
+MOVR M60 1 4
+mov S$XYEW_W_百分一 1
+SetNewItemValue boxitem27 1 + <$STR(M60)>
+
+#if
+equal P60 11
+#act
+INC N$XYEW_W_神圣一击 1
+mov S$XYEW_W_百分一 0
+MOVR M60 1 6
+
+#if
+equal P60 12
+#act
+INC N$XYEW_W_真实一击 1
+mov S$XYEW_W_百分一 0
+MOVR M60 1 100
+
+#if
+equal P60 13
+#act
+INC N$XYEW_W_麻痹一击 1
+mov S$XYEW_W_百分一 0
+MOVR M60 1 3
+
+#if
+equal P60 14
+#act
+INC N$XYEW_W_冰冻一击 1
+mov S$XYEW_W_百分一 0
+MOVR M60 1 3
+
+#if
+equal P60 15
+#act
+INC N$XYEW_W_攻击速度 1
+mov S$XYEW_W_百分一 0
+MOVR M60 1 3
+
+[@特殊圣级二属性]
+#if
+#act
+MOVR P61  3  16
+
+
+#if
+equal P61 1
+#act
+GetDBItemFieldValue <$BOXITEM[27].NAME> AC2 <$STR(M63)>
+INC N$XYEW_W_装备防御 1
+mov S$XYEW_W_百分二 0
+mul N$XYEW_W_临时防御 <$STR(M63)> 7
+DIV N$XYEW_W_计算防御 <$STR(N$XYEW_W_临时防御)> 5
+MOVR M62 1 <$STR(M63)>
+
+
+
+#if
+equal P61 2
+#act
+GetDBItemFieldValue <$BOXITEM[27].NAME> MAC2 <$STR(M63)>
+INC N$XYEW_W_装备魔御 2
+mov S$XYEW_W_百分二 0
+mul N$XYEW_W_临时魔御 <$STR(M63)> 7
+DIV N$XYEW_W_计算魔御 <$STR(N$XYEW_W_临时魔御)> 5
+MOVR M62 1 <$STR(M63)>
+
+
+
+#if
+equal P61 3
+#act
+GetDBItemFieldValue <$BOXITEM[27].NAME> DC2 <$STR(M63)>
+INC N$XYEW_W_装备攻击 1
+mov S$XYEW_W_百分二 0
+mul N$XYEW_W_临时攻击 <$STR(M63)> 7
+DIV N$XYEW_W_计算攻击 <$STR(N$XYEW_W_临时攻击)> 5
+MOVR M62 1 <$STR(M63)>
+#if
+equal P61 4
+#act
+GetDBItemFieldValue <$BOXITEM[27].NAME> MC2 <$STR(M63)>
+INC N$XYEW_W_装备魔法 1
+mov S$XYEW_W_百分二 0
+mul N$XYEW_W_临时魔法 <$STR(M63)> 7
+DIV N$XYEW_W_计算魔法 <$STR(N$XYEW_W_临时魔法)> 5
+MOVR M62 1 <$STR(M63)>
+
+#if
+equal P61 5
+#act
+GetDBItemFieldValue <$BOXITEM[27].NAME> SC2 <$STR(M63)>
+INC N$XYEW_W_装备道术 1
+mov S$XYEW_W_百分二 0
+mul N$XYEW_W_临时道术 <$STR(M63)> 7
+DIV N$XYEW_W_计算道术 <$STR(N$XYEW_W_临时道术)> 5
+MOVR M62 1 <$STR(M63)>
+
+#if
+equal P61 6
+#act
+GetDBItemFieldValue <$BOXITEM[27].NAME> HP <$STR(M63)>
+INC N$XYEW_W_装备生命 1
+mov S$XYEW_W_百分二 0
+mul N$XYEW_W_临时生命 <$STR(M63)> 11
+DIV N$XYEW_W_计算生命 <$STR(N$XYEW_W_临时生命)> 5
+MOVR M62 1 <$STR(M63)>
+
+#if
+equal P61 7
+#act
+GetDBItemFieldValue <$BOXITEM[27].NAME> MP <$STR(M63)>
+INC N$XYEW_W_装备魔力 1
+mov S$XYEW_W_百分二 0
+mul N$XYEW_W_临时魔力 <$STR(M63)> 11
+DIV N$XYEW_W_计算魔力 <$STR(N$XYEW_W_临时魔力)> 5
+MOVR M62 1 <$STR(M63)>
+
+#if
+equal P61 8
+#act
+INC N$XYEW_W_暴击伤害 1
+mov S$XYEW_W_百分二 1
+MOVR M62 1 9
+
+#if
+equal P61 9
+#act
+INC N$XYEW_W_致命一击 1
+MOVR M62 1 3
+mov S$XYEW_W_百分二 1
+SetNewItemValue boxitem27 0 + <$STR(M62)>
+
+#if
+equal P61 10
+#act
+INC N$XYEW_W_攻击伤害 1
+MOVR M62 1 4
+mov S$XYEW_W_百分二 1
+SetNewItemValue boxitem27 1 + <$STR(M62)>
+
+#if
+equal P61 11
+#act
+INC N$XYEW_W_神圣一击 1
+mov S$XYEW_W_百分二 0
+MOVR M62 1 6
+
+#if
+equal P61 12
+#act
+INC N$XYEW_W_真实一击 1
+mov S$XYEW_W_百分二 0
+MOVR M62 1 100
+
+#if
+equal P61 13
+#act
+INC N$XYEW_W_麻痹一击 1
+mov S$XYEW_W_百分二 0
+MOVR M62 1 3
+
+#if
+equal P61 14
+#act
+INC N$XYEW_W_冰冻一击 1
+mov S$XYEW_W_百分二 0
+MOVR M62 1 3
+
+#if
+equal P61 15
+#act
+INC N$XYEW_W_攻击速度 1
+mov S$XYEW_W_百分二 0
+MOVR M62 1 3
+
+
+[@特殊圣级三属性]
+#if
+#act
+MOVR P62  3  16
+
+
+#if
+equal P62 8
+large N$XYEW_W_暴击伤害 0
+#act
+inc P63 1
+
+#if
+equal P62 9
+large N$XYEW_W_致命一击 1
+#act
+inc P63 1
+
+#if
+equal P62 10
+large N$XYEW_W_攻击伤害 1
+#act
+inc P63 1
+
+
+#if
+equal P62 11
+large N$XYEW_W_神圣一击 1
+#act
+inc P63 1
+
+#if
+equal P62 12
+large N$XYEW_W_真实一击 1
+#act
+inc P63 1
+
+#if
+equal P62 13
+large N$XYEW_W_麻痹一击 1
+#act
+inc P63 1
+
+#if
+equal P62 14
+large N$XYEW_W_冰冻一击 1
+#act
+inc P63 1
+
+#if
+equal P62 15
+large N$XYEW_W_攻击速度 1
+#act
+movr P62 1 8
+
+
+#if
+equal P62 1
+#act
+GetDBItemFieldValue <$BOXITEM[27].NAME> AC2 <$STR(M65)>
+INC N$XYEW_W_装备防御 1
+mov S$XYEW_W_百分三 0
+mul N$XYEW_W_临时防御 <$STR(M65)> 7
+DIV N$XYEW_W_计算防御 <$STR(N$XYEW_W_临时防御)> 5
+MOVR M64 1 <$STR(M65)>
+
+
+
+#if
+equal P62 2
+#act
+GetDBItemFieldValue <$BOXITEM[27].NAME> MAC2 <$STR(M65)>
+INC N$XYEW_W_装备魔御 2
+mov S$XYEW_W_百分三 0
+mul N$XYEW_W_临时魔御 <$STR(M65)> 7
+DIV N$XYEW_W_计算魔御 <$STR(N$XYEW_W_临时魔御)> 5
+MOVR M64 1 <$STR(M65)>
+
+
+
+#if
+equal P62 3
+#act
+GetDBItemFieldValue <$BOXITEM[27].NAME> DC2 <$STR(M65)>
+INC N$XYEW_W_装备攻击 1
+mov S$XYEW_W_百分三 0
+mul N$XYEW_W_临时攻击 <$STR(M65)> 7
+DIV N$XYEW_W_计算攻击 <$STR(N$XYEW_W_临时攻击)> 5
+MOVR M64 1 <$STR(M65)>
+#if
+equal P62 4
+#act
+GetDBItemFieldValue <$BOXITEM[27].NAME> MC2 <$STR(M65)>
+INC N$XYEW_W_装备魔法 1
+mov S$XYEW_W_百分三 0
+mul N$XYEW_W_临时魔法 <$STR(M65)> 7
+DIV N$XYEW_W_计算魔法 <$STR(N$XYEW_W_临时魔法)> 5
+MOVR M64 1 <$STR(M65)>
+
+#if
+equal P62 5
+#act
+GetDBItemFieldValue <$BOXITEM[27].NAME> SC2 <$STR(M65)>
+INC N$XYEW_W_装备道术 1
+mov S$XYEW_W_百分三 0
+mul N$XYEW_W_临时道术 <$STR(M65)> 7
+DIV N$XYEW_W_计算道术 <$STR(N$XYEW_W_临时道术)> 5
+MOVR M64 1 <$STR(M65)>
+
+#if
+equal P62 6
+#act
+GetDBItemFieldValue <$BOXITEM[27].NAME> HP <$STR(M65)>
+INC N$XYEW_W_装备生命 1
+mov S$XYEW_W_百分三 0
+mul N$XYEW_W_临时生命 <$STR(M65)> 11
+DIV N$XYEW_W_计算生命 <$STR(N$XYEW_W_临时生命)> 5
+MOVR M64 1 <$STR(M65)>
+
+#if
+equal P62 7
+#act
+GetDBItemFieldValue <$BOXITEM[27].NAME> MP <$STR(M65)>
+INC N$XYEW_W_装备魔力 1
+mov S$XYEW_W_百分三 0
+mul N$XYEW_W_临时魔力 <$STR(M65)> 11
+DIV N$XYEW_W_计算魔力 <$STR(N$XYEW_W_临时魔力)> 5
+MOVR M64 1 <$STR(M65)>
+
+#if
+equal P62 8
+#act
+INC N$XYEW_W_暴击伤害 1
+mov S$XYEW_W_百分三 1
+MOVR M64 1 9
+
+#if
+equal P62 9
+#act
+INC N$XYEW_W_致命一击 1
+MOVR M64 1 3
+mov S$XYEW_W_百分三 1
+SetNewItemValue boxitem27 0 + <$STR(M64)>
+
+#if
+equal P62 10
+#act
+INC N$XYEW_W_攻击伤害 1
+MOVR M64 1 4
+mov S$XYEW_W_百分三 1
+SetNewItemValue boxitem27 1 + <$STR(M64)>
+
+#if
+equal P62 11
+#act
+INC N$XYEW_W_神圣一击 1
+mov S$XYEW_W_百分三 0
+MOVR M64 1 6
+
+#if
+equal P62 12
+#act
+INC N$XYEW_W_真实一击 1
+mov S$XYEW_W_百分三 0
+MOVR M64 1 100
+
+#if
+equal P62 13
+#act
+INC N$XYEW_W_麻痹一击 1
+mov S$XYEW_W_百分三 0
+MOVR M64 1 3
+
+#if
+equal P62 14
+#act
+INC N$XYEW_W_冰冻一击 1
+mov S$XYEW_W_百分三 0
+MOVR M64 1 3
+
+#if
+equal P62 15
+#act
+INC N$XYEW_W_攻击速度 1
+mov S$XYEW_W_百分三 0
+MOVR M64 1 3
+
+
+[@特殊圣级四属性]
+#if
+#act
+MOVR P63  3  16
+
+#if
+equal P63 1
+large N$XYEW_W_装备防御 2
+#act
+inc P63 1
+
+#if
+equal P63 2
+large N$XYEW_W_装备魔御 2
+#act
+inc P63 1
+
+#if
+equal P63 3
+large N$XYEW_W_装备攻击 2
+#act
+inc P63 1
+
+#if
+equal P63 4
+large N$XYEW_W_装备魔法 2
+#act
+inc P63 1
+
+#if
+equal P63 5
+large N$XYEW_W_装备道术 2
+#act
+inc P63 1
+
+
+#if
+equal P63 6
+large N$XYEW_W_装备生命 2
+#act
+inc P63 1
+
+#if
+equal P63 7
+large N$XYEW_W_装备魔力 2
+#act
+inc P63 1
+
+#if
+equal P63 8
+large N$XYEW_W_暴击伤害 0
+#act
+inc P63 1
+
+#if
+equal P63 9
+large N$XYEW_W_致命一击 1
+#act
+inc P63 1
+
+#if
+equal P63 10
+large N$XYEW_W_攻击伤害 1
+#act
+inc P63 1
+
+
+#if
+equal P63 11
+large N$XYEW_W_神圣一击 1
+#act
+inc P63 1
+
+#if
+equal P63 12
+large N$XYEW_W_真实一击 1
+#act
+inc P63 1
+
+#if
+equal P63 13
+large N$XYEW_W_麻痹一击 1
+#act
+inc P63 1
+
+#if
+equal P63 14
+large N$XYEW_W_冰冻一击 1
+#act
+inc P63 1
+
+#if
+equal P63 15
+large N$XYEW_W_攻击速度 1
+#act
+goto @特殊圣级四属性
+break
+
+#if
+equal P63 1
+#act
+GetDBItemFieldValue <$BOXITEM[27].NAME> AC2 <$STR(M67)>
+INC N$XYEW_W_装备防御 1
+mov S$XYEW_W_百分四 0
+mul N$XYEW_W_临时防御 <$STR(M67)> 7
+DIV N$XYEW_W_计算防御 <$STR(N$XYEW_W_临时防御)> 5
+MOVR M66 1 <$STR(M67)>
+
+
+
+#if
+equal P63 2
+#act
+GetDBItemFieldValue <$BOXITEM[27].NAME> MAC2 <$STR(M67)>
+INC N$XYEW_W_装备魔御 2
+mov S$XYEW_W_百分四 0
+mul N$XYEW_W_临时魔御 <$STR(M67)> 7
+DIV N$XYEW_W_计算魔御 <$STR(N$XYEW_W_临时魔御)> 5
+MOVR M66 1 <$STR(M67)>
+
+
+
+#if
+equal P63 3
+#act
+GetDBItemFieldValue <$BOXITEM[27].NAME> DC2 <$STR(M67)>
+INC N$XYEW_W_装备攻击 1
+mov S$XYEW_W_百分四 0
+mul N$XYEW_W_临时攻击 <$STR(M67)> 7
+DIV N$XYEW_W_计算攻击 <$STR(N$XYEW_W_临时攻击)> 5
+MOVR M66 1 <$STR(M67)>
+#if
+equal P63 4
+#act
+GetDBItemFieldValue <$BOXITEM[27].NAME> MC2 <$STR(M67)>
+INC N$XYEW_W_装备魔法 1
+mov S$XYEW_W_百分四 0
+mul N$XYEW_W_临时魔法 <$STR(M67)> 7
+DIV N$XYEW_W_计算魔法 <$STR(N$XYEW_W_临时魔法)> 5
+MOVR M66 1 <$STR(M67)>
+
+#if
+equal P63 5
+#act
+GetDBItemFieldValue <$BOXITEM[27].NAME> SC2 <$STR(M67)>
+INC N$XYEW_W_装备道术 1
+mov S$XYEW_W_百分四 0
+mul N$XYEW_W_临时道术 <$STR(M67)> 7
+DIV N$XYEW_W_计算道术 <$STR(N$XYEW_W_临时道术)> 5
+MOVR M66 1 <$STR(M67)>
+
+#if
+equal P63 6
+#act
+GetDBItemFieldValue <$BOXITEM[27].NAME> HP <$STR(M67)>
+INC N$XYEW_W_装备生命 1
+mov S$XYEW_W_百分四 0
+mul N$XYEW_W_临时生命 <$STR(M67)> 11
+DIV N$XYEW_W_计算生命 <$STR(N$XYEW_W_临时生命)> 5
+MOVR M66 1 <$STR(M67)>
+
+#if
+equal P63 7
+#act
+GetDBItemFieldValue <$BOXITEM[27].NAME> MP <$STR(M67)>
+INC N$XYEW_W_装备魔力 1
+mov S$XYEW_W_百分四 0
+mul N$XYEW_W_临时魔力 <$STR(M67)> 11
+DIV N$XYEW_W_计算魔力 <$STR(N$XYEW_W_临时魔力)> 5
+MOVR M66 1 <$STR(M67)>
+#if
+equal P63 8
+#act
+INC N$XYEW_W_暴击伤害 1
+mov S$XYEW_W_百分四 1
+MOVR M66 1 9
+
+#if
+equal P63 9
+#act
+INC N$XYEW_W_致命一击 1
+MOVR M66 1 3
+mov S$XYEW_W_百分四 1
+SetNewItemValue boxitem27 0 + <$STR(M66)>
+
+#if
+equal P63 10
+#act
+INC N$XYEW_W_攻击伤害 1
+MOVR M66 1 4
+mov S$XYEW_W_百分四 1
+SetNewItemValue boxitem27 1 + <$STR(M66)>
+
+#if
+equal P63 11
+#act
+INC N$XYEW_W_神圣一击 1
+mov S$XYEW_W_百分四 0
+MOVR M66 1 6
+
+#if
+equal P63 12
+#act
+INC N$XYEW_W_真实一击 1
+mov S$XYEW_W_百分四 0
+MOVR M66 1 100
+
+#if
+equal P63 13
+#act
+INC N$XYEW_W_麻痹一击 1
+mov S$XYEW_W_百分四 0
+MOVR M66 1 3
+
+#if
+equal P63 14
+#act
+INC N$XYEW_W_冰冻一击 1
+mov S$XYEW_W_百分四 0
+MOVR M66 1 3
+
+#if
+equal P63 15
+#act
+INC N$XYEW_W_攻击速度 1
+mov S$XYEW_W_百分四 0
+MOVR M66 1 3
+
+
+
+
+[@特殊圣级五属性]
+#if
+#act
+MOVR P64  3  16
+
+#if
+equal P64 1
+large N$XYEW_W_装备防御 2
+#act
+inc P64 1
+
+#if
+equal P64 2
+large N$XYEW_W_装备魔御 2
+#act
+inc P64 1
+
+#if
+equal P64 3
+large N$XYEW_W_装备攻击 2
+#act
+inc P64 1
+
+#if
+equal P64 4
+large N$XYEW_W_装备魔法 2
+#act
+inc P64 1
+
+#if
+equal P64 5
+large N$XYEW_W_装备道术 2
+#act
+inc P64 1
+
+
+#if
+equal P64 6
+large N$XYEW_W_装备生命 2
+#act
+inc P64 1
+
+#if
+equal P64 7
+large N$XYEW_W_装备魔力 2
+#act
+inc P64 1
+
+#if
+equal P64 8
+large N$XYEW_W_暴击伤害 0
+#act
+inc P64 1
+
+#if
+equal P64 9
+large N$XYEW_W_致命一击 1
+#act
+inc P64 1
+
+#if
+equal P64 10
+large N$XYEW_W_攻击伤害 1
+#act
+inc P64 1
+
+
+#if
+equal P64 11
+large N$XYEW_W_神圣一击 1
+#act
+inc P64 1
+
+#if
+equal P64 12
+large N$XYEW_W_真实一击 1
+#act
+inc P64 1
+
+#if
+equal P64 13
+large N$XYEW_W_麻痹一击 1
+#act
+inc P64 1
+
+#if
+equal P64 14
+large N$XYEW_W_冰冻一击 1
+#act
+inc P64 1
+
+#if
+equal P64 15
+large N$XYEW_W_攻击速度 1
+#act
+goto @特殊圣级五属性
+break
+
+#if
+equal P64 1
+#act
+GetDBItemFieldValue <$BOXITEM[27].NAME> AC2 <$STR(M69)>
+INC N$XYEW_W_装备防御 1
+mov S$XYEW_W_百分五 0
+mul N$XYEW_W_临时防御 <$STR(M69)> 7
+DIV N$XYEW_W_计算防御 <$STR(N$XYEW_W_临时防御)> 5
+MOVR M68 1 <$STR(M69)>
+
+
+
+#if
+equal P64 2
+#act
+GetDBItemFieldValue <$BOXITEM[27].NAME> MAC2 <$STR(M69)>
+INC N$XYEW_W_装备魔御 2
+mov S$XYEW_W_百分五 0
+mul N$XYEW_W_临时魔御 <$STR(M69)> 7
+DIV N$XYEW_W_计算魔御 <$STR(N$XYEW_W_临时魔御)> 5
+MOVR M68 1 <$STR(M69)>
+
+
+
+#if
+equal P64 3
+#act
+GetDBItemFieldValue <$BOXITEM[27].NAME> DC2 <$STR(M69)>
+INC N$XYEW_W_装备攻击 1
+mov S$XYEW_W_百分五 0
+mul N$XYEW_W_临时攻击 <$STR(M69)> 7
+DIV N$XYEW_W_计算攻击 <$STR(N$XYEW_W_临时攻击)> 5
+MOVR M68 1 <$STR(M69)>
+#if
+equal P64 4
+#act
+GetDBItemFieldValue <$BOXITEM[27].NAME> MC2 <$STR(M69)>
+INC N$XYEW_W_装备魔法 1
+mov S$XYEW_W_百分五 0
+mul N$XYEW_W_临时魔法 <$STR(M69)> 7
+DIV N$XYEW_W_计算魔法 <$STR(N$XYEW_W_临时魔法)> 5
+MOVR M68 1 <$STR(M69)>
+
+#if
+equal P64 5
+#act
+GetDBItemFieldValue <$BOXITEM[27].NAME> SC2 <$STR(M69)>
+INC N$XYEW_W_装备道术 1
+mov S$XYEW_W_百分五 0
+mul N$XYEW_W_临时道术 <$STR(M69)> 7
+DIV N$XYEW_W_计算道术 <$STR(N$XYEW_W_临时道术)> 5
+MOVR M68 1 <$STR(M69)>
+
+#if
+equal P64 6
+#act
+GetDBItemFieldValue <$BOXITEM[27].NAME> HP <$STR(M69)>
+INC N$XYEW_W_装备生命 1
+mov S$XYEW_W_百分五 0
+mul N$XYEW_W_临时生命 <$STR(M69)> 11
+DIV N$XYEW_W_计算生命 <$STR(N$XYEW_W_临时生命)> 5
+MOVR M68 1 <$STR(M69)>
+
+#if
+equal P64 7
+#act
+GetDBItemFieldValue <$BOXITEM[27].NAME> MP <$STR(M69)>
+INC N$XYEW_W_装备魔力 1
+mov S$XYEW_W_百分五 0
+mul N$XYEW_W_临时魔力 <$STR(M69)> 11
+DIV N$XYEW_W_计算魔力 <$STR(N$XYEW_W_临时魔力)> 5
+MOVR M68 1 <$STR(M69)>
+#if
+equal P64 8
+#act
+INC N$XYEW_W_暴击伤害 1
+mov S$XYEW_W_百分五 1
+MOVR M68 1 9
+
+#if
+equal P64 9
+#act
+INC N$XYEW_W_致命一击 1
+MOVR M68 1 3
+mov S$XYEW_W_百分五 1
+SetNewItemValue boxitem27 0 + <$STR(M68)>
+
+#if
+equal P64 10
+#act
+INC N$XYEW_W_攻击伤害 1
+MOVR M68 1 4
+mov S$XYEW_W_百分五 1
+SetNewItemValue boxitem27 1 + <$STR(M68)>
+
+#if
+equal P64 11
+#act
+INC N$XYEW_W_神圣一击 1
+mov S$XYEW_W_百分五 0
+MOVR M68 1 6
+
+#if
+equal P64 12
+#act
+INC N$XYEW_W_真实一击 1
+mov S$XYEW_W_百分五 0
+MOVR M68 1 100
+
+#if
+equal P64 13
+#act
+INC N$XYEW_W_麻痹一击 1
+mov S$XYEW_W_百分五 0
+MOVR M68 1 3
+
+#if
+equal P64 14
+#act
+INC N$XYEW_W_冰冻一击 1
+mov S$XYEW_W_百分五 0
+MOVR M68 1 3
+
+#if
+equal P64 15
+#act
+INC N$XYEW_W_攻击速度 1
+mov S$XYEW_W_百分五 0
+MOVR M68 1 3
+
+
+
+[@特殊圣级六属性]
+#if
+#act
+MOVR P65  3  16
+
+#if
+equal P65 1
+large N$XYEW_W_装备防御 2
+#act
+inc P65 1
+
+#if
+equal P65 2
+large N$XYEW_W_装备魔御 2
+#act
+inc P65 1
+
+#if
+equal P65 3
+large N$XYEW_W_装备攻击 2
+#act
+inc P65 1
+
+#if
+equal P65 4
+large N$XYEW_W_装备魔法 2
+#act
+inc P65 1
+
+#if
+equal P65 5
+large N$XYEW_W_装备道术 2
+#act
+inc P65 1
+
+
+#if
+equal P65 6
+large N$XYEW_W_装备生命 2
+#act
+inc P65 1
+
+#if
+equal P65 7
+large N$XYEW_W_装备魔力 2
+#act
+inc P65 1
+
+#if
+equal P65 8
+large N$XYEW_W_暴击伤害 0
+#act
+inc P65 1
+
+#if
+equal P65 9
+large N$XYEW_W_致命一击 1
+#act
+inc P65 1
+
+#if
+equal P65 10
+large N$XYEW_W_攻击伤害 1
+#act
+inc P65 1
+
+
+#if
+equal P65 11
+large N$XYEW_W_神圣一击 1
+#act
+inc P65 1
+
+#if
+equal P65 12
+large N$XYEW_W_真实一击 1
+#act
+inc P65 1
+
+#if
+equal P65 13
+large N$XYEW_W_麻痹一击 1
+#act
+inc P65 1
+
+#if
+equal P65 14
+large N$XYEW_W_冰冻一击 1
+#act
+inc P65 1
+
+#if
+equal P65 15
+large N$XYEW_W_攻击速度 1
+#act
+goto @特殊圣级六属性
+break
+
+#if
+equal P65 1
+#act
+GetDBItemFieldValue <$BOXITEM[27].NAME> AC2 <$STR(M101)>
+INC N$XYEW_W_装备防御 1
+mov S$XYEW_W_百分六 0
+mul N$XYEW_W_临时防御 <$STR(M101)> 7
+DIV N$XYEW_W_计算防御 <$STR(N$XYEW_W_临时防御)> 5
+MOVR M100 1 <$STR(M101)>
+
+
+
+#if
+equal P65 2
+#act
+GetDBItemFieldValue <$BOXITEM[27].NAME> MAC2 <$STR(M101)>
+INC N$XYEW_W_装备魔御 2
+mov S$XYEW_W_百分六 0
+mul N$XYEW_W_临时魔御 <$STR(M101)> 7
+DIV N$XYEW_W_计算魔御 <$STR(N$XYEW_W_临时魔御)> 5
+MOVR M100 1 <$STR(M101)>
+
+
+
+#if
+equal P65 3
+#act
+GetDBItemFieldValue <$BOXITEM[27].NAME> DC2 <$STR(M101)>
+INC N$XYEW_W_装备攻击 1
+mov S$XYEW_W_百分六 0
+mul N$XYEW_W_临时攻击 <$STR(M101)> 7
+DIV N$XYEW_W_计算攻击 <$STR(N$XYEW_W_临时攻击)> 5
+MOVR M100 1 <$STR(M101)>
+#if
+equal P65 4
+#act
+GetDBItemFieldValue <$BOXITEM[27].NAME> MC2 <$STR(M101)>
+INC N$XYEW_W_装备魔法 1
+mov S$XYEW_W_百分六 0
+mul N$XYEW_W_临时魔法 <$STR(M101)> 7
+DIV N$XYEW_W_计算魔法 <$STR(N$XYEW_W_临时魔法)> 5
+MOVR M100 1 <$STR(M101)>
+
+#if
+equal P65 5
+#act
+GetDBItemFieldValue <$BOXITEM[27].NAME> SC2 <$STR(M101)>
+INC N$XYEW_W_装备道术 1
+mov S$XYEW_W_百分六 0
+mul N$XYEW_W_临时道术 <$STR(M101)> 7
+DIV N$XYEW_W_计算道术 <$STR(N$XYEW_W_临时道术)> 5
+MOVR M100 1 <$STR(M101)>
+
+#if
+equal P65 6
+#act
+GetDBItemFieldValue <$BOXITEM[27].NAME> HP <$STR(M101)>
+INC N$XYEW_W_装备生命 1
+mov S$XYEW_W_百分六 0
+mul N$XYEW_W_临时生命 <$STR(M101)> 11
+DIV N$XYEW_W_计算生命 <$STR(N$XYEW_W_临时生命)> 5
+MOVR M100 1 <$STR(M101)>
+
+#if
+equal P65 7
+#act
+GetDBItemFieldValue <$BOXITEM[27].NAME> MP <$STR(M101)>
+INC N$XYEW_W_装备魔力 1
+mov S$XYEW_W_百分六 0
+mul N$XYEW_W_临时魔力 <$STR(M101)> 11
+DIV N$XYEW_W_计算魔力 <$STR(N$XYEW_W_临时魔力)> 5
+MOVR M100 1 <$STR(M101)>
+#if
+equal P65 8
+#act
+INC N$XYEW_W_暴击伤害 1
+mov S$XYEW_W_百分六 1
+MOVR M100 1 9
+
+#if
+equal P65 9
+#act
+INC N$XYEW_W_致命一击 1
+MOVR M100 1 3
+mov S$XYEW_W_百分六 1
+SetNewItemValue boxitem27 0 + <$STR(M100)>
+
+#if
+equal P65 10
+#act
+INC N$XYEW_W_攻击伤害 1
+MOVR M100 1 4
+mov S$XYEW_W_百分六 1
+SetNewItemValue boxitem27 1 + <$STR(M100)>
+
+#if
+equal P65 11
+#act
+INC N$XYEW_W_神圣一击 1
+mov S$XYEW_W_百分六 0
+MOVR M100 1 6
+
+#if
+equal P65 12
+#act
+INC N$XYEW_W_真实一击 1
+mov S$XYEW_W_百分六 0
+MOVR M100 1 100
+
+#if
+equal P65 13
+#act
+INC N$XYEW_W_麻痹一击 1
+mov S$XYEW_W_百分六 0
+MOVR M100 1 3
+
+#if
+equal P65 14
+#act
+INC N$XYEW_W_冰冻一击 1
+mov S$XYEW_W_百分六 0
+MOVR M100 1 3
+
+#if
+equal P65 15
+#act
+INC N$XYEW_W_攻击速度 1
+mov S$XYEW_W_百分六 0
+MOVR M100 1 3
+
+
+
+}

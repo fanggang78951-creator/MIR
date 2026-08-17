@@ -1,0 +1,99 @@
+{
+  "schema_version": 1,
+  "id": "xy.item.super-blessing-oil",
+  "version": "1.0.0-candidate.1",
+  "display_name": "超级祝福油",
+  "status": "candidate",
+  "engine": "LFM2",
+  "residency": "optional",
+  "bundle": "single-item",
+  "dependencies": [],
+  "parameters": {},
+  "claims": {
+    "labels": ["StdModeFunc82"],
+    "variables": [],
+    "maps": [],
+    "npcs": []
+  },
+  "operations": [
+    {
+      "type": "sqlite_upsert",
+      "target": "Mud2/DB/ApexM2.DB",
+      "table": "StdItems",
+      "unique_key": ["Name"],
+      "conflict_keys": [["Anicount"]],
+      "values": {
+        "Name": "超级祝福油",
+        "StdMode": 31,
+        "Shape": 0,
+        "Weight": 1,
+        "Anicount": 82,
+        "Source": 0,
+        "Reserved": 0,
+        "Looks": 26,
+        "DuraMax": 1,
+        "Ac": 0,
+        "Ac2": 0,
+        "Mac": 0,
+        "Mac2": 0,
+        "Dc": 0,
+        "Dc2": 0,
+        "Mc": 0,
+        "Mc2": 0,
+        "Sc": 0,
+        "Sc2": 0,
+        "Need": 0,
+        "NeedLevel": 0,
+        "Price": 1000,
+        "Stock": 5,
+        "Color": 251,
+        "OverLap": 0,
+        "HP": 0,
+        "MP": 0,
+        "Light": 0,
+        "Horse": 0,
+        "Element": 0,
+        "Expand1": 0,
+        "Expand2": 0
+      },
+      "allocate": {"Idx": "max_plus_one"},
+      "on_conflict": "error"
+    },
+    {
+      "type": "managed_block",
+      "target": "Mir200/Envir/Market_Def/QFunction-0.txt",
+      "target_encoding": "gb18030",
+      "content": "[@StdModeFunc82]\n#IF\nNOT CHECKUSEITEM 1\n#ACT\nGIVE 超级祝福油 1\nSENDMSG 6 超级祝福油：请先佩戴武器，本瓶已返还。\nBREAK\n\n#IF\nCheckItemAddValue 1 3 > 6\n#ACT\nGIVE 超级祝福油 1\nSENDMSG 6 超级祝福油：武器幸运已经达到上限7，本瓶已返还。\nBREAK\n\n#IF\n#ACT\nUPGRADEITEMEX 1 3 1 1 0\nSENDMSG 6 超级祝福油使用成功：武器幸运增加1。\nBREAK"
+    }
+  ],
+  "preflight_checks": [
+    {"type": "file_exists", "path": "Mud2/DB/ApexM2.DB"},
+    {"type": "file_exists", "path": "Mir200/Envir/Market_Def/QFunction-0.txt"},
+    {
+      "type": "label_available",
+      "path": "Mir200/Envir/Market_Def/QFunction-0.txt",
+      "label": "StdModeFunc82",
+      "owner_package_id": "xy.item.super-blessing-oil"
+    }
+  ],
+  "post_checks": [
+    {
+      "type": "label_exists",
+      "path": "Mir200/Envir/Market_Def/QFunction-0.txt",
+      "label": "StdModeFunc82"
+    },
+    {
+      "type": "text_contains",
+      "path": "Mir200/Envir/Market_Def/QFunction-0.txt",
+      "text": "UPGRADEITEMEX 1 3 1 1 0"
+    }
+  ],
+  "evidence": [
+    "history:20260716_2132-super-blessing-oil",
+    "fix:20260717_1041-StdMode31-Shape0",
+    "reference:mingyue-StdModeFunc82",
+    "static:current-server-Anicount82-and-label-free",
+    "game-validation:required",
+    "rollback:required"
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "source": "D:/MirServer/AI_Handoff/tools/xy_equip_maker/script_properties.json",
+  "source_version": 1,
+  "properties": {
+    "神力倍攻": {
+      "anchor": "XY_EQUIP_MAKER_POWER_ANCHOR",
+      "variable": "N$倍攻"
+    },
+    "打怪伤害": {
+      "anchors": [
+        "XY_EQUIP_MAKER_POWER_ANCHOR",
+        "XY_EQUIP_MAKER_ATTACK_ANCHOR"
+      ],
+      "variables": [
+        "N$XY_PVE",
+        "N$XY_PVE_Extra"
+      ]
+    },
+    "暴击伤害": {
+      "anchor": "XY_EQUIP_MAKER_BLAST_ANCHOR",
+      "variable": "N$XY_最终爆伤"
+    },
+    "爆率": {
+      "anchor": "XY_EQUIP_MAKER_DROP_ANCHOR",
+      "variable": "N$XY_最终爆率"
+    },
+    "最大爆率": {
+      "anchor": "XY_EQUIP_MAKER_DROP_ANCHOR",
+      "variable": "N$XY_最大爆率"
+    },
+    "首刀斩杀": {
+      "anchor": "XY_EQUIP_MAKER_ATTACK_ANCHOR",
+      "variable": "N$XY_FirstKillRate"
+    },
+    "尾刀斩杀": {
+      "anchor": "XY_EQUIP_MAKER_ATTACK_ANCHOR",
+      "variable": "N$XY_TailKillRate"
+    },
+    "鞭尸概率": {
+      "anchor": "XY_EQUIP_MAKER_CORPSE_ANCHOR",
+      "variable": "N$XY_CorpseRate"
+    },
+    "伤害系数": {
+      "anchor": "XY_EQUIP_MAKER_RUNTIME_DAMAGE_COEFFICIENT_ANCHOR",
+      "variable": "N$XY_RT_DamageCoeff"
+    },
+    "对怪伤害吸收": {
+      "anchor": "XY_EQUIP_MAKER_MONSTER_ABSORB_ANCHOR",
+      "variable": "N$XY_MDA_Raw",
+      "display": "ItemDescList（M2自定义属性槽只到BindType53）"
+    },
+    "伤害吸收上限": {
+      "anchor": "XY_EQUIP_MAKER_MONSTER_ABSORB_CAP_ANCHOR",
+      "variable": "N$XY_MDA_CapBonus",
+      "display": "ItemDescList（M2自定义属性槽只到BindType53）"
+    }
+  },
+  "anchors": [
+    "XY_EQUIP_MAKER_POWER_ANCHOR",
+    "XY_EQUIP_MAKER_ATTACK_ANCHOR",
+    "XY_EQUIP_MAKER_BLAST_ANCHOR",
+    "XY_EQUIP_MAKER_DROP_ANCHOR",
+    "XY_EQUIP_MAKER_CORPSE_ANCHOR",
+    "XY_EQUIP_MAKER_RUNTIME_DAMAGE_COEFFICIENT_ANCHOR",
+    "XY_EQUIP_MAKER_MONSTER_ABSORB_ANCHOR",
+    "XY_EQUIP_MAKER_MONSTER_ABSORB_CAP_ANCHOR"
+  ]
+}

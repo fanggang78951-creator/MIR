@@ -1,0 +1,6 @@
+; 地图0物理NPC只负责转入唯一狂暴业务脚本。
+[@Main]
+#IF
+#ACT
+#CALL [\玄渊功能\狂暴\狂暴NPC接口.txt] @XY_RAGE_NPC_MAIN
+BREAK

@@ -1,0 +1,22 @@
+[@Main]
+#SAY
+【新手礼包】每个角色只能领取一次，请输入礼包码。\
+<INPUTTEXT:1:15:80:180:18:0:249:255:1:32:礼包码格式错误:请输入礼包码:160>\
+<TEXT:提交礼包码:15:110:1/@XY_GIFT_CLAIM>\
+<关闭/@exit>
+
+[@XY_GIFT_CLAIM]
+#IF
+NOT CHECKNAMELIST ..\QuestDiary\玄渊数据\新手礼包\已领取.txt
+EQUAL <$NPCINPUT(1)> 888888
+CHECKBAGSIZE 2
+#ACT
+ForceDirectories ..\QuestDiary\玄渊数据\新手礼包\
+GiveStateItem 圣律之剑LV1 1 0 0 0 0 0 0 1
+GiveStateItem 黄金圣物LV1 1 0 0 0 0 0 0 1
+ADDNAMELIST ..\QuestDiary\玄渊数据\新手礼包\已领取.txt
+SENDMSG 6 [新手礼包] 已领取绑定装备：圣律之剑LV1、黄金圣物LV1。
+BREAK
+#ELSEACT
+MESSAGEBOX 礼包码错误、已经领取或背包空间不足。
+BREAK

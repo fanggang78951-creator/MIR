@@ -1,0 +1,392 @@
+[@Main]
+#IF
+CHECKITEM 黄金圣物LV10 1
+#ACT
+GOTO @XY_RELIC_FULL
+BREAK
+
+#IF
+CHECKITEM 黄金圣物LV9 1
+#ACT
+GOTO @XY_RELIC_VIEW_9
+BREAK
+
+#IF
+CHECKITEM 黄金圣物LV8 1
+#ACT
+GOTO @XY_RELIC_VIEW_8
+BREAK
+
+#IF
+CHECKITEM 黄金圣物LV7 1
+#ACT
+GOTO @XY_RELIC_VIEW_7
+BREAK
+
+#IF
+CHECKITEM 黄金圣物LV6 1
+#ACT
+GOTO @XY_RELIC_VIEW_6
+BREAK
+
+#IF
+CHECKITEM 黄金圣物LV5 1
+#ACT
+GOTO @XY_RELIC_VIEW_5
+BREAK
+
+#IF
+CHECKITEM 黄金圣物LV4 1
+#ACT
+GOTO @XY_RELIC_VIEW_4
+BREAK
+
+#IF
+CHECKITEM 黄金圣物LV3 1
+#ACT
+GOTO @XY_RELIC_VIEW_3
+BREAK
+
+#IF
+CHECKITEM 黄金圣物LV2 1
+#ACT
+GOTO @XY_RELIC_VIEW_2
+BREAK
+
+#IF
+CHECKITEM 黄金圣物LV1 1
+#ACT
+GOTO @XY_RELIC_VIEW_1
+BREAK
+
+#IF
+#ACT
+GOTO @XY_RELIC_NONE
+BREAK
+
+[@XY_RELIC_VIEW_1]
+#IF
+#SAY
+< /FCOLOR=250>\
+<> <黄金圣物进阶：/FCOLOR=158> <只显示当前可升级的下一件/FCOLOR=218>\
+<> <---------------------------------------------------------------/FCOLOR=10>\
+<> <当前装备:/FCOLOR=161>{黄金圣物LV1/SCOLOR=249}\
+<> <下一装备:/FCOLOR=161>{黄金圣物LV2/SCOLOR=253}\
+<> <升级消耗:/FCOLOR=161>{金币×50000/SCOLOR=251}\
+<> <将鼠标移到图标查看下一装备的完整属性。/FCOLOR=147>\
+<> <---------------------------------------------------------------/FCOLOR=10>\
+<ItemShow:544:0:260:-90:1>　【<确认升级/@XY_RELIC_1>】　<关闭/@exit>\
+
+[@XY_RELIC_1]
+#IF
+CHECKBAGSIZE 1
+CHECKITEM 黄金圣物LV1 1
+NOT CHECKITEM 黄金圣物LV2 1
+NOT CHECKITEM 黄金圣物LV3 1
+NOT CHECKITEM 黄金圣物LV4 1
+NOT CHECKITEM 黄金圣物LV5 1
+NOT CHECKITEM 黄金圣物LV6 1
+NOT CHECKITEM 黄金圣物LV7 1
+NOT CHECKITEM 黄金圣物LV8 1
+NOT CHECKITEM 黄金圣物LV9 1
+NOT CHECKITEM 黄金圣物LV10 1
+CHECKGOLD 50000
+#ACT
+TAKE 黄金圣物LV1 1
+GOLDCOUNT - 50000
+GIVE 黄金圣物LV2 1
+SENDMSG 6 [黄金圣物] 已将黄金圣物LV1升级为黄金圣物LV2。
+GOTO @Main
+BREAK
+#ELSEACT
+MESSAGEBOX 当前装备不是背包内最高档，或材料、货币、背包空间不满足。
+BREAK
+
+[@XY_RELIC_VIEW_2]
+#IF
+#SAY
+< /FCOLOR=250>\
+<> <黄金圣物进阶：/FCOLOR=158> <只显示当前可升级的下一件/FCOLOR=218>\
+<> <---------------------------------------------------------------/FCOLOR=10>\
+<> <当前装备:/FCOLOR=161>{黄金圣物LV2/SCOLOR=249}\
+<> <下一装备:/FCOLOR=161>{黄金圣物LV3/SCOLOR=253}\
+<> <升级消耗:/FCOLOR=161>{金币×100000/SCOLOR=251}\
+<> <将鼠标移到图标查看下一装备的完整属性。/FCOLOR=147>\
+<> <---------------------------------------------------------------/FCOLOR=10>\
+<ItemShow:545:0:260:-90:1>　【<确认升级/@XY_RELIC_2>】　<关闭/@exit>\
+
+[@XY_RELIC_2]
+#IF
+CHECKBAGSIZE 1
+CHECKITEM 黄金圣物LV2 1
+NOT CHECKITEM 黄金圣物LV3 1
+NOT CHECKITEM 黄金圣物LV4 1
+NOT CHECKITEM 黄金圣物LV5 1
+NOT CHECKITEM 黄金圣物LV6 1
+NOT CHECKITEM 黄金圣物LV7 1
+NOT CHECKITEM 黄金圣物LV8 1
+NOT CHECKITEM 黄金圣物LV9 1
+NOT CHECKITEM 黄金圣物LV10 1
+CHECKGOLD 100000
+#ACT
+TAKE 黄金圣物LV2 1
+GOLDCOUNT - 100000
+GIVE 黄金圣物LV3 1
+SENDMSG 6 [黄金圣物] 已将黄金圣物LV2升级为黄金圣物LV3。
+GOTO @Main
+BREAK
+#ELSEACT
+MESSAGEBOX 当前装备不是背包内最高档，或材料、货币、背包空间不满足。
+BREAK
+
+[@XY_RELIC_VIEW_3]
+#IF
+#SAY
+< /FCOLOR=250>\
+<> <黄金圣物进阶：/FCOLOR=158> <只显示当前可升级的下一件/FCOLOR=218>\
+<> <---------------------------------------------------------------/FCOLOR=10>\
+<> <当前装备:/FCOLOR=161>{黄金圣物LV3/SCOLOR=249}\
+<> <下一装备:/FCOLOR=161>{黄金圣物LV4/SCOLOR=253}\
+<> <升级消耗:/FCOLOR=161>{金币×150000/SCOLOR=251}\
+<> <将鼠标移到图标查看下一装备的完整属性。/FCOLOR=147>\
+<> <---------------------------------------------------------------/FCOLOR=10>\
+<ItemShow:546:0:260:-90:1>　【<确认升级/@XY_RELIC_3>】　<关闭/@exit>\
+
+[@XY_RELIC_3]
+#IF
+CHECKBAGSIZE 1
+CHECKITEM 黄金圣物LV3 1
+NOT CHECKITEM 黄金圣物LV4 1
+NOT CHECKITEM 黄金圣物LV5 1
+NOT CHECKITEM 黄金圣物LV6 1
+NOT CHECKITEM 黄金圣物LV7 1
+NOT CHECKITEM 黄金圣物LV8 1
+NOT CHECKITEM 黄金圣物LV9 1
+NOT CHECKITEM 黄金圣物LV10 1
+CHECKGOLD 150000
+#ACT
+TAKE 黄金圣物LV3 1
+GOLDCOUNT - 150000
+GIVE 黄金圣物LV4 1
+SENDMSG 6 [黄金圣物] 已将黄金圣物LV3升级为黄金圣物LV4。
+GOTO @Main
+BREAK
+#ELSEACT
+MESSAGEBOX 当前装备不是背包内最高档，或材料、货币、背包空间不满足。
+BREAK
+
+[@XY_RELIC_VIEW_4]
+#IF
+#SAY
+< /FCOLOR=250>\
+<> <黄金圣物进阶：/FCOLOR=158> <只显示当前可升级的下一件/FCOLOR=218>\
+<> <---------------------------------------------------------------/FCOLOR=10>\
+<> <当前装备:/FCOLOR=161>{黄金圣物LV4/SCOLOR=249}\
+<> <下一装备:/FCOLOR=161>{黄金圣物LV5/SCOLOR=253}\
+<> <升级消耗:/FCOLOR=161>{金币×200000/SCOLOR=251}\
+<> <将鼠标移到图标查看下一装备的完整属性。/FCOLOR=147>\
+<> <---------------------------------------------------------------/FCOLOR=10>\
+<ItemShow:547:0:260:-90:1>　【<确认升级/@XY_RELIC_4>】　<关闭/@exit>\
+
+[@XY_RELIC_4]
+#IF
+CHECKBAGSIZE 1
+CHECKITEM 黄金圣物LV4 1
+NOT CHECKITEM 黄金圣物LV5 1
+NOT CHECKITEM 黄金圣物LV6 1
+NOT CHECKITEM 黄金圣物LV7 1
+NOT CHECKITEM 黄金圣物LV8 1
+NOT CHECKITEM 黄金圣物LV9 1
+NOT CHECKITEM 黄金圣物LV10 1
+CHECKGOLD 200000
+#ACT
+TAKE 黄金圣物LV4 1
+GOLDCOUNT - 200000
+GIVE 黄金圣物LV5 1
+SENDMSG 6 [黄金圣物] 已将黄金圣物LV4升级为黄金圣物LV5。
+GOTO @Main
+BREAK
+#ELSEACT
+MESSAGEBOX 当前装备不是背包内最高档，或材料、货币、背包空间不满足。
+BREAK
+
+[@XY_RELIC_VIEW_5]
+#IF
+#SAY
+< /FCOLOR=250>\
+<> <黄金圣物进阶：/FCOLOR=158> <只显示当前可升级的下一件/FCOLOR=218>\
+<> <---------------------------------------------------------------/FCOLOR=10>\
+<> <当前装备:/FCOLOR=161>{黄金圣物LV5/SCOLOR=249}\
+<> <下一装备:/FCOLOR=161>{黄金圣物LV6/SCOLOR=253}\
+<> <升级消耗:/FCOLOR=161>{金币×300000/SCOLOR=251}\
+<> <将鼠标移到图标查看下一装备的完整属性。/FCOLOR=147>\
+<> <---------------------------------------------------------------/FCOLOR=10>\
+<ItemShow:548:0:260:-90:1>　【<确认升级/@XY_RELIC_5>】　<关闭/@exit>\
+
+[@XY_RELIC_5]
+#IF
+CHECKBAGSIZE 1
+CHECKITEM 黄金圣物LV5 1
+NOT CHECKITEM 黄金圣物LV6 1
+NOT CHECKITEM 黄金圣物LV7 1
+NOT CHECKITEM 黄金圣物LV8 1
+NOT CHECKITEM 黄金圣物LV9 1
+NOT CHECKITEM 黄金圣物LV10 1
+CHECKGOLD 300000
+#ACT
+TAKE 黄金圣物LV5 1
+GOLDCOUNT - 300000
+GIVE 黄金圣物LV6 1
+SENDMSG 6 [黄金圣物] 已将黄金圣物LV5升级为黄金圣物LV6。
+GOTO @Main
+BREAK
+#ELSEACT
+MESSAGEBOX 当前装备不是背包内最高档，或材料、货币、背包空间不满足。
+BREAK
+
+[@XY_RELIC_VIEW_6]
+#IF
+#SAY
+< /FCOLOR=250>\
+<> <黄金圣物进阶：/FCOLOR=158> <只显示当前可升级的下一件/FCOLOR=218>\
+<> <---------------------------------------------------------------/FCOLOR=10>\
+<> <当前装备:/FCOLOR=161>{黄金圣物LV6/SCOLOR=249}\
+<> <下一装备:/FCOLOR=161>{黄金圣物LV7/SCOLOR=253}\
+<> <升级消耗:/FCOLOR=161>{金币×500000/SCOLOR=251}\
+<> <将鼠标移到图标查看下一装备的完整属性。/FCOLOR=147>\
+<> <---------------------------------------------------------------/FCOLOR=10>\
+<ItemShow:549:0:260:-90:1>　【<确认升级/@XY_RELIC_6>】　<关闭/@exit>\
+
+[@XY_RELIC_6]
+#IF
+CHECKBAGSIZE 1
+CHECKITEM 黄金圣物LV6 1
+NOT CHECKITEM 黄金圣物LV7 1
+NOT CHECKITEM 黄金圣物LV8 1
+NOT CHECKITEM 黄金圣物LV9 1
+NOT CHECKITEM 黄金圣物LV10 1
+CHECKGOLD 500000
+#ACT
+TAKE 黄金圣物LV6 1
+GOLDCOUNT - 500000
+GIVE 黄金圣物LV7 1
+SENDMSG 6 [黄金圣物] 已将黄金圣物LV6升级为黄金圣物LV7。
+GOTO @Main
+BREAK
+#ELSEACT
+MESSAGEBOX 当前装备不是背包内最高档，或材料、货币、背包空间不满足。
+BREAK
+
+[@XY_RELIC_VIEW_7]
+#IF
+#SAY
+< /FCOLOR=250>\
+<> <黄金圣物进阶：/FCOLOR=158> <只显示当前可升级的下一件/FCOLOR=218>\
+<> <---------------------------------------------------------------/FCOLOR=10>\
+<> <当前装备:/FCOLOR=161>{黄金圣物LV7/SCOLOR=249}\
+<> <下一装备:/FCOLOR=161>{黄金圣物LV8/SCOLOR=253}\
+<> <升级消耗:/FCOLOR=161>{金币×800000/SCOLOR=251}\
+<> <将鼠标移到图标查看下一装备的完整属性。/FCOLOR=147>\
+<> <---------------------------------------------------------------/FCOLOR=10>\
+<ItemShow:550:0:260:-90:1>　【<确认升级/@XY_RELIC_7>】　<关闭/@exit>\
+
+[@XY_RELIC_7]
+#IF
+CHECKBAGSIZE 1
+CHECKITEM 黄金圣物LV7 1
+NOT CHECKITEM 黄金圣物LV8 1
+NOT CHECKITEM 黄金圣物LV9 1
+NOT CHECKITEM 黄金圣物LV10 1
+CHECKGOLD 800000
+#ACT
+TAKE 黄金圣物LV7 1
+GOLDCOUNT - 800000
+GIVE 黄金圣物LV8 1
+SENDMSG 6 [黄金圣物] 已将黄金圣物LV7升级为黄金圣物LV8。
+GOTO @Main
+BREAK
+#ELSEACT
+MESSAGEBOX 当前装备不是背包内最高档，或材料、货币、背包空间不满足。
+BREAK
+
+[@XY_RELIC_VIEW_8]
+#IF
+#SAY
+< /FCOLOR=250>\
+<> <黄金圣物进阶：/FCOLOR=158> <只显示当前可升级的下一件/FCOLOR=218>\
+<> <---------------------------------------------------------------/FCOLOR=10>\
+<> <当前装备:/FCOLOR=161>{黄金圣物LV8/SCOLOR=249}\
+<> <下一装备:/FCOLOR=161>{黄金圣物LV9/SCOLOR=253}\
+<> <升级消耗:/FCOLOR=161>{金币×1000000/SCOLOR=251}\
+<> <将鼠标移到图标查看下一装备的完整属性。/FCOLOR=147>\
+<> <---------------------------------------------------------------/FCOLOR=10>\
+<ItemShow:551:0:260:-90:1>　【<确认升级/@XY_RELIC_8>】　<关闭/@exit>\
+
+[@XY_RELIC_8]
+#IF
+CHECKBAGSIZE 1
+CHECKITEM 黄金圣物LV8 1
+NOT CHECKITEM 黄金圣物LV9 1
+NOT CHECKITEM 黄金圣物LV10 1
+CHECKGOLD 1000000
+#ACT
+TAKE 黄金圣物LV8 1
+GOLDCOUNT - 1000000
+GIVE 黄金圣物LV9 1
+SENDMSG 6 [黄金圣物] 已将黄金圣物LV8升级为黄金圣物LV9。
+GOTO @Main
+BREAK
+#ELSEACT
+MESSAGEBOX 当前装备不是背包内最高档，或材料、货币、背包空间不满足。
+BREAK
+
+[@XY_RELIC_VIEW_9]
+#IF
+#SAY
+< /FCOLOR=250>\
+<> <黄金圣物进阶：/FCOLOR=158> <只显示当前可升级的下一件/FCOLOR=218>\
+<> <---------------------------------------------------------------/FCOLOR=10>\
+<> <当前装备:/FCOLOR=161>{黄金圣物LV9/SCOLOR=249}\
+<> <下一装备:/FCOLOR=161>{黄金圣物LV10/SCOLOR=253}\
+<> <升级消耗:/FCOLOR=161>{金币×2000000/SCOLOR=251}\
+<> <将鼠标移到图标查看下一装备的完整属性。/FCOLOR=147>\
+<> <---------------------------------------------------------------/FCOLOR=10>\
+<ItemShow:552:0:260:-90:1>　【<确认升级/@XY_RELIC_9>】　<关闭/@exit>\
+
+[@XY_RELIC_9]
+#IF
+CHECKBAGSIZE 1
+CHECKITEM 黄金圣物LV9 1
+NOT CHECKITEM 黄金圣物LV10 1
+CHECKGOLD 2000000
+#ACT
+TAKE 黄金圣物LV9 1
+GOLDCOUNT - 2000000
+GIVE 黄金圣物LV10 1
+SENDMSG 6 [黄金圣物] 已将黄金圣物LV9升级为黄金圣物LV10。
+GOTO @Main
+BREAK
+#ELSEACT
+MESSAGEBOX 当前装备不是背包内最高档，或材料、货币、背包空间不满足。
+BREAK
+
+[@XY_RELIC_NONE]
+#IF
+#SAY
+< /FCOLOR=250>\
+<> <黄金圣物进阶：/FCOLOR=158> <未找到可升级装备/FCOLOR=218>\
+<> <---------------------------------------------------------------/FCOLOR=10>\
+<> <请先将黄金圣物放入背包；穿戴中的装备不参与识别。/FCOLOR=251>\
+<> <---------------------------------------------------------------/FCOLOR=10>\
+<> <关闭/@exit>\
+
+[@XY_RELIC_FULL]
+#IF
+#SAY
+< /FCOLOR=250>\
+<> <黄金圣物进阶：/FCOLOR=158> <当前装备已经达到最高档/FCOLOR=218>\
+<> <---------------------------------------------------------------/FCOLOR=10>\
+<> <当前装备:/FCOLOR=161>{黄金圣物LV10/SCOLOR=249}\
+<> <状态:/FCOLOR=161>{已满级/SCOLOR=253}\
+<> <---------------------------------------------------------------/FCOLOR=10>\
+<> <关闭/@exit>\

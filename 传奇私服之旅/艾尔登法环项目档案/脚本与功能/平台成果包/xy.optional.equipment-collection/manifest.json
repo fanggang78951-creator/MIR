@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "id": "xy.optional.equipment-collection",
+  "version": "1.0.0-candidate.10",
+  "display_name": "十三大陆图形装备收集图鉴",
+  "status": "candidate",
+  "engine": "LFM2",
+  "residency": "optional",
+  "install_route": "equipment-collection",
+  "bundle": "equipment-collection",
+  "dependencies": [],
+  "parameters": {},
+  "claims": {
+    "labels": [
+      "XY_COLLECTION_COMMAND",
+      "XY_COLLECTION_MAIN",
+      "XY_COLLECTION_REFRESH"
+    ],
+    "variables": [
+      "N$XY_COL_DONE",
+      "N$XY_COL_BATCH_COUNT",
+      "S$XY_COL_GROUP_HOVER"
+    ],
+    "maps": [],
+    "npcs": [],
+    "states": [
+      "400-599",
+      "600-639"
+    ],
+    "user_commands": [
+      "装备收集:92"
+    ]
+  },
+  "operations": [],
+  "preflight_checks": [],
+  "post_checks": [],
+  "evidence": [
+    "specialized-route:equipment-collection",
+    "source:src/xydp/equipment_collection.py",
+    "workbook:所需材料表格汇总/33_装备收集图鉴.xlsx",
+    "interface:接口/33_装备收集图鉴接口.txt",
+    "tests:22-targeted-passed",
+    "transaction:20260814_211109_ef99a920",
+    "rollback:20260814_211109_ef99a920",
+    "game:basic-single-item-and-reward-passed",
+    "pending:continent-hover-and-batch-game-acceptance"
+  ]
+}

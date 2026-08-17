@@ -1,0 +1,11 @@
+[@Main]
+#SAY
+这里通往漂流墓地。\ \
+<前往漂流墓地/@Go>
+<关闭/@exit>
+
+[@Go]
+#IF
+#ACT
+MAPMOVE XX346 176 49
+BREAK

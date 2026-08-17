@@ -1,0 +1,1323 @@
+[@Main]
+#IF
+CHECKRENEWLEVEL = 0
+CHECKFENGHAO 转生10重
+#ACT
+GOTO @XY_REBIRTH_MIGRATE_VIEW_10
+BREAK
+
+#IF
+CHECKRENEWLEVEL = 0
+CHECKFENGHAO 转生9重
+#ACT
+GOTO @XY_REBIRTH_MIGRATE_VIEW_9
+BREAK
+
+#IF
+CHECKRENEWLEVEL = 0
+CHECKFENGHAO 转生8重
+#ACT
+GOTO @XY_REBIRTH_MIGRATE_VIEW_8
+BREAK
+
+#IF
+CHECKRENEWLEVEL = 0
+CHECKFENGHAO 转生7重
+#ACT
+GOTO @XY_REBIRTH_MIGRATE_VIEW_7
+BREAK
+
+#IF
+CHECKRENEWLEVEL = 0
+CHECKFENGHAO 转生6重
+#ACT
+GOTO @XY_REBIRTH_MIGRATE_VIEW_6
+BREAK
+
+#IF
+CHECKRENEWLEVEL = 0
+CHECKFENGHAO 转生5重
+#ACT
+GOTO @XY_REBIRTH_MIGRATE_VIEW_5
+BREAK
+
+#IF
+CHECKRENEWLEVEL = 0
+CHECKFENGHAO 转生4重
+#ACT
+GOTO @XY_REBIRTH_MIGRATE_VIEW_4
+BREAK
+
+#IF
+CHECKRENEWLEVEL = 0
+CHECKFENGHAO 转生3重
+#ACT
+GOTO @XY_REBIRTH_MIGRATE_VIEW_3
+BREAK
+
+#IF
+CHECKRENEWLEVEL = 0
+CHECKFENGHAO 转生2重
+#ACT
+GOTO @XY_REBIRTH_MIGRATE_VIEW_2
+BREAK
+
+#IF
+CHECKRENEWLEVEL = 0
+CHECKFENGHAO 转生1重
+#ACT
+GOTO @XY_REBIRTH_MIGRATE_VIEW_1
+BREAK
+
+#IF
+CHECKRENEWLEVEL > 9
+#ACT
+GOTO @XY_REBIRTH_FULL
+BREAK
+
+#IF
+CHECKRENEWLEVEL = 9
+#ACT
+GOTO @XY_REBIRTH_VIEW_10
+BREAK
+
+#IF
+CHECKRENEWLEVEL = 8
+#ACT
+GOTO @XY_REBIRTH_VIEW_9
+BREAK
+
+#IF
+CHECKRENEWLEVEL = 7
+#ACT
+GOTO @XY_REBIRTH_VIEW_8
+BREAK
+
+#IF
+CHECKRENEWLEVEL = 6
+#ACT
+GOTO @XY_REBIRTH_VIEW_7
+BREAK
+
+#IF
+CHECKRENEWLEVEL = 5
+#ACT
+GOTO @XY_REBIRTH_VIEW_6
+BREAK
+
+#IF
+CHECKRENEWLEVEL = 4
+#ACT
+GOTO @XY_REBIRTH_VIEW_5
+BREAK
+
+#IF
+CHECKRENEWLEVEL = 3
+#ACT
+GOTO @XY_REBIRTH_VIEW_4
+BREAK
+
+#IF
+CHECKRENEWLEVEL = 2
+#ACT
+GOTO @XY_REBIRTH_VIEW_3
+BREAK
+
+#IF
+CHECKRENEWLEVEL = 1
+#ACT
+GOTO @XY_REBIRTH_VIEW_2
+BREAK
+
+#IF
+CHECKRENEWLEVEL = 0
+#ACT
+GOTO @XY_REBIRTH_VIEW_1
+BREAK
+
+#IF
+#ACT
+MESSAGEBOX 当前转生状态异常，请联系管理员处理。
+BREAK
+
+[@XY_REBIRTH_VIEW_1]
+#IF
+#SAY
+< /FCOLOR=250>\
+<> <转生进阶：/FCOLOR=158> <突破桎梏，重塑根基/FCOLOR=218>\
+<> <---------------------------------------------------------------/FCOLOR=10>\
+<> <当前转生:/FCOLOR=161>{未转生/SCOLOR=249}\
+<> <下一转生:/FCOLOR=161>{1转（转生1重）/SCOLOR=253}\
+<> <所需材料:/FCOLOR=161>{小卢恩×5/SCOLOR=251}\
+<> <转生属性:/FCOLOR=161>{每次转生神力倍攻+0.05；其余条件与属性待填/SCOLOR=147}\
+<> <规则说明:/FCOLOR=161>{转生后人物等级不变，当前经验将清空/SCOLOR=245}\
+<> <---------------------------------------------------------------/FCOLOR=10>\
+<> 【<确认转生/@XY_REBIRTH_1>】　<关闭/@exit>\
+
+[@XY_REBIRTH_1]
+#IF
+CHECKRENEWLEVEL = 0
+CHECKITEM 小卢恩 5
+#ACT
+GOTO @XY_REBIRTH_APPLY_1
+#ELSEACT
+MESSAGEBOX 当前转生阶段不符，或所需物品、货币不足。
+BREAK
+
+[@XY_REBIRTH_APPLY_1]
+#IF
+CHECKRENEWLEVEL = 0
+CHECKITEM 小卢恩 5
+#ACT
+GIVEFENGHAO 转生1重 1
+GOTO @XY_REBIRTH_TITLE_CONFIRM_1
+BREAK
+#ELSEACT
+MESSAGEBOX 当前转生阶段不符，或所需物品、货币不足。
+BREAK
+
+[@XY_REBIRTH_TITLE_CONFIRM_1]
+#IF
+CHECKRENEWLEVEL = 0
+CHECKFENGHAO 转生1重
+#ACT
+RENEWLEVEL 1
+GOTO @XY_REBIRTH_ENGINE_CONFIRM_1
+BREAK
+#ELSEACT
+MESSAGEBOX 转生称号未能授予，本次未消耗物品和货币。
+BREAK
+
+[@XY_REBIRTH_ENGINE_CONFIRM_1]
+#IF
+CHECKRENEWLEVEL = 1
+CHECKFENGHAO 转生1重
+#ACT
+TAKE 小卢恩 5
+RECYCFENGHAO 转生2重
+RECYCFENGHAO 转生3重
+RECYCFENGHAO 转生4重
+RECYCFENGHAO 转生5重
+RECYCFENGHAO 转生6重
+RECYCFENGHAO 转生7重
+RECYCFENGHAO 转生8重
+RECYCFENGHAO 转生9重
+RECYCFENGHAO 转生10重
+SENDMSG 6 [转生] 恭喜您晋升至转生1重，获得称号转生1重。
+GOTO @Main
+BREAK
+#ELSEACT
+RECYCFENGHAO 转生1重
+MESSAGEBOX 转生未能完成，本次未扣除物品和货币。
+BREAK
+
+[@XY_REBIRTH_VIEW_2]
+#IF
+#SAY
+< /FCOLOR=250>\
+<> <转生进阶：/FCOLOR=158> <突破桎梏，重塑根基/FCOLOR=218>\
+<> <---------------------------------------------------------------/FCOLOR=10>\
+<> <当前转生:/FCOLOR=161>{转生1重/SCOLOR=249}\
+<> <下一转生:/FCOLOR=161>{2转（转生2重）/SCOLOR=253}\
+<> <所需材料:/FCOLOR=161>{小卢恩×10/SCOLOR=251}\
+<> <转生属性:/FCOLOR=161>{每次转生神力倍攻+0.05；其余条件与属性待填/SCOLOR=147}\
+<> <规则说明:/FCOLOR=161>{转生后人物等级不变，当前经验将清空/SCOLOR=245}\
+<> <---------------------------------------------------------------/FCOLOR=10>\
+<> 【<确认转生/@XY_REBIRTH_2>】　<关闭/@exit>\
+
+[@XY_REBIRTH_2]
+#IF
+CHECKRENEWLEVEL = 1
+CHECKITEM 小卢恩 10
+#ACT
+GOTO @XY_REBIRTH_APPLY_2
+#ELSEACT
+MESSAGEBOX 当前转生阶段不符，或所需物品、货币不足。
+BREAK
+
+[@XY_REBIRTH_APPLY_2]
+#IF
+CHECKRENEWLEVEL = 1
+CHECKITEM 小卢恩 10
+#ACT
+GIVEFENGHAO 转生2重 1
+GOTO @XY_REBIRTH_TITLE_CONFIRM_2
+BREAK
+#ELSEACT
+MESSAGEBOX 当前转生阶段不符，或所需物品、货币不足。
+BREAK
+
+[@XY_REBIRTH_TITLE_CONFIRM_2]
+#IF
+CHECKRENEWLEVEL = 1
+CHECKFENGHAO 转生2重
+#ACT
+RENEWLEVEL 1
+GOTO @XY_REBIRTH_ENGINE_CONFIRM_2
+BREAK
+#ELSEACT
+MESSAGEBOX 转生称号未能授予，本次未消耗物品和货币。
+BREAK
+
+[@XY_REBIRTH_ENGINE_CONFIRM_2]
+#IF
+CHECKRENEWLEVEL = 2
+CHECKFENGHAO 转生2重
+#ACT
+TAKE 小卢恩 10
+RECYCFENGHAO 转生1重
+RECYCFENGHAO 转生3重
+RECYCFENGHAO 转生4重
+RECYCFENGHAO 转生5重
+RECYCFENGHAO 转生6重
+RECYCFENGHAO 转生7重
+RECYCFENGHAO 转生8重
+RECYCFENGHAO 转生9重
+RECYCFENGHAO 转生10重
+SENDMSG 6 [转生] 恭喜您晋升至转生2重，获得称号转生2重。
+GOTO @Main
+BREAK
+#ELSEACT
+RECYCFENGHAO 转生2重
+MESSAGEBOX 转生未能完成，本次未扣除物品和货币。
+BREAK
+
+[@XY_REBIRTH_VIEW_3]
+#IF
+#SAY
+< /FCOLOR=250>\
+<> <转生进阶：/FCOLOR=158> <突破桎梏，重塑根基/FCOLOR=218>\
+<> <---------------------------------------------------------------/FCOLOR=10>\
+<> <当前转生:/FCOLOR=161>{转生2重/SCOLOR=249}\
+<> <下一转生:/FCOLOR=161>{3转（转生3重）/SCOLOR=253}\
+<> <所需材料:/FCOLOR=161>{小卢恩×15/SCOLOR=251}\
+<> <转生属性:/FCOLOR=161>{每次转生神力倍攻+0.05；其余条件与属性待填/SCOLOR=147}\
+<> <规则说明:/FCOLOR=161>{转生后人物等级不变，当前经验将清空/SCOLOR=245}\
+<> <---------------------------------------------------------------/FCOLOR=10>\
+<> 【<确认转生/@XY_REBIRTH_3>】　<关闭/@exit>\
+
+[@XY_REBIRTH_3]
+#IF
+CHECKRENEWLEVEL = 2
+CHECKITEM 小卢恩 15
+#ACT
+GOTO @XY_REBIRTH_APPLY_3
+#ELSEACT
+MESSAGEBOX 当前转生阶段不符，或所需物品、货币不足。
+BREAK
+
+[@XY_REBIRTH_APPLY_3]
+#IF
+CHECKRENEWLEVEL = 2
+CHECKITEM 小卢恩 15
+#ACT
+GIVEFENGHAO 转生3重 1
+GOTO @XY_REBIRTH_TITLE_CONFIRM_3
+BREAK
+#ELSEACT
+MESSAGEBOX 当前转生阶段不符，或所需物品、货币不足。
+BREAK
+
+[@XY_REBIRTH_TITLE_CONFIRM_3]
+#IF
+CHECKRENEWLEVEL = 2
+CHECKFENGHAO 转生3重
+#ACT
+RENEWLEVEL 1
+GOTO @XY_REBIRTH_ENGINE_CONFIRM_3
+BREAK
+#ELSEACT
+MESSAGEBOX 转生称号未能授予，本次未消耗物品和货币。
+BREAK
+
+[@XY_REBIRTH_ENGINE_CONFIRM_3]
+#IF
+CHECKRENEWLEVEL = 3
+CHECKFENGHAO 转生3重
+#ACT
+TAKE 小卢恩 15
+RECYCFENGHAO 转生1重
+RECYCFENGHAO 转生2重
+RECYCFENGHAO 转生4重
+RECYCFENGHAO 转生5重
+RECYCFENGHAO 转生6重
+RECYCFENGHAO 转生7重
+RECYCFENGHAO 转生8重
+RECYCFENGHAO 转生9重
+RECYCFENGHAO 转生10重
+SENDMSG 6 [转生] 恭喜您晋升至转生3重，获得称号转生3重。
+GOTO @Main
+BREAK
+#ELSEACT
+RECYCFENGHAO 转生3重
+MESSAGEBOX 转生未能完成，本次未扣除物品和货币。
+BREAK
+
+[@XY_REBIRTH_VIEW_4]
+#IF
+#SAY
+< /FCOLOR=250>\
+<> <转生进阶：/FCOLOR=158> <突破桎梏，重塑根基/FCOLOR=218>\
+<> <---------------------------------------------------------------/FCOLOR=10>\
+<> <当前转生:/FCOLOR=161>{转生3重/SCOLOR=249}\
+<> <下一转生:/FCOLOR=161>{4转（转生4重）/SCOLOR=253}\
+<> <所需材料:/FCOLOR=161>{小卢恩×20/SCOLOR=251}\
+<> <转生属性:/FCOLOR=161>{每次转生神力倍攻+0.05；其余条件与属性待填/SCOLOR=147}\
+<> <规则说明:/FCOLOR=161>{转生后人物等级不变，当前经验将清空/SCOLOR=245}\
+<> <---------------------------------------------------------------/FCOLOR=10>\
+<> 【<确认转生/@XY_REBIRTH_4>】　<关闭/@exit>\
+
+[@XY_REBIRTH_4]
+#IF
+CHECKRENEWLEVEL = 3
+CHECKITEM 小卢恩 20
+#ACT
+GOTO @XY_REBIRTH_APPLY_4
+#ELSEACT
+MESSAGEBOX 当前转生阶段不符，或所需物品、货币不足。
+BREAK
+
+[@XY_REBIRTH_APPLY_4]
+#IF
+CHECKRENEWLEVEL = 3
+CHECKITEM 小卢恩 20
+#ACT
+GIVEFENGHAO 转生4重 1
+GOTO @XY_REBIRTH_TITLE_CONFIRM_4
+BREAK
+#ELSEACT
+MESSAGEBOX 当前转生阶段不符，或所需物品、货币不足。
+BREAK
+
+[@XY_REBIRTH_TITLE_CONFIRM_4]
+#IF
+CHECKRENEWLEVEL = 3
+CHECKFENGHAO 转生4重
+#ACT
+RENEWLEVEL 1
+GOTO @XY_REBIRTH_ENGINE_CONFIRM_4
+BREAK
+#ELSEACT
+MESSAGEBOX 转生称号未能授予，本次未消耗物品和货币。
+BREAK
+
+[@XY_REBIRTH_ENGINE_CONFIRM_4]
+#IF
+CHECKRENEWLEVEL = 4
+CHECKFENGHAO 转生4重
+#ACT
+TAKE 小卢恩 20
+RECYCFENGHAO 转生1重
+RECYCFENGHAO 转生2重
+RECYCFENGHAO 转生3重
+RECYCFENGHAO 转生5重
+RECYCFENGHAO 转生6重
+RECYCFENGHAO 转生7重
+RECYCFENGHAO 转生8重
+RECYCFENGHAO 转生9重
+RECYCFENGHAO 转生10重
+SENDMSG 6 [转生] 恭喜您晋升至转生4重，获得称号转生4重。
+GOTO @Main
+BREAK
+#ELSEACT
+RECYCFENGHAO 转生4重
+MESSAGEBOX 转生未能完成，本次未扣除物品和货币。
+BREAK
+
+[@XY_REBIRTH_VIEW_5]
+#IF
+#SAY
+< /FCOLOR=250>\
+<> <转生进阶：/FCOLOR=158> <突破桎梏，重塑根基/FCOLOR=218>\
+<> <---------------------------------------------------------------/FCOLOR=10>\
+<> <当前转生:/FCOLOR=161>{转生4重/SCOLOR=249}\
+<> <下一转生:/FCOLOR=161>{5转（转生5重）/SCOLOR=253}\
+<> <所需材料:/FCOLOR=161>{小卢恩×30/SCOLOR=251}\
+<> <转生属性:/FCOLOR=161>{每次转生神力倍攻+0.05；其余条件与属性待填/SCOLOR=147}\
+<> <规则说明:/FCOLOR=161>{转生后人物等级不变，当前经验将清空/SCOLOR=245}\
+<> <---------------------------------------------------------------/FCOLOR=10>\
+<> 【<确认转生/@XY_REBIRTH_5>】　<关闭/@exit>\
+
+[@XY_REBIRTH_5]
+#IF
+CHECKRENEWLEVEL = 4
+CHECKITEM 小卢恩 30
+#ACT
+GOTO @XY_REBIRTH_APPLY_5
+#ELSEACT
+MESSAGEBOX 当前转生阶段不符，或所需物品、货币不足。
+BREAK
+
+[@XY_REBIRTH_APPLY_5]
+#IF
+CHECKRENEWLEVEL = 4
+CHECKITEM 小卢恩 30
+#ACT
+GIVEFENGHAO 转生5重 1
+GOTO @XY_REBIRTH_TITLE_CONFIRM_5
+BREAK
+#ELSEACT
+MESSAGEBOX 当前转生阶段不符，或所需物品、货币不足。
+BREAK
+
+[@XY_REBIRTH_TITLE_CONFIRM_5]
+#IF
+CHECKRENEWLEVEL = 4
+CHECKFENGHAO 转生5重
+#ACT
+RENEWLEVEL 1
+GOTO @XY_REBIRTH_ENGINE_CONFIRM_5
+BREAK
+#ELSEACT
+MESSAGEBOX 转生称号未能授予，本次未消耗物品和货币。
+BREAK
+
+[@XY_REBIRTH_ENGINE_CONFIRM_5]
+#IF
+CHECKRENEWLEVEL = 5
+CHECKFENGHAO 转生5重
+#ACT
+TAKE 小卢恩 30
+RECYCFENGHAO 转生1重
+RECYCFENGHAO 转生2重
+RECYCFENGHAO 转生3重
+RECYCFENGHAO 转生4重
+RECYCFENGHAO 转生6重
+RECYCFENGHAO 转生7重
+RECYCFENGHAO 转生8重
+RECYCFENGHAO 转生9重
+RECYCFENGHAO 转生10重
+SENDMSG 6 [转生] 恭喜您晋升至转生5重，获得称号转生5重。
+GOTO @Main
+BREAK
+#ELSEACT
+RECYCFENGHAO 转生5重
+MESSAGEBOX 转生未能完成，本次未扣除物品和货币。
+BREAK
+
+[@XY_REBIRTH_VIEW_6]
+#IF
+#SAY
+< /FCOLOR=250>\
+<> <转生进阶：/FCOLOR=158> <突破桎梏，重塑根基/FCOLOR=218>\
+<> <---------------------------------------------------------------/FCOLOR=10>\
+<> <当前转生:/FCOLOR=161>{转生5重/SCOLOR=249}\
+<> <下一转生:/FCOLOR=161>{6转（转生6重）/SCOLOR=253}\
+<> <所需材料:/FCOLOR=161>{大卢恩×5/SCOLOR=251}\
+<> <转生属性:/FCOLOR=161>{每次转生神力倍攻+0.05；其余条件与属性待填/SCOLOR=147}\
+<> <规则说明:/FCOLOR=161>{转生后人物等级不变，当前经验将清空/SCOLOR=245}\
+<> <---------------------------------------------------------------/FCOLOR=10>\
+<> 【<确认转生/@XY_REBIRTH_6>】　<关闭/@exit>\
+
+[@XY_REBIRTH_6]
+#IF
+CHECKRENEWLEVEL = 5
+CHECKITEM 大卢恩 5
+#ACT
+GOTO @XY_REBIRTH_APPLY_6
+#ELSEACT
+MESSAGEBOX 当前转生阶段不符，或所需物品、货币不足。
+BREAK
+
+[@XY_REBIRTH_APPLY_6]
+#IF
+CHECKRENEWLEVEL = 5
+CHECKITEM 大卢恩 5
+#ACT
+GIVEFENGHAO 转生6重 1
+GOTO @XY_REBIRTH_TITLE_CONFIRM_6
+BREAK
+#ELSEACT
+MESSAGEBOX 当前转生阶段不符，或所需物品、货币不足。
+BREAK
+
+[@XY_REBIRTH_TITLE_CONFIRM_6]
+#IF
+CHECKRENEWLEVEL = 5
+CHECKFENGHAO 转生6重
+#ACT
+RENEWLEVEL 1
+GOTO @XY_REBIRTH_ENGINE_CONFIRM_6
+BREAK
+#ELSEACT
+MESSAGEBOX 转生称号未能授予，本次未消耗物品和货币。
+BREAK
+
+[@XY_REBIRTH_ENGINE_CONFIRM_6]
+#IF
+CHECKRENEWLEVEL = 6
+CHECKFENGHAO 转生6重
+#ACT
+TAKE 大卢恩 5
+RECYCFENGHAO 转生1重
+RECYCFENGHAO 转生2重
+RECYCFENGHAO 转生3重
+RECYCFENGHAO 转生4重
+RECYCFENGHAO 转生5重
+RECYCFENGHAO 转生7重
+RECYCFENGHAO 转生8重
+RECYCFENGHAO 转生9重
+RECYCFENGHAO 转生10重
+SENDMSG 6 [转生] 恭喜您晋升至转生6重，获得称号转生6重。
+GOTO @Main
+BREAK
+#ELSEACT
+RECYCFENGHAO 转生6重
+MESSAGEBOX 转生未能完成，本次未扣除物品和货币。
+BREAK
+
+[@XY_REBIRTH_VIEW_7]
+#IF
+#SAY
+< /FCOLOR=250>\
+<> <转生进阶：/FCOLOR=158> <突破桎梏，重塑根基/FCOLOR=218>\
+<> <---------------------------------------------------------------/FCOLOR=10>\
+<> <当前转生:/FCOLOR=161>{转生6重/SCOLOR=249}\
+<> <下一转生:/FCOLOR=161>{7转（转生7重）/SCOLOR=253}\
+<> <所需材料:/FCOLOR=161>{大卢恩×10/SCOLOR=251}\
+<> <转生属性:/FCOLOR=161>{每次转生神力倍攻+0.05；其余条件与属性待填/SCOLOR=147}\
+<> <规则说明:/FCOLOR=161>{转生后人物等级不变，当前经验将清空/SCOLOR=245}\
+<> <---------------------------------------------------------------/FCOLOR=10>\
+<> 【<确认转生/@XY_REBIRTH_7>】　<关闭/@exit>\
+
+[@XY_REBIRTH_7]
+#IF
+CHECKRENEWLEVEL = 6
+CHECKITEM 大卢恩 10
+#ACT
+GOTO @XY_REBIRTH_APPLY_7
+#ELSEACT
+MESSAGEBOX 当前转生阶段不符，或所需物品、货币不足。
+BREAK
+
+[@XY_REBIRTH_APPLY_7]
+#IF
+CHECKRENEWLEVEL = 6
+CHECKITEM 大卢恩 10
+#ACT
+GIVEFENGHAO 转生7重 1
+GOTO @XY_REBIRTH_TITLE_CONFIRM_7
+BREAK
+#ELSEACT
+MESSAGEBOX 当前转生阶段不符，或所需物品、货币不足。
+BREAK
+
+[@XY_REBIRTH_TITLE_CONFIRM_7]
+#IF
+CHECKRENEWLEVEL = 6
+CHECKFENGHAO 转生7重
+#ACT
+RENEWLEVEL 1
+GOTO @XY_REBIRTH_ENGINE_CONFIRM_7
+BREAK
+#ELSEACT
+MESSAGEBOX 转生称号未能授予，本次未消耗物品和货币。
+BREAK
+
+[@XY_REBIRTH_ENGINE_CONFIRM_7]
+#IF
+CHECKRENEWLEVEL = 7
+CHECKFENGHAO 转生7重
+#ACT
+TAKE 大卢恩 10
+RECYCFENGHAO 转生1重
+RECYCFENGHAO 转生2重
+RECYCFENGHAO 转生3重
+RECYCFENGHAO 转生4重
+RECYCFENGHAO 转生5重
+RECYCFENGHAO 转生6重
+RECYCFENGHAO 转生8重
+RECYCFENGHAO 转生9重
+RECYCFENGHAO 转生10重
+SENDMSG 6 [转生] 恭喜您晋升至转生7重，获得称号转生7重。
+GOTO @Main
+BREAK
+#ELSEACT
+RECYCFENGHAO 转生7重
+MESSAGEBOX 转生未能完成，本次未扣除物品和货币。
+BREAK
+
+[@XY_REBIRTH_VIEW_8]
+#IF
+#SAY
+< /FCOLOR=250>\
+<> <转生进阶：/FCOLOR=158> <突破桎梏，重塑根基/FCOLOR=218>\
+<> <---------------------------------------------------------------/FCOLOR=10>\
+<> <当前转生:/FCOLOR=161>{转生7重/SCOLOR=249}\
+<> <下一转生:/FCOLOR=161>{8转（转生8重）/SCOLOR=253}\
+<> <所需材料:/FCOLOR=161>{大卢恩×15/SCOLOR=251}\
+<> <转生属性:/FCOLOR=161>{每次转生神力倍攻+0.05；其余条件与属性待填/SCOLOR=147}\
+<> <规则说明:/FCOLOR=161>{转生后人物等级不变，当前经验将清空/SCOLOR=245}\
+<> <---------------------------------------------------------------/FCOLOR=10>\
+<> 【<确认转生/@XY_REBIRTH_8>】　<关闭/@exit>\
+
+[@XY_REBIRTH_8]
+#IF
+CHECKRENEWLEVEL = 7
+CHECKITEM 大卢恩 15
+#ACT
+GOTO @XY_REBIRTH_APPLY_8
+#ELSEACT
+MESSAGEBOX 当前转生阶段不符，或所需物品、货币不足。
+BREAK
+
+[@XY_REBIRTH_APPLY_8]
+#IF
+CHECKRENEWLEVEL = 7
+CHECKITEM 大卢恩 15
+#ACT
+GIVEFENGHAO 转生8重 1
+GOTO @XY_REBIRTH_TITLE_CONFIRM_8
+BREAK
+#ELSEACT
+MESSAGEBOX 当前转生阶段不符，或所需物品、货币不足。
+BREAK
+
+[@XY_REBIRTH_TITLE_CONFIRM_8]
+#IF
+CHECKRENEWLEVEL = 7
+CHECKFENGHAO 转生8重
+#ACT
+RENEWLEVEL 1
+GOTO @XY_REBIRTH_ENGINE_CONFIRM_8
+BREAK
+#ELSEACT
+MESSAGEBOX 转生称号未能授予，本次未消耗物品和货币。
+BREAK
+
+[@XY_REBIRTH_ENGINE_CONFIRM_8]
+#IF
+CHECKRENEWLEVEL = 8
+CHECKFENGHAO 转生8重
+#ACT
+TAKE 大卢恩 15
+RECYCFENGHAO 转生1重
+RECYCFENGHAO 转生2重
+RECYCFENGHAO 转生3重
+RECYCFENGHAO 转生4重
+RECYCFENGHAO 转生5重
+RECYCFENGHAO 转生6重
+RECYCFENGHAO 转生7重
+RECYCFENGHAO 转生9重
+RECYCFENGHAO 转生10重
+SENDMSG 6 [转生] 恭喜您晋升至转生8重，获得称号转生8重。
+GOTO @Main
+BREAK
+#ELSEACT
+RECYCFENGHAO 转生8重
+MESSAGEBOX 转生未能完成，本次未扣除物品和货币。
+BREAK
+
+[@XY_REBIRTH_VIEW_9]
+#IF
+#SAY
+< /FCOLOR=250>\
+<> <转生进阶：/FCOLOR=158> <突破桎梏，重塑根基/FCOLOR=218>\
+<> <---------------------------------------------------------------/FCOLOR=10>\
+<> <当前转生:/FCOLOR=161>{转生8重/SCOLOR=249}\
+<> <下一转生:/FCOLOR=161>{9转（转生9重）/SCOLOR=253}\
+<> <所需材料:/FCOLOR=161>{大卢恩×20/SCOLOR=251}\
+<> <转生属性:/FCOLOR=161>{每次转生神力倍攻+0.05；其余条件与属性待填/SCOLOR=147}\
+<> <规则说明:/FCOLOR=161>{转生后人物等级不变，当前经验将清空/SCOLOR=245}\
+<> <---------------------------------------------------------------/FCOLOR=10>\
+<> 【<确认转生/@XY_REBIRTH_9>】　<关闭/@exit>\
+
+[@XY_REBIRTH_9]
+#IF
+CHECKRENEWLEVEL = 8
+CHECKITEM 大卢恩 20
+#ACT
+GOTO @XY_REBIRTH_APPLY_9
+#ELSEACT
+MESSAGEBOX 当前转生阶段不符，或所需物品、货币不足。
+BREAK
+
+[@XY_REBIRTH_APPLY_9]
+#IF
+CHECKRENEWLEVEL = 8
+CHECKITEM 大卢恩 20
+#ACT
+GIVEFENGHAO 转生9重 1
+GOTO @XY_REBIRTH_TITLE_CONFIRM_9
+BREAK
+#ELSEACT
+MESSAGEBOX 当前转生阶段不符，或所需物品、货币不足。
+BREAK
+
+[@XY_REBIRTH_TITLE_CONFIRM_9]
+#IF
+CHECKRENEWLEVEL = 8
+CHECKFENGHAO 转生9重
+#ACT
+RENEWLEVEL 1
+GOTO @XY_REBIRTH_ENGINE_CONFIRM_9
+BREAK
+#ELSEACT
+MESSAGEBOX 转生称号未能授予，本次未消耗物品和货币。
+BREAK
+
+[@XY_REBIRTH_ENGINE_CONFIRM_9]
+#IF
+CHECKRENEWLEVEL = 9
+CHECKFENGHAO 转生9重
+#ACT
+TAKE 大卢恩 20
+RECYCFENGHAO 转生1重
+RECYCFENGHAO 转生2重
+RECYCFENGHAO 转生3重
+RECYCFENGHAO 转生4重
+RECYCFENGHAO 转生5重
+RECYCFENGHAO 转生6重
+RECYCFENGHAO 转生7重
+RECYCFENGHAO 转生8重
+RECYCFENGHAO 转生10重
+SENDMSG 6 [转生] 恭喜您晋升至转生9重，获得称号转生9重。
+GOTO @Main
+BREAK
+#ELSEACT
+RECYCFENGHAO 转生9重
+MESSAGEBOX 转生未能完成，本次未扣除物品和货币。
+BREAK
+
+[@XY_REBIRTH_VIEW_10]
+#IF
+#SAY
+< /FCOLOR=250>\
+<> <转生进阶：/FCOLOR=158> <突破桎梏，重塑根基/FCOLOR=218>\
+<> <---------------------------------------------------------------/FCOLOR=10>\
+<> <当前转生:/FCOLOR=161>{转生9重/SCOLOR=249}\
+<> <下一转生:/FCOLOR=161>{10转（转生10重）/SCOLOR=253}\
+<> <所需材料:/FCOLOR=161>{大卢恩×30/SCOLOR=251}\
+<> <转生属性:/FCOLOR=161>{每次转生神力倍攻+0.05；其余条件与属性待填/SCOLOR=147}\
+<> <规则说明:/FCOLOR=161>{转生后人物等级不变，当前经验将清空/SCOLOR=245}\
+<> <---------------------------------------------------------------/FCOLOR=10>\
+<> 【<确认转生/@XY_REBIRTH_10>】　<关闭/@exit>\
+
+[@XY_REBIRTH_10]
+#IF
+CHECKRENEWLEVEL = 9
+CHECKITEM 大卢恩 30
+#ACT
+GOTO @XY_REBIRTH_APPLY_10
+#ELSEACT
+MESSAGEBOX 当前转生阶段不符，或所需物品、货币不足。
+BREAK
+
+[@XY_REBIRTH_APPLY_10]
+#IF
+CHECKRENEWLEVEL = 9
+CHECKITEM 大卢恩 30
+#ACT
+GIVEFENGHAO 转生10重 1
+GOTO @XY_REBIRTH_TITLE_CONFIRM_10
+BREAK
+#ELSEACT
+MESSAGEBOX 当前转生阶段不符，或所需物品、货币不足。
+BREAK
+
+[@XY_REBIRTH_TITLE_CONFIRM_10]
+#IF
+CHECKRENEWLEVEL = 9
+CHECKFENGHAO 转生10重
+#ACT
+RENEWLEVEL 1
+GOTO @XY_REBIRTH_ENGINE_CONFIRM_10
+BREAK
+#ELSEACT
+MESSAGEBOX 转生称号未能授予，本次未消耗物品和货币。
+BREAK
+
+[@XY_REBIRTH_ENGINE_CONFIRM_10]
+#IF
+CHECKRENEWLEVEL = 10
+CHECKFENGHAO 转生10重
+#ACT
+TAKE 大卢恩 30
+RECYCFENGHAO 转生1重
+RECYCFENGHAO 转生2重
+RECYCFENGHAO 转生3重
+RECYCFENGHAO 转生4重
+RECYCFENGHAO 转生5重
+RECYCFENGHAO 转生6重
+RECYCFENGHAO 转生7重
+RECYCFENGHAO 转生8重
+RECYCFENGHAO 转生9重
+SENDMSG 6 [转生] 恭喜您晋升至转生10重，获得称号转生10重。
+GOTO @Main
+BREAK
+#ELSEACT
+RECYCFENGHAO 转生10重
+MESSAGEBOX 转生未能完成，本次未扣除物品和货币。
+BREAK
+
+[@XY_REBIRTH_MIGRATE_VIEW_1]
+#IF
+#SAY
+< /FCOLOR=250>\
+<> <转生传承：/FCOLOR=158> <找回您曾经达到的转生境界/FCOLOR=218>\
+<> <---------------------------------------------------------------/FCOLOR=10>\
+<> <昔日称号:/FCOLOR=161>{转生1重/SCOLOR=249}\
+<> <恢复境界:/FCOLOR=161>{转生1重/SCOLOR=253}\
+<> <传承消耗:/FCOLOR=161>{不消耗材料和货币/SCOLOR=251}\
+<> <重要说明:/FCOLOR=161>{人物等级不变，当前经验将清空/SCOLOR=245}\
+<> <---------------------------------------------------------------/FCOLOR=10>\
+<> 【<确认传承/@XY_REBIRTH_MIGRATE_1>】　<关闭/@exit>\
+
+[@XY_REBIRTH_MIGRATE_1]
+#IF
+CHECKRENEWLEVEL = 0
+CHECKFENGHAO 转生1重
+#ACT
+RENEWLEVEL 1
+GOTO @XY_REBIRTH_MIGRATE_CONFIRM_1
+BREAK
+#ELSEACT
+MESSAGEBOX 当前转生状态已变化，请重新打开转生界面。
+BREAK
+
+[@XY_REBIRTH_MIGRATE_CONFIRM_1]
+#IF
+CHECKRENEWLEVEL = 1
+CHECKFENGHAO 转生1重
+#ACT
+RECYCFENGHAO 转生2重
+RECYCFENGHAO 转生3重
+RECYCFENGHAO 转生4重
+RECYCFENGHAO 转生5重
+RECYCFENGHAO 转生6重
+RECYCFENGHAO 转生7重
+RECYCFENGHAO 转生8重
+RECYCFENGHAO 转生9重
+RECYCFENGHAO 转生10重
+SENDMSG 6 [转生] 往日转生境界已恢复至1重。
+GOTO @Main
+BREAK
+#ELSEACT
+MESSAGEBOX 转生境界恢复未能完成，请联系管理员处理。
+BREAK
+
+[@XY_REBIRTH_MIGRATE_VIEW_2]
+#IF
+#SAY
+< /FCOLOR=250>\
+<> <转生传承：/FCOLOR=158> <找回您曾经达到的转生境界/FCOLOR=218>\
+<> <---------------------------------------------------------------/FCOLOR=10>\
+<> <昔日称号:/FCOLOR=161>{转生2重/SCOLOR=249}\
+<> <恢复境界:/FCOLOR=161>{转生2重/SCOLOR=253}\
+<> <传承消耗:/FCOLOR=161>{不消耗材料和货币/SCOLOR=251}\
+<> <重要说明:/FCOLOR=161>{人物等级不变，当前经验将清空/SCOLOR=245}\
+<> <---------------------------------------------------------------/FCOLOR=10>\
+<> 【<确认传承/@XY_REBIRTH_MIGRATE_2>】　<关闭/@exit>\
+
+[@XY_REBIRTH_MIGRATE_2]
+#IF
+CHECKRENEWLEVEL = 0
+CHECKFENGHAO 转生2重
+#ACT
+RENEWLEVEL 2
+GOTO @XY_REBIRTH_MIGRATE_CONFIRM_2
+BREAK
+#ELSEACT
+MESSAGEBOX 当前转生状态已变化，请重新打开转生界面。
+BREAK
+
+[@XY_REBIRTH_MIGRATE_CONFIRM_2]
+#IF
+CHECKRENEWLEVEL = 2
+CHECKFENGHAO 转生2重
+#ACT
+RECYCFENGHAO 转生1重
+RECYCFENGHAO 转生3重
+RECYCFENGHAO 转生4重
+RECYCFENGHAO 转生5重
+RECYCFENGHAO 转生6重
+RECYCFENGHAO 转生7重
+RECYCFENGHAO 转生8重
+RECYCFENGHAO 转生9重
+RECYCFENGHAO 转生10重
+SENDMSG 6 [转生] 往日转生境界已恢复至2重。
+GOTO @Main
+BREAK
+#ELSEACT
+MESSAGEBOX 转生境界恢复未能完成，请联系管理员处理。
+BREAK
+
+[@XY_REBIRTH_MIGRATE_VIEW_3]
+#IF
+#SAY
+< /FCOLOR=250>\
+<> <转生传承：/FCOLOR=158> <找回您曾经达到的转生境界/FCOLOR=218>\
+<> <---------------------------------------------------------------/FCOLOR=10>\
+<> <昔日称号:/FCOLOR=161>{转生3重/SCOLOR=249}\
+<> <恢复境界:/FCOLOR=161>{转生3重/SCOLOR=253}\
+<> <传承消耗:/FCOLOR=161>{不消耗材料和货币/SCOLOR=251}\
+<> <重要说明:/FCOLOR=161>{人物等级不变，当前经验将清空/SCOLOR=245}\
+<> <---------------------------------------------------------------/FCOLOR=10>\
+<> 【<确认传承/@XY_REBIRTH_MIGRATE_3>】　<关闭/@exit>\
+
+[@XY_REBIRTH_MIGRATE_3]
+#IF
+CHECKRENEWLEVEL = 0
+CHECKFENGHAO 转生3重
+#ACT
+RENEWLEVEL 3
+GOTO @XY_REBIRTH_MIGRATE_CONFIRM_3
+BREAK
+#ELSEACT
+MESSAGEBOX 当前转生状态已变化，请重新打开转生界面。
+BREAK
+
+[@XY_REBIRTH_MIGRATE_CONFIRM_3]
+#IF
+CHECKRENEWLEVEL = 3
+CHECKFENGHAO 转生3重
+#ACT
+RECYCFENGHAO 转生1重
+RECYCFENGHAO 转生2重
+RECYCFENGHAO 转生4重
+RECYCFENGHAO 转生5重
+RECYCFENGHAO 转生6重
+RECYCFENGHAO 转生7重
+RECYCFENGHAO 转生8重
+RECYCFENGHAO 转生9重
+RECYCFENGHAO 转生10重
+SENDMSG 6 [转生] 往日转生境界已恢复至3重。
+GOTO @Main
+BREAK
+#ELSEACT
+MESSAGEBOX 转生境界恢复未能完成，请联系管理员处理。
+BREAK
+
+[@XY_REBIRTH_MIGRATE_VIEW_4]
+#IF
+#SAY
+< /FCOLOR=250>\
+<> <转生传承：/FCOLOR=158> <找回您曾经达到的转生境界/FCOLOR=218>\
+<> <---------------------------------------------------------------/FCOLOR=10>\
+<> <昔日称号:/FCOLOR=161>{转生4重/SCOLOR=249}\
+<> <恢复境界:/FCOLOR=161>{转生4重/SCOLOR=253}\
+<> <传承消耗:/FCOLOR=161>{不消耗材料和货币/SCOLOR=251}\
+<> <重要说明:/FCOLOR=161>{人物等级不变，当前经验将清空/SCOLOR=245}\
+<> <---------------------------------------------------------------/FCOLOR=10>\
+<> 【<确认传承/@XY_REBIRTH_MIGRATE_4>】　<关闭/@exit>\
+
+[@XY_REBIRTH_MIGRATE_4]
+#IF
+CHECKRENEWLEVEL = 0
+CHECKFENGHAO 转生4重
+#ACT
+RENEWLEVEL 4
+GOTO @XY_REBIRTH_MIGRATE_CONFIRM_4
+BREAK
+#ELSEACT
+MESSAGEBOX 当前转生状态已变化，请重新打开转生界面。
+BREAK
+
+[@XY_REBIRTH_MIGRATE_CONFIRM_4]
+#IF
+CHECKRENEWLEVEL = 4
+CHECKFENGHAO 转生4重
+#ACT
+RECYCFENGHAO 转生1重
+RECYCFENGHAO 转生2重
+RECYCFENGHAO 转生3重
+RECYCFENGHAO 转生5重
+RECYCFENGHAO 转生6重
+RECYCFENGHAO 转生7重
+RECYCFENGHAO 转生8重
+RECYCFENGHAO 转生9重
+RECYCFENGHAO 转生10重
+SENDMSG 6 [转生] 往日转生境界已恢复至4重。
+GOTO @Main
+BREAK
+#ELSEACT
+MESSAGEBOX 转生境界恢复未能完成，请联系管理员处理。
+BREAK
+
+[@XY_REBIRTH_MIGRATE_VIEW_5]
+#IF
+#SAY
+< /FCOLOR=250>\
+<> <转生传承：/FCOLOR=158> <找回您曾经达到的转生境界/FCOLOR=218>\
+<> <---------------------------------------------------------------/FCOLOR=10>\
+<> <昔日称号:/FCOLOR=161>{转生5重/SCOLOR=249}\
+<> <恢复境界:/FCOLOR=161>{转生5重/SCOLOR=253}\
+<> <传承消耗:/FCOLOR=161>{不消耗材料和货币/SCOLOR=251}\
+<> <重要说明:/FCOLOR=161>{人物等级不变，当前经验将清空/SCOLOR=245}\
+<> <---------------------------------------------------------------/FCOLOR=10>\
+<> 【<确认传承/@XY_REBIRTH_MIGRATE_5>】　<关闭/@exit>\
+
+[@XY_REBIRTH_MIGRATE_5]
+#IF
+CHECKRENEWLEVEL = 0
+CHECKFENGHAO 转生5重
+#ACT
+RENEWLEVEL 5
+GOTO @XY_REBIRTH_MIGRATE_CONFIRM_5
+BREAK
+#ELSEACT
+MESSAGEBOX 当前转生状态已变化，请重新打开转生界面。
+BREAK
+
+[@XY_REBIRTH_MIGRATE_CONFIRM_5]
+#IF
+CHECKRENEWLEVEL = 5
+CHECKFENGHAO 转生5重
+#ACT
+RECYCFENGHAO 转生1重
+RECYCFENGHAO 转生2重
+RECYCFENGHAO 转生3重
+RECYCFENGHAO 转生4重
+RECYCFENGHAO 转生6重
+RECYCFENGHAO 转生7重
+RECYCFENGHAO 转生8重
+RECYCFENGHAO 转生9重
+RECYCFENGHAO 转生10重
+SENDMSG 6 [转生] 往日转生境界已恢复至5重。
+GOTO @Main
+BREAK
+#ELSEACT
+MESSAGEBOX 转生境界恢复未能完成，请联系管理员处理。
+BREAK
+
+[@XY_REBIRTH_MIGRATE_VIEW_6]
+#IF
+#SAY
+< /FCOLOR=250>\
+<> <转生传承：/FCOLOR=158> <找回您曾经达到的转生境界/FCOLOR=218>\
+<> <---------------------------------------------------------------/FCOLOR=10>\
+<> <昔日称号:/FCOLOR=161>{转生6重/SCOLOR=249}\
+<> <恢复境界:/FCOLOR=161>{转生6重/SCOLOR=253}\
+<> <传承消耗:/FCOLOR=161>{不消耗材料和货币/SCOLOR=251}\
+<> <重要说明:/FCOLOR=161>{人物等级不变，当前经验将清空/SCOLOR=245}\
+<> <---------------------------------------------------------------/FCOLOR=10>\
+<> 【<确认传承/@XY_REBIRTH_MIGRATE_6>】　<关闭/@exit>\
+
+[@XY_REBIRTH_MIGRATE_6]
+#IF
+CHECKRENEWLEVEL = 0
+CHECKFENGHAO 转生6重
+#ACT
+RENEWLEVEL 6
+GOTO @XY_REBIRTH_MIGRATE_CONFIRM_6
+BREAK
+#ELSEACT
+MESSAGEBOX 当前转生状态已变化，请重新打开转生界面。
+BREAK
+
+[@XY_REBIRTH_MIGRATE_CONFIRM_6]
+#IF
+CHECKRENEWLEVEL = 6
+CHECKFENGHAO 转生6重
+#ACT
+RECYCFENGHAO 转生1重
+RECYCFENGHAO 转生2重
+RECYCFENGHAO 转生3重
+RECYCFENGHAO 转生4重
+RECYCFENGHAO 转生5重
+RECYCFENGHAO 转生7重
+RECYCFENGHAO 转生8重
+RECYCFENGHAO 转生9重
+RECYCFENGHAO 转生10重
+SENDMSG 6 [转生] 往日转生境界已恢复至6重。
+GOTO @Main
+BREAK
+#ELSEACT
+MESSAGEBOX 转生境界恢复未能完成，请联系管理员处理。
+BREAK
+
+[@XY_REBIRTH_MIGRATE_VIEW_7]
+#IF
+#SAY
+< /FCOLOR=250>\
+<> <转生传承：/FCOLOR=158> <找回您曾经达到的转生境界/FCOLOR=218>\
+<> <---------------------------------------------------------------/FCOLOR=10>\
+<> <昔日称号:/FCOLOR=161>{转生7重/SCOLOR=249}\
+<> <恢复境界:/FCOLOR=161>{转生7重/SCOLOR=253}\
+<> <传承消耗:/FCOLOR=161>{不消耗材料和货币/SCOLOR=251}\
+<> <重要说明:/FCOLOR=161>{人物等级不变，当前经验将清空/SCOLOR=245}\
+<> <---------------------------------------------------------------/FCOLOR=10>\
+<> 【<确认传承/@XY_REBIRTH_MIGRATE_7>】　<关闭/@exit>\
+
+[@XY_REBIRTH_MIGRATE_7]
+#IF
+CHECKRENEWLEVEL = 0
+CHECKFENGHAO 转生7重
+#ACT
+RENEWLEVEL 7
+GOTO @XY_REBIRTH_MIGRATE_CONFIRM_7
+BREAK
+#ELSEACT
+MESSAGEBOX 当前转生状态已变化，请重新打开转生界面。
+BREAK
+
+[@XY_REBIRTH_MIGRATE_CONFIRM_7]
+#IF
+CHECKRENEWLEVEL = 7
+CHECKFENGHAO 转生7重
+#ACT
+RECYCFENGHAO 转生1重
+RECYCFENGHAO 转生2重
+RECYCFENGHAO 转生3重
+RECYCFENGHAO 转生4重
+RECYCFENGHAO 转生5重
+RECYCFENGHAO 转生6重
+RECYCFENGHAO 转生8重
+RECYCFENGHAO 转生9重
+RECYCFENGHAO 转生10重
+SENDMSG 6 [转生] 往日转生境界已恢复至7重。
+GOTO @Main
+BREAK
+#ELSEACT
+MESSAGEBOX 转生境界恢复未能完成，请联系管理员处理。
+BREAK
+
+[@XY_REBIRTH_MIGRATE_VIEW_8]
+#IF
+#SAY
+< /FCOLOR=250>\
+<> <转生传承：/FCOLOR=158> <找回您曾经达到的转生境界/FCOLOR=218>\
+<> <---------------------------------------------------------------/FCOLOR=10>\
+<> <昔日称号:/FCOLOR=161>{转生8重/SCOLOR=249}\
+<> <恢复境界:/FCOLOR=161>{转生8重/SCOLOR=253}\
+<> <传承消耗:/FCOLOR=161>{不消耗材料和货币/SCOLOR=251}\
+<> <重要说明:/FCOLOR=161>{人物等级不变，当前经验将清空/SCOLOR=245}\
+<> <---------------------------------------------------------------/FCOLOR=10>\
+<> 【<确认传承/@XY_REBIRTH_MIGRATE_8>】　<关闭/@exit>\
+
+[@XY_REBIRTH_MIGRATE_8]
+#IF
+CHECKRENEWLEVEL = 0
+CHECKFENGHAO 转生8重
+#ACT
+RENEWLEVEL 8
+GOTO @XY_REBIRTH_MIGRATE_CONFIRM_8
+BREAK
+#ELSEACT
+MESSAGEBOX 当前转生状态已变化，请重新打开转生界面。
+BREAK
+
+[@XY_REBIRTH_MIGRATE_CONFIRM_8]
+#IF
+CHECKRENEWLEVEL = 8
+CHECKFENGHAO 转生8重
+#ACT
+RECYCFENGHAO 转生1重
+RECYCFENGHAO 转生2重
+RECYCFENGHAO 转生3重
+RECYCFENGHAO 转生4重
+RECYCFENGHAO 转生5重
+RECYCFENGHAO 转生6重
+RECYCFENGHAO 转生7重
+RECYCFENGHAO 转生9重
+RECYCFENGHAO 转生10重
+SENDMSG 6 [转生] 往日转生境界已恢复至8重。
+GOTO @Main
+BREAK
+#ELSEACT
+MESSAGEBOX 转生境界恢复未能完成，请联系管理员处理。
+BREAK
+
+[@XY_REBIRTH_MIGRATE_VIEW_9]
+#IF
+#SAY
+< /FCOLOR=250>\
+<> <转生传承：/FCOLOR=158> <找回您曾经达到的转生境界/FCOLOR=218>\
+<> <---------------------------------------------------------------/FCOLOR=10>\
+<> <昔日称号:/FCOLOR=161>{转生9重/SCOLOR=249}\
+<> <恢复境界:/FCOLOR=161>{转生9重/SCOLOR=253}\
+<> <传承消耗:/FCOLOR=161>{不消耗材料和货币/SCOLOR=251}\
+<> <重要说明:/FCOLOR=161>{人物等级不变，当前经验将清空/SCOLOR=245}\
+<> <---------------------------------------------------------------/FCOLOR=10>\
+<> 【<确认传承/@XY_REBIRTH_MIGRATE_9>】　<关闭/@exit>\
+
+[@XY_REBIRTH_MIGRATE_9]
+#IF
+CHECKRENEWLEVEL = 0
+CHECKFENGHAO 转生9重
+#ACT
+RENEWLEVEL 9
+GOTO @XY_REBIRTH_MIGRATE_CONFIRM_9
+BREAK
+#ELSEACT
+MESSAGEBOX 当前转生状态已变化，请重新打开转生界面。
+BREAK
+
+[@XY_REBIRTH_MIGRATE_CONFIRM_9]
+#IF
+CHECKRENEWLEVEL = 9
+CHECKFENGHAO 转生9重
+#ACT
+RECYCFENGHAO 转生1重
+RECYCFENGHAO 转生2重
+RECYCFENGHAO 转生3重
+RECYCFENGHAO 转生4重
+RECYCFENGHAO 转生5重
+RECYCFENGHAO 转生6重
+RECYCFENGHAO 转生7重
+RECYCFENGHAO 转生8重
+RECYCFENGHAO 转生10重
+SENDMSG 6 [转生] 往日转生境界已恢复至9重。
+GOTO @Main
+BREAK
+#ELSEACT
+MESSAGEBOX 转生境界恢复未能完成，请联系管理员处理。
+BREAK
+
+[@XY_REBIRTH_MIGRATE_VIEW_10]
+#IF
+#SAY
+< /FCOLOR=250>\
+<> <转生传承：/FCOLOR=158> <找回您曾经达到的转生境界/FCOLOR=218>\
+<> <---------------------------------------------------------------/FCOLOR=10>\
+<> <昔日称号:/FCOLOR=161>{转生10重/SCOLOR=249}\
+<> <恢复境界:/FCOLOR=161>{转生10重/SCOLOR=253}\
+<> <传承消耗:/FCOLOR=161>{不消耗材料和货币/SCOLOR=251}\
+<> <重要说明:/FCOLOR=161>{人物等级不变，当前经验将清空/SCOLOR=245}\
+<> <---------------------------------------------------------------/FCOLOR=10>\
+<> 【<确认传承/@XY_REBIRTH_MIGRATE_10>】　<关闭/@exit>\
+
+[@XY_REBIRTH_MIGRATE_10]
+#IF
+CHECKRENEWLEVEL = 0
+CHECKFENGHAO 转生10重
+#ACT
+RENEWLEVEL 10
+GOTO @XY_REBIRTH_MIGRATE_CONFIRM_10
+BREAK
+#ELSEACT
+MESSAGEBOX 当前转生状态已变化，请重新打开转生界面。
+BREAK
+
+[@XY_REBIRTH_MIGRATE_CONFIRM_10]
+#IF
+CHECKRENEWLEVEL = 10
+CHECKFENGHAO 转生10重
+#ACT
+RECYCFENGHAO 转生1重
+RECYCFENGHAO 转生2重
+RECYCFENGHAO 转生3重
+RECYCFENGHAO 转生4重
+RECYCFENGHAO 转生5重
+RECYCFENGHAO 转生6重
+RECYCFENGHAO 转生7重
+RECYCFENGHAO 转生8重
+RECYCFENGHAO 转生9重
+SENDMSG 6 [转生] 往日转生境界已恢复至10重。
+GOTO @Main
+BREAK
+#ELSEACT
+MESSAGEBOX 转生境界恢复未能完成，请联系管理员处理。
+BREAK
+
+[@XY_REBIRTH_FULL]
+#IF
+#SAY
+< /FCOLOR=250>\
+<> <转生进阶：/FCOLOR=158> <当前已达到最高档/FCOLOR=218>\
+<> <---------------------------------------------------------------/FCOLOR=10>\
+<> <当前转生:/FCOLOR=161>{转生10重/SCOLOR=249}\
+<> <对应称号:/FCOLOR=161>{转生10重/SCOLOR=253}\
+<> <状态:/FCOLOR=161>{已满级/SCOLOR=253}\
+<> <---------------------------------------------------------------/FCOLOR=10>\
+<> <关闭/@exit>\

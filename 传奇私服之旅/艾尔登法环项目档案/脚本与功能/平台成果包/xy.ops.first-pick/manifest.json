@@ -1,0 +1,116 @@
+{
+  "schema_version": 1,
+  "id": "xy.ops.first-pick",
+  "version": "1.0.3",
+  "display_name": "首爆首次拾取系统",
+  "status": "verified",
+  "engine": "LFM2",
+  "residency": "optional",
+  "bundle": "ops-suite",
+  "dependencies": [],
+  "parameters": {},
+  "claims": {
+    "labels": [
+      "@首爆拾取处理",
+      "@首爆成功"
+    ],
+    "variables": [
+      "S$首爆原始数据",
+      "S$首爆数量",
+      "S$首爆状态",
+      "S$首爆剩余",
+      "S$首爆类型",
+      "N$首爆当前奖励",
+      "N$首爆公告坐标"
+    ],
+    "maps": [],
+    "npcs": []
+  },
+  "operations": [
+    {
+      "type": "transcode_copy",
+      "source": "payload/首爆脚本/首爆处理_utf8.txt",
+      "target": "Mir200/Envir/QuestDiary/首爆脚本/首爆处理.txt",
+      "source_encoding": "utf-8",
+      "target_encoding": "gb18030",
+      "newline": "\r\n",
+      "scope": "server"
+    },
+    {
+      "type": "render",
+      "source": "payload/首爆脚本/首爆奖励配置.txt",
+      "user_document": "15_首爆奖励配置.txt",
+      "target": "Mir200/Envir/QuestDiary/首爆脚本/首爆奖励配置.txt",
+      "source_encoding": "utf-8",
+      "target_encoding": "gb18030",
+      "newline": "\r\n",
+      "preserve_existing": true,
+      "scope": "server"
+    },
+    {
+      "type": "render",
+      "source": "payload/首爆脚本/已领取奖励.txt",
+      "target": "Mir200/Envir/QuestDiary/首爆脚本/已领取奖励.txt",
+      "source_encoding": "utf-8",
+      "target_encoding": "gb18030",
+      "newline": "\r\n",
+      "preserve_existing": true,
+      "scope": "server"
+    },
+    {
+      "type": "ensure_event_label",
+      "target": "Mir200/Envir/Market_Def/QFunction-0.txt",
+      "label": "PickUpItemEX",
+      "target_encoding": "gb18030",
+      "scope": "server"
+    },
+    {
+      "type": "event_hook",
+      "target": "Mir200/Envir/Market_Def/QFunction-0.txt",
+      "label": "PickUpItemEX",
+      "content": "#IF\n#ACT\nLINKPICKUPITEM\n#CALL [\\首爆脚本\\首爆处理.txt] @首爆拾取处理",
+      "target_encoding": "gb18030",
+      "scope": "server"
+    }
+  ],
+  "preflight_checks": [
+    {
+      "type": "file_missing",
+      "path": "Mir200/Envir/QuestDiary/首爆系统/首爆处理.txt"
+    }
+  ],
+  "post_checks": [
+    {
+      "type": "file_exists",
+      "path": "Mir200/Envir/QuestDiary/首爆脚本/首爆处理.txt"
+    },
+    {
+      "type": "text_contains",
+      "path": "Mir200/Envir/QuestDiary/首爆脚本/首爆处理.txt",
+      "text": "首爆奖励配置.txt 首爆奖励配置"
+    },
+    {
+      "type": "file_exists",
+      "path": "Mir200/Envir/QuestDiary/首爆脚本/首爆奖励配置.txt"
+    },
+    {
+      "type": "file_exists",
+      "path": "Mir200/Envir/QuestDiary/首爆脚本/已领取奖励.txt"
+    },
+    {
+      "type": "label_exists",
+      "path": "Mir200/Envir/Market_Def/QFunction-0.txt",
+      "label": "PickUpItemEX"
+    }
+  ],
+  "evidence": [
+    "static:manifest-and-payload",
+    "static:config-section-contract-20260717",
+    "static:movr-direct-variable-contract-20260717",
+    "game:core-script-validated-20260713",
+    "m2:restart-no-runtime-issues-20260717",
+    "game:new-server-first-pick-wooden-sword-20260717",
+    "rollback:automated-transaction-suite-20260717",
+    "evidence:20260717_xy.ops.first-pick_1.0.3_验收.json"
+  ]
+}

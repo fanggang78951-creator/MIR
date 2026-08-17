@@ -1,0 +1,15 @@
+; 死亡后回初始营地执行脚本。
+; 3秒DelayCall及其目标标签固定放在QFunction本地，避免跨脚本延迟上下文丢失。
+; 本脚本不发放SETREBORN资格，不增加任何额外复活机会。
+
+[@XY_AUTO_RETURN_CAMP_EXEC]
+{
+#IF
+#ACT
+MAPMOVE xycamp 25 28 10
+REALIVE
+HUMANHP = 100 0 1 0 0 1
+HUMANMP = 100 0 1 1
+SENDMSG 6 [死亡] 已在初始营地复活。
+BREAK
+}

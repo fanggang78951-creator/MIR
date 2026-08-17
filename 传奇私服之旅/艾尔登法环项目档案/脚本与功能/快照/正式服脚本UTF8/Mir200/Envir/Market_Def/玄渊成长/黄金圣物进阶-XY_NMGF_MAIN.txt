@@ -1,0 +1,459 @@
+[@Main]
+#IF
+CHECKITEM 黄金之心LV10 1
+#ACT
+GOTO @XY_NMGF_RELIC_FULL
+BREAK
+
+#IF
+CHECKITEM 黄金之心LV9 1
+#ACT
+GOTO @XY_NMGF_RELIC_VIEW_10
+BREAK
+
+#IF
+CHECKITEM 黄金之心LV8 1
+#ACT
+GOTO @XY_NMGF_RELIC_VIEW_9
+BREAK
+
+#IF
+CHECKITEM 黄金之心LV7 1
+#ACT
+GOTO @XY_NMGF_RELIC_VIEW_8
+BREAK
+
+#IF
+CHECKITEM 黄金之心LV6 1
+#ACT
+GOTO @XY_NMGF_RELIC_VIEW_7
+BREAK
+
+#IF
+CHECKITEM 黄金之心LV5 1
+#ACT
+GOTO @XY_NMGF_RELIC_VIEW_6
+BREAK
+
+#IF
+CHECKITEM 黄金之心LV4 1
+#ACT
+GOTO @XY_NMGF_RELIC_VIEW_5
+BREAK
+
+#IF
+CHECKITEM 黄金之心LV3 1
+#ACT
+GOTO @XY_NMGF_RELIC_VIEW_4
+BREAK
+
+#IF
+CHECKITEM 黄金之心LV2 1
+#ACT
+GOTO @XY_NMGF_RELIC_VIEW_3
+BREAK
+
+#IF
+CHECKITEM 黄金之心LV1 1
+#ACT
+GOTO @XY_NMGF_RELIC_VIEW_2
+BREAK
+
+#IF
+CHECKITEM 黄金圣物LV10 1
+#ACT
+GOTO @XY_NMGF_RELIC_VIEW_1
+BREAK
+
+#IF
+#ACT
+GOTO @XY_NMGF_RELIC_NONE
+BREAK
+
+[@XY_NMGF_RELIC_VIEW_1]
+#IF
+#SAY
+< /FCOLOR=250>\
+<> <黄金圣物进阶：/FCOLOR=158> <宁姆格福阶段只显示当前下一档/FCOLOR=218>\
+<> <---------------------------------------------------------------/FCOLOR=10>\
+<> <当前装备:/FCOLOR=161>{黄金圣物LV10/SCOLOR=249}\
+<> <下一装备:/FCOLOR=161>{黄金之心LV1/SCOLOR=253}\
+<> <升级消耗:/FCOLOR=161>{失色锻造石×50、元宝×10000/SCOLOR=251}\
+<> <将鼠标移到图标查看下一装备的完整属性。/FCOLOR=147>\
+<> <---------------------------------------------------------------/FCOLOR=10>\
+<ItemShow:885:0:260:-90:1>　【<确认升级/@XY_NMGF_RELIC_1>】　<关闭/@exit>\
+
+[@XY_NMGF_RELIC_1]
+#IF
+CHECKBAGSIZE 1
+CHECKITEM 黄金圣物LV10 1
+NOT CHECKITEM 黄金之心LV1 1
+NOT CHECKITEM 黄金之心LV2 1
+NOT CHECKITEM 黄金之心LV3 1
+NOT CHECKITEM 黄金之心LV4 1
+NOT CHECKITEM 黄金之心LV5 1
+NOT CHECKITEM 黄金之心LV6 1
+NOT CHECKITEM 黄金之心LV7 1
+NOT CHECKITEM 黄金之心LV8 1
+NOT CHECKITEM 黄金之心LV9 1
+NOT CHECKITEM 黄金之心LV10 1
+CHECKITEM 失色锻造石 50
+CHECKGAMEGOLD > 9999
+#ACT
+TAKE 黄金圣物LV10 1
+TAKE 失色锻造石 50
+GAMEGOLD - 10000
+GIVE 黄金之心LV1 1
+SENDMSG 6 [黄金圣物进阶] 已将黄金圣物LV10升级为黄金之心LV1。
+GOTO @Main
+BREAK
+#ELSEACT
+MESSAGEBOX 当前装备不是背包内最高档，或材料、货币、背包空间不满足。
+BREAK
+
+[@XY_NMGF_RELIC_VIEW_2]
+#IF
+#SAY
+< /FCOLOR=250>\
+<> <黄金圣物进阶：/FCOLOR=158> <宁姆格福阶段只显示当前下一档/FCOLOR=218>\
+<> <---------------------------------------------------------------/FCOLOR=10>\
+<> <当前装备:/FCOLOR=161>{黄金之心LV1/SCOLOR=249}\
+<> <下一装备:/FCOLOR=161>{黄金之心LV2/SCOLOR=253}\
+<> <升级消耗:/FCOLOR=161>{失色锻造石×100、元宝×20000/SCOLOR=251}\
+<> <将鼠标移到图标查看下一装备的完整属性。/FCOLOR=147>\
+<> <---------------------------------------------------------------/FCOLOR=10>\
+<ItemShow:886:0:260:-90:1>　【<确认升级/@XY_NMGF_RELIC_2>】　<关闭/@exit>\
+
+[@XY_NMGF_RELIC_2]
+#IF
+CHECKBAGSIZE 1
+CHECKITEM 黄金之心LV1 1
+NOT CHECKITEM 黄金之心LV2 1
+NOT CHECKITEM 黄金之心LV3 1
+NOT CHECKITEM 黄金之心LV4 1
+NOT CHECKITEM 黄金之心LV5 1
+NOT CHECKITEM 黄金之心LV6 1
+NOT CHECKITEM 黄金之心LV7 1
+NOT CHECKITEM 黄金之心LV8 1
+NOT CHECKITEM 黄金之心LV9 1
+NOT CHECKITEM 黄金之心LV10 1
+CHECKITEM 失色锻造石 100
+CHECKGAMEGOLD > 19999
+#ACT
+TAKE 黄金之心LV1 1
+TAKE 失色锻造石 100
+GAMEGOLD - 20000
+GIVE 黄金之心LV2 1
+SENDMSG 6 [黄金圣物进阶] 已将黄金之心LV1升级为黄金之心LV2。
+GOTO @Main
+BREAK
+#ELSEACT
+MESSAGEBOX 当前装备不是背包内最高档，或材料、货币、背包空间不满足。
+BREAK
+
+[@XY_NMGF_RELIC_VIEW_3]
+#IF
+#SAY
+< /FCOLOR=250>\
+<> <黄金圣物进阶：/FCOLOR=158> <宁姆格福阶段只显示当前下一档/FCOLOR=218>\
+<> <---------------------------------------------------------------/FCOLOR=10>\
+<> <当前装备:/FCOLOR=161>{黄金之心LV2/SCOLOR=249}\
+<> <下一装备:/FCOLOR=161>{黄金之心LV3/SCOLOR=253}\
+<> <升级消耗:/FCOLOR=161>{失色锻造石×150、元宝×30000/SCOLOR=251}\
+<> <将鼠标移到图标查看下一装备的完整属性。/FCOLOR=147>\
+<> <---------------------------------------------------------------/FCOLOR=10>\
+<ItemShow:887:0:260:-90:1>　【<确认升级/@XY_NMGF_RELIC_3>】　<关闭/@exit>\
+
+[@XY_NMGF_RELIC_3]
+#IF
+CHECKBAGSIZE 1
+CHECKITEM 黄金之心LV2 1
+NOT CHECKITEM 黄金之心LV3 1
+NOT CHECKITEM 黄金之心LV4 1
+NOT CHECKITEM 黄金之心LV5 1
+NOT CHECKITEM 黄金之心LV6 1
+NOT CHECKITEM 黄金之心LV7 1
+NOT CHECKITEM 黄金之心LV8 1
+NOT CHECKITEM 黄金之心LV9 1
+NOT CHECKITEM 黄金之心LV10 1
+CHECKITEM 失色锻造石 150
+CHECKGAMEGOLD > 29999
+#ACT
+TAKE 黄金之心LV2 1
+TAKE 失色锻造石 150
+GAMEGOLD - 30000
+GIVE 黄金之心LV3 1
+SENDMSG 6 [黄金圣物进阶] 已将黄金之心LV2升级为黄金之心LV3。
+GOTO @Main
+BREAK
+#ELSEACT
+MESSAGEBOX 当前装备不是背包内最高档，或材料、货币、背包空间不满足。
+BREAK
+
+[@XY_NMGF_RELIC_VIEW_4]
+#IF
+#SAY
+< /FCOLOR=250>\
+<> <黄金圣物进阶：/FCOLOR=158> <宁姆格福阶段只显示当前下一档/FCOLOR=218>\
+<> <---------------------------------------------------------------/FCOLOR=10>\
+<> <当前装备:/FCOLOR=161>{黄金之心LV3/SCOLOR=249}\
+<> <下一装备:/FCOLOR=161>{黄金之心LV4/SCOLOR=253}\
+<> <升级消耗:/FCOLOR=161>{失色锻造石×200、元宝×50000/SCOLOR=251}\
+<> <将鼠标移到图标查看下一装备的完整属性。/FCOLOR=147>\
+<> <---------------------------------------------------------------/FCOLOR=10>\
+<ItemShow:888:0:260:-90:1>　【<确认升级/@XY_NMGF_RELIC_4>】　<关闭/@exit>\
+
+[@XY_NMGF_RELIC_4]
+#IF
+CHECKBAGSIZE 1
+CHECKITEM 黄金之心LV3 1
+NOT CHECKITEM 黄金之心LV4 1
+NOT CHECKITEM 黄金之心LV5 1
+NOT CHECKITEM 黄金之心LV6 1
+NOT CHECKITEM 黄金之心LV7 1
+NOT CHECKITEM 黄金之心LV8 1
+NOT CHECKITEM 黄金之心LV9 1
+NOT CHECKITEM 黄金之心LV10 1
+CHECKITEM 失色锻造石 200
+CHECKGAMEGOLD > 49999
+#ACT
+TAKE 黄金之心LV3 1
+TAKE 失色锻造石 200
+GAMEGOLD - 50000
+GIVE 黄金之心LV4 1
+SENDMSG 6 [黄金圣物进阶] 已将黄金之心LV3升级为黄金之心LV4。
+GOTO @Main
+BREAK
+#ELSEACT
+MESSAGEBOX 当前装备不是背包内最高档，或材料、货币、背包空间不满足。
+BREAK
+
+[@XY_NMGF_RELIC_VIEW_5]
+#IF
+#SAY
+< /FCOLOR=250>\
+<> <黄金圣物进阶：/FCOLOR=158> <宁姆格福阶段只显示当前下一档/FCOLOR=218>\
+<> <---------------------------------------------------------------/FCOLOR=10>\
+<> <当前装备:/FCOLOR=161>{黄金之心LV4/SCOLOR=249}\
+<> <下一装备:/FCOLOR=161>{黄金之心LV5/SCOLOR=253}\
+<> <升级消耗:/FCOLOR=161>{失色锻造石×250、元宝×80000/SCOLOR=251}\
+<> <将鼠标移到图标查看下一装备的完整属性。/FCOLOR=147>\
+<> <---------------------------------------------------------------/FCOLOR=10>\
+<ItemShow:889:0:260:-90:1>　【<确认升级/@XY_NMGF_RELIC_5>】　<关闭/@exit>\
+
+[@XY_NMGF_RELIC_5]
+#IF
+CHECKBAGSIZE 1
+CHECKITEM 黄金之心LV4 1
+NOT CHECKITEM 黄金之心LV5 1
+NOT CHECKITEM 黄金之心LV6 1
+NOT CHECKITEM 黄金之心LV7 1
+NOT CHECKITEM 黄金之心LV8 1
+NOT CHECKITEM 黄金之心LV9 1
+NOT CHECKITEM 黄金之心LV10 1
+CHECKITEM 失色锻造石 250
+CHECKGAMEGOLD > 79999
+#ACT
+TAKE 黄金之心LV4 1
+TAKE 失色锻造石 250
+GAMEGOLD - 80000
+GIVE 黄金之心LV5 1
+SENDMSG 6 [黄金圣物进阶] 已将黄金之心LV4升级为黄金之心LV5。
+GOTO @Main
+BREAK
+#ELSEACT
+MESSAGEBOX 当前装备不是背包内最高档，或材料、货币、背包空间不满足。
+BREAK
+
+[@XY_NMGF_RELIC_VIEW_6]
+#IF
+#SAY
+< /FCOLOR=250>\
+<> <黄金圣物进阶：/FCOLOR=158> <宁姆格福阶段只显示当前下一档/FCOLOR=218>\
+<> <---------------------------------------------------------------/FCOLOR=10>\
+<> <当前装备:/FCOLOR=161>{黄金之心LV5/SCOLOR=249}\
+<> <下一装备:/FCOLOR=161>{黄金之心LV6/SCOLOR=253}\
+<> <升级消耗:/FCOLOR=161>{失色锻造石×300、元宝×100000/SCOLOR=251}\
+<> <将鼠标移到图标查看下一装备的完整属性。/FCOLOR=147>\
+<> <---------------------------------------------------------------/FCOLOR=10>\
+<ItemShow:890:0:260:-90:1>　【<确认升级/@XY_NMGF_RELIC_6>】　<关闭/@exit>\
+
+[@XY_NMGF_RELIC_6]
+#IF
+CHECKBAGSIZE 1
+CHECKITEM 黄金之心LV5 1
+NOT CHECKITEM 黄金之心LV6 1
+NOT CHECKITEM 黄金之心LV7 1
+NOT CHECKITEM 黄金之心LV8 1
+NOT CHECKITEM 黄金之心LV9 1
+NOT CHECKITEM 黄金之心LV10 1
+CHECKITEM 失色锻造石 300
+CHECKGAMEGOLD > 99999
+#ACT
+TAKE 黄金之心LV5 1
+TAKE 失色锻造石 300
+GAMEGOLD - 100000
+GIVE 黄金之心LV6 1
+SENDMSG 6 [黄金圣物进阶] 已将黄金之心LV5升级为黄金之心LV6。
+GOTO @Main
+BREAK
+#ELSEACT
+MESSAGEBOX 当前装备不是背包内最高档，或材料、货币、背包空间不满足。
+BREAK
+
+[@XY_NMGF_RELIC_VIEW_7]
+#IF
+#SAY
+< /FCOLOR=250>\
+<> <黄金圣物进阶：/FCOLOR=158> <宁姆格福阶段只显示当前下一档/FCOLOR=218>\
+<> <---------------------------------------------------------------/FCOLOR=10>\
+<> <当前装备:/FCOLOR=161>{黄金之心LV6/SCOLOR=249}\
+<> <下一装备:/FCOLOR=161>{黄金之心LV7/SCOLOR=253}\
+<> <升级消耗:/FCOLOR=161>{失色锻造石×350、元宝×150000/SCOLOR=251}\
+<> <将鼠标移到图标查看下一装备的完整属性。/FCOLOR=147>\
+<> <---------------------------------------------------------------/FCOLOR=10>\
+<ItemShow:891:0:260:-90:1>　【<确认升级/@XY_NMGF_RELIC_7>】　<关闭/@exit>\
+
+[@XY_NMGF_RELIC_7]
+#IF
+CHECKBAGSIZE 1
+CHECKITEM 黄金之心LV6 1
+NOT CHECKITEM 黄金之心LV7 1
+NOT CHECKITEM 黄金之心LV8 1
+NOT CHECKITEM 黄金之心LV9 1
+NOT CHECKITEM 黄金之心LV10 1
+CHECKITEM 失色锻造石 350
+CHECKGAMEGOLD > 149999
+#ACT
+TAKE 黄金之心LV6 1
+TAKE 失色锻造石 350
+GAMEGOLD - 150000
+GIVE 黄金之心LV7 1
+SENDMSG 6 [黄金圣物进阶] 已将黄金之心LV6升级为黄金之心LV7。
+GOTO @Main
+BREAK
+#ELSEACT
+MESSAGEBOX 当前装备不是背包内最高档，或材料、货币、背包空间不满足。
+BREAK
+
+[@XY_NMGF_RELIC_VIEW_8]
+#IF
+#SAY
+< /FCOLOR=250>\
+<> <黄金圣物进阶：/FCOLOR=158> <宁姆格福阶段只显示当前下一档/FCOLOR=218>\
+<> <---------------------------------------------------------------/FCOLOR=10>\
+<> <当前装备:/FCOLOR=161>{黄金之心LV7/SCOLOR=249}\
+<> <下一装备:/FCOLOR=161>{黄金之心LV8/SCOLOR=253}\
+<> <升级消耗:/FCOLOR=161>{失色锻造石×400、元宝×200000/SCOLOR=251}\
+<> <将鼠标移到图标查看下一装备的完整属性。/FCOLOR=147>\
+<> <---------------------------------------------------------------/FCOLOR=10>\
+<ItemShow:892:0:260:-90:1>　【<确认升级/@XY_NMGF_RELIC_8>】　<关闭/@exit>\
+
+[@XY_NMGF_RELIC_8]
+#IF
+CHECKBAGSIZE 1
+CHECKITEM 黄金之心LV7 1
+NOT CHECKITEM 黄金之心LV8 1
+NOT CHECKITEM 黄金之心LV9 1
+NOT CHECKITEM 黄金之心LV10 1
+CHECKITEM 失色锻造石 400
+CHECKGAMEGOLD > 199999
+#ACT
+TAKE 黄金之心LV7 1
+TAKE 失色锻造石 400
+GAMEGOLD - 200000
+GIVE 黄金之心LV8 1
+SENDMSG 6 [黄金圣物进阶] 已将黄金之心LV7升级为黄金之心LV8。
+GOTO @Main
+BREAK
+#ELSEACT
+MESSAGEBOX 当前装备不是背包内最高档，或材料、货币、背包空间不满足。
+BREAK
+
+[@XY_NMGF_RELIC_VIEW_9]
+#IF
+#SAY
+< /FCOLOR=250>\
+<> <黄金圣物进阶：/FCOLOR=158> <宁姆格福阶段只显示当前下一档/FCOLOR=218>\
+<> <---------------------------------------------------------------/FCOLOR=10>\
+<> <当前装备:/FCOLOR=161>{黄金之心LV8/SCOLOR=249}\
+<> <下一装备:/FCOLOR=161>{黄金之心LV9/SCOLOR=253}\
+<> <升级消耗:/FCOLOR=161>{失色锻造石×450、元宝×300000/SCOLOR=251}\
+<> <将鼠标移到图标查看下一装备的完整属性。/FCOLOR=147>\
+<> <---------------------------------------------------------------/FCOLOR=10>\
+<ItemShow:893:0:260:-90:1>　【<确认升级/@XY_NMGF_RELIC_9>】　<关闭/@exit>\
+
+[@XY_NMGF_RELIC_9]
+#IF
+CHECKBAGSIZE 1
+CHECKITEM 黄金之心LV8 1
+NOT CHECKITEM 黄金之心LV9 1
+NOT CHECKITEM 黄金之心LV10 1
+CHECKITEM 失色锻造石 450
+CHECKGAMEGOLD > 299999
+#ACT
+TAKE 黄金之心LV8 1
+TAKE 失色锻造石 450
+GAMEGOLD - 300000
+GIVE 黄金之心LV9 1
+SENDMSG 6 [黄金圣物进阶] 已将黄金之心LV8升级为黄金之心LV9。
+GOTO @Main
+BREAK
+#ELSEACT
+MESSAGEBOX 当前装备不是背包内最高档，或材料、货币、背包空间不满足。
+BREAK
+
+[@XY_NMGF_RELIC_VIEW_10]
+#IF
+#SAY
+< /FCOLOR=250>\
+<> <黄金圣物进阶：/FCOLOR=158> <宁姆格福阶段只显示当前下一档/FCOLOR=218>\
+<> <---------------------------------------------------------------/FCOLOR=10>\
+<> <当前装备:/FCOLOR=161>{黄金之心LV9/SCOLOR=249}\
+<> <下一装备:/FCOLOR=161>{黄金之心LV10/SCOLOR=253}\
+<> <升级消耗:/FCOLOR=161>{失色锻造石×500、元宝×500000/SCOLOR=251}\
+<> <将鼠标移到图标查看下一装备的完整属性。/FCOLOR=147>\
+<> <---------------------------------------------------------------/FCOLOR=10>\
+<ItemShow:894:0:260:-90:1>　【<确认升级/@XY_NMGF_RELIC_10>】　<关闭/@exit>\
+
+[@XY_NMGF_RELIC_10]
+#IF
+CHECKBAGSIZE 1
+CHECKITEM 黄金之心LV9 1
+NOT CHECKITEM 黄金之心LV10 1
+CHECKITEM 失色锻造石 500
+CHECKGAMEGOLD > 499999
+#ACT
+TAKE 黄金之心LV9 1
+TAKE 失色锻造石 500
+GAMEGOLD - 500000
+GIVE 黄金之心LV10 1
+SENDMSG 6 [黄金圣物进阶] 已将黄金之心LV9升级为黄金之心LV10。
+GOTO @Main
+BREAK
+#ELSEACT
+MESSAGEBOX 当前装备不是背包内最高档，或材料、货币、背包空间不满足。
+BREAK
+
+[@XY_NMGF_RELIC_NONE]
+#IF
+#SAY
+< /FCOLOR=250>\
+<> <黄金圣物进阶：/FCOLOR=158> <未找到本大陆可升级装备/FCOLOR=218>\
+<> <---------------------------------------------------------------/FCOLOR=10>\
+<> <请先在初始营地将黄金圣物提升至LV10，并把装备放入背包。/FCOLOR=251>\
+<> <穿戴中的装备不参与识别。/FCOLOR=147>\
+<> <---------------------------------------------------------------/FCOLOR=10>\
+<> <关闭/@exit>\
+
+[@XY_NMGF_RELIC_FULL]
+#IF
+#SAY
+< /FCOLOR=250>\
+<> <黄金圣物进阶：/FCOLOR=158> <本大陆阶段已经完成/FCOLOR=218>\
+<> <---------------------------------------------------------------/FCOLOR=10>\
+<> <当前装备:/FCOLOR=161>{黄金之心LV10/SCOLOR=249}\
+<> <状态:/FCOLOR=161>{宁姆格福阶段已完成/SCOLOR=253}\
+<> <后续大陆请前往对应成长NPC。/FCOLOR=147>\
+<> <---------------------------------------------------------------/FCOLOR=10>\
+<> <关闭/@exit>\

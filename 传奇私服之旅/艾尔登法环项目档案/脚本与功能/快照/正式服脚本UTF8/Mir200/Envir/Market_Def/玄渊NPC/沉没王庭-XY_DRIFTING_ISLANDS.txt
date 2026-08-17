@@ -1,0 +1,11 @@
+[@Main]
+#SAY
+沉没王庭已响应。\ \
+<进入沉没王庭/@Enter>
+<关闭/@exit>
+
+[@Enter]
+#IF
+#ACT
+MAPMOVE XX102 50 51
+BREAK

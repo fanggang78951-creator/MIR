@@ -1,0 +1,9 @@
+[@Main]
+#IF
+CheckMapMonCount XX105 = 0 1
+#ACT
+MAPMOVE XY_NMGF_MAIN 100 75
+BREAK
+#ELSESAY
+激发传送阵需要全神贯注，小心怪物的偷袭\ \
+<关闭/@exit>

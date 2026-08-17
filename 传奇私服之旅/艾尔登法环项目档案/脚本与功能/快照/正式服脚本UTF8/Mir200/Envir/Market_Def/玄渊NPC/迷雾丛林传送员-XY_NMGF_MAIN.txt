@@ -1,0 +1,11 @@
+[@Main]
+#SAY
+这里通往迷雾丛林。\ \
+<前往迷雾丛林/@Go>
+<关闭/@exit>
+
+[@Go]
+#IF
+#ACT
+MAPMOVE XX171 104 22
+BREAK

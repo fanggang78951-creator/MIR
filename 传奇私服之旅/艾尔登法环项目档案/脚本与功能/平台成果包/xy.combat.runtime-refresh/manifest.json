@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "id": "xy.combat.runtime-refresh",
+  "version": "1.2.0",
+  "display_name": "战斗属性攻击前实时刷新",
+  "status": "verified",
+  "engine": "LFM2",
+  "residency": "resident",
+  "bundle": "combat-suite",
+  "dependencies": [],
+  "parameters": {},
+  "claims": {
+    "labels": [],
+    "variables": ["N$XY_RT_Power", "N$XY_RT_Blast", "N$XY_RT_Drop", "N$XY_RT_DropMax", "N$XY_RT_DropFinal"],
+    "maps": [],
+    "npcs": []
+  },
+  "operations": [
+    {
+      "type": "event_hook",
+      "target": "Mir200/Envir/Market_Def/QFunction-0.txt",
+      "label": "AttackDamage",
+      "content": "#IF\n#ACT\nMOV N$XY_RT_Power 100\nMOV N$XY_RT_Blast 100\nMOV N$XY_RT_Drop 100\nMOV N$XY_RT_DropMax 100\n; XY_EQUIP_MAKER_RUNTIME_POWER_ANCHOR\n; XY_EQUIP_MAKER_RUNTIME_BLAST_ANCHOR\n; XY_EQUIP_MAKER_RUNTIME_DROP_ANCHOR\n; XY_EQUIP_MAKER_RUNTIME_DROP_MAX_ANCHOR\n; XYDP-EXTENSION-BEGIN DAMAGE_COEFFICIENT\n; XY_DAMAGE_COEFFICIENT_PACKAGE_ANCHOR\n; XYDP-EXTENSION-END DAMAGE_COEFFICIENT\n#IF\n#ACT\nMOV N$XY_RT_DropFinal 100\nCalcPercent <$STR(N$XY_RT_Drop)> <$STR(N$XY_RT_DropMax)> N$XY_RT_DropFinal\n#IF\n#ACT\nPOWERRATE <$STR(N$XY_RT_Power)> 0 0 1 0\nSetBlastHitRate <$STR(N$XY_RT_Blast)> 0\nKILLMONBURSTRATE <$STR(N$XY_RT_DropFinal)>"
+    }
+  ],
+  "preflight_checks": [],
+  "post_checks": [],
+  "evidence": [
+    "game:../xy.combat.drop/evidence/20260719_36x_game_acceptance.md",
+    "game:evidence/20260711_game_acceptance.md",
+    "runtime:AttackDamage-confirmed-by-user",
+    "source:XY-SKILL-004",
+    "source:XY-SKILL-009",
+    "source:XY-SKILL-012",
+    "source:XY-SKILL-017"
+  ]
+}

@@ -1,0 +1,64 @@
+{
+  "schema_version": 1,
+  "id": "xy.optional.storage.bag-entry",
+  "version": "1.0.0-candidate.1",
+  "display_name": "随身无限仓库（背包按钮入口）",
+  "status": "candidate",
+  "engine": "LFM2",
+  "residency": "optional",
+  "bundle": "storage",
+  "dependencies": [],
+  "parameters": {},
+  "claims": {
+    "labels": [],
+    "variables": [],
+    "maps": [],
+    "npcs": []
+  },
+  "operations": [
+    {
+      "type": "ensure_event_label",
+      "target": "Mir200/Envir/Market_Def/QFunction-0.txt",
+      "label": "CustomButtonClick",
+      "target_encoding": "gb18030"
+    },
+    {
+      "type": "event_hook",
+      "target": "Mir200/Envir/Market_Def/QFunction-0.txt",
+      "label": "CustomButtonClick",
+      "content": "#IF\nEQUAL <$CustomButtonID> 20\n#ACT\nOpenStorageView 1\nBREAK",
+      "target_encoding": "gb18030"
+    }
+  ],
+  "preflight_checks": [
+    {
+      "type": "file_exists",
+      "path": "Mir200/Envir/Market_Def/QFunction-0.txt"
+    }
+  ],
+  "post_checks": [
+    {
+      "type": "label_exists",
+      "path": "Mir200/Envir/Market_Def/QFunction-0.txt",
+      "label": "CustomButtonClick"
+    },
+    {
+      "type": "text_contains",
+      "path": "Mir200/Envir/Market_Def/QFunction-0.txt",
+      "text": "EQUAL <$CustomButtonID> 20"
+    },
+    {
+      "type": "text_contains",
+      "path": "Mir200/Envir/Market_Def/QFunction-0.txt",
+      "text": "OpenStorageView 1"
+    }
+  ],
+  "evidence": [
+    "engine-doc:open-storage-view-1-opens-infinite-visual-storage",
+    "engine-doc:backpack-reserved-buttons-20-24",
+    "static:current-mir-ui-contains-dbagcustombutton1",
+    "static:current-qfunction-button-20-unoccupied",
+    "config:current-big-storage-limit-and-save-count-100",
+    "game:pending-backpack-button-click-and-persistence"
+  ]
+}

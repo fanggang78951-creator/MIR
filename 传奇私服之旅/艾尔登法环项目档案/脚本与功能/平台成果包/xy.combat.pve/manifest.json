@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "id": "xy.combat.pve",
+  "version": "1.0.1",
+  "display_name": "打怪伤害（ChangeDamageValue路线）",
+  "status": "verified",
+  "engine": "LFM2",
+  "residency": "resident",
+  "bundle": "combat-suite",
+  "dependencies": [
+    "xy.combat.power"
+  ],
+  "parameters": {},
+  "claims": {
+    "labels": [],
+    "variables": [
+      "N$XY_PVE_Point",
+      "N$XY_PVE_Rate",
+      "N$XY_PVE_Extra",
+      "N$XY_PVE_Damage",
+      "N$XY_FirstKillRate",
+      "N$XY_TailKillRate"
+    ],
+    "maps": [],
+    "npcs": []
+  },
+  "operations": [
+    {
+      "type": "event_hook",
+      "target": "Mir200/Envir/Market_Def/QFunction-0.txt",
+      "label": "AttackDamage",
+      "content": "#IF\n#ACT\nMOV N$XY_PVE_Point 0\nMOV N$XY_PVE_Rate 0\nMOV N$XY_PVE_Extra 0\nMOV N$XY_PVE_Damage 0\nMOV N$XY_FirstKillRate 0\nMOV N$XY_TailKillRate 0\nGetAllCustomItemValue 22 N$XY_PVE_Point N$XY_PVE_Rate\nINC N$XY_PVE_Extra <$STR(N$XY_PVE_Point)>\nINC N$XY_PVE_Extra <$STR(N$XY_PVE_Rate)>\n; XYDP-EXTENSION-BEGIN EQUIP_ATTACK\n; XY_EQUIP_MAKER_ATTACK_ANCHOR\n; XYDP-EXTENSION-END EQUIP_ATTACK\n#IF\nLARGE N$XY_PVE_Extra 0\nNOT CHECKTEXTLIST ..\\QuestDiary\\不可切割.txt <$ATTACKMONSTER_NAMEEX>\nNOT CHECKTEXTLIST ..\\QuestDiary\\不可切割.txt <$ATTACKMONSTER_NAME>\n#ACT\nCalcPercent <$MAXDC> <$STR(N$XY_PVE_Extra)> N$XY_PVE_Damage\nChangeDamageValue 0 + <$STR(N$XY_PVE_Damage)>"
+    }
+  ],
+  "preflight_checks": [],
+  "post_checks": [],
+  "evidence": [
+    "runtime:XY-PVE-DAMAGEFIX-001",
+    "source:XY-SKILL-011"
+  ]
+}

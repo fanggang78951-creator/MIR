@@ -1,0 +1,108 @@
+玄渊平台接口：神印基础属性与称号晋升双NPC
+
+状态：原单档晋升verified；双支付路线candidate / 待游戏验收
+当前版本：xy.lab.seal-title-v2 2.1.0-candidate.2
+事务类型：seal-title-two-npc
+验收日期：2026-08-09
+正式母表：
+  D:\XuanYuanDevPlatform\所需材料表格汇总\21_神印基础属性.xlsx
+  D:\XuanYuanDevPlatform\所需材料表格汇总\22_称号晋升.xlsx
+
+一、正确入口与调用标准
+
+锻体：
+  地图：XY_NMGF_MAIN
+  当前服坐标：98,73
+  当前服外观：59（平台升级时保留现有受管NPC外观）
+  内部主标签：@XY_SEAL_BASE_MAIN
+
+神树赐福：
+  地图：XY_NMGF_MAIN
+  坐标：76,88
+  外观：244
+  内部主标签：@XY_TITLE_ADVANCE_MAIN
+
+正式脚本规则：
+  1. 玩家直接点击NPC进入唯一[@Main]。
+  2. 平台把核心母版自动展开到各自Market_Def NPC文件中。
+  3. 实际NPC必须自包含全部标签、GOTO和按钮目标。
+  4. 实际NPC不得含可执行#CALL，也不得含独立的“{”或“}”行。
+  5. @XY_SEAL_BASE_MAIN、@XY_TITLE_ADVANCE_MAIN仅作为核心母版的生成入口；展开时会改为[@Main]。
+  6. 其他NPC不得手工复制扣费、属性、称号判断或回收逻辑；需要迁移时必须重新走平台预检和事务安装。
+
+禁止参考：
+  candidate.4与candidate.5的跨目录#CALL入口已经被实际故障证伪；candidate.6把核心展开后保留外层花括号，造成M2脚本错误。三者只可作为失败原因记录，不得再用于生成。
+
+二、21号表：锻体
+
+1. 共200层，只显示并执行当前层的下一层。
+2. 人物等级变量：HUMAN XY_SEAL_BASE_LEVEL；脚本判断只允许CHECKVAR，赋值只允许CALCVAR。
+3. 登录时由QManage唯一声明并LOADVAR；受管块固定为#IF、#ACT、VAR、LOADVAR，四行顺序不得改变。
+   QManage位于MapQuest_Def，统一状态文件必须写为..\QuestDiary\XY_System\XuanYuanHumanVar.txt。
+   每次升级后必须执行SAVEVAR HUMAN XY_SEAL_BASE_LEVEL ..\QuestDiary\XY_System\XuanYuanHumanVar.txt。
+   禁止混用N$XY_SEAL_BASE_LEVEL、MOV N$变量、裸文件名或Market_Def旧状态文件；混用会造成在线值与保存值分裂，小退后回到0档。
+4. 平台首次安装时，如果统一状态文件不存在而旧Market_Def状态文件存在，只复制一次旧内容；已有统一状态文件永不覆盖，旧文件也不删除。
+5. 使用ChangeHumAbilityEX 5至11增加攻击、魔法、道术上下限和HP。
+6. 只增加基础属性，不授予称号，不进入神力、伤害系数、爆率、处决等乘区。
+7. 保留10个20层区间路由，每次最多约30次判断；禁止恢复200层倒序扫描。
+8. 材料、货币和总属性全部只认21_神印基础属性.xlsx。
+
+三、22号表：称号晋升
+
+1. 只显示当前称号、下一称号、需要材料、支付方式和下一档完整属性。
+2. 第一档当前称号显示“无”；成功后自动刷新到再下一档；10档显示已满级。
+3. 执行顺序固定为：复核状态和所选路线资源 -> 授予新称号 -> 再次复核 -> 只扣所选路线资源 -> 回收旧称号。
+4. 高级称号覆盖低级称号。
+5. 称号编号使用StdMode=70、Shape=100至109；每次安装仍需重新检查目标数据库占用。
+6. MP逐档与HP相同；基础爆率进入平台唯一爆率重算锚点。
+7. “支付方式”留空或填写“同时支付”时保持旧逻辑：货币A与货币B必须同时支付，只显示一个确认按钮。
+8. “支付方式”填写“二选一”时，货币A、货币B必须是两种不同的原生货币；两条路线都需要材料A/B，只扣玩家选择的货币。
+9. “支付方式”填写“二选一B免材料”时，货币A路线扣材料A/B与货币A；货币B路线只检查并扣除货币B，不检查、不扣除任何材料。
+10. 二选一路线分别使用独立APPLY/CONFIRM标签；任何一条路线资源不足都不得扣另一条路线资源，也不得留下新称号。
+11. 当前10档母表统一填写“二选一B免材料”：金币路线需要神秘符文与金币，灵符路线只使用原生灵符。
+12. 当前货币B数量沿用原表10、20、35、60、100、160、250、380、550、800；以后只认22号表填写值。
+
+正式10级名称：
+  1. 漂泊余烬
+  2. 失乡之魂
+  3. 赐福初燃
+  4. 卢恩觉醒
+  5. 黄金誓血
+  6. 风暴踏灭
+  7. 王城染血
+  8. 接肢终焉
+  9. 大卢恩之主
+  10. 黄金树下·初王
+
+四、平台操作
+
+GUI：NPC编辑 -> 神印与称号双NPC -> 读取21/22并预检 -> 确认安装。
+
+CLI预检：
+  bin\xydp-cli.exe seal-title-preflight --server D:\NewMirServer --materials D:\XuanYuanDevPlatform\所需材料表格汇总
+
+CLI安装：
+  bin\xydp-cli.exe seal-title-install --server D:\NewMirServer --materials D:\XuanYuanDevPlatform\所需材料表格汇总 --yes
+
+CLI回滚：
+  bin\xydp-cli.exe seal-title-rollback --server D:\NewMirServer --yes
+
+称号为可安装状态时必须选择客户端根目录，以同步fenghao.dat；只有锻体时不要求客户端。
+
+五、安全与验收标准
+
+1. 预检只读；blockers非空时零写入。
+2. NPC名称、坐标、变量、标签、称号名称、称号Shape或数据库定义冲突时阻止。
+3. 受管核心或自包含NPC被手工修改时阻止升级和回滚。
+4. candidate.5正式文件与candidate.7验收文件均可安全升级；未知文件绝不接管。
+5. 安装前复核文件哈希，事务失败不留半成品，回滚逐字节恢复。
+6. 当前服candidate.7已由用户确认锻体和称号全部合格；同日最新M2日志静态核对为0条脚本错误。
+7. 2026-08-09正式源码零写入预检：blockers=0，只计划把两个NPC的candidate.7标记转为正式受管标记，其余文件不变。
+8. 原2.0.1能力保持verified；2.1.0-candidate.2新增“货币B免材料”。在金币+材料路线、仅灵符路线、资源不足和重复点击完成游戏验收前进入candidate_packages。
+9. 2.0.1的HUMAN统一状态链已由用户完成在线升级、小退、重新读取验证；当前服统一状态文件中的20档数据在正式平台预检中不产生修改项。
+
+六、明确禁止参考的旧持久化路线
+
+1. 2.0.0中“N$XY_SEAL_BASE_LEVEL + SAVEVAR HUMAN”的混合路线已被实际小退归零证伪。
+2. ..\Market_Def\XY_Seal_Base_Level.txt不是2.0.1正式状态文件，只能作为首次迁移来源。
+3. 禁止把旧失败记录中的N$、MOV、Market_Def状态路径重新写回平台或服务端。

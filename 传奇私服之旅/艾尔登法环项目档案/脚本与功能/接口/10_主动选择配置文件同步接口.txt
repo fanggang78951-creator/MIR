@@ -1,0 +1,86 @@
+玄渊平台——主动选择配置文件同步接口
+整理日期：2026-07-30
+适用版本：2026.07.30-r47
+
+一、用途
+
+用户在D:\XuanYuanDevPlatform\所需材料表格汇总中修改一份已登记文件后，可主动选择该文件并完成：
+选择 -> 预检 -> 确认植入 -> 事务回滚。
+
+平台不扫描目录，不根据修改时间猜文件，也不把未选择文件自动纳入本次操作。
+
+二、GUI入口
+
+脚本配置同步 -> 选择配置文件
+脚本配置同步 -> 预检所选文件
+脚本配置同步 -> 确认植入
+脚本配置同步 -> 回滚本次植入
+
+三、CLI接口
+
+只读预检：
+bin\xydp-cli.exe config-sync-preflight --server D:\NewMirServer --client D:\Client --file D:\XuanYuanDevPlatform\所需材料表格汇总\02_捐献.xlsx
+
+确认植入：
+bin\xydp-cli.exe config-sync-install --server D:\NewMirServer --client D:\Client --file D:\XuanYuanDevPlatform\所需材料表格汇总\02_捐献.xlsx --yes
+
+同核心多选时重复--file：
+bin\xydp-cli.exe config-sync-preflight --server D:\NewMirServer --client D:\Client --file <文件1> --file <文件2>
+
+普通事务回滚：
+bin\xydp-cli.exe config-sync-rollback --server D:\NewMirServer --transaction <事务号> --route initial-camp-selected --yes
+
+route允许值：
+- initial-camp-selected
+- package-documents
+- king-mode-config
+
+四、登记契约
+
+权威注册表：
+D:\XuanYuanDevPlatform\所需材料表格汇总\00_填写文档注册表.json
+
+文件必须同时满足：
+1. 位于汇总目录根层；
+2. 是普通文件，不是路径链接；
+3. 扩展名为.xlsx、.txt或.csv；
+4. 文件名与注册表完全一致；
+5. 预检后文件SHA-256未变化。
+
+五、路由
+
+01至07：调用初始之地局部生成核心，只处理所选NPC。
+08至13：通用入口只识别并提示专用页面，不绕过地图、装备、技能或实验室校验。
+14：国王模式配置事务。
+15：首爆奖励配置成果链。
+16：复活图标装备名单成果链。
+
+捐献与赞助共用历史属性钩子。选择02或03时，平台会只读读取两表以保全共享块，但不会重建未选NPC。
+
+六、安全标准
+
+- blockers非空禁止确认。
+- 跨安装核心多选时阻止，必须拆分事务。
+- 安装前复核来源文件哈希和目标文件预检前字节。
+- 写入前备份全部受影响文件。
+- 临时文件写入后原子替换。
+- 任一失败自动恢复，不留下半成品。
+- 受管内容被手改时阻止，不猜测覆盖。
+
+七、程序接口
+
+核心类：src\xydp\config_sync.py::ConfigSyncService
+计划类：ConfigSyncPlan
+登记记录：RegisteredDocument
+局部七NPC：InitialCampService.preflight_selected
+
+operation_type：config-sync
+
+八、禁止
+
+- 禁止把“预检捐献”扩展成通用入口。
+- 禁止扫描整个汇总文件夹判断要安装什么。
+- 禁止用未登记同名文件或目录外文件替代母版。
+- 禁止选中02时重建其余六个NPC。
+- 禁止通过通用入口绕过08至13专用核心。
+- 禁止在包或配置文件中执行Python、BAT、CMD、PS1、DLL或EXE。

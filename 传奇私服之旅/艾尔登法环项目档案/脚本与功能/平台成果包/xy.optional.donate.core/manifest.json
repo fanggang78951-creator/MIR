@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "id": "xy.optional.donate.core",
+  "version": "2.4.0-candidate.1",
+  "display_name": "沙城捐献（脚本+命令接口）",
+  "status": "candidate",
+  "engine": "LFM2",
+  "residency": "optional",
+  "bundle": "ops-single-entry",
+  "dependencies": [],
+  "parameters": {},
+  "claims": {
+    "labels": ["XY_DONATE_COMMAND", "XY_DONATE_TRIGGER", "XY_DONATE_APPLY"],
+    "variables": ["N$XY_DONATE_ENABLE", "N$XY_DONATE_COST_COUNT", "N$XY_DONATE_COST_THRESHOLD", "N$XY_DONATE_ADD", "N$XY_DONATE_SEAL_LIMIT", "N$XY_DONATE_SEALED", "N$XY_DONATE_PERSONAL", "N$XY_DONATE_GLOBAL", "N$XY_DONATE_TOP", "N$XY_DONATE_LAST_SUCCESS", "S$XY_DONATE_COST_TYPE", "S$XY_DONATE_COST_NAME", "S$XY_DONATE_TOP_NAME"],
+    "maps": [],
+    "npcs": []
+  },
+  "operations": [
+    {"type": "transcode_copy", "source": "payload/捐献核心.txt", "target": "Mir200/Envir/QuestDiary/玄渊功能/捐献/捐献核心.txt", "source_encoding": "utf-8", "target_encoding": "gb18030", "newline": "\r\n"},
+    {"type": "config_merge", "source": "payload/捐献配置.txt", "target": "Mir200/Envir/QuestDiary/玄渊配置/沙城捐献配置.txt", "source_encoding": "utf-8", "target_encoding": "gb18030", "newline": "\r\n"},
+    {"type": "copy", "source": "payload/捐献状态初始.txt", "target": "Mir200/Envir/QuestDiary/玄渊数据/xy_donate/捐献状态.txt", "preserve_existing": true, "scope": "server"},
+    {"type": "managed_block", "target": "Mir200/Envir/Market_Def/QFunction-0.txt", "content": "[@XY_DONATE_COMMAND]\n#IF\n#ACT\n#CALL [\\玄渊功能\\捐献\\捐献核心.txt] @XY_DONATE_TRIGGER\nBREAK", "legacy_package_ids": ["xy.optional.donate.command"]}
+  ],
+  "preflight_checks": [],
+  "post_checks": [
+    {"type": "file_exists", "path": "Mir200/Envir/QuestDiary/玄渊功能/捐献/捐献核心.txt"},
+    {"type": "file_exists", "path": "Mir200/Envir/QuestDiary/玄渊配置/沙城捐献配置.txt"},
+    {"type": "file_exists", "path": "Mir200/Envir/QuestDiary/玄渊数据/xy_donate/捐献状态.txt"},
+    {"type": "label_exists", "path": "Mir200/Envir/Market_Def/QFunction-0.txt", "label": "XY_DONATE_COMMAND"}
+  ],
+  "evidence": ["static:single-script-command-contract", "static:evidence/20260730_native_lingfu_gamegird.md", "static:evidence/20260815_native_currency_contract.md", "game:evidence/20260730_donate_state_file_game_acceptance.md", "docs:README_使用说明.md", "rollback:required"]
+}

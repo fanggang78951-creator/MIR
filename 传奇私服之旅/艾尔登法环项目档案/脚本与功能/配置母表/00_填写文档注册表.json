@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "directory": "D:\\XuanYuanDevPlatform\\所需材料表格汇总",
+  "policy": "central-first-with-legacy-fallback",
+  "documents": [
+    {"id": "rage", "file": "01_狂暴.xlsx", "consumer": "initial-camp", "legacy": null},
+    {"id": "donate", "file": "02_捐献.xlsx", "consumer": "initial-camp", "legacy": null},
+    {"id": "sponsor", "file": "03_赞助称号.xlsx", "consumer": "initial-camp", "legacy": null},
+    {"id": "rebirth", "file": "04_转生.xlsx", "consumer": "initial-camp", "legacy": null},
+    {"id": "sword", "file": "05_圣律之剑.xlsx", "consumer": "initial-camp", "legacy": null},
+    {"id": "relic", "file": "06_黄金圣物.xlsx", "consumer": "initial-camp", "legacy": null},
+    {"id": "gift", "file": "07_新手礼包.xlsx", "consumer": "initial-camp", "legacy": null},
+    {"id": "layered_map", "file": "08_地图外显与多层传送.xlsx", "consumer": "map-workbench", "legacy": null},
+    {"id": "equipment_create", "file": "09_装备批量生成.xlsx", "consumer": "equipment", "legacy": "做装备\\templates\\XuanYuanItems.xlsx"},
+    {"id": "material_create", "file": "11_材料批量生成.xlsx", "consumer": "equipment", "legacy": "做装备\\templates\\XuanYuanMaterials.xlsx"},
+    {"id": "warrior_skill_upgrade", "file": "12_战士技能强化.xlsx", "consumer": "skill-upgrade-lab", "legacy": "labs\\skill_upgrade\\templates\\WarriorSkillUpgrade.xlsx"},
+    {"id": "monster_execution_rules", "file": "13_地图怪物处决规则.csv", "consumer": "monster-execution-pilot", "legacy": "labs\\execution\\monster_map0_pilot\\templates\\地图处决规则.csv"},
+    {"id": "king_mode", "file": "14_国王模式配置.txt", "consumer": "king-mode", "legacy": "packages\\verified\\xy.optional.king-mode.complete\\payload\\国王模式配置.txt"},
+    {"id": "first_pick", "file": "15_首爆奖励配置.txt", "consumer": "xy.ops.first-pick", "legacy": "packages\\verified\\xy.ops.first-pick\\payload\\首爆脚本\\首爆奖励配置.txt"},
+    {"id": "revive_icon", "file": "16_复活图标装备名单.txt", "consumer": "xy.ui.attr-overview", "legacy": "packages\\candidate\\xy.ui.attr-overview\\payload\\复活图标配置.txt"},
+    {"id": "equipment_item_hint", "file": "17_装备悬浮分类.xlsx", "consumer": "equipment", "legacy": "做装备\\templates\\XuanYuanItemHints.xlsx"},
+    {"id": "recycle_config", "file": "19_装备回收配置.xlsx", "consumer": "recycle-config", "legacy": null},
+    {"id": "monster_create", "file": "20_怪物批量生成.xlsx", "consumer": "monster-library", "legacy": null},
+    {"id": "seal_base", "file": "21_神印基础属性.xlsx", "consumer": "seal-title-two-npc", "legacy": null},
+    {"id": "title_advance", "file": "22_称号晋升.xlsx", "consumer": "seal-title-two-npc", "legacy": null},
+    {"id": "nmgf_sword", "file": "23_宁姆格福_圣律之剑.xlsx", "consumer": "growth-stage", "legacy": null},
+    {"id": "nmgf_relic", "file": "24_宁姆格福_黄金圣物.xlsx", "consumer": "growth-stage", "legacy": null},
+    {"id": "equipment_collection", "file": "33_装备收集图鉴.xlsx", "consumer": "equipment-collection", "legacy": null},
+    {"id": "item_synthesis", "file": "34_通用物品合成.xlsx", "consumer": "item-synthesis", "legacy": null},
+    {"id": "item_synthesis_npcs", "file": "35_合成NPC与配方分配.txt", "consumer": "item-synthesis", "legacy": null}
+  ]
+}

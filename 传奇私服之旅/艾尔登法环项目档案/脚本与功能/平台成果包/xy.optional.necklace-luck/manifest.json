@@ -1,0 +1,204 @@
+{
+  "schema_version": 1,
+  "id": "xy.optional.necklace-luck",
+  "version": "1.0.0-candidate.25",
+  "display_name": "项链幸运强化",
+  "status": "candidate",
+  "engine": "LFM2",
+  "residency": "optional",
+  "bundle": "growth-optional",
+  "dependencies": [
+    "xy.combat.damage-coefficient"
+  ],
+  "parameters": {
+    "neck_luck_npc_script": {
+      "type": "string",
+      "required": true,
+      "default": "玄渊实验室/项链幸运"
+    },
+    "neck_luck_npc_display": {
+      "type": "string",
+      "required": true,
+      "default": "项链幸运"
+    },
+    "neck_luck_npc_map": {
+      "type": "string",
+      "required": true,
+      "default": "XY_NMGF_MAIN"
+    },
+    "neck_luck_npc_x": {
+      "type": "integer",
+      "required": true,
+      "default": 102
+    },
+    "neck_luck_npc_y": {
+      "type": "integer",
+      "required": true,
+      "default": 75
+    },
+    "neck_luck_npc_appearance": {
+      "type": "integer",
+      "required": true,
+      "default": 220
+    }
+  },
+  "claims": {
+    "labels": [
+      "XY_NECK_LUCK_SYNC",
+      "XY_NECK_LUCK_TAKEOFF"
+    ],
+    "variables": [
+      "U19",
+      "U20",
+      "U21",
+      "U22",
+      "U23",
+      "U24",
+      "U25",
+      "U26"
+    ],
+    "maps": [],
+    "npcs": []
+  },
+  "operations": [
+    {
+      "type": "config_set",
+      "target": "Mir200/!setup.txt",
+      "target_encoding": "gb18030",
+      "values": {
+        "MaxLuckMaxPower": "12",
+        "NeckLace19LuckAddValueMaxLimit": "8",
+        "LuckUseNewAlgorism": "0",
+        "MaxAttackOfLuckValue": "10"
+      }
+    },
+    {
+      "type": "render",
+      "source": "payload/项链幸运核心.txt",
+      "target": "Mir200/Envir/QuestDiary/玄渊实验室/项链幸运/项链幸运核心.txt",
+      "source_encoding": "utf-8",
+      "target_encoding": "gb18030",
+      "newline": "\r\n"
+    },
+    {
+      "type": "render",
+      "source": "payload/项链幸运NPC.txt",
+      "target": "Mir200/Envir/Market_Def/{neck_luck_npc_script}-{neck_luck_npc_map}.txt",
+      "source_encoding": "utf-8",
+      "target_encoding": "gb18030",
+      "newline": "\r\n"
+    },
+    {
+      "type": "ensure_event_label",
+      "target": "Mir200/Envir/Market_Def/QFunction-0.txt",
+      "label": "PlayLogin"
+    },
+    {
+      "type": "ensure_event_label",
+      "target": "Mir200/Envir/Market_Def/QFunction-0.txt",
+      "label": "TakeOn3"
+    },
+    {
+      "type": "ensure_event_label",
+      "target": "Mir200/Envir/Market_Def/QFunction-0.txt",
+      "label": "TakeOff3"
+    },
+    {
+      "type": "event_hook",
+      "target": "Mir200/Envir/Market_Def/QFunction-0.txt",
+      "label": "PlayLogin",
+      "content": "#IF\n#ACT\n#CALL [\\玄渊实验室\\项链幸运\\项链幸运核心.txt] @XY_NECK_LUCK_SYNC"
+    },
+    {
+      "type": "event_hook",
+      "target": "Mir200/Envir/Market_Def/QFunction-0.txt",
+      "label": "TakeOn3",
+      "content": "#IF\n#ACT\n#CALL [\\玄渊实验室\\项链幸运\\项链幸运核心.txt] @XY_NECK_LUCK_SYNC"
+    },
+    {
+      "type": "event_hook",
+      "target": "Mir200/Envir/Market_Def/QFunction-0.txt",
+      "label": "TakeOff3",
+      "content": "#IF\n#ACT\n#CALL [\\玄渊实验室\\项链幸运\\项链幸运核心.txt] @XY_NECK_LUCK_TAKEOFF"
+    },
+    {
+      "type": "managed_anchor_hook",
+      "target": "Mir200/Envir/Market_Def/QFunction-0.txt",
+      "anchor": "XY_EQUIP_MAKER_RUNTIME_DAMAGE_COEFFICIENT_ANCHOR",
+      "content": "#IF\n#ACT\nMOV N$XY_NL_WeaponLuck 0\nMOV N$XY_NL_NeckEquipped 0\nMOV N$XY_NL_TotalLuck 0\nMOV N$XY_NL_StdMode 0\nGetItemFieldValue 3 stdmode N$XY_NL_StdMode\n#IF\nEQUAL N$XY_NL_StdMode 19\n#ACT\nMOV N$XY_NL_NeckEquipped 1\n#IF\nEQUAL N$XY_NL_StdMode 20\n#ACT\nMOV N$XY_NL_NeckEquipped 1\n#IF\nEQUAL N$XY_NL_StdMode 21\n#ACT\nMOV N$XY_NL_NeckEquipped 1\n#IF\nCHECKITEMADDVALUE 1 3 = 1\n#ACT\nMOV N$XY_NL_WeaponLuck 1\n#IF\nCHECKITEMADDVALUE 1 3 = 2\n#ACT\nMOV N$XY_NL_WeaponLuck 2\n#IF\nCHECKITEMADDVALUE 1 3 = 3\n#ACT\nMOV N$XY_NL_WeaponLuck 3\n#IF\nCHECKITEMADDVALUE 1 3 = 4\n#ACT\nMOV N$XY_NL_WeaponLuck 4\n#IF\nCHECKITEMADDVALUE 1 3 = 5\n#ACT\nMOV N$XY_NL_WeaponLuck 5\n#IF\nCHECKITEMADDVALUE 1 3 = 6\n#ACT\nMOV N$XY_NL_WeaponLuck 6\n#IF\nCHECKITEMADDVALUE 1 3 = 7\n#ACT\nMOV N$XY_NL_WeaponLuck 7\n#IF\nEQUAL N$XY_NL_NeckEquipped 1\n#ACT\nFORMULATION <$STR(U20)>+<$STR(N$XY_NL_WeaponLuck)> N$XY_NL_TotalLuck\n#IF\nEQUAL N$XY_NL_TotalLuck 13\n#ACT\nINC N$XY_RT_DamageCoeff 5\n#IF\nEQUAL N$XY_NL_TotalLuck 14\n#ACT\nINC N$XY_RT_DamageCoeff 15\n#IF\nEQUAL N$XY_NL_TotalLuck 15\n#ACT\nINC N$XY_RT_DamageCoeff 15"
+    },
+    {
+      "type": "managed_anchor_hook",
+      "target": "Mir200/Envir/Market_Def/QFunction-0.txt",
+      "anchor": "XY_EXECUTION_LAB_CHANCE_ANCHOR",
+      "content": "#IF\nEQUAL N$XY_NL_TotalLuck 15\n#ACT\nINC N$XY_EXEC_ChanceBP 500"
+    },
+    {
+      "type": "exclusive_unique_line",
+      "target": "Mir200/Envir/MerChant.txt",
+      "line": "{neck_luck_npc_script}\t{neck_luck_npc_map}\t{neck_luck_npc_x}\t{neck_luck_npc_y}\t{neck_luck_npc_display}\t0\t{neck_luck_npc_appearance}\t0",
+      "key_fields": [
+        0
+      ]
+    }
+  ],
+  "preflight_checks": [
+    {
+      "type": "file_exists",
+      "path": "Mir200/Envir/Market_Def/QFunction-0.txt"
+    },
+    {
+      "type": "file_exists",
+      "path": "Mir200/!setup.txt"
+    },
+    {
+      "type": "file_exists",
+      "path": "Mir200/Envir/MerChant.txt"
+    },
+    {
+      "type": "text_contains",
+      "path": "Mir200/Envir/Market_Def/QFunction-0.txt",
+      "text": "XY_EQUIP_MAKER_RUNTIME_DAMAGE_COEFFICIENT_ANCHOR"
+    },
+    {
+      "type": "text_contains",
+      "path": "Mir200/Envir/Market_Def/QFunction-0.txt",
+      "text": "XY_EXECUTION_LAB_CHANCE_ANCHOR"
+    }
+  ],
+  "post_checks": [
+    {
+      "type": "file_exists",
+      "path": "Mir200/Envir/QuestDiary/玄渊实验室/项链幸运/项链幸运核心.txt"
+    },
+    {
+      "type": "label_exists",
+      "path": "Mir200/Envir/QuestDiary/玄渊实验室/项链幸运/项链幸运核心.txt",
+      "label": "XY_NECK_LUCK_SYNC"
+    },
+    {
+      "type": "label_exists",
+      "path": "Mir200/Envir/QuestDiary/玄渊实验室/项链幸运/项链幸运核心.txt",
+      "label": "XY_NECK_LUCK_TAKEOFF"
+    },
+    {
+      "type": "text_contains",
+      "path": "Mir200/Envir/Market_Def/QFunction-0.txt",
+      "text": "FORMULATION <$STR(U20)>+<$STR(N$XY_NL_WeaponLuck)> N$XY_NL_TotalLuck"
+    },
+    {
+      "type": "text_contains",
+      "path": "Mir200/Envir/Market_Def/QFunction-0.txt",
+      "text": "MOV N$XY_NL_StdMode 0"
+    }
+  ],
+  "evidence": [
+    "game:reinforcement-body-accepted-20260731",
+    "static:evidence/20260731_candidate25_正式包清理.md",
+    "workbook-sha256:35EE5F0334FE65DC4562713DA9659188B82797D5D9220F95AEF86303ED70D9AB",
+    "isolation:install-and-byte-exact-rollback-20260731_163522_bcd77104",
+    "game:luck15-u20-plus-weapon7-runtime-observed-20260731",
+    "game:empty-necklace-slot-cache-reset-pending-recheck",
+    "rollback:required"
+  ]
+}

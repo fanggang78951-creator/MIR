@@ -1,0 +1,11 @@
+[@Main]
+#SAY
+风暴断礁已响应。\ \
+<进入风暴断礁/@Enter>
+<关闭/@exit>
+
+[@Enter]
+#IF
+#ACT
+MAPMOVE XX327 110 110
+BREAK

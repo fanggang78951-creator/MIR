@@ -1,0 +1,2 @@
+﻿map_id,enabled,required_toughness,base_chance_bp,monster_execution_toughness,中文说明
+0,1,100,1000,60,地图0：玩家韧性达到100时免疫怪物处决；怪物对玩家基础处决概率10%；地图怪物韧性60会把玩家对怪物的处决概率降低6个百分点

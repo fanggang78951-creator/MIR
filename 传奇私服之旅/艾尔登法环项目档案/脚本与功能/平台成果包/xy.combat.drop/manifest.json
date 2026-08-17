@@ -1,0 +1,64 @@
+{
+  "schema_version": 1,
+  "id": "xy.combat.drop",
+  "version": "1.2.0",
+  "display_name": "人物爆率与最大爆率",
+  "status": "verified",
+  "engine": "LFM2",
+  "residency": "resident",
+  "bundle": "combat-suite",
+  "dependencies": [
+    "xy.combat.core",
+    "xy.combat.runtime-refresh"
+  ],
+  "parameters": {},
+  "claims": {
+    "labels": [
+      "XYDP_RecalcDrop"
+    ],
+    "variables": [
+      "N$XY_最终爆率",
+      "N$XY_最大爆率",
+      "N$XY_DropFinal",
+      "N$XY_Bind14Point",
+      "N$XY_Bind14Rate",
+      "N$XY_Bind20Point",
+      "N$XY_Bind20Rate"
+    ],
+    "maps": [],
+    "npcs": []
+  },
+  "operations": [
+    {
+      "type": "managed_block",
+      "target": "Mir200/Envir/Market_Def/QFunction-0.txt",
+      "content": "[@XYDP_RecalcDrop]\n#IF\n#ACT\nMOV N$XY_最终爆率 100\nMOV N$XY_最大爆率 100\nMOV N$XY_Bind14Point 0\nMOV N$XY_Bind14Rate 0\nMOV N$XY_Bind20Point 0\nMOV N$XY_Bind20Rate 0\nGetAllCustomItemValue 14 N$XY_Bind14Point N$XY_Bind14Rate\nGetAllCustomItemValue 20 N$XY_Bind20Point N$XY_Bind20Rate\nINC N$XY_最终爆率 <$STR(N$XY_Bind14Point)>\nINC N$XY_最终爆率 <$STR(N$XY_Bind14Rate)>\nINC N$XY_最大爆率 <$STR(N$XY_Bind20Point)>\nINC N$XY_最大爆率 <$STR(N$XY_Bind20Rate)>\n; XYDP-EXTENSION-BEGIN EQUIP_DROP\n; XY_EQUIP_MAKER_DROP_ANCHOR\n; XYDP-EXTENSION-END EQUIP_DROP\n#IF\n#ACT\nMOV N$XY_DropFinal 100\nCalcPercent <$STR(N$XY_最终爆率)> <$STR(N$XY_最大爆率)> N$XY_DropFinal\nMOV N$XY_最终爆率 <$STR(N$XY_DropFinal)>\n#IF\n#ACT\nKILLMONBURSTRATE <$STR(N$XY_最终爆率)>\nBREAK"
+    },
+    {
+      "type": "event_hook",
+      "target": "Mir200/Envir/Market_Def/QFunction-0.txt",
+      "label": "PlayLogin",
+      "content": "#IF\n#ACT\nDELAYGOTO 3 @XYDP_RecalcDrop"
+    },
+    {
+      "type": "event_hook",
+      "target": "Mir200/Envir/Market_Def/QFunction-0.txt",
+      "label": "TakeOnEx",
+      "content": "#IF\n#ACT\nDELAYGOTO 3 @XYDP_RecalcDrop"
+    },
+    {
+      "type": "event_hook",
+      "target": "Mir200/Envir/Market_Def/QFunction-0.txt",
+      "label": "TakeOffEx",
+      "content": "#IF\n#ACT\nDELAYGOTO 3 @XYDP_RecalcDrop"
+    }
+  ],
+  "preflight_checks": [],
+  "post_checks": [],
+  "evidence": [
+    "game:evidence/20260719_36x_game_acceptance.md",
+    "game:../xy.combat.runtime-refresh/evidence/20260711_game_acceptance.md",
+    "runtime:XY-CUSTOM-ATTR-RECALC-001",
+    "source:XY-SKILL-009"
+  ]
+}

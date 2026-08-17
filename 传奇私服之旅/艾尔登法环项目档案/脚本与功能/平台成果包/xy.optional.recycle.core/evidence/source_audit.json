@@ -1,0 +1,49 @@
+{
+  "reviewed_at": "2026-07-19T23:01:42+08:00",
+  "conclusion": "historical-page-framework-incomplete; confirmed-12-item-inline-whitelist-promoted-after-live-game-acceptance",
+  "sources": [
+    {
+      "path": "D:\\MirServer旧\\AI_Handoff\\技能库\\04_脚本技能\\XY-SKILL-008_背包自定义UI按钮与回收入口规则.md",
+      "length": 4228,
+      "sha256": "F8F979B682AD4DE69C4F15AA107D9D54CC612D733D5FEAA65536D77C1048CA95",
+      "use": "button routing and safety boundaries"
+    },
+    {
+      "path": "D:\\MirServer旧\\AI_Handoff\\技能库\\04_脚本技能\\XY-SKILL-021_回收分页面板迭代规则.md",
+      "length": 1697,
+      "sha256": "BAE30B49B613604483527A3124DEECD756C470EF35BAEAA5623CF966C9C3B82C",
+      "use": "QFunction inline page and unfinished 24-slot status"
+    },
+    {
+      "path": "D:\\MirServer旧\\AI_Handoff\\Temp\\xy_c001_recycle_sections_utf8.txt",
+      "length": 14507,
+      "sha256": "AE529AB7F740D819EB0E48EDA6411F04B719D998DEBC91FB695B5941969C546F",
+      "use": "MingYue reference only; explicitly excluded"
+    },
+    {
+      "path": "D:\\MirServer旧\\Backup\\XuanYuan_RecycleInline_PageMin_20260617_205605\\QFunction-0.txt",
+      "length": 50894,
+      "sha256": "9C271F30FA5C795AF85D9A68FE5B1D85BE3EF60815B76E3F50EEA7BBB5736DF4",
+      "use": "recover exact UserCmd31 whitelist and reward"
+    },
+    {
+      "path": "D:\\MirServer旧\\Backup\\XuanYuan_RecycleInline_PageMin_20260617_205605\\UserCmd.txt",
+      "length": 229,
+      "sha256": "842B96529BC56983534169794D71F10F09694AB1BEF1B4CD4554E57EAAC0223F",
+      "use": "recover player command mapping"
+    }
+  ],
+  "published": {
+    "package_id": "xy.optional.recycle.core",
+    "version": "1.0.2",
+    "command": "@快捷回收",
+    "qfunction_label": "@XY_RECYCLE_COMMAND",
+    "business_label": "@XY_RECYCLE_APPLY",
+    "runtime_route": "fully-inline-managed-block-no-external-call",
+    "item_count": 12,
+    "max_each": 10,
+    "reward": "金币",
+    "reward_each": 1000,
+    "auto_recycle": false
+  }
+}

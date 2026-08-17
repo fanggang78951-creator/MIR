@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "xy.optional.item-synthesis",
+  "version": "1.1.0-candidate.4",
+  "display_name": "通用装备材料物品合成",
+  "status": "candidate",
+  "engine": "LFM2",
+  "residency": "optional",
+  "install_route": "item-synthesis",
+  "bundle": "item-synthesis",
+  "dependencies": [],
+  "parameters": {},
+  "claims": {
+    "labels": [
+      "XY_SYN_PAGE_*",
+      "XY_SYN_VIEW_*",
+      "XY_SYN_APPLY_*"
+    ],
+    "variables": [],
+    "maps": [],
+    "npcs": [
+      "multi-map-multi-npc-configured"
+    ]
+  },
+  "operations": [],
+  "preflight_checks": [],
+  "post_checks": [],
+  "evidence": [
+    "specialized-route:item-synthesis",
+    "source:src/xydp/item_synthesis.py",
+    "workbook:所需材料表格汇总/34_通用物品合成.xlsx",
+    "npc-config:所需材料表格汇总/35_合成NPC与配方分配.txt",
+    "interface:接口/34_通用物品合成接口.txt",
+    "tests:multi-map-multi-npc-isolation-passed",
+    "transaction:idempotent-and-byte-rollback-passed",
+    "frozen-cli-package-validation:passed",
+    "game:base-synthesis-and-output-hover-position-passed"
+  ]
+}

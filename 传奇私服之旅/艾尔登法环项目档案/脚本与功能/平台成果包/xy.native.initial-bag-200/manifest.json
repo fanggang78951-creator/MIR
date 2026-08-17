@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "id": "xy.native.initial-bag-200",
+  "version": "2.0.0-candidate.1",
+  "display_name": "登录初始背包200格（4页+160扩展格）",
+  "status": "candidate",
+  "engine": "LFM2",
+  "residency": "resident",
+  "bundle": "native-base",
+  "dependencies": [],
+  "parameters": {},
+  "claims": {
+    "labels": [],
+    "variables": [],
+    "maps": [],
+    "npcs": []
+  },
+  "operations": [
+    {
+      "type": "event_hook",
+      "target": "Mir200/Envir/QuestDiary/游戏登陆/登陆脚本.txt",
+      "label": "登陆设置",
+      "target_encoding": "gb18030",
+      "content": "#IF\n#ACT\nExtBagPageCount = 4\nExtBagOpenItemCount + 160"
+    }
+  ],
+  "preflight_checks": [
+    {
+      "type": "file_exists",
+      "path": "Mir200/Envir/QuestDiary/游戏登陆/登陆脚本.txt"
+    },
+    {
+      "type": "label_exists",
+      "path": "Mir200/Envir/QuestDiary/游戏登陆/登陆脚本.txt",
+      "label": "登陆设置"
+    }
+  ],
+  "post_checks": [
+    {
+      "type": "text_contains",
+      "path": "Mir200/Envir/QuestDiary/游戏登陆/登陆脚本.txt",
+      "text": "ExtBagPageCount = 4"
+    },
+    {
+      "type": "text_contains",
+      "path": "Mir200/Envir/QuestDiary/游戏登陆/登陆脚本.txt",
+      "text": "ExtBagOpenItemCount + 160"
+    }
+  ],
+  "evidence": [
+    "current-server:user-game-accepted-2026-07-26",
+    "formula:base-40-plus-4-pages-times-40-equals-200",
+    "forbidden:ExtBagOpenItemCount-equals-route",
+    "automated:idempotent-install-and-byte-rollback"
+  ]
+}

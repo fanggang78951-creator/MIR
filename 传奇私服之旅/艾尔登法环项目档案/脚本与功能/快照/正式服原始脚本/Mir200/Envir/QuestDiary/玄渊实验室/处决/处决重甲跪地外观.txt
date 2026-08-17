@@ -1,0 +1,37 @@
+; 处决换装视觉方案已由用户正式废弃。
+; APPLY永久为空操作；CLEAR只保留旧运行状态的保护性还原，不会产生新换装。
+; 处决伤害、失衡、减速和提示均在其他脚本中，本文件不修改那些实效。
+
+[@XY_EXEC_VISUAL_APPLY]
+{
+#IF
+#ACT
+BREAK
+}
+
+[@XY_EXEC_VISUAL_CLEAR]
+{
+#IF
+EQUAL N$XY_EXEC_VisualActive 0
+#ACT
+MOV N$XY_EXEC_VisualSkippedFashion 0
+BREAK
+
+#IF
+#ACT
+MOV N$XY_EXEC_CurrentDressId 0
+GetItemFieldValue 0 makeindex N$XY_EXEC_CurrentDressId
+
+#IF
+EQUAL N$XY_EXEC_CurrentDressId <$STR(N$XY_EXEC_OriginalDressId)>
+#ACT
+SetItemShape 0 = <$STR(N$XY_EXEC_OriginalDressShape)>
+
+#IF
+#ACT
+MOV N$XY_EXEC_VisualActive 0
+MOV N$XY_EXEC_VisualSkippedFashion 0
+MOV N$XY_EXEC_OriginalDressId 0
+MOV N$XY_EXEC_OriginalDressShape 0
+MOV N$XY_EXEC_CurrentDressId 0
+}

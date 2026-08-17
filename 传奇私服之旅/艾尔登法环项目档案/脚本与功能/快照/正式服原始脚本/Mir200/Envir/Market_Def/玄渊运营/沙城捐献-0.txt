@@ -1,0 +1,52 @@
+[@Main]
+#SAY
+每次捐献100账户金刚石；首次捐献自动获得【沙城捐献】称号。\
+称号属性：暴击+10%，最大爆率+20，攻魔道+99-99，打怪伤害+50%。\
+个人累计：<$STR(N$XY_DONATE_TOTAL)>  全服累计：<$STR(G1)>\
+榜一：<$STR(S$10)>，金额：<$STR(G2)>\
+<捐献一次/@XY_DONATE_ONCE> <查看榜单/@XY_DONATE_BOARD> <关闭/@exit>
+
+[@XY_DONATE_ONCE]
+#IF
+EQUAL G3 0
+CHECKGAMEDIAMOND 100
+#ACT
+GAMEDIAMOND - 100
+INC N$XY_DONATE_TOTAL 100
+INC G1 100
+GOTO @XY_DONATE_TITLE
+BREAK
+#ELSEACT
+MESSAGEBOX 捐献已封榜或账户金刚石不足100。
+BREAK
+
+[@XY_DONATE_TITLE]
+#IF
+NOT CHECKFENGHAO 沙城捐献
+#ACT
+GIVEFENGHAO 沙城捐献 1
+SetNewFengHaoValue 沙城捐献 0 = 10
+SENDMSG 6 [沙城捐献] 已获得称号：暴击+10%，最大爆率+20，打怪伤害+50%。
+#IF
+#ACT
+GOTO @XY_DONATE_RANK
+BREAK
+
+[@XY_DONATE_RANK]
+#IF
+LARGE N$XY_DONATE_TOTAL G2
+#ACT
+MOV G2 <$STR(N$XY_DONATE_TOTAL)>
+MOV S$10 <$USERNAME>
+SENDMSG 0 [沙捐] <$USERNAME> 成为新的捐献榜一。
+#IF
+#ACT
+SENDMSG 6 [沙捐] 捐献成功，个人累计：<$STR(N$XY_DONATE_TOTAL)>。
+BREAK
+
+[@XY_DONATE_BOARD]
+#SAY
+全服累计：<$STR(G1)>\
+榜一玩家：<$STR(S$10)>\
+榜一金额：<$STR(G2)>\
+<返回/@Main> <关闭/@exit>
