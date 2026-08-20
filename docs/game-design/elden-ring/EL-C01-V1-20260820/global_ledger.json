@@ -1,0 +1,185 @@
+{
+  "project": "艾尔登法环十大陆联合重做",
+  "version": "EL-C01-V1-20260820",
+  "authority": "本总账为跨大陆连续性锚点；按大陆分批制作，但任何对象都必须登记ID、来源、状态和版本。",
+  "rules": {
+    "continentCount": 10,
+    "mapSizeRequired": false,
+    "deploymentClaimAllowed": false,
+    "primaryExclusivePerMonster": 1,
+    "playerDropCalibration": "只校准当前大陆角色×当前大陆怪物"
+  },
+  "continents": [
+    {
+      "id": "C01",
+      "order": 1,
+      "name": "漂流群岛",
+      "mapGroupCount": 3,
+      "mapCount": 11,
+      "monsterCount": 36,
+      "primaryExclusiveCount": 36,
+      "strongSynthesisCount": 0,
+      "playerDropMultiplier": 5,
+      "gateBossHp": "10000000",
+      "status": "第一版实数已生成"
+    },
+    {
+      "id": "C02",
+      "order": 2,
+      "name": "宁姆格福",
+      "mapGroupCount": 5,
+      "mapCount": 16,
+      "monsterCount": 61,
+      "primaryExclusiveCount": 61,
+      "strongSynthesisCount": 0,
+      "playerDropMultiplier": 7,
+      "gateBossHp": "200000000",
+      "status": "待重算"
+    },
+    {
+      "id": "C03",
+      "order": 3,
+      "name": "宁姆格福西域",
+      "mapGroupCount": 6,
+      "mapCount": 20,
+      "monsterCount": 72,
+      "primaryExclusiveCount": 72,
+      "strongSynthesisCount": 1,
+      "playerDropMultiplier": 10,
+      "gateBossHp": "4000000000",
+      "status": "待制作"
+    },
+    {
+      "id": "C04",
+      "order": 4,
+      "name": "利耶尼亚海域",
+      "mapGroupCount": 6,
+      "mapCount": 17,
+      "monsterCount": 72,
+      "primaryExclusiveCount": 72,
+      "strongSynthesisCount": 2,
+      "playerDropMultiplier": 14,
+      "gateBossHp": "80000000000",
+      "status": "待制作"
+    },
+    {
+      "id": "C05",
+      "order": 5,
+      "name": "湖之利耶尼亚",
+      "mapGroupCount": 6,
+      "mapCount": 22,
+      "monsterCount": 72,
+      "primaryExclusiveCount": 72,
+      "strongSynthesisCount": 1,
+      "playerDropMultiplier": 20,
+      "gateBossHp": "1600000000000",
+      "status": "待制作"
+    },
+    {
+      "id": "C06",
+      "order": 6,
+      "name": "盖利德",
+      "mapGroupCount": 3,
+      "mapCount": 15,
+      "monsterCount": 36,
+      "primaryExclusiveCount": 36,
+      "strongSynthesisCount": 1,
+      "playerDropMultiplier": 28,
+      "gateBossHp": "32000000000000",
+      "status": "待制作"
+    },
+    {
+      "id": "C07",
+      "order": 7,
+      "name": "化圣雪原",
+      "mapGroupCount": 3,
+      "mapCount": 13,
+      "monsterCount": 36,
+      "primaryExclusiveCount": 36,
+      "strongSynthesisCount": 2,
+      "playerDropMultiplier": 40,
+      "gateBossHp": "640000000000000",
+      "status": "待制作"
+    },
+    {
+      "id": "C08",
+      "order": 8,
+      "name": "巨人山顶",
+      "mapGroupCount": 4,
+      "mapCount": 16,
+      "monsterCount": 48,
+      "primaryExclusiveCount": 48,
+      "strongSynthesisCount": 1,
+      "playerDropMultiplier": 55,
+      "gateBossHp": "12800000000000000",
+      "status": "待制作"
+    },
+    {
+      "id": "C09",
+      "order": 9,
+      "name": "亚坛高原",
+      "mapGroupCount": 5,
+      "mapCount": 22,
+      "monsterCount": 60,
+      "primaryExclusiveCount": 60,
+      "strongSynthesisCount": 1,
+      "playerDropMultiplier": 75,
+      "gateBossHp": "256000000000000000",
+      "status": "待制作"
+    },
+    {
+      "id": "C10",
+      "order": 10,
+      "name": "王城罗德尔",
+      "mapGroupCount": 5,
+      "mapCount": 19,
+      "monsterCount": 60,
+      "primaryExclusiveCount": 60,
+      "strongSynthesisCount": 2,
+      "playerDropMultiplier": 100,
+      "gateBossHp": "5120000000000000000",
+      "status": "待制作"
+    }
+  ],
+  "idConflictResolutions": [
+    {
+      "mapId": "XX821",
+      "mapName": "黄金矿道",
+      "equipmentName": "褪色旅人战靴",
+      "slot": "鞋子",
+      "oldSourceNumber": 821,
+      "newSourceNumber": 6407,
+      "resourceName": "黄金圣树·初誓／鞋子",
+      "state": "替代号已锁定，待回写制式装备表"
+    },
+    {
+      "mapId": "XX823",
+      "mapName": "深层矿井",
+      "equipmentName": "褪色旅人项链",
+      "slot": "项链",
+      "oldSourceNumber": 823,
+      "newSourceNumber": 6401,
+      "resourceName": "黄金圣树·初誓／项链",
+      "state": "替代号已锁定，待回写制式装备表"
+    },
+    {
+      "mapId": "XX824",
+      "mapName": "矿脉核心",
+      "equipmentName": "褪色旅人戒指",
+      "slot": "戒指",
+      "oldSourceNumber": 824,
+      "newSourceNumber": 6403,
+      "resourceName": "黄金圣树·初誓／戒指",
+      "state": "替代号已锁定，待回写制式装备表"
+    }
+  ],
+  "currentPointer": {
+    "completed": [
+      "C01怪物V1",
+      "C01装备V1",
+      "C01掉落V1",
+      "C01 NPC设计V1"
+    ],
+    "next": "C02宁姆格福61怪与对应装备重算；承接C01毕业攻击/HP/韧性/爆率快照"
+  }
+}

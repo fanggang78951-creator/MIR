@@ -1,0 +1,1072 @@
+[
+  {
+    "id": "EL-DROP-EL-MON-C01-G01-N01",
+    "continentId": "C01",
+    "monsterId": "EL-MON-C01-G01-N01",
+    "monsterName": "盐蚀流民",
+    "monsterType": "normal",
+    "playerDropMultiplier": 5,
+    "standardEquipmentPools": "沿用现有第一大陆制式装备池；本版只重算主要专属与大陆材料",
+    "items": [
+      {
+        "role": "primary_exclusive",
+        "itemId": "EL-EQP-C01-001",
+        "itemName": "盐蚀弯刃",
+        "numerator": 1,
+        "denominator": 1800,
+        "effectiveProbability": 0.002777777777777778
+      },
+      {
+        "role": "continent_common_material",
+        "itemName": "海蚀铁片",
+        "numerator": 1,
+        "denominator": 75
+      }
+    ],
+    "numericVersion": "EL-C01-V1-20260820"
+  },
+  {
+    "id": "EL-DROP-EL-MON-C01-G01-N02",
+    "continentId": "C01",
+    "monsterId": "EL-MON-C01-G01-N02",
+    "monsterName": "断桨弩手",
+    "monsterType": "normal",
+    "playerDropMultiplier": 5,
+    "standardEquipmentPools": "沿用现有第一大陆制式装备池；本版只重算主要专属与大陆材料",
+    "items": [
+      {
+        "role": "primary_exclusive",
+        "itemId": "EL-EQP-C01-002",
+        "itemName": "断桨骨链",
+        "numerator": 1,
+        "denominator": 1800,
+        "effectiveProbability": 0.002777777777777778
+      },
+      {
+        "role": "continent_common_material",
+        "itemName": "海蚀铁片",
+        "numerator": 1,
+        "denominator": 75
+      }
+    ],
+    "numericVersion": "EL-C01-V1-20260820"
+  },
+  {
+    "id": "EL-DROP-EL-MON-C01-G01-N03",
+    "continentId": "C01",
+    "monsterId": "EL-MON-C01-G01-N03",
+    "monsterName": "漂流尸兵",
+    "monsterType": "normal",
+    "playerDropMultiplier": 5,
+    "standardEquipmentPools": "沿用现有第一大陆制式装备池；本版只重算主要专属与大陆材料",
+    "items": [
+      {
+        "role": "primary_exclusive",
+        "itemId": "EL-EQP-C01-003",
+        "itemName": "漂流尸甲",
+        "numerator": 1,
+        "denominator": 1800,
+        "effectiveProbability": 0.002777777777777778
+      },
+      {
+        "role": "continent_common_material",
+        "itemName": "海蚀铁片",
+        "numerator": 1,
+        "denominator": 75
+      }
+    ],
+    "numericVersion": "EL-C01-V1-20260820"
+  },
+  {
+    "id": "EL-DROP-EL-MON-C01-G01-N04",
+    "continentId": "C01",
+    "monsterId": "EL-MON-C01-G01-N04",
+    "monsterName": "失乡猎犬",
+    "monsterType": "normal",
+    "playerDropMultiplier": 5,
+    "standardEquipmentPools": "沿用现有第一大陆制式装备池；本版只重算主要专属与大陆材料",
+    "items": [
+      {
+        "role": "primary_exclusive",
+        "itemId": "EL-EQP-C01-004",
+        "itemName": "猎犬骨戒",
+        "numerator": 1,
+        "denominator": 1800,
+        "effectiveProbability": 0.002777777777777778
+      },
+      {
+        "role": "continent_common_material",
+        "itemName": "海蚀铁片",
+        "numerator": 1,
+        "denominator": 75
+      }
+    ],
+    "numericVersion": "EL-C01-V1-20260820"
+  },
+  {
+    "id": "EL-DROP-EL-MON-C01-G01-N05",
+    "continentId": "C01",
+    "monsterId": "EL-MON-C01-G01-N05",
+    "monsterName": "腐潮巨蟹",
+    "monsterType": "normal",
+    "playerDropMultiplier": 5,
+    "standardEquipmentPools": "沿用现有第一大陆制式装备池；本版只重算主要专属与大陆材料",
+    "items": [
+      {
+        "role": "primary_exclusive",
+        "itemId": "EL-EQP-C01-005",
+        "itemName": "腐潮钳镯",
+        "numerator": 1,
+        "denominator": 1800,
+        "effectiveProbability": 0.002777777777777778
+      },
+      {
+        "role": "continent_common_material",
+        "itemName": "海蚀铁片",
+        "numerator": 1,
+        "denominator": 75
+      }
+    ],
+    "numericVersion": "EL-C01-V1-20260820"
+  },
+  {
+    "id": "EL-DROP-EL-MON-C01-G01-R01",
+    "continentId": "C01",
+    "monsterId": "EL-MON-C01-G01-R01",
+    "monsterName": "铁锚行刑者",
+    "monsterType": "rare",
+    "playerDropMultiplier": 5,
+    "standardEquipmentPools": "沿用现有第一大陆制式装备池；本版只重算主要专属与大陆材料",
+    "items": [
+      {
+        "role": "primary_exclusive",
+        "itemId": "EL-EQP-C01-006",
+        "itemName": "行刑锚刃",
+        "numerator": 1,
+        "denominator": 600,
+        "effectiveProbability": 0.008333333333333333
+      },
+      {
+        "role": "continent_rare_material",
+        "itemName": "潮痕结晶",
+        "numerator": 1,
+        "denominator": 75
+      },
+      {
+        "role": "protected_task_material",
+        "itemName": "锈锚魂魄",
+        "numerator": 1,
+        "denominator": 50
+      }
+    ],
+    "numericVersion": "EL-C01-V1-20260820"
+  },
+  {
+    "id": "EL-DROP-EL-MON-C01-G01-R02",
+    "continentId": "C01",
+    "monsterId": "EL-MON-C01-G01-R02",
+    "monsterName": "唤潮祷师",
+    "monsterType": "rare",
+    "playerDropMultiplier": 5,
+    "standardEquipmentPools": "沿用现有第一大陆制式装备池；本版只重算主要专属与大陆材料",
+    "items": [
+      {
+        "role": "primary_exclusive",
+        "itemId": "EL-EQP-C01-007",
+        "itemName": "唤潮旧勋",
+        "numerator": 1,
+        "denominator": 600,
+        "effectiveProbability": 0.008333333333333333
+      },
+      {
+        "role": "continent_rare_material",
+        "itemName": "潮痕结晶",
+        "numerator": 1,
+        "denominator": 75
+      }
+    ],
+    "numericVersion": "EL-C01-V1-20260820"
+  },
+  {
+    "id": "EL-DROP-EL-MON-C01-G01-R03",
+    "continentId": "C01",
+    "monsterId": "EL-MON-C01-G01-R03",
+    "monsterName": "沉船守财者",
+    "monsterType": "rare",
+    "playerDropMultiplier": 5,
+    "standardEquipmentPools": "沿用现有第一大陆制式装备池；本版只重算主要专属与大陆材料",
+    "items": [
+      {
+        "role": "primary_exclusive",
+        "itemId": "EL-EQP-C01-008",
+        "itemName": "沉金铁盔",
+        "numerator": 1,
+        "denominator": 600,
+        "effectiveProbability": 0.008333333333333333
+      },
+      {
+        "role": "continent_rare_material",
+        "itemName": "潮痕结晶",
+        "numerator": 1,
+        "denominator": 75
+      },
+      {
+        "role": "protected_task_material",
+        "itemName": "沉金魂魄",
+        "numerator": 1,
+        "denominator": 60
+      }
+    ],
+    "numericVersion": "EL-C01-V1-20260820"
+  },
+  {
+    "id": "EL-DROP-EL-MON-C01-G01-R04",
+    "continentId": "C01",
+    "monsterId": "EL-MON-C01-G01-R04",
+    "monsterName": "海雾骑士",
+    "monsterType": "rare",
+    "playerDropMultiplier": 5,
+    "standardEquipmentPools": "沿用现有第一大陆制式装备池；本版只重算主要专属与大陆材料",
+    "items": [
+      {
+        "role": "primary_exclusive",
+        "itemId": "EL-EQP-C01-009",
+        "itemName": "海雾塔盾",
+        "numerator": 1,
+        "denominator": 600,
+        "effectiveProbability": 0.008333333333333333
+      },
+      {
+        "role": "continent_rare_material",
+        "itemName": "潮痕结晶",
+        "numerator": 1,
+        "denominator": 75
+      }
+    ],
+    "numericVersion": "EL-C01-V1-20260820"
+  },
+  {
+    "id": "EL-DROP-EL-MON-C01-G01-B01",
+    "continentId": "C01",
+    "monsterId": "EL-MON-C01-G01-B01",
+    "monsterName": "断桅船长·赫恩",
+    "monsterType": "boss",
+    "playerDropMultiplier": 5,
+    "standardEquipmentPools": "沿用现有第一大陆制式装备池；本版只重算主要专属与大陆材料",
+    "items": [
+      {
+        "role": "primary_exclusive",
+        "itemId": "EL-EQP-C01-010",
+        "itemName": "断桅血刃",
+        "numerator": 1,
+        "denominator": 120,
+        "effectiveProbability": 0.041666666666666664
+      },
+      {
+        "role": "continent_common_material",
+        "itemName": "海蚀铁片",
+        "numerator": 1,
+        "denominator": 30
+      },
+      {
+        "role": "continent_rare_material",
+        "itemName": "潮痕结晶",
+        "numerator": 1,
+        "denominator": 20
+      },
+      {
+        "role": "protected_task_material",
+        "itemName": "船长残魂",
+        "numerator": 1,
+        "denominator": 20
+      }
+    ],
+    "numericVersion": "EL-C01-V1-20260820"
+  },
+  {
+    "id": "EL-DROP-EL-MON-C01-G01-B02",
+    "continentId": "C01",
+    "monsterId": "EL-MON-C01-G01-B02",
+    "monsterName": "吞岸巨兽·格拉姆",
+    "monsterType": "boss",
+    "playerDropMultiplier": 5,
+    "standardEquipmentPools": "沿用现有第一大陆制式装备池；本版只重算主要专属与大陆材料",
+    "items": [
+      {
+        "role": "primary_exclusive",
+        "itemId": "EL-EQP-C01-011",
+        "itemName": "吞岸重甲",
+        "numerator": 1,
+        "denominator": 120,
+        "effectiveProbability": 0.041666666666666664
+      },
+      {
+        "role": "continent_common_material",
+        "itemName": "海蚀铁片",
+        "numerator": 1,
+        "denominator": 30
+      },
+      {
+        "role": "continent_rare_material",
+        "itemName": "潮痕结晶",
+        "numerator": 1,
+        "denominator": 20
+      },
+      {
+        "role": "protected_task_material",
+        "itemName": "吞岸王魂",
+        "numerator": 1,
+        "denominator": 25
+      }
+    ],
+    "numericVersion": "EL-C01-V1-20260820"
+  },
+  {
+    "id": "EL-DROP-EL-MON-C01-G02-N01",
+    "continentId": "C01",
+    "monsterId": "EL-MON-C01-G02-N01",
+    "monsterName": "风蚀守卫",
+    "monsterType": "normal",
+    "playerDropMultiplier": 5,
+    "standardEquipmentPools": "沿用现有第一大陆制式装备池；本版只重算主要专属与大陆材料",
+    "items": [
+      {
+        "role": "primary_exclusive",
+        "itemId": "EL-EQP-C01-012",
+        "itemName": "风蚀盔",
+        "numerator": 1,
+        "denominator": 1800,
+        "effectiveProbability": 0.002777777777777778
+      },
+      {
+        "role": "continent_common_material",
+        "itemName": "海蚀铁片",
+        "numerator": 1,
+        "denominator": 75
+      }
+    ],
+    "numericVersion": "EL-C01-V1-20260820"
+  },
+  {
+    "id": "EL-DROP-EL-MON-C01-G02-N02",
+    "continentId": "C01",
+    "monsterId": "EL-MON-C01-G02-N02",
+    "monsterName": "断崖弩手",
+    "monsterType": "normal",
+    "playerDropMultiplier": 5,
+    "standardEquipmentPools": "沿用现有第一大陆制式装备池；本版只重算主要专属与大陆材料",
+    "items": [
+      {
+        "role": "primary_exclusive",
+        "itemId": "EL-EQP-C01-013",
+        "itemName": "鹰眼链",
+        "numerator": 1,
+        "denominator": 1800,
+        "effectiveProbability": 0.002777777777777778
+      },
+      {
+        "role": "continent_common_material",
+        "itemName": "海蚀铁片",
+        "numerator": 1,
+        "denominator": 75
+      }
+    ],
+    "numericVersion": "EL-C01-V1-20260820"
+  },
+  {
+    "id": "EL-DROP-EL-MON-C01-G02-N03",
+    "continentId": "C01",
+    "monsterId": "EL-MON-C01-G02-N03",
+    "monsterName": "雷羽鹰",
+    "monsterType": "normal",
+    "playerDropMultiplier": 5,
+    "standardEquipmentPools": "沿用现有第一大陆制式装备池；本版只重算主要专属与大陆材料",
+    "items": [
+      {
+        "role": "primary_exclusive",
+        "itemId": "EL-EQP-C01-014",
+        "itemName": "雷羽护腕",
+        "numerator": 1,
+        "denominator": 1800,
+        "effectiveProbability": 0.002777777777777778
+      },
+      {
+        "role": "continent_common_material",
+        "itemName": "海蚀铁片",
+        "numerator": 1,
+        "denominator": 75
+      }
+    ],
+    "numericVersion": "EL-C01-V1-20260820"
+  },
+  {
+    "id": "EL-DROP-EL-MON-C01-G02-N04",
+    "continentId": "C01",
+    "monsterId": "EL-MON-C01-G02-N04",
+    "monsterName": "狂风战奴",
+    "monsterType": "normal",
+    "playerDropMultiplier": 5,
+    "standardEquipmentPools": "沿用现有第一大陆制式装备池；本版只重算主要专属与大陆材料",
+    "items": [
+      {
+        "role": "primary_exclusive",
+        "itemId": "EL-EQP-C01-015",
+        "itemName": "狂风骨戒",
+        "numerator": 1,
+        "denominator": 1800,
+        "effectiveProbability": 0.002777777777777778
+      },
+      {
+        "role": "continent_common_material",
+        "itemName": "海蚀铁片",
+        "numerator": 1,
+        "denominator": 75
+      }
+    ],
+    "numericVersion": "EL-C01-V1-20260820"
+  },
+  {
+    "id": "EL-DROP-EL-MON-C01-G02-N05",
+    "continentId": "C01",
+    "monsterId": "EL-MON-C01-G02-N05",
+    "monsterName": "坠崖亡兵",
+    "monsterType": "normal",
+    "playerDropMultiplier": 5,
+    "standardEquipmentPools": "沿用现有第一大陆制式装备池；本版只重算主要专属与大陆材料",
+    "items": [
+      {
+        "role": "primary_exclusive",
+        "itemId": "EL-EQP-C01-016",
+        "itemName": "断崖束带",
+        "numerator": 1,
+        "denominator": 1800,
+        "effectiveProbability": 0.002777777777777778
+      },
+      {
+        "role": "continent_common_material",
+        "itemName": "海蚀铁片",
+        "numerator": 1,
+        "denominator": 75
+      }
+    ],
+    "numericVersion": "EL-C01-V1-20260820"
+  },
+  {
+    "id": "EL-DROP-EL-MON-C01-G02-N06",
+    "continentId": "C01",
+    "monsterId": "EL-MON-C01-G02-N06",
+    "monsterName": "崖穴石蜥",
+    "monsterType": "normal",
+    "playerDropMultiplier": 5,
+    "standardEquipmentPools": "沿用现有第一大陆制式装备池；本版只重算主要专属与大陆材料",
+    "items": [
+      {
+        "role": "primary_exclusive",
+        "itemId": "EL-EQP-C01-017",
+        "itemName": "石蜥面巾",
+        "numerator": 1,
+        "denominator": 1800,
+        "effectiveProbability": 0.002777777777777778
+      },
+      {
+        "role": "continent_common_material",
+        "itemName": "海蚀铁片",
+        "numerator": 1,
+        "denominator": 75
+      }
+    ],
+    "numericVersion": "EL-C01-V1-20260820"
+  },
+  {
+    "id": "EL-DROP-EL-MON-C01-G02-R01",
+    "continentId": "C01",
+    "monsterId": "EL-MON-C01-G02-R01",
+    "monsterName": "逐雷骑士",
+    "monsterType": "rare",
+    "playerDropMultiplier": 5,
+    "standardEquipmentPools": "沿用现有第一大陆制式装备池；本版只重算主要专属与大陆材料",
+    "items": [
+      {
+        "role": "primary_exclusive",
+        "itemId": "EL-EQP-C01-018",
+        "itemName": "逐雷战靴",
+        "numerator": 1,
+        "denominator": 600,
+        "effectiveProbability": 0.008333333333333333
+      },
+      {
+        "role": "continent_rare_material",
+        "itemName": "潮痕结晶",
+        "numerator": 1,
+        "denominator": 75
+      },
+      {
+        "role": "protected_task_material",
+        "itemName": "逐雷魂印",
+        "numerator": 1,
+        "denominator": 80
+      }
+    ],
+    "numericVersion": "EL-C01-V1-20260820"
+  },
+  {
+    "id": "EL-DROP-EL-MON-C01-G02-R02",
+    "continentId": "C01",
+    "monsterId": "EL-MON-C01-G02-R02",
+    "monsterName": "风暴祭司",
+    "monsterType": "rare",
+    "playerDropMultiplier": 5,
+    "standardEquipmentPools": "沿用现有第一大陆制式装备池；本版只重算主要专属与大陆材料",
+    "items": [
+      {
+        "role": "primary_exclusive",
+        "itemId": "EL-EQP-C01-019",
+        "itemName": "风暴勋章",
+        "numerator": 1,
+        "denominator": 600,
+        "effectiveProbability": 0.008333333333333333
+      },
+      {
+        "role": "continent_rare_material",
+        "itemName": "潮痕结晶",
+        "numerator": 1,
+        "denominator": 75
+      }
+    ],
+    "numericVersion": "EL-C01-V1-20260820"
+  },
+  {
+    "id": "EL-DROP-EL-MON-C01-G02-R03",
+    "continentId": "C01",
+    "monsterId": "EL-MON-C01-G02-R03",
+    "monsterName": "裂岩巨人",
+    "monsterType": "rare",
+    "playerDropMultiplier": 5,
+    "standardEquipmentPools": "沿用现有第一大陆制式装备池；本版只重算主要专属与大陆材料",
+    "items": [
+      {
+        "role": "primary_exclusive",
+        "itemId": "EL-EQP-C01-020",
+        "itemName": "裂岩巨盾",
+        "numerator": 1,
+        "denominator": 600,
+        "effectiveProbability": 0.008333333333333333
+      },
+      {
+        "role": "continent_rare_material",
+        "itemName": "潮痕结晶",
+        "numerator": 1,
+        "denominator": 75
+      },
+      {
+        "role": "protected_task_material",
+        "itemName": "裂岩之心",
+        "numerator": 1,
+        "denominator": 100
+      }
+    ],
+    "numericVersion": "EL-C01-V1-20260820"
+  },
+  {
+    "id": "EL-DROP-EL-MON-C01-G02-R04",
+    "continentId": "C01",
+    "monsterId": "EL-MON-C01-G02-R04",
+    "monsterName": "黑翼猎杀者",
+    "monsterType": "rare",
+    "playerDropMultiplier": 5,
+    "standardEquipmentPools": "沿用现有第一大陆制式装备池；本版只重算主要专属与大陆材料",
+    "items": [
+      {
+        "role": "primary_exclusive",
+        "itemId": "EL-EQP-C01-021",
+        "itemName": "黑翼灵玉",
+        "numerator": 1,
+        "denominator": 600,
+        "effectiveProbability": 0.008333333333333333
+      },
+      {
+        "role": "continent_rare_material",
+        "itemName": "潮痕结晶",
+        "numerator": 1,
+        "denominator": 75
+      }
+    ],
+    "numericVersion": "EL-C01-V1-20260820"
+  },
+  {
+    "id": "EL-DROP-EL-MON-C01-G02-B01",
+    "continentId": "C01",
+    "monsterId": "EL-MON-C01-G02-B01",
+    "monsterName": "风暴执刑官·巴鲁克",
+    "monsterType": "boss",
+    "playerDropMultiplier": 5,
+    "standardEquipmentPools": "沿用现有第一大陆制式装备池；本版只重算主要专属与大陆材料",
+    "items": [
+      {
+        "role": "primary_exclusive",
+        "itemId": "EL-EQP-C01-022",
+        "itemName": "执刑雷刃",
+        "numerator": 1,
+        "denominator": 120,
+        "effectiveProbability": 0.041666666666666664
+      },
+      {
+        "role": "continent_common_material",
+        "itemName": "海蚀铁片",
+        "numerator": 1,
+        "denominator": 30
+      },
+      {
+        "role": "continent_rare_material",
+        "itemName": "潮痕结晶",
+        "numerator": 1,
+        "denominator": 20
+      },
+      {
+        "role": "protected_task_material",
+        "itemName": "执刑官残魂",
+        "numerator": 1,
+        "denominator": 20
+      }
+    ],
+    "numericVersion": "EL-C01-V1-20260820"
+  },
+  {
+    "id": "EL-DROP-EL-MON-C01-G02-B02",
+    "continentId": "C01",
+    "monsterId": "EL-MON-C01-G02-B02",
+    "monsterName": "断崖古龙·赛尔",
+    "monsterType": "boss",
+    "playerDropMultiplier": 5,
+    "standardEquipmentPools": "沿用现有第一大陆制式装备池；本版只重算主要专属与大陆材料",
+    "items": [
+      {
+        "role": "primary_exclusive",
+        "itemId": "EL-EQP-C01-023",
+        "itemName": "古龙风铠",
+        "numerator": 1,
+        "denominator": 120,
+        "effectiveProbability": 0.041666666666666664
+      },
+      {
+        "role": "continent_common_material",
+        "itemName": "海蚀铁片",
+        "numerator": 1,
+        "denominator": 30
+      },
+      {
+        "role": "continent_rare_material",
+        "itemName": "潮痕结晶",
+        "numerator": 1,
+        "denominator": 20
+      },
+      {
+        "role": "protected_task_material",
+        "itemName": "古龙逆鳞",
+        "numerator": 1,
+        "denominator": 25
+      }
+    ],
+    "numericVersion": "EL-C01-V1-20260820"
+  },
+  {
+    "id": "EL-DROP-EL-MON-C01-G03-N01",
+    "continentId": "C01",
+    "monsterId": "EL-MON-C01-G03-N01",
+    "monsterName": "溺亡禁卫",
+    "monsterType": "normal",
+    "playerDropMultiplier": 5,
+    "standardEquipmentPools": "沿用现有第一大陆制式装备池；本版只重算主要专属与大陆材料",
+    "items": [
+      {
+        "role": "primary_exclusive",
+        "itemId": "EL-EQP-C01-024",
+        "itemName": "溺亡王盔",
+        "numerator": 1,
+        "denominator": 1800,
+        "effectiveProbability": 0.002777777777777778
+      },
+      {
+        "role": "continent_common_material",
+        "itemName": "海蚀铁片",
+        "numerator": 1,
+        "denominator": 75
+      }
+    ],
+    "numericVersion": "EL-C01-V1-20260820"
+  },
+  {
+    "id": "EL-DROP-EL-MON-C01-G03-N02",
+    "continentId": "C01",
+    "monsterId": "EL-MON-C01-G03-N02",
+    "monsterName": "沉宫侍从",
+    "monsterType": "normal",
+    "playerDropMultiplier": 5,
+    "standardEquipmentPools": "沿用现有第一大陆制式装备池；本版只重算主要专属与大陆材料",
+    "items": [
+      {
+        "role": "primary_exclusive",
+        "itemId": "EL-EQP-C01-025",
+        "itemName": "沉宫项链",
+        "numerator": 1,
+        "denominator": 1800,
+        "effectiveProbability": 0.002777777777777778
+      },
+      {
+        "role": "continent_common_material",
+        "itemName": "海蚀铁片",
+        "numerator": 1,
+        "denominator": 75
+      }
+    ],
+    "numericVersion": "EL-C01-V1-20260820"
+  },
+  {
+    "id": "EL-DROP-EL-MON-C01-G03-N03",
+    "continentId": "C01",
+    "monsterId": "EL-MON-C01-G03-N03",
+    "monsterName": "苔甲骑兵",
+    "monsterType": "normal",
+    "playerDropMultiplier": 5,
+    "standardEquipmentPools": "沿用现有第一大陆制式装备池；本版只重算主要专属与大陆材料",
+    "items": [
+      {
+        "role": "primary_exclusive",
+        "itemId": "EL-EQP-C01-026",
+        "itemName": "苔痕护腕",
+        "numerator": 1,
+        "denominator": 1800,
+        "effectiveProbability": 0.002777777777777778
+      },
+      {
+        "role": "continent_common_material",
+        "itemName": "海蚀铁片",
+        "numerator": 1,
+        "denominator": 75
+      }
+    ],
+    "numericVersion": "EL-C01-V1-20260820"
+  },
+  {
+    "id": "EL-DROP-EL-MON-C01-G03-N04",
+    "continentId": "C01",
+    "monsterId": "EL-MON-C01-G03-N04",
+    "monsterName": "王庭咒师",
+    "monsterType": "normal",
+    "playerDropMultiplier": 5,
+    "standardEquipmentPools": "沿用现有第一大陆制式装备池；本版只重算主要专属与大陆材料",
+    "items": [
+      {
+        "role": "primary_exclusive",
+        "itemId": "EL-EQP-C01-027",
+        "itemName": "王庭秘戒",
+        "numerator": 1,
+        "denominator": 1800,
+        "effectiveProbability": 0.002777777777777778
+      },
+      {
+        "role": "continent_common_material",
+        "itemName": "海蚀铁片",
+        "numerator": 1,
+        "denominator": 75
+      }
+    ],
+    "numericVersion": "EL-C01-V1-20260820"
+  },
+  {
+    "id": "EL-DROP-EL-MON-C01-G03-N05",
+    "continentId": "C01",
+    "monsterId": "EL-MON-C01-G03-N05",
+    "monsterName": "深水石像",
+    "monsterType": "normal",
+    "playerDropMultiplier": 5,
+    "standardEquipmentPools": "沿用现有第一大陆制式装备池；本版只重算主要专属与大陆材料",
+    "items": [
+      {
+        "role": "primary_exclusive",
+        "itemId": "EL-EQP-C01-028",
+        "itemName": "深水束带",
+        "numerator": 1,
+        "denominator": 1800,
+        "effectiveProbability": 0.002777777777777778
+      },
+      {
+        "role": "continent_common_material",
+        "itemName": "海蚀铁片",
+        "numerator": 1,
+        "denominator": 75
+      }
+    ],
+    "numericVersion": "EL-C01-V1-20260820"
+  },
+  {
+    "id": "EL-DROP-EL-MON-C01-G03-N06",
+    "continentId": "C01",
+    "monsterId": "EL-MON-C01-G03-N06",
+    "monsterName": "幽灯侍者",
+    "monsterType": "normal",
+    "playerDropMultiplier": 5,
+    "standardEquipmentPools": "沿用现有第一大陆制式装备池；本版只重算主要专属与大陆材料",
+    "items": [
+      {
+        "role": "primary_exclusive",
+        "itemId": "EL-EQP-C01-029",
+        "itemName": "幽灯面巾",
+        "numerator": 1,
+        "denominator": 1800,
+        "effectiveProbability": 0.002777777777777778
+      },
+      {
+        "role": "continent_common_material",
+        "itemName": "海蚀铁片",
+        "numerator": 1,
+        "denominator": 75
+      }
+    ],
+    "numericVersion": "EL-C01-V1-20260820"
+  },
+  {
+    "id": "EL-DROP-EL-MON-C01-G03-R01",
+    "continentId": "C01",
+    "monsterId": "EL-MON-C01-G03-R01",
+    "monsterName": "失冠王子",
+    "monsterType": "rare",
+    "playerDropMultiplier": 5,
+    "standardEquipmentPools": "沿用现有第一大陆制式装备池；本版只重算主要专属与大陆材料",
+    "items": [
+      {
+        "role": "primary_exclusive",
+        "itemId": "EL-EQP-C01-030",
+        "itemName": "失冠战靴",
+        "numerator": 1,
+        "denominator": 600,
+        "effectiveProbability": 0.008333333333333333
+      },
+      {
+        "role": "continent_rare_material",
+        "itemName": "潮痕结晶",
+        "numerator": 1,
+        "denominator": 75
+      },
+      {
+        "role": "protected_task_material",
+        "itemName": "失冠徽记",
+        "numerator": 1,
+        "denominator": 100
+      }
+    ],
+    "numericVersion": "EL-C01-V1-20260820"
+  },
+  {
+    "id": "EL-DROP-EL-MON-C01-G03-R02",
+    "continentId": "C01",
+    "monsterId": "EL-MON-C01-G03-R02",
+    "monsterName": "深渊看守",
+    "monsterType": "rare",
+    "playerDropMultiplier": 5,
+    "standardEquipmentPools": "沿用现有第一大陆制式装备池；本版只重算主要专属与大陆材料",
+    "items": [
+      {
+        "role": "primary_exclusive",
+        "itemId": "EL-EQP-C01-031",
+        "itemName": "深渊勋章",
+        "numerator": 1,
+        "denominator": 600,
+        "effectiveProbability": 0.008333333333333333
+      },
+      {
+        "role": "continent_rare_material",
+        "itemName": "潮痕结晶",
+        "numerator": 1,
+        "denominator": 75
+      }
+    ],
+    "numericVersion": "EL-C01-V1-20260820"
+  },
+  {
+    "id": "EL-DROP-EL-MON-C01-G03-R03",
+    "continentId": "C01",
+    "monsterId": "EL-MON-C01-G03-R03",
+    "monsterName": "王庭裁决官",
+    "monsterType": "rare",
+    "playerDropMultiplier": 5,
+    "standardEquipmentPools": "沿用现有第一大陆制式装备池；本版只重算主要专属与大陆材料",
+    "items": [
+      {
+        "role": "primary_exclusive",
+        "itemId": "EL-EQP-C01-032",
+        "itemName": "裁决王盾",
+        "numerator": 1,
+        "denominator": 600,
+        "effectiveProbability": 0.008333333333333333
+      },
+      {
+        "role": "continent_rare_material",
+        "itemName": "潮痕结晶",
+        "numerator": 1,
+        "denominator": 75
+      }
+    ],
+    "numericVersion": "EL-C01-V1-20260820"
+  },
+  {
+    "id": "EL-DROP-EL-MON-C01-G03-R04",
+    "continentId": "C01",
+    "monsterId": "EL-MON-C01-G03-R04",
+    "monsterName": "沉默女祭司",
+    "monsterType": "rare",
+    "playerDropMultiplier": 5,
+    "standardEquipmentPools": "沿用现有第一大陆制式装备池；本版只重算主要专属与大陆材料",
+    "items": [
+      {
+        "role": "primary_exclusive",
+        "itemId": "EL-EQP-C01-033",
+        "itemName": "沉默灵玉",
+        "numerator": 1,
+        "denominator": 600,
+        "effectiveProbability": 0.008333333333333333
+      },
+      {
+        "role": "continent_rare_material",
+        "itemName": "潮痕结晶",
+        "numerator": 1,
+        "denominator": 75
+      },
+      {
+        "role": "protected_task_material",
+        "itemName": "沉默祷文",
+        "numerator": 1,
+        "denominator": 120
+      }
+    ],
+    "numericVersion": "EL-C01-V1-20260820"
+  },
+  {
+    "id": "EL-DROP-EL-MON-C01-G03-B01",
+    "continentId": "C01",
+    "monsterId": "EL-MON-C01-G03-B01",
+    "monsterName": "溺王亲卫长·萨恩",
+    "monsterType": "boss",
+    "playerDropMultiplier": 5,
+    "standardEquipmentPools": "沿用现有第一大陆制式装备池；本版只重算主要专属与大陆材料",
+    "items": [
+      {
+        "role": "primary_exclusive",
+        "itemId": "EL-EQP-C01-034",
+        "itemName": "亲卫王剑",
+        "numerator": 1,
+        "denominator": 120,
+        "effectiveProbability": 0.041666666666666664
+      },
+      {
+        "role": "continent_common_material",
+        "itemName": "海蚀铁片",
+        "numerator": 1,
+        "denominator": 30
+      },
+      {
+        "role": "continent_rare_material",
+        "itemName": "潮痕结晶",
+        "numerator": 1,
+        "denominator": 20
+      },
+      {
+        "role": "protected_task_material",
+        "itemName": "亲卫长残魂",
+        "numerator": 1,
+        "denominator": 25
+      }
+    ],
+    "numericVersion": "EL-C01-V1-20260820"
+  },
+  {
+    "id": "EL-DROP-EL-MON-C01-G03-B02",
+    "continentId": "C01",
+    "monsterId": "EL-MON-C01-G03-B02",
+    "monsterName": "深潮大祭司·伊莱娜",
+    "monsterType": "boss",
+    "playerDropMultiplier": 5,
+    "standardEquipmentPools": "沿用现有第一大陆制式装备池；本版只重算主要专属与大陆材料",
+    "items": [
+      {
+        "role": "primary_exclusive",
+        "itemId": "EL-EQP-C01-035",
+        "itemName": "深潮王铠",
+        "numerator": 1,
+        "denominator": 120,
+        "effectiveProbability": 0.041666666666666664
+      },
+      {
+        "role": "continent_common_material",
+        "itemName": "海蚀铁片",
+        "numerator": 1,
+        "denominator": 30
+      },
+      {
+        "role": "continent_rare_material",
+        "itemName": "潮痕结晶",
+        "numerator": 1,
+        "denominator": 20
+      },
+      {
+        "role": "protected_task_material",
+        "itemName": "深潮祭冠",
+        "numerator": 1,
+        "denominator": 30
+      }
+    ],
+    "numericVersion": "EL-C01-V1-20260820"
+  },
+  {
+    "id": "EL-DROP-EL-MON-C01-G03-G01",
+    "continentId": "C01",
+    "monsterId": "EL-MON-C01-G03-G01",
+    "monsterName": "沉没之王·奥德里安",
+    "monsterType": "gate_boss",
+    "playerDropMultiplier": 5,
+    "standardEquipmentPools": "沿用现有第一大陆制式装备池；本版只重算主要专属与大陆材料",
+    "items": [
+      {
+        "role": "primary_exclusive",
+        "itemId": "EL-EQP-C01-036",
+        "itemName": "沉没王权",
+        "numerator": 1,
+        "denominator": 50,
+        "effectiveProbability": 0.1
+      },
+      {
+        "role": "continent_common_material",
+        "itemName": "海蚀铁片",
+        "numerator": 1,
+        "denominator": 10
+      },
+      {
+        "role": "continent_rare_material",
+        "itemName": "潮痕结晶",
+        "numerator": 1,
+        "denominator": 10
+      },
+      {
+        "role": "gate_fashion_extra",
+        "itemId": "EL-EQP-C01-037",
+        "itemName": "潮葬礼剑",
+        "numerator": 1,
+        "denominator": 200
+      },
+      {
+        "role": "gate_fashion_extra",
+        "itemId": "EL-EQP-C01-038",
+        "itemName": "无冠王衣",
+        "numerator": 1,
+        "denominator": 200
+      },
+      {
+        "role": "protected_task_material",
+        "itemName": "沉王魂核",
+        "numerator": 1,
+        "denominator": 10
+      }
+    ],
+    "numericVersion": "EL-C01-V1-20260820"
+  }
+]

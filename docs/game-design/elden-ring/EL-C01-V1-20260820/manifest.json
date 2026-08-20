@@ -1,0 +1,16 @@
+{
+  "version": "EL-C01-V1-20260820",
+  "generatedAt": "2026-08-20T11:20:16.018Z",
+  "counts": {
+    "continents": 10,
+    "c1Monsters": 36,
+    "c1Equipment": 38,
+    "c1PrimaryExclusive": 36,
+    "c1GateExtras": 2,
+    "c1Drops": 36,
+    "c1Npcs": 4,
+    "c1GraduationMaxDrop": 150
+  },
+  "mapSizeIgnored": true,
+  "deploymentState": "设计数据完成，未部署"
+}
