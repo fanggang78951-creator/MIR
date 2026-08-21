@@ -38,7 +38,17 @@
 4. 脚本窗口提交脚本对象映射与坐标结果。
 5. 平台应用窗口复核实际Idx、怪物ID、装备Idx、来源编号和脚本引用是否一致。
 
-## 四、当前替代关系
+## 四、统一交班目录
+
+所有Codex窗口必须同时更新仓库根目录下的固定交班入口：
+
+- 平台应用窗口：`handoffs/elden_ring/current/platform_app.md`
+- 脚本窗口：`handoffs/elden_ring/current/script.md`
+- 历史记录：`handoffs/elden_ring/history/<window>/`
+
+格式与必填项见 `handoffs/elden_ring/README.md`。主设计以后直接读取这些固定路径。
+
+## 五、当前替代关系
 
 - 旧任务单 `02_任务单_脚本窗口_材料编号颜色与第一轮交接.md` 对新任务已停止；已经接近完成的现有窗口允许完成一次并交给平台应用窗口。
 - 旧任务单 `03_任务单_怪物窗口_材料来源怪物与掉率交接.md` 已停止执行。
