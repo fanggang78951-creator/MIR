@@ -12,7 +12,9 @@
 
 平台应用窗口当前执行：
 
-`outputs/elden_ring_10_continent_material_system_20260821/04_当前任务单_平台应用窗口_材料怪物装备.md`
+`outputs/elden_ring_10_continent_material_system_20260821/06_当前任务单_平台应用窗口_材料系统接续落地.md`
+
+其中`04_当前任务单_平台应用窗口_材料怪物装备.md`保留为基础设计与验收规范，`06`为当前正式执行入口。
 
 ### 本轮过渡例外
 
