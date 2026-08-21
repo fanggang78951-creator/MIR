@@ -1,0 +1,624 @@
+{
+  "schemaVersion": "1.0",
+  "generatedAt": "2026-08-21T10:51:48.662Z",
+  "sourceCommit": "710bc13e8eabffda6b5ad4c26b26adf30e063446",
+  "state": "ready_for_monster_window_source_binding",
+  "warnings": [
+    "Idx 907-971为已核对未占用的规划编号，尚未写入ApexM2.DB；怪物窗口可完成来源设计，但正式掉落部署必须等待物品入库。",
+    "失色锻造石、野兽骨片、神秘符文复用现服Idx，不得新建同名物品。"
+  ],
+  "materials": [
+    {
+      "logicalMaterialId": "EL-MAT-GLOBAL-SOMBER",
+      "name": "失色锻造石",
+      "continentId": "ALL",
+      "actualIdx": 793,
+      "existingInDatabase": true,
+      "plannedSourceType": "怪物专属装备分解",
+      "verificationState": "已验证复用/颜色语义不一致"
+    },
+    {
+      "logicalMaterialId": "EL-MAT-C02-BONE",
+      "name": "野兽骨片",
+      "continentId": "C02",
+      "actualIdx": 794,
+      "existingInDatabase": true,
+      "plannedSourceType": "沿用宁姆格福既有掉落",
+      "verificationState": "已验证复用/颜色语义不一致"
+    },
+    {
+      "logicalMaterialId": "EL-MAT-C02-RUNE",
+      "name": "神秘符文",
+      "continentId": "C02",
+      "actualIdx": 802,
+      "existingInDatabase": true,
+      "plannedSourceType": "沿用现有任务/称号脚本",
+      "verificationState": "已验证复用/颜色语义不一致"
+    },
+    {
+      "logicalMaterialId": "EL-MAT-C01-WITNESS-TIDE",
+      "name": "漂流见证·潮",
+      "continentId": "C01",
+      "actualIdx": 907,
+      "existingInDatabase": false,
+      "plannedSourceType": "海岸亡魂任务固定奖励",
+      "verificationState": "已核对待部署"
+    },
+    {
+      "logicalMaterialId": "EL-MAT-C01-WITNESS-STORM",
+      "name": "漂流见证·雷",
+      "continentId": "C01",
+      "actualIdx": 908,
+      "existingInDatabase": false,
+      "plannedSourceType": "风暴遗誓任务固定奖励",
+      "verificationState": "已核对待部署"
+    },
+    {
+      "logicalMaterialId": "EL-MAT-C02-OATHPAGE",
+      "name": "宁姆格福誓页",
+      "continentId": "C02",
+      "actualIdx": 909,
+      "existingInDatabase": false,
+      "plannedSourceType": "宁姆格福前四任务固定奖励",
+      "verificationState": "已核对待部署"
+    },
+    {
+      "logicalMaterialId": "EL-MAT-C01-COM",
+      "name": "海蚀铁片",
+      "continentId": "C01",
+      "actualIdx": 910,
+      "existingInDatabase": false,
+      "plannedSourceType": "本大陆普通怪独立掉落",
+      "verificationState": "已核对待部署"
+    },
+    {
+      "logicalMaterialId": "EL-MAT-C01-RARE",
+      "name": "潮痕结晶",
+      "continentId": "C01",
+      "actualIdx": 911,
+      "existingInDatabase": false,
+      "plannedSourceType": "本大陆精英怪独立掉落",
+      "verificationState": "已核对待部署"
+    },
+    {
+      "logicalMaterialId": "EL-MAT-C01-MARK",
+      "name": "漂流大陆印记",
+      "continentId": "C01",
+      "actualIdx": 912,
+      "existingInDatabase": false,
+      "plannedSourceType": "主任务/守关BOSS首杀固定1",
+      "verificationState": "已核对待部署"
+    },
+    {
+      "logicalMaterialId": "EL-MAT-C02-COM",
+      "name": "风暴石片",
+      "continentId": "C02",
+      "actualIdx": 913,
+      "existingInDatabase": false,
+      "plannedSourceType": "本大陆普通怪独立掉落",
+      "verificationState": "已核对待部署"
+    },
+    {
+      "logicalMaterialId": "EL-MAT-C02-RARE",
+      "name": "黄金树芽",
+      "continentId": "C02",
+      "actualIdx": 914,
+      "existingInDatabase": false,
+      "plannedSourceType": "本大陆精英怪独立掉落",
+      "verificationState": "已核对待部署"
+    },
+    {
+      "logicalMaterialId": "EL-MAT-C02-MARK",
+      "name": "接肢王印",
+      "continentId": "C02",
+      "actualIdx": 915,
+      "existingInDatabase": false,
+      "plannedSourceType": "主任务/守关BOSS首杀固定1",
+      "verificationState": "已核对待部署"
+    },
+    {
+      "logicalMaterialId": "EL-MAT-C03-COM",
+      "name": "风蚀铁片",
+      "continentId": "C03",
+      "actualIdx": 916,
+      "existingInDatabase": false,
+      "plannedSourceType": "本大陆普通怪独立掉落",
+      "verificationState": "已核对待部署"
+    },
+    {
+      "logicalMaterialId": "EL-MAT-C03-RARE",
+      "name": "西境战旗",
+      "continentId": "C03",
+      "actualIdx": 917,
+      "existingInDatabase": false,
+      "plannedSourceType": "本大陆精英怪独立掉落",
+      "verificationState": "已核对待部署"
+    },
+    {
+      "logicalMaterialId": "EL-MAT-C03-MARK",
+      "name": "西境战旗印",
+      "continentId": "C03",
+      "actualIdx": 918,
+      "existingInDatabase": false,
+      "plannedSourceType": "主任务/守关BOSS首杀固定1",
+      "verificationState": "已核对待部署"
+    },
+    {
+      "logicalMaterialId": "EL-MAT-C04-COM",
+      "name": "湖盐结晶",
+      "continentId": "C04",
+      "actualIdx": 919,
+      "existingInDatabase": false,
+      "plannedSourceType": "本大陆普通怪独立掉落",
+      "verificationState": "已核对待部署"
+    },
+    {
+      "logicalMaterialId": "EL-MAT-C04-RARE",
+      "name": "幽船铆钉",
+      "continentId": "C04",
+      "actualIdx": 920,
+      "existingInDatabase": false,
+      "plannedSourceType": "本大陆精英怪独立掉落",
+      "verificationState": "已核对待部署"
+    },
+    {
+      "logicalMaterialId": "EL-MAT-C04-MARK",
+      "name": "沉湖王印",
+      "continentId": "C04",
+      "actualIdx": 921,
+      "existingInDatabase": false,
+      "plannedSourceType": "主任务/守关BOSS首杀固定1",
+      "verificationState": "已核对待部署"
+    },
+    {
+      "logicalMaterialId": "EL-MAT-C05-COM",
+      "name": "辉石碎晶",
+      "continentId": "C05",
+      "actualIdx": 922,
+      "existingInDatabase": false,
+      "plannedSourceType": "本大陆普通怪独立掉落",
+      "verificationState": "已核对待部署"
+    },
+    {
+      "logicalMaterialId": "EL-MAT-C05-RARE",
+      "name": "卡利亚月露",
+      "continentId": "C05",
+      "actualIdx": 923,
+      "existingInDatabase": false,
+      "plannedSourceType": "本大陆精英怪独立掉落",
+      "verificationState": "已核对待部署"
+    },
+    {
+      "logicalMaterialId": "EL-MAT-C05-MARK",
+      "name": "满月王室印",
+      "continentId": "C05",
+      "actualIdx": 924,
+      "existingInDatabase": false,
+      "plannedSourceType": "主任务/守关BOSS首杀固定1",
+      "verificationState": "已核对待部署"
+    },
+    {
+      "logicalMaterialId": "EL-MAT-C06-COM",
+      "name": "猩红矿渣",
+      "continentId": "C06",
+      "actualIdx": 925,
+      "existingInDatabase": false,
+      "plannedSourceType": "本大陆普通怪独立掉落",
+      "verificationState": "已核对待部署"
+    },
+    {
+      "logicalMaterialId": "EL-MAT-C06-RARE",
+      "name": "龙火鳞",
+      "continentId": "C06",
+      "actualIdx": 926,
+      "existingInDatabase": false,
+      "plannedSourceType": "本大陆精英怪独立掉落",
+      "verificationState": "已核对待部署"
+    },
+    {
+      "logicalMaterialId": "EL-MAT-C06-MARK",
+      "name": "红狮战印",
+      "continentId": "C06",
+      "actualIdx": 927,
+      "existingInDatabase": false,
+      "plannedSourceType": "主任务/守关BOSS首杀固定1",
+      "verificationState": "已核对待部署"
+    },
+    {
+      "logicalMaterialId": "EL-MAT-C07-COM",
+      "name": "冻晶尘",
+      "continentId": "C07",
+      "actualIdx": 928,
+      "existingInDatabase": false,
+      "plannedSourceType": "本大陆普通怪独立掉落",
+      "verificationState": "已核对待部署"
+    },
+    {
+      "logicalMaterialId": "EL-MAT-C07-RARE",
+      "name": "白金纺线",
+      "continentId": "C07",
+      "actualIdx": 929,
+      "existingInDatabase": false,
+      "plannedSourceType": "本大陆精英怪独立掉落",
+      "verificationState": "已核对待部署"
+    },
+    {
+      "logicalMaterialId": "EL-MAT-C07-MARK",
+      "name": "圣雪誓印",
+      "continentId": "C07",
+      "actualIdx": 930,
+      "existingInDatabase": false,
+      "plannedSourceType": "主任务/守关BOSS首杀固定1",
+      "verificationState": "已核对待部署"
+    },
+    {
+      "logicalMaterialId": "EL-MAT-C08-COM",
+      "name": "霜脊铁",
+      "continentId": "C08",
+      "actualIdx": 931,
+      "existingInDatabase": false,
+      "plannedSourceType": "本大陆普通怪独立掉落",
+      "verificationState": "已核对待部署"
+    },
+    {
+      "logicalMaterialId": "EL-MAT-C08-RARE",
+      "name": "巨人火种",
+      "continentId": "C08",
+      "actualIdx": 932,
+      "existingInDatabase": false,
+      "plannedSourceType": "本大陆精英怪独立掉落",
+      "verificationState": "已核对待部署"
+    },
+    {
+      "logicalMaterialId": "EL-MAT-C08-MARK",
+      "name": "巨人火印",
+      "continentId": "C08",
+      "actualIdx": 933,
+      "existingInDatabase": false,
+      "plannedSourceType": "主任务/守关BOSS首杀固定1",
+      "verificationState": "已核对待部署"
+    },
+    {
+      "logicalMaterialId": "EL-MAT-C09-COM",
+      "name": "黄金叶脉",
+      "continentId": "C09",
+      "actualIdx": 934,
+      "existingInDatabase": false,
+      "plannedSourceType": "本大陆普通怪独立掉落",
+      "verificationState": "已核对待部署"
+    },
+    {
+      "logicalMaterialId": "EL-MAT-C09-RARE",
+      "name": "古王律页",
+      "continentId": "C09",
+      "actualIdx": 935,
+      "existingInDatabase": false,
+      "plannedSourceType": "本大陆精英怪独立掉落",
+      "verificationState": "已核对待部署"
+    },
+    {
+      "logicalMaterialId": "EL-MAT-C09-MARK",
+      "name": "黄金律印",
+      "continentId": "C09",
+      "actualIdx": 936,
+      "existingInDatabase": false,
+      "plannedSourceType": "主任务/守关BOSS首杀固定1",
+      "verificationState": "已核对待部署"
+    },
+    {
+      "logicalMaterialId": "EL-MAT-C10-COM",
+      "name": "王城金屑",
+      "continentId": "C10",
+      "actualIdx": 937,
+      "existingInDatabase": false,
+      "plannedSourceType": "本大陆普通怪独立掉落",
+      "verificationState": "已核对待部署"
+    },
+    {
+      "logicalMaterialId": "EL-MAT-C10-RARE",
+      "name": "王宫律文",
+      "continentId": "C10",
+      "actualIdx": 938,
+      "existingInDatabase": false,
+      "plannedSourceType": "本大陆精英怪独立掉落",
+      "verificationState": "已核对待部署"
+    },
+    {
+      "logicalMaterialId": "EL-MAT-C10-MARK",
+      "name": "艾尔登王印",
+      "continentId": "C10",
+      "actualIdx": 939,
+      "existingInDatabase": false,
+      "plannedSourceType": "主任务/守关BOSS首杀固定1",
+      "verificationState": "已核对待部署"
+    },
+    {
+      "logicalMaterialId": "EL-MAT-C03-Q01",
+      "name": "裂风崖羽",
+      "continentId": "C03",
+      "actualIdx": 940,
+      "existingInDatabase": false,
+      "plannedSourceType": "海风断崖/XX335/EL-MON-C03-G02-N04",
+      "verificationState": "已核对待部署"
+    },
+    {
+      "logicalMaterialId": "EL-MAT-C03-Q02",
+      "name": "商队火漆",
+      "continentId": "C03",
+      "actualIdx": 941,
+      "existingInDatabase": false,
+      "plannedSourceType": "失落驿道/XX345/EL-MON-C03-G03-R02",
+      "verificationState": "已核对待部署"
+    },
+    {
+      "logicalMaterialId": "EL-MAT-C03-Q03",
+      "name": "守垒铜钥",
+      "continentId": "C03",
+      "actualIdx": 942,
+      "existingInDatabase": false,
+      "plannedSourceType": "风蚀古垒/XX516/EL-MON-C03-G05-B01",
+      "verificationState": "已核对待部署"
+    },
+    {
+      "logicalMaterialId": "EL-MAT-C03-Q04",
+      "name": "哨垒旗冠",
+      "continentId": "C03",
+      "actualIdx": 943,
+      "existingInDatabase": false,
+      "plannedSourceType": "黄金树哨垒/XX169/EL-MON-C03-G06-G01",
+      "verificationState": "已核对待部署"
+    },
+    {
+      "logicalMaterialId": "EL-MAT-C04-Q01",
+      "name": "雾潮银鳞",
+      "continentId": "C04",
+      "actualIdx": 944,
+      "existingInDatabase": false,
+      "plannedSourceType": "雾潮湿地/XX342/EL-MON-C04-G01-N04",
+      "verificationState": "已核对待部署"
+    },
+    {
+      "logicalMaterialId": "EL-MAT-C04-Q02",
+      "name": "沉船缆扣",
+      "continentId": "C04",
+      "actualIdx": 945,
+      "existingInDatabase": false,
+      "plannedSourceType": "湖心沉船/XX351/EL-MON-C04-G03-R02",
+      "verificationState": "已核对待部署"
+    },
+    {
+      "logicalMaterialId": "EL-MAT-C04-Q03",
+      "name": "深湖压舱印",
+      "continentId": "C04",
+      "actualIdx": 946,
+      "existingInDatabase": false,
+      "plannedSourceType": "深湖水道/XX391/EL-MON-C04-G05-B01",
+      "verificationState": "已核对待部署"
+    },
+    {
+      "logicalMaterialId": "EL-MAT-C04-Q04",
+      "name": "湖底封门珠",
+      "continentId": "C04",
+      "actualIdx": 947,
+      "existingInDatabase": false,
+      "plannedSourceType": "湖底密道/XX369/EL-MON-C04-G06-G01",
+      "verificationState": "已核对待部署"
+    },
+    {
+      "logicalMaterialId": "EL-MAT-C05-Q01",
+      "name": "雾月星砂",
+      "continentId": "C05",
+      "actualIdx": 948,
+      "existingInDatabase": false,
+      "plannedSourceType": "雾月水庭/XX331/EL-MON-C05-G01-N04",
+      "verificationState": "已核对待部署"
+    },
+    {
+      "logicalMaterialId": "EL-MAT-C05-Q02",
+      "name": "学院封蜡",
+      "continentId": "C05",
+      "actualIdx": 949,
+      "existingInDatabase": false,
+      "plannedSourceType": "辉石遗迹/XX816/EL-MON-C05-G02-R02",
+      "verificationState": "已核对待部署"
+    },
+    {
+      "logicalMaterialId": "EL-MAT-C05-Q03",
+      "name": "月蚀镜片",
+      "continentId": "C05",
+      "actualIdx": 950,
+      "existingInDatabase": false,
+      "plannedSourceType": "满月书库/XX1066/EL-MON-C05-G04-B01",
+      "verificationState": "已核对待部署"
+    },
+    {
+      "logicalMaterialId": "EL-MAT-C05-Q04",
+      "name": "禁域星钥",
+      "continentId": "C05",
+      "actualIdx": 951,
+      "existingInDatabase": false,
+      "plannedSourceType": "卡利亚禁域/XX924/EL-MON-C05-G06-G01",
+      "verificationState": "已核对待部署"
+    },
+    {
+      "logicalMaterialId": "EL-MAT-C06-Q01",
+      "name": "红狮断箭",
+      "continentId": "C06",
+      "actualIdx": 952,
+      "existingInDatabase": false,
+      "plannedSourceType": "猩红熔原/XX308/EL-MON-C06-G01-N04",
+      "verificationState": "已核对待部署"
+    },
+    {
+      "logicalMaterialId": "EL-MAT-C06-Q02",
+      "name": "净火腺囊",
+      "continentId": "C06",
+      "actualIdx": 953,
+      "existingInDatabase": false,
+      "plannedSourceType": "腐败火狱/XX361/EL-MON-C06-G02-R02",
+      "verificationState": "已核对待部署"
+    },
+    {
+      "logicalMaterialId": "EL-MAT-C06-Q03",
+      "name": "龙窟熔牙",
+      "continentId": "C06",
+      "actualIdx": 954,
+      "existingInDatabase": false,
+      "plannedSourceType": "红狮龙窟/XX482/EL-MON-C06-G03-B01",
+      "verificationState": "已核对待部署"
+    },
+    {
+      "logicalMaterialId": "EL-MAT-C06-Q04",
+      "name": "碎星仪仗钉",
+      "continentId": "C06",
+      "actualIdx": 955,
+      "existingInDatabase": false,
+      "plannedSourceType": "红狮龙窟/XX481/EL-MON-C06-G03-G01",
+      "verificationState": "已核对待部署"
+    },
+    {
+      "logicalMaterialId": "EL-MAT-C07-Q01",
+      "name": "白金路标片",
+      "continentId": "C07",
+      "actualIdx": 956,
+      "existingInDatabase": false,
+      "plannedSourceType": "苍白雪原/XX150/EL-MON-C07-G01-N04",
+      "verificationState": "已核对待部署"
+    },
+    {
+      "logicalMaterialId": "EL-MAT-C07-Q02",
+      "name": "冻原银角",
+      "continentId": "C07",
+      "actualIdx": 957,
+      "existingInDatabase": false,
+      "plannedSourceType": "永冻荒境/XX905/EL-MON-C07-G02-R02",
+      "verificationState": "已核对待部署"
+    },
+    {
+      "logicalMaterialId": "EL-MAT-C07-Q03",
+      "name": "秘树霜芽",
+      "continentId": "C07",
+      "actualIdx": 958,
+      "existingInDatabase": false,
+      "plannedSourceType": "极寒禁域/XX910/EL-MON-C07-G03-B01",
+      "verificationState": "已核对待部署"
+    },
+    {
+      "logicalMaterialId": "EL-MAT-C07-Q04",
+      "name": "圣雪门楔",
+      "continentId": "C07",
+      "actualIdx": 959,
+      "existingInDatabase": false,
+      "plannedSourceType": "极寒禁域/XX911/EL-MON-C07-G03-G01",
+      "verificationState": "已核对待部署"
+    },
+    {
+      "logicalMaterialId": "EL-MAT-C08-Q01",
+      "name": "登山铁楔",
+      "continentId": "C08",
+      "actualIdx": 960,
+      "existingInDatabase": false,
+      "plannedSourceType": "寒霜山径/XX903/EL-MON-C08-G01-N04",
+      "verificationState": "已核对待部署"
+    },
+    {
+      "logicalMaterialId": "EL-MAT-C08-Q02",
+      "name": "裂峰号角片",
+      "continentId": "C08",
+      "actualIdx": 961,
+      "existingInDatabase": false,
+      "plannedSourceType": "断冰峰群/XX316/EL-MON-C08-G02-R02",
+      "verificationState": "已核对待部署"
+    },
+    {
+      "logicalMaterialId": "EL-MAT-C08-Q03",
+      "name": "冰宫守门铃",
+      "continentId": "C08",
+      "actualIdx": 962,
+      "existingInDatabase": false,
+      "plannedSourceType": "冰宫王庭/XX326/EL-MON-C08-G03-B01",
+      "verificationState": "已核对待部署"
+    },
+    {
+      "logicalMaterialId": "EL-MAT-C08-Q04",
+      "name": "王庭炉冠",
+      "continentId": "C08",
+      "actualIdx": 963,
+      "existingInDatabase": false,
+      "plannedSourceType": "巨人王庭/XX897/EL-MON-C08-G04-G01",
+      "verificationState": "已核对待部署"
+    },
+    {
+      "logicalMaterialId": "EL-MAT-C09-Q01",
+      "name": "金叶驿票",
+      "continentId": "C09",
+      "actualIdx": 964,
+      "existingInDatabase": false,
+      "plannedSourceType": "金叶古道（组名待Codex正式落账）/XX717/EL-MON-C09-G01-N04",
+      "verificationState": "已核对待部署"
+    },
+    {
+      "logicalMaterialId": "EL-MAT-C09-Q02",
+      "name": "矿脉灯芯",
+      "continentId": "C09",
+      "actualIdx": 965,
+      "existingInDatabase": false,
+      "plannedSourceType": "高原矿脉/XX824/EL-MON-C09-G02-R02",
+      "verificationState": "已核对待部署"
+    },
+    {
+      "logicalMaterialId": "EL-MAT-C09-Q03",
+      "name": "裁文蜡封",
+      "continentId": "C09",
+      "actualIdx": 966,
+      "existingInDatabase": false,
+      "plannedSourceType": "古律圣堂（工作名）/XX795/EL-MON-C09-G04-B01",
+      "verificationState": "已核对待部署"
+    },
+    {
+      "logicalMaterialId": "EL-MAT-C09-Q04",
+      "name": "高原王诏金版",
+      "continentId": "C09",
+      "actualIdx": 967,
+      "existingInDatabase": false,
+      "plannedSourceType": "黄金树祭域（工作名）/XX639/EL-MON-C09-G05-G01",
+      "verificationState": "已核对待部署"
+    },
+    {
+      "logicalMaterialId": "EL-MAT-C10-Q01",
+      "name": "无名墓钉",
+      "continentId": "C10",
+      "actualIdx": 968,
+      "existingInDatabase": false,
+      "plannedSourceType": "王城下城区（组名待Codex正式落账）/XX930/EL-MON-C10-G01-N04",
+      "verificationState": "已核对待部署"
+    },
+    {
+      "logicalMaterialId": "EL-MAT-C10-Q02",
+      "name": "旧渠阀芯",
+      "continentId": "C10",
+      "actualIdx": 969,
+      "existingInDatabase": false,
+      "plannedSourceType": "王城排水墓道（工作名）/XX624/EL-MON-C10-G02-R02",
+      "verificationState": "已核对待部署"
+    },
+    {
+      "logicalMaterialId": "EL-MAT-C10-Q03",
+      "name": "失温熔炉楔",
+      "continentId": "C10",
+      "actualIdx": 970,
+      "existingInDatabase": false,
+      "plannedSourceType": "地底工坊（组名待Codex正式落账）/XX956/EL-MON-C10-G03-B01",
+      "verificationState": "已核对待部署"
+    },
+    {
+      "logicalMaterialId": "EL-MAT-C10-Q04",
+      "name": "王宫断冠片",
+      "continentId": "C10",
+      "actualIdx": 971,
+      "existingInDatabase": false,
+      "plannedSourceType": "王宫深殿（工作名）/XX386/EL-MON-C10-G05-G01",
+      "verificationState": "已核对待部署"
+    }
+  ]
+}
