@@ -9,11 +9,13 @@
 交给**能够直接访问并修改以下本机目录的“游戏数据／服务端施工Codex窗口”**：
 
 - `D:\MirServer`
-- `D:\XuanYuanDevPlatform`
+- `E:\XuanYuanDevPlatform`
 - `D:\MirServer\AI_Handoff\任务文件`
 - 当前服务端数据库、怪物库与装备库
 
 不要交给纯聊天设计窗口，也不要交给只负责平台UI/应用代码、无法访问服务端数据的Codex窗口。
+
+> 路径修正：开发平台已由`D:\XuanYuanDevPlatform`迁移至`E:\XuanYuanDevPlatform`。旧D盘平台路径已失效，不得继续作为执行目标；`D:\MirServer`及其任务目录不变。
 
 ## 文件与用途
 
@@ -84,4 +86,3 @@
 7. 追梦六件同戴叠加结果；
 8. 是否已进入生产库；
 9. 回滚命令。
-
