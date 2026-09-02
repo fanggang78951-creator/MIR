@@ -1,0 +1,231 @@
+{
+  "generatedAt": "2026-09-02",
+  "input": {
+    "ledger": "/workspace/scratch/f124f410aa49/outputs/f124f410aa49/第3至10大陆_怪物专属与材料来源总账_V1.0.xlsx",
+    "equip": "/workspace/scratch/f124f410aa49/library_downloads/传奇私服之旅/装备素材套装代码表.xlsx",
+    "material": "/workspace/scratch/f124f410aa49/archive_final_20260821/材料编码数据库.xlsx"
+  },
+  "output": {
+    "ledger": "/workspace/scratch/f124f410aa49/outputs/f124f410aa49/20260902_专属与材料编码阶段分配/第3至10大陆_怪物专属与材料来源总账_V1.1_编码阶段分配.xlsx",
+    "equip": "/workspace/scratch/f124f410aa49/outputs/f124f410aa49/20260902_专属与材料编码阶段分配/装备素材套装代码表.xlsx",
+    "material": "/workspace/scratch/f124f410aa49/outputs/f124f410aa49/20260902_专属与材料编码阶段分配/材料编码数据库.xlsx"
+  },
+  "summary": {
+    "conceptualItems": 464,
+    "assignedConceptualItems": 342,
+    "pendingConceptualItems": 122,
+    "allocatedSourceCodeCount": 342,
+    "neededAdditionalSourceCodes": 122,
+    "inventory": [
+      {
+        "conceptualPart": "项链",
+        "physicalPart": "项链",
+        "demand": 39,
+        "available": 46,
+        "assigned": 39,
+        "pendingItems": 0,
+        "additionalSourceCodesNeeded": 0
+      },
+      {
+        "conceptualPart": "手镯",
+        "physicalPart": "手镯",
+        "demand": 38,
+        "available": 47,
+        "assigned": 38,
+        "pendingItems": 0,
+        "additionalSourceCodesNeeded": 0
+      },
+      {
+        "conceptualPart": "鞋子",
+        "physicalPart": "鞋子",
+        "demand": 36,
+        "available": 49,
+        "assigned": 36,
+        "pendingItems": 0,
+        "additionalSourceCodesNeeded": 0
+      },
+      {
+        "conceptualPart": "戒指",
+        "physicalPart": "戒指",
+        "demand": 39,
+        "available": 46,
+        "assigned": 39,
+        "pendingItems": 0,
+        "additionalSourceCodesNeeded": 0
+      },
+      {
+        "conceptualPart": "腰带",
+        "physicalPart": "腰带",
+        "demand": 35,
+        "available": 49,
+        "assigned": 35,
+        "pendingItems": 0,
+        "additionalSourceCodesNeeded": 0
+      },
+      {
+        "conceptualPart": "头盔",
+        "physicalPart": "头盔",
+        "demand": 40,
+        "available": 46,
+        "assigned": 40,
+        "pendingItems": 0,
+        "additionalSourceCodesNeeded": 0
+      },
+      {
+        "conceptualPart": "勋章",
+        "physicalPart": "勋章",
+        "demand": 23,
+        "available": 47,
+        "assigned": 23,
+        "pendingItems": 0,
+        "additionalSourceCodesNeeded": 0
+      },
+      {
+        "conceptualPart": "盾牌",
+        "physicalPart": "盾牌",
+        "demand": 36,
+        "available": 46,
+        "assigned": 36,
+        "pendingItems": 0,
+        "additionalSourceCodesNeeded": 0
+      },
+      {
+        "conceptualPart": "武器",
+        "physicalPart": "武器",
+        "demand": 79,
+        "available": 19,
+        "assigned": 19,
+        "pendingItems": 60,
+        "additionalSourceCodesNeeded": 60
+      },
+      {
+        "conceptualPart": "衣服",
+        "physicalPart": "男衣服（StdMode10）",
+        "demand": 70,
+        "available": 19,
+        "assigned": 19,
+        "pendingItems": 51,
+        "additionalSourceCodesNeeded": 51
+      },
+      {
+        "conceptualPart": "斗笠",
+        "physicalPart": "面巾（StdMode16/位置13）",
+        "demand": 29,
+        "available": 18,
+        "assigned": 18,
+        "pendingItems": 11,
+        "additionalSourceCodesNeeded": 11
+      }
+    ],
+    "checks": {
+      "duplicateNewCodes": [],
+      "collisionExisting": [],
+      "collisionMaterial": []
+    }
+  },
+  "materialPlan": [
+    {
+      "continentId": "C03",
+      "continent": "宁姆格福西域",
+      "logicalId": "EL-MAT-C03-COLLECT",
+      "name": "西境风痕碑拓",
+      "idx": 972,
+      "itemsLooks": null,
+      "status": "待提供／未入库"
+    },
+    {
+      "continentId": "C04",
+      "continent": "利耶尼亚海域",
+      "logicalId": "EL-MAT-C04-COLLECT",
+      "name": "月潮忆珀",
+      "idx": 973,
+      "itemsLooks": null,
+      "status": "待提供／未入库"
+    },
+    {
+      "continentId": "C05",
+      "continent": "湖之利耶尼亚",
+      "logicalId": "EL-MAT-C05-COLLECT",
+      "name": "湖心月谱残章",
+      "idx": 974,
+      "itemsLooks": null,
+      "status": "待提供／未入库"
+    },
+    {
+      "continentId": "C06",
+      "continent": "盖利德",
+      "logicalId": "EL-MAT-C06-COLLECT",
+      "name": "熔原罪火残章",
+      "idx": 975,
+      "itemsLooks": null,
+      "status": "待提供／未入库"
+    },
+    {
+      "continentId": "C07",
+      "continent": "化圣雪原",
+      "logicalId": "EL-MAT-C07-COLLECT",
+      "name": "永霜朝圣痕",
+      "idx": 976,
+      "itemsLooks": null,
+      "status": "待提供／未入库"
+    },
+    {
+      "continentId": "C08",
+      "continent": "巨人山顶",
+      "logicalId": "EL-MAT-C08-COLLECT",
+      "name": "穹霜碑珀",
+      "idx": 977,
+      "itemsLooks": null,
+      "status": "待提供／未入库"
+    },
+    {
+      "continentId": "C09",
+      "continent": "亚坛高原",
+      "logicalId": "EL-MAT-C09-COLLECT",
+      "name": "古坛鎏叶髓",
+      "idx": 978,
+      "itemsLooks": null,
+      "status": "待提供／未入库"
+    },
+    {
+      "continentId": "C10",
+      "continent": "王城罗德尔",
+      "logicalId": "EL-MAT-C10-COLLECT",
+      "name": "穹律鎏痕拓片",
+      "idx": 979,
+      "itemsLooks": null,
+      "status": "待提供／未入库"
+    }
+  ],
+  "formulaError": {
+    "ledger": "{\"kind\":\"notice\",\"message\":\"Cell search matched 0 entries.\"}",
+    "equip": "{\"kind\":\"notice\",\"message\":\"Cell search matched 0 entries.\"}",
+    "material": "{\"kind\":\"notice\",\"message\":\"Cell search matched 0 entries.\"}"
+  },
+  "finalValidation": {
+    "status": "PASS",
+    "verifiedAt": "2026-09-02",
+    "c1c2OccupiedSourceCodes": 219,
+    "c1c2Evidence": "艾尔登法环_20套制式装备.xlsx 160码＋艾尔登法环_全部专属装备统一成长重做版.xlsx 59码",
+    "c3c10Assigned": 342,
+    "c3c10Pending": 122,
+    "pendingByPart": {
+      "武器": 60,
+      "衣服": 51,
+      "斗笠": 11
+    },
+    "assignedDuplicate": 0,
+    "collisionC1C2": 0,
+    "collisionMaterialLooks6398To6462": 0,
+    "monsterCodesAssigned": 0,
+    "materialBatchBDeployed": false,
+    "equipmentStructuredTable": "A4:N39",
+    "formulaErrorLiteralCount": 0,
+    "sha256": {
+      "第3至10大陆_怪物专属与材料来源总账_V1.1_编码阶段分配.xlsx": "127e25c27b8975155182ddcdd211b708ae238055a8dd79955788beade64c13c6",
+      "装备素材套装代码表.xlsx": "3c330a80a1c48029215d44f296459f8799224794b778f2abce1557b3f8479e72",
+      "材料编码数据库.xlsx": "7d98aa1ad4d993e26add0f7c02200b28606cf4104a80a2f3ff3b857abfcf11d1",
+      "02_已确认规则与数值.xlsx": "4c6cd23980353b6f446cb7dfa79dc74fbd4d7b8dfa635f6b7d403c10bd82e44e"
+    }
+  }
+}
