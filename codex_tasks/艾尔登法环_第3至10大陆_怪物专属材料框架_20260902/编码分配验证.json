@@ -1,231 +1,70 @@
 {
   "generatedAt": "2026-09-02",
-  "input": {
-    "ledger": "/workspace/scratch/f124f410aa49/outputs/f124f410aa49/第3至10大陆_怪物专属与材料来源总账_V1.0.xlsx",
-    "equip": "/workspace/scratch/f124f410aa49/library_downloads/传奇私服之旅/装备素材套装代码表.xlsx",
-    "material": "/workspace/scratch/f124f410aa49/archive_final_20260821/材料编码数据库.xlsx"
-  },
-  "output": {
-    "ledger": "/workspace/scratch/f124f410aa49/outputs/f124f410aa49/20260902_专属与材料编码阶段分配/第3至10大陆_怪物专属与材料来源总账_V1.1_编码阶段分配.xlsx",
-    "equip": "/workspace/scratch/f124f410aa49/outputs/f124f410aa49/20260902_专属与材料编码阶段分配/装备素材套装代码表.xlsx",
-    "material": "/workspace/scratch/f124f410aa49/outputs/f124f410aa49/20260902_专属与材料编码阶段分配/材料编码数据库.xlsx"
-  },
-  "summary": {
-    "conceptualItems": 464,
-    "assignedConceptualItems": 342,
-    "pendingConceptualItems": 122,
-    "allocatedSourceCodeCount": 342,
-    "neededAdditionalSourceCodes": 122,
-    "inventory": [
-      {
-        "conceptualPart": "项链",
-        "physicalPart": "项链",
-        "demand": 39,
-        "available": 46,
-        "assigned": 39,
-        "pendingItems": 0,
-        "additionalSourceCodesNeeded": 0
-      },
-      {
-        "conceptualPart": "手镯",
-        "physicalPart": "手镯",
-        "demand": 38,
-        "available": 47,
-        "assigned": 38,
-        "pendingItems": 0,
-        "additionalSourceCodesNeeded": 0
-      },
-      {
-        "conceptualPart": "鞋子",
-        "physicalPart": "鞋子",
-        "demand": 36,
-        "available": 49,
-        "assigned": 36,
-        "pendingItems": 0,
-        "additionalSourceCodesNeeded": 0
-      },
-      {
-        "conceptualPart": "戒指",
-        "physicalPart": "戒指",
-        "demand": 39,
-        "available": 46,
-        "assigned": 39,
-        "pendingItems": 0,
-        "additionalSourceCodesNeeded": 0
-      },
-      {
-        "conceptualPart": "腰带",
-        "physicalPart": "腰带",
-        "demand": 35,
-        "available": 49,
-        "assigned": 35,
-        "pendingItems": 0,
-        "additionalSourceCodesNeeded": 0
-      },
-      {
-        "conceptualPart": "头盔",
-        "physicalPart": "头盔",
-        "demand": 40,
-        "available": 46,
-        "assigned": 40,
-        "pendingItems": 0,
-        "additionalSourceCodesNeeded": 0
-      },
-      {
-        "conceptualPart": "勋章",
-        "physicalPart": "勋章",
-        "demand": 23,
-        "available": 47,
-        "assigned": 23,
-        "pendingItems": 0,
-        "additionalSourceCodesNeeded": 0
-      },
-      {
-        "conceptualPart": "盾牌",
-        "physicalPart": "盾牌",
-        "demand": 36,
-        "available": 46,
-        "assigned": 36,
-        "pendingItems": 0,
-        "additionalSourceCodesNeeded": 0
-      },
-      {
-        "conceptualPart": "武器",
-        "physicalPart": "武器",
-        "demand": 79,
-        "available": 19,
-        "assigned": 19,
-        "pendingItems": 60,
-        "additionalSourceCodesNeeded": 60
-      },
-      {
-        "conceptualPart": "衣服",
-        "physicalPart": "男衣服（StdMode10）",
-        "demand": 70,
-        "available": 19,
-        "assigned": 19,
-        "pendingItems": 51,
-        "additionalSourceCodesNeeded": 51
-      },
-      {
-        "conceptualPart": "斗笠",
-        "physicalPart": "面巾（StdMode16/位置13）",
-        "demand": 29,
-        "available": 18,
-        "assigned": 18,
-        "pendingItems": 11,
-        "additionalSourceCodesNeeded": 11
-      }
-    ],
-    "checks": {
-      "duplicateNewCodes": [],
-      "collisionExisting": [],
-      "collisionMaterial": []
-    }
-  },
-  "materialPlan": [
-    {
-      "continentId": "C03",
-      "continent": "宁姆格福西域",
-      "logicalId": "EL-MAT-C03-COLLECT",
-      "name": "西境风痕碑拓",
-      "idx": 972,
-      "itemsLooks": null,
-      "status": "待提供／未入库"
-    },
-    {
-      "continentId": "C04",
-      "continent": "利耶尼亚海域",
-      "logicalId": "EL-MAT-C04-COLLECT",
-      "name": "月潮忆珀",
-      "idx": 973,
-      "itemsLooks": null,
-      "status": "待提供／未入库"
-    },
-    {
-      "continentId": "C05",
-      "continent": "湖之利耶尼亚",
-      "logicalId": "EL-MAT-C05-COLLECT",
-      "name": "湖心月谱残章",
-      "idx": 974,
-      "itemsLooks": null,
-      "status": "待提供／未入库"
-    },
-    {
-      "continentId": "C06",
-      "continent": "盖利德",
-      "logicalId": "EL-MAT-C06-COLLECT",
-      "name": "熔原罪火残章",
-      "idx": 975,
-      "itemsLooks": null,
-      "status": "待提供／未入库"
-    },
-    {
-      "continentId": "C07",
-      "continent": "化圣雪原",
-      "logicalId": "EL-MAT-C07-COLLECT",
-      "name": "永霜朝圣痕",
-      "idx": 976,
-      "itemsLooks": null,
-      "status": "待提供／未入库"
-    },
-    {
-      "continentId": "C08",
-      "continent": "巨人山顶",
-      "logicalId": "EL-MAT-C08-COLLECT",
-      "name": "穹霜碑珀",
-      "idx": 977,
-      "itemsLooks": null,
-      "status": "待提供／未入库"
-    },
-    {
-      "continentId": "C09",
-      "continent": "亚坛高原",
-      "logicalId": "EL-MAT-C09-COLLECT",
-      "name": "古坛鎏叶髓",
-      "idx": 978,
-      "itemsLooks": null,
-      "status": "待提供／未入库"
-    },
-    {
-      "continentId": "C10",
-      "continent": "王城罗德尔",
-      "logicalId": "EL-MAT-C10-COLLECT",
-      "name": "穹律鎏痕拓片",
-      "idx": 979,
-      "itemsLooks": null,
-      "status": "待提供／未入库"
-    }
-  ],
-  "formulaError": {
-    "ledger": "{\"kind\":\"notice\",\"message\":\"Cell search matched 0 entries.\"}",
-    "equip": "{\"kind\":\"notice\",\"message\":\"Cell search matched 0 entries.\"}",
-    "material": "{\"kind\":\"notice\",\"message\":\"Cell search matched 0 entries.\"}"
-  },
-  "finalValidation": {
-    "status": "PASS",
-    "verifiedAt": "2026-09-02",
-    "c1c2OccupiedSourceCodes": 219,
-    "c1c2Evidence": "艾尔登法环_20套制式装备.xlsx 160码＋艾尔登法环_全部专属装备统一成长重做版.xlsx 59码",
-    "c3c10Assigned": 342,
-    "c3c10Pending": 122,
-    "pendingByPart": {
-      "武器": 60,
-      "衣服": 51,
-      "斗笠": 11
-    },
-    "assignedDuplicate": 0,
+  "status": "PASS",
+  "testOnly": true,
+  "conceptualItems": 464,
+  "assignedConceptualItems": 464,
+  "pendingConceptualItems": 0,
+  "neededAdditionalSourceCodes": 0,
+  "collisionChecks": {
+    "duplicateNewCodes": 0,
     "collisionC1C2": 0,
+    "collisionLockedC3C10": 0,
     "collisionMaterialLooks6398To6462": 0,
-    "monsterCodesAssigned": 0,
-    "materialBatchBDeployed": false,
-    "equipmentStructuredTable": "A4:N39",
-    "formulaErrorLiteralCount": 0,
-    "sha256": {
-      "第3至10大陆_怪物专属与材料来源总账_V1.1_编码阶段分配.xlsx": "127e25c27b8975155182ddcdd211b708ae238055a8dd79955788beade64c13c6",
-      "装备素材套装代码表.xlsx": "3c330a80a1c48029215d44f296459f8799224794b778f2abce1557b3f8479e72",
-      "材料编码数据库.xlsx": "7d98aa1ad4d993e26add0f7c02200b28606cf4104a80a2f3ff3b857abfcf11d1",
-      "02_已确认规则与数值.xlsx": "4c6cd23980353b6f446cb7dfa79dc74fbd4d7b8dfa635f6b7d403c10bd82e44e"
-    }
-  }
+    "partMappingErrors": 0
+  },
+  "newEquipmentSourceCodes": {
+    "total": 122,
+    "weapon": 60,
+    "maleClothes": 51,
+    "facecloth": 11,
+    "range": [
+      7096,
+      7217
+    ]
+  },
+  "materials": {
+    "idxRange": [
+      972,
+      979
+    ],
+    "count": 8,
+    "looksRange": [
+      7218,
+      7225
+    ],
+    "library": "Items",
+    "stateItemWritten": false,
+    "dnItemsWritten": false
+  },
+  "monsterCodesAssigned": 0,
+  "frozenIdx980_983": 0,
+  "formulaErrorLiteralCount": 0,
+  "preflightHashes": {
+    "testClientBefore": {
+      "DnItems.wzl": "F09FE4D0CC070DD6B6768BE507F8011DA84E975920A77C48C10921CCE4C35E2B",
+      "DnItems.wzx": "8EF7DC8D5FE5E94F0428363672AF8C0B146CF8FE5F4E190EBADD8DF9F9CCA2DD",
+      "Items.wzl": "E855C1E8ECE7E8A1A4EA0C559B918A841AA12E8FDF3F06704357F46CA69FFD9C",
+      "Items.wzx": "74A1B3B5F2E5CF5A099F9D6DC7FDF8207A71B834CA4AD2A17B9F00FC328729C3",
+      "StateItem.wzl": "4D3F02939347F6F0EB623A067A15567E333007C3E9838C13AAD4890A8288AABA",
+      "StateItem.wzx": "0378622956D4ACAEA58677571D512D40BC897E7ECF3EB1CDFA99BC8B8E593AD7"
+    },
+    "testDbBefore": "C393CEACF82F65337456E7C1412C9ECFD0052D370196CD8CC9804C5719660A42"
+  },
+  "postHashes": {
+    "DnItems.wzl": "0158F8B79E06DF991A8377B3B5AAF09257F2BCFB7443DF1072FD2C7671C7267C",
+    "DnItems.wzx": "17CE429B2D9D12A6A8BA4363EBAC938996CF6F6345489B0C3586ED8C51698556",
+    "Items.wzl": "0E2670EBA58658F95268FB5632DC3CA009C01E12C4A2AF983F7065E4C681004F",
+    "Items.wzx": "3D56DEC75FD8A75A1A255ECF4321F978FB540FDF3CA048FD072DCF6C06EF2219",
+    "StateItem.wzl": "AD16C591926B8F7E88143F2DFB2E3497059F01E6E853CC8338D3B228BD9F9A9A",
+    "StateItem.wzx": "43B1F1E1B27B53D796EDC3455274F77BB41125C490FC938DEA8D0938CC9578C3"
+  },
+  "testDbAfter": "BBCFA62211DB790B34B87664C05413C67FE36B9EF86024EF5F91C42F1BF3578F",
+  "readback": {
+    "newEquipment": "122/122 each in Items, StateItem and DnItems",
+    "materials": "8/8 in Items; StateItem and DnItems untouched",
+    "legacy342": "未重新回读；沿用既有交接状态，进服验证仍待完成"
+  },
+  "formalDeployment": "未写入 D:\\MirServer 或 E:\\11周年\\data；仅隔离测试副本",
+  "inGameAcceptance": "未验收"
 }
