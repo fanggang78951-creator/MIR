@@ -1,0 +1,355 @@
+{
+  "generated_at_utc": "2026-09-03T11:33:56.453Z",
+  "inputs": [
+    "/workspace/scratch/f124f410aa49/outputs/f124f410aa49/20260903_产消闭环与处决韧性框架/十大陆产出消耗闭环总账_V1.1_爆率机制补齐.xlsx",
+    "/workspace/scratch/f124f410aa49/outputs/f124f410aa49/20260902_NPC与配方正式结构/十大陆NPC与配方总账_V1.0.xlsx"
+  ],
+  "outputs": [
+    "/workspace/scratch/f124f410aa49/outputs/f124f410aa49/20260903_第一批非战斗结构收口/十大陆产出消耗闭环总账_V1.2_非战斗结构定稿.xlsx",
+    "/workspace/scratch/f124f410aa49/outputs/f124f410aa49/20260903_第一批非战斗结构收口/十大陆NPC与配方总账_V1.1_非战斗结构定稿.xlsx"
+  ],
+  "counts": {
+    "rebirth_stages": 4,
+    "rebirth_levels": 20,
+    "retained_collectibles_c3_c10": 8,
+    "crafted_non_recyclables": 38,
+    "title_scroll_rows": 25,
+    "gate_boss_rows": 10,
+    "c2_historical_rows_including_gate": 16,
+    "c1c2_terminal_resource_rows": 2,
+    "c1c2_terminal_production_rows": 2,
+    "c1c2_terminal_registration_rows": 2,
+    "rebirth_material_core_resource_rows": 2,
+    "rebirth_material_core_production_rows": 2
+  },
+  "checks": [
+    {
+      "name": "title_scroll_rows",
+      "pass": true,
+      "details": "rows=25"
+    },
+    {
+      "name": "gate_boss_rows",
+      "pass": true,
+      "details": "rows=10"
+    },
+    {
+      "name": "crafted_wearables",
+      "pass": true,
+      "details": "rows=38"
+    },
+    {
+      "name": "rebirth_stages",
+      "pass": true,
+      "details": "rows=4"
+    },
+    {
+      "name": "c1c2_placeholders_closed",
+      "pass": true,
+      "details": "CLOSED-C01-COLLECT|已关闭|C1额外大陆收藏材料|不新增额外大陆收藏材料；旧占位资源、产出、登记关系全部停用。|不取码、不建产出、不建登记；C1/C2装备图鉴独立保留。|关闭完成|CLOSED-C02-COLLECT|已关闭|C2额外大陆收藏材料|不新增额外大陆收藏材料；旧占位资源、产出、登记关系全部停用。|不取码、不建产出、不建登记；C1/C2装备图鉴独立保留。|关闭完成"
+    },
+    {
+      "name": "c1c2_original_resource_rows_terminally_disabled",
+      "pass": true,
+      "details": "rows=2"
+    },
+    {
+      "name": "c1c2_original_production_rows_terminally_disabled",
+      "pass": true,
+      "details": "rows=2"
+    },
+    {
+      "name": "c1c2_original_registration_rows_terminally_disabled",
+      "pass": true,
+      "details": "rows=2"
+    },
+    {
+      "name": "no_duplicate_closed_c1c2_audit_rows",
+      "pass": true,
+      "details": "original IDs only"
+    },
+    {
+      "name": "small_large_rune_production_enabled",
+      "pass": true,
+      "details": "rows=2"
+    },
+    {
+      "name": "new_rebirth_material_core_rows",
+      "pass": true,
+      "details": "resources=2; production=2"
+    },
+    {
+      "name": "zero_active_slash_ambiguous_runes",
+      "pass": true,
+      "details": "active=0"
+    },
+    {
+      "name": "c10_title_material",
+      "pass": true,
+      "details": "王宫律文＋艾尔登王印＋王宫断冠片＋失温熔炉楔"
+    },
+    {
+      "name": "retained_collectibles_c3_c10",
+      "pass": true,
+      "details": "rows=8"
+    },
+    {
+      "name": "twenty_rebirth_recipes_one_stage_material",
+      "pass": true,
+      "details": "rows=20"
+    },
+    {
+      "name": "title_scroll_combat_and_true_rate_pending",
+      "pass": true,
+      "details": "25/25 pending"
+    },
+    {
+      "name": "zero_invented_rebirth_codes",
+      "pass": true,
+      "details": "4/4 blank codes"
+    },
+    {
+      "name": "zero_final_numeric_economic_or_combat_values",
+      "pass": true,
+      "details": "all new monetary/combat fields pending"
+    },
+    {
+      "name": "rebirth_currency_01",
+      "pass": true,
+      "details": "CUR-GOLD=CUR-GOLD"
+    },
+    {
+      "name": "rebirth_currency_02",
+      "pass": true,
+      "details": "CUR-GOLD=CUR-GOLD"
+    },
+    {
+      "name": "rebirth_currency_03",
+      "pass": true,
+      "details": "CUR-GOLD+CUR-YUANBAO=CUR-GOLD+CUR-YUANBAO"
+    },
+    {
+      "name": "rebirth_currency_04",
+      "pass": true,
+      "details": "CUR-YUANBAO=CUR-YUANBAO"
+    },
+    {
+      "name": "rebirth_currency_05",
+      "pass": true,
+      "details": "CUR-GOLD+CUR-YUANBAO=CUR-GOLD+CUR-YUANBAO"
+    },
+    {
+      "name": "rebirth_currency_06",
+      "pass": true,
+      "details": "CUR-YUANBAO=CUR-YUANBAO"
+    },
+    {
+      "name": "rebirth_currency_07",
+      "pass": true,
+      "details": "CUR-GOLD+CUR-YUANBAO=CUR-GOLD+CUR-YUANBAO"
+    },
+    {
+      "name": "rebirth_currency_08",
+      "pass": true,
+      "details": "CUR-GOLD=CUR-GOLD"
+    },
+    {
+      "name": "rebirth_currency_09",
+      "pass": true,
+      "details": "CUR-GOLD+CUR-YUANBAO=CUR-GOLD+CUR-YUANBAO"
+    },
+    {
+      "name": "rebirth_currency_10",
+      "pass": true,
+      "details": "CUR-GOLD+CUR-YUANBAO=CUR-GOLD+CUR-YUANBAO"
+    },
+    {
+      "name": "rebirth_currency_11",
+      "pass": true,
+      "details": "CUR-GOLD=CUR-GOLD"
+    },
+    {
+      "name": "rebirth_currency_12",
+      "pass": true,
+      "details": "CUR-GOLD=CUR-GOLD"
+    },
+    {
+      "name": "rebirth_currency_13",
+      "pass": true,
+      "details": "CUR-GOLD+CUR-YUANBAO=CUR-GOLD+CUR-YUANBAO"
+    },
+    {
+      "name": "rebirth_currency_14",
+      "pass": true,
+      "details": "CUR-YUANBAO=CUR-YUANBAO"
+    },
+    {
+      "name": "rebirth_currency_15",
+      "pass": true,
+      "details": "CUR-GOLD+CUR-YUANBAO=CUR-GOLD+CUR-YUANBAO"
+    },
+    {
+      "name": "rebirth_currency_16",
+      "pass": true,
+      "details": "CUR-YUANBAO=CUR-YUANBAO"
+    },
+    {
+      "name": "rebirth_currency_17",
+      "pass": true,
+      "details": "CUR-GOLD+CUR-YUANBAO=CUR-GOLD+CUR-YUANBAO"
+    },
+    {
+      "name": "rebirth_currency_18",
+      "pass": true,
+      "details": "CUR-GOLD=CUR-GOLD"
+    },
+    {
+      "name": "rebirth_currency_19",
+      "pass": true,
+      "details": "CUR-GOLD+CUR-YUANBAO=CUR-GOLD+CUR-YUANBAO"
+    },
+    {
+      "name": "rebirth_currency_20",
+      "pass": true,
+      "details": "CUR-GOLD+CUR-YUANBAO=CUR-GOLD+CUR-YUANBAO"
+    },
+    {
+      "name": "ordinary_material_roles_no_rebirth",
+      "pass": true,
+      "details": "ordinary usages cleaned"
+    },
+    {
+      "name": "four_rebirth_material_roles",
+      "pass": true,
+      "details": "four stage rows"
+    },
+    {
+      "name": "four_rebirth_npcs_each_five",
+      "pass": true,
+      "details": "[[\"C04-REBIRTH\",5],[\"C06-REBIRTH\",5],[\"C08-REBIRTH\",5],[\"C10-REBIRTH\",5]]"
+    },
+    {
+      "name": "main_validation_has_no_failure",
+      "pass": true,
+      "details": "rows=28"
+    },
+    {
+      "name": "npc_validation_has_no_failure",
+      "pass": true,
+      "details": "rows=15"
+    },
+    {
+      "name": "exported_main_validation_has_no_failure",
+      "pass": true,
+      "details": "rows=28; exact_failure_statuses=0"
+    },
+    {
+      "name": "exported_npc_validation_has_no_failure",
+      "pass": true,
+      "details": "rows=15; exact_failure_statuses=0"
+    },
+    {
+      "name": "exported_rebirth_recipe_edges_match_active_consumption",
+      "pass": true,
+      "details": "04_配方闭环边数／边ID与03_消耗端活跃边逐级一致"
+    },
+    {
+      "name": "exported_filter_10_转生材料与回收",
+      "pass": true,
+      "details": "added table filter enabled"
+    },
+    {
+      "name": "exported_freezeRows4_configured_10_转生材料与回收",
+      "pass": true,
+      "details": "builder calls freezePanes.freezeRows(4); imported API has no reliable freeze readback"
+    },
+    {
+      "name": "exported_filter_11_BOSS称号卷来源",
+      "pass": true,
+      "details": "added table filter enabled"
+    },
+    {
+      "name": "exported_freezeRows4_configured_11_BOSS称号卷来源",
+      "pass": true,
+      "details": "builder calls freezePanes.freezeRows(4); imported API has no reliable freeze readback"
+    },
+    {
+      "name": "exported_filter_12_编码与实库回读",
+      "pass": true,
+      "details": "added table filter enabled"
+    },
+    {
+      "name": "exported_freezeRows4_configured_12_编码与实库回读",
+      "pass": true,
+      "details": "builder calls freezePanes.freezeRows(4); imported API has no reliable freeze readback"
+    },
+    {
+      "name": "exported_filter_13_合成穿戴物回收边界",
+      "pass": true,
+      "details": "added table filter enabled"
+    },
+    {
+      "name": "exported_freezeRows4_configured_13_合成穿戴物回收边界",
+      "pass": true,
+      "details": "builder calls freezePanes.freezeRows(4); imported API has no reliable freeze readback"
+    },
+    {
+      "name": "exported_filter_09_转生材料与回收",
+      "pass": true,
+      "details": "added table filter enabled"
+    },
+    {
+      "name": "exported_freezeRows4_configured_09_转生材料与回收",
+      "pass": true,
+      "details": "builder calls freezePanes.freezeRows(4); imported API has no reliable freeze readback"
+    },
+    {
+      "name": "exported_filter_10_BOSS称号卷来源",
+      "pass": true,
+      "details": "added table filter enabled"
+    },
+    {
+      "name": "exported_freezeRows4_configured_10_BOSS称号卷来源",
+      "pass": true,
+      "details": "builder calls freezePanes.freezeRows(4); imported API has no reliable freeze readback"
+    },
+    {
+      "name": "exported_filter_11_编码与实库回读",
+      "pass": true,
+      "details": "added table filter enabled"
+    },
+    {
+      "name": "exported_freezeRows4_configured_11_编码与实库回读",
+      "pass": true,
+      "details": "builder calls freezePanes.freezeRows(4); imported API has no reliable freeze readback"
+    },
+    {
+      "name": "exported_filter_12_合成穿戴物回收边界",
+      "pass": true,
+      "details": "added table filter enabled"
+    },
+    {
+      "name": "exported_freezeRows4_configured_12_合成穿戴物回收边界",
+      "pass": true,
+      "details": "builder calls freezePanes.freezeRows(4); imported API has no reliable freeze readback"
+    },
+    {
+      "name": "exported_main_version_marker",
+      "pass": true,
+      "details": "十大陆产出—消耗闭环总账 V1.2|十大陆产出—消耗闭环总账 V1.0|十大陆产出—消耗闭环总账 V1.0|2026-09-03｜第一批非战斗结构定稿：C1/C2收藏占位关闭；四段实物转生材料、回收与称号卷来源结构已固化；不填战斗、掉率或经济真值。|2026-09-03｜当前阶段只固定关系、规则与缺口。数值将在外围框架稳定后集中反算。|2026-09-03｜当前阶段只固定关系、规则与缺口。数值将在外围框架稳定后集中反算。"
+    },
+    {
+      "name": "exported_npc_version_marker",
+      "pass": true,
+      "details": "《艾尔登法环》传奇版·十大陆NPC与配方总账 V1.1||||第一批非战斗结构定稿：转生仅保留前置、单一阶段实物材料与指定金币／元宝方向；称号卷来源、编码回读与不可回收边界已定。真实属性、掉率、数量、金额仍待统一反算。|用途：冻结NPC、故事、配方产物、底材与经济角色；真实属性、掉率、数量、金币/元宝金额留到总平衡阶段统一计算。|用途：冻结NPC、故事、配方产物、底材与经济角色；真实属性、掉率、数量、金币/元宝金额留到总平衡阶段统一计算。|用途：冻结NPC、故事、配方产物、底材与经济角色；真实属性、掉率、数量、金币/元宝金额留到总平衡阶段统一计算。|||||项目|口径|状态|说明|版本|V1.1|第一批非战斗结构定稿|不填战斗真值、真实1/x、最终金币／元宝金额或回收价。"
+    }
+  ],
+  "pass": true,
+  "pending_value_policy": {
+    "combat": "待统一战斗／经济反算",
+    "economics": "待统一战斗／经济反算",
+    "codes": "待实库回读／待取码",
+    "no_invented_codes": true,
+    "no_final_numeric_economic_or_combat_values": true
+  }
+}

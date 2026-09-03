@@ -1,0 +1,2334 @@
+{
+  "generated_at_utc": "2026-09-03T11:38:01.905Z",
+  "inputs": {
+    "mapping": {
+      "path": "outputs/f124f410aa49/20260903_第一批非战斗结构收口/基线与变更映射.json",
+      "sha256": "9b50ab87a4a2c84165c43ed794c50f2e196b6070873c21da3815c64fe4289f67"
+    },
+    "buildEvidence": {
+      "path": "outputs/f124f410aa49/20260903_第一批非战斗结构收口/构建校验.json",
+      "sha256": "774ee88fe17725f01701e774a17651b15ab43a72d6171a0cf54a7c607ab86a13"
+    },
+    "main": {
+      "path": "outputs/f124f410aa49/20260903_第一批非战斗结构收口/十大陆产出消耗闭环总账_V1.2_非战斗结构定稿.xlsx",
+      "sha256": "a5d9206667bffd64af9fc75c17d47dbdb0f388659d46bcd2d1cd4eecba397686",
+      "worksheets": [
+        {
+          "name": "00_使用说明",
+          "used_range": "A1:C17",
+          "rows": 17,
+          "cols": 3
+        },
+        {
+          "name": "01_资源总览",
+          "used_range": "A1:Q269",
+          "rows": 269,
+          "cols": 17
+        },
+        {
+          "name": "02_产出端",
+          "used_range": "A1:Q158",
+          "rows": 158,
+          "cols": 17
+        },
+        {
+          "name": "03_消耗端",
+          "used_range": "A1:W490",
+          "rows": 490,
+          "cols": 23
+        },
+        {
+          "name": "04_配方闭环",
+          "used_range": "A1:W78",
+          "rows": 78,
+          "cols": 23
+        },
+        {
+          "name": "05_大陆闭环",
+          "used_range": "A1:W14",
+          "rows": 14,
+          "cols": 23
+        },
+        {
+          "name": "06_未闭合清单",
+          "used_range": "A1:F24",
+          "rows": 24,
+          "cols": 6
+        },
+        {
+          "name": "07_处决韧性难度",
+          "used_range": "A1:I18",
+          "rows": 18,
+          "cols": 9
+        },
+        {
+          "name": "08_校验",
+          "used_range": "A1:F29",
+          "rows": 29,
+          "cols": 6
+        },
+        {
+          "name": "09_爆率计算框架",
+          "used_range": "A1:O70",
+          "rows": 70,
+          "cols": 15
+        },
+        {
+          "name": "10_转生材料与回收",
+          "used_range": "A1:L8",
+          "rows": 8,
+          "cols": 12
+        },
+        {
+          "name": "11_BOSS称号卷来源",
+          "used_range": "A1:N29",
+          "rows": 29,
+          "cols": 14
+        },
+        {
+          "name": "12_编码与实库回读",
+          "used_range": "A1:H18",
+          "rows": 18,
+          "cols": 8
+        },
+        {
+          "name": "13_合成穿戴物回收边界",
+          "used_range": "A1:J42",
+          "rows": 42,
+          "cols": 10
+        }
+      ]
+    },
+    "npc": {
+      "path": "outputs/f124f410aa49/20260903_第一批非战斗结构收口/十大陆NPC与配方总账_V1.1_非战斗结构定稿.xlsx",
+      "sha256": "cb89a50334625a7ab564cd5f3a78aa96976084858672656e7919059cf45e4b11",
+      "worksheets": [
+        {
+          "name": "00_使用说明",
+          "used_range": "A1:D12",
+          "rows": 12,
+          "cols": 4
+        },
+        {
+          "name": "01_NPC总览",
+          "used_range": "A1:K54",
+          "rows": 54,
+          "cols": 11
+        },
+        {
+          "name": "02_配方总表",
+          "used_range": "A1:S78",
+          "rows": 78,
+          "cols": 19
+        },
+        {
+          "name": "03_材料角色",
+          "used_range": "A1:N84",
+          "rows": 84,
+          "cols": 14
+        },
+        {
+          "name": "04_大陆经济口径",
+          "used_range": "A1:L14",
+          "rows": 14,
+          "cols": 12
+        },
+        {
+          "name": "05_生肖与群攻",
+          "used_range": "A1:J20",
+          "rows": 20,
+          "cols": 10
+        },
+        {
+          "name": "06_属性来源",
+          "used_range": "A1:G13",
+          "rows": 13,
+          "cols": 7
+        },
+        {
+          "name": "07_玩家模型",
+          "used_range": "A1:G8",
+          "rows": 8,
+          "cols": 7
+        },
+        {
+          "name": "08_校验",
+          "used_range": "A1:F16",
+          "rows": 16,
+          "cols": 6
+        },
+        {
+          "name": "09_转生材料与回收",
+          "used_range": "A1:L8",
+          "rows": 8,
+          "cols": 12
+        },
+        {
+          "name": "10_BOSS称号卷来源",
+          "used_range": "A1:N29",
+          "rows": 29,
+          "cols": 14
+        },
+        {
+          "name": "11_编码与实库回读",
+          "used_range": "A1:H18",
+          "rows": 18,
+          "cols": 8
+        },
+        {
+          "name": "12_合成穿戴物回收边界",
+          "used_range": "A1:J42",
+          "rows": 42,
+          "cols": 10
+        }
+      ]
+    },
+    "archive02": {
+      "path": "outputs/f124f410aa49/20260903_第一批非战斗结构收口/项目档案/02_已确认规则与数值.xlsx",
+      "sha256": "a6e8088adb2779918de01cf9ba5f997a7aac339b23d66fc2f27ea279add651d9",
+      "worksheets": [
+        {
+          "name": "使用说明",
+          "used_range": "A1:F20",
+          "rows": 20,
+          "cols": 6
+        },
+        {
+          "name": "已确认规则",
+          "used_range": "A1:G294",
+          "rows": 294,
+          "cols": 7
+        },
+        {
+          "name": "数值参数",
+          "used_range": "A1:J268",
+          "rows": 268,
+          "cols": 10
+        },
+        {
+          "name": "装备索引",
+          "used_range": "A1:H26",
+          "rows": 26,
+          "cols": 8
+        },
+        {
+          "name": "怪物索引",
+          "used_range": "A1:H14",
+          "rows": 14,
+          "cols": 8
+        },
+        {
+          "name": "地图索引",
+          "used_range": "A1:H18",
+          "rows": 18,
+          "cols": 8
+        },
+        {
+          "name": "掉落索引",
+          "used_range": "A1:H37",
+          "rows": 37,
+          "cols": 8
+        }
+      ]
+    }
+  },
+  "discovered_tables": {
+    "main": {
+      "resource": {
+        "sheet": "01_资源总览",
+        "address": "A4:Q269",
+        "headerRow": 4,
+        "columns": {
+          "id": 0,
+          "name": 1,
+          "category": 2,
+          "subcategory": 3,
+          "continentId": 4,
+          "looks": 6,
+          "state": 7,
+          "relationState": 15,
+          "productionEdges": 13,
+          "consumptionEdges": 14,
+          "note": 16
+        },
+        "rows": 265
+      },
+      "production": {
+        "sheet": "02_产出端",
+        "address": "A4:Q158",
+        "headerRow": 4,
+        "columns": {
+          "id": 0,
+          "resourceId": 6,
+          "name": 7,
+          "sourceType": 3,
+          "sourceName": 4,
+          "scope": 5,
+          "includeBase": 10,
+          "enabled": 11,
+          "status": 15,
+          "note": 16
+        },
+        "rows": 154
+      },
+      "consumption": {
+        "sheet": "03_消耗端",
+        "address": "A4:W490",
+        "headerRow": 4,
+        "columns": {
+          "id": 0,
+          "resourceId": 4,
+          "name": 5,
+          "recipe": 2,
+          "quantity": 12,
+          "recycle": 19,
+          "state": 21,
+          "enabled": 17,
+          "role": 8,
+          "consume": 13,
+          "onlyPrecondition": 14,
+          "base": 16
+        },
+        "rows": 486
+      },
+      "recipe": {
+        "sheet": "04_配方闭环",
+        "address": "A4:W78",
+        "headerRow": 4,
+        "columns": {
+          "id": 0,
+          "category": 5,
+          "material": 20,
+          "inputCount": 9,
+          "inputEdges": 10,
+          "success": 11,
+          "output": 6,
+          "outputResourceId": 7,
+          "codeStatus": 17,
+          "revision": 21,
+          "note": 22
+        },
+        "rows": 74
+      },
+      "boss": {
+        "sheet": "11_BOSS称号卷来源",
+        "address": "A4:N29",
+        "headerRow": 4,
+        "columns": {
+          "id": 0,
+          "continent": 1,
+          "mapId": 2,
+          "mapName": 3,
+          "boss": 4,
+          "tier": 5,
+          "scroll": 6,
+          "activated": 7,
+          "sourceStatus": 8,
+          "titleIdStatus": 9,
+          "combatStatus": 10,
+          "rateStatus": 11,
+          "duplicate": 12,
+          "note": 13
+        },
+        "rows": 25
+      },
+      "wearables": {
+        "sheet": "13_合成穿戴物回收边界",
+        "address": "A4:J42",
+        "headerRow": 4,
+        "columns": {
+          "type": 0,
+          "continent": 1,
+          "id": 2,
+          "name": 3,
+          "code": 4,
+          "codeStatus": 5,
+          "trade": 6,
+          "recyclable": 7,
+          "recycleRule": 8,
+          "note": 9
+        },
+        "rows": 38
+      },
+      "code": {
+        "sheet": "12_编码与实库回读",
+        "address": "A4:H18",
+        "headerRow": 4,
+        "columns": {
+          "id": 0,
+          "object": 1,
+          "use": 2,
+          "idx": 3,
+          "looks": 4,
+          "status": 5,
+          "rule": 6,
+          "note": 7
+        },
+        "rows": 14
+      },
+      "validation": {
+        "sheet": "08_校验",
+        "address": "A4:F29",
+        "headerRow": 4,
+        "columns": {
+          "item": 0,
+          "expected": 1,
+          "actual": 2,
+          "diff": 3,
+          "result": 4,
+          "note": 5
+        },
+        "rows": 25
+      },
+      "stage": {
+        "sheet": "10_转生材料与回收",
+        "address": "A4:L8",
+        "headerRow": 4,
+        "columns": {
+          "id": 0,
+          "level": 1,
+          "material": 4,
+          "form": 5,
+          "source": 6,
+          "recycle": 7,
+          "currency": 8,
+          "codeStatus": 9,
+          "trade": 10
+        },
+        "rows": 4
+      },
+      "gap": {
+        "sheet": "06_未闭合清单",
+        "address": "A4:F24",
+        "headerRow": 4,
+        "columns": {
+          "id": 0,
+          "status": 1,
+          "object": 2,
+          "fact": 3,
+          "action": 4,
+          "blocker": 5
+        },
+        "rows": 20
+      },
+      "continentClosure": {
+        "sheet": "05_大陆闭环",
+        "address": "A4:W14",
+        "headerRow": 4,
+        "columns": {
+          "continent": 0,
+          "collectibleId": 13,
+          "collectible": 14,
+          "collectibleStatus": 15,
+          "registrationCost": 16
+        },
+        "rows": 10
+      }
+    },
+    "npc": {
+      "resource": null,
+      "production": null,
+      "consumption": null,
+      "recipe": {
+        "sheet": "02_配方总表",
+        "address": "A4:S78",
+        "headerRow": 4,
+        "columns": {
+          "id": 0,
+          "category": 5,
+          "baseMaterial": 8,
+          "genericMaterial": 9,
+          "rareMaterial": 10,
+          "globalMaterial": 11,
+          "material": 9,
+          "currency": 12,
+          "success": 13,
+          "output": 6,
+          "codeStatus": 17,
+          "note": 18
+        },
+        "rows": 74
+      },
+      "boss": {
+        "sheet": "10_BOSS称号卷来源",
+        "address": "A4:N29",
+        "headerRow": 4,
+        "columns": {
+          "id": 0,
+          "continent": 1,
+          "mapId": 2,
+          "mapName": 3,
+          "boss": 4,
+          "tier": 5,
+          "scroll": 6,
+          "activated": 7,
+          "sourceStatus": 8,
+          "titleIdStatus": 9,
+          "combatStatus": 10,
+          "rateStatus": 11,
+          "duplicate": 12,
+          "note": 13
+        },
+        "rows": 25
+      },
+      "wearables": {
+        "sheet": "12_合成穿戴物回收边界",
+        "address": "A4:J42",
+        "headerRow": 4,
+        "columns": {
+          "type": 0,
+          "continent": 1,
+          "id": 2,
+          "name": 3,
+          "code": 4,
+          "codeStatus": 5,
+          "trade": 6,
+          "recyclable": 7,
+          "recycleRule": 8,
+          "note": 9
+        },
+        "rows": 38
+      },
+      "code": {
+        "sheet": "11_编码与实库回读",
+        "address": "A4:H18",
+        "headerRow": 4,
+        "columns": {
+          "id": 0,
+          "object": 1,
+          "use": 2,
+          "idx": 3,
+          "looks": 4,
+          "status": 5,
+          "rule": 6,
+          "note": 7
+        },
+        "rows": 14
+      },
+      "validation": {
+        "sheet": "08_校验",
+        "address": "A4:F16",
+        "headerRow": 4,
+        "columns": {
+          "item": 0,
+          "expected": 1,
+          "actual": 2,
+          "diff": 3,
+          "result": 4,
+          "note": 5
+        },
+        "rows": 12
+      },
+      "stage": {
+        "sheet": "09_转生材料与回收",
+        "address": "A4:L8",
+        "headerRow": 4,
+        "columns": {
+          "id": 0,
+          "level": 1,
+          "material": 4,
+          "form": 5,
+          "source": 6,
+          "recycle": 7,
+          "currency": 8,
+          "codeStatus": 9,
+          "trade": 10
+        },
+        "rows": 4
+      },
+      "gap": null,
+      "continentClosure": null
+    }
+  },
+  "assertions": [
+    {
+      "id": "V01",
+      "status": "PASS",
+      "target": "required package paths and XLSX imports",
+      "observed": true,
+      "expected": true,
+      "discovered_range": "01_资源总览!A4:Q269 | 02_产出端!A4:Q158 | 03_消耗端!A4:W490 | 04_配方闭环!A4:W78 | 11_BOSS称号卷来源!A4:N29 | 12_编码与实库回读!A4:H18 | 05_大陆闭环!A4:W14 | 02_配方总表!A4:S78 | 10_BOSS称号卷来源!A4:N29 | 11_编码与实库回读!A4:H18",
+      "evidence": "all required files were present after preflight, workbooks have non-empty sheets, and semantic tables were discovered unambiguously"
+    },
+    {
+      "id": "V02",
+      "status": "PASS",
+      "target": "mapping/build evidence JSON",
+      "observed": true,
+      "expected": "mapping input SHA-256 values are present; buildEvidence.pass=true and every buildEvidence.checks[].pass=true",
+      "discovered_range": "range unavailable: discovery failed",
+      "evidence": "mapping.json; 构建校验.json"
+    },
+    {
+      "id": "V03",
+      "status": "PASS",
+      "target": "stable IDs and resolvable resource/edge references",
+      "observed": true,
+      "expected": "each semantic table has a non-empty unique ID per row; determinable resource IDs resolve exactly once; main recipe input-edge IDs/counts resolve to main consumption; main/NPC recipe IDs mirror; pending status fields alone may defer unresolved IDs",
+      "discovered_range": "01_资源总览!A4:Q269 | 02_产出端!A4:Q158 | 03_消耗端!A4:W490 | 04_配方闭环!A4:W78 | 02_配方总表!A4:S78 | 11_BOSS称号卷来源!A4:N29 | 10_BOSS称号卷来源!A4:N29 | 13_合成穿戴物回收边界!A4:J42 | 12_合成穿戴物回收边界!A4:J42 | 12_编码与实库回读!A4:H18 | 11_编码与实库回读!A4:H18",
+      "evidence": "duplicates=; missing=; unresolvedResources=; unresolvedRecipeEdges=; edgeCountMismatches=; recipeMirrorPass=true; activeNameMismatches=; checkedRefs=561"
+    },
+    {
+      "id": "V04",
+      "status": "PASS",
+      "target": "main/NPC retained sheets and added semantic tables",
+      "observed": true,
+      "expected": true,
+      "discovered_range": "01_资源总览!A4:Q269 | 02_产出端!A4:Q158 | 03_消耗端!A4:W490 | 04_配方闭环!A4:W78 | 06_未闭合清单!A4:F24 | 10_转生材料与回收!A4:L8 | 05_大陆闭环!A4:W14 | 11_BOSS称号卷来源!A4:N29 | 12_编码与实库回读!A4:H18 | 13_合成穿戴物回收边界!A4:J42 | 08_校验!A4:F29 | 02_配方总表!A4:S78 | 09_转生材料与回收!A4:L8 | 10_BOSS称号卷来源!A4:N29 | 11_编码与实库回读!A4:H18 | 12_合成穿戴物回收边界!A4:J42 | 08_校验!A4:F16",
+      "evidence": "all baseline/new sheets and every required discovered semantic table are present"
+    },
+    {
+      "id": "V05",
+      "status": "PASS",
+      "target": "C1/C2 collectible placeholders, gap/source closure, and retained equipment catalogue",
+      "observed": true,
+      "expected": "exact C1/C2 resource IDs have terminal H/P states and zero edge counts; registration cost is exactly 不适用; every non-equipment C1/C2 collectible resource/production/consumption/gap row is terminal/closed; exact active equipment catalogue edge/system/resource IDs and consume/base/enable fields remain",
+      "discovered_range": "01_资源总览!A4:Q269 | 02_产出端!A4:Q158 | 03_消耗端!A4:W490 | 05_大陆闭环!A4:W14 | 06_未闭合清单!A4:F24",
+      "evidence": "{\"resourceClose\":[{\"id\":\"EL-MAT-C01-COLLECT-TBD\",\"count\":1,\"pass\":true},{\"id\":\"EL-MAT-C02-COLLECT-TBD\",\"count\":1,\"pass\":true}],\"productionClose\":[{\"resourceId\":\"EL-MAT-C01-COLLECT-TBD\",\"count\":1,\"pass\":true},{\"resourceId\":\"EL-MAT-C02-COLLECT-TBD\",\"count\":1,\"pass\":true}],\"consumptionClose\":[{\"resourceId\":\"EL-MAT-C01-COLLECT-TBD\",\"count\":1,\"pass\":true},{\"resourceId\":\"EL-MAT-C02-COLLECT-TBD\",\"count\":1,\"pass\":true}],\"closureRows\":[\"C01 | 1 | 漂流群岛 | EL-MAT-C01-COM | 海蚀铁片 | 本大陆全怪 | 高小时数量；单次多叠加、触发频率较低 | R1 | 金币主、元宝辅 | 金币偏重 | 制式装备低频回收补充 | 可交易；免费号主要出售给赞助号 | 材料回收底价计入所有配方机会成本；禁止合成后回收套利 | 不设置 | — | 已关闭 | 不适用 | 7 | C01-FATE-SINGLE、C01-FATE-TEN、C01-FATE-SHOP、C01-FATE-SLOT、C01-SYN-EQ-01、C01-SYN-ZD-01、C01-SYN-TT-01 | 3 | 是 | 否 | 产量、回收价、配方数量均待经济反算；无大陆收藏材料登记。\",\"C02 | 2 | 宁姆格福 | EL-MAT-C02-COM | 风暴石片 | 本大陆全怪 | 高小时数量；单次多叠加、触发频率较低 | R2 | 元宝主、金币辅 | 元宝偏重 | 制式装备低频回收补充 | 可交易；免费号主要出售给赞助号 | 材料回收底价计入所有配方机会成本；禁止合成后回收套利 | 不设置 | — | 已关闭 | 不适用 | 7 | C02-ASH-NORMAL、C02-ASH-HIGH、C02-ASH-OVERWRITE、C02-SYN-EQ-01、C02-SYN-EQ-02、C02-SYN-ZD-01、C02-AOE-LV1 | 3 | 是 | 否 | 产量、回收价、配方数量均待经济反算；无大陆收藏材料登记。\"],\"gapClosed\":true,\"collectibleOpenItems\":[],\"equipmentAudits\":[{\"edgeId\":\"CON-COLLECT-EQ-C01\",\"systemId\":\"SYS-COLLECT-EQ-C01\",\"resourceId\":\"COLL-C01-EXCLUSIVE-SET\",\"found\":true,\"actualSystemId\":\"SYS-COLLECT-EQ-C01\",\"actualResourceId\":\"COLL-C01-EXCLUSIVE-SET\",\"pass\":true},{\"edgeId\":\"CON-COLLECT-EQ-C02\",\"systemId\":\"SYS-COLLECT-EQ-C02\",\"resourceId\":\"COLL-C02-EXCLUSIVE-SET\",\"found\":true,\"actualSystemId\":\"SYS-COLLECT-EQ-C02\",\"actualResourceId\":\"COLL-C02-EXCLUSIVE-SET\",\"pass\":true}]}"
+    },
+    {
+      "id": "V06",
+      "status": "PASS",
+      "target": "C3-C10 retained collectibles",
+      "observed": true,
+      "expected": "8 exact IDs, exact C03-C10 continentId, unique names, structured G Looks 7218-7225 one-per-row, explicit formal production/in-game/readback pending evidence and no-renumber evidence per row, no production claim",
+      "discovered_range": "01_资源总览!A4:Q269 | 12_编码与实库回读!A4:H18",
+      "evidence": "{\"rows\":[{\"id\":\"EL-MAT-C03-COLLECT\",\"name\":\"西境风痕碑拓\",\"expectedLooks\":7218,\"structuredLooks\":7218,\"continentId\":\"C03\",\"continentPass\":true,\"pending\":true,\"noRenumber\":true,\"productionNotClaimed\":true},{\"id\":\"EL-MAT-C04-COLLECT\",\"name\":\"月潮忆珀\",\"expectedLooks\":7219,\"structuredLooks\":7219,\"continentId\":\"C04\",\"continentPass\":true,\"pending\":true,\"noRenumber\":true,\"productionNotClaimed\":true},{\"id\":\"EL-MAT-C05-COLLECT\",\"name\":\"湖心月谱残章\",\"expectedLooks\":7220,\"structuredLooks\":7220,\"continentId\":\"C05\",\"continentPass\":true,\"pending\":true,\"noRenumber\":true,\"productionNotClaimed\":true},{\"id\":\"EL-MAT-C06-COLLECT\",\"name\":\"熔原罪火残章\",\"expectedLooks\":7221,\"structuredLooks\":7221,\"continentId\":\"C06\",\"continentPass\":true,\"pending\":true,\"noRenumber\":true,\"productionNotClaimed\":true},{\"id\":\"EL-MAT-C07-COLLECT\",\"name\":\"永霜朝圣痕\",\"expectedLooks\":7222,\"structuredLooks\":7222,\"continentId\":\"C07\",\"continentPass\":true,\"pending\":true,\"noRenumber\":true,\"productionNotClaimed\":true},{\"id\":\"EL-MAT-C08-COLLECT\",\"name\":\"穹霜碑珀\",\"expectedLooks\":7223,\"structuredLooks\":7223,\"continentId\":\"C08\",\"continentPass\":true,\"pending\":true,\"noRenumber\":true,\"productionNotClaimed\":true},{\"id\":\"EL-MAT-C09-COLLECT\",\"name\":\"古坛鎏叶髓\",\"expectedLooks\":7224,\"structuredLooks\":7224,\"continentId\":\"C09\",\"continentPass\":true,\"pending\":true,\"noRenumber\":true,\"productionNotClaimed\":true},{\"id\":\"EL-MAT-C10-COLLECT\",\"name\":\"穹律鎏痕拓片\",\"expectedLooks\":7225,\"structuredLooks\":7225,\"continentId\":\"C10\",\"continentPass\":true,\"pending\":true,\"noRenumber\":true,\"productionNotClaimed\":true}],\"looks\":[7218,7219,7220,7221,7222,7223,7224,7225]}"
+    },
+    {
+      "id": "V07",
+      "status": "PASS",
+      "target": "small/large rune physical-material semantics",
+      "observed": true,
+      "expected": "both stage tables independently state physical bag materials, all-monster source, exact level/recycle, and XXX的大卢恩 full-name separation",
+      "discovered_range": "10_转生材料与回收!A4:L8 | 09_转生材料与回收!A4:L8",
+      "evidence": "[{\"sheet\":\"10_转生材料与回收\",\"rows\":[{\"material\":\"小卢恩\",\"found\":true,\"fields\":{\"level\":\"1–5\",\"form\":\"背包实物材料\",\"source\":\"全服所有大陆／所有怪物\",\"recycle\":\"10转后\"},\"fieldPass\":true,\"artifactSeparated\":true},{\"material\":\"大卢恩\",\"found\":true,\"fields\":{\"level\":\"6–10\",\"form\":\"背包实物材料\",\"source\":\"全服所有大陆／所有怪物\",\"recycle\":\"10转后\"},\"fieldPass\":true,\"artifactSeparated\":true}],\"pass\":true},{\"sheet\":\"09_转生材料与回收\",\"rows\":[{\"material\":\"小卢恩\",\"found\":true,\"fields\":{\"level\":\"1–5\",\"form\":\"背包实物材料\",\"source\":\"全服所有大陆／所有怪物\",\"recycle\":\"10转后\"},\"fieldPass\":true,\"artifactSeparated\":true},{\"material\":\"大卢恩\",\"found\":true,\"fields\":{\"level\":\"6–10\",\"form\":\"背包实物材料\",\"source\":\"全服所有大陆／所有怪物\",\"recycle\":\"10转后\"},\"fieldPass\":true,\"artifactSeparated\":true}],\"pass\":true}]"
+    },
+    {
+      "id": "V08",
+      "status": "PASS",
+      "target": "active slash-ambiguous rune inputs",
+      "observed": true,
+      "expected": 0,
+      "discovered_range": "03_消耗端!A4:W490",
+      "evidence": "activeRows=0"
+    },
+    {
+      "id": "V09",
+      "status": "PASS",
+      "target": "20 active rebirth levels and four NPC locations",
+      "observed": true,
+      "expected": "levels 1..20; C04/C06/C08/C10",
+      "discovered_range": "02_配方总表!A4:S78",
+      "evidence": "levels=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20"
+    },
+    {
+      "id": "V10",
+      "status": "PASS",
+      "target": "authoritative active rebirth edges and recipe closure",
+      "observed": true,
+      "expected": "each level has exactly one precondition, one stage material, exact approved currency multiset/row count, no other active input, and main 03↔04 edge IDs/counts are equal; NPC I:L fields match",
+      "discovered_range": "02_配方总表!A4:S78 | 03_消耗端!A4:W490 | 04_配方闭环!A4:W78",
+      "evidence": "[]"
+    },
+    {
+      "id": "V11",
+      "status": "PASS",
+      "target": "exact currency direction across NPC, main active edges, and stage summaries",
+      "observed": true,
+      "expected": "NPC per-level field, main 03 active CUR-GOLD/CUR-YUANBAO edges, all stage summary rows bound by exact material, and GAMEGOLD=元宝 exactly match approved directions",
+      "discovered_range": "02_配方总表!A4:S78 | 03_消耗端!A4:W490 | 10_转生材料与回收!A4:L8 | 09_转生材料与回收!A4:L8",
+      "evidence": "{\"npcDirections\":[{\"level\":1,\"actual\":\"金币\",\"expected\":\"金币\"},{\"level\":2,\"actual\":\"金币\",\"expected\":\"金币\"},{\"level\":3,\"actual\":\"金币＋元宝\",\"expected\":\"金币＋元宝\"},{\"level\":4,\"actual\":\"元宝\",\"expected\":\"元宝\"},{\"level\":5,\"actual\":\"金币＋元宝\",\"expected\":\"金币＋元宝\"},{\"level\":6,\"actual\":\"元宝\",\"expected\":\"元宝\"},{\"level\":7,\"actual\":\"金币＋元宝\",\"expected\":\"金币＋元宝\"},{\"level\":8,\"actual\":\"金币\",\"expected\":\"金币\"},{\"level\":9,\"actual\":\"金币＋元宝\",\"expected\":\"金币＋元宝\"},{\"level\":10,\"actual\":\"金币＋元宝\",\"expected\":\"金币＋元宝\"},{\"level\":11,\"actual\":\"金币\",\"expected\":\"金币\"},{\"level\":12,\"actual\":\"金币\",\"expected\":\"金币\"},{\"level\":13,\"actual\":\"金币＋元宝\",\"expected\":\"金币＋元宝\"},{\"level\":14,\"actual\":\"元宝\",\"expected\":\"元宝\"},{\"level\":15,\"actual\":\"金币＋元宝\",\"expected\":\"金币＋元宝\"},{\"level\":16,\"actual\":\"元宝\",\"expected\":\"元宝\"},{\"level\":17,\"actual\":\"金币＋元宝\",\"expected\":\"金币＋元宝\"},{\"level\":18,\"actual\":\"金币\",\"expected\":\"金币\"},{\"level\":19,\"actual\":\"金币＋元宝\",\"expected\":\"金币＋元宝\"},{\"level\":20,\"actual\":\"金币＋元宝\",\"expected\":\"金币＋元宝\"}],\"mainDirections\":[\"金币\",\"金币\",\"元宝＋金币\",\"元宝\",\"元宝＋金币\",\"元宝\",\"元宝＋金币\",\"金币\",\"元宝＋金币\",\"元宝＋金币\",\"金币\",\"金币\",\"元宝＋金币\",\"元宝\",\"元宝＋金币\",\"元宝\",\"元宝＋金币\",\"金币\",\"元宝＋金币\",\"元宝＋金币\"],\"stageDirectionPass\":true,\"gamegoldPass\":true}"
+    },
+    {
+      "id": "V12",
+      "status": "PASS",
+      "target": "rebirth success and field-level pending numeric values",
+      "observed": true,
+      "expected": "only the NPC/main 20-level rows and active main rebirth edges are scanned; both main04 and NPC02 success fields are 100%/no failure consume, truth fields are blank or strict pending, and structural 每件实物×1 is allowed",
+      "discovered_range": "02_配方总表!A4:S78 | 04_配方闭环!A4:W78 | 03_消耗端!A4:W490",
+      "evidence": "{\"rebirthRowsOneToTwenty\":true,\"successPairPass\":true,\"mainSuccessByLevel\":{\"1\":\"100%确定成功；不失败吞料\",\"2\":\"100%确定成功；不失败吞料\",\"3\":\"100%确定成功；不失败吞料\",\"4\":\"100%确定成功；不失败吞料\",\"5\":\"100%确定成功；不失败吞料\",\"6\":\"100%确定成功；不失败吞料\",\"7\":\"100%确定成功；不失败吞料\",\"8\":\"100%确定成功；不失败吞料\",\"9\":\"100%确定成功；不失败吞料\",\"10\":\"100%确定成功；不失败吞料\",\"11\":\"100%确定成功；不失败吞料\",\"12\":\"100%确定成功；不失败吞料\",\"13\":\"100%确定成功；不失败吞料\",\"14\":\"100%确定成功；不失败吞料\",\"15\":\"100%确定成功；不失败吞料\",\"16\":\"100%确定成功；不失败吞料\",\"17\":\"100%确定成功；不失败吞料\",\"18\":\"100%确定成功；不失败吞料\",\"19\":\"100%确定成功；不失败吞料\",\"20\":\"100%确定成功；不失败吞料\"},\"npcSuccessByLevel\":{\"1\":\"100%确定成功；不失败吞料\",\"2\":\"100%确定成功；不失败吞料\",\"3\":\"100%确定成功；不失败吞料\",\"4\":\"100%确定成功；不失败吞料\",\"5\":\"100%确定成功；不失败吞料\",\"6\":\"100%确定成功；不失败吞料\",\"7\":\"100%确定成功；不失败吞料\",\"8\":\"100%确定成功；不失败吞料\",\"9\":\"100%确定成功；不失败吞料\",\"10\":\"100%确定成功；不失败吞料\",\"11\":\"100%确定成功；不失败吞料\",\"12\":\"100%确定成功；不失败吞料\",\"13\":\"100%确定成功；不失败吞料\",\"14\":\"100%确定成功；不失败吞料\",\"15\":\"100%确定成功；不失败吞料\",\"16\":\"100%确定成功；不失败吞料\",\"17\":\"100%确定成功；不失败吞料\",\"18\":\"100%确定成功；不失败吞料\",\"19\":\"100%确定成功；不失败吞料\",\"20\":\"100%确定成功；不失败吞料\"},\"scannedRows\":110,\"violations\":[]}"
+    },
+    {
+      "id": "V13",
+      "status": "PASS",
+      "target": "stage sources and manual recycle unlock",
+      "observed": true,
+      "expected": "each main/NPC stage table independently verifies all four source/recycle rules and pending quantities/rates",
+      "discovered_range": "10_转生材料与回收!A4:L8 | 09_转生材料与回收!A4:L8",
+      "evidence": "[{\"sheet\":\"10_转生材料与回收\",\"checks\":[{\"material\":\"小卢恩\",\"found\":true,\"source\":true,\"recycle\":true,\"pendingQuantities\":true},{\"material\":\"大卢恩\",\"found\":true,\"source\":true,\"recycle\":true,\"pendingQuantities\":true},{\"material\":\"巨人熔火卢恩\",\"found\":true,\"source\":true,\"recycle\":true,\"pendingQuantities\":true},{\"material\":\"黄金律法卢恩\",\"found\":true,\"source\":true,\"recycle\":true,\"pendingQuantities\":true}],\"pass\":true},{\"sheet\":\"09_转生材料与回收\",\"checks\":[{\"material\":\"小卢恩\",\"found\":true,\"source\":true,\"recycle\":true,\"pendingQuantities\":true},{\"material\":\"大卢恩\",\"found\":true,\"source\":true,\"recycle\":true,\"pendingQuantities\":true},{\"material\":\"巨人熔火卢恩\",\"found\":true,\"source\":true,\"recycle\":true,\"pendingQuantities\":true},{\"material\":\"黄金律法卢恩\",\"found\":true,\"source\":true,\"recycle\":true,\"pendingQuantities\":true}],\"pass\":true}]"
+    },
+    {
+      "id": "V14",
+      "status": "PASS",
+      "target": "C10 title material and source evidence",
+      "observed": true,
+      "expected": "NPC C10-SYN-TT-01 outputs [称号]艾尔登之王 and I:L uses 失温熔炉楔 only; main04 declares the six exact input edge IDs; main03 has exactly those six active edges with the exact resource multiset (including Q03 and both currencies), no C10 collectible edge; source resolves to C10 map-BOSS evidence",
+      "discovered_range": "02_配方总表!A4:S78 | 01_资源总览!A4:Q269 | 02_产出端!A4:Q158 | 03_消耗端!A4:W490 | 11_BOSS称号卷来源!A4:N29 | 04_配方闭环!A4:W78",
+      "evidence": "{\"c10TitleChecks\":[{\"label\":\"npc\",\"count\":1,\"materialFields\":\"— | — | 王宫律文 | 艾尔登王印 | 王宫断冠片 | 失温熔炉楔 | —\",\"activeMaterial\":true,\"oldMaterialInInput\":false,\"oldMaterialHistorical\":true}],\"c10NpcOutputCheck\":true,\"c10MainRecipeCheck\":true,\"c10MainRecipeEdgeIds\":[\"CON-C10-SYN-TT-01-0273\",\"CON-C10-SYN-TT-01-0274\",\"CON-C10-SYN-TT-01-0275\",\"CON-C10-SYN-TT-01-0276\",\"CON-C10-SYN-TT-01-0277\",\"CON-C10-SYN-TT-01-0278\"],\"c10ResourceEvidence\":true,\"c10BossEvidence\":true,\"c10SourceEvidence\":true,\"c10InputEvidence\":true,\"activeC10EdgeCount\":6,\"c10InputEdgeIds\":[\"CON-C10-SYN-TT-01-0273\",\"CON-C10-SYN-TT-01-0274\",\"CON-C10-SYN-TT-01-0275\",\"CON-C10-SYN-TT-01-0276\",\"CON-C10-SYN-TT-01-0277\",\"CON-C10-SYN-TT-01-0278\"],\"c10InputResourceIds\":[\"CUR-GOLD\",\"CUR-YUANBAO\",\"EL-MAT-C10-MARK\",\"EL-MAT-C10-Q03\",\"EL-MAT-C10-Q04\",\"EL-MAT-C10-RARE\"]}"
+    },
+    {
+      "id": "V15",
+      "status": "PASS",
+      "target": "38 crafted wearables non-recyclable",
+      "observed": true,
+      "expected": "main/NPC each contain mirrored 23 equipment + 10 zodiac + 5 group-AOE rows, every row is non-recyclable with non-empty preserved trade rule",
+      "discovered_range": "13_合成穿戴物回收边界!A4:J42 | 12_合成穿戴物回收边界!A4:J42",
+      "evidence": "[{\"label\":\"main\",\"count\":38,\"counts\":{\"装备\":23,\"生肖\":10,\"群攻生肖\":5},\"violations\":[]},{\"label\":\"npc\",\"count\":38,\"counts\":{\"装备\":23,\"生肖\":10,\"群攻生肖\":5},\"violations\":[]}]"
+    },
+    {
+      "id": "V16",
+      "status": "PASS",
+      "target": "main/NPC boss source tables",
+      "observed": true,
+      "expected": "main and NPC each contain the same 25 unique stable source rows, unique map/BOSS pairs and scroll names, with C02 exactly 16 rows and C01/C03-C10 exactly one each",
+      "discovered_range": "11_BOSS称号卷来源!A4:N29 | 10_BOSS称号卷来源!A4:N29",
+      "evidence": "{\"mainRows\":25,\"npcRows\":25,\"mainIds\":[\"TSC-C02-H01\",\"TSC-C02-H02\",\"TSC-C02-H03\",\"TSC-C02-H04\",\"TSC-C02-H05\",\"TSC-C02-H06\",\"TSC-C02-H07\",\"TSC-C02-H08\",\"TSC-C02-H09\",\"TSC-C02-H10\",\"TSC-C02-H11\",\"TSC-C02-H12\",\"TSC-C02-H13\",\"TSC-C02-H14\",\"TSC-C02-H15\",\"TSC-C01-GATE\",\"TSC-C02-GATE\",\"TSC-C03-GATE\",\"TSC-C04-GATE\",\"TSC-C05-GATE\",\"TSC-C06-GATE\",\"TSC-C07-GATE\",\"TSC-C08-GATE\",\"TSC-C09-GATE\",\"TSC-C10-GATE\"],\"npcIds\":[\"TSC-C02-H01\",\"TSC-C02-H02\",\"TSC-C02-H03\",\"TSC-C02-H04\",\"TSC-C02-H05\",\"TSC-C02-H06\",\"TSC-C02-H07\",\"TSC-C02-H08\",\"TSC-C02-H09\",\"TSC-C02-H10\",\"TSC-C02-H11\",\"TSC-C02-H12\",\"TSC-C02-H13\",\"TSC-C02-H14\",\"TSC-C02-H15\",\"TSC-C01-GATE\",\"TSC-C02-GATE\",\"TSC-C03-GATE\",\"TSC-C04-GATE\",\"TSC-C05-GATE\",\"TSC-C06-GATE\",\"TSC-C07-GATE\",\"TSC-C08-GATE\",\"TSC-C09-GATE\",\"TSC-C10-GATE\"],\"mirrorExact\":true,\"continentCounts\":{\"C02\":16,\"C01\":1,\"C03\":1,\"C04\":1,\"C05\":1,\"C06\":1,\"C07\":1,\"C08\":1,\"C09\":1,\"C10\":1},\"duplicatePairs\":[\"待权威回读\\u0000归树看门犬\",\"待权威回读\\u0000溃烂树灵·乌尔德\",\"待权威回读\\u0000接肢贵胄·格雷姆\",\"待权威回读\\u0000黄金重骑\",\"待权威回读\\u0000大树守卫·罗兰\",\"待权威回读\\u0000黑夜骑兵·莫尔\",\"待权威回读\\u0000卢恩熊王\",\"待权威回读\\u0000提比亚唤船人·赫洛\",\"待权威回读\\u0000雾林熔炉骑士·奥德\",\"待权威回读\\u0000死亡仪鸟\",\"待权威回读\\u0000风暴君王·奥雷格\",\"待权威回读\\u0000恶兆妖鬼·玛尔基特\",\"待权威回读\\u0000失乡骑士长\",\"待权威回读\\u0000接肢兽将·戈德温\",\"待权威回读\\u0000失乡统帅·欧尼尔\",\"XX105\\u0000沉没之王·奥德里安\",\"XX279\\u0000接肢君王·葛瑞克\",\"XX169\\u0000西境征服者·戈德里安\",\"XX369\\u0000闭潮王·莱弥恩\",\"XX924\\u0000寒镜终誓王\",\"XX481\\u0000碎星狮王·拉塔恩\",\"XX911\\u0000化圣霜王·埃琉斯\",\"XX897\\u0000吞日霜王·乌尔迈\",\"XX639\\u0000鎏日王城之影·阿尔维萨\",\"XX386\\u0000万冠终审者·萨洛恩\"],\"duplicateScrolls\":[\"[称号]墓门守誓\",\"[称号]腐根不眠\",\"[称号]百臂遗嗣\",\"[称号]金甲破阵\",\"[称号]黄金长戟\",\"[称号]无月追猎\",\"[称号]雾林暴君\",\"[称号]死水引魂\",\"[称号]初火铸身\",\"[称号]黑翼葬日\",\"[称号]雷冠之主\",\"[称号]恶兆之印\",\"[称号]失乡统帅\",\"[称号]百骸兽王\",\"[称号]王城战魂\",\"[称号]潮下弑王\",\"[称号]接肢弑王\",\"[称号]西境破冠者\",\"[称号]深湖解封者\",\"[称号]寒镜破誓者\",\"[称号]群星解缚者\",\"[称号]圣雪断誓者\",\"[称号]熄日猎王\",\"[称号]鎏日破影者\",\"[称号]万冠裁决者\"]}"
+    },
+    {
+      "id": "V17",
+      "status": "PASS",
+      "target": "main ten gate-boss mappings",
+      "observed": true,
+      "expected": "both main/NPC tables independently match exact C01-C10 mapping",
+      "discovered_range": "11_BOSS称号卷来源!A4:N29 | 10_BOSS称号卷来源!A4:N29",
+      "evidence": "{\"main\":{\"count\":10,\"match\":true},\"npc\":{\"count\":10,\"match\":true}}"
+    },
+    {
+      "id": "V18",
+      "status": "PASS",
+      "target": "main source status fields and pending combat/rates",
+      "observed": true,
+      "expected": "both 25-row tables have complete status fields, exact pending whitelist for combat/rates, and C02 reuse/refusal behavior",
+      "discovered_range": "11_BOSS称号卷来源!A4:N29 | 10_BOSS称号卷来源!A4:N29",
+      "evidence": "{\"main\":true,\"npc\":true,\"c02Behavior\":true}"
+    },
+    {
+      "id": "V19",
+      "status": "PASS",
+      "target": "main title slot and attack-speed rule",
+      "observed": true,
+      "expected": "both tables state title scrolls do not occupy equipment slot, participate in multiplier, and have no default attack-speed breakthrough",
+      "discovered_range": "11_BOSS称号卷来源!A4:N29 | 10_BOSS称号卷来源!A4:N29",
+      "evidence": "main/NPC source notes"
+    },
+    {
+      "id": "V20",
+      "status": "PASS",
+      "target": "code/readback status and frozen Idx",
+      "observed": true,
+      "expected": "each code/readback table independently verifies all 14 required objects, exact status/Idx/Looks fields, frozen 980–983 only on CODE-FROZEN, no duplicate IDs, mirrored fields, and blank/pending actual code fields",
+      "discovered_range": "12_编码与实库回读!A4:H18 | 11_编码与实库回读!A4:H18",
+      "evidence": "{\"codeMirrorPass\":true,\"audits\":[{\"sheet\":\"12_编码与实库回读\",\"duplicateIds\":[],\"reservedIdxViolations\":[],\"checks\":[{\"id\":\"CODE-REB-01\",\"object\":\"小卢恩\",\"found\":true,\"objectExact\":true,\"state\":true,\"evidence\":true,\"idx\":\"\",\"looks\":\"\",\"idxExact\":true,\"looksExact\":true,\"actualCode\":\"\",\"codeBlankOrPending\":true},{\"id\":\"CODE-REB-02\",\"object\":\"大卢恩\",\"found\":true,\"objectExact\":true,\"state\":true,\"evidence\":true,\"idx\":\"\",\"looks\":\"\",\"idxExact\":true,\"looksExact\":true,\"actualCode\":\"\",\"codeBlankOrPending\":true},{\"id\":\"CODE-REB-03\",\"object\":\"巨人熔火卢恩\",\"found\":true,\"objectExact\":true,\"state\":true,\"evidence\":true,\"idx\":\"\",\"looks\":\"\",\"idxExact\":true,\"looksExact\":true,\"actualCode\":\"\",\"codeBlankOrPending\":true},{\"id\":\"CODE-REB-04\",\"object\":\"黄金律法卢恩\",\"found\":true,\"objectExact\":true,\"state\":true,\"evidence\":true,\"idx\":\"\",\"looks\":\"\",\"idxExact\":true,\"looksExact\":true,\"actualCode\":\"\",\"codeBlankOrPending\":true},{\"id\":\"CODE-C03\",\"object\":\"西境风痕碑拓\",\"found\":true,\"objectExact\":true,\"state\":true,\"evidence\":true,\"idx\":\"972\",\"looks\":\"7218（隔离测试证据）\",\"idxExact\":true,\"looksExact\":true,\"actualCode\":\"\",\"codeBlankOrPending\":true},{\"id\":\"CODE-C04\",\"object\":\"月潮忆珀\",\"found\":true,\"objectExact\":true,\"state\":true,\"evidence\":true,\"idx\":\"973\",\"looks\":\"7219（隔离测试证据）\",\"idxExact\":true,\"looksExact\":true,\"actualCode\":\"\",\"codeBlankOrPending\":true},{\"id\":\"CODE-C05\",\"object\":\"湖心月谱残章\",\"found\":true,\"objectExact\":true,\"state\":true,\"evidence\":true,\"idx\":\"974\",\"looks\":\"7220（隔离测试证据）\",\"idxExact\":true,\"looksExact\":true,\"actualCode\":\"\",\"codeBlankOrPending\":true},{\"id\":\"CODE-C06\",\"object\":\"熔原罪火残章\",\"found\":true,\"objectExact\":true,\"state\":true,\"evidence\":true,\"idx\":\"975\",\"looks\":\"7221（隔离测试证据）\",\"idxExact\":true,\"looksExact\":true,\"actualCode\":\"\",\"codeBlankOrPending\":true},{\"id\":\"CODE-C07\",\"object\":\"永霜朝圣痕\",\"found\":true,\"objectExact\":true,\"state\":true,\"evidence\":true,\"idx\":\"976\",\"looks\":\"7222（隔离测试证据）\",\"idxExact\":true,\"looksExact\":true,\"actualCode\":\"\",\"codeBlankOrPending\":true},{\"id\":\"CODE-C08\",\"object\":\"穹霜碑珀\",\"found\":true,\"objectExact\":true,\"state\":true,\"evidence\":true,\"idx\":\"977\",\"looks\":\"7223（隔离测试证据）\",\"idxExact\":true,\"looksExact\":true,\"actualCode\":\"\",\"codeBlankOrPending\":true},{\"id\":\"CODE-C09\",\"object\":\"古坛鎏叶髓\",\"found\":true,\"objectExact\":true,\"state\":true,\"evidence\":true,\"idx\":\"978\",\"looks\":\"7224（隔离测试证据）\",\"idxExact\":true,\"looksExact\":true,\"actualCode\":\"\",\"codeBlankOrPending\":true},{\"id\":\"CODE-C10\",\"object\":\"穹律鎏痕拓片\",\"found\":true,\"objectExact\":true,\"state\":true,\"evidence\":true,\"idx\":\"979\",\"looks\":\"7225（隔离测试证据）\",\"idxExact\":true,\"looksExact\":true,\"actualCode\":\"\",\"codeBlankOrPending\":true},{\"id\":\"CODE-FROZEN\",\"object\":\"Idx 980–983\",\"found\":true,\"objectExact\":true,\"state\":true,\"evidence\":true,\"idx\":\"980–983\",\"looks\":\"\",\"idxExact\":true,\"looksExact\":true,\"actualCode\":\"\",\"codeBlankOrPending\":true},{\"id\":\"CODE-WEARABLE\",\"object\":\"38件合成穿戴物\",\"found\":true,\"objectExact\":true,\"state\":true,\"evidence\":true,\"idx\":\"\",\"looks\":\"\",\"idxExact\":true,\"looksExact\":true,\"actualCode\":\"\",\"codeBlankOrPending\":true}],\"pass\":true},{\"sheet\":\"11_编码与实库回读\",\"duplicateIds\":[],\"reservedIdxViolations\":[],\"checks\":[{\"id\":\"CODE-REB-01\",\"object\":\"小卢恩\",\"found\":true,\"objectExact\":true,\"state\":true,\"evidence\":true,\"idx\":\"\",\"looks\":\"\",\"idxExact\":true,\"looksExact\":true,\"actualCode\":\"\",\"codeBlankOrPending\":true},{\"id\":\"CODE-REB-02\",\"object\":\"大卢恩\",\"found\":true,\"objectExact\":true,\"state\":true,\"evidence\":true,\"idx\":\"\",\"looks\":\"\",\"idxExact\":true,\"looksExact\":true,\"actualCode\":\"\",\"codeBlankOrPending\":true},{\"id\":\"CODE-REB-03\",\"object\":\"巨人熔火卢恩\",\"found\":true,\"objectExact\":true,\"state\":true,\"evidence\":true,\"idx\":\"\",\"looks\":\"\",\"idxExact\":true,\"looksExact\":true,\"actualCode\":\"\",\"codeBlankOrPending\":true},{\"id\":\"CODE-REB-04\",\"object\":\"黄金律法卢恩\",\"found\":true,\"objectExact\":true,\"state\":true,\"evidence\":true,\"idx\":\"\",\"looks\":\"\",\"idxExact\":true,\"looksExact\":true,\"actualCode\":\"\",\"codeBlankOrPending\":true},{\"id\":\"CODE-C03\",\"object\":\"西境风痕碑拓\",\"found\":true,\"objectExact\":true,\"state\":true,\"evidence\":true,\"idx\":\"972\",\"looks\":\"7218（隔离测试证据）\",\"idxExact\":true,\"looksExact\":true,\"actualCode\":\"\",\"codeBlankOrPending\":true},{\"id\":\"CODE-C04\",\"object\":\"月潮忆珀\",\"found\":true,\"objectExact\":true,\"state\":true,\"evidence\":true,\"idx\":\"973\",\"looks\":\"7219（隔离测试证据）\",\"idxExact\":true,\"looksExact\":true,\"actualCode\":\"\",\"codeBlankOrPending\":true},{\"id\":\"CODE-C05\",\"object\":\"湖心月谱残章\",\"found\":true,\"objectExact\":true,\"state\":true,\"evidence\":true,\"idx\":\"974\",\"looks\":\"7220（隔离测试证据）\",\"idxExact\":true,\"looksExact\":true,\"actualCode\":\"\",\"codeBlankOrPending\":true},{\"id\":\"CODE-C06\",\"object\":\"熔原罪火残章\",\"found\":true,\"objectExact\":true,\"state\":true,\"evidence\":true,\"idx\":\"975\",\"looks\":\"7221（隔离测试证据）\",\"idxExact\":true,\"looksExact\":true,\"actualCode\":\"\",\"codeBlankOrPending\":true},{\"id\":\"CODE-C07\",\"object\":\"永霜朝圣痕\",\"found\":true,\"objectExact\":true,\"state\":true,\"evidence\":true,\"idx\":\"976\",\"looks\":\"7222（隔离测试证据）\",\"idxExact\":true,\"looksExact\":true,\"actualCode\":\"\",\"codeBlankOrPending\":true},{\"id\":\"CODE-C08\",\"object\":\"穹霜碑珀\",\"found\":true,\"objectExact\":true,\"state\":true,\"evidence\":true,\"idx\":\"977\",\"looks\":\"7223（隔离测试证据）\",\"idxExact\":true,\"looksExact\":true,\"actualCode\":\"\",\"codeBlankOrPending\":true},{\"id\":\"CODE-C09\",\"object\":\"古坛鎏叶髓\",\"found\":true,\"objectExact\":true,\"state\":true,\"evidence\":true,\"idx\":\"978\",\"looks\":\"7224（隔离测试证据）\",\"idxExact\":true,\"looksExact\":true,\"actualCode\":\"\",\"codeBlankOrPending\":true},{\"id\":\"CODE-C10\",\"object\":\"穹律鎏痕拓片\",\"found\":true,\"objectExact\":true,\"state\":true,\"evidence\":true,\"idx\":\"979\",\"looks\":\"7225（隔离测试证据）\",\"idxExact\":true,\"looksExact\":true,\"actualCode\":\"\",\"codeBlankOrPending\":true},{\"id\":\"CODE-FROZEN\",\"object\":\"Idx 980–983\",\"found\":true,\"objectExact\":true,\"state\":true,\"evidence\":true,\"idx\":\"980–983\",\"looks\":\"\",\"idxExact\":true,\"looksExact\":true,\"actualCode\":\"\",\"codeBlankOrPending\":true},{\"id\":\"CODE-WEARABLE\",\"object\":\"38件合成穿戴物\",\"found\":true,\"objectExact\":true,\"state\":true,\"evidence\":true,\"idx\":\"\",\"looks\":\"\",\"idxExact\":true,\"looksExact\":true,\"actualCode\":\"\",\"codeBlankOrPending\":true}],\"pass\":true}]}"
+    },
+    {
+      "id": "V21",
+      "status": "PASS",
+      "target": "recipe input/resource full-name resolution",
+      "observed": true,
+      "expected": "every active main03 recipe input resource ID resolves to exactly one main01 resource row with exact full name; no note/status pending exemption is accepted; five required names are each actively referenced; 大卢恩 is isolated from XXX的大卢恩 artifacts by explicit positive wording",
+      "discovered_range": "01_资源总览!A4:Q269 | 03_消耗端!A4:W490 | 10_转生材料与回收!A4:L8 | 09_转生材料与回收!A4:L8 | 12_编码与实库回读!A4:H18 | 11_编码与实库回读!A4:H18",
+      "evidence": "{\"requiredNames\":[\"小卢恩\",\"大卢恩\",\"巨人熔火卢恩\",\"黄金律法卢恩\",\"失温熔炉楔\"],\"requiredActiveReferencesPass\":true,\"unresolved\":[],\"checked\":390,\"artifactIsolation\":true}"
+    },
+    {
+      "id": "V22",
+      "status": "PASS",
+      "target": "formula error scan",
+      "observed": true,
+      "expected": 0,
+      "discovered_range": "main:00_使用说明!A1:C17 | main:01_资源总览!A1:Q269 | main:02_产出端!A1:Q158 | main:03_消耗端!A1:W490 | main:04_配方闭环!A1:W78 | main:05_大陆闭环!A1:W14 | main:06_未闭合清单!A1:F24 | main:07_处决韧性难度!A1:I18 | main:08_校验!A1:F29 | main:09_爆率计算框架!A1:O70 | main:10_转生材料与回收!A1:L8 | main:11_BOSS称号卷来源!A1:N29 | main:12_编码与实库回读!A1:H18 | main:13_合成穿戴物回收边界!A1:J42 | npc:00_使用说明!A1:D12 | npc:01_NPC总览!A1:K54 | npc:02_配方总表!A1:S78 | npc:03_材料角色!A1:N84 | npc:04_大陆经济口径!A1:L14 | npc:05_生肖与群攻!A1:J20 | npc:06_属性来源!A1:G13 | npc:07_玩家模型!A1:G8 | npc:08_校验!A1:F16 | npc:09_转生材料与回收!A1:L8 | npc:10_BOSS称号卷来源!A1:N29 | npc:11_编码与实库回读!A1:H18 | npc:12_合成穿戴物回收边界!A1:J42 | archive02:使用说明!A1:F20 | archive02:已确认规则!A1:G294 | archive02:数值参数!A1:J268 | archive02:装备索引!A1:H26 | archive02:怪物索引!A1:H14 | archive02:地图索引!A1:H18 | archive02:掉落索引!A1:H37",
+      "evidence": "see formula error scan NDJSON; inspect matches without a sheet are retained as UNKNOWN_SHEET failures"
+    },
+    {
+      "id": "V23",
+      "status": "PASS",
+      "target": "field-aware forbidden numeric truth scan",
+      "observed": true,
+      "expected": 0,
+      "discovered_range": "11_BOSS称号卷来源!A4:N29 | 10_BOSS称号卷来源!A4:N29 | 02_配方总表!A4:S78 | 04_配方闭环!A4:W78 | 03_消耗端!A4:W490 | 10_转生材料与回收!A4:L8 | 09_转生材料与回收!A4:L8 | 13_合成穿戴物回收边界!A4:J42 | 12_合成穿戴物回收边界!A4:J42 | 已确认规则!A284:G294 | 数值参数!A258:J268 | 掉落索引!A21:H37",
+      "evidence": "{\"scanned\":{\"boss\":50,\"npcRebirth\":20,\"mainRecipe\":20,\"mainConsumption\":70,\"stage\":8,\"wearables\":76,\"archiveNewRows\":36},\"violations\":[],\"stageSourceViolations\":[],\"archiveDropTruthViolations\":[],\"archiveRequiredTablesPass\":true,\"archiveDropProbabilityColumn\":3,\"archiveParamIndices\":{\"下限\":4,\"上限\":5,\"正式值\":6,\"状态\":7},\"wearPriceViolations\":[],\"archiveTruthPendingRows\":1,\"archiveTruthPendingViolations\":[]}"
+    },
+    {
+      "id": "V24",
+      "status": "PASS",
+      "target": "five archive texts, confirmation archive, and archive workbook IDs",
+      "observed": true,
+      "expected": "each five text docs and required confirmation archive has current-batch marker plus noncombat boundary with no active C1/C2 missing-code conflict; archive XLSX full-workbook current-batch IDs match the exact expected 36-item multiset once each, rejects an unknown 37th ID anywhere, and has no formula errors",
+      "discovered_range": "archive02:已确认规则!A265:G294 | archive02:数值参数!A250:J268 | archive02:掉落索引!A18:H37 | five archive text docs + confirmation",
+      "evidence": "{\"archiveTextChecks\":[{\"name\":\"00_项目总纲.md\",\"coverage\":true,\"boundary\":true},{\"name\":\"01_当前任务指针.txt\",\"coverage\":true,\"boundary\":true},{\"name\":\"03_变更记录.md\",\"coverage\":true,\"boundary\":true},{\"name\":\"04_每日设计更新.md\",\"coverage\":true,\"boundary\":true},{\"name\":\"05_当前有效游戏设计总档.md\",\"coverage\":true,\"boundary\":true}],\"confirmationCheck\":{\"name\":\"20260903_第一批非战斗结构收口_确认归档.md\",\"coverage\":true,\"boundary\":true},\"archiveConflicts\":[],\"textConflictLines\":[],\"archiveStableIdCellCount\":36,\"archiveStableUniqueCount\":36,\"archiveStableDuplicateIds\":[],\"archiveMissingExpectedIds\":[],\"archiveCurrentBatchIds\":[\"EL-NC-C1C2-CLOSE-20260903\",\"EL-NC-C3C10-READBACK-20260903\",\"EL-NC-REBIRTH-STAGES-20260903\",\"EL-NC-REBIRTH-CURRENCY-20260903\",\"EL-NC-REBIRTH-SOURCE-RECYCLE-20260903\",\"EL-NC-C10-TITLE-MATERIAL-20260903\",\"EL-NC-WEARABLE-NORECYCLE-20260903\",\"EL-NC-TITLE-SOURCES-20260903\",\"EL-NC-CODE-FREEZE-20260903\",\"EL-NC-SCOPE-BOUNDARY-20260903\",\"EL-PARAM-NC-C1C2-ACTIVE-20260903\",\"EL-PARAM-NC-C3C10-COLLECT-20260903\",\"EL-PARAM-NC-REBIRTH-STAGES-20260903\",\"EL-PARAM-NC-REBIRTH-LEVELS-20260903\",\"EL-PARAM-NC-REBIRTH-SLASH-20260903\",\"EL-PARAM-NC-WEARABLE-NORECYCLE-20260903\",\"EL-PARAM-NC-TITLE-SOURCES-20260903\",\"EL-PARAM-NC-GATE-SOURCES-20260903\",\"EL-PARAM-NC-CODE-FREEZE-20260903\",\"EL-PARAM-NC-TRUTH-PENDING-20260903\",\"EL-DROP-NC-RUNE-SMALL-20260903\",\"EL-DROP-NC-RUNE-LARGE-20260903\",\"EL-DROP-NC-RUNE-GIANT-20260903\",\"EL-DROP-NC-RUNE-GOLDEN-20260903\",\"EL-DROP-NC-TITLE-SOURCES-20260903\",\"EL-DROP-NC-GATE-C01-20260903\",\"EL-DROP-NC-GATE-C02-20260903\",\"EL-DROP-NC-GATE-C03-20260903\",\"EL-DROP-NC-GATE-C04-20260903\",\"EL-DROP-NC-GATE-C05-20260903\",\"EL-DROP-NC-GATE-C06-20260903\",\"EL-DROP-NC-GATE-C07-20260903\",\"EL-DROP-NC-GATE-C08-20260903\",\"EL-DROP-NC-GATE-C09-20260903\",\"EL-DROP-NC-GATE-C10-20260903\",\"EL-DROP-NC-C3C10-READBACK-20260903\"],\"archiveCurrentBatchCounts\":{\"EL-NC-C1C2-CLOSE-20260903\":1,\"EL-NC-C3C10-READBACK-20260903\":1,\"EL-NC-REBIRTH-STAGES-20260903\":1,\"EL-NC-REBIRTH-CURRENCY-20260903\":1,\"EL-NC-REBIRTH-SOURCE-RECYCLE-20260903\":1,\"EL-NC-C10-TITLE-MATERIAL-20260903\":1,\"EL-NC-WEARABLE-NORECYCLE-20260903\":1,\"EL-NC-TITLE-SOURCES-20260903\":1,\"EL-NC-CODE-FREEZE-20260903\":1,\"EL-NC-SCOPE-BOUNDARY-20260903\":1,\"EL-PARAM-NC-C1C2-ACTIVE-20260903\":1,\"EL-PARAM-NC-C3C10-COLLECT-20260903\":1,\"EL-PARAM-NC-REBIRTH-STAGES-20260903\":1,\"EL-PARAM-NC-REBIRTH-LEVELS-20260903\":1,\"EL-PARAM-NC-REBIRTH-SLASH-20260903\":1,\"EL-PARAM-NC-WEARABLE-NORECYCLE-20260903\":1,\"EL-PARAM-NC-TITLE-SOURCES-20260903\":1,\"EL-PARAM-NC-GATE-SOURCES-20260903\":1,\"EL-PARAM-NC-CODE-FREEZE-20260903\":1,\"EL-PARAM-NC-TRUTH-PENDING-20260903\":1,\"EL-DROP-NC-RUNE-SMALL-20260903\":1,\"EL-DROP-NC-RUNE-LARGE-20260903\":1,\"EL-DROP-NC-RUNE-GIANT-20260903\":1,\"EL-DROP-NC-RUNE-GOLDEN-20260903\":1,\"EL-DROP-NC-TITLE-SOURCES-20260903\":1,\"EL-DROP-NC-GATE-C01-20260903\":1,\"EL-DROP-NC-GATE-C02-20260903\":1,\"EL-DROP-NC-GATE-C03-20260903\":1,\"EL-DROP-NC-GATE-C04-20260903\":1,\"EL-DROP-NC-GATE-C05-20260903\":1,\"EL-DROP-NC-GATE-C06-20260903\":1,\"EL-DROP-NC-GATE-C07-20260903\":1,\"EL-DROP-NC-GATE-C08-20260903\":1,\"EL-DROP-NC-GATE-C09-20260903\":1,\"EL-DROP-NC-GATE-C10-20260903\":1,\"EL-DROP-NC-C3C10-READBACK-20260903\":1},\"archiveCurrentBatchExact\":true,\"archiveLocationChecks\":[{\"sheet\":\"已确认规则\",\"range\":\"A284:G294\",\"expected\":10,\"found\":10,\"missing\":[]},{\"sheet\":\"数值参数\",\"range\":\"A258:J268\",\"expected\":10,\"found\":10,\"missing\":[]},{\"sheet\":\"掉落索引\",\"range\":\"A21:H37\",\"expected\":16,\"found\":16,\"missing\":[]}],\"archiveUnexpectedCurrentIds\":[],\"archiveFormulaErrors\":0}"
+    }
+  ],
+  "formula_error_count": 0,
+  "formula_scan_path": "/workspace/scratch/f124f410aa49/outputs/f124f410aa49/20260903_第一批非战斗结构收口/公式错误扫描.ndjson",
+  "sha_preservation": {
+    "all_equal": true,
+    "targets": [
+      {
+        "path": "deliverables/艾尔登法环_第一二大陆_Codex施工包_20260821/01_第一大陆36怪_属性修改表.xlsx",
+        "expected_sha256": "99933b77d6eea1c0348aea0ff36ee913cde1690e40ccc5ef264042c1d9c89153",
+        "before_sha256": "99933b77d6eea1c0348aea0ff36ee913cde1690e40ccc5ef264042c1d9c89153",
+        "after_sha256": "99933b77d6eea1c0348aea0ff36ee913cde1690e40ccc5ef264042c1d9c89153",
+        "expected_match": true,
+        "unchanged": true
+      },
+      {
+        "path": "deliverables/艾尔登法环_第一二大陆_Codex施工包_20260821/02_第二大陆宁姆格福61怪_属性修改表.xlsx",
+        "expected_sha256": "6b274e6eb8728418c7b44be1322e1c53ce42854f80d397a69c3bcf59b0e09b6c",
+        "before_sha256": "6b274e6eb8728418c7b44be1322e1c53ce42854f80d397a69c3bcf59b0e09b6c",
+        "after_sha256": "6b274e6eb8728418c7b44be1322e1c53ce42854f80d397a69c3bcf59b0e09b6c",
+        "expected_match": true,
+        "unchanged": true
+      },
+      {
+        "path": "deliverables/艾尔登法环_第一二大陆_Codex施工包_20260821/03_第一二大陆20套制式装备_属性修改表.xlsx",
+        "expected_sha256": "d562071899c8baba28f06b9d4c2bf1ef7873e92d4f56454ad10c05872d64a734",
+        "before_sha256": "d562071899c8baba28f06b9d4c2bf1ef7873e92d4f56454ad10c05872d64a734",
+        "after_sha256": "d562071899c8baba28f06b9d4c2bf1ef7873e92d4f56454ad10c05872d64a734",
+        "expected_match": true,
+        "unchanged": true
+      },
+      {
+        "path": "deliverables/艾尔登法环_第一二大陆_Codex施工包_20260821/04_第一二大陆105件专属装备_属性修改表.xlsx",
+        "expected_sha256": "54472f837b5ea94da9922e584f40b7ce3e24b9adf2e3e8294a2ba9aeeef8584b",
+        "before_sha256": "54472f837b5ea94da9922e584f40b7ce3e24b9adf2e3e8294a2ba9aeeef8584b",
+        "after_sha256": "54472f837b5ea94da9922e584f40b7ce3e24b9adf2e3e8294a2ba9aeeef8584b",
+        "expected_match": true,
+        "unchanged": true
+      }
+    ]
+  },
+  "renders": [
+    {
+      "workbook": "main",
+      "sheet": "00_使用说明",
+      "range": "A1:C17",
+      "path": "/workspace/scratch/f124f410aa49/outputs/f124f410aa49/20260903_第一批非战斗结构收口/预览/main__00_使用说明__1__A1_C17.png",
+      "status": "PASS",
+      "reused": true
+    },
+    {
+      "workbook": "main",
+      "sheet": "01_资源总览",
+      "range": "A1:Q95",
+      "path": "/workspace/scratch/f124f410aa49/outputs/f124f410aa49/20260903_第一批非战斗结构收口/预览/main__01_资源总览__1__A1_Q95.png",
+      "status": "PASS",
+      "reused": true
+    },
+    {
+      "workbook": "main",
+      "sheet": "01_资源总览",
+      "range": "A250:Q267",
+      "path": "/workspace/scratch/f124f410aa49/outputs/f124f410aa49/20260903_第一批非战斗结构收口/预览/main__01_资源总览__2__A250_Q267.png",
+      "status": "PASS",
+      "reused": true
+    },
+    {
+      "workbook": "main",
+      "sheet": "02_产出端",
+      "range": "A1:Q20",
+      "path": "/workspace/scratch/f124f410aa49/outputs/f124f410aa49/20260903_第一批非战斗结构收口/预览/main__02_产出端__1__A1_Q20.png",
+      "status": "PASS",
+      "reused": true
+    },
+    {
+      "workbook": "main",
+      "sheet": "02_产出端",
+      "range": "A145:Q158",
+      "path": "/workspace/scratch/f124f410aa49/outputs/f124f410aa49/20260903_第一批非战斗结构收口/预览/main__02_产出端__2__A145_Q158.png",
+      "status": "PASS",
+      "reused": true
+    },
+    {
+      "workbook": "main",
+      "sheet": "03_消耗端",
+      "range": "A1:W12",
+      "path": "/workspace/scratch/f124f410aa49/outputs/f124f410aa49/20260903_第一批非战斗结构收口/预览/main__03_消耗端__1__A1_W12.png",
+      "status": "PASS",
+      "reused": true
+    },
+    {
+      "workbook": "main",
+      "sheet": "03_消耗端",
+      "range": "A270:W383",
+      "path": "/workspace/scratch/f124f410aa49/outputs/f124f410aa49/20260903_第一批非战斗结构收口/预览/main__03_消耗端__2__A270_W383.png",
+      "status": "PASS",
+      "reused": true
+    },
+    {
+      "workbook": "main",
+      "sheet": "03_消耗端",
+      "range": "A384:W490",
+      "path": "/workspace/scratch/f124f410aa49/outputs/f124f410aa49/20260903_第一批非战斗结构收口/预览/main__03_消耗端__3__A384_W490.png",
+      "status": "PASS",
+      "reused": true
+    },
+    {
+      "workbook": "main",
+      "sheet": "04_配方闭环",
+      "range": "A1:W12",
+      "path": "/workspace/scratch/f124f410aa49/outputs/f124f410aa49/20260903_第一批非战斗结构收口/预览/main__04_配方闭环__1__A1_W12.png",
+      "status": "PASS",
+      "reused": true
+    },
+    {
+      "workbook": "main",
+      "sheet": "04_配方闭环",
+      "range": "A49:W78",
+      "path": "/workspace/scratch/f124f410aa49/outputs/f124f410aa49/20260903_第一批非战斗结构收口/预览/main__04_配方闭环__2__A49_W78.png",
+      "status": "PASS",
+      "reused": true
+    },
+    {
+      "workbook": "main",
+      "sheet": "05_大陆闭环",
+      "range": "A1:W14",
+      "path": "/workspace/scratch/f124f410aa49/outputs/f124f410aa49/20260903_第一批非战斗结构收口/预览/main__05_大陆闭环__1__A1_W14.png",
+      "status": "PASS",
+      "reused": true
+    },
+    {
+      "workbook": "main",
+      "sheet": "06_未闭合清单",
+      "range": "A1:F24",
+      "path": "/workspace/scratch/f124f410aa49/outputs/f124f410aa49/20260903_第一批非战斗结构收口/预览/main__06_未闭合清单__1__A1_F24.png",
+      "status": "PASS",
+      "reused": true
+    },
+    {
+      "workbook": "main",
+      "sheet": "08_校验",
+      "range": "A1:F29",
+      "path": "/workspace/scratch/f124f410aa49/outputs/f124f410aa49/20260903_第一批非战斗结构收口/预览/main__08_校验__1__A1_F29.png",
+      "status": "PASS",
+      "reused": true
+    },
+    {
+      "workbook": "main",
+      "sheet": "09_爆率计算框架",
+      "range": "A1:O70",
+      "path": "/workspace/scratch/f124f410aa49/outputs/f124f410aa49/20260903_第一批非战斗结构收口/预览/main__09_爆率计算框架__1__A1_O70.png",
+      "status": "PASS",
+      "reused": true
+    },
+    {
+      "workbook": "main",
+      "sheet": "10_转生材料与回收",
+      "range": "A1:L8",
+      "path": "/workspace/scratch/f124f410aa49/outputs/f124f410aa49/20260903_第一批非战斗结构收口/预览/main__10_转生材料与回收__1__A1_L8.png",
+      "status": "PASS",
+      "reused": true
+    },
+    {
+      "workbook": "main",
+      "sheet": "11_BOSS称号卷来源",
+      "range": "A1:N29",
+      "path": "/workspace/scratch/f124f410aa49/outputs/f124f410aa49/20260903_第一批非战斗结构收口/预览/main__11_BOSS称号卷来源__1__A1_N29.png",
+      "status": "PASS",
+      "reused": true
+    },
+    {
+      "workbook": "main",
+      "sheet": "12_编码与实库回读",
+      "range": "A1:H18",
+      "path": "/workspace/scratch/f124f410aa49/outputs/f124f410aa49/20260903_第一批非战斗结构收口/预览/main__12_编码与实库回读__1__A1_H18.png",
+      "status": "PASS",
+      "reused": true
+    },
+    {
+      "workbook": "main",
+      "sheet": "13_合成穿戴物回收边界",
+      "range": "A1:J42",
+      "path": "/workspace/scratch/f124f410aa49/outputs/f124f410aa49/20260903_第一批非战斗结构收口/预览/main__13_合成穿戴物回收边界__1__A1_J42.png",
+      "status": "PASS",
+      "reused": true
+    },
+    {
+      "workbook": "npc",
+      "sheet": "00_使用说明",
+      "range": "A1:D12",
+      "path": "/workspace/scratch/f124f410aa49/outputs/f124f410aa49/20260903_第一批非战斗结构收口/预览/npc__00_使用说明__1__A1_D12.png",
+      "status": "PASS",
+      "reused": true
+    },
+    {
+      "workbook": "npc",
+      "sheet": "01_NPC总览",
+      "range": "A1:K54",
+      "path": "/workspace/scratch/f124f410aa49/outputs/f124f410aa49/20260903_第一批非战斗结构收口/预览/npc__01_NPC总览__1__A1_K54.png",
+      "status": "PASS",
+      "reused": true
+    },
+    {
+      "workbook": "npc",
+      "sheet": "02_配方总表",
+      "range": "A1:S10",
+      "path": "/workspace/scratch/f124f410aa49/outputs/f124f410aa49/20260903_第一批非战斗结构收口/预览/npc__02_配方总表__1__A1_S10.png",
+      "status": "PASS",
+      "reused": true
+    },
+    {
+      "workbook": "npc",
+      "sheet": "02_配方总表",
+      "range": "A49:S78",
+      "path": "/workspace/scratch/f124f410aa49/outputs/f124f410aa49/20260903_第一批非战斗结构收口/预览/npc__02_配方总表__2__A49_S78.png",
+      "status": "PASS",
+      "reused": true
+    },
+    {
+      "workbook": "npc",
+      "sheet": "03_材料角色",
+      "range": "A1:N12",
+      "path": "/workspace/scratch/f124f410aa49/outputs/f124f410aa49/20260903_第一批非战斗结构收口/预览/npc__03_材料角色__1__A1_N12.png",
+      "status": "PASS",
+      "reused": true
+    },
+    {
+      "workbook": "npc",
+      "sheet": "03_材料角色",
+      "range": "A70:N84",
+      "path": "/workspace/scratch/f124f410aa49/outputs/f124f410aa49/20260903_第一批非战斗结构收口/预览/npc__03_材料角色__2__A70_N84.png",
+      "status": "PASS",
+      "reused": true
+    },
+    {
+      "workbook": "npc",
+      "sheet": "04_大陆经济口径",
+      "range": "A1:L14",
+      "path": "/workspace/scratch/f124f410aa49/outputs/f124f410aa49/20260903_第一批非战斗结构收口/预览/npc__04_大陆经济口径__1__A1_L14.png",
+      "status": "PASS",
+      "reused": true
+    },
+    {
+      "workbook": "npc",
+      "sheet": "08_校验",
+      "range": "A1:F16",
+      "path": "/workspace/scratch/f124f410aa49/outputs/f124f410aa49/20260903_第一批非战斗结构收口/预览/npc__08_校验__1__A1_F16.png",
+      "status": "PASS",
+      "reused": true
+    },
+    {
+      "workbook": "npc",
+      "sheet": "09_转生材料与回收",
+      "range": "A1:L8",
+      "path": "/workspace/scratch/f124f410aa49/outputs/f124f410aa49/20260903_第一批非战斗结构收口/预览/npc__09_转生材料与回收__1__A1_L8.png",
+      "status": "PASS",
+      "reused": true
+    },
+    {
+      "workbook": "npc",
+      "sheet": "10_BOSS称号卷来源",
+      "range": "A1:N29",
+      "path": "/workspace/scratch/f124f410aa49/outputs/f124f410aa49/20260903_第一批非战斗结构收口/预览/npc__10_BOSS称号卷来源__1__A1_N29.png",
+      "status": "PASS",
+      "reused": true
+    },
+    {
+      "workbook": "npc",
+      "sheet": "11_编码与实库回读",
+      "range": "A1:H18",
+      "path": "/workspace/scratch/f124f410aa49/outputs/f124f410aa49/20260903_第一批非战斗结构收口/预览/npc__11_编码与实库回读__1__A1_H18.png",
+      "status": "PASS",
+      "reused": true
+    },
+    {
+      "workbook": "npc",
+      "sheet": "12_合成穿戴物回收边界",
+      "range": "A1:J42",
+      "path": "/workspace/scratch/f124f410aa49/outputs/f124f410aa49/20260903_第一批非战斗结构收口/预览/npc__12_合成穿戴物回收边界__1__A1_J42.png",
+      "status": "PASS",
+      "reused": true
+    },
+    {
+      "workbook": "archive02",
+      "sheet": "使用说明",
+      "range": "A1:F20",
+      "path": "/workspace/scratch/f124f410aa49/outputs/f124f410aa49/20260903_第一批非战斗结构收口/预览/archive02__使用说明__1__A1_F20.png",
+      "status": "PASS",
+      "reused": true
+    },
+    {
+      "workbook": "archive02",
+      "sheet": "已确认规则",
+      "range": "A265:G294",
+      "path": "/workspace/scratch/f124f410aa49/outputs/f124f410aa49/20260903_第一批非战斗结构收口/预览/archive02__已确认规则__1__A265_G294.png",
+      "status": "PASS",
+      "reused": true
+    },
+    {
+      "workbook": "archive02",
+      "sheet": "数值参数",
+      "range": "A258:J268",
+      "path": "/workspace/scratch/f124f410aa49/outputs/f124f410aa49/20260903_第一批非战斗结构收口/预览/archive02__数值参数__1__A258_J268.png",
+      "status": "PASS",
+      "reused": true
+    },
+    {
+      "workbook": "archive02",
+      "sheet": "掉落索引",
+      "range": "A21:H37",
+      "path": "/workspace/scratch/f124f410aa49/outputs/f124f410aa49/20260903_第一批非战斗结构收口/预览/archive02__掉落索引__1__A21_H37.png",
+      "status": "PASS",
+      "reused": true
+    }
+  ],
+  "visual_qa": [
+    {
+      "preview": "/workspace/scratch/f124f410aa49/outputs/f124f410aa49/20260903_第一批非战斗结构收口/预览/main__00_使用说明__1__A1_C17.png",
+      "workbook": "main",
+      "sheet": "00_使用说明",
+      "range": "A1:C17",
+      "checks": {
+        "chinese": true,
+        "clipping": true,
+        "key_values_visible": true,
+        "pending_status_readable": true,
+        "no_blank_default_sheet": true,
+        "style_consistent": true,
+        "no_scientific_notation": true,
+        "autoCrop_all": true,
+        "headers": true
+      },
+      "status": "PASS"
+    },
+    {
+      "preview": "/workspace/scratch/f124f410aa49/outputs/f124f410aa49/20260903_第一批非战斗结构收口/预览/main__01_资源总览__1__A1_Q95.png",
+      "workbook": "main",
+      "sheet": "01_资源总览",
+      "range": "A1:Q95",
+      "checks": {
+        "chinese": true,
+        "clipping": true,
+        "key_values_visible": true,
+        "pending_status_readable": true,
+        "no_blank_default_sheet": true,
+        "style_consistent": true,
+        "no_scientific_notation": true,
+        "autoCrop_all": true,
+        "headers": true,
+        "c1c2_closure_visible": true
+      },
+      "status": "PASS"
+    },
+    {
+      "preview": "/workspace/scratch/f124f410aa49/outputs/f124f410aa49/20260903_第一批非战斗结构收口/预览/main__01_资源总览__2__A250_Q267.png",
+      "workbook": "main",
+      "sheet": "01_资源总览",
+      "range": "A250:Q267",
+      "checks": {
+        "chinese": true,
+        "clipping": true,
+        "key_values_visible": true,
+        "pending_status_readable": true,
+        "no_blank_default_sheet": true,
+        "style_consistent": true,
+        "no_scientific_notation": true,
+        "autoCrop_all": true
+      },
+      "status": "PASS"
+    },
+    {
+      "preview": "/workspace/scratch/f124f410aa49/outputs/f124f410aa49/20260903_第一批非战斗结构收口/预览/main__02_产出端__1__A1_Q20.png",
+      "workbook": "main",
+      "sheet": "02_产出端",
+      "range": "A1:Q20",
+      "checks": {
+        "chinese": true,
+        "clipping": true,
+        "key_values_visible": true,
+        "pending_status_readable": true,
+        "no_blank_default_sheet": true,
+        "style_consistent": true,
+        "no_scientific_notation": true,
+        "autoCrop_all": true,
+        "headers": true
+      },
+      "status": "PASS"
+    },
+    {
+      "preview": "/workspace/scratch/f124f410aa49/outputs/f124f410aa49/20260903_第一批非战斗结构收口/预览/main__02_产出端__2__A145_Q158.png",
+      "workbook": "main",
+      "sheet": "02_产出端",
+      "range": "A145:Q158",
+      "checks": {
+        "chinese": true,
+        "clipping": true,
+        "key_values_visible": true,
+        "pending_status_readable": true,
+        "no_blank_default_sheet": true,
+        "style_consistent": true,
+        "no_scientific_notation": true,
+        "autoCrop_all": true
+      },
+      "status": "PASS"
+    },
+    {
+      "preview": "/workspace/scratch/f124f410aa49/outputs/f124f410aa49/20260903_第一批非战斗结构收口/预览/main__03_消耗端__1__A1_W12.png",
+      "workbook": "main",
+      "sheet": "03_消耗端",
+      "range": "A1:W12",
+      "checks": {
+        "chinese": true,
+        "clipping": true,
+        "key_values_visible": true,
+        "pending_status_readable": true,
+        "no_blank_default_sheet": true,
+        "style_consistent": true,
+        "no_scientific_notation": true,
+        "autoCrop_all": true,
+        "headers": true
+      },
+      "status": "PASS"
+    },
+    {
+      "preview": "/workspace/scratch/f124f410aa49/outputs/f124f410aa49/20260903_第一批非战斗结构收口/预览/main__03_消耗端__2__A270_W383.png",
+      "workbook": "main",
+      "sheet": "03_消耗端",
+      "range": "A270:W383",
+      "checks": {
+        "chinese": true,
+        "clipping": true,
+        "key_values_visible": true,
+        "pending_status_readable": true,
+        "no_blank_default_sheet": true,
+        "style_consistent": true,
+        "no_scientific_notation": true,
+        "autoCrop_all": true,
+        "c10_title_material_visible": true
+      },
+      "status": "PASS"
+    },
+    {
+      "preview": "/workspace/scratch/f124f410aa49/outputs/f124f410aa49/20260903_第一批非战斗结构收口/预览/main__03_消耗端__3__A384_W490.png",
+      "workbook": "main",
+      "sheet": "03_消耗端",
+      "range": "A384:W490",
+      "checks": {
+        "chinese": true,
+        "clipping": true,
+        "key_values_visible": true,
+        "pending_status_readable": true,
+        "no_blank_default_sheet": true,
+        "style_consistent": true,
+        "no_scientific_notation": true,
+        "autoCrop_all": true,
+        "c1c2_closure_visible": true
+      },
+      "status": "PASS"
+    },
+    {
+      "preview": "/workspace/scratch/f124f410aa49/outputs/f124f410aa49/20260903_第一批非战斗结构收口/预览/main__04_配方闭环__1__A1_W12.png",
+      "workbook": "main",
+      "sheet": "04_配方闭环",
+      "range": "A1:W12",
+      "checks": {
+        "chinese": true,
+        "clipping": true,
+        "key_values_visible": true,
+        "pending_status_readable": true,
+        "no_blank_default_sheet": true,
+        "style_consistent": true,
+        "no_scientific_notation": true,
+        "autoCrop_all": true,
+        "headers": true
+      },
+      "status": "PASS"
+    },
+    {
+      "preview": "/workspace/scratch/f124f410aa49/outputs/f124f410aa49/20260903_第一批非战斗结构收口/预览/main__04_配方闭环__2__A49_W78.png",
+      "workbook": "main",
+      "sheet": "04_配方闭环",
+      "range": "A49:W78",
+      "checks": {
+        "chinese": true,
+        "clipping": true,
+        "key_values_visible": true,
+        "pending_status_readable": true,
+        "no_blank_default_sheet": true,
+        "style_consistent": true,
+        "no_scientific_notation": true,
+        "autoCrop_all": true,
+        "c10_title_material_visible": true,
+        "rebirth_20_order_visible": true
+      },
+      "status": "PASS"
+    },
+    {
+      "preview": "/workspace/scratch/f124f410aa49/outputs/f124f410aa49/20260903_第一批非战斗结构收口/预览/main__05_大陆闭环__1__A1_W14.png",
+      "workbook": "main",
+      "sheet": "05_大陆闭环",
+      "range": "A1:W14",
+      "checks": {
+        "chinese": true,
+        "clipping": true,
+        "key_values_visible": true,
+        "pending_status_readable": true,
+        "no_blank_default_sheet": true,
+        "style_consistent": true,
+        "no_scientific_notation": true,
+        "autoCrop_all": true,
+        "headers": true,
+        "c1c2_closure_visible": true
+      },
+      "status": "PASS"
+    },
+    {
+      "preview": "/workspace/scratch/f124f410aa49/outputs/f124f410aa49/20260903_第一批非战斗结构收口/预览/main__06_未闭合清单__1__A1_F24.png",
+      "workbook": "main",
+      "sheet": "06_未闭合清单",
+      "range": "A1:F24",
+      "checks": {
+        "chinese": true,
+        "clipping": true,
+        "key_values_visible": true,
+        "pending_status_readable": true,
+        "no_blank_default_sheet": true,
+        "style_consistent": true,
+        "no_scientific_notation": true,
+        "autoCrop_all": true,
+        "headers": true
+      },
+      "status": "PASS"
+    },
+    {
+      "preview": "/workspace/scratch/f124f410aa49/outputs/f124f410aa49/20260903_第一批非战斗结构收口/预览/main__08_校验__1__A1_F29.png",
+      "workbook": "main",
+      "sheet": "08_校验",
+      "range": "A1:F29",
+      "checks": {
+        "chinese": true,
+        "clipping": true,
+        "key_values_visible": true,
+        "pending_status_readable": true,
+        "no_blank_default_sheet": true,
+        "style_consistent": true,
+        "no_scientific_notation": true,
+        "autoCrop_all": true,
+        "headers": true
+      },
+      "status": "PASS"
+    },
+    {
+      "preview": "/workspace/scratch/f124f410aa49/outputs/f124f410aa49/20260903_第一批非战斗结构收口/预览/main__09_爆率计算框架__1__A1_O70.png",
+      "workbook": "main",
+      "sheet": "09_爆率计算框架",
+      "range": "A1:O70",
+      "checks": {
+        "chinese": true,
+        "clipping": true,
+        "key_values_visible": true,
+        "pending_status_readable": true,
+        "no_blank_default_sheet": true,
+        "style_consistent": true,
+        "no_scientific_notation": true,
+        "autoCrop_all": true,
+        "headers": true
+      },
+      "status": "PASS"
+    },
+    {
+      "preview": "/workspace/scratch/f124f410aa49/outputs/f124f410aa49/20260903_第一批非战斗结构收口/预览/main__10_转生材料与回收__1__A1_L8.png",
+      "workbook": "main",
+      "sheet": "10_转生材料与回收",
+      "range": "A1:L8",
+      "checks": {
+        "chinese": true,
+        "clipping": true,
+        "key_values_visible": true,
+        "pending_status_readable": true,
+        "no_blank_default_sheet": true,
+        "style_consistent": true,
+        "no_scientific_notation": true,
+        "autoCrop_all": true,
+        "headers": true
+      },
+      "status": "PASS"
+    },
+    {
+      "preview": "/workspace/scratch/f124f410aa49/outputs/f124f410aa49/20260903_第一批非战斗结构收口/预览/main__11_BOSS称号卷来源__1__A1_N29.png",
+      "workbook": "main",
+      "sheet": "11_BOSS称号卷来源",
+      "range": "A1:N29",
+      "checks": {
+        "chinese": true,
+        "clipping": true,
+        "key_values_visible": true,
+        "pending_status_readable": true,
+        "no_blank_default_sheet": true,
+        "style_consistent": true,
+        "no_scientific_notation": true,
+        "autoCrop_all": true,
+        "headers": true,
+        "boss_25_structure_visible": true,
+        "autofilter_and_frozen_header": true
+      },
+      "status": "PASS"
+    },
+    {
+      "preview": "/workspace/scratch/f124f410aa49/outputs/f124f410aa49/20260903_第一批非战斗结构收口/预览/main__12_编码与实库回读__1__A1_H18.png",
+      "workbook": "main",
+      "sheet": "12_编码与实库回读",
+      "range": "A1:H18",
+      "checks": {
+        "chinese": true,
+        "clipping": true,
+        "key_values_visible": true,
+        "pending_status_readable": true,
+        "no_blank_default_sheet": true,
+        "style_consistent": true,
+        "no_scientific_notation": true,
+        "autoCrop_all": true,
+        "headers": true,
+        "autofilter_and_frozen_header": true
+      },
+      "status": "PASS"
+    },
+    {
+      "preview": "/workspace/scratch/f124f410aa49/outputs/f124f410aa49/20260903_第一批非战斗结构收口/预览/main__13_合成穿戴物回收边界__1__A1_J42.png",
+      "workbook": "main",
+      "sheet": "13_合成穿戴物回收边界",
+      "range": "A1:J42",
+      "checks": {
+        "chinese": true,
+        "clipping": true,
+        "key_values_visible": true,
+        "pending_status_readable": true,
+        "no_blank_default_sheet": true,
+        "style_consistent": true,
+        "no_scientific_notation": true,
+        "autoCrop_all": true,
+        "headers": true,
+        "autofilter_and_frozen_header": true
+      },
+      "status": "PASS"
+    },
+    {
+      "preview": "/workspace/scratch/f124f410aa49/outputs/f124f410aa49/20260903_第一批非战斗结构收口/预览/npc__00_使用说明__1__A1_D12.png",
+      "workbook": "npc",
+      "sheet": "00_使用说明",
+      "range": "A1:D12",
+      "checks": {
+        "chinese": true,
+        "clipping": true,
+        "key_values_visible": true,
+        "pending_status_readable": true,
+        "no_blank_default_sheet": true,
+        "style_consistent": true,
+        "no_scientific_notation": true,
+        "autoCrop_all": true,
+        "headers": true
+      },
+      "status": "PASS"
+    },
+    {
+      "preview": "/workspace/scratch/f124f410aa49/outputs/f124f410aa49/20260903_第一批非战斗结构收口/预览/npc__01_NPC总览__1__A1_K54.png",
+      "workbook": "npc",
+      "sheet": "01_NPC总览",
+      "range": "A1:K54",
+      "checks": {
+        "chinese": true,
+        "clipping": true,
+        "key_values_visible": true,
+        "pending_status_readable": true,
+        "no_blank_default_sheet": true,
+        "style_consistent": true,
+        "no_scientific_notation": true,
+        "autoCrop_all": true,
+        "headers": true
+      },
+      "status": "PASS"
+    },
+    {
+      "preview": "/workspace/scratch/f124f410aa49/outputs/f124f410aa49/20260903_第一批非战斗结构收口/预览/npc__02_配方总表__1__A1_S10.png",
+      "workbook": "npc",
+      "sheet": "02_配方总表",
+      "range": "A1:S10",
+      "checks": {
+        "chinese": true,
+        "clipping": true,
+        "key_values_visible": true,
+        "pending_status_readable": true,
+        "no_blank_default_sheet": true,
+        "style_consistent": true,
+        "no_scientific_notation": true,
+        "autoCrop_all": true,
+        "headers": true
+      },
+      "status": "PASS"
+    },
+    {
+      "preview": "/workspace/scratch/f124f410aa49/outputs/f124f410aa49/20260903_第一批非战斗结构收口/预览/npc__02_配方总表__2__A49_S78.png",
+      "workbook": "npc",
+      "sheet": "02_配方总表",
+      "range": "A49:S78",
+      "checks": {
+        "chinese": true,
+        "clipping": true,
+        "key_values_visible": true,
+        "pending_status_readable": true,
+        "no_blank_default_sheet": true,
+        "style_consistent": true,
+        "no_scientific_notation": true,
+        "autoCrop_all": true,
+        "rebirth_20_order_visible": true
+      },
+      "status": "PASS"
+    },
+    {
+      "preview": "/workspace/scratch/f124f410aa49/outputs/f124f410aa49/20260903_第一批非战斗结构收口/预览/npc__03_材料角色__1__A1_N12.png",
+      "workbook": "npc",
+      "sheet": "03_材料角色",
+      "range": "A1:N12",
+      "checks": {
+        "chinese": true,
+        "clipping": true,
+        "key_values_visible": true,
+        "pending_status_readable": true,
+        "no_blank_default_sheet": true,
+        "style_consistent": true,
+        "no_scientific_notation": true,
+        "autoCrop_all": true,
+        "headers": true
+      },
+      "status": "PASS"
+    },
+    {
+      "preview": "/workspace/scratch/f124f410aa49/outputs/f124f410aa49/20260903_第一批非战斗结构收口/预览/npc__03_材料角色__2__A70_N84.png",
+      "workbook": "npc",
+      "sheet": "03_材料角色",
+      "range": "A70:N84",
+      "checks": {
+        "chinese": true,
+        "clipping": true,
+        "key_values_visible": true,
+        "pending_status_readable": true,
+        "no_blank_default_sheet": true,
+        "style_consistent": true,
+        "no_scientific_notation": true,
+        "autoCrop_all": true
+      },
+      "status": "PASS"
+    },
+    {
+      "preview": "/workspace/scratch/f124f410aa49/outputs/f124f410aa49/20260903_第一批非战斗结构收口/预览/npc__04_大陆经济口径__1__A1_L14.png",
+      "workbook": "npc",
+      "sheet": "04_大陆经济口径",
+      "range": "A1:L14",
+      "checks": {
+        "chinese": true,
+        "clipping": true,
+        "key_values_visible": true,
+        "pending_status_readable": true,
+        "no_blank_default_sheet": true,
+        "style_consistent": true,
+        "no_scientific_notation": true,
+        "autoCrop_all": true,
+        "headers": true
+      },
+      "status": "PASS"
+    },
+    {
+      "preview": "/workspace/scratch/f124f410aa49/outputs/f124f410aa49/20260903_第一批非战斗结构收口/预览/npc__08_校验__1__A1_F16.png",
+      "workbook": "npc",
+      "sheet": "08_校验",
+      "range": "A1:F16",
+      "checks": {
+        "chinese": true,
+        "clipping": true,
+        "key_values_visible": true,
+        "pending_status_readable": true,
+        "no_blank_default_sheet": true,
+        "style_consistent": true,
+        "no_scientific_notation": true,
+        "autoCrop_all": true,
+        "headers": true
+      },
+      "status": "PASS"
+    },
+    {
+      "preview": "/workspace/scratch/f124f410aa49/outputs/f124f410aa49/20260903_第一批非战斗结构收口/预览/npc__09_转生材料与回收__1__A1_L8.png",
+      "workbook": "npc",
+      "sheet": "09_转生材料与回收",
+      "range": "A1:L8",
+      "checks": {
+        "chinese": true,
+        "clipping": true,
+        "key_values_visible": true,
+        "pending_status_readable": true,
+        "no_blank_default_sheet": true,
+        "style_consistent": true,
+        "no_scientific_notation": true,
+        "autoCrop_all": true,
+        "headers": true
+      },
+      "status": "PASS"
+    },
+    {
+      "preview": "/workspace/scratch/f124f410aa49/outputs/f124f410aa49/20260903_第一批非战斗结构收口/预览/npc__10_BOSS称号卷来源__1__A1_N29.png",
+      "workbook": "npc",
+      "sheet": "10_BOSS称号卷来源",
+      "range": "A1:N29",
+      "checks": {
+        "chinese": true,
+        "clipping": true,
+        "key_values_visible": true,
+        "pending_status_readable": true,
+        "no_blank_default_sheet": true,
+        "style_consistent": true,
+        "no_scientific_notation": true,
+        "autoCrop_all": true,
+        "headers": true,
+        "boss_25_structure_visible": true,
+        "autofilter_and_frozen_header": true
+      },
+      "status": "PASS"
+    },
+    {
+      "preview": "/workspace/scratch/f124f410aa49/outputs/f124f410aa49/20260903_第一批非战斗结构收口/预览/npc__11_编码与实库回读__1__A1_H18.png",
+      "workbook": "npc",
+      "sheet": "11_编码与实库回读",
+      "range": "A1:H18",
+      "checks": {
+        "chinese": true,
+        "clipping": true,
+        "key_values_visible": true,
+        "pending_status_readable": true,
+        "no_blank_default_sheet": true,
+        "style_consistent": true,
+        "no_scientific_notation": true,
+        "autoCrop_all": true,
+        "headers": true,
+        "autofilter_and_frozen_header": true
+      },
+      "status": "PASS"
+    },
+    {
+      "preview": "/workspace/scratch/f124f410aa49/outputs/f124f410aa49/20260903_第一批非战斗结构收口/预览/npc__12_合成穿戴物回收边界__1__A1_J42.png",
+      "workbook": "npc",
+      "sheet": "12_合成穿戴物回收边界",
+      "range": "A1:J42",
+      "checks": {
+        "chinese": true,
+        "clipping": true,
+        "key_values_visible": true,
+        "pending_status_readable": true,
+        "no_blank_default_sheet": true,
+        "style_consistent": true,
+        "no_scientific_notation": true,
+        "autoCrop_all": true,
+        "headers": true,
+        "autofilter_and_frozen_header": true
+      },
+      "status": "PASS"
+    },
+    {
+      "preview": "/workspace/scratch/f124f410aa49/outputs/f124f410aa49/20260903_第一批非战斗结构收口/预览/archive02__使用说明__1__A1_F20.png",
+      "workbook": "archive02",
+      "sheet": "使用说明",
+      "range": "A1:F20",
+      "checks": {
+        "chinese": true,
+        "clipping": true,
+        "key_values_visible": true,
+        "pending_status_readable": true,
+        "no_blank_default_sheet": true,
+        "style_consistent": true,
+        "no_scientific_notation": true,
+        "autoCrop_all": true,
+        "headers": true,
+        "archive_style_retained": true
+      },
+      "status": "PASS"
+    },
+    {
+      "preview": "/workspace/scratch/f124f410aa49/outputs/f124f410aa49/20260903_第一批非战斗结构收口/预览/archive02__已确认规则__1__A265_G294.png",
+      "workbook": "archive02",
+      "sheet": "已确认规则",
+      "range": "A265:G294",
+      "checks": {
+        "chinese": true,
+        "clipping": true,
+        "key_values_visible": true,
+        "pending_status_readable": true,
+        "no_blank_default_sheet": true,
+        "style_consistent": true,
+        "no_scientific_notation": true,
+        "autoCrop_all": true,
+        "headers": true,
+        "archive_style_retained": true
+      },
+      "status": "PASS"
+    },
+    {
+      "preview": "/workspace/scratch/f124f410aa49/outputs/f124f410aa49/20260903_第一批非战斗结构收口/预览/archive02__数值参数__1__A258_J268.png",
+      "workbook": "archive02",
+      "sheet": "数值参数",
+      "range": "A258:J268",
+      "checks": {
+        "chinese": true,
+        "clipping": true,
+        "key_values_visible": true,
+        "pending_status_readable": true,
+        "no_blank_default_sheet": true,
+        "style_consistent": true,
+        "no_scientific_notation": true,
+        "autoCrop_all": true,
+        "headers": true,
+        "archive_style_retained": true
+      },
+      "status": "PASS"
+    },
+    {
+      "preview": "/workspace/scratch/f124f410aa49/outputs/f124f410aa49/20260903_第一批非战斗结构收口/预览/archive02__掉落索引__1__A21_H37.png",
+      "workbook": "archive02",
+      "sheet": "掉落索引",
+      "range": "A21:H37",
+      "checks": {
+        "chinese": true,
+        "clipping": true,
+        "key_values_visible": true,
+        "pending_status_readable": true,
+        "no_blank_default_sheet": true,
+        "style_consistent": true,
+        "no_scientific_notation": true,
+        "autoCrop_all": true,
+        "headers": true,
+        "archive_style_retained": true
+      },
+      "status": "PASS"
+    }
+  ],
+  "visual_gate": {
+    "template_path": "outputs/f124f410aa49/20260903_第一批非战斗结构收口/视觉验收模板.json",
+    "review_path": "outputs/f124f410aa49/20260903_第一批非战斗结构收口/视觉验收.json",
+    "accepted": true,
+    "errors": [],
+    "reviewed_visual_qa": [
+      {
+        "preview": "/workspace/scratch/f124f410aa49/outputs/f124f410aa49/20260903_第一批非战斗结构收口/预览/main__00_使用说明__1__A1_C17.png",
+        "workbook": "main",
+        "sheet": "00_使用说明",
+        "range": "A1:C17",
+        "checks": {
+          "chinese": true,
+          "clipping": true,
+          "key_values_visible": true,
+          "pending_status_readable": true,
+          "no_blank_default_sheet": true,
+          "style_consistent": true,
+          "no_scientific_notation": true,
+          "autoCrop_all": true,
+          "headers": true
+        },
+        "status": "PASS"
+      },
+      {
+        "preview": "/workspace/scratch/f124f410aa49/outputs/f124f410aa49/20260903_第一批非战斗结构收口/预览/main__01_资源总览__1__A1_Q95.png",
+        "workbook": "main",
+        "sheet": "01_资源总览",
+        "range": "A1:Q95",
+        "checks": {
+          "chinese": true,
+          "clipping": true,
+          "key_values_visible": true,
+          "pending_status_readable": true,
+          "no_blank_default_sheet": true,
+          "style_consistent": true,
+          "no_scientific_notation": true,
+          "autoCrop_all": true,
+          "headers": true,
+          "c1c2_closure_visible": true
+        },
+        "status": "PASS"
+      },
+      {
+        "preview": "/workspace/scratch/f124f410aa49/outputs/f124f410aa49/20260903_第一批非战斗结构收口/预览/main__01_资源总览__2__A250_Q267.png",
+        "workbook": "main",
+        "sheet": "01_资源总览",
+        "range": "A250:Q267",
+        "checks": {
+          "chinese": true,
+          "clipping": true,
+          "key_values_visible": true,
+          "pending_status_readable": true,
+          "no_blank_default_sheet": true,
+          "style_consistent": true,
+          "no_scientific_notation": true,
+          "autoCrop_all": true
+        },
+        "status": "PASS"
+      },
+      {
+        "preview": "/workspace/scratch/f124f410aa49/outputs/f124f410aa49/20260903_第一批非战斗结构收口/预览/main__02_产出端__1__A1_Q20.png",
+        "workbook": "main",
+        "sheet": "02_产出端",
+        "range": "A1:Q20",
+        "checks": {
+          "chinese": true,
+          "clipping": true,
+          "key_values_visible": true,
+          "pending_status_readable": true,
+          "no_blank_default_sheet": true,
+          "style_consistent": true,
+          "no_scientific_notation": true,
+          "autoCrop_all": true,
+          "headers": true
+        },
+        "status": "PASS"
+      },
+      {
+        "preview": "/workspace/scratch/f124f410aa49/outputs/f124f410aa49/20260903_第一批非战斗结构收口/预览/main__02_产出端__2__A145_Q158.png",
+        "workbook": "main",
+        "sheet": "02_产出端",
+        "range": "A145:Q158",
+        "checks": {
+          "chinese": true,
+          "clipping": true,
+          "key_values_visible": true,
+          "pending_status_readable": true,
+          "no_blank_default_sheet": true,
+          "style_consistent": true,
+          "no_scientific_notation": true,
+          "autoCrop_all": true
+        },
+        "status": "PASS"
+      },
+      {
+        "preview": "/workspace/scratch/f124f410aa49/outputs/f124f410aa49/20260903_第一批非战斗结构收口/预览/main__03_消耗端__1__A1_W12.png",
+        "workbook": "main",
+        "sheet": "03_消耗端",
+        "range": "A1:W12",
+        "checks": {
+          "chinese": true,
+          "clipping": true,
+          "key_values_visible": true,
+          "pending_status_readable": true,
+          "no_blank_default_sheet": true,
+          "style_consistent": true,
+          "no_scientific_notation": true,
+          "autoCrop_all": true,
+          "headers": true
+        },
+        "status": "PASS"
+      },
+      {
+        "preview": "/workspace/scratch/f124f410aa49/outputs/f124f410aa49/20260903_第一批非战斗结构收口/预览/main__03_消耗端__2__A270_W383.png",
+        "workbook": "main",
+        "sheet": "03_消耗端",
+        "range": "A270:W383",
+        "checks": {
+          "chinese": true,
+          "clipping": true,
+          "key_values_visible": true,
+          "pending_status_readable": true,
+          "no_blank_default_sheet": true,
+          "style_consistent": true,
+          "no_scientific_notation": true,
+          "autoCrop_all": true,
+          "c10_title_material_visible": true
+        },
+        "status": "PASS"
+      },
+      {
+        "preview": "/workspace/scratch/f124f410aa49/outputs/f124f410aa49/20260903_第一批非战斗结构收口/预览/main__03_消耗端__3__A384_W490.png",
+        "workbook": "main",
+        "sheet": "03_消耗端",
+        "range": "A384:W490",
+        "checks": {
+          "chinese": true,
+          "clipping": true,
+          "key_values_visible": true,
+          "pending_status_readable": true,
+          "no_blank_default_sheet": true,
+          "style_consistent": true,
+          "no_scientific_notation": true,
+          "autoCrop_all": true,
+          "c1c2_closure_visible": true
+        },
+        "status": "PASS"
+      },
+      {
+        "preview": "/workspace/scratch/f124f410aa49/outputs/f124f410aa49/20260903_第一批非战斗结构收口/预览/main__04_配方闭环__1__A1_W12.png",
+        "workbook": "main",
+        "sheet": "04_配方闭环",
+        "range": "A1:W12",
+        "checks": {
+          "chinese": true,
+          "clipping": true,
+          "key_values_visible": true,
+          "pending_status_readable": true,
+          "no_blank_default_sheet": true,
+          "style_consistent": true,
+          "no_scientific_notation": true,
+          "autoCrop_all": true,
+          "headers": true
+        },
+        "status": "PASS"
+      },
+      {
+        "preview": "/workspace/scratch/f124f410aa49/outputs/f124f410aa49/20260903_第一批非战斗结构收口/预览/main__04_配方闭环__2__A49_W78.png",
+        "workbook": "main",
+        "sheet": "04_配方闭环",
+        "range": "A49:W78",
+        "checks": {
+          "chinese": true,
+          "clipping": true,
+          "key_values_visible": true,
+          "pending_status_readable": true,
+          "no_blank_default_sheet": true,
+          "style_consistent": true,
+          "no_scientific_notation": true,
+          "autoCrop_all": true,
+          "c10_title_material_visible": true,
+          "rebirth_20_order_visible": true
+        },
+        "status": "PASS"
+      },
+      {
+        "preview": "/workspace/scratch/f124f410aa49/outputs/f124f410aa49/20260903_第一批非战斗结构收口/预览/main__05_大陆闭环__1__A1_W14.png",
+        "workbook": "main",
+        "sheet": "05_大陆闭环",
+        "range": "A1:W14",
+        "checks": {
+          "chinese": true,
+          "clipping": true,
+          "key_values_visible": true,
+          "pending_status_readable": true,
+          "no_blank_default_sheet": true,
+          "style_consistent": true,
+          "no_scientific_notation": true,
+          "autoCrop_all": true,
+          "headers": true,
+          "c1c2_closure_visible": true
+        },
+        "status": "PASS"
+      },
+      {
+        "preview": "/workspace/scratch/f124f410aa49/outputs/f124f410aa49/20260903_第一批非战斗结构收口/预览/main__06_未闭合清单__1__A1_F24.png",
+        "workbook": "main",
+        "sheet": "06_未闭合清单",
+        "range": "A1:F24",
+        "checks": {
+          "chinese": true,
+          "clipping": true,
+          "key_values_visible": true,
+          "pending_status_readable": true,
+          "no_blank_default_sheet": true,
+          "style_consistent": true,
+          "no_scientific_notation": true,
+          "autoCrop_all": true,
+          "headers": true
+        },
+        "status": "PASS"
+      },
+      {
+        "preview": "/workspace/scratch/f124f410aa49/outputs/f124f410aa49/20260903_第一批非战斗结构收口/预览/main__08_校验__1__A1_F29.png",
+        "workbook": "main",
+        "sheet": "08_校验",
+        "range": "A1:F29",
+        "checks": {
+          "chinese": true,
+          "clipping": true,
+          "key_values_visible": true,
+          "pending_status_readable": true,
+          "no_blank_default_sheet": true,
+          "style_consistent": true,
+          "no_scientific_notation": true,
+          "autoCrop_all": true,
+          "headers": true
+        },
+        "status": "PASS"
+      },
+      {
+        "preview": "/workspace/scratch/f124f410aa49/outputs/f124f410aa49/20260903_第一批非战斗结构收口/预览/main__09_爆率计算框架__1__A1_O70.png",
+        "workbook": "main",
+        "sheet": "09_爆率计算框架",
+        "range": "A1:O70",
+        "checks": {
+          "chinese": true,
+          "clipping": true,
+          "key_values_visible": true,
+          "pending_status_readable": true,
+          "no_blank_default_sheet": true,
+          "style_consistent": true,
+          "no_scientific_notation": true,
+          "autoCrop_all": true,
+          "headers": true
+        },
+        "status": "PASS"
+      },
+      {
+        "preview": "/workspace/scratch/f124f410aa49/outputs/f124f410aa49/20260903_第一批非战斗结构收口/预览/main__10_转生材料与回收__1__A1_L8.png",
+        "workbook": "main",
+        "sheet": "10_转生材料与回收",
+        "range": "A1:L8",
+        "checks": {
+          "chinese": true,
+          "clipping": true,
+          "key_values_visible": true,
+          "pending_status_readable": true,
+          "no_blank_default_sheet": true,
+          "style_consistent": true,
+          "no_scientific_notation": true,
+          "autoCrop_all": true,
+          "headers": true
+        },
+        "status": "PASS"
+      },
+      {
+        "preview": "/workspace/scratch/f124f410aa49/outputs/f124f410aa49/20260903_第一批非战斗结构收口/预览/main__11_BOSS称号卷来源__1__A1_N29.png",
+        "workbook": "main",
+        "sheet": "11_BOSS称号卷来源",
+        "range": "A1:N29",
+        "checks": {
+          "chinese": true,
+          "clipping": true,
+          "key_values_visible": true,
+          "pending_status_readable": true,
+          "no_blank_default_sheet": true,
+          "style_consistent": true,
+          "no_scientific_notation": true,
+          "autoCrop_all": true,
+          "headers": true,
+          "boss_25_structure_visible": true,
+          "autofilter_and_frozen_header": true
+        },
+        "status": "PASS"
+      },
+      {
+        "preview": "/workspace/scratch/f124f410aa49/outputs/f124f410aa49/20260903_第一批非战斗结构收口/预览/main__12_编码与实库回读__1__A1_H18.png",
+        "workbook": "main",
+        "sheet": "12_编码与实库回读",
+        "range": "A1:H18",
+        "checks": {
+          "chinese": true,
+          "clipping": true,
+          "key_values_visible": true,
+          "pending_status_readable": true,
+          "no_blank_default_sheet": true,
+          "style_consistent": true,
+          "no_scientific_notation": true,
+          "autoCrop_all": true,
+          "headers": true,
+          "autofilter_and_frozen_header": true
+        },
+        "status": "PASS"
+      },
+      {
+        "preview": "/workspace/scratch/f124f410aa49/outputs/f124f410aa49/20260903_第一批非战斗结构收口/预览/main__13_合成穿戴物回收边界__1__A1_J42.png",
+        "workbook": "main",
+        "sheet": "13_合成穿戴物回收边界",
+        "range": "A1:J42",
+        "checks": {
+          "chinese": true,
+          "clipping": true,
+          "key_values_visible": true,
+          "pending_status_readable": true,
+          "no_blank_default_sheet": true,
+          "style_consistent": true,
+          "no_scientific_notation": true,
+          "autoCrop_all": true,
+          "headers": true,
+          "autofilter_and_frozen_header": true
+        },
+        "status": "PASS"
+      },
+      {
+        "preview": "/workspace/scratch/f124f410aa49/outputs/f124f410aa49/20260903_第一批非战斗结构收口/预览/npc__00_使用说明__1__A1_D12.png",
+        "workbook": "npc",
+        "sheet": "00_使用说明",
+        "range": "A1:D12",
+        "checks": {
+          "chinese": true,
+          "clipping": true,
+          "key_values_visible": true,
+          "pending_status_readable": true,
+          "no_blank_default_sheet": true,
+          "style_consistent": true,
+          "no_scientific_notation": true,
+          "autoCrop_all": true,
+          "headers": true
+        },
+        "status": "PASS"
+      },
+      {
+        "preview": "/workspace/scratch/f124f410aa49/outputs/f124f410aa49/20260903_第一批非战斗结构收口/预览/npc__01_NPC总览__1__A1_K54.png",
+        "workbook": "npc",
+        "sheet": "01_NPC总览",
+        "range": "A1:K54",
+        "checks": {
+          "chinese": true,
+          "clipping": true,
+          "key_values_visible": true,
+          "pending_status_readable": true,
+          "no_blank_default_sheet": true,
+          "style_consistent": true,
+          "no_scientific_notation": true,
+          "autoCrop_all": true,
+          "headers": true
+        },
+        "status": "PASS"
+      },
+      {
+        "preview": "/workspace/scratch/f124f410aa49/outputs/f124f410aa49/20260903_第一批非战斗结构收口/预览/npc__02_配方总表__1__A1_S10.png",
+        "workbook": "npc",
+        "sheet": "02_配方总表",
+        "range": "A1:S10",
+        "checks": {
+          "chinese": true,
+          "clipping": true,
+          "key_values_visible": true,
+          "pending_status_readable": true,
+          "no_blank_default_sheet": true,
+          "style_consistent": true,
+          "no_scientific_notation": true,
+          "autoCrop_all": true,
+          "headers": true
+        },
+        "status": "PASS"
+      },
+      {
+        "preview": "/workspace/scratch/f124f410aa49/outputs/f124f410aa49/20260903_第一批非战斗结构收口/预览/npc__02_配方总表__2__A49_S78.png",
+        "workbook": "npc",
+        "sheet": "02_配方总表",
+        "range": "A49:S78",
+        "checks": {
+          "chinese": true,
+          "clipping": true,
+          "key_values_visible": true,
+          "pending_status_readable": true,
+          "no_blank_default_sheet": true,
+          "style_consistent": true,
+          "no_scientific_notation": true,
+          "autoCrop_all": true,
+          "rebirth_20_order_visible": true
+        },
+        "status": "PASS"
+      },
+      {
+        "preview": "/workspace/scratch/f124f410aa49/outputs/f124f410aa49/20260903_第一批非战斗结构收口/预览/npc__03_材料角色__1__A1_N12.png",
+        "workbook": "npc",
+        "sheet": "03_材料角色",
+        "range": "A1:N12",
+        "checks": {
+          "chinese": true,
+          "clipping": true,
+          "key_values_visible": true,
+          "pending_status_readable": true,
+          "no_blank_default_sheet": true,
+          "style_consistent": true,
+          "no_scientific_notation": true,
+          "autoCrop_all": true,
+          "headers": true
+        },
+        "status": "PASS"
+      },
+      {
+        "preview": "/workspace/scratch/f124f410aa49/outputs/f124f410aa49/20260903_第一批非战斗结构收口/预览/npc__03_材料角色__2__A70_N84.png",
+        "workbook": "npc",
+        "sheet": "03_材料角色",
+        "range": "A70:N84",
+        "checks": {
+          "chinese": true,
+          "clipping": true,
+          "key_values_visible": true,
+          "pending_status_readable": true,
+          "no_blank_default_sheet": true,
+          "style_consistent": true,
+          "no_scientific_notation": true,
+          "autoCrop_all": true
+        },
+        "status": "PASS"
+      },
+      {
+        "preview": "/workspace/scratch/f124f410aa49/outputs/f124f410aa49/20260903_第一批非战斗结构收口/预览/npc__04_大陆经济口径__1__A1_L14.png",
+        "workbook": "npc",
+        "sheet": "04_大陆经济口径",
+        "range": "A1:L14",
+        "checks": {
+          "chinese": true,
+          "clipping": true,
+          "key_values_visible": true,
+          "pending_status_readable": true,
+          "no_blank_default_sheet": true,
+          "style_consistent": true,
+          "no_scientific_notation": true,
+          "autoCrop_all": true,
+          "headers": true
+        },
+        "status": "PASS"
+      },
+      {
+        "preview": "/workspace/scratch/f124f410aa49/outputs/f124f410aa49/20260903_第一批非战斗结构收口/预览/npc__08_校验__1__A1_F16.png",
+        "workbook": "npc",
+        "sheet": "08_校验",
+        "range": "A1:F16",
+        "checks": {
+          "chinese": true,
+          "clipping": true,
+          "key_values_visible": true,
+          "pending_status_readable": true,
+          "no_blank_default_sheet": true,
+          "style_consistent": true,
+          "no_scientific_notation": true,
+          "autoCrop_all": true,
+          "headers": true
+        },
+        "status": "PASS"
+      },
+      {
+        "preview": "/workspace/scratch/f124f410aa49/outputs/f124f410aa49/20260903_第一批非战斗结构收口/预览/npc__09_转生材料与回收__1__A1_L8.png",
+        "workbook": "npc",
+        "sheet": "09_转生材料与回收",
+        "range": "A1:L8",
+        "checks": {
+          "chinese": true,
+          "clipping": true,
+          "key_values_visible": true,
+          "pending_status_readable": true,
+          "no_blank_default_sheet": true,
+          "style_consistent": true,
+          "no_scientific_notation": true,
+          "autoCrop_all": true,
+          "headers": true
+        },
+        "status": "PASS"
+      },
+      {
+        "preview": "/workspace/scratch/f124f410aa49/outputs/f124f410aa49/20260903_第一批非战斗结构收口/预览/npc__10_BOSS称号卷来源__1__A1_N29.png",
+        "workbook": "npc",
+        "sheet": "10_BOSS称号卷来源",
+        "range": "A1:N29",
+        "checks": {
+          "chinese": true,
+          "clipping": true,
+          "key_values_visible": true,
+          "pending_status_readable": true,
+          "no_blank_default_sheet": true,
+          "style_consistent": true,
+          "no_scientific_notation": true,
+          "autoCrop_all": true,
+          "headers": true,
+          "boss_25_structure_visible": true,
+          "autofilter_and_frozen_header": true
+        },
+        "status": "PASS"
+      },
+      {
+        "preview": "/workspace/scratch/f124f410aa49/outputs/f124f410aa49/20260903_第一批非战斗结构收口/预览/npc__11_编码与实库回读__1__A1_H18.png",
+        "workbook": "npc",
+        "sheet": "11_编码与实库回读",
+        "range": "A1:H18",
+        "checks": {
+          "chinese": true,
+          "clipping": true,
+          "key_values_visible": true,
+          "pending_status_readable": true,
+          "no_blank_default_sheet": true,
+          "style_consistent": true,
+          "no_scientific_notation": true,
+          "autoCrop_all": true,
+          "headers": true,
+          "autofilter_and_frozen_header": true
+        },
+        "status": "PASS"
+      },
+      {
+        "preview": "/workspace/scratch/f124f410aa49/outputs/f124f410aa49/20260903_第一批非战斗结构收口/预览/npc__12_合成穿戴物回收边界__1__A1_J42.png",
+        "workbook": "npc",
+        "sheet": "12_合成穿戴物回收边界",
+        "range": "A1:J42",
+        "checks": {
+          "chinese": true,
+          "clipping": true,
+          "key_values_visible": true,
+          "pending_status_readable": true,
+          "no_blank_default_sheet": true,
+          "style_consistent": true,
+          "no_scientific_notation": true,
+          "autoCrop_all": true,
+          "headers": true,
+          "autofilter_and_frozen_header": true
+        },
+        "status": "PASS"
+      },
+      {
+        "preview": "/workspace/scratch/f124f410aa49/outputs/f124f410aa49/20260903_第一批非战斗结构收口/预览/archive02__使用说明__1__A1_F20.png",
+        "workbook": "archive02",
+        "sheet": "使用说明",
+        "range": "A1:F20",
+        "checks": {
+          "chinese": true,
+          "clipping": true,
+          "key_values_visible": true,
+          "pending_status_readable": true,
+          "no_blank_default_sheet": true,
+          "style_consistent": true,
+          "no_scientific_notation": true,
+          "autoCrop_all": true,
+          "headers": true,
+          "archive_style_retained": true
+        },
+        "status": "PASS"
+      },
+      {
+        "preview": "/workspace/scratch/f124f410aa49/outputs/f124f410aa49/20260903_第一批非战斗结构收口/预览/archive02__已确认规则__1__A265_G294.png",
+        "workbook": "archive02",
+        "sheet": "已确认规则",
+        "range": "A265:G294",
+        "checks": {
+          "chinese": true,
+          "clipping": true,
+          "key_values_visible": true,
+          "pending_status_readable": true,
+          "no_blank_default_sheet": true,
+          "style_consistent": true,
+          "no_scientific_notation": true,
+          "autoCrop_all": true,
+          "headers": true,
+          "archive_style_retained": true
+        },
+        "status": "PASS"
+      },
+      {
+        "preview": "/workspace/scratch/f124f410aa49/outputs/f124f410aa49/20260903_第一批非战斗结构收口/预览/archive02__数值参数__1__A258_J268.png",
+        "workbook": "archive02",
+        "sheet": "数值参数",
+        "range": "A258:J268",
+        "checks": {
+          "chinese": true,
+          "clipping": true,
+          "key_values_visible": true,
+          "pending_status_readable": true,
+          "no_blank_default_sheet": true,
+          "style_consistent": true,
+          "no_scientific_notation": true,
+          "autoCrop_all": true,
+          "headers": true,
+          "archive_style_retained": true
+        },
+        "status": "PASS"
+      },
+      {
+        "preview": "/workspace/scratch/f124f410aa49/outputs/f124f410aa49/20260903_第一批非战斗结构收口/预览/archive02__掉落索引__1__A21_H37.png",
+        "workbook": "archive02",
+        "sheet": "掉落索引",
+        "range": "A21:H37",
+        "checks": {
+          "chinese": true,
+          "clipping": true,
+          "key_values_visible": true,
+          "pending_status_readable": true,
+          "no_blank_default_sheet": true,
+          "style_consistent": true,
+          "no_scientific_notation": true,
+          "autoCrop_all": true,
+          "headers": true,
+          "archive_style_retained": true
+        },
+        "status": "PASS"
+      }
+    ]
+  },
+  "mode": "finalize",
+  "overall": "PASS"
+}

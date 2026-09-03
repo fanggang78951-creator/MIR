@@ -1,0 +1,704 @@
+{
+  "reviewed_at_utc": "2026-09-03T11:37:50.506Z",
+  "evidence": {
+    "group_a": ".superpowers/sdd/2026-09-03-first-noncombat-closure/visual-review-a-final-r2.md",
+    "group_b": ".superpowers/sdd/2026-09-03-first-noncombat-closure/visual-review-b-final.md",
+    "group_c": ".superpowers/sdd/2026-09-03-first-noncombat-closure/visual-review-c-final.md",
+    "group_d": ".superpowers/sdd/2026-09-03-first-noncombat-closure/visual-review-d-final.md",
+    "group_e": ".superpowers/sdd/2026-09-03-first-noncombat-closure/visual-review-e-final.md"
+  },
+  "visual_qa": [
+    {
+      "preview": "outputs/f124f410aa49/20260903_第一批非战斗结构收口/预览/main__00_使用说明__1__A1_C17.png",
+      "preview_sha256": "f2fb99c1eb29217f916bba7d5df29019d7c7bbc080b5456dcaeb58e1837efd15",
+      "workbook": "main",
+      "sheet": "00_使用说明",
+      "range": "A1:C17",
+      "checks": {
+        "chinese": true,
+        "clipping": true,
+        "key_values_visible": true,
+        "pending_status_readable": true,
+        "no_blank_default_sheet": true,
+        "style_consistent": true,
+        "no_scientific_notation": true,
+        "autoCrop_all": true,
+        "headers": true
+      },
+      "status": "PASS",
+      "notes": "人工逐图验收通过；预览SHA与最终模板一致。"
+    },
+    {
+      "preview": "outputs/f124f410aa49/20260903_第一批非战斗结构收口/预览/main__01_资源总览__1__A1_Q95.png",
+      "preview_sha256": "b3fd466d799379c29b5adef21548611a0f64e47bcd66eac1fe9713d9e930fd24",
+      "workbook": "main",
+      "sheet": "01_资源总览",
+      "range": "A1:Q95",
+      "checks": {
+        "chinese": true,
+        "clipping": true,
+        "key_values_visible": true,
+        "pending_status_readable": true,
+        "no_blank_default_sheet": true,
+        "style_consistent": true,
+        "no_scientific_notation": true,
+        "autoCrop_all": true,
+        "headers": true,
+        "c1c2_closure_visible": true
+      },
+      "status": "PASS",
+      "notes": "人工逐图验收通过；预览SHA与最终模板一致。"
+    },
+    {
+      "preview": "outputs/f124f410aa49/20260903_第一批非战斗结构收口/预览/main__01_资源总览__2__A250_Q267.png",
+      "preview_sha256": "9bd659c01bcc1d185c6753c8a7970ee2853c51207e53c048ae694fc06a8b70e0",
+      "workbook": "main",
+      "sheet": "01_资源总览",
+      "range": "A250:Q267",
+      "checks": {
+        "chinese": true,
+        "clipping": true,
+        "key_values_visible": true,
+        "pending_status_readable": true,
+        "no_blank_default_sheet": true,
+        "style_consistent": true,
+        "no_scientific_notation": true,
+        "autoCrop_all": true
+      },
+      "status": "PASS",
+      "notes": "人工逐图验收通过；预览SHA与最终模板一致。"
+    },
+    {
+      "preview": "outputs/f124f410aa49/20260903_第一批非战斗结构收口/预览/main__02_产出端__1__A1_Q20.png",
+      "preview_sha256": "d26ee53b3a7c11383dc94b9c2570d4bbdf195263f74cbe1329b77511aaf2f41e",
+      "workbook": "main",
+      "sheet": "02_产出端",
+      "range": "A1:Q20",
+      "checks": {
+        "chinese": true,
+        "clipping": true,
+        "key_values_visible": true,
+        "pending_status_readable": true,
+        "no_blank_default_sheet": true,
+        "style_consistent": true,
+        "no_scientific_notation": true,
+        "autoCrop_all": true,
+        "headers": true
+      },
+      "status": "PASS",
+      "notes": "人工逐图验收通过；预览SHA与最终模板一致。"
+    },
+    {
+      "preview": "outputs/f124f410aa49/20260903_第一批非战斗结构收口/预览/main__02_产出端__2__A145_Q158.png",
+      "preview_sha256": "216b3bc6688a79ee50d5af4eeb907ed864e9d32287e41517b20e9da99681dd2a",
+      "workbook": "main",
+      "sheet": "02_产出端",
+      "range": "A145:Q158",
+      "checks": {
+        "chinese": true,
+        "clipping": true,
+        "key_values_visible": true,
+        "pending_status_readable": true,
+        "no_blank_default_sheet": true,
+        "style_consistent": true,
+        "no_scientific_notation": true,
+        "autoCrop_all": true
+      },
+      "status": "PASS",
+      "notes": "人工逐图验收通过；预览SHA与最终模板一致。"
+    },
+    {
+      "preview": "outputs/f124f410aa49/20260903_第一批非战斗结构收口/预览/main__03_消耗端__1__A1_W12.png",
+      "preview_sha256": "2c5da419d7939df8c4129193255fa004119046178a233e3cf1c63a997cc2e923",
+      "workbook": "main",
+      "sheet": "03_消耗端",
+      "range": "A1:W12",
+      "checks": {
+        "chinese": true,
+        "clipping": true,
+        "key_values_visible": true,
+        "pending_status_readable": true,
+        "no_blank_default_sheet": true,
+        "style_consistent": true,
+        "no_scientific_notation": true,
+        "autoCrop_all": true,
+        "headers": true
+      },
+      "status": "PASS",
+      "notes": "人工逐图验收通过；预览SHA与最终模板一致。"
+    },
+    {
+      "preview": "outputs/f124f410aa49/20260903_第一批非战斗结构收口/预览/main__03_消耗端__2__A270_W383.png",
+      "preview_sha256": "f172624f7e66ef057c6def07616f89cdc95a5e8a27b8283afc604662f3419888",
+      "workbook": "main",
+      "sheet": "03_消耗端",
+      "range": "A270:W383",
+      "checks": {
+        "chinese": true,
+        "clipping": true,
+        "key_values_visible": true,
+        "pending_status_readable": true,
+        "no_blank_default_sheet": true,
+        "style_consistent": true,
+        "no_scientific_notation": true,
+        "autoCrop_all": true,
+        "c10_title_material_visible": true
+      },
+      "status": "PASS",
+      "notes": "人工逐图验收通过；预览SHA与最终模板一致。"
+    },
+    {
+      "preview": "outputs/f124f410aa49/20260903_第一批非战斗结构收口/预览/main__03_消耗端__3__A384_W490.png",
+      "preview_sha256": "5f7aa85db2a05ae5a8b212c99331f7863d86cfd6b65750e3accd208ea277de8d",
+      "workbook": "main",
+      "sheet": "03_消耗端",
+      "range": "A384:W490",
+      "checks": {
+        "chinese": true,
+        "clipping": true,
+        "key_values_visible": true,
+        "pending_status_readable": true,
+        "no_blank_default_sheet": true,
+        "style_consistent": true,
+        "no_scientific_notation": true,
+        "autoCrop_all": true,
+        "c1c2_closure_visible": true
+      },
+      "status": "PASS",
+      "notes": "人工逐图验收通过；预览SHA与最终模板一致。"
+    },
+    {
+      "preview": "outputs/f124f410aa49/20260903_第一批非战斗结构收口/预览/main__04_配方闭环__1__A1_W12.png",
+      "preview_sha256": "7ec570dba6d964547f18eb33530fcf14de6f689ede8e5b94f7b2763513893a79",
+      "workbook": "main",
+      "sheet": "04_配方闭环",
+      "range": "A1:W12",
+      "checks": {
+        "chinese": true,
+        "clipping": true,
+        "key_values_visible": true,
+        "pending_status_readable": true,
+        "no_blank_default_sheet": true,
+        "style_consistent": true,
+        "no_scientific_notation": true,
+        "autoCrop_all": true,
+        "headers": true
+      },
+      "status": "PASS",
+      "notes": "人工逐图验收通过；预览SHA与最终模板一致。"
+    },
+    {
+      "preview": "outputs/f124f410aa49/20260903_第一批非战斗结构收口/预览/main__04_配方闭环__2__A49_W78.png",
+      "preview_sha256": "16e9ceb2a188335e3737cf64c954d54ecc36c1b848e95c4e234d121d46c68de7",
+      "workbook": "main",
+      "sheet": "04_配方闭环",
+      "range": "A49:W78",
+      "checks": {
+        "chinese": true,
+        "clipping": true,
+        "key_values_visible": true,
+        "pending_status_readable": true,
+        "no_blank_default_sheet": true,
+        "style_consistent": true,
+        "no_scientific_notation": true,
+        "autoCrop_all": true,
+        "c10_title_material_visible": true,
+        "rebirth_20_order_visible": true
+      },
+      "status": "PASS",
+      "notes": "人工逐图验收通过；预览SHA与最终模板一致。"
+    },
+    {
+      "preview": "outputs/f124f410aa49/20260903_第一批非战斗结构收口/预览/main__05_大陆闭环__1__A1_W14.png",
+      "preview_sha256": "55ea9c523666d4650e8bbdf14b6d2a1309cb4f033ca37b7d78d1557b00a66af2",
+      "workbook": "main",
+      "sheet": "05_大陆闭环",
+      "range": "A1:W14",
+      "checks": {
+        "chinese": true,
+        "clipping": true,
+        "key_values_visible": true,
+        "pending_status_readable": true,
+        "no_blank_default_sheet": true,
+        "style_consistent": true,
+        "no_scientific_notation": true,
+        "autoCrop_all": true,
+        "headers": true,
+        "c1c2_closure_visible": true
+      },
+      "status": "PASS",
+      "notes": "人工逐图验收通过；预览SHA与最终模板一致。"
+    },
+    {
+      "preview": "outputs/f124f410aa49/20260903_第一批非战斗结构收口/预览/main__06_未闭合清单__1__A1_F24.png",
+      "preview_sha256": "893216d115b56cb92e0cb1cb52f35ec540c7c905c8ae32489101fb93c698bd86",
+      "workbook": "main",
+      "sheet": "06_未闭合清单",
+      "range": "A1:F24",
+      "checks": {
+        "chinese": true,
+        "clipping": true,
+        "key_values_visible": true,
+        "pending_status_readable": true,
+        "no_blank_default_sheet": true,
+        "style_consistent": true,
+        "no_scientific_notation": true,
+        "autoCrop_all": true,
+        "headers": true
+      },
+      "status": "PASS",
+      "notes": "人工逐图验收通过；预览SHA与最终模板一致。"
+    },
+    {
+      "preview": "outputs/f124f410aa49/20260903_第一批非战斗结构收口/预览/main__08_校验__1__A1_F29.png",
+      "preview_sha256": "7c5b735174978ffe56abf8382d743aff9ee028a4e7b14addc268a5beb18e5e54",
+      "workbook": "main",
+      "sheet": "08_校验",
+      "range": "A1:F29",
+      "checks": {
+        "chinese": true,
+        "clipping": true,
+        "key_values_visible": true,
+        "pending_status_readable": true,
+        "no_blank_default_sheet": true,
+        "style_consistent": true,
+        "no_scientific_notation": true,
+        "autoCrop_all": true,
+        "headers": true
+      },
+      "status": "PASS",
+      "notes": "人工逐图验收通过；预览SHA与最终模板一致。"
+    },
+    {
+      "preview": "outputs/f124f410aa49/20260903_第一批非战斗结构收口/预览/main__09_爆率计算框架__1__A1_O70.png",
+      "preview_sha256": "5bfc0793be98e0b0c8969aa8f7c0bf2115cc1018bdc88dcd9528e091357d8aba",
+      "workbook": "main",
+      "sheet": "09_爆率计算框架",
+      "range": "A1:O70",
+      "checks": {
+        "chinese": true,
+        "clipping": true,
+        "key_values_visible": true,
+        "pending_status_readable": true,
+        "no_blank_default_sheet": true,
+        "style_consistent": true,
+        "no_scientific_notation": true,
+        "autoCrop_all": true,
+        "headers": true
+      },
+      "status": "PASS",
+      "notes": "人工逐图验收通过；预览SHA与最终模板一致。"
+    },
+    {
+      "preview": "outputs/f124f410aa49/20260903_第一批非战斗结构收口/预览/main__10_转生材料与回收__1__A1_L8.png",
+      "preview_sha256": "e93304df0acac250ef66d83d2c609cf4e918db058fec3ded274ceb4ebafe1d0b",
+      "workbook": "main",
+      "sheet": "10_转生材料与回收",
+      "range": "A1:L8",
+      "checks": {
+        "chinese": true,
+        "clipping": true,
+        "key_values_visible": true,
+        "pending_status_readable": true,
+        "no_blank_default_sheet": true,
+        "style_consistent": true,
+        "no_scientific_notation": true,
+        "autoCrop_all": true,
+        "headers": true
+      },
+      "status": "PASS",
+      "notes": "人工逐图验收通过；预览SHA与最终模板一致。"
+    },
+    {
+      "preview": "outputs/f124f410aa49/20260903_第一批非战斗结构收口/预览/main__11_BOSS称号卷来源__1__A1_N29.png",
+      "preview_sha256": "72cac5e4565f6d87a5bafb8cc9d1098cfeb61642279e0aa6772e43d94c11c4d0",
+      "workbook": "main",
+      "sheet": "11_BOSS称号卷来源",
+      "range": "A1:N29",
+      "checks": {
+        "chinese": true,
+        "clipping": true,
+        "key_values_visible": true,
+        "pending_status_readable": true,
+        "no_blank_default_sheet": true,
+        "style_consistent": true,
+        "no_scientific_notation": true,
+        "autoCrop_all": true,
+        "headers": true,
+        "boss_25_structure_visible": true,
+        "autofilter_and_frozen_header": true
+      },
+      "status": "PASS",
+      "notes": "人工逐图验收通过；预览SHA与最终模板一致。"
+    },
+    {
+      "preview": "outputs/f124f410aa49/20260903_第一批非战斗结构收口/预览/main__12_编码与实库回读__1__A1_H18.png",
+      "preview_sha256": "65fd69326c7c5c1e3fe42ea2eb69694e5b0bebacaacfc4ebd965054e8a3ac62f",
+      "workbook": "main",
+      "sheet": "12_编码与实库回读",
+      "range": "A1:H18",
+      "checks": {
+        "chinese": true,
+        "clipping": true,
+        "key_values_visible": true,
+        "pending_status_readable": true,
+        "no_blank_default_sheet": true,
+        "style_consistent": true,
+        "no_scientific_notation": true,
+        "autoCrop_all": true,
+        "headers": true,
+        "autofilter_and_frozen_header": true
+      },
+      "status": "PASS",
+      "notes": "人工逐图验收通过；预览SHA与最终模板一致。"
+    },
+    {
+      "preview": "outputs/f124f410aa49/20260903_第一批非战斗结构收口/预览/main__13_合成穿戴物回收边界__1__A1_J42.png",
+      "preview_sha256": "2e245d049a94561e1d60783f55c01f8505fd17233a911cbd0055bfceb981a0eb",
+      "workbook": "main",
+      "sheet": "13_合成穿戴物回收边界",
+      "range": "A1:J42",
+      "checks": {
+        "chinese": true,
+        "clipping": true,
+        "key_values_visible": true,
+        "pending_status_readable": true,
+        "no_blank_default_sheet": true,
+        "style_consistent": true,
+        "no_scientific_notation": true,
+        "autoCrop_all": true,
+        "headers": true,
+        "autofilter_and_frozen_header": true
+      },
+      "status": "PASS",
+      "notes": "人工逐图验收通过；预览SHA与最终模板一致。"
+    },
+    {
+      "preview": "outputs/f124f410aa49/20260903_第一批非战斗结构收口/预览/npc__00_使用说明__1__A1_D12.png",
+      "preview_sha256": "34aac14ffde8fedecd4ecf224159d773be46f229a861e4d33c4785af29a6adc7",
+      "workbook": "npc",
+      "sheet": "00_使用说明",
+      "range": "A1:D12",
+      "checks": {
+        "chinese": true,
+        "clipping": true,
+        "key_values_visible": true,
+        "pending_status_readable": true,
+        "no_blank_default_sheet": true,
+        "style_consistent": true,
+        "no_scientific_notation": true,
+        "autoCrop_all": true,
+        "headers": true
+      },
+      "status": "PASS",
+      "notes": "人工逐图验收通过；预览SHA与最终模板一致。"
+    },
+    {
+      "preview": "outputs/f124f410aa49/20260903_第一批非战斗结构收口/预览/npc__01_NPC总览__1__A1_K54.png",
+      "preview_sha256": "e857cc98336063807b5cb3fde6acd508141f4d7d6bf1d4b443cb9271b177f573",
+      "workbook": "npc",
+      "sheet": "01_NPC总览",
+      "range": "A1:K54",
+      "checks": {
+        "chinese": true,
+        "clipping": true,
+        "key_values_visible": true,
+        "pending_status_readable": true,
+        "no_blank_default_sheet": true,
+        "style_consistent": true,
+        "no_scientific_notation": true,
+        "autoCrop_all": true,
+        "headers": true
+      },
+      "status": "PASS",
+      "notes": "人工逐图验收通过；预览SHA与最终模板一致。"
+    },
+    {
+      "preview": "outputs/f124f410aa49/20260903_第一批非战斗结构收口/预览/npc__02_配方总表__1__A1_S10.png",
+      "preview_sha256": "02df1eaa310dcd9120015ef305c2327b7d54db7f2eb2359f5481d0e5ec4bdbe4",
+      "workbook": "npc",
+      "sheet": "02_配方总表",
+      "range": "A1:S10",
+      "checks": {
+        "chinese": true,
+        "clipping": true,
+        "key_values_visible": true,
+        "pending_status_readable": true,
+        "no_blank_default_sheet": true,
+        "style_consistent": true,
+        "no_scientific_notation": true,
+        "autoCrop_all": true,
+        "headers": true
+      },
+      "status": "PASS",
+      "notes": "人工逐图验收通过；预览SHA与最终模板一致。"
+    },
+    {
+      "preview": "outputs/f124f410aa49/20260903_第一批非战斗结构收口/预览/npc__02_配方总表__2__A49_S78.png",
+      "preview_sha256": "159de690a0c9de64d04b18351783f965b8fb161915abf335a1dcdb172f66a8cc",
+      "workbook": "npc",
+      "sheet": "02_配方总表",
+      "range": "A49:S78",
+      "checks": {
+        "chinese": true,
+        "clipping": true,
+        "key_values_visible": true,
+        "pending_status_readable": true,
+        "no_blank_default_sheet": true,
+        "style_consistent": true,
+        "no_scientific_notation": true,
+        "autoCrop_all": true,
+        "rebirth_20_order_visible": true
+      },
+      "status": "PASS",
+      "notes": "人工逐图验收通过；预览SHA与最终模板一致。"
+    },
+    {
+      "preview": "outputs/f124f410aa49/20260903_第一批非战斗结构收口/预览/npc__03_材料角色__1__A1_N12.png",
+      "preview_sha256": "1807f556c44f8d3011b125e1cbc5cf7d87e749f6fe82239caa9698b53f1da036",
+      "workbook": "npc",
+      "sheet": "03_材料角色",
+      "range": "A1:N12",
+      "checks": {
+        "chinese": true,
+        "clipping": true,
+        "key_values_visible": true,
+        "pending_status_readable": true,
+        "no_blank_default_sheet": true,
+        "style_consistent": true,
+        "no_scientific_notation": true,
+        "autoCrop_all": true,
+        "headers": true
+      },
+      "status": "PASS",
+      "notes": "人工逐图验收通过；预览SHA与最终模板一致。"
+    },
+    {
+      "preview": "outputs/f124f410aa49/20260903_第一批非战斗结构收口/预览/npc__03_材料角色__2__A70_N84.png",
+      "preview_sha256": "7d98513858c5b2db11f58f688612fc56aeb26bb5bca8604c6580c39ff41ada4b",
+      "workbook": "npc",
+      "sheet": "03_材料角色",
+      "range": "A70:N84",
+      "checks": {
+        "chinese": true,
+        "clipping": true,
+        "key_values_visible": true,
+        "pending_status_readable": true,
+        "no_blank_default_sheet": true,
+        "style_consistent": true,
+        "no_scientific_notation": true,
+        "autoCrop_all": true
+      },
+      "status": "PASS",
+      "notes": "人工逐图验收通过；预览SHA与最终模板一致。"
+    },
+    {
+      "preview": "outputs/f124f410aa49/20260903_第一批非战斗结构收口/预览/npc__04_大陆经济口径__1__A1_L14.png",
+      "preview_sha256": "52b8f596a87a8a4c1bb79704dce2a7dc802310fbe7e1ff6699eeb39f8acd4a2c",
+      "workbook": "npc",
+      "sheet": "04_大陆经济口径",
+      "range": "A1:L14",
+      "checks": {
+        "chinese": true,
+        "clipping": true,
+        "key_values_visible": true,
+        "pending_status_readable": true,
+        "no_blank_default_sheet": true,
+        "style_consistent": true,
+        "no_scientific_notation": true,
+        "autoCrop_all": true,
+        "headers": true
+      },
+      "status": "PASS",
+      "notes": "人工逐图验收通过；预览SHA与最终模板一致。"
+    },
+    {
+      "preview": "outputs/f124f410aa49/20260903_第一批非战斗结构收口/预览/npc__08_校验__1__A1_F16.png",
+      "preview_sha256": "0a28e28f875250ce70b0b5f18d9af59a931cc8e087d8de126eaa48442124b3e2",
+      "workbook": "npc",
+      "sheet": "08_校验",
+      "range": "A1:F16",
+      "checks": {
+        "chinese": true,
+        "clipping": true,
+        "key_values_visible": true,
+        "pending_status_readable": true,
+        "no_blank_default_sheet": true,
+        "style_consistent": true,
+        "no_scientific_notation": true,
+        "autoCrop_all": true,
+        "headers": true
+      },
+      "status": "PASS",
+      "notes": "人工逐图验收通过；预览SHA与最终模板一致。"
+    },
+    {
+      "preview": "outputs/f124f410aa49/20260903_第一批非战斗结构收口/预览/npc__09_转生材料与回收__1__A1_L8.png",
+      "preview_sha256": "e93304df0acac250ef66d83d2c609cf4e918db058fec3ded274ceb4ebafe1d0b",
+      "workbook": "npc",
+      "sheet": "09_转生材料与回收",
+      "range": "A1:L8",
+      "checks": {
+        "chinese": true,
+        "clipping": true,
+        "key_values_visible": true,
+        "pending_status_readable": true,
+        "no_blank_default_sheet": true,
+        "style_consistent": true,
+        "no_scientific_notation": true,
+        "autoCrop_all": true,
+        "headers": true
+      },
+      "status": "PASS",
+      "notes": "人工逐图验收通过；预览SHA与最终模板一致。"
+    },
+    {
+      "preview": "outputs/f124f410aa49/20260903_第一批非战斗结构收口/预览/npc__10_BOSS称号卷来源__1__A1_N29.png",
+      "preview_sha256": "72cac5e4565f6d87a5bafb8cc9d1098cfeb61642279e0aa6772e43d94c11c4d0",
+      "workbook": "npc",
+      "sheet": "10_BOSS称号卷来源",
+      "range": "A1:N29",
+      "checks": {
+        "chinese": true,
+        "clipping": true,
+        "key_values_visible": true,
+        "pending_status_readable": true,
+        "no_blank_default_sheet": true,
+        "style_consistent": true,
+        "no_scientific_notation": true,
+        "autoCrop_all": true,
+        "headers": true,
+        "boss_25_structure_visible": true,
+        "autofilter_and_frozen_header": true
+      },
+      "status": "PASS",
+      "notes": "人工逐图验收通过；预览SHA与最终模板一致。"
+    },
+    {
+      "preview": "outputs/f124f410aa49/20260903_第一批非战斗结构收口/预览/npc__11_编码与实库回读__1__A1_H18.png",
+      "preview_sha256": "65fd69326c7c5c1e3fe42ea2eb69694e5b0bebacaacfc4ebd965054e8a3ac62f",
+      "workbook": "npc",
+      "sheet": "11_编码与实库回读",
+      "range": "A1:H18",
+      "checks": {
+        "chinese": true,
+        "clipping": true,
+        "key_values_visible": true,
+        "pending_status_readable": true,
+        "no_blank_default_sheet": true,
+        "style_consistent": true,
+        "no_scientific_notation": true,
+        "autoCrop_all": true,
+        "headers": true,
+        "autofilter_and_frozen_header": true
+      },
+      "status": "PASS",
+      "notes": "人工逐图验收通过；预览SHA与最终模板一致。"
+    },
+    {
+      "preview": "outputs/f124f410aa49/20260903_第一批非战斗结构收口/预览/npc__12_合成穿戴物回收边界__1__A1_J42.png",
+      "preview_sha256": "2e245d049a94561e1d60783f55c01f8505fd17233a911cbd0055bfceb981a0eb",
+      "workbook": "npc",
+      "sheet": "12_合成穿戴物回收边界",
+      "range": "A1:J42",
+      "checks": {
+        "chinese": true,
+        "clipping": true,
+        "key_values_visible": true,
+        "pending_status_readable": true,
+        "no_blank_default_sheet": true,
+        "style_consistent": true,
+        "no_scientific_notation": true,
+        "autoCrop_all": true,
+        "headers": true,
+        "autofilter_and_frozen_header": true
+      },
+      "status": "PASS",
+      "notes": "人工逐图验收通过；预览SHA与最终模板一致。"
+    },
+    {
+      "preview": "outputs/f124f410aa49/20260903_第一批非战斗结构收口/预览/archive02__使用说明__1__A1_F20.png",
+      "preview_sha256": "5b70f67ba8025971cb67db0d282f98d2db0f4281c726dce74cb6c6b275d847d7",
+      "workbook": "archive02",
+      "sheet": "使用说明",
+      "range": "A1:F20",
+      "checks": {
+        "chinese": true,
+        "clipping": true,
+        "key_values_visible": true,
+        "pending_status_readable": true,
+        "no_blank_default_sheet": true,
+        "style_consistent": true,
+        "no_scientific_notation": true,
+        "autoCrop_all": true,
+        "headers": true,
+        "archive_style_retained": true
+      },
+      "status": "PASS",
+      "notes": "人工逐图验收通过；预览SHA与最终模板一致。"
+    },
+    {
+      "preview": "outputs/f124f410aa49/20260903_第一批非战斗结构收口/预览/archive02__已确认规则__1__A265_G294.png",
+      "preview_sha256": "d341ef7618c6d4a4e3abfef2a46ea547463b1b00130401761c4ba7c55bd26262",
+      "workbook": "archive02",
+      "sheet": "已确认规则",
+      "range": "A265:G294",
+      "checks": {
+        "chinese": true,
+        "clipping": true,
+        "key_values_visible": true,
+        "pending_status_readable": true,
+        "no_blank_default_sheet": true,
+        "style_consistent": true,
+        "no_scientific_notation": true,
+        "autoCrop_all": true,
+        "headers": true,
+        "archive_style_retained": true
+      },
+      "status": "PASS",
+      "notes": "人工逐图验收通过；预览SHA与最终模板一致。"
+    },
+    {
+      "preview": "outputs/f124f410aa49/20260903_第一批非战斗结构收口/预览/archive02__数值参数__1__A258_J268.png",
+      "preview_sha256": "83ce105b8041359f8d4b52bedcb86b58cd068a19be14c748bc699a67cf760d50",
+      "workbook": "archive02",
+      "sheet": "数值参数",
+      "range": "A258:J268",
+      "checks": {
+        "chinese": true,
+        "clipping": true,
+        "key_values_visible": true,
+        "pending_status_readable": true,
+        "no_blank_default_sheet": true,
+        "style_consistent": true,
+        "no_scientific_notation": true,
+        "autoCrop_all": true,
+        "headers": true,
+        "archive_style_retained": true
+      },
+      "status": "PASS",
+      "notes": "人工逐图验收通过；预览SHA与最终模板一致。"
+    },
+    {
+      "preview": "outputs/f124f410aa49/20260903_第一批非战斗结构收口/预览/archive02__掉落索引__1__A21_H37.png",
+      "preview_sha256": "398ba245984e2a98f7a542f78a4ded02312de25fbabf46ba425b8d50ab8b6d31",
+      "workbook": "archive02",
+      "sheet": "掉落索引",
+      "range": "A21:H37",
+      "checks": {
+        "chinese": true,
+        "clipping": true,
+        "key_values_visible": true,
+        "pending_status_readable": true,
+        "no_blank_default_sheet": true,
+        "style_consistent": true,
+        "no_scientific_notation": true,
+        "autoCrop_all": true,
+        "headers": true,
+        "archive_style_retained": true
+      },
+      "status": "PASS",
+      "notes": "人工逐图验收通过；预览SHA与最终模板一致。"
+    }
+  ]
+}

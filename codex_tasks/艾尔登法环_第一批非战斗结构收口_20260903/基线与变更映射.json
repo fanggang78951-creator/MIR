@@ -1,0 +1,1371 @@
+{
+  "generated_at_utc": "2026-09-03T07:23:42Z",
+  "spec_path": "docs/superpowers/specs/2026-09-03-first-noncombat-closure.md",
+  "input_files": [
+    {
+      "path": "outputs/f124f410aa49/20260903_产消闭环与处决韧性框架/十大陆产出消耗闭环总账_V1.1_爆率机制补齐.xlsx",
+      "sha256": "52d025fc131a90b5a32adf2bdeb41ef65b1211a0037ab3b208dd12c4251fe59b",
+      "worksheets": [
+        {
+          "name": "00_使用说明",
+          "used_range": "A1:C17"
+        },
+        {
+          "name": "01_资源总览",
+          "used_range": "A1:Q267"
+        },
+        {
+          "name": "02_产出端",
+          "used_range": "A1:Q156"
+        },
+        {
+          "name": "03_消耗端",
+          "used_range": "A1:W490"
+        },
+        {
+          "name": "04_配方闭环",
+          "used_range": "A1:W78"
+        },
+        {
+          "name": "05_大陆闭环",
+          "used_range": "A1:W14"
+        },
+        {
+          "name": "06_未闭合清单",
+          "used_range": "A1:F24"
+        },
+        {
+          "name": "07_处决韧性难度",
+          "used_range": "A1:I18"
+        },
+        {
+          "name": "08_校验",
+          "used_range": "A1:F29"
+        },
+        {
+          "name": "09_爆率计算框架",
+          "used_range": "A1:O70"
+        }
+      ]
+    },
+    {
+      "path": "outputs/f124f410aa49/20260902_NPC与配方正式结构/十大陆NPC与配方总账_V1.0.xlsx",
+      "sha256": "cc07f2fa22f6a82a26bbc3463d868f46653eccdf2a7604ebc851814d410b04b3",
+      "worksheets": [
+        {
+          "name": "00_使用说明",
+          "used_range": "A1:D12"
+        },
+        {
+          "name": "01_NPC总览",
+          "used_range": "A1:K54"
+        },
+        {
+          "name": "02_配方总表",
+          "used_range": "A1:S78"
+        },
+        {
+          "name": "03_材料角色",
+          "used_range": "A1:N80"
+        },
+        {
+          "name": "04_大陆经济口径",
+          "used_range": "A1:L14"
+        },
+        {
+          "name": "05_生肖与群攻",
+          "used_range": "A1:J20"
+        },
+        {
+          "name": "06_属性来源",
+          "used_range": "A1:G13"
+        },
+        {
+          "name": "07_玩家模型",
+          "used_range": "A1:G8"
+        },
+        {
+          "name": "08_校验",
+          "used_range": "A1:F16"
+        }
+      ]
+    },
+    {
+      "path": "outputs/f124f410aa49/20260902_专属与材料编码阶段分配/材料编码数据库.xlsx",
+      "sha256": "7d98aa1ad4d993e26add0f7c02200b28606cf4104a80a2f3ff3b857abfcf11d1",
+      "worksheets": [
+        {
+          "name": "使用说明",
+          "used_range": "A1:F12"
+        },
+        {
+          "name": "材料主索引",
+          "used_range": "A1:Z72"
+        },
+        {
+          "name": "占用与预留",
+          "used_range": "A1:H11"
+        },
+        {
+          "name": "事务与哈希",
+          "used_range": "A1:E13"
+        },
+        {
+          "name": "验收与来源",
+          "used_range": "A1:F15"
+        },
+        {
+          "name": "大陆收藏材料_批次B规划",
+          "used_range": "A1:N12"
+        },
+        {
+          "name": "批次B规划验收",
+          "used_range": "A1:F12"
+        }
+      ]
+    }
+  ],
+  "baseline_preview_dir": "outputs/f124f410aa49/20260903_第一批非战斗结构收口/基线预览/",
+  "baseline_preview_note": "V1.1整表渲染对大表超过渲染器尺寸限制；已保留成功渲染的01/02局部基线，并按brief复用同目录既有预览核对其余指定工作表。",
+  "changes": [
+    {
+      "change_id": "CHG-001",
+      "target_workbook": "产消闭环总账V1.1",
+      "sheet": "06_未闭合清单",
+      "match_key": "EL-MAT-C01-COLLECT-TBD",
+      "old_state": {
+        "state": "硬缺口占位",
+        "name": "未定义",
+        "production_relation": "存在误建收藏材料占位关系",
+        "registration_relation": "存在误建登记关系"
+      },
+      "new_state": {
+        "state": "彻底停用",
+        "production_relation": "删除",
+        "registration_relation": "删除",
+        "equipment_catalog": "仅独立保留C1专属装备逐件图鉴"
+      },
+      "action": "deactivate",
+      "value_status": "停用完成；不存在后续C1收藏材料工作项",
+      "evidence": [
+        {
+          "file": "outputs/f124f410aa49/20260903_产消闭环与处决韧性框架/十大陆产出消耗闭环总账_V1.1_爆率机制补齐.xlsx",
+          "sheet": "06_未闭合清单",
+          "range": "A5:F5",
+          "note": "C1收藏材料占位仍在硬缺口清单"
+        },
+        {
+          "file": "docs/superpowers/specs/2026-09-03-first-noncombat-closure.md",
+          "sheet": "规则6",
+          "range": "—",
+          "note": "删除误建占位资源和关系，仅保留C1装备图鉴"
+        }
+      ]
+    },
+    {
+      "change_id": "CHG-002",
+      "target_workbook": "产消闭环总账V1.1",
+      "sheet": "06_未闭合清单",
+      "match_key": "EL-MAT-C02-COLLECT-TBD",
+      "old_state": {
+        "state": "硬缺口占位",
+        "name": "未定义",
+        "production_relation": "存在误建收藏材料占位关系",
+        "registration_relation": "存在误建登记关系"
+      },
+      "new_state": {
+        "state": "彻底停用",
+        "production_relation": "删除",
+        "registration_relation": "删除",
+        "equipment_catalog": "仅独立保留C2专属装备逐件图鉴"
+      },
+      "action": "deactivate",
+      "value_status": "停用完成；不存在后续C2收藏材料工作项",
+      "evidence": [
+        {
+          "file": "outputs/f124f410aa49/20260903_产消闭环与处决韧性框架/十大陆产出消耗闭环总账_V1.1_爆率机制补齐.xlsx",
+          "sheet": "06_未闭合清单",
+          "range": "A6:F6",
+          "note": "C2收藏材料占位仍在硬缺口清单"
+        },
+        {
+          "file": "docs/superpowers/specs/2026-09-03-first-noncombat-closure.md",
+          "sheet": "规则6",
+          "range": "—",
+          "note": "删除误建占位资源和关系，仅保留C2装备图鉴"
+        }
+      ]
+    },
+    {
+      "change_id": "CHG-C03-COLLECT",
+      "target_workbook": "产消闭环总账V1.1",
+      "sheet": "01_资源总览",
+      "match_key": "EL-MAT-C03-COLLECT",
+      "old_state": {
+        "state": "已测试但来源/生产前状态需复核",
+        "continent": "C03",
+        "name": "西境风痕碑拓",
+        "planned_idx": 972,
+        "ledger_looks": 7218,
+        "production_relation": "本大陆所有怪物共用极低概率掉落",
+        "registration_relation": "图鉴页面登记时消耗1件且不收货币"
+      },
+      "new_state": {
+        "state": "保留",
+        "continent": "C03",
+        "name": "西境风痕碑拓",
+        "planned_idx": 972,
+        "looks": 7218,
+        "production_relation": "隔离测试证据存在；生产前必须实库回读后补源表",
+        "registration_relation": "登记消耗1件，不进入普通回收",
+        "renumbering": "禁止重编号"
+      },
+      "action": "retain",
+      "value_status": "隔离测试证据存在、生产前必须实库回读后补源表，禁止重编号",
+      "evidence": [
+        {
+          "file": "outputs/f124f410aa49/20260903_产消闭环与处决韧性框架/十大陆产出消耗闭环总账_V1.1_爆率机制补齐.xlsx",
+          "sheet": "01_资源总览",
+          "range": "A73:Q73",
+          "note": "C3—C10收藏材料及隔离测试Looks 7218"
+        },
+        {
+          "file": "outputs/f124f410aa49/20260902_专属与材料编码阶段分配/材料编码数据库.xlsx",
+          "sheet": "大陆收藏材料_批次B规划",
+          "range": "A5:N5",
+          "note": "Idx 972 规划锁定、未入库、Looks待补；与总账存在来源状态差异"
+        },
+        {
+          "file": "docs/superpowers/specs/2026-09-03-first-noncombat-closure.md",
+          "sheet": "规则7",
+          "range": "—",
+          "note": "7218—7225以实库回读为权威，不得重新编号"
+        }
+      ]
+    },
+    {
+      "change_id": "CHG-C04-COLLECT",
+      "target_workbook": "产消闭环总账V1.1",
+      "sheet": "01_资源总览",
+      "match_key": "EL-MAT-C04-COLLECT",
+      "old_state": {
+        "state": "已测试但来源/生产前状态需复核",
+        "continent": "C04",
+        "name": "月潮忆珀",
+        "planned_idx": 973,
+        "ledger_looks": 7219,
+        "production_relation": "本大陆所有怪物共用极低概率掉落",
+        "registration_relation": "图鉴页面登记时消耗1件且不收货币"
+      },
+      "new_state": {
+        "state": "保留",
+        "continent": "C04",
+        "name": "月潮忆珀",
+        "planned_idx": 973,
+        "looks": 7219,
+        "production_relation": "隔离测试证据存在；生产前必须实库回读后补源表",
+        "registration_relation": "登记消耗1件，不进入普通回收",
+        "renumbering": "禁止重编号"
+      },
+      "action": "retain",
+      "value_status": "隔离测试证据存在、生产前必须实库回读后补源表，禁止重编号",
+      "evidence": [
+        {
+          "file": "outputs/f124f410aa49/20260903_产消闭环与处决韧性框架/十大陆产出消耗闭环总账_V1.1_爆率机制补齐.xlsx",
+          "sheet": "01_资源总览",
+          "range": "A74:Q74",
+          "note": "C3—C10收藏材料及隔离测试Looks 7219"
+        },
+        {
+          "file": "outputs/f124f410aa49/20260902_专属与材料编码阶段分配/材料编码数据库.xlsx",
+          "sheet": "大陆收藏材料_批次B规划",
+          "range": "A6:N6",
+          "note": "Idx 973 规划锁定、未入库、Looks待补；与总账存在来源状态差异"
+        },
+        {
+          "file": "docs/superpowers/specs/2026-09-03-first-noncombat-closure.md",
+          "sheet": "规则7",
+          "range": "—",
+          "note": "7218—7225以实库回读为权威，不得重新编号"
+        }
+      ]
+    },
+    {
+      "change_id": "CHG-C05-COLLECT",
+      "target_workbook": "产消闭环总账V1.1",
+      "sheet": "01_资源总览",
+      "match_key": "EL-MAT-C05-COLLECT",
+      "old_state": {
+        "state": "已测试但来源/生产前状态需复核",
+        "continent": "C05",
+        "name": "湖心月谱残章",
+        "planned_idx": 974,
+        "ledger_looks": 7220,
+        "production_relation": "本大陆所有怪物共用极低概率掉落",
+        "registration_relation": "图鉴页面登记时消耗1件且不收货币"
+      },
+      "new_state": {
+        "state": "保留",
+        "continent": "C05",
+        "name": "湖心月谱残章",
+        "planned_idx": 974,
+        "looks": 7220,
+        "production_relation": "隔离测试证据存在；生产前必须实库回读后补源表",
+        "registration_relation": "登记消耗1件，不进入普通回收",
+        "renumbering": "禁止重编号"
+      },
+      "action": "retain",
+      "value_status": "隔离测试证据存在、生产前必须实库回读后补源表，禁止重编号",
+      "evidence": [
+        {
+          "file": "outputs/f124f410aa49/20260903_产消闭环与处决韧性框架/十大陆产出消耗闭环总账_V1.1_爆率机制补齐.xlsx",
+          "sheet": "01_资源总览",
+          "range": "A75:Q75",
+          "note": "C3—C10收藏材料及隔离测试Looks 7220"
+        },
+        {
+          "file": "outputs/f124f410aa49/20260902_专属与材料编码阶段分配/材料编码数据库.xlsx",
+          "sheet": "大陆收藏材料_批次B规划",
+          "range": "A7:N7",
+          "note": "Idx 974 规划锁定、未入库、Looks待补；与总账存在来源状态差异"
+        },
+        {
+          "file": "docs/superpowers/specs/2026-09-03-first-noncombat-closure.md",
+          "sheet": "规则7",
+          "range": "—",
+          "note": "7218—7225以实库回读为权威，不得重新编号"
+        }
+      ]
+    },
+    {
+      "change_id": "CHG-C06-COLLECT",
+      "target_workbook": "产消闭环总账V1.1",
+      "sheet": "01_资源总览",
+      "match_key": "EL-MAT-C06-COLLECT",
+      "old_state": {
+        "state": "已测试但来源/生产前状态需复核",
+        "continent": "C06",
+        "name": "熔原罪火残章",
+        "planned_idx": 975,
+        "ledger_looks": 7221,
+        "production_relation": "本大陆所有怪物共用极低概率掉落",
+        "registration_relation": "图鉴页面登记时消耗1件且不收货币"
+      },
+      "new_state": {
+        "state": "保留",
+        "continent": "C06",
+        "name": "熔原罪火残章",
+        "planned_idx": 975,
+        "looks": 7221,
+        "production_relation": "隔离测试证据存在；生产前必须实库回读后补源表",
+        "registration_relation": "登记消耗1件，不进入普通回收",
+        "renumbering": "禁止重编号"
+      },
+      "action": "retain",
+      "value_status": "隔离测试证据存在、生产前必须实库回读后补源表，禁止重编号",
+      "evidence": [
+        {
+          "file": "outputs/f124f410aa49/20260903_产消闭环与处决韧性框架/十大陆产出消耗闭环总账_V1.1_爆率机制补齐.xlsx",
+          "sheet": "01_资源总览",
+          "range": "A76:Q76",
+          "note": "C3—C10收藏材料及隔离测试Looks 7221"
+        },
+        {
+          "file": "outputs/f124f410aa49/20260902_专属与材料编码阶段分配/材料编码数据库.xlsx",
+          "sheet": "大陆收藏材料_批次B规划",
+          "range": "A8:N8",
+          "note": "Idx 975 规划锁定、未入库、Looks待补；与总账存在来源状态差异"
+        },
+        {
+          "file": "docs/superpowers/specs/2026-09-03-first-noncombat-closure.md",
+          "sheet": "规则7",
+          "range": "—",
+          "note": "7218—7225以实库回读为权威，不得重新编号"
+        }
+      ]
+    },
+    {
+      "change_id": "CHG-C07-COLLECT",
+      "target_workbook": "产消闭环总账V1.1",
+      "sheet": "01_资源总览",
+      "match_key": "EL-MAT-C07-COLLECT",
+      "old_state": {
+        "state": "已测试但来源/生产前状态需复核",
+        "continent": "C07",
+        "name": "永霜朝圣痕",
+        "planned_idx": 976,
+        "ledger_looks": 7222,
+        "production_relation": "本大陆所有怪物共用极低概率掉落",
+        "registration_relation": "图鉴页面登记时消耗1件且不收货币"
+      },
+      "new_state": {
+        "state": "保留",
+        "continent": "C07",
+        "name": "永霜朝圣痕",
+        "planned_idx": 976,
+        "looks": 7222,
+        "production_relation": "隔离测试证据存在；生产前必须实库回读后补源表",
+        "registration_relation": "登记消耗1件，不进入普通回收",
+        "renumbering": "禁止重编号"
+      },
+      "action": "retain",
+      "value_status": "隔离测试证据存在、生产前必须实库回读后补源表，禁止重编号",
+      "evidence": [
+        {
+          "file": "outputs/f124f410aa49/20260903_产消闭环与处决韧性框架/十大陆产出消耗闭环总账_V1.1_爆率机制补齐.xlsx",
+          "sheet": "01_资源总览",
+          "range": "A77:Q77",
+          "note": "C3—C10收藏材料及隔离测试Looks 7222"
+        },
+        {
+          "file": "outputs/f124f410aa49/20260902_专属与材料编码阶段分配/材料编码数据库.xlsx",
+          "sheet": "大陆收藏材料_批次B规划",
+          "range": "A9:N9",
+          "note": "Idx 976 规划锁定、未入库、Looks待补；与总账存在来源状态差异"
+        },
+        {
+          "file": "docs/superpowers/specs/2026-09-03-first-noncombat-closure.md",
+          "sheet": "规则7",
+          "range": "—",
+          "note": "7218—7225以实库回读为权威，不得重新编号"
+        }
+      ]
+    },
+    {
+      "change_id": "CHG-C08-COLLECT",
+      "target_workbook": "产消闭环总账V1.1",
+      "sheet": "01_资源总览",
+      "match_key": "EL-MAT-C08-COLLECT",
+      "old_state": {
+        "state": "已测试但来源/生产前状态需复核",
+        "continent": "C08",
+        "name": "穹霜碑珀",
+        "planned_idx": 977,
+        "ledger_looks": 7223,
+        "production_relation": "本大陆所有怪物共用极低概率掉落",
+        "registration_relation": "图鉴页面登记时消耗1件且不收货币"
+      },
+      "new_state": {
+        "state": "保留",
+        "continent": "C08",
+        "name": "穹霜碑珀",
+        "planned_idx": 977,
+        "looks": 7223,
+        "production_relation": "隔离测试证据存在；生产前必须实库回读后补源表",
+        "registration_relation": "登记消耗1件，不进入普通回收",
+        "renumbering": "禁止重编号"
+      },
+      "action": "retain",
+      "value_status": "隔离测试证据存在、生产前必须实库回读后补源表，禁止重编号",
+      "evidence": [
+        {
+          "file": "outputs/f124f410aa49/20260903_产消闭环与处决韧性框架/十大陆产出消耗闭环总账_V1.1_爆率机制补齐.xlsx",
+          "sheet": "01_资源总览",
+          "range": "A78:Q78",
+          "note": "C3—C10收藏材料及隔离测试Looks 7223"
+        },
+        {
+          "file": "outputs/f124f410aa49/20260902_专属与材料编码阶段分配/材料编码数据库.xlsx",
+          "sheet": "大陆收藏材料_批次B规划",
+          "range": "A10:N10",
+          "note": "Idx 977 规划锁定、未入库、Looks待补；与总账存在来源状态差异"
+        },
+        {
+          "file": "docs/superpowers/specs/2026-09-03-first-noncombat-closure.md",
+          "sheet": "规则7",
+          "range": "—",
+          "note": "7218—7225以实库回读为权威，不得重新编号"
+        }
+      ]
+    },
+    {
+      "change_id": "CHG-C09-COLLECT",
+      "target_workbook": "产消闭环总账V1.1",
+      "sheet": "01_资源总览",
+      "match_key": "EL-MAT-C09-COLLECT",
+      "old_state": {
+        "state": "已测试但来源/生产前状态需复核",
+        "continent": "C09",
+        "name": "古坛鎏叶髓",
+        "planned_idx": 978,
+        "ledger_looks": 7224,
+        "production_relation": "本大陆所有怪物共用极低概率掉落",
+        "registration_relation": "图鉴页面登记时消耗1件且不收货币"
+      },
+      "new_state": {
+        "state": "保留",
+        "continent": "C09",
+        "name": "古坛鎏叶髓",
+        "planned_idx": 978,
+        "looks": 7224,
+        "production_relation": "隔离测试证据存在；生产前必须实库回读后补源表",
+        "registration_relation": "登记消耗1件，不进入普通回收",
+        "renumbering": "禁止重编号"
+      },
+      "action": "retain",
+      "value_status": "隔离测试证据存在、生产前必须实库回读后补源表，禁止重编号",
+      "evidence": [
+        {
+          "file": "outputs/f124f410aa49/20260903_产消闭环与处决韧性框架/十大陆产出消耗闭环总账_V1.1_爆率机制补齐.xlsx",
+          "sheet": "01_资源总览",
+          "range": "A79:Q79",
+          "note": "C3—C10收藏材料及隔离测试Looks 7224"
+        },
+        {
+          "file": "outputs/f124f410aa49/20260902_专属与材料编码阶段分配/材料编码数据库.xlsx",
+          "sheet": "大陆收藏材料_批次B规划",
+          "range": "A11:N11",
+          "note": "Idx 978 规划锁定、未入库、Looks待补；与总账存在来源状态差异"
+        },
+        {
+          "file": "docs/superpowers/specs/2026-09-03-first-noncombat-closure.md",
+          "sheet": "规则7",
+          "range": "—",
+          "note": "7218—7225以实库回读为权威，不得重新编号"
+        }
+      ]
+    },
+    {
+      "change_id": "CHG-C10-COLLECT",
+      "target_workbook": "产消闭环总账V1.1",
+      "sheet": "01_资源总览",
+      "match_key": "EL-MAT-C10-COLLECT",
+      "old_state": {
+        "state": "已测试但来源/生产前状态需复核",
+        "continent": "C10",
+        "name": "穹律鎏痕拓片",
+        "planned_idx": 979,
+        "ledger_looks": 7225,
+        "production_relation": "本大陆所有怪物共用极低概率掉落",
+        "registration_relation": "图鉴页面登记时消耗1件且不收货币"
+      },
+      "new_state": {
+        "state": "保留",
+        "continent": "C10",
+        "name": "穹律鎏痕拓片",
+        "planned_idx": 979,
+        "looks": 7225,
+        "production_relation": "隔离测试证据存在；生产前必须实库回读后补源表",
+        "registration_relation": "登记消耗1件，不进入普通回收",
+        "renumbering": "禁止重编号"
+      },
+      "action": "retain",
+      "value_status": "隔离测试证据存在、生产前必须实库回读后补源表，禁止重编号",
+      "evidence": [
+        {
+          "file": "outputs/f124f410aa49/20260903_产消闭环与处决韧性框架/十大陆产出消耗闭环总账_V1.1_爆率机制补齐.xlsx",
+          "sheet": "01_资源总览",
+          "range": "A80:Q80",
+          "note": "C3—C10收藏材料及隔离测试Looks 7225"
+        },
+        {
+          "file": "outputs/f124f410aa49/20260902_专属与材料编码阶段分配/材料编码数据库.xlsx",
+          "sheet": "大陆收藏材料_批次B规划",
+          "range": "A12:N12",
+          "note": "Idx 979 规划锁定、未入库、Looks待补；与总账存在来源状态差异"
+        },
+        {
+          "file": "docs/superpowers/specs/2026-09-03-first-noncombat-closure.md",
+          "sheet": "规则7",
+          "range": "—",
+          "note": "7218—7225以实库回读为权威，不得重新编号"
+        }
+      ]
+    },
+    {
+      "change_id": "CHG-RUNE-SMALL",
+      "target_workbook": "产消闭环总账V1.1",
+      "sheet": "01_资源总览",
+      "match_key": "CUR-SMALL-RUNE／小卢恩",
+      "old_state": {
+        "state": "硬缺口：产出来源未定义",
+        "form": "货币/账户口径"
+      },
+      "new_state": {
+        "form": "背包实物材料",
+        "name_match": "小卢恩（全名精确匹配）",
+        "drop_scope": "全服所有大陆怪物可掉",
+        "usage": "1—5转使用",
+        "post_stage": "10转后余量可回收",
+        "artifact_exclusion": "不得与‘XXX的大卢恩’追梦神器混淆"
+      },
+      "action": "redefine",
+      "value_status": "来源与实物语义待回读；数量/掉率留空",
+      "evidence": [
+        {
+          "file": "outputs/f124f410aa49/20260903_产消闭环与处决韧性框架/十大陆产出消耗闭环总账_V1.1_爆率机制补齐.xlsx",
+          "sheet": "01_资源总览",
+          "range": "A8:Q8",
+          "note": "小卢恩当前列为转生货币且产出来源硬缺口"
+        },
+        {
+          "file": "outputs/f124f410aa49/20260903_产消闭环与处决韧性框架/十大陆产出消耗闭环总账_V1.1_爆率机制补齐.xlsx",
+          "sheet": "06_未闭合清单",
+          "range": "A7:F7",
+          "note": "小卢恩产出来源未定义"
+        },
+        {
+          "file": "docs/superpowers/specs/2026-09-03-first-noncombat-closure.md",
+          "sheet": "规则1-3",
+          "range": "—",
+          "note": "实物、全服掉落、1—5转使用、10转后回收"
+        }
+      ]
+    },
+    {
+      "change_id": "CHG-RUNE-LARGE",
+      "target_workbook": "产消闭环总账V1.1",
+      "sheet": "01_资源总览",
+      "match_key": "CUR-LARGE-RUNE／大卢恩",
+      "old_state": {
+        "state": "硬缺口：产出来源未定义",
+        "form": "货币/账户口径"
+      },
+      "new_state": {
+        "form": "背包实物材料",
+        "name_match": "大卢恩（全名精确匹配）",
+        "drop_scope": "全服所有大陆怪物可掉",
+        "usage": "6—10转使用",
+        "post_stage": "10转后余量可回收",
+        "artifact_exclusion": "不得与‘XXX的大卢恩’追梦神器混淆"
+      },
+      "action": "redefine",
+      "value_status": "来源与实物语义待回读；数量/掉率留空",
+      "evidence": [
+        {
+          "file": "outputs/f124f410aa49/20260903_产消闭环与处决韧性框架/十大陆产出消耗闭环总账_V1.1_爆率机制补齐.xlsx",
+          "sheet": "01_资源总览",
+          "range": "A9:Q9",
+          "note": "大卢恩当前列为转生货币且产出来源硬缺口"
+        },
+        {
+          "file": "outputs/f124f410aa49/20260903_产消闭环与处决韧性框架/十大陆产出消耗闭环总账_V1.1_爆率机制补齐.xlsx",
+          "sheet": "06_未闭合清单",
+          "range": "A8:F8",
+          "note": "大卢恩产出来源未定义"
+        },
+        {
+          "file": "docs/superpowers/specs/2026-09-03-first-noncombat-closure.md",
+          "sheet": "规则1-3",
+          "range": "—",
+          "note": "实物、全服掉落、6—10转使用、10转后回收"
+        }
+      ]
+    },
+    {
+      "change_id": "CHG-REBIRTH-11-15",
+      "target_workbook": "NPC与配方总账V1.0",
+      "sheet": "02_配方总表",
+      "match_key": "C08-REBIRTH-11—15",
+      "old_state": {
+        "stage_material": "普通大陆材料＋稀有/证物材料",
+        "currency": "大卢恩及币种方向",
+        "state": "旧表结构含普通合成材料"
+      },
+      "new_state": {
+        "stage_material": "巨人熔火卢恩",
+        "usage": "仅供11—15转",
+        "post_stage": "阶段完成后余量可回收",
+        "idx": "待实库回读／待取码",
+        "ordinary_materials": "全部移除"
+      },
+      "action": "replace",
+      "value_status": "正式建议名确定；Idx/Looks与数量不填",
+      "evidence": [
+        {
+          "file": "outputs/f124f410aa49/20260902_NPC与配方正式结构/十大陆NPC与配方总账_V1.0.xlsx",
+          "sheet": "02_配方总表",
+          "range": "A69:S73",
+          "note": "11—15转旧表含普通材料，保留转生结构与币种方向"
+        },
+        {
+          "file": "docs/superpowers/specs/2026-09-03-first-noncombat-closure.md",
+          "sheet": "规则4-5",
+          "range": "—",
+          "note": "阶段专材独立、只供对应阶段、余量可回收"
+        }
+      ]
+    },
+    {
+      "change_id": "CHG-REBIRTH-16-20",
+      "target_workbook": "NPC与配方总账V1.0",
+      "sheet": "02_配方总表",
+      "match_key": "C10-REBIRTH-16—20",
+      "old_state": {
+        "stage_material": "普通大陆材料＋稀有/证物材料",
+        "currency": "大卢恩及币种方向",
+        "state": "旧表结构含普通合成材料"
+      },
+      "new_state": {
+        "stage_material": "黄金律法卢恩",
+        "usage": "仅供16—20转",
+        "post_stage": "阶段完成后余量可回收",
+        "idx": "待实库回读／待取码",
+        "ordinary_materials": "全部移除"
+      },
+      "action": "replace",
+      "value_status": "正式建议名确定；Idx/Looks与数量不填",
+      "evidence": [
+        {
+          "file": "outputs/f124f410aa49/20260902_NPC与配方正式结构/十大陆NPC与配方总账_V1.0.xlsx",
+          "sheet": "02_配方总表",
+          "range": "A74:S78",
+          "note": "16—20转旧表含普通材料，保留转生结构与币种方向"
+        },
+        {
+          "file": "docs/superpowers/specs/2026-09-03-first-noncombat-closure.md",
+          "sheet": "规则4-5",
+          "range": "—",
+          "note": "阶段专材独立、只供对应阶段、余量可回收"
+        }
+      ]
+    },
+    {
+      "change_id": "CHG-REBIRTH-ALL",
+      "target_workbook": "NPC与配方总账V1.0",
+      "sheet": "02_配方总表",
+      "match_key": "全部20个转生配方",
+      "old_state": {
+        "ordinary_materials": "当前表存在高产通用材料和稀有/证物材料列",
+        "failure_rule": "已有结构写100%成功、不失败吞料"
+      },
+      "new_state": {
+        "allowed_components": [
+          "前置转生",
+          "对应阶段专材",
+          "金币／元宝方向"
+        ],
+        "ordinary_materials": "不得保留任何普通合成材料",
+        "success_rule": "成功率100%；不得失败吞料"
+      },
+      "action": "normalize",
+      "value_status": "数量、金额、掉率和属性不填",
+      "evidence": [
+        {
+          "file": "outputs/f124f410aa49/20260902_NPC与配方正式结构/十大陆NPC与配方总账_V1.0.xlsx",
+          "sheet": "02_配方总表",
+          "range": "A59:S78",
+          "note": "20项转生结构与当前材料列"
+        },
+        {
+          "file": "outputs/f124f410aa49/20260903_产消闭环与处决韧性框架/十大陆产出消耗闭环总账_V1.1_爆率机制补齐.xlsx",
+          "sheet": "06_未闭合清单",
+          "range": "A7:F8",
+          "note": "卢恩来源与经济量化仍待后续"
+        },
+        {
+          "file": "docs/superpowers/specs/2026-09-03-first-noncombat-closure.md",
+          "sheet": "规则5",
+          "range": "—",
+          "note": "四处NPC各5级，共20转"
+        }
+      ]
+    },
+    {
+      "change_id": "CHG-C10-TITLE",
+      "target_workbook": "NPC与配方总账V1.0",
+      "sheet": "02_配方总表",
+      "match_key": "C10-SYN-TT-01／[称号]艾尔登之王",
+      "old_state": {
+        "title_material": "穹律鎏痕拓片",
+        "state": "V1.0误用大陆图鉴收藏材料"
+      },
+      "new_state": {
+        "title_material": "失温熔炉楔",
+        "state": "与产消总账C10地图BOSS证物一致",
+        "collection_material": "不得再使用穹律鎏痕拓片"
+      },
+      "action": "replace",
+      "value_status": "结构已定；属性与数量待后算",
+      "evidence": [
+        {
+          "file": "outputs/f124f410aa49/20260902_NPC与配方正式结构/十大陆NPC与配方总账_V1.0.xlsx",
+          "sheet": "02_配方总表",
+          "range": "A53:S53",
+          "note": "旧称号配方材料列含穹律鎏痕拓片"
+        },
+        {
+          "file": "outputs/f124f410aa49/20260903_产消闭环与处决韧性框架/十大陆产出消耗闭环总账_V1.1_爆率机制补齐.xlsx",
+          "sheet": "01_资源总览",
+          "range": "A76:Q76",
+          "note": "失温熔炉楔为C10地图BOSS证物"
+        },
+        {
+          "file": "docs/superpowers/specs/2026-09-03-first-noncombat-closure.md",
+          "sheet": "规则8",
+          "range": "—",
+          "note": "C10称号材料统一为失温熔炉楔"
+        }
+      ]
+    },
+    {
+      "change_id": "CHG-WEARABLE-RECYCLE",
+      "target_workbook": "NPC与配方总账V1.0",
+      "sheet": "02_配方总表",
+      "match_key": "38件合成穿戴物",
+      "old_state": {
+        "count": 38,
+        "prior_recycle": "部分旧字段写回收价后算",
+        "trade_rule": "成品可交易"
+      },
+      "new_state": {
+        "count": 38,
+        "recycleable": false,
+        "recycle_rule": "禁止回收",
+        "trade_rule": "保持现行成品交易规则"
+      },
+      "action": "normalize",
+      "value_status": "回收价格不填",
+      "evidence": [
+        {
+          "file": "outputs/f124f410aa49/20260903_产消闭环与处决韧性框架/十大陆产出消耗闭环总账_V1.1_爆率机制补齐.xlsx",
+          "sheet": "06_未闭合清单",
+          "range": "A10:F10",
+          "note": "38项=23装备＋10生肖＋5群攻生肖的回收边界修订"
+        },
+        {
+          "file": "outputs/f124f410aa49/20260903_产消闭环与处决韧性框架/十大陆产出消耗闭环总账_V1.1_爆率机制补齐.xlsx",
+          "sheet": "08_校验",
+          "range": "A16:F17",
+          "note": "合成穿戴物禁止回收期望38、违规0"
+        },
+        {
+          "file": "docs/superpowers/specs/2026-09-03-first-noncombat-closure.md",
+          "sheet": "规则9",
+          "range": "—",
+          "note": "所有合成后的穿戴物不可回收"
+        }
+      ]
+    },
+    {
+      "change_id": "CHG-BOSS-TITLE-SCROLL",
+      "target_workbook": "产消闭环总账V1.1",
+      "sheet": "02_产出端",
+      "match_key": "BOSS称号卷来源表",
+      "old_state": {
+        "state": "来源表未建立",
+        "combat_values": "不应在本批填写"
+      },
+      "new_state": {
+        "source_table": "新增",
+        "allocation": "每个守关BOSS配置一张独立称号卷",
+        "source_rows": [
+          {
+            "continent": "C01",
+            "map_id": "XX105",
+            "map_name": "沉没王座",
+            "gate_boss": "沉没之王·奥德里安",
+            "title_scroll_full_name": "[称号]潮下弑王",
+            "unlock_display": "称号外显：[称号]潮下弑王",
+            "status": "来源结构已定；属性/1/x后算"
+          },
+          {
+            "continent": "C02",
+            "map_id": "XX279",
+            "map_name": "接肢王座",
+            "gate_boss": "接肢君王·葛瑞克",
+            "title_scroll_full_name": "[称号]接肢弑王",
+            "unlock_display": "称号外显：[称号]接肢弑王",
+            "status": "复用既有称号ID，已激活不扣物品；属性/1/x后算"
+          },
+          {
+            "continent": "C03",
+            "map_id": "XX169",
+            "map_name": "黄金树祭台",
+            "gate_boss": "西境征服者·戈德里安",
+            "title_scroll_full_name": "[称号]西境破冠者",
+            "unlock_display": "称号外显：[称号]西境破冠者",
+            "status": "来源结构已定；属性/1/x后算"
+          },
+          {
+            "continent": "C04",
+            "map_id": "XX369",
+            "map_name": "深湖秘室",
+            "gate_boss": "闭潮王·莱弥恩",
+            "title_scroll_full_name": "[称号]深湖解封者",
+            "unlock_display": "称号外显：[称号]深湖解封者",
+            "status": "来源结构已定；属性/1/x后算"
+          },
+          {
+            "continent": "C05",
+            "map_id": "XX924",
+            "map_name": "卡利亚圣所",
+            "gate_boss": "寒镜终誓王",
+            "title_scroll_full_name": "[称号]寒镜破誓者",
+            "unlock_display": "称号外显：[称号]寒镜破誓者",
+            "status": "来源结构已定；属性/1/x后算"
+          },
+          {
+            "continent": "C06",
+            "map_id": "XX481",
+            "map_name": "红狮神殿",
+            "gate_boss": "碎星狮王·拉塔恩",
+            "title_scroll_full_name": "[称号]群星解缚者",
+            "unlock_display": "称号外显：[称号]群星解缚者",
+            "status": "来源结构已定；属性/1/x后算"
+          },
+          {
+            "continent": "C07",
+            "map_id": "XX911",
+            "map_name": "极寒圣所",
+            "gate_boss": "化圣霜王·埃琉斯",
+            "title_scroll_full_name": "[称号]圣雪断誓者",
+            "unlock_display": "称号外显：[称号]圣雪断誓者",
+            "status": "来源结构已定；属性/1/x后算"
+          },
+          {
+            "continent": "C08",
+            "map_id": "XX897",
+            "map_name": "巨人王座",
+            "gate_boss": "吞日霜王·乌尔迈",
+            "title_scroll_full_name": "[称号]熄日猎王",
+            "unlock_display": "称号外显：[称号]熄日猎王",
+            "status": "来源结构已定；属性/1/x后算"
+          },
+          {
+            "continent": "C09",
+            "map_id": "XX639",
+            "map_name": "罗德尔关门",
+            "gate_boss": "鎏日王城之影·阿尔维萨",
+            "title_scroll_full_name": "[称号]鎏日破影者",
+            "unlock_display": "称号外显：[称号]鎏日破影者",
+            "status": "来源结构已定；属性/1/x后算"
+          },
+          {
+            "continent": "C10",
+            "map_id": "XX386",
+            "map_name": "艾尔登王座",
+            "gate_boss": "万冠终审者·萨洛恩",
+            "title_scroll_full_name": "[称号]万冠裁决者",
+            "unlock_display": "称号外显：[称号]万冠裁决者",
+            "status": "来源结构已定；属性/1/x后算"
+          }
+        ],
+        "slot_rule": "称号卷不占装备位并参与乘区",
+        "naming_and_structure": "本批确定",
+        "attributes_and_true_drop": "后算"
+      },
+      "action": "add",
+      "value_status": "来源结构已定；属性与真实掉率留空",
+      "evidence": [
+        {
+          "file": "outputs/f124f410aa49/20260903_产消闭环与处决韧性框架/十大陆产出消耗闭环总账_V1.1_爆率机制补齐.xlsx",
+          "sheet": "06_未闭合清单",
+          "range": "A20:F21",
+          "note": "称号脚本/来源为后续编码与结构待办"
+        },
+        {
+          "file": "docs/superpowers/specs/2026-09-03-first-noncombat-closure.md",
+          "sheet": "规则10",
+          "range": "—",
+          "note": "每个守关BOSS一张，属性与真实掉率后算"
+        }
+      ]
+    },
+    {
+      "change_id": "CHG-CODING-RULES",
+      "target_workbook": "材料编码数据库",
+      "sheet": "占用与预留",
+      "match_key": "小卢恩／大卢恩／阶段专材／Idx 980—983",
+      "old_state": {
+        "state": "小/大卢恩来源与实物编码未回读；阶段专材尚无正式编码",
+        "reserved_idx": "980—983冻结",
+        "matching": "现有材料主索引按逻辑ID"
+      },
+      "new_state": {
+        "live_readback": "小卢恩、大卢恩先回读现服",
+        "exact_match": "资源名全名精确匹配，实物与追梦神器严格区分",
+        "frozen_idx": [
+          980,
+          981,
+          982,
+          983
+        ],
+        "special_material_codes": "巨人熔火卢恩、黄金律法卢恩待实库回读／待取码",
+        "auto_allocate": false
+      },
+      "action": "gate",
+      "value_status": "编码与实库回读待后续；不擅自取码",
+      "evidence": [
+        {
+          "file": "outputs/f124f410aa49/20260902_专属与材料编码阶段分配/材料编码数据库.xlsx",
+          "sheet": "占用与预留",
+          "range": "A4:H11",
+          "note": "980—983预留冻结；972—979规划锁定"
+        },
+        {
+          "file": "outputs/f124f410aa49/20260902_专属与材料编码阶段分配/材料编码数据库.xlsx",
+          "sheet": "材料主索引",
+          "range": "A4:Z72",
+          "note": "资源全名与ActualIdx字段结构"
+        },
+        {
+          "file": "docs/superpowers/specs/2026-09-03-first-noncombat-closure.md",
+          "sheet": "规则1、11",
+          "range": "—",
+          "note": "全名精确匹配；攻速突破只登记候选"
+        }
+      ]
+    },
+    {
+      "change_id": "CHG-SCOPE-GUARDRAILS",
+      "target_workbook": "三份权威工作簿",
+      "sheet": "各指定工作表",
+      "match_key": "本批施工范围",
+      "old_state": {
+        "state": "待后续统一计算与手动导入",
+        "excluded": [
+          "地图",
+          "界面",
+          "赞助地图"
+        ]
+      },
+      "new_state": {
+        "no_combat_truth_edits": true,
+        "no_final_currency_values": true,
+        "no_true_drop_rates": true,
+        "no_existing_monster_or_equipment_table_edits": true,
+        "excluded": [
+          "地图",
+          "界面",
+          "赞助地图"
+        ],
+        "attack_speed_breakthrough": "仅登记候选，不填数值"
+      },
+      "action": "guard",
+      "value_status": "本批只做结构映射",
+      "evidence": [
+        {
+          "file": "docs/superpowers/specs/2026-09-03-first-noncombat-closure.md",
+          "sheet": "目标/本批交付",
+          "range": "—",
+          "note": "明确不填写战斗真值、最终金额、真实1/x；地图/界面不在范围"
+        },
+        {
+          "file": "outputs/f124f410aa49/20260903_产消闭环与处决韧性框架/十大陆产出消耗闭环总账_V1.1_爆率机制补齐.xlsx",
+          "sheet": "06_未闭合清单",
+          "range": "A23:F23",
+          "note": "产量、掉率、回收与消耗真数待统一计算"
+        }
+      ]
+    }
+  ],
+  "boss_title_scroll_source_rows": [
+    {
+      "continent": "C01",
+      "map_id": "XX105",
+      "map_name": "沉没王座",
+      "gate_boss": "沉没之王·奥德里安",
+      "title_scroll_full_name": "[称号]潮下弑王",
+      "unlock_display": "称号外显：[称号]潮下弑王",
+      "status": "来源结构已定；属性/1/x后算"
+    },
+    {
+      "continent": "C02",
+      "map_id": "XX279",
+      "map_name": "接肢王座",
+      "gate_boss": "接肢君王·葛瑞克",
+      "title_scroll_full_name": "[称号]接肢弑王",
+      "unlock_display": "称号外显：[称号]接肢弑王",
+      "status": "复用既有称号ID，已激活不扣物品；属性/1/x后算"
+    },
+    {
+      "continent": "C03",
+      "map_id": "XX169",
+      "map_name": "黄金树祭台",
+      "gate_boss": "西境征服者·戈德里安",
+      "title_scroll_full_name": "[称号]西境破冠者",
+      "unlock_display": "称号外显：[称号]西境破冠者",
+      "status": "来源结构已定；属性/1/x后算"
+    },
+    {
+      "continent": "C04",
+      "map_id": "XX369",
+      "map_name": "深湖秘室",
+      "gate_boss": "闭潮王·莱弥恩",
+      "title_scroll_full_name": "[称号]深湖解封者",
+      "unlock_display": "称号外显：[称号]深湖解封者",
+      "status": "来源结构已定；属性/1/x后算"
+    },
+    {
+      "continent": "C05",
+      "map_id": "XX924",
+      "map_name": "卡利亚圣所",
+      "gate_boss": "寒镜终誓王",
+      "title_scroll_full_name": "[称号]寒镜破誓者",
+      "unlock_display": "称号外显：[称号]寒镜破誓者",
+      "status": "来源结构已定；属性/1/x后算"
+    },
+    {
+      "continent": "C06",
+      "map_id": "XX481",
+      "map_name": "红狮神殿",
+      "gate_boss": "碎星狮王·拉塔恩",
+      "title_scroll_full_name": "[称号]群星解缚者",
+      "unlock_display": "称号外显：[称号]群星解缚者",
+      "status": "来源结构已定；属性/1/x后算"
+    },
+    {
+      "continent": "C07",
+      "map_id": "XX911",
+      "map_name": "极寒圣所",
+      "gate_boss": "化圣霜王·埃琉斯",
+      "title_scroll_full_name": "[称号]圣雪断誓者",
+      "unlock_display": "称号外显：[称号]圣雪断誓者",
+      "status": "来源结构已定；属性/1/x后算"
+    },
+    {
+      "continent": "C08",
+      "map_id": "XX897",
+      "map_name": "巨人王座",
+      "gate_boss": "吞日霜王·乌尔迈",
+      "title_scroll_full_name": "[称号]熄日猎王",
+      "unlock_display": "称号外显：[称号]熄日猎王",
+      "status": "来源结构已定；属性/1/x后算"
+    },
+    {
+      "continent": "C09",
+      "map_id": "XX639",
+      "map_name": "罗德尔关门",
+      "gate_boss": "鎏日王城之影·阿尔维萨",
+      "title_scroll_full_name": "[称号]鎏日破影者",
+      "unlock_display": "称号外显：[称号]鎏日破影者",
+      "status": "来源结构已定；属性/1/x后算"
+    },
+    {
+      "continent": "C10",
+      "map_id": "XX386",
+      "map_name": "艾尔登王座",
+      "gate_boss": "万冠终审者·萨洛恩",
+      "title_scroll_full_name": "[称号]万冠裁决者",
+      "unlock_display": "称号外显：[称号]万冠裁决者",
+      "status": "来源结构已定；属性/1/x后算"
+    }
+  ],
+  "forbidden_value_types": [
+    "怪物战斗属性真值",
+    "装备战斗属性真值",
+    "称号/称号卷战斗属性真值",
+    "命格战斗属性真值",
+    "处决战斗属性真值",
+    "攻速突破具体数值",
+    "真实1/x掉率",
+    "每次掉落数量",
+    "最终金币金额",
+    "最终元宝金额",
+    "物品回收价格",
+    "地图韧性与围攻承伤数值"
+  ],
+  "acceptance_assertions": [
+    {
+      "id": "A01",
+      "json_path": "$.input_files",
+      "operator": "length_equals",
+      "expected": 3
+    },
+    {
+      "id": "A02",
+      "json_path": "$.input_files[*].sha256",
+      "collection_path": "$.input_files",
+      "field": "sha256",
+      "operator": "all_nonempty",
+      "expected": true
+    },
+    {
+      "id": "A03",
+      "json_path": "$.changes[0].action",
+      "operator": "in",
+      "expected": [
+        "delete",
+        "deactivate"
+      ]
+    },
+    {
+      "id": "A04",
+      "json_path": "$.changes[0].new_state.registration_relation",
+      "operator": "equals",
+      "expected": "删除"
+    },
+    {
+      "id": "A05",
+      "json_path": "$.changes[0].new_state.equipment_catalog",
+      "operator": "equals",
+      "expected": "仅独立保留C1专属装备逐件图鉴"
+    },
+    {
+      "id": "A06",
+      "json_path": "$.changes[1].new_state.registration_relation",
+      "operator": "equals",
+      "expected": "删除"
+    },
+    {
+      "id": "A07",
+      "json_path": "$.changes[*].new_state.renumbering",
+      "collection_path": "$.changes",
+      "filter": {
+        "change_id_in": [
+          "CHG-C03-COLLECT",
+          "CHG-C04-COLLECT",
+          "CHG-C05-COLLECT",
+          "CHG-C06-COLLECT",
+          "CHG-C07-COLLECT",
+          "CHG-C08-COLLECT",
+          "CHG-C09-COLLECT",
+          "CHG-C10-COLLECT"
+        ]
+      },
+      "field": "new_state.renumbering",
+      "operator": "all_equals",
+      "expected": "禁止重编号"
+    },
+    {
+      "id": "A08",
+      "json_path": "$.changes[*].new_state.looks",
+      "collection_path": "$.changes",
+      "filter": {
+        "change_id_in": [
+          "CHG-C03-COLLECT",
+          "CHG-C04-COLLECT",
+          "CHG-C05-COLLECT",
+          "CHG-C06-COLLECT",
+          "CHG-C07-COLLECT",
+          "CHG-C08-COLLECT",
+          "CHG-C09-COLLECT",
+          "CHG-C10-COLLECT"
+        ]
+      },
+      "field": "new_state.looks",
+      "operator": "set_equals",
+      "expected": [
+        7218,
+        7219,
+        7220,
+        7221,
+        7222,
+        7223,
+        7224,
+        7225
+      ]
+    },
+    {
+      "id": "A09",
+      "json_path": "$.changes[10].new_state",
+      "operator": "fields_equal",
+      "expected": {
+        "form": "背包实物材料",
+        "drop_scope": "全服所有大陆怪物可掉",
+        "usage": "1—5转使用"
+      }
+    },
+    {
+      "id": "A10",
+      "json_path": "$.changes[11].new_state",
+      "operator": "fields_equal",
+      "expected": {
+        "form": "背包实物材料",
+        "drop_scope": "全服所有大陆怪物可掉",
+        "usage": "6—10转使用"
+      }
+    },
+    {
+      "id": "A11",
+      "json_path": "$.changes[12].new_state.stage_material",
+      "operator": "equals",
+      "expected": "巨人熔火卢恩"
+    },
+    {
+      "id": "A12",
+      "json_path": "$.changes[13].new_state.stage_material",
+      "operator": "equals",
+      "expected": "黄金律法卢恩"
+    },
+    {
+      "id": "A13",
+      "json_path": "$.changes[14].new_state.allowed_components",
+      "operator": "set_equals",
+      "expected": [
+        "前置转生",
+        "对应阶段专材",
+        "金币／元宝方向"
+      ]
+    },
+    {
+      "id": "A14",
+      "json_path": "$.changes[14].new_state.success_rule",
+      "operator": "equals",
+      "expected": "成功率100%；不得失败吞料"
+    },
+    {
+      "id": "A15",
+      "json_path": "$.changes[15].new_state.title_material",
+      "operator": "equals",
+      "expected": "失温熔炉楔"
+    },
+    {
+      "id": "A16",
+      "json_path": "$.changes[16].new_state",
+      "operator": "fields_equal",
+      "expected": {
+        "count": 38,
+        "recycleable": false,
+        "recycle_rule": "禁止回收",
+        "trade_rule": "保持现行成品交易规则"
+      }
+    },
+    {
+      "id": "A17",
+      "json_path": "$.boss_title_scroll_source_rows",
+      "operator": "length_equals",
+      "expected": 10
+    },
+    {
+      "id": "A18",
+      "json_path": "$.boss_title_scroll_source_rows[*].map_id",
+      "collection_path": "$.boss_title_scroll_source_rows",
+      "field": "map_id",
+      "operator": "set_equals",
+      "expected": [
+        "XX105",
+        "XX279",
+        "XX169",
+        "XX369",
+        "XX924",
+        "XX481",
+        "XX911",
+        "XX897",
+        "XX639",
+        "XX386"
+      ]
+    },
+    {
+      "id": "A19",
+      "json_path": "$.boss_title_scroll_source_rows[*].title_scroll_full_name",
+      "collection_path": "$.boss_title_scroll_source_rows",
+      "field": "title_scroll_full_name",
+      "operator": "all_nonempty",
+      "expected": true
+    },
+    {
+      "id": "A20",
+      "json_path": "$.changes[18].new_state.frozen_idx",
+      "operator": "set_equals",
+      "expected": [
+        980,
+        981,
+        982,
+        983
+      ]
+    },
+    {
+      "id": "A21",
+      "json_path": "$.forbidden_value_types",
+      "operator": "contains_all",
+      "expected": [
+        "真实1/x掉率",
+        "最终金币金额",
+        "最终元宝金额",
+        "攻速突破具体数值"
+      ]
+    }
+  ]
+}
