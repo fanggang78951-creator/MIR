@@ -1,0 +1,356 @@
+{
+  "summary": {
+    "total": 64,
+    "pass": 64,
+    "fail": 0
+  },
+  "validations": [
+    {
+      "id": "FORMULA-01_第一大陆36怪_战斗属性表.xlsx",
+      "pass": true,
+      "detail": "{\"kind\":\"notice\",\"message\":\"Cell search matched 0 entries.\"}"
+    },
+    {
+      "id": "FORMULA-02_第二大陆宁姆格福61怪_战斗属性表.xlsx",
+      "pass": true,
+      "detail": "{\"kind\":\"notice\",\"message\":\"Cell search matched 0 entries.\"}"
+    },
+    {
+      "id": "FORMULA-03_第一二大陆20套制式装备_69列平台表.xlsx",
+      "pass": true,
+      "detail": "{\"kind\":\"notice\",\"message\":\"Cell search matched 0 entries.\"}"
+    },
+    {
+      "id": "FORMULA-04_第一二大陆105件专属装备_69列平台表.xlsx",
+      "pass": true,
+      "detail": "{\"kind\":\"notice\",\"message\":\"Cell search matched 0 entries.\"}"
+    },
+    {
+      "id": "COUNT-C1",
+      "pass": true,
+      "detail": "actual=36"
+    },
+    {
+      "id": "COUNT-C2",
+      "pass": true,
+      "detail": "actual=61"
+    },
+    {
+      "id": "NAMES-C1",
+      "pass": true,
+      "detail": "名称与顺序"
+    },
+    {
+      "id": "NAMES-C2",
+      "pass": true,
+      "detail": "名称与顺序"
+    },
+    {
+      "id": "C1-GATE-HP",
+      "pass": true,
+      "detail": "HP=8880000"
+    },
+    {
+      "id": "NORMAL-HIT-SPEED",
+      "pass": true,
+      "detail": "普通怪HIT/SPEED空白"
+    },
+    {
+      "id": "COUNT-STANDARD",
+      "pass": true,
+      "detail": "actual=160"
+    },
+    {
+      "id": "COUNT-EXCLUSIVE-EDITABLE",
+      "pass": true,
+      "detail": "actual=99"
+    },
+    {
+      "id": "STD-NO-LUCK",
+      "pass": true,
+      "detail": "STD幸运留空"
+    },
+    {
+      "id": "STD-NO-DAMAGE-ABSORB",
+      "pass": true,
+      "detail": "STD普通伤害吸收留空"
+    },
+    {
+      "id": "STD-WEAPON-NECK-NO-DEF",
+      "pass": true,
+      "detail": "STD武器项链禁防御魔御"
+    },
+    {
+      "id": "STD-OTHER-NO-HIT-SPEED",
+      "pass": true,
+      "detail": "STD非武器禁准确攻速"
+    },
+    {
+      "id": "STD-RANGE-ORDER",
+      "pass": true,
+      "detail": "STD上下限顺序"
+    },
+    {
+      "id": "EXC-NO-LUCK",
+      "pass": true,
+      "detail": "EXC幸运留空"
+    },
+    {
+      "id": "EXC-NO-DAMAGE-ABSORB",
+      "pass": true,
+      "detail": "EXC普通伤害吸收留空"
+    },
+    {
+      "id": "EXC-WEAPON-NECK-NO-DEF",
+      "pass": true,
+      "detail": "EXC武器项链禁防御魔御"
+    },
+    {
+      "id": "EXC-OTHER-NO-HIT-SPEED",
+      "pass": true,
+      "detail": "EXC非武器禁准确攻速"
+    },
+    {
+      "id": "EXC-RANGE-ORDER",
+      "pass": true,
+      "detail": "EXC上下限顺序"
+    },
+    {
+      "id": "WEAPON-RATIO-1",
+      "pass": true,
+      "detail": "min=6.67,max=10.00"
+    },
+    {
+      "id": "ARMOR-ROLE-1",
+      "pass": true,
+      "detail": "HP=5000,HP%=1,吸收=1"
+    },
+    {
+      "id": "WEAPON-RATIO-2",
+      "pass": true,
+      "detail": "min=6.67,max=10.00"
+    },
+    {
+      "id": "ARMOR-ROLE-2",
+      "pass": true,
+      "detail": "HP=10000,HP%=1,吸收=2"
+    },
+    {
+      "id": "WEAPON-RATIO-3",
+      "pass": true,
+      "detail": "min=6.67,max=10.00"
+    },
+    {
+      "id": "ARMOR-ROLE-3",
+      "pass": true,
+      "detail": "HP=15000,HP%=2,吸收=2"
+    },
+    {
+      "id": "WEAPON-RATIO-4",
+      "pass": true,
+      "detail": "min=6.67,max=10.00"
+    },
+    {
+      "id": "ARMOR-ROLE-4",
+      "pass": true,
+      "detail": "HP=20000,HP%=2,吸收=3"
+    },
+    {
+      "id": "WEAPON-RATIO-5",
+      "pass": true,
+      "detail": "min=6.67,max=10.00"
+    },
+    {
+      "id": "ARMOR-ROLE-5",
+      "pass": true,
+      "detail": "HP=25000,HP%=3,吸收=4"
+    },
+    {
+      "id": "WEAPON-RATIO-6",
+      "pass": true,
+      "detail": "min=6.67,max=10.00"
+    },
+    {
+      "id": "ARMOR-ROLE-6",
+      "pass": true,
+      "detail": "HP=30000,HP%=3,吸收=5"
+    },
+    {
+      "id": "WEAPON-RATIO-7",
+      "pass": true,
+      "detail": "min=6.67,max=10.00"
+    },
+    {
+      "id": "ARMOR-ROLE-7",
+      "pass": true,
+      "detail": "HP=35000,HP%=4,吸收=5"
+    },
+    {
+      "id": "WEAPON-RATIO-8",
+      "pass": true,
+      "detail": "min=6.67,max=10.00"
+    },
+    {
+      "id": "ARMOR-ROLE-8",
+      "pass": true,
+      "detail": "HP=40000,HP%=4,吸收=6"
+    },
+    {
+      "id": "WEAPON-RATIO-9",
+      "pass": true,
+      "detail": "min=6.67,max=10.00"
+    },
+    {
+      "id": "ARMOR-ROLE-9",
+      "pass": true,
+      "detail": "HP=45000,HP%=5,吸收=7"
+    },
+    {
+      "id": "WEAPON-RATIO-10",
+      "pass": true,
+      "detail": "min=6.67,max=10.00"
+    },
+    {
+      "id": "ARMOR-ROLE-10",
+      "pass": true,
+      "detail": "HP=50000,HP%=5,吸收=8"
+    },
+    {
+      "id": "WEAPON-RATIO-11",
+      "pass": true,
+      "detail": "min=6.67,max=10.00"
+    },
+    {
+      "id": "ARMOR-ROLE-11",
+      "pass": true,
+      "detail": "HP=55000,HP%=6,吸收=8"
+    },
+    {
+      "id": "WEAPON-RATIO-12",
+      "pass": true,
+      "detail": "min=6.67,max=10.00"
+    },
+    {
+      "id": "ARMOR-ROLE-12",
+      "pass": true,
+      "detail": "HP=60000,HP%=6,吸收=9"
+    },
+    {
+      "id": "WEAPON-RATIO-13",
+      "pass": true,
+      "detail": "min=6.67,max=10.00"
+    },
+    {
+      "id": "ARMOR-ROLE-13",
+      "pass": true,
+      "detail": "HP=65000,HP%=7,吸收=10"
+    },
+    {
+      "id": "WEAPON-RATIO-14",
+      "pass": true,
+      "detail": "min=6.67,max=10.00"
+    },
+    {
+      "id": "ARMOR-ROLE-14",
+      "pass": true,
+      "detail": "HP=70000,HP%=7,吸收=11"
+    },
+    {
+      "id": "WEAPON-RATIO-15",
+      "pass": true,
+      "detail": "min=6.67,max=10.00"
+    },
+    {
+      "id": "ARMOR-ROLE-15",
+      "pass": true,
+      "detail": "HP=75000,HP%=8,吸收=11"
+    },
+    {
+      "id": "WEAPON-RATIO-16",
+      "pass": true,
+      "detail": "min=6.67,max=10.00"
+    },
+    {
+      "id": "ARMOR-ROLE-16",
+      "pass": true,
+      "detail": "HP=80000,HP%=8,吸收=12"
+    },
+    {
+      "id": "WEAPON-RATIO-17",
+      "pass": true,
+      "detail": "min=6.67,max=10.00"
+    },
+    {
+      "id": "ARMOR-ROLE-17",
+      "pass": true,
+      "detail": "HP=85000,HP%=9,吸收=13"
+    },
+    {
+      "id": "WEAPON-RATIO-18",
+      "pass": true,
+      "detail": "min=6.67,max=10.00"
+    },
+    {
+      "id": "ARMOR-ROLE-18",
+      "pass": true,
+      "detail": "HP=90000,HP%=9,吸收=14"
+    },
+    {
+      "id": "WEAPON-RATIO-19",
+      "pass": true,
+      "detail": "min=6.67,max=10.00"
+    },
+    {
+      "id": "ARMOR-ROLE-19",
+      "pass": true,
+      "detail": "HP=95000,HP%=10,吸收=14"
+    },
+    {
+      "id": "WEAPON-RATIO-20",
+      "pass": true,
+      "detail": "min=6.67,max=10.00"
+    },
+    {
+      "id": "ARMOR-ROLE-20",
+      "pass": true,
+      "detail": "HP=100000,HP%=10,吸收=15"
+    },
+    {
+      "id": "PROTECTED-ARTIFACTS",
+      "pass": true,
+      "detail": "actual=6"
+    },
+    {
+      "id": "PROTECTED-NOT-IN-IMPORT",
+      "pass": true,
+      "detail": "六神器未进入导入区"
+    }
+  ],
+  "hashes": [
+    {
+      "file": "01_第一大陆36怪_战斗属性表.xlsx",
+      "sha256": "6d4ba899a3062ca606b4e50a542d4dc32a9bf9ae051bfda042a9c13695efda48",
+      "bytes": 170438
+    },
+    {
+      "file": "02_第二大陆宁姆格福61怪_战斗属性表.xlsx",
+      "sha256": "db667e3f352502eeddbc5f2f16544d45644ea10e36595ddf09ecce557ba47d9d",
+      "bytes": 172248
+    },
+    {
+      "file": "03_第一二大陆20套制式装备_69列平台表.xlsx",
+      "sha256": "8ea65f3f6b375d41b72a49c65347b6c9f5396914abed78135e36511bd90b5145",
+      "bytes": 187331
+    },
+    {
+      "file": "04_第一二大陆105件专属装备_69列平台表.xlsx",
+      "sha256": "b62450a6eb5c3c50eb387cd28f8566ed82709c8a2b6f17e115702707eed946a1",
+      "bytes": 197162
+    },
+    {
+      "file": "05_战斗数值校验报告.md",
+      "sha256": "ce105c244558117228b1671f239167111e8b39078493e2984aac45f5d6853b3d",
+      "bytes": 4455
+    }
+  ]
+}
