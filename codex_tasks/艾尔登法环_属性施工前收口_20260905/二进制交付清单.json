@@ -1,0 +1,14 @@
+{
+  "date": "2026-09-05",
+  "status": "generated_locally_not_uploaded_by_this_text_commit",
+  "tests_passed": 251,
+  "tests_failed": 0,
+  "files": [
+    {"path":"艾尔登法环_十大陆经济与回收完整规划_V1.2.xlsx","bytes":179686,"sha256":"10505bceb8e28388db105c3a3c2287b3f32f5400254ca18a5b6ae9d70d50787f"},
+    {"path":"03_NPC奖励与永久成长数值总控_V1.2.xlsx","bytes":121360,"sha256":"e404fc10243ed8d178d9dcdd7f6091d5aa89fb310736a274c175676da398ceeb"},
+    {"path":"艾尔登法环_洗练_标准角色_爆率基线_V1.1.xlsx","bytes":59008,"sha256":"868d6c9dead870011fd5e32a4ee673b41ad9a60df6271c48529b6e8d2f98c1e6"},
+    {"path":"19_装备回收配置_十大陆完整规划_V1.1.xlsx","bytes":32757,"sha256":"458b0d1cb7af958c7b06385395834dcf69525a074d9e70ca059060140c448d1a"},
+    {"path":"属性施工前_复核与计算口径_V1.0.xlsx","bytes":19938,"sha256":"611b09d9c9e2e76eb272c28302bc80c9d974dcfa824e59db9a7ec55bae93c65a"},
+    {"path":"项目档案/02_已确认规则与数值.xlsx","bytes":19938,"sha256":"611b09d9c9e2e76eb272c28302bc80c9d974dcfa824e59db9a7ec55bae93c65a"}
+  ]
+}
