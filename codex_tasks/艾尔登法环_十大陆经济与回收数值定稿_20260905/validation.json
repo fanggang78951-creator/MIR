@@ -1,4 +1,6 @@
 {
+  "date": "2026-09-05",
+  "authority": "2026-09-05 economy/recycle incremental snapshot; unchanged rules inherit 2026-09-03 first non-combat closure snapshot",
   "counts": {
     "core_npc_rows": 74,
     "aux_npc_rows": 53,
@@ -6,9 +8,7 @@
     "standard_sets": 20,
     "standard_items": 160,
     "exclusive_items": 563,
-    "exclusive_groups": 30,
     "material_recycle_rows": 81,
-    "material_demand_rows": 96,
     "task_soul_rows": 34,
     "title_scroll_rows": 25,
     "dream_rows": 6,
@@ -18,23 +18,35 @@
     "platform_duplicate_item_names": 0
   },
   "checks": {
+    "currency_recycle_bonus": 0.5,
+    "currency_actual_multiplier": 1.5,
+    "material_reward_multiplier": 1.0,
+    "material_bonus_supported_by_engine": false,
     "C1_somber_normal_rare_boss": [1, 2, 5],
-    "C10_title_uses": "失温熔炉楔",
-    "C1C2_collectible_placeholders": "closed",
-    "currency_bonus": 0.5,
-    "material_reward_bonus": 0,
-    "formula_note": "hourly currency = (recycled high-yield surplus × base recycle + recycled standard gear × weighted base recycle) × 1.5"
+    "body_255_beast_bone_total": 84095,
+    "crafted_base_currency_refund": 0.2,
+    "hard_480_528_hour_target": "deprecated"
   },
-  "files": {
-    "艾尔登法环_十大陆经济与回收完整规划_V1.0.xlsx": {
-      "sha256": "e8ec9482ee10558c04b7d75715a7ef7645f7c1674812e16f90bbbef413c6035f",
-      "bytes": 147986
-    },
-    "19_装备回收配置_十大陆完整规划_V1.0.xlsx": {
-      "sha256": "2a8a7aec340579aab48ffae435a5f551d6ce2ee4e9c35bffb485d1b5aa159092",
-      "bytes": 32648
-    }
-  },
-  "master_formula_error_scan": "{\"kind\":\"notice\",\"message\":\"Cell search matched 0 entries.\"}",
-  "config_formula_error_scan": "{\"kind\":\"notice\",\"message\":\"Cell search matched 0 entries.\"}"
+  "deprecated": [
+    "material reward is multiplied by recycle bonus",
+    "old standardized gear test recycle values",
+    "C1 boss somber range 3-5",
+    "all crafted wearables are non-recyclable",
+    "255-body material curve pending",
+    "5h/480h/528h hard completion anchors"
+  ],
+  "files": [
+    {"path":"19_装备回收配置_十大陆完整规划_V1.0.xlsx","sha256":"3037a0ec62ef77baf4012e1358d3bfe98bb3ceb59ee1b793c7c56c4ae1d03b4d","bytes":32775},
+    {"path":"20260905_十大陆经济与回收数值确认说明.md","sha256":"2a758668f96af3548f2da33b508dc9f61330f899e3a57ba39921217e04cb66f1","bytes":2821},
+    {"path":"20260905_同步与废止清单.md","sha256":"0a5d4092ab2653e50fbf332fae11595dd11ea636ead53ffc77f255c8034101da","bytes":1101},
+    {"path":"README.md","sha256":"742d68f1aca8f9b21cf27463b6519588e26e91950720bbfac1a4241f7324c9b9","bytes":429},
+    {"path":"economy_recycle_payload.json","sha256":"9509740c9dd62ada6b88a3c32cc87fa68b2a287f4e90a84671ba987c4e2b1657","bytes":827846},
+    {"path":"艾尔登法环_十大陆经济与回收完整规划_V1.0.xlsx","sha256":"23eeef42d4c837d60806a9adce8a06368840ca12df97275abd6d4308a3ba524a","bytes":148082},
+    {"path":"项目档案/00_项目总纲.md","sha256":"c8dde5b7fb1d65e543877811a6e07363dfcdbd85e8e01b7d27c2b0da93b6ad70","bytes":1774},
+    {"path":"项目档案/01_当前任务指针.txt","sha256":"59966f0dc7b17d64ce88c3eea48215340103339a97d4eea914d5077c9bfd9965","bytes":1524},
+    {"path":"项目档案/02_已确认规则与数值.xlsx","sha256":"7cf2ff86364ad634df91feb60bb9a132d1bd3a2553b7ade3eae955f99d58793a","bytes":10736},
+    {"path":"项目档案/03_变更记录.md","sha256":"3e1ef39651e4e0b04a173f3d4d03b5a5443fe90199f5eb641a06421042962274","bytes":2003},
+    {"path":"项目档案/04_每日设计更新.md","sha256":"71be66927e954d5105659c3ad369dc272b6ede59f6afb96fac85cda4ce702ad0","bytes":1182},
+    {"path":"项目档案/05_当前有效游戏设计总档.md","sha256":"804fc3b38a69d041b147ec7d0a12a7028922dbe601fd3acd6daf4774d4bf59a4","bytes":2253}
+  ]
 }
