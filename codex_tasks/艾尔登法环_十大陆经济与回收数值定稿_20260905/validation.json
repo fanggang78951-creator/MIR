@@ -1,0 +1,40 @@
+{
+  "counts": {
+    "core_npc_rows": 74,
+    "aux_npc_rows": 53,
+    "body_levels": 255,
+    "standard_sets": 20,
+    "standard_items": 160,
+    "exclusive_items": 563,
+    "exclusive_groups": 30,
+    "material_recycle_rows": 81,
+    "material_demand_rows": 96,
+    "task_soul_rows": 34,
+    "title_scroll_rows": 25,
+    "dream_rows": 6,
+    "crafted_rows": 38,
+    "platform_rows": 233,
+    "platform_unique_item_names": 906,
+    "platform_duplicate_item_names": 0
+  },
+  "checks": {
+    "C1_somber_normal_rare_boss": [1, 2, 5],
+    "C10_title_uses": "失温熔炉楔",
+    "C1C2_collectible_placeholders": "closed",
+    "currency_bonus": 0.5,
+    "material_reward_bonus": 0,
+    "formula_note": "hourly currency = (recycled high-yield surplus × base recycle + recycled standard gear × weighted base recycle) × 1.5"
+  },
+  "files": {
+    "艾尔登法环_十大陆经济与回收完整规划_V1.0.xlsx": {
+      "sha256": "e8ec9482ee10558c04b7d75715a7ef7645f7c1674812e16f90bbbef413c6035f",
+      "bytes": 147986
+    },
+    "19_装备回收配置_十大陆完整规划_V1.0.xlsx": {
+      "sha256": "2a8a7aec340579aab48ffae435a5f551d6ce2ee4e9c35bffb485d1b5aa159092",
+      "bytes": 32648
+    }
+  },
+  "master_formula_error_scan": "{\"kind\":\"notice\",\"message\":\"Cell search matched 0 entries.\"}",
+  "config_formula_error_scan": "{\"kind\":\"notice\",\"message\":\"Cell search matched 0 entries.\"}"
+}
