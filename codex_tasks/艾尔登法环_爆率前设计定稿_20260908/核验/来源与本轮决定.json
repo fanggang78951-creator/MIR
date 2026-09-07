@@ -1,0 +1,35 @@
+{
+  "date": "2026-09-08",
+  "task": "爆率前设计定稿",
+  "source_layers": [
+    {
+      "path": "inputs/normalized.json",
+      "meaning": "上一审核版的冻结实体、配方与来源；本批不改物品身份及配方输入"
+    },
+    {
+      "path": "inputs/snapshot_all.json",
+      "meaning": "已批准C1/C2、命格、各成长表及历史材料价格"
+    },
+    {
+      "path": "inputs/combat.json",
+      "meaning": "619件单件图鉴奖励；本批同步导出范围，不新增奖励"
+    },
+    {
+      "path": "inputs/baseline_results.json",
+      "meaning": "上一版人物背景，仅供同条件普通装备分支比较"
+    },
+    {
+      "path": "inputs/equipment_comparison_original.json",
+      "meaning": "原合成比较参考；实际物品与虚拟标尺分开标注"
+    }
+  ],
+  "new_design": "C3-C10常规战斗字段调整及伴随稀有/合成维护；怪物和地图大体反推；具体差异逐字段记录",
+  "unchanged": [
+    "817名称/部位/资源号",
+    "C1/C2及前期制作265件",
+    "100命格属性与颜色",
+    "127配方实际单价/材料来源",
+    "无物品触发概率"
+  ],
+  "no_server_or_git_mutations": true
+}

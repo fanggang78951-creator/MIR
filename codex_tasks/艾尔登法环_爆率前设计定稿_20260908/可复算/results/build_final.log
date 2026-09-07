@@ -1,0 +1,13 @@
+{
+  "profiles": 336,
+  "monsters": 561,
+  "maps": 171,
+  "groups": 46,
+  "ordinary_edges": 36,
+  "edges_clear": 4,
+  "gate70_pass": 10,
+  "weak25_fail": 10,
+  "shared_map_encounters_pass": 622,
+  "checks": 1817,
+  "check_failures": 0
+}

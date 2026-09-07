@@ -1,0 +1,27 @@
+[
+  {
+    "name": "normalized.json",
+    "unchanged": true,
+    "sha256": "d802bd95ba440680c6f20c1f42665983c6a90940afa6710d7ba6a540f5ac59a9"
+  },
+  {
+    "name": "snapshot_all.json",
+    "unchanged": true,
+    "sha256": "4290398a63e577463b809f69df1051475662ce75c623aa160e43d1c7c7a5e3f1"
+  },
+  {
+    "name": "source_inputs.json",
+    "unchanged": true,
+    "sha256": "91ea58180bb9e9993e286aa43c7e248436cb2eec529c2059115129b26cd16a59"
+  },
+  {
+    "name": "combat.json",
+    "unchanged": true,
+    "sha256": "0bc5a4ab9728bce7f30433af903e60a17d1d295fbb5eea8b1a9c7d6ead71d13e"
+  },
+  {
+    "name": "map_registry.json",
+    "unchanged": true,
+    "sha256": "e520e344f42a7faaab4026c33685075272f4d40e791fe5db2b556bdd77168cba"
+  }
+]

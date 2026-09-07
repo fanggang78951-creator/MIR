@@ -1,0 +1,42 @@
+{
+  "date": "2026-09-08",
+  "scope": "全服数值设计基线，爆率空置",
+  "skill_efficiency": 2.0,
+  "leech_skill_factor": 1.3,
+  "hit": 0.95,
+  "uptime": 0.8,
+  "ordinary_acquisition_reference": 0.6,
+  "normal_seconds": 8,
+  "rare_seconds": 24,
+  "map_boss_seconds": 75,
+  "gate_seconds": [
+    90,
+    150,
+    180,
+    210,
+    240,
+    270,
+    300,
+    330,
+    360,
+    420
+  ],
+  "roles": {
+    "普通": 0.06,
+    "稀有": 0.12,
+    "地图BOSS": 0.18,
+    "守关BOSS": 0.22
+  },
+  "c1_damage_multiplier": 0.18,
+  "completion_weights": {
+    "title": 20,
+    "collection": 50,
+    "equipment": 20,
+    "craft": 10
+  },
+  "coin_policy": "现有大数值底板；不重乘100；合计=单价×次数；爆率未定不宣称产出/小时",
+  "same_map_rule": "同一真实地图只设一组处决和韧性要求；不更改地图或添加BOSS专属地图变量",
+  "fate_duplicates": false,
+  "frozen_gear": true,
+  "normal_lane_note": "普通60%仅换装，不新增本图图鉴、称号、NPC奖励或洗练；BOSS和合成强装另作快线"
+}

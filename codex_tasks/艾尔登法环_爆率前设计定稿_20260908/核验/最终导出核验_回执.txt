@@ -1,0 +1,48 @@
+{
+  "passed": 82877,
+  "failed": 0,
+  "formula_cross_checks": 2219,
+  "equipment_cells": 56373,
+  "monster_cells": 6732,
+  "fate_cells_checked": 2801,
+  "atlas_cells_checked": 9285,
+  "workbooks": [
+    {
+      "file": "01_817装备定稿总表_V3.0.xlsx",
+      "sheets": 6,
+      "formula_cells": 158,
+      "error_cells": 0,
+      "bytes": 385301
+    },
+    {
+      "file": "02_561怪与地图人物_设计定稿_V1.0.xlsx",
+      "sheets": 9,
+      "formula_cells": 1569,
+      "error_cells": 0,
+      "bytes": 290545
+    },
+    {
+      "file": "03_NPC任务与永久成长_设计定稿_V1.0.xlsx",
+      "sheets": 17,
+      "formula_cells": 254,
+      "error_cells": 0,
+      "bytes": 144005
+    },
+    {
+      "file": "04_掉落内容与回收_爆率空置_V1.0.xlsx",
+      "sheets": 7,
+      "formula_cells": 238,
+      "error_cells": 0,
+      "bytes": 275663
+    },
+    {
+      "file": "05_100命格_属性冻结规则统一_V2.2.xlsx",
+      "sheets": 5,
+      "formula_cells": 0,
+      "error_cells": 0,
+      "bytes": 26560
+    }
+  ],
+  "failures": [],
+  "scope": "数据、文件结构和近似模型输入一致性；不是游戏内胜率测试"
+}
