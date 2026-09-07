@@ -1,0 +1,34 @@
+{
+  "date": "2026-09-05",
+  "github_synced": false,
+  "profile_core_verification": {
+    "checks": 4234,
+    "failures": 0
+  },
+  "workbook_formula_error_scans": {
+    "经济V1.3": 0,
+    "NPC V1.3": 0,
+    "洗练基线V1.2": 0,
+    "回收配置V1.2": 0,
+    "40组人物V1.1": 0
+  },
+  "recycle_config_scale_verification": {
+    "numeric_reward_cells_checked": 412,
+    "mismatches": 0,
+    "currency_primary_rows": 203,
+    "currency_secondary_rows": 179,
+    "somber_primary_rows": 30
+  },
+  "spot_checks": {
+    "C1制式第一套基础金币": 10000000,
+    "C1制式第一套基础元宝": 50000,
+    "C1普通专属分解失色": 10,
+    "C2普通洗练失色每次": 10,
+    "C2开光失色每次": 50,
+    "C2半急速毕业人物项链幸运": 8,
+    "C2半急速毕业有效幸运": 15,
+    "C3入场继承项链幸运": 8,
+    "武器幸运成本材料祝福油出现次数": 0
+  },
+  "scope_note": "静态/数学核验，不等于正式服部署和进服实测。"
+}

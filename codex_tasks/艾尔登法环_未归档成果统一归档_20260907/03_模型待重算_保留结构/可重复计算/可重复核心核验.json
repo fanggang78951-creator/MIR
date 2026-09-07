@@ -1,0 +1,6 @@
+{
+  "checks": 4234,
+  "failures": 0,
+  "failed_items": [],
+  "note": "Core reproducibility check only; full recorded tests and Excel formula checks are separate."
+}
