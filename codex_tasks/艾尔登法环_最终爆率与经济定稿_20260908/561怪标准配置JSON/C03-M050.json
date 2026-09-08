@@ -1,0 +1,116 @@
+{
+  "monster_id": "C03-M050",
+  "name": "风沙箭手",
+  "continent": 3,
+  "map_group_index_zero_based": 4,
+  "role": "普通",
+  "triggers": [
+    {
+      "trigger_id": "D01131",
+      "kind": "自身专属",
+      "base_denominator": 1000,
+      "quantity": 1,
+      "corpse_handling": "use_existing_engine_once",
+      "apply_player_drop_rate": true,
+      "selection": "independent",
+      "item": "风沙鹰链"
+    },
+    {
+      "trigger_id": "D01132",
+      "kind": "材料独立候选",
+      "base_denominator": 800,
+      "quantity": 8,
+      "corpse_handling": "use_existing_engine_once",
+      "apply_player_drop_rate": true,
+      "selection": "independent",
+      "item": "风蚀铁片"
+    },
+    {
+      "trigger_id": "D01133",
+      "kind": "材料独立候选",
+      "base_denominator": 2000,
+      "quantity": 1,
+      "corpse_handling": "use_existing_engine_once",
+      "apply_player_drop_rate": true,
+      "selection": "independent",
+      "item": "裂风崖羽"
+    },
+    {
+      "trigger_id": "D01134",
+      "kind": "材料独立候选",
+      "base_denominator": 800000,
+      "quantity": 1,
+      "corpse_handling": "use_existing_engine_once",
+      "apply_player_drop_rate": true,
+      "selection": "independent",
+      "item": "西境风痕碑拓"
+    },
+    {
+      "trigger_id": "D01135",
+      "kind": "材料独立候选",
+      "base_denominator": 120,
+      "quantity": 2,
+      "corpse_handling": "use_existing_engine_once",
+      "apply_player_drop_rate": true,
+      "selection": "independent",
+      "item": "野兽骨片"
+    },
+    {
+      "trigger_id": "D01136",
+      "kind": "材料独立候选",
+      "base_denominator": 300,
+      "quantity": 1,
+      "corpse_handling": "use_existing_engine_once",
+      "apply_player_drop_rate": true,
+      "selection": "independent",
+      "item": "技能残页"
+    },
+    {
+      "trigger_id": "D01137",
+      "kind": "材料独立候选",
+      "base_denominator": 5000,
+      "quantity": 1,
+      "corpse_handling": "use_existing_engine_once",
+      "apply_player_drop_rate": true,
+      "selection": "independent",
+      "item": "小卢恩"
+    },
+    {
+      "trigger_id": "D01138",
+      "kind": "六神器公共池",
+      "base_denominator": 20000000,
+      "quantity": 1,
+      "corpse_handling": "use_existing_engine_once",
+      "apply_player_drop_rate": true,
+      "selection": "one_weighted",
+      "pool_id": "POOL006",
+      "candidates": [
+        {
+          "item": "玛莲妮亚的大卢恩",
+          "weight": 1
+        },
+        {
+          "item": "拉塔恩的大卢恩",
+          "weight": 1
+        },
+        {
+          "item": "蒙葛特的大卢恩",
+          "weight": 1
+        },
+        {
+          "item": "蒙格的大卢恩",
+          "weight": 1
+        },
+        {
+          "item": "拉卡德的大卢恩",
+          "weight": 1
+        },
+        {
+          "item": "葛瑞克的大卢恩",
+          "weight": 1
+        }
+      ]
+    }
+  ],
+  "deployment": "archive_only_until_user_authorizes; verify_stack_parser_before_install"
+}

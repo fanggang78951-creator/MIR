@@ -1,0 +1,162 @@
+{
+  "monster_id": "C07-M037",
+  "name": "化圣霜王·埃琉斯",
+  "continent": 7,
+  "map_group_index_zero_based": 2,
+  "role": "守关BOSS",
+  "triggers": [
+    {
+      "trigger_id": "D03509",
+      "kind": "自身专属",
+      "base_denominator": 180,
+      "quantity": 1,
+      "corpse_handling": "use_existing_engine_once",
+      "apply_player_drop_rate": true,
+      "selection": "independent",
+      "item": "埃琉斯永霜铠"
+    },
+    {
+      "trigger_id": "D03510",
+      "kind": "自身专属",
+      "base_denominator": 180,
+      "quantity": 1,
+      "corpse_handling": "use_existing_engine_once",
+      "apply_player_drop_rate": true,
+      "selection": "independent",
+      "item": "霜誓仪镰"
+    },
+    {
+      "trigger_id": "D03511",
+      "kind": "自身专属",
+      "base_denominator": 180,
+      "quantity": 1,
+      "corpse_handling": "use_existing_engine_once",
+      "apply_player_drop_rate": true,
+      "selection": "independent",
+      "item": "朝圣雪衣"
+    },
+    {
+      "trigger_id": "D03512",
+      "kind": "本图普通兼掉候选",
+      "base_denominator": 120,
+      "quantity": 1,
+      "corpse_handling": "use_existing_engine_once",
+      "apply_player_drop_rate": true,
+      "selection": "one_weighted",
+      "pool_id": "POOL059",
+      "candidates": [
+        {
+          "item": "白甲战衣",
+          "weight": 1
+        }
+      ]
+    },
+    {
+      "trigger_id": "D03513",
+      "kind": "材料独立候选",
+      "base_denominator": 1,
+      "quantity": 40,
+      "corpse_handling": "use_existing_engine_once",
+      "apply_player_drop_rate": true,
+      "selection": "independent",
+      "item": "冻晶尘"
+    },
+    {
+      "trigger_id": "D03514",
+      "kind": "材料独立候选",
+      "base_denominator": 1,
+      "quantity": 1,
+      "corpse_handling": "use_existing_engine_once",
+      "apply_player_drop_rate": true,
+      "selection": "independent",
+      "item": "白金纺线"
+    },
+    {
+      "trigger_id": "D03515",
+      "kind": "材料独立候选",
+      "base_denominator": 1,
+      "quantity": 1,
+      "corpse_handling": "use_existing_engine_once",
+      "apply_player_drop_rate": true,
+      "selection": "independent",
+      "item": "圣雪誓印"
+    },
+    {
+      "trigger_id": "D03516",
+      "kind": "材料独立候选",
+      "base_denominator": 1,
+      "quantity": 1,
+      "corpse_handling": "use_existing_engine_once",
+      "apply_player_drop_rate": true,
+      "selection": "independent",
+      "item": "圣雪门楔"
+    },
+    {
+      "trigger_id": "D03517",
+      "kind": "材料独立候选",
+      "base_denominator": 12000,
+      "quantity": 1,
+      "corpse_handling": "use_existing_engine_once",
+      "apply_player_drop_rate": true,
+      "selection": "independent",
+      "item": "永霜朝圣痕"
+    },
+    {
+      "trigger_id": "D03518",
+      "kind": "材料独立候选",
+      "base_denominator": 1,
+      "quantity": 1,
+      "corpse_handling": "use_existing_engine_once",
+      "apply_player_drop_rate": true,
+      "selection": "independent",
+      "item": "黄金树芽"
+    },
+    {
+      "trigger_id": "D03519",
+      "kind": "六神器公共池",
+      "base_denominator": 40000,
+      "quantity": 1,
+      "corpse_handling": "use_existing_engine_once",
+      "apply_player_drop_rate": true,
+      "selection": "one_weighted",
+      "pool_id": "POOL006",
+      "candidates": [
+        {
+          "item": "玛莲妮亚的大卢恩",
+          "weight": 1
+        },
+        {
+          "item": "拉塔恩的大卢恩",
+          "weight": 1
+        },
+        {
+          "item": "蒙葛特的大卢恩",
+          "weight": 1
+        },
+        {
+          "item": "蒙格的大卢恩",
+          "weight": 1
+        },
+        {
+          "item": "拉卡德的大卢恩",
+          "weight": 1
+        },
+        {
+          "item": "葛瑞克的大卢恩",
+          "weight": 1
+        }
+      ]
+    },
+    {
+      "trigger_id": "D05348",
+      "kind": "称号卷",
+      "base_denominator": 600,
+      "quantity": 1,
+      "corpse_handling": "use_existing_engine_once",
+      "apply_player_drop_rate": true,
+      "selection": "independent",
+      "item": "[称号]化圣霜王"
+    }
+  ],
+  "deployment": "archive_only_until_user_authorizes; verify_stack_parser_before_install"
+}

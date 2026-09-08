@@ -1,0 +1,252 @@
+{
+  "monster_id": "EL-MON-LIM-CASTLE-012",
+  "name": "失乡统帅·欧尼尔",
+  "continent": 2,
+  "map_group_index_zero_based": 4,
+  "role": "地图BOSS",
+  "triggers": [
+    {
+      "trigger_id": "D00638",
+      "kind": "自身专属",
+      "base_denominator": 30,
+      "quantity": 1,
+      "corpse_handling": "use_existing_engine_once",
+      "apply_player_drop_rate": true,
+      "selection": "independent",
+      "item": "失乡戌狗"
+    },
+    {
+      "trigger_id": "D00639",
+      "kind": "本图普通兼掉候选",
+      "base_denominator": 30,
+      "quantity": 1,
+      "corpse_handling": "use_existing_engine_once",
+      "apply_player_drop_rate": true,
+      "selection": "one_weighted",
+      "pool_id": "POOL011",
+      "candidates": [
+        {
+          "item": "百指腕甲",
+          "weight": 1
+        },
+        {
+          "item": "禁卫誓戒",
+          "weight": 1
+        }
+      ]
+    },
+    {
+      "trigger_id": "D00640",
+      "kind": "材料独立候选",
+      "base_denominator": 150,
+      "quantity": 30,
+      "corpse_handling": "use_existing_engine_once",
+      "apply_player_drop_rate": true,
+      "selection": "independent",
+      "item": "风暴石片"
+    },
+    {
+      "trigger_id": "D00641",
+      "kind": "材料独立候选",
+      "base_denominator": 30,
+      "quantity": 2,
+      "corpse_handling": "use_existing_engine_once",
+      "apply_player_drop_rate": true,
+      "selection": "independent",
+      "item": "黄金树芽"
+    },
+    {
+      "trigger_id": "D00642",
+      "kind": "材料独立候选",
+      "base_denominator": 80,
+      "quantity": 2,
+      "corpse_handling": "use_existing_engine_once",
+      "apply_player_drop_rate": true,
+      "selection": "independent",
+      "item": "接肢王印"
+    },
+    {
+      "trigger_id": "D00643",
+      "kind": "材料独立候选",
+      "base_denominator": 80,
+      "quantity": 4,
+      "corpse_handling": "use_existing_engine_once",
+      "apply_player_drop_rate": true,
+      "selection": "independent",
+      "item": "王城军印"
+    },
+    {
+      "trigger_id": "D00644",
+      "kind": "材料独立候选",
+      "base_denominator": 40,
+      "quantity": 2,
+      "corpse_handling": "use_existing_engine_once",
+      "apply_player_drop_rate": true,
+      "selection": "independent",
+      "item": "野兽骨片"
+    },
+    {
+      "trigger_id": "D00645",
+      "kind": "材料独立候选",
+      "base_denominator": 30,
+      "quantity": 1,
+      "corpse_handling": "use_existing_engine_once",
+      "apply_player_drop_rate": true,
+      "selection": "independent",
+      "item": "技能残页"
+    },
+    {
+      "trigger_id": "D00646",
+      "kind": "材料独立候选",
+      "base_denominator": 180,
+      "quantity": 1,
+      "corpse_handling": "use_existing_engine_once",
+      "apply_player_drop_rate": true,
+      "selection": "independent",
+      "item": "宁姆格福誓页"
+    },
+    {
+      "trigger_id": "D00647",
+      "kind": "材料独立候选",
+      "base_denominator": 1200,
+      "quantity": 1,
+      "corpse_handling": "use_existing_engine_once",
+      "apply_player_drop_rate": true,
+      "selection": "independent",
+      "item": "小卢恩"
+    },
+    {
+      "trigger_id": "D00648",
+      "kind": "材料独立候选",
+      "base_denominator": 120,
+      "quantity": 1,
+      "corpse_handling": "use_existing_engine_once",
+      "apply_player_drop_rate": true,
+      "selection": "independent",
+      "item": "大卢恩"
+    },
+    {
+      "trigger_id": "D00649",
+      "kind": "六神器公共池",
+      "base_denominator": 200000,
+      "quantity": 1,
+      "corpse_handling": "use_existing_engine_once",
+      "apply_player_drop_rate": true,
+      "selection": "one_weighted",
+      "pool_id": "POOL006",
+      "candidates": [
+        {
+          "item": "玛莲妮亚的大卢恩",
+          "weight": 1
+        },
+        {
+          "item": "拉塔恩的大卢恩",
+          "weight": 1
+        },
+        {
+          "item": "蒙葛特的大卢恩",
+          "weight": 1
+        },
+        {
+          "item": "蒙格的大卢恩",
+          "weight": 1
+        },
+        {
+          "item": "拉卡德的大卢恩",
+          "weight": 1
+        },
+        {
+          "item": "葛瑞克的大卢恩",
+          "weight": 1
+        }
+      ]
+    },
+    {
+      "trigger_id": "D05325",
+      "kind": "制式独立候选",
+      "base_denominator": 6000,
+      "quantity": 1,
+      "corpse_handling": "use_existing_engine_once",
+      "apply_player_drop_rate": true,
+      "selection": "one_weighted",
+      "pool_id": "POOL095",
+      "candidates": [
+        {
+          "item": "法环禁军剑",
+          "weight": 1
+        },
+        {
+          "item": "法环禁军战甲",
+          "weight": 1
+        },
+        {
+          "item": "法环禁军战盔",
+          "weight": 1
+        },
+        {
+          "item": "法环禁军项链",
+          "weight": 1
+        },
+        {
+          "item": "法环禁军腕甲",
+          "weight": 1
+        },
+        {
+          "item": "法环禁军戒指",
+          "weight": 1
+        },
+        {
+          "item": "法环禁军腰带",
+          "weight": 1
+        },
+        {
+          "item": "法环禁军战靴",
+          "weight": 1
+        },
+        {
+          "item": "王庭统领剑",
+          "weight": 1
+        },
+        {
+          "item": "王庭统领战甲",
+          "weight": 1
+        },
+        {
+          "item": "王庭统领战盔",
+          "weight": 1
+        },
+        {
+          "item": "王庭统领项链",
+          "weight": 1
+        },
+        {
+          "item": "王庭统领腕甲",
+          "weight": 1
+        },
+        {
+          "item": "王庭统领戒指",
+          "weight": 1
+        },
+        {
+          "item": "王庭统领腰带",
+          "weight": 1
+        },
+        {
+          "item": "王庭统领战靴",
+          "weight": 1
+        }
+      ]
+    },
+    {
+      "trigger_id": "D05341",
+      "kind": "称号卷",
+      "base_denominator": 250,
+      "quantity": 1,
+      "corpse_handling": "use_existing_engine_once",
+      "apply_player_drop_rate": true,
+      "selection": "independent",
+      "item": "[称号]王城战魂"
+    }
+  ],
+  "deployment": "archive_only_until_user_authorizes; verify_stack_parser_before_install"
+}

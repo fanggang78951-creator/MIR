@@ -1,0 +1,19 @@
+{
+  "date": "2026-09-08",
+  "model_checks": 6696,
+  "model_failures": 0,
+  "math_unit_tests": 7,
+  "math_unit_test_failures": 0,
+  "xlsx_numeric_comparisons": 27161,
+  "xlsx_formula_count": 18069,
+  "xlsx_errors": 0,
+  "monster_configs": 561,
+  "trigger_roundtrip_comparisons": 5351,
+  "utf8_gb18030_roundtrips": 561,
+  "stack_quantity_lines_needing_native_parser_preflight": 1303,
+  "source_design_sha256": "5b2940b284c101b97ecc8a064c0f1e991a32882e71987816228416025bc2c692",
+  "no_source_modification": true,
+  "monitems_check_scope": "self-parser against canonical JSON, not actual engine preflight",
+  "server_or_github_writes": 0,
+  "status": "numerical_design_final; installation_preflight_required"
+}

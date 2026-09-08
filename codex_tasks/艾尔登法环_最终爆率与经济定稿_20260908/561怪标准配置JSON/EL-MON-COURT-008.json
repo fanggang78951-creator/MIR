@@ -1,0 +1,200 @@
+{
+  "monster_id": "EL-MON-COURT-008",
+  "name": "深渊看守",
+  "continent": 1,
+  "map_group_index_zero_based": 2,
+  "role": "稀有",
+  "triggers": [
+    {
+      "trigger_id": "D00159",
+      "kind": "自身专属",
+      "base_denominator": 120,
+      "quantity": 1,
+      "corpse_handling": "use_existing_engine_once",
+      "apply_player_drop_rate": true,
+      "selection": "independent",
+      "item": "深渊勋章"
+    },
+    {
+      "trigger_id": "D00160",
+      "kind": "材料独立候选",
+      "base_denominator": 300,
+      "quantity": 15,
+      "corpse_handling": "use_existing_engine_once",
+      "apply_player_drop_rate": true,
+      "selection": "independent",
+      "item": "海蚀铁片"
+    },
+    {
+      "trigger_id": "D00161",
+      "kind": "材料独立候选",
+      "base_denominator": 120,
+      "quantity": 1,
+      "corpse_handling": "use_existing_engine_once",
+      "apply_player_drop_rate": true,
+      "selection": "independent",
+      "item": "潮痕结晶"
+    },
+    {
+      "trigger_id": "D00162",
+      "kind": "材料独立候选",
+      "base_denominator": 40,
+      "quantity": 1,
+      "corpse_handling": "use_existing_engine_once",
+      "apply_player_drop_rate": true,
+      "selection": "independent",
+      "item": "技能残页"
+    },
+    {
+      "trigger_id": "D00163",
+      "kind": "材料独立候选",
+      "base_denominator": 1500,
+      "quantity": 1,
+      "corpse_handling": "use_existing_engine_once",
+      "apply_player_drop_rate": true,
+      "selection": "independent",
+      "item": "小卢恩"
+    },
+    {
+      "trigger_id": "D05260",
+      "kind": "制式独立候选",
+      "base_denominator": 2500,
+      "quantity": 1,
+      "corpse_handling": "use_existing_engine_once",
+      "apply_player_drop_rate": true,
+      "selection": "one_weighted",
+      "pool_id": "POOL090",
+      "candidates": [
+        {
+          "item": "沉船守卫古剑",
+          "weight": 1
+        },
+        {
+          "item": "沉船守卫战甲",
+          "weight": 1
+        },
+        {
+          "item": "沉船守卫战盔",
+          "weight": 1
+        },
+        {
+          "item": "沉船守卫项链",
+          "weight": 1
+        },
+        {
+          "item": "沉船守卫腕甲",
+          "weight": 1
+        },
+        {
+          "item": "沉船守卫戒指",
+          "weight": 1
+        },
+        {
+          "item": "沉船守卫腰带",
+          "weight": 1
+        },
+        {
+          "item": "沉船守卫战靴",
+          "weight": 1
+        },
+        {
+          "item": "古礁卫士长剑",
+          "weight": 1
+        },
+        {
+          "item": "古礁卫士战甲",
+          "weight": 1
+        },
+        {
+          "item": "古礁卫士战盔",
+          "weight": 1
+        },
+        {
+          "item": "古礁卫士项链",
+          "weight": 1
+        },
+        {
+          "item": "古礁卫士腕甲",
+          "weight": 1
+        },
+        {
+          "item": "古礁卫士戒指",
+          "weight": 1
+        },
+        {
+          "item": "古礁卫士腰带",
+          "weight": 1
+        },
+        {
+          "item": "古礁卫士战靴",
+          "weight": 1
+        },
+        {
+          "item": "失落禁卫剑",
+          "weight": 1
+        },
+        {
+          "item": "失落禁卫战甲",
+          "weight": 1
+        },
+        {
+          "item": "失落禁卫战盔",
+          "weight": 1
+        },
+        {
+          "item": "失落禁卫项链",
+          "weight": 1
+        },
+        {
+          "item": "失落禁卫腕甲",
+          "weight": 1
+        },
+        {
+          "item": "失落禁卫戒指",
+          "weight": 1
+        },
+        {
+          "item": "失落禁卫腰带",
+          "weight": 1
+        },
+        {
+          "item": "失落禁卫战靴",
+          "weight": 1
+        },
+        {
+          "item": "王庭侍从剑",
+          "weight": 1
+        },
+        {
+          "item": "王庭侍从战甲",
+          "weight": 1
+        },
+        {
+          "item": "王庭侍从战盔",
+          "weight": 1
+        },
+        {
+          "item": "王庭侍从项链",
+          "weight": 1
+        },
+        {
+          "item": "王庭侍从腕甲",
+          "weight": 1
+        },
+        {
+          "item": "王庭侍从戒指",
+          "weight": 1
+        },
+        {
+          "item": "王庭侍从腰带",
+          "weight": 1
+        },
+        {
+          "item": "王庭侍从战靴",
+          "weight": 1
+        }
+      ]
+    }
+  ],
+  "deployment": "archive_only_until_user_authorizes; verify_stack_parser_before_install"
+}

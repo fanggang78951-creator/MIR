@@ -1,0 +1,186 @@
+{
+  "monster_id": "C04-M047",
+  "name": "幽舵大副·赫岚",
+  "continent": 4,
+  "map_group_index_zero_based": 3,
+  "role": "地图BOSS",
+  "triggers": [
+    {
+      "trigger_id": "D01807",
+      "kind": "自身专属",
+      "base_denominator": 50,
+      "quantity": 1,
+      "corpse_handling": "use_existing_engine_once",
+      "apply_player_drop_rate": true,
+      "selection": "independent",
+      "item": "赫岚的幽舵刃"
+    },
+    {
+      "trigger_id": "D01808",
+      "kind": "本图普通兼掉候选",
+      "base_denominator": 50,
+      "quantity": 1,
+      "corpse_handling": "use_existing_engine_once",
+      "apply_player_drop_rate": true,
+      "selection": "one_weighted",
+      "pool_id": "POOL030",
+      "candidates": [
+        {
+          "item": "引魂铜铃链",
+          "weight": 1
+        },
+        {
+          "item": "舀魂铜瓢",
+          "weight": 1
+        }
+      ]
+    },
+    {
+      "trigger_id": "D01809",
+      "kind": "材料独立候选",
+      "base_denominator": 200,
+      "quantity": 30,
+      "corpse_handling": "use_existing_engine_once",
+      "apply_player_drop_rate": true,
+      "selection": "independent",
+      "item": "湖盐结晶"
+    },
+    {
+      "trigger_id": "D01810",
+      "kind": "材料独立候选",
+      "base_denominator": 600,
+      "quantity": 1,
+      "corpse_handling": "use_existing_engine_once",
+      "apply_player_drop_rate": true,
+      "selection": "independent",
+      "item": "幽船铆钉"
+    },
+    {
+      "trigger_id": "D01811",
+      "kind": "材料独立候选",
+      "base_denominator": 100,
+      "quantity": 2,
+      "corpse_handling": "use_existing_engine_once",
+      "apply_player_drop_rate": true,
+      "selection": "independent",
+      "item": "沉湖王印"
+    },
+    {
+      "trigger_id": "D01812",
+      "kind": "材料独立候选",
+      "base_denominator": 120,
+      "quantity": 2,
+      "corpse_handling": "use_existing_engine_once",
+      "apply_player_drop_rate": true,
+      "selection": "independent",
+      "item": "深湖压舱印"
+    },
+    {
+      "trigger_id": "D01813",
+      "kind": "材料独立候选",
+      "base_denominator": 300000,
+      "quantity": 1,
+      "corpse_handling": "use_existing_engine_once",
+      "apply_player_drop_rate": true,
+      "selection": "independent",
+      "item": "月潮忆珀"
+    },
+    {
+      "trigger_id": "D01814",
+      "kind": "材料独立候选",
+      "base_denominator": 1000,
+      "quantity": 1,
+      "corpse_handling": "use_existing_engine_once",
+      "apply_player_drop_rate": true,
+      "selection": "independent",
+      "item": "黄金树芽"
+    },
+    {
+      "trigger_id": "D01815",
+      "kind": "材料独立候选",
+      "base_denominator": 40,
+      "quantity": 2,
+      "corpse_handling": "use_existing_engine_once",
+      "apply_player_drop_rate": true,
+      "selection": "independent",
+      "item": "野兽骨片"
+    },
+    {
+      "trigger_id": "D01816",
+      "kind": "材料独立候选",
+      "base_denominator": 180,
+      "quantity": 1,
+      "corpse_handling": "use_existing_engine_once",
+      "apply_player_drop_rate": true,
+      "selection": "independent",
+      "item": "技能残页"
+    },
+    {
+      "trigger_id": "D01817",
+      "kind": "材料独立候选",
+      "base_denominator": 300,
+      "quantity": 1,
+      "corpse_handling": "use_existing_engine_once",
+      "apply_player_drop_rate": true,
+      "selection": "independent",
+      "item": "宁姆格福誓页"
+    },
+    {
+      "trigger_id": "D01818",
+      "kind": "材料独立候选",
+      "base_denominator": 300,
+      "quantity": 1,
+      "corpse_handling": "use_existing_engine_once",
+      "apply_player_drop_rate": true,
+      "selection": "independent",
+      "item": "小卢恩"
+    },
+    {
+      "trigger_id": "D01819",
+      "kind": "材料独立候选",
+      "base_denominator": 200,
+      "quantity": 1,
+      "corpse_handling": "use_existing_engine_once",
+      "apply_player_drop_rate": true,
+      "selection": "independent",
+      "item": "大卢恩"
+    },
+    {
+      "trigger_id": "D01820",
+      "kind": "六神器公共池",
+      "base_denominator": 200000,
+      "quantity": 1,
+      "corpse_handling": "use_existing_engine_once",
+      "apply_player_drop_rate": true,
+      "selection": "one_weighted",
+      "pool_id": "POOL006",
+      "candidates": [
+        {
+          "item": "玛莲妮亚的大卢恩",
+          "weight": 1
+        },
+        {
+          "item": "拉塔恩的大卢恩",
+          "weight": 1
+        },
+        {
+          "item": "蒙葛特的大卢恩",
+          "weight": 1
+        },
+        {
+          "item": "蒙格的大卢恩",
+          "weight": 1
+        },
+        {
+          "item": "拉卡德的大卢恩",
+          "weight": 1
+        },
+        {
+          "item": "葛瑞克的大卢恩",
+          "weight": 1
+        }
+      ]
+    }
+  ],
+  "deployment": "archive_only_until_user_authorizes; verify_stack_parser_before_install"
+}

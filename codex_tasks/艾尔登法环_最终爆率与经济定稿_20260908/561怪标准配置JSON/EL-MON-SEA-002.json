@@ -1,0 +1,190 @@
+{
+  "monster_id": "EL-MON-SEA-002",
+  "name": "断桨弩手",
+  "continent": 1,
+  "map_group_index_zero_based": 0,
+  "role": "普通",
+  "triggers": [
+    {
+      "trigger_id": "D00005",
+      "kind": "自身专属",
+      "base_denominator": 400,
+      "quantity": 1,
+      "corpse_handling": "use_existing_engine_once",
+      "apply_player_drop_rate": true,
+      "selection": "independent",
+      "item": "断桨骨链"
+    },
+    {
+      "trigger_id": "D00006",
+      "kind": "材料独立候选",
+      "base_denominator": 400,
+      "quantity": 8,
+      "corpse_handling": "use_existing_engine_once",
+      "apply_player_drop_rate": true,
+      "selection": "independent",
+      "item": "海蚀铁片"
+    },
+    {
+      "trigger_id": "D00007",
+      "kind": "材料独立候选",
+      "base_denominator": 60,
+      "quantity": 1,
+      "corpse_handling": "use_existing_engine_once",
+      "apply_player_drop_rate": true,
+      "selection": "independent",
+      "item": "技能残页"
+    },
+    {
+      "trigger_id": "D00008",
+      "kind": "材料独立候选",
+      "base_denominator": 2500,
+      "quantity": 1,
+      "corpse_handling": "use_existing_engine_once",
+      "apply_player_drop_rate": true,
+      "selection": "independent",
+      "item": "小卢恩"
+    },
+    {
+      "trigger_id": "D05231",
+      "kind": "制式独立候选",
+      "base_denominator": 1000,
+      "quantity": 1,
+      "corpse_handling": "use_existing_engine_once",
+      "apply_player_drop_rate": true,
+      "selection": "one_weighted",
+      "pool_id": "POOL088",
+      "candidates": [
+        {
+          "item": "褪色旅人直剑",
+          "weight": 1
+        },
+        {
+          "item": "褪色旅人战甲",
+          "weight": 1
+        },
+        {
+          "item": "褪色旅人战盔",
+          "weight": 1
+        },
+        {
+          "item": "褪色旅人项链",
+          "weight": 1
+        },
+        {
+          "item": "褪色旅人腕甲",
+          "weight": 1
+        },
+        {
+          "item": "褪色旅人戒指",
+          "weight": 1
+        },
+        {
+          "item": "褪色旅人腰带",
+          "weight": 1
+        },
+        {
+          "item": "褪色旅人战靴",
+          "weight": 1
+        },
+        {
+          "item": "失乡战士长剑",
+          "weight": 1
+        },
+        {
+          "item": "失乡战士战甲",
+          "weight": 1
+        },
+        {
+          "item": "失乡战士战盔",
+          "weight": 1
+        },
+        {
+          "item": "失乡战士项链",
+          "weight": 1
+        },
+        {
+          "item": "失乡战士腕甲",
+          "weight": 1
+        },
+        {
+          "item": "失乡战士戒指",
+          "weight": 1
+        },
+        {
+          "item": "失乡战士腰带",
+          "weight": 1
+        },
+        {
+          "item": "失乡战士战靴",
+          "weight": 1
+        },
+        {
+          "item": "漂流守卫战刃",
+          "weight": 1
+        },
+        {
+          "item": "漂流守卫战甲",
+          "weight": 1
+        },
+        {
+          "item": "漂流守卫战盔",
+          "weight": 1
+        },
+        {
+          "item": "漂流守卫项链",
+          "weight": 1
+        },
+        {
+          "item": "漂流守卫腕甲",
+          "weight": 1
+        },
+        {
+          "item": "漂流守卫戒指",
+          "weight": 1
+        },
+        {
+          "item": "漂流守卫腰带",
+          "weight": 1
+        },
+        {
+          "item": "漂流守卫战靴",
+          "weight": 1
+        },
+        {
+          "item": "断崖铁卫重剑",
+          "weight": 1
+        },
+        {
+          "item": "断崖铁卫战甲",
+          "weight": 1
+        },
+        {
+          "item": "断崖铁卫战盔",
+          "weight": 1
+        },
+        {
+          "item": "断崖铁卫项链",
+          "weight": 1
+        },
+        {
+          "item": "断崖铁卫腕甲",
+          "weight": 1
+        },
+        {
+          "item": "断崖铁卫戒指",
+          "weight": 1
+        },
+        {
+          "item": "断崖铁卫腰带",
+          "weight": 1
+        },
+        {
+          "item": "断崖铁卫战靴",
+          "weight": 1
+        }
+      ]
+    }
+  ],
+  "deployment": "archive_only_until_user_authorizes; verify_stack_parser_before_install"
+}

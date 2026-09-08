@@ -1,0 +1,136 @@
+{
+  "monster_id": "C05-M044",
+  "name": "禁页蚀字兽",
+  "continent": 5,
+  "map_group_index_zero_based": 3,
+  "role": "稀有",
+  "triggers": [
+    {
+      "trigger_id": "D02489",
+      "kind": "自身专属",
+      "base_denominator": 500,
+      "quantity": 1,
+      "corpse_handling": "use_existing_engine_once",
+      "apply_player_drop_rate": true,
+      "selection": "independent",
+      "item": "禁页蚀字冠"
+    },
+    {
+      "trigger_id": "D02490",
+      "kind": "材料独立候选",
+      "base_denominator": 500,
+      "quantity": 15,
+      "corpse_handling": "use_existing_engine_once",
+      "apply_player_drop_rate": true,
+      "selection": "independent",
+      "item": "辉石碎晶"
+    },
+    {
+      "trigger_id": "D02491",
+      "kind": "材料独立候选",
+      "base_denominator": 800,
+      "quantity": 1,
+      "corpse_handling": "use_existing_engine_once",
+      "apply_player_drop_rate": true,
+      "selection": "independent",
+      "item": "卡利亚月露"
+    },
+    {
+      "trigger_id": "D02492",
+      "kind": "材料独立候选",
+      "base_denominator": 1200,
+      "quantity": 1,
+      "corpse_handling": "use_existing_engine_once",
+      "apply_player_drop_rate": true,
+      "selection": "independent",
+      "item": "学院封蜡"
+    },
+    {
+      "trigger_id": "D02493",
+      "kind": "材料独立候选",
+      "base_denominator": 800000,
+      "quantity": 1,
+      "corpse_handling": "use_existing_engine_once",
+      "apply_player_drop_rate": true,
+      "selection": "independent",
+      "item": "湖心月谱残章"
+    },
+    {
+      "trigger_id": "D02494",
+      "kind": "材料独立候选",
+      "base_denominator": 4000,
+      "quantity": 1,
+      "corpse_handling": "use_existing_engine_once",
+      "apply_player_drop_rate": true,
+      "selection": "independent",
+      "item": "黄金树芽"
+    },
+    {
+      "trigger_id": "D02495",
+      "kind": "材料独立候选",
+      "base_denominator": 80,
+      "quantity": 3,
+      "corpse_handling": "use_existing_engine_once",
+      "apply_player_drop_rate": true,
+      "selection": "independent",
+      "item": "野兽骨片"
+    },
+    {
+      "trigger_id": "D02496",
+      "kind": "材料独立候选",
+      "base_denominator": 2000,
+      "quantity": 1,
+      "corpse_handling": "use_existing_engine_once",
+      "apply_player_drop_rate": true,
+      "selection": "independent",
+      "item": "技能残页"
+    },
+    {
+      "trigger_id": "D02497",
+      "kind": "材料独立候选",
+      "base_denominator": 5000,
+      "quantity": 1,
+      "corpse_handling": "use_existing_engine_once",
+      "apply_player_drop_rate": true,
+      "selection": "independent",
+      "item": "小卢恩"
+    },
+    {
+      "trigger_id": "D02498",
+      "kind": "六神器公共池",
+      "base_denominator": 5000000,
+      "quantity": 1,
+      "corpse_handling": "use_existing_engine_once",
+      "apply_player_drop_rate": true,
+      "selection": "one_weighted",
+      "pool_id": "POOL006",
+      "candidates": [
+        {
+          "item": "玛莲妮亚的大卢恩",
+          "weight": 1
+        },
+        {
+          "item": "拉塔恩的大卢恩",
+          "weight": 1
+        },
+        {
+          "item": "蒙葛特的大卢恩",
+          "weight": 1
+        },
+        {
+          "item": "蒙格的大卢恩",
+          "weight": 1
+        },
+        {
+          "item": "拉卡德的大卢恩",
+          "weight": 1
+        },
+        {
+          "item": "葛瑞克的大卢恩",
+          "weight": 1
+        }
+      ]
+    }
+  ],
+  "deployment": "archive_only_until_user_authorizes; verify_stack_parser_before_install"
+}

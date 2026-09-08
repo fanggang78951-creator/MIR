@@ -1,0 +1,202 @@
+{
+  "monster_id": "C09-M060",
+  "name": "王门执宪者·赫桑达",
+  "continent": 9,
+  "map_group_index_zero_based": 4,
+  "role": "地图BOSS",
+  "triggers": [
+    {
+      "trigger_id": "D04587",
+      "kind": "自身专属",
+      "base_denominator": 400,
+      "quantity": 1,
+      "corpse_handling": "use_existing_engine_once",
+      "apply_player_drop_rate": true,
+      "selection": "independent",
+      "item": "赫桑达执宪战衣"
+    },
+    {
+      "trigger_id": "D04588",
+      "kind": "自身专属",
+      "base_denominator": 400,
+      "quantity": 1,
+      "corpse_handling": "use_existing_engine_once",
+      "apply_player_drop_rate": true,
+      "selection": "independent",
+      "item": "报晓金翎"
+    },
+    {
+      "trigger_id": "D04589",
+      "kind": "本图普通兼掉候选",
+      "base_denominator": 180,
+      "quantity": 1,
+      "corpse_handling": "use_existing_engine_once",
+      "apply_player_drop_rate": true,
+      "selection": "one_weighted",
+      "pool_id": "POOL077",
+      "candidates": [
+        {
+          "item": "锁链关门甲",
+          "weight": 1
+        }
+      ]
+    },
+    {
+      "trigger_id": "D04590",
+      "kind": "材料独立候选",
+      "base_denominator": 600,
+      "quantity": 30,
+      "corpse_handling": "use_existing_engine_once",
+      "apply_player_drop_rate": true,
+      "selection": "independent",
+      "item": "黄金叶脉"
+    },
+    {
+      "trigger_id": "D04591",
+      "kind": "材料独立候选",
+      "base_denominator": 600,
+      "quantity": 1,
+      "corpse_handling": "use_existing_engine_once",
+      "apply_player_drop_rate": true,
+      "selection": "independent",
+      "item": "古王律页"
+    },
+    {
+      "trigger_id": "D04592",
+      "kind": "材料独立候选",
+      "base_denominator": 300,
+      "quantity": 7,
+      "corpse_handling": "use_existing_engine_once",
+      "apply_player_drop_rate": true,
+      "selection": "independent",
+      "item": "黄金律印"
+    },
+    {
+      "trigger_id": "D04593",
+      "kind": "材料独立候选",
+      "base_denominator": 300,
+      "quantity": 3,
+      "corpse_handling": "use_existing_engine_once",
+      "apply_player_drop_rate": true,
+      "selection": "independent",
+      "item": "裁文蜡封"
+    },
+    {
+      "trigger_id": "D04594",
+      "kind": "材料独立候选",
+      "base_denominator": 1200000,
+      "quantity": 1,
+      "corpse_handling": "use_existing_engine_once",
+      "apply_player_drop_rate": true,
+      "selection": "independent",
+      "item": "古坛鎏叶髓"
+    },
+    {
+      "trigger_id": "D04595",
+      "kind": "材料独立候选",
+      "base_denominator": 8000,
+      "quantity": 1,
+      "corpse_handling": "use_existing_engine_once",
+      "apply_player_drop_rate": true,
+      "selection": "independent",
+      "item": "黄金树芽"
+    },
+    {
+      "trigger_id": "D04596",
+      "kind": "材料独立候选",
+      "base_denominator": 120,
+      "quantity": 5,
+      "corpse_handling": "use_existing_engine_once",
+      "apply_player_drop_rate": true,
+      "selection": "independent",
+      "item": "野兽骨片"
+    },
+    {
+      "trigger_id": "D04597",
+      "kind": "材料独立候选",
+      "base_denominator": 1000,
+      "quantity": 1,
+      "corpse_handling": "use_existing_engine_once",
+      "apply_player_drop_rate": true,
+      "selection": "independent",
+      "item": "技能残页"
+    },
+    {
+      "trigger_id": "D04598",
+      "kind": "材料独立候选",
+      "base_denominator": 1000,
+      "quantity": 1,
+      "corpse_handling": "use_existing_engine_once",
+      "apply_player_drop_rate": true,
+      "selection": "independent",
+      "item": "宁姆格福誓页"
+    },
+    {
+      "trigger_id": "D04599",
+      "kind": "材料独立候选",
+      "base_denominator": 8000,
+      "quantity": 1,
+      "corpse_handling": "use_existing_engine_once",
+      "apply_player_drop_rate": true,
+      "selection": "independent",
+      "item": "小卢恩"
+    },
+    {
+      "trigger_id": "D04600",
+      "kind": "材料独立候选",
+      "base_denominator": 600,
+      "quantity": 1,
+      "corpse_handling": "use_existing_engine_once",
+      "apply_player_drop_rate": true,
+      "selection": "independent",
+      "item": "大卢恩"
+    },
+    {
+      "trigger_id": "D04601",
+      "kind": "材料独立候选",
+      "base_denominator": 1000,
+      "quantity": 1,
+      "corpse_handling": "use_existing_engine_once",
+      "apply_player_drop_rate": true,
+      "selection": "independent",
+      "item": "巨人熔火卢恩"
+    },
+    {
+      "trigger_id": "D04602",
+      "kind": "六神器公共池",
+      "base_denominator": 200000,
+      "quantity": 1,
+      "corpse_handling": "use_existing_engine_once",
+      "apply_player_drop_rate": true,
+      "selection": "one_weighted",
+      "pool_id": "POOL006",
+      "candidates": [
+        {
+          "item": "玛莲妮亚的大卢恩",
+          "weight": 1
+        },
+        {
+          "item": "拉塔恩的大卢恩",
+          "weight": 1
+        },
+        {
+          "item": "蒙葛特的大卢恩",
+          "weight": 1
+        },
+        {
+          "item": "蒙格的大卢恩",
+          "weight": 1
+        },
+        {
+          "item": "拉卡德的大卢恩",
+          "weight": 1
+        },
+        {
+          "item": "葛瑞克的大卢恩",
+          "weight": 1
+        }
+      ]
+    }
+  ],
+  "deployment": "archive_only_until_user_authorizes; verify_stack_parser_before_install"
+}

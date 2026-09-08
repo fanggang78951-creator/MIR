@@ -1,0 +1,162 @@
+{
+  "monster_id": "C05-M073",
+  "name": "寒镜终誓王",
+  "continent": 5,
+  "map_group_index_zero_based": 5,
+  "role": "守关BOSS",
+  "triggers": [
+    {
+      "trigger_id": "D02781",
+      "kind": "自身专属",
+      "base_denominator": 100,
+      "quantity": 1,
+      "corpse_handling": "use_existing_engine_once",
+      "apply_player_drop_rate": true,
+      "selection": "independent",
+      "item": "终誓月裁剑"
+    },
+    {
+      "trigger_id": "D02782",
+      "kind": "自身专属",
+      "base_denominator": 100,
+      "quantity": 1,
+      "corpse_handling": "use_existing_engine_once",
+      "apply_player_drop_rate": true,
+      "selection": "independent",
+      "item": "残月仪剑"
+    },
+    {
+      "trigger_id": "D02783",
+      "kind": "自身专属",
+      "base_denominator": 100,
+      "quantity": 1,
+      "corpse_handling": "use_existing_engine_once",
+      "apply_player_drop_rate": true,
+      "selection": "independent",
+      "item": "镜宫月袍"
+    },
+    {
+      "trigger_id": "D02784",
+      "kind": "本图普通兼掉候选",
+      "base_denominator": 80,
+      "quantity": 1,
+      "corpse_handling": "use_existing_engine_once",
+      "apply_player_drop_rate": true,
+      "selection": "one_weighted",
+      "pool_id": "POOL047",
+      "candidates": [
+        {
+          "item": "守星残灵戒",
+          "weight": 1
+        }
+      ]
+    },
+    {
+      "trigger_id": "D02785",
+      "kind": "材料独立候选",
+      "base_denominator": 1,
+      "quantity": 40,
+      "corpse_handling": "use_existing_engine_once",
+      "apply_player_drop_rate": true,
+      "selection": "independent",
+      "item": "辉石碎晶"
+    },
+    {
+      "trigger_id": "D02786",
+      "kind": "材料独立候选",
+      "base_denominator": 1,
+      "quantity": 1,
+      "corpse_handling": "use_existing_engine_once",
+      "apply_player_drop_rate": true,
+      "selection": "independent",
+      "item": "卡利亚月露"
+    },
+    {
+      "trigger_id": "D02787",
+      "kind": "材料独立候选",
+      "base_denominator": 1,
+      "quantity": 1,
+      "corpse_handling": "use_existing_engine_once",
+      "apply_player_drop_rate": true,
+      "selection": "independent",
+      "item": "满月王室印"
+    },
+    {
+      "trigger_id": "D02788",
+      "kind": "材料独立候选",
+      "base_denominator": 1,
+      "quantity": 1,
+      "corpse_handling": "use_existing_engine_once",
+      "apply_player_drop_rate": true,
+      "selection": "independent",
+      "item": "禁域星钥"
+    },
+    {
+      "trigger_id": "D02789",
+      "kind": "材料独立候选",
+      "base_denominator": 8000,
+      "quantity": 1,
+      "corpse_handling": "use_existing_engine_once",
+      "apply_player_drop_rate": true,
+      "selection": "independent",
+      "item": "湖心月谱残章"
+    },
+    {
+      "trigger_id": "D02790",
+      "kind": "材料独立候选",
+      "base_denominator": 1,
+      "quantity": 1,
+      "corpse_handling": "use_existing_engine_once",
+      "apply_player_drop_rate": true,
+      "selection": "independent",
+      "item": "黄金树芽"
+    },
+    {
+      "trigger_id": "D02791",
+      "kind": "六神器公共池",
+      "base_denominator": 40000,
+      "quantity": 1,
+      "corpse_handling": "use_existing_engine_once",
+      "apply_player_drop_rate": true,
+      "selection": "one_weighted",
+      "pool_id": "POOL006",
+      "candidates": [
+        {
+          "item": "玛莲妮亚的大卢恩",
+          "weight": 1
+        },
+        {
+          "item": "拉塔恩的大卢恩",
+          "weight": 1
+        },
+        {
+          "item": "蒙葛特的大卢恩",
+          "weight": 1
+        },
+        {
+          "item": "蒙格的大卢恩",
+          "weight": 1
+        },
+        {
+          "item": "拉卡德的大卢恩",
+          "weight": 1
+        },
+        {
+          "item": "葛瑞克的大卢恩",
+          "weight": 1
+        }
+      ]
+    },
+    {
+      "trigger_id": "D05346",
+      "kind": "称号卷",
+      "base_denominator": 400,
+      "quantity": 1,
+      "corpse_handling": "use_existing_engine_once",
+      "apply_player_drop_rate": true,
+      "selection": "independent",
+      "item": "[称号]寒镜终誓"
+    }
+  ],
+  "deployment": "archive_only_until_user_authorizes; verify_stack_parser_before_install"
+}

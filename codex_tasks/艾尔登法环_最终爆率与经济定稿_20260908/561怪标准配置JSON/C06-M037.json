@@ -1,0 +1,162 @@
+{
+  "monster_id": "C06-M037",
+  "name": "碎星狮王·拉塔恩",
+  "continent": 6,
+  "map_group_index_zero_based": 2,
+  "role": "守关BOSS",
+  "triggers": [
+    {
+      "trigger_id": "D03145",
+      "kind": "自身专属",
+      "base_denominator": 120,
+      "quantity": 1,
+      "corpse_handling": "use_existing_engine_once",
+      "apply_player_drop_rate": true,
+      "selection": "independent",
+      "item": "拉塔恩碎星巨刃"
+    },
+    {
+      "trigger_id": "D03146",
+      "kind": "自身专属",
+      "base_denominator": 120,
+      "quantity": 1,
+      "corpse_handling": "use_existing_engine_once",
+      "apply_player_drop_rate": true,
+      "selection": "independent",
+      "item": "陨星礼锋"
+    },
+    {
+      "trigger_id": "D03147",
+      "kind": "自身专属",
+      "base_denominator": 120,
+      "quantity": 1,
+      "corpse_handling": "use_existing_engine_once",
+      "apply_player_drop_rate": true,
+      "selection": "independent",
+      "item": "赤狮葬衣"
+    },
+    {
+      "trigger_id": "D03148",
+      "kind": "本图普通兼掉候选",
+      "base_denominator": 100,
+      "quantity": 1,
+      "corpse_handling": "use_existing_engine_once",
+      "apply_player_drop_rate": true,
+      "selection": "one_weighted",
+      "pool_id": "POOL053",
+      "candidates": [
+        {
+          "item": "神殿焰矛",
+          "weight": 1
+        }
+      ]
+    },
+    {
+      "trigger_id": "D03149",
+      "kind": "材料独立候选",
+      "base_denominator": 1,
+      "quantity": 40,
+      "corpse_handling": "use_existing_engine_once",
+      "apply_player_drop_rate": true,
+      "selection": "independent",
+      "item": "猩红矿渣"
+    },
+    {
+      "trigger_id": "D03150",
+      "kind": "材料独立候选",
+      "base_denominator": 1,
+      "quantity": 1,
+      "corpse_handling": "use_existing_engine_once",
+      "apply_player_drop_rate": true,
+      "selection": "independent",
+      "item": "龙火鳞"
+    },
+    {
+      "trigger_id": "D03151",
+      "kind": "材料独立候选",
+      "base_denominator": 1,
+      "quantity": 1,
+      "corpse_handling": "use_existing_engine_once",
+      "apply_player_drop_rate": true,
+      "selection": "independent",
+      "item": "红狮战印"
+    },
+    {
+      "trigger_id": "D03152",
+      "kind": "材料独立候选",
+      "base_denominator": 1,
+      "quantity": 1,
+      "corpse_handling": "use_existing_engine_once",
+      "apply_player_drop_rate": true,
+      "selection": "independent",
+      "item": "碎星仪仗钉"
+    },
+    {
+      "trigger_id": "D03153",
+      "kind": "材料独立候选",
+      "base_denominator": 10000,
+      "quantity": 1,
+      "corpse_handling": "use_existing_engine_once",
+      "apply_player_drop_rate": true,
+      "selection": "independent",
+      "item": "熔原罪火残章"
+    },
+    {
+      "trigger_id": "D03154",
+      "kind": "材料独立候选",
+      "base_denominator": 1,
+      "quantity": 1,
+      "corpse_handling": "use_existing_engine_once",
+      "apply_player_drop_rate": true,
+      "selection": "independent",
+      "item": "黄金树芽"
+    },
+    {
+      "trigger_id": "D03155",
+      "kind": "六神器公共池",
+      "base_denominator": 40000,
+      "quantity": 1,
+      "corpse_handling": "use_existing_engine_once",
+      "apply_player_drop_rate": true,
+      "selection": "one_weighted",
+      "pool_id": "POOL006",
+      "candidates": [
+        {
+          "item": "玛莲妮亚的大卢恩",
+          "weight": 1
+        },
+        {
+          "item": "拉塔恩的大卢恩",
+          "weight": 1
+        },
+        {
+          "item": "蒙葛特的大卢恩",
+          "weight": 1
+        },
+        {
+          "item": "蒙格的大卢恩",
+          "weight": 1
+        },
+        {
+          "item": "拉卡德的大卢恩",
+          "weight": 1
+        },
+        {
+          "item": "葛瑞克的大卢恩",
+          "weight": 1
+        }
+      ]
+    },
+    {
+      "trigger_id": "D05347",
+      "kind": "称号卷",
+      "base_denominator": 500,
+      "quantity": 1,
+      "corpse_handling": "use_existing_engine_once",
+      "apply_player_drop_rate": true,
+      "selection": "independent",
+      "item": "[称号]碎星狮王"
+    }
+  ],
+  "deployment": "archive_only_until_user_authorizes; verify_stack_parser_before_install"
+}

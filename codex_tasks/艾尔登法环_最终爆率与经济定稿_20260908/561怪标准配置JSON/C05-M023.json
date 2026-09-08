@@ -1,0 +1,182 @@
+{
+  "monster_id": "C05-M023",
+  "name": "裂辉古院监",
+  "continent": 5,
+  "map_group_index_zero_based": 1,
+  "role": "地图BOSS",
+  "triggers": [
+    {
+      "trigger_id": "D02285",
+      "kind": "自身专属",
+      "base_denominator": 60,
+      "quantity": 1,
+      "corpse_handling": "use_existing_engine_once",
+      "apply_player_drop_rate": true,
+      "selection": "independent",
+      "item": "裂辉监院长戟"
+    },
+    {
+      "trigger_id": "D02286",
+      "kind": "本图普通兼掉候选",
+      "base_denominator": 60,
+      "quantity": 1,
+      "corpse_handling": "use_existing_engine_once",
+      "apply_player_drop_rate": true,
+      "selection": "one_weighted",
+      "pool_id": "POOL038",
+      "candidates": [
+        {
+          "item": "辉壳束腰",
+          "weight": 1
+        }
+      ]
+    },
+    {
+      "trigger_id": "D02287",
+      "kind": "材料独立候选",
+      "base_denominator": 250,
+      "quantity": 30,
+      "corpse_handling": "use_existing_engine_once",
+      "apply_player_drop_rate": true,
+      "selection": "independent",
+      "item": "辉石碎晶"
+    },
+    {
+      "trigger_id": "D02288",
+      "kind": "材料独立候选",
+      "base_denominator": 400,
+      "quantity": 1,
+      "corpse_handling": "use_existing_engine_once",
+      "apply_player_drop_rate": true,
+      "selection": "independent",
+      "item": "卡利亚月露"
+    },
+    {
+      "trigger_id": "D02289",
+      "kind": "材料独立候选",
+      "base_denominator": 120,
+      "quantity": 3,
+      "corpse_handling": "use_existing_engine_once",
+      "apply_player_drop_rate": true,
+      "selection": "independent",
+      "item": "满月王室印"
+    },
+    {
+      "trigger_id": "D02290",
+      "kind": "材料独立候选",
+      "base_denominator": 120,
+      "quantity": 2,
+      "corpse_handling": "use_existing_engine_once",
+      "apply_player_drop_rate": true,
+      "selection": "independent",
+      "item": "月蚀镜片"
+    },
+    {
+      "trigger_id": "D02291",
+      "kind": "材料独立候选",
+      "base_denominator": 300000,
+      "quantity": 1,
+      "corpse_handling": "use_existing_engine_once",
+      "apply_player_drop_rate": true,
+      "selection": "independent",
+      "item": "湖心月谱残章"
+    },
+    {
+      "trigger_id": "D02292",
+      "kind": "材料独立候选",
+      "base_denominator": 1800,
+      "quantity": 1,
+      "corpse_handling": "use_existing_engine_once",
+      "apply_player_drop_rate": true,
+      "selection": "independent",
+      "item": "黄金树芽"
+    },
+    {
+      "trigger_id": "D02293",
+      "kind": "材料独立候选",
+      "base_denominator": 40,
+      "quantity": 3,
+      "corpse_handling": "use_existing_engine_once",
+      "apply_player_drop_rate": true,
+      "selection": "independent",
+      "item": "野兽骨片"
+    },
+    {
+      "trigger_id": "D02294",
+      "kind": "材料独立候选",
+      "base_denominator": 1000,
+      "quantity": 1,
+      "corpse_handling": "use_existing_engine_once",
+      "apply_player_drop_rate": true,
+      "selection": "independent",
+      "item": "技能残页"
+    },
+    {
+      "trigger_id": "D02295",
+      "kind": "材料独立候选",
+      "base_denominator": 300,
+      "quantity": 1,
+      "corpse_handling": "use_existing_engine_once",
+      "apply_player_drop_rate": true,
+      "selection": "independent",
+      "item": "宁姆格福誓页"
+    },
+    {
+      "trigger_id": "D02296",
+      "kind": "材料独立候选",
+      "base_denominator": 2000,
+      "quantity": 1,
+      "corpse_handling": "use_existing_engine_once",
+      "apply_player_drop_rate": true,
+      "selection": "independent",
+      "item": "小卢恩"
+    },
+    {
+      "trigger_id": "D02297",
+      "kind": "材料独立候选",
+      "base_denominator": 200,
+      "quantity": 1,
+      "corpse_handling": "use_existing_engine_once",
+      "apply_player_drop_rate": true,
+      "selection": "independent",
+      "item": "大卢恩"
+    },
+    {
+      "trigger_id": "D02298",
+      "kind": "六神器公共池",
+      "base_denominator": 200000,
+      "quantity": 1,
+      "corpse_handling": "use_existing_engine_once",
+      "apply_player_drop_rate": true,
+      "selection": "one_weighted",
+      "pool_id": "POOL006",
+      "candidates": [
+        {
+          "item": "玛莲妮亚的大卢恩",
+          "weight": 1
+        },
+        {
+          "item": "拉塔恩的大卢恩",
+          "weight": 1
+        },
+        {
+          "item": "蒙葛特的大卢恩",
+          "weight": 1
+        },
+        {
+          "item": "蒙格的大卢恩",
+          "weight": 1
+        },
+        {
+          "item": "拉卡德的大卢恩",
+          "weight": 1
+        },
+        {
+          "item": "葛瑞克的大卢恩",
+          "weight": 1
+        }
+      ]
+    }
+  ],
+  "deployment": "archive_only_until_user_authorizes; verify_stack_parser_before_install"
+}

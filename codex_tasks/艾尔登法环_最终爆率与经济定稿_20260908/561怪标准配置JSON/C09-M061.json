@@ -1,0 +1,162 @@
+{
+  "monster_id": "C09-M061",
+  "name": "鎏日王城之影·阿尔维萨",
+  "continent": 9,
+  "map_group_index_zero_based": 4,
+  "role": "守关BOSS",
+  "triggers": [
+    {
+      "trigger_id": "D04603",
+      "kind": "自身专属",
+      "base_denominator": 250,
+      "quantity": 1,
+      "corpse_handling": "use_existing_engine_once",
+      "apply_player_drop_rate": true,
+      "selection": "independent",
+      "item": "阿尔维萨蚀日王刃"
+    },
+    {
+      "trigger_id": "D04604",
+      "kind": "自身专属",
+      "base_denominator": 250,
+      "quantity": 1,
+      "corpse_handling": "use_existing_engine_once",
+      "apply_player_drop_rate": true,
+      "selection": "independent",
+      "item": "裁阳仪刃"
+    },
+    {
+      "trigger_id": "D04605",
+      "kind": "自身专属",
+      "base_denominator": 250,
+      "quantity": 1,
+      "corpse_handling": "use_existing_engine_once",
+      "apply_player_drop_rate": true,
+      "selection": "independent",
+      "item": "鎏叶王袍"
+    },
+    {
+      "trigger_id": "D04606",
+      "kind": "本图普通兼掉候选",
+      "base_denominator": 180,
+      "quantity": 1,
+      "corpse_handling": "use_existing_engine_once",
+      "apply_player_drop_rate": true,
+      "selection": "one_weighted",
+      "pool_id": "POOL077",
+      "candidates": [
+        {
+          "item": "锁链关门甲",
+          "weight": 1
+        }
+      ]
+    },
+    {
+      "trigger_id": "D04607",
+      "kind": "材料独立候选",
+      "base_denominator": 1,
+      "quantity": 40,
+      "corpse_handling": "use_existing_engine_once",
+      "apply_player_drop_rate": true,
+      "selection": "independent",
+      "item": "黄金叶脉"
+    },
+    {
+      "trigger_id": "D04608",
+      "kind": "材料独立候选",
+      "base_denominator": 1,
+      "quantity": 1,
+      "corpse_handling": "use_existing_engine_once",
+      "apply_player_drop_rate": true,
+      "selection": "independent",
+      "item": "古王律页"
+    },
+    {
+      "trigger_id": "D04609",
+      "kind": "材料独立候选",
+      "base_denominator": 1,
+      "quantity": 1,
+      "corpse_handling": "use_existing_engine_once",
+      "apply_player_drop_rate": true,
+      "selection": "independent",
+      "item": "黄金律印"
+    },
+    {
+      "trigger_id": "D04610",
+      "kind": "材料独立候选",
+      "base_denominator": 1,
+      "quantity": 1,
+      "corpse_handling": "use_existing_engine_once",
+      "apply_player_drop_rate": true,
+      "selection": "independent",
+      "item": "高原王诏金版"
+    },
+    {
+      "trigger_id": "D04611",
+      "kind": "材料独立候选",
+      "base_denominator": 18000,
+      "quantity": 1,
+      "corpse_handling": "use_existing_engine_once",
+      "apply_player_drop_rate": true,
+      "selection": "independent",
+      "item": "古坛鎏叶髓"
+    },
+    {
+      "trigger_id": "D04612",
+      "kind": "材料独立候选",
+      "base_denominator": 1,
+      "quantity": 1,
+      "corpse_handling": "use_existing_engine_once",
+      "apply_player_drop_rate": true,
+      "selection": "independent",
+      "item": "黄金树芽"
+    },
+    {
+      "trigger_id": "D04613",
+      "kind": "六神器公共池",
+      "base_denominator": 40000,
+      "quantity": 1,
+      "corpse_handling": "use_existing_engine_once",
+      "apply_player_drop_rate": true,
+      "selection": "one_weighted",
+      "pool_id": "POOL006",
+      "candidates": [
+        {
+          "item": "玛莲妮亚的大卢恩",
+          "weight": 1
+        },
+        {
+          "item": "拉塔恩的大卢恩",
+          "weight": 1
+        },
+        {
+          "item": "蒙葛特的大卢恩",
+          "weight": 1
+        },
+        {
+          "item": "蒙格的大卢恩",
+          "weight": 1
+        },
+        {
+          "item": "拉卡德的大卢恩",
+          "weight": 1
+        },
+        {
+          "item": "葛瑞克的大卢恩",
+          "weight": 1
+        }
+      ]
+    },
+    {
+      "trigger_id": "D05350",
+      "kind": "称号卷",
+      "base_denominator": 1000,
+      "quantity": 1,
+      "corpse_handling": "use_existing_engine_once",
+      "apply_player_drop_rate": true,
+      "selection": "independent",
+      "item": "[称号]鎏日王城之影"
+    }
+  ],
+  "deployment": "archive_only_until_user_authorizes; verify_stack_parser_before_install"
+}

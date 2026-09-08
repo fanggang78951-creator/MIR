@@ -1,0 +1,13 @@
+{
+  "summary": {
+    "triggers": 5351,
+    "source_relations": 5400,
+    "normal_pickup_groups": 46,
+    "plan_hours": 299.5,
+    "checks": 6696,
+    "failed": 0,
+    "qty_changes": 742
+  },
+  "warnings": [],
+  "failed": []
+}

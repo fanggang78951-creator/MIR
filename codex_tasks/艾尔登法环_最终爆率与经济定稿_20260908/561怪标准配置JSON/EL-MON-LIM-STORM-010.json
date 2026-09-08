@@ -1,0 +1,202 @@
+{
+  "monster_id": "EL-MON-LIM-STORM-010",
+  "name": "死亡仪鸟",
+  "continent": 2,
+  "map_group_index_zero_based": 3,
+  "role": "稀有",
+  "triggers": [
+    {
+      "trigger_id": "D00528",
+      "kind": "自身专属",
+      "base_denominator": 180,
+      "quantity": 1,
+      "corpse_handling": "use_existing_engine_once",
+      "apply_player_drop_rate": true,
+      "selection": "independent",
+      "item": "葬日未羊"
+    },
+    {
+      "trigger_id": "D00529",
+      "kind": "材料独立候选",
+      "base_denominator": 300,
+      "quantity": 15,
+      "corpse_handling": "use_existing_engine_once",
+      "apply_player_drop_rate": true,
+      "selection": "independent",
+      "item": "风暴石片"
+    },
+    {
+      "trigger_id": "D00530",
+      "kind": "材料独立候选",
+      "base_denominator": 60,
+      "quantity": 2,
+      "corpse_handling": "use_existing_engine_once",
+      "apply_player_drop_rate": true,
+      "selection": "independent",
+      "item": "黄金树芽"
+    },
+    {
+      "trigger_id": "D00531",
+      "kind": "材料独立候选",
+      "base_denominator": 180,
+      "quantity": 1,
+      "corpse_handling": "use_existing_engine_once",
+      "apply_player_drop_rate": true,
+      "selection": "independent",
+      "item": "死亡仪羽"
+    },
+    {
+      "trigger_id": "D00532",
+      "kind": "材料独立候选",
+      "base_denominator": 60,
+      "quantity": 2,
+      "corpse_handling": "use_existing_engine_once",
+      "apply_player_drop_rate": true,
+      "selection": "independent",
+      "item": "野兽骨片"
+    },
+    {
+      "trigger_id": "D00533",
+      "kind": "材料独立候选",
+      "base_denominator": 60,
+      "quantity": 1,
+      "corpse_handling": "use_existing_engine_once",
+      "apply_player_drop_rate": true,
+      "selection": "independent",
+      "item": "技能残页"
+    },
+    {
+      "trigger_id": "D00534",
+      "kind": "材料独立候选",
+      "base_denominator": 2500,
+      "quantity": 1,
+      "corpse_handling": "use_existing_engine_once",
+      "apply_player_drop_rate": true,
+      "selection": "independent",
+      "item": "小卢恩"
+    },
+    {
+      "trigger_id": "D00535",
+      "kind": "六神器公共池",
+      "base_denominator": 5000000,
+      "quantity": 1,
+      "corpse_handling": "use_existing_engine_once",
+      "apply_player_drop_rate": true,
+      "selection": "one_weighted",
+      "pool_id": "POOL006",
+      "candidates": [
+        {
+          "item": "玛莲妮亚的大卢恩",
+          "weight": 1
+        },
+        {
+          "item": "拉塔恩的大卢恩",
+          "weight": 1
+        },
+        {
+          "item": "蒙葛特的大卢恩",
+          "weight": 1
+        },
+        {
+          "item": "蒙格的大卢恩",
+          "weight": 1
+        },
+        {
+          "item": "拉卡德的大卢恩",
+          "weight": 1
+        },
+        {
+          "item": "葛瑞克的大卢恩",
+          "weight": 1
+        }
+      ]
+    },
+    {
+      "trigger_id": "D05311",
+      "kind": "制式独立候选",
+      "base_denominator": 15000,
+      "quantity": 1,
+      "corpse_handling": "use_existing_engine_once",
+      "apply_player_drop_rate": true,
+      "selection": "one_weighted",
+      "pool_id": "POOL094",
+      "candidates": [
+        {
+          "item": "古龙近卫剑",
+          "weight": 1
+        },
+        {
+          "item": "古龙近卫战甲",
+          "weight": 1
+        },
+        {
+          "item": "古龙近卫战盔",
+          "weight": 1
+        },
+        {
+          "item": "古龙近卫项链",
+          "weight": 1
+        },
+        {
+          "item": "古龙近卫腕甲",
+          "weight": 1
+        },
+        {
+          "item": "古龙近卫戒指",
+          "weight": 1
+        },
+        {
+          "item": "古龙近卫腰带",
+          "weight": 1
+        },
+        {
+          "item": "古龙近卫战靴",
+          "weight": 1
+        },
+        {
+          "item": "神授征服剑",
+          "weight": 1
+        },
+        {
+          "item": "神授征服战甲",
+          "weight": 1
+        },
+        {
+          "item": "神授征服战盔",
+          "weight": 1
+        },
+        {
+          "item": "神授征服项链",
+          "weight": 1
+        },
+        {
+          "item": "神授征服腕甲",
+          "weight": 1
+        },
+        {
+          "item": "神授征服戒指",
+          "weight": 1
+        },
+        {
+          "item": "神授征服腰带",
+          "weight": 1
+        },
+        {
+          "item": "神授征服战靴",
+          "weight": 1
+        }
+      ]
+    },
+    {
+      "trigger_id": "D05336",
+      "kind": "称号卷",
+      "base_denominator": 600,
+      "quantity": 1,
+      "corpse_handling": "use_existing_engine_once",
+      "apply_player_drop_rate": true,
+      "selection": "independent",
+      "item": "[称号]黑翼葬日"
+    }
+  ],
+  "deployment": "archive_only_until_user_authorizes; verify_stack_parser_before_install"
+}

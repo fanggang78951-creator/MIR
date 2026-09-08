@@ -1,0 +1,210 @@
+{
+  "monster_id": "EL-MON-CLIFF-007",
+  "name": "逐雷骑士",
+  "continent": 1,
+  "map_group_index_zero_based": 1,
+  "role": "稀有",
+  "triggers": [
+    {
+      "trigger_id": "D00087",
+      "kind": "自身专属",
+      "base_denominator": 120,
+      "quantity": 1,
+      "corpse_handling": "use_existing_engine_once",
+      "apply_player_drop_rate": true,
+      "selection": "independent",
+      "item": "逐雷战靴"
+    },
+    {
+      "trigger_id": "D00088",
+      "kind": "材料独立候选",
+      "base_denominator": 300,
+      "quantity": 15,
+      "corpse_handling": "use_existing_engine_once",
+      "apply_player_drop_rate": true,
+      "selection": "independent",
+      "item": "海蚀铁片"
+    },
+    {
+      "trigger_id": "D00089",
+      "kind": "材料独立候选",
+      "base_denominator": 120,
+      "quantity": 1,
+      "corpse_handling": "use_existing_engine_once",
+      "apply_player_drop_rate": true,
+      "selection": "independent",
+      "item": "潮痕结晶"
+    },
+    {
+      "trigger_id": "D00090",
+      "kind": "材料独立候选",
+      "base_denominator": 150,
+      "quantity": 1,
+      "corpse_handling": "use_existing_engine_once",
+      "apply_player_drop_rate": true,
+      "selection": "independent",
+      "item": "逐雷魂印"
+    },
+    {
+      "trigger_id": "D00091",
+      "kind": "材料独立候选",
+      "base_denominator": 40,
+      "quantity": 1,
+      "corpse_handling": "use_existing_engine_once",
+      "apply_player_drop_rate": true,
+      "selection": "independent",
+      "item": "技能残页"
+    },
+    {
+      "trigger_id": "D00092",
+      "kind": "材料独立候选",
+      "base_denominator": 1500,
+      "quantity": 1,
+      "corpse_handling": "use_existing_engine_once",
+      "apply_player_drop_rate": true,
+      "selection": "independent",
+      "item": "小卢恩"
+    },
+    {
+      "trigger_id": "D05247",
+      "kind": "制式独立候选",
+      "base_denominator": 1000,
+      "quantity": 1,
+      "corpse_handling": "use_existing_engine_once",
+      "apply_player_drop_rate": true,
+      "selection": "one_weighted",
+      "pool_id": "POOL089",
+      "candidates": [
+        {
+          "item": "断崖铁卫重剑",
+          "weight": 1
+        },
+        {
+          "item": "断崖铁卫战甲",
+          "weight": 1
+        },
+        {
+          "item": "断崖铁卫战盔",
+          "weight": 1
+        },
+        {
+          "item": "断崖铁卫项链",
+          "weight": 1
+        },
+        {
+          "item": "断崖铁卫腕甲",
+          "weight": 1
+        },
+        {
+          "item": "断崖铁卫戒指",
+          "weight": 1
+        },
+        {
+          "item": "断崖铁卫腰带",
+          "weight": 1
+        },
+        {
+          "item": "断崖铁卫战靴",
+          "weight": 1
+        },
+        {
+          "item": "风暴骑士剑",
+          "weight": 1
+        },
+        {
+          "item": "风暴骑士战甲",
+          "weight": 1
+        },
+        {
+          "item": "风暴骑士战盔",
+          "weight": 1
+        },
+        {
+          "item": "风暴骑士项链",
+          "weight": 1
+        },
+        {
+          "item": "风暴骑士腕甲",
+          "weight": 1
+        },
+        {
+          "item": "风暴骑士戒指",
+          "weight": 1
+        },
+        {
+          "item": "风暴骑士腰带",
+          "weight": 1
+        },
+        {
+          "item": "风暴骑士战靴",
+          "weight": 1
+        },
+        {
+          "item": "海雾战团战刃",
+          "weight": 1
+        },
+        {
+          "item": "海雾战团战甲",
+          "weight": 1
+        },
+        {
+          "item": "海雾战团战盔",
+          "weight": 1
+        },
+        {
+          "item": "海雾战团项链",
+          "weight": 1
+        },
+        {
+          "item": "海雾战团腕甲",
+          "weight": 1
+        },
+        {
+          "item": "海雾战团戒指",
+          "weight": 1
+        },
+        {
+          "item": "海雾战团腰带",
+          "weight": 1
+        },
+        {
+          "item": "海雾战团战靴",
+          "weight": 1
+        },
+        {
+          "item": "沉船守卫古剑",
+          "weight": 1
+        },
+        {
+          "item": "沉船守卫战甲",
+          "weight": 1
+        },
+        {
+          "item": "沉船守卫战盔",
+          "weight": 1
+        },
+        {
+          "item": "沉船守卫项链",
+          "weight": 1
+        },
+        {
+          "item": "沉船守卫腕甲",
+          "weight": 1
+        },
+        {
+          "item": "沉船守卫戒指",
+          "weight": 1
+        },
+        {
+          "item": "沉船守卫腰带",
+          "weight": 1
+        },
+        {
+          "item": "沉船守卫战靴",
+          "weight": 1
+        }
+      ]
+    }
+  ],
+  "deployment": "archive_only_until_user_authorizes; verify_stack_parser_before_install"
+}

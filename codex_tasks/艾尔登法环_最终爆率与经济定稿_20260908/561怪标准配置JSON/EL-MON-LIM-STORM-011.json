@@ -1,0 +1,252 @@
+{
+  "monster_id": "EL-MON-LIM-STORM-011",
+  "name": "风暴君王·奥雷格",
+  "continent": 2,
+  "map_group_index_zero_based": 3,
+  "role": "地图BOSS",
+  "triggers": [
+    {
+      "trigger_id": "D00536",
+      "kind": "自身专属",
+      "base_denominator": 30,
+      "quantity": 1,
+      "corpse_handling": "use_existing_engine_once",
+      "apply_player_drop_rate": true,
+      "selection": "independent",
+      "item": "雷冠申猴"
+    },
+    {
+      "trigger_id": "D00537",
+      "kind": "本图普通兼掉候选",
+      "base_denominator": 30,
+      "quantity": 1,
+      "corpse_handling": "use_existing_engine_once",
+      "apply_player_drop_rate": true,
+      "selection": "one_weighted",
+      "pool_id": "POOL010",
+      "candidates": [
+        {
+          "item": "流寇束带",
+          "weight": 1
+        },
+        {
+          "item": "雷痕石盾",
+          "weight": 1
+        }
+      ]
+    },
+    {
+      "trigger_id": "D00538",
+      "kind": "材料独立候选",
+      "base_denominator": 150,
+      "quantity": 30,
+      "corpse_handling": "use_existing_engine_once",
+      "apply_player_drop_rate": true,
+      "selection": "independent",
+      "item": "风暴石片"
+    },
+    {
+      "trigger_id": "D00539",
+      "kind": "材料独立候选",
+      "base_denominator": 30,
+      "quantity": 2,
+      "corpse_handling": "use_existing_engine_once",
+      "apply_player_drop_rate": true,
+      "selection": "independent",
+      "item": "黄金树芽"
+    },
+    {
+      "trigger_id": "D00540",
+      "kind": "材料独立候选",
+      "base_denominator": 80,
+      "quantity": 2,
+      "corpse_handling": "use_existing_engine_once",
+      "apply_player_drop_rate": true,
+      "selection": "independent",
+      "item": "接肢王印"
+    },
+    {
+      "trigger_id": "D00541",
+      "kind": "材料独立候选",
+      "base_denominator": 60,
+      "quantity": 1,
+      "corpse_handling": "use_existing_engine_once",
+      "apply_player_drop_rate": true,
+      "selection": "independent",
+      "item": "风暴王核"
+    },
+    {
+      "trigger_id": "D00542",
+      "kind": "材料独立候选",
+      "base_denominator": 40,
+      "quantity": 2,
+      "corpse_handling": "use_existing_engine_once",
+      "apply_player_drop_rate": true,
+      "selection": "independent",
+      "item": "野兽骨片"
+    },
+    {
+      "trigger_id": "D00543",
+      "kind": "材料独立候选",
+      "base_denominator": 30,
+      "quantity": 1,
+      "corpse_handling": "use_existing_engine_once",
+      "apply_player_drop_rate": true,
+      "selection": "independent",
+      "item": "技能残页"
+    },
+    {
+      "trigger_id": "D00544",
+      "kind": "材料独立候选",
+      "base_denominator": 180,
+      "quantity": 1,
+      "corpse_handling": "use_existing_engine_once",
+      "apply_player_drop_rate": true,
+      "selection": "independent",
+      "item": "宁姆格福誓页"
+    },
+    {
+      "trigger_id": "D00545",
+      "kind": "材料独立候选",
+      "base_denominator": 1200,
+      "quantity": 1,
+      "corpse_handling": "use_existing_engine_once",
+      "apply_player_drop_rate": true,
+      "selection": "independent",
+      "item": "小卢恩"
+    },
+    {
+      "trigger_id": "D00546",
+      "kind": "材料独立候选",
+      "base_denominator": 120,
+      "quantity": 1,
+      "corpse_handling": "use_existing_engine_once",
+      "apply_player_drop_rate": true,
+      "selection": "independent",
+      "item": "大卢恩"
+    },
+    {
+      "trigger_id": "D00547",
+      "kind": "六神器公共池",
+      "base_denominator": 200000,
+      "quantity": 1,
+      "corpse_handling": "use_existing_engine_once",
+      "apply_player_drop_rate": true,
+      "selection": "one_weighted",
+      "pool_id": "POOL006",
+      "candidates": [
+        {
+          "item": "玛莲妮亚的大卢恩",
+          "weight": 1
+        },
+        {
+          "item": "拉塔恩的大卢恩",
+          "weight": 1
+        },
+        {
+          "item": "蒙葛特的大卢恩",
+          "weight": 1
+        },
+        {
+          "item": "蒙格的大卢恩",
+          "weight": 1
+        },
+        {
+          "item": "拉卡德的大卢恩",
+          "weight": 1
+        },
+        {
+          "item": "葛瑞克的大卢恩",
+          "weight": 1
+        }
+      ]
+    },
+    {
+      "trigger_id": "D05312",
+      "kind": "制式独立候选",
+      "base_denominator": 4000,
+      "quantity": 1,
+      "corpse_handling": "use_existing_engine_once",
+      "apply_player_drop_rate": true,
+      "selection": "one_weighted",
+      "pool_id": "POOL094",
+      "candidates": [
+        {
+          "item": "古龙近卫剑",
+          "weight": 1
+        },
+        {
+          "item": "古龙近卫战甲",
+          "weight": 1
+        },
+        {
+          "item": "古龙近卫战盔",
+          "weight": 1
+        },
+        {
+          "item": "古龙近卫项链",
+          "weight": 1
+        },
+        {
+          "item": "古龙近卫腕甲",
+          "weight": 1
+        },
+        {
+          "item": "古龙近卫戒指",
+          "weight": 1
+        },
+        {
+          "item": "古龙近卫腰带",
+          "weight": 1
+        },
+        {
+          "item": "古龙近卫战靴",
+          "weight": 1
+        },
+        {
+          "item": "神授征服剑",
+          "weight": 1
+        },
+        {
+          "item": "神授征服战甲",
+          "weight": 1
+        },
+        {
+          "item": "神授征服战盔",
+          "weight": 1
+        },
+        {
+          "item": "神授征服项链",
+          "weight": 1
+        },
+        {
+          "item": "神授征服腕甲",
+          "weight": 1
+        },
+        {
+          "item": "神授征服戒指",
+          "weight": 1
+        },
+        {
+          "item": "神授征服腰带",
+          "weight": 1
+        },
+        {
+          "item": "神授征服战靴",
+          "weight": 1
+        }
+      ]
+    },
+    {
+      "trigger_id": "D05337",
+      "kind": "称号卷",
+      "base_denominator": 250,
+      "quantity": 1,
+      "corpse_handling": "use_existing_engine_once",
+      "apply_player_drop_rate": true,
+      "selection": "independent",
+      "item": "[称号]雷冠之主"
+    }
+  ],
+  "deployment": "archive_only_until_user_authorizes; verify_stack_parser_before_install"
+}

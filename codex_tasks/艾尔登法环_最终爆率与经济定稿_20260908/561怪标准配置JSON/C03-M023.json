@@ -1,0 +1,182 @@
+{
+  "monster_id": "C03-M023",
+  "name": "裂风执旗官·卡恩",
+  "continent": 3,
+  "map_group_index_zero_based": 1,
+  "role": "地图BOSS",
+  "triggers": [
+    {
+      "trigger_id": "D00861",
+      "kind": "自身专属",
+      "base_denominator": 30,
+      "quantity": 1,
+      "corpse_handling": "use_existing_engine_once",
+      "apply_player_drop_rate": true,
+      "selection": "independent",
+      "item": "裂风战旗刃"
+    },
+    {
+      "trigger_id": "D00862",
+      "kind": "本图普通兼掉候选",
+      "base_denominator": 30,
+      "quantity": 1,
+      "corpse_handling": "use_existing_engine_once",
+      "apply_player_drop_rate": true,
+      "selection": "one_weighted",
+      "pool_id": "POOL014",
+      "candidates": [
+        {
+          "item": "裂羽护腕",
+          "weight": 1
+        }
+      ]
+    },
+    {
+      "trigger_id": "D00863",
+      "kind": "材料独立候选",
+      "base_denominator": 200,
+      "quantity": 30,
+      "corpse_handling": "use_existing_engine_once",
+      "apply_player_drop_rate": true,
+      "selection": "independent",
+      "item": "风蚀铁片"
+    },
+    {
+      "trigger_id": "D00864",
+      "kind": "材料独立候选",
+      "base_denominator": 400,
+      "quantity": 1,
+      "corpse_handling": "use_existing_engine_once",
+      "apply_player_drop_rate": true,
+      "selection": "independent",
+      "item": "西境战旗"
+    },
+    {
+      "trigger_id": "D00865",
+      "kind": "材料独立候选",
+      "base_denominator": 100,
+      "quantity": 2,
+      "corpse_handling": "use_existing_engine_once",
+      "apply_player_drop_rate": true,
+      "selection": "independent",
+      "item": "西境战旗印"
+    },
+    {
+      "trigger_id": "D00866",
+      "kind": "材料独立候选",
+      "base_denominator": 100,
+      "quantity": 1,
+      "corpse_handling": "use_existing_engine_once",
+      "apply_player_drop_rate": true,
+      "selection": "independent",
+      "item": "守垒铜钥"
+    },
+    {
+      "trigger_id": "D00867",
+      "kind": "材料独立候选",
+      "base_denominator": 200000,
+      "quantity": 1,
+      "corpse_handling": "use_existing_engine_once",
+      "apply_player_drop_rate": true,
+      "selection": "independent",
+      "item": "西境风痕碑拓"
+    },
+    {
+      "trigger_id": "D00868",
+      "kind": "材料独立候选",
+      "base_denominator": 800,
+      "quantity": 1,
+      "corpse_handling": "use_existing_engine_once",
+      "apply_player_drop_rate": true,
+      "selection": "independent",
+      "item": "黄金树芽"
+    },
+    {
+      "trigger_id": "D00869",
+      "kind": "材料独立候选",
+      "base_denominator": 30,
+      "quantity": 2,
+      "corpse_handling": "use_existing_engine_once",
+      "apply_player_drop_rate": true,
+      "selection": "independent",
+      "item": "野兽骨片"
+    },
+    {
+      "trigger_id": "D00870",
+      "kind": "材料独立候选",
+      "base_denominator": 80,
+      "quantity": 1,
+      "corpse_handling": "use_existing_engine_once",
+      "apply_player_drop_rate": true,
+      "selection": "independent",
+      "item": "技能残页"
+    },
+    {
+      "trigger_id": "D00871",
+      "kind": "材料独立候选",
+      "base_denominator": 180,
+      "quantity": 1,
+      "corpse_handling": "use_existing_engine_once",
+      "apply_player_drop_rate": true,
+      "selection": "independent",
+      "item": "宁姆格福誓页"
+    },
+    {
+      "trigger_id": "D00872",
+      "kind": "材料独立候选",
+      "base_denominator": 1200,
+      "quantity": 1,
+      "corpse_handling": "use_existing_engine_once",
+      "apply_player_drop_rate": true,
+      "selection": "independent",
+      "item": "小卢恩"
+    },
+    {
+      "trigger_id": "D00873",
+      "kind": "材料独立候选",
+      "base_denominator": 120,
+      "quantity": 1,
+      "corpse_handling": "use_existing_engine_once",
+      "apply_player_drop_rate": true,
+      "selection": "independent",
+      "item": "大卢恩"
+    },
+    {
+      "trigger_id": "D00874",
+      "kind": "六神器公共池",
+      "base_denominator": 200000,
+      "quantity": 1,
+      "corpse_handling": "use_existing_engine_once",
+      "apply_player_drop_rate": true,
+      "selection": "one_weighted",
+      "pool_id": "POOL006",
+      "candidates": [
+        {
+          "item": "玛莲妮亚的大卢恩",
+          "weight": 1
+        },
+        {
+          "item": "拉塔恩的大卢恩",
+          "weight": 1
+        },
+        {
+          "item": "蒙葛特的大卢恩",
+          "weight": 1
+        },
+        {
+          "item": "蒙格的大卢恩",
+          "weight": 1
+        },
+        {
+          "item": "拉卡德的大卢恩",
+          "weight": 1
+        },
+        {
+          "item": "葛瑞克的大卢恩",
+          "weight": 1
+        }
+      ]
+    }
+  ],
+  "deployment": "archive_only_until_user_authorizes; verify_stack_parser_before_install"
+}

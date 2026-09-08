@@ -1,0 +1,166 @@
+{
+  "monster_id": "C08-M049",
+  "name": "吞日霜王·乌尔迈",
+  "continent": 8,
+  "map_group_index_zero_based": 3,
+  "role": "守关BOSS",
+  "triggers": [
+    {
+      "trigger_id": "D03997",
+      "kind": "自身专属",
+      "base_denominator": 200,
+      "quantity": 1,
+      "corpse_handling": "use_existing_engine_once",
+      "apply_player_drop_rate": true,
+      "selection": "independent",
+      "item": "乌尔迈吞日巨剑"
+    },
+    {
+      "trigger_id": "D03998",
+      "kind": "自身专属",
+      "base_denominator": 200,
+      "quantity": 1,
+      "corpse_handling": "use_existing_engine_once",
+      "apply_player_drop_rate": true,
+      "selection": "independent",
+      "item": "吞日礼戟"
+    },
+    {
+      "trigger_id": "D03999",
+      "kind": "自身专属",
+      "base_denominator": 200,
+      "quantity": 1,
+      "corpse_handling": "use_existing_engine_once",
+      "apply_player_drop_rate": true,
+      "selection": "independent",
+      "item": "熔雪王袍"
+    },
+    {
+      "trigger_id": "D04000",
+      "kind": "本图普通兼掉候选",
+      "base_denominator": 150,
+      "quantity": 1,
+      "corpse_handling": "use_existing_engine_once",
+      "apply_player_drop_rate": true,
+      "selection": "one_weighted",
+      "pool_id": "POOL067",
+      "candidates": [
+        {
+          "item": "冰铃童腕镯",
+          "weight": 1
+        },
+        {
+          "item": "负碑王座盾",
+          "weight": 1
+        }
+      ]
+    },
+    {
+      "trigger_id": "D04001",
+      "kind": "材料独立候选",
+      "base_denominator": 1,
+      "quantity": 40,
+      "corpse_handling": "use_existing_engine_once",
+      "apply_player_drop_rate": true,
+      "selection": "independent",
+      "item": "霜脊铁"
+    },
+    {
+      "trigger_id": "D04002",
+      "kind": "材料独立候选",
+      "base_denominator": 1,
+      "quantity": 1,
+      "corpse_handling": "use_existing_engine_once",
+      "apply_player_drop_rate": true,
+      "selection": "independent",
+      "item": "巨人火种"
+    },
+    {
+      "trigger_id": "D04003",
+      "kind": "材料独立候选",
+      "base_denominator": 1,
+      "quantity": 1,
+      "corpse_handling": "use_existing_engine_once",
+      "apply_player_drop_rate": true,
+      "selection": "independent",
+      "item": "巨人火印"
+    },
+    {
+      "trigger_id": "D04004",
+      "kind": "材料独立候选",
+      "base_denominator": 1,
+      "quantity": 1,
+      "corpse_handling": "use_existing_engine_once",
+      "apply_player_drop_rate": true,
+      "selection": "independent",
+      "item": "王庭炉冠"
+    },
+    {
+      "trigger_id": "D04005",
+      "kind": "材料独立候选",
+      "base_denominator": 15000,
+      "quantity": 1,
+      "corpse_handling": "use_existing_engine_once",
+      "apply_player_drop_rate": true,
+      "selection": "independent",
+      "item": "穹霜碑珀"
+    },
+    {
+      "trigger_id": "D04006",
+      "kind": "材料独立候选",
+      "base_denominator": 1,
+      "quantity": 1,
+      "corpse_handling": "use_existing_engine_once",
+      "apply_player_drop_rate": true,
+      "selection": "independent",
+      "item": "黄金树芽"
+    },
+    {
+      "trigger_id": "D04007",
+      "kind": "六神器公共池",
+      "base_denominator": 40000,
+      "quantity": 1,
+      "corpse_handling": "use_existing_engine_once",
+      "apply_player_drop_rate": true,
+      "selection": "one_weighted",
+      "pool_id": "POOL006",
+      "candidates": [
+        {
+          "item": "玛莲妮亚的大卢恩",
+          "weight": 1
+        },
+        {
+          "item": "拉塔恩的大卢恩",
+          "weight": 1
+        },
+        {
+          "item": "蒙葛特的大卢恩",
+          "weight": 1
+        },
+        {
+          "item": "蒙格的大卢恩",
+          "weight": 1
+        },
+        {
+          "item": "拉卡德的大卢恩",
+          "weight": 1
+        },
+        {
+          "item": "葛瑞克的大卢恩",
+          "weight": 1
+        }
+      ]
+    },
+    {
+      "trigger_id": "D05349",
+      "kind": "称号卷",
+      "base_denominator": 800,
+      "quantity": 1,
+      "corpse_handling": "use_existing_engine_once",
+      "apply_player_drop_rate": true,
+      "selection": "independent",
+      "item": "[称号]吞日霜王"
+    }
+  ],
+  "deployment": "archive_only_until_user_authorizes; verify_stack_parser_before_install"
+}

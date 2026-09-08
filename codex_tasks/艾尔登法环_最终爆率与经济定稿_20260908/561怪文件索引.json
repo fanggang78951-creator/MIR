@@ -1,0 +1,5612 @@
+[
+  {
+    "monster_id": "EL-MON-SEA-001",
+    "name": "盐蚀流民",
+    "continent": 1,
+    "role": "普通",
+    "trigger_count": 5,
+    "utf8": "MonItems_UTF8_部署前预检/盐蚀流民.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/盐蚀流民.txt",
+    "json": "561怪标准配置JSON/EL-MON-SEA-001.json"
+  },
+  {
+    "monster_id": "EL-MON-SEA-002",
+    "name": "断桨弩手",
+    "continent": 1,
+    "role": "普通",
+    "trigger_count": 5,
+    "utf8": "MonItems_UTF8_部署前预检/断桨弩手.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/断桨弩手.txt",
+    "json": "561怪标准配置JSON/EL-MON-SEA-002.json"
+  },
+  {
+    "monster_id": "EL-MON-SEA-003",
+    "name": "漂流尸兵",
+    "continent": 1,
+    "role": "普通",
+    "trigger_count": 5,
+    "utf8": "MonItems_UTF8_部署前预检/漂流尸兵.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/漂流尸兵.txt",
+    "json": "561怪标准配置JSON/EL-MON-SEA-003.json"
+  },
+  {
+    "monster_id": "EL-MON-SEA-004",
+    "name": "失乡猎犬",
+    "continent": 1,
+    "role": "普通",
+    "trigger_count": 5,
+    "utf8": "MonItems_UTF8_部署前预检/失乡猎犬.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/失乡猎犬.txt",
+    "json": "561怪标准配置JSON/EL-MON-SEA-004.json"
+  },
+  {
+    "monster_id": "EL-MON-SEA-005",
+    "name": "腐潮巨蟹",
+    "continent": 1,
+    "role": "普通",
+    "trigger_count": 5,
+    "utf8": "MonItems_UTF8_部署前预检/腐潮巨蟹.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/腐潮巨蟹.txt",
+    "json": "561怪标准配置JSON/EL-MON-SEA-005.json"
+  },
+  {
+    "monster_id": "EL-MON-SEA-006",
+    "name": "铁锚行刑者",
+    "continent": 1,
+    "role": "稀有",
+    "trigger_count": 7,
+    "utf8": "MonItems_UTF8_部署前预检/铁锚行刑者.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/铁锚行刑者.txt",
+    "json": "561怪标准配置JSON/EL-MON-SEA-006.json"
+  },
+  {
+    "monster_id": "EL-MON-SEA-007",
+    "name": "唤潮祷师",
+    "continent": 1,
+    "role": "稀有",
+    "trigger_count": 6,
+    "utf8": "MonItems_UTF8_部署前预检/唤潮祷师.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/唤潮祷师.txt",
+    "json": "561怪标准配置JSON/EL-MON-SEA-007.json"
+  },
+  {
+    "monster_id": "EL-MON-SEA-008",
+    "name": "沉船守财者",
+    "continent": 1,
+    "role": "稀有",
+    "trigger_count": 7,
+    "utf8": "MonItems_UTF8_部署前预检/沉船守财者.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/沉船守财者.txt",
+    "json": "561怪标准配置JSON/EL-MON-SEA-008.json"
+  },
+  {
+    "monster_id": "EL-MON-SEA-009",
+    "name": "海雾骑士",
+    "continent": 1,
+    "role": "稀有",
+    "trigger_count": 6,
+    "utf8": "MonItems_UTF8_部署前预检/海雾骑士.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/海雾骑士.txt",
+    "json": "561怪标准配置JSON/EL-MON-SEA-009.json"
+  },
+  {
+    "monster_id": "EL-MON-SEA-010",
+    "name": "断桅船长·赫恩",
+    "continent": 1,
+    "role": "地图BOSS",
+    "trigger_count": 11,
+    "utf8": "MonItems_UTF8_部署前预检/断桅船长·赫恩.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/断桅船长·赫恩.txt",
+    "json": "561怪标准配置JSON/EL-MON-SEA-010.json"
+  },
+  {
+    "monster_id": "EL-MON-SEA-011",
+    "name": "吞岸巨兽·格拉姆",
+    "continent": 1,
+    "role": "地图BOSS",
+    "trigger_count": 11,
+    "utf8": "MonItems_UTF8_部署前预检/吞岸巨兽·格拉姆.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/吞岸巨兽·格拉姆.txt",
+    "json": "561怪标准配置JSON/EL-MON-SEA-011.json"
+  },
+  {
+    "monster_id": "EL-MON-CLIFF-001",
+    "name": "风蚀守卫",
+    "continent": 1,
+    "role": "普通",
+    "trigger_count": 5,
+    "utf8": "MonItems_UTF8_部署前预检/风蚀守卫.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/风蚀守卫.txt",
+    "json": "561怪标准配置JSON/EL-MON-CLIFF-001.json"
+  },
+  {
+    "monster_id": "EL-MON-CLIFF-002",
+    "name": "断崖弩手",
+    "continent": 1,
+    "role": "普通",
+    "trigger_count": 5,
+    "utf8": "MonItems_UTF8_部署前预检/断崖弩手.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/断崖弩手.txt",
+    "json": "561怪标准配置JSON/EL-MON-CLIFF-002.json"
+  },
+  {
+    "monster_id": "EL-MON-CLIFF-003",
+    "name": "雷羽鹰",
+    "continent": 1,
+    "role": "普通",
+    "trigger_count": 5,
+    "utf8": "MonItems_UTF8_部署前预检/雷羽鹰.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/雷羽鹰.txt",
+    "json": "561怪标准配置JSON/EL-MON-CLIFF-003.json"
+  },
+  {
+    "monster_id": "EL-MON-CLIFF-004",
+    "name": "狂风战奴",
+    "continent": 1,
+    "role": "普通",
+    "trigger_count": 5,
+    "utf8": "MonItems_UTF8_部署前预检/狂风战奴.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/狂风战奴.txt",
+    "json": "561怪标准配置JSON/EL-MON-CLIFF-004.json"
+  },
+  {
+    "monster_id": "EL-MON-CLIFF-005",
+    "name": "坠崖亡兵",
+    "continent": 1,
+    "role": "普通",
+    "trigger_count": 5,
+    "utf8": "MonItems_UTF8_部署前预检/坠崖亡兵.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/坠崖亡兵.txt",
+    "json": "561怪标准配置JSON/EL-MON-CLIFF-005.json"
+  },
+  {
+    "monster_id": "EL-MON-CLIFF-006",
+    "name": "崖穴石蜥",
+    "continent": 1,
+    "role": "普通",
+    "trigger_count": 5,
+    "utf8": "MonItems_UTF8_部署前预检/崖穴石蜥.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/崖穴石蜥.txt",
+    "json": "561怪标准配置JSON/EL-MON-CLIFF-006.json"
+  },
+  {
+    "monster_id": "EL-MON-CLIFF-007",
+    "name": "逐雷骑士",
+    "continent": 1,
+    "role": "稀有",
+    "trigger_count": 7,
+    "utf8": "MonItems_UTF8_部署前预检/逐雷骑士.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/逐雷骑士.txt",
+    "json": "561怪标准配置JSON/EL-MON-CLIFF-007.json"
+  },
+  {
+    "monster_id": "EL-MON-CLIFF-008",
+    "name": "风暴祭司",
+    "continent": 1,
+    "role": "稀有",
+    "trigger_count": 6,
+    "utf8": "MonItems_UTF8_部署前预检/风暴祭司.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/风暴祭司.txt",
+    "json": "561怪标准配置JSON/EL-MON-CLIFF-008.json"
+  },
+  {
+    "monster_id": "EL-MON-CLIFF-009",
+    "name": "裂岩巨人",
+    "continent": 1,
+    "role": "稀有",
+    "trigger_count": 7,
+    "utf8": "MonItems_UTF8_部署前预检/裂岩巨人.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/裂岩巨人.txt",
+    "json": "561怪标准配置JSON/EL-MON-CLIFF-009.json"
+  },
+  {
+    "monster_id": "EL-MON-CLIFF-010",
+    "name": "黑翼猎杀者",
+    "continent": 1,
+    "role": "稀有",
+    "trigger_count": 6,
+    "utf8": "MonItems_UTF8_部署前预检/黑翼猎杀者.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/黑翼猎杀者.txt",
+    "json": "561怪标准配置JSON/EL-MON-CLIFF-010.json"
+  },
+  {
+    "monster_id": "EL-MON-CLIFF-011",
+    "name": "风暴执刑官·巴鲁克",
+    "continent": 1,
+    "role": "地图BOSS",
+    "trigger_count": 11,
+    "utf8": "MonItems_UTF8_部署前预检/风暴执刑官·巴鲁克.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/风暴执刑官·巴鲁克.txt",
+    "json": "561怪标准配置JSON/EL-MON-CLIFF-011.json"
+  },
+  {
+    "monster_id": "EL-MON-CLIFF-012",
+    "name": "断崖古龙·赛尔",
+    "continent": 1,
+    "role": "地图BOSS",
+    "trigger_count": 11,
+    "utf8": "MonItems_UTF8_部署前预检/断崖古龙·赛尔.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/断崖古龙·赛尔.txt",
+    "json": "561怪标准配置JSON/EL-MON-CLIFF-012.json"
+  },
+  {
+    "monster_id": "EL-MON-COURT-001",
+    "name": "溺亡禁卫",
+    "continent": 1,
+    "role": "普通",
+    "trigger_count": 5,
+    "utf8": "MonItems_UTF8_部署前预检/溺亡禁卫.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/溺亡禁卫.txt",
+    "json": "561怪标准配置JSON/EL-MON-COURT-001.json"
+  },
+  {
+    "monster_id": "EL-MON-COURT-002",
+    "name": "沉宫侍从",
+    "continent": 1,
+    "role": "普通",
+    "trigger_count": 5,
+    "utf8": "MonItems_UTF8_部署前预检/沉宫侍从.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/沉宫侍从.txt",
+    "json": "561怪标准配置JSON/EL-MON-COURT-002.json"
+  },
+  {
+    "monster_id": "EL-MON-COURT-003",
+    "name": "苔甲骑兵",
+    "continent": 1,
+    "role": "普通",
+    "trigger_count": 5,
+    "utf8": "MonItems_UTF8_部署前预检/苔甲骑兵.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/苔甲骑兵.txt",
+    "json": "561怪标准配置JSON/EL-MON-COURT-003.json"
+  },
+  {
+    "monster_id": "EL-MON-COURT-004",
+    "name": "王庭咒师",
+    "continent": 1,
+    "role": "普通",
+    "trigger_count": 5,
+    "utf8": "MonItems_UTF8_部署前预检/王庭咒师.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/王庭咒师.txt",
+    "json": "561怪标准配置JSON/EL-MON-COURT-004.json"
+  },
+  {
+    "monster_id": "EL-MON-COURT-005",
+    "name": "深水石像",
+    "continent": 1,
+    "role": "普通",
+    "trigger_count": 5,
+    "utf8": "MonItems_UTF8_部署前预检/深水石像.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/深水石像.txt",
+    "json": "561怪标准配置JSON/EL-MON-COURT-005.json"
+  },
+  {
+    "monster_id": "EL-MON-COURT-006",
+    "name": "幽灯侍者",
+    "continent": 1,
+    "role": "普通",
+    "trigger_count": 5,
+    "utf8": "MonItems_UTF8_部署前预检/幽灯侍者.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/幽灯侍者.txt",
+    "json": "561怪标准配置JSON/EL-MON-COURT-006.json"
+  },
+  {
+    "monster_id": "EL-MON-COURT-007",
+    "name": "失冠王子",
+    "continent": 1,
+    "role": "稀有",
+    "trigger_count": 7,
+    "utf8": "MonItems_UTF8_部署前预检/失冠王子.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/失冠王子.txt",
+    "json": "561怪标准配置JSON/EL-MON-COURT-007.json"
+  },
+  {
+    "monster_id": "EL-MON-COURT-008",
+    "name": "深渊看守",
+    "continent": 1,
+    "role": "稀有",
+    "trigger_count": 6,
+    "utf8": "MonItems_UTF8_部署前预检/深渊看守.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/深渊看守.txt",
+    "json": "561怪标准配置JSON/EL-MON-COURT-008.json"
+  },
+  {
+    "monster_id": "EL-MON-COURT-009",
+    "name": "王庭裁决官",
+    "continent": 1,
+    "role": "稀有",
+    "trigger_count": 6,
+    "utf8": "MonItems_UTF8_部署前预检/王庭裁决官.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/王庭裁决官.txt",
+    "json": "561怪标准配置JSON/EL-MON-COURT-009.json"
+  },
+  {
+    "monster_id": "EL-MON-COURT-010",
+    "name": "沉默女祭司",
+    "continent": 1,
+    "role": "稀有",
+    "trigger_count": 7,
+    "utf8": "MonItems_UTF8_部署前预检/沉默女祭司.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/沉默女祭司.txt",
+    "json": "561怪标准配置JSON/EL-MON-COURT-010.json"
+  },
+  {
+    "monster_id": "EL-MON-COURT-011",
+    "name": "溺王亲卫长·萨恩",
+    "continent": 1,
+    "role": "地图BOSS",
+    "trigger_count": 10,
+    "utf8": "MonItems_UTF8_部署前预检/溺王亲卫长·萨恩.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/溺王亲卫长·萨恩.txt",
+    "json": "561怪标准配置JSON/EL-MON-COURT-011.json"
+  },
+  {
+    "monster_id": "EL-MON-COURT-012",
+    "name": "深潮大祭司·伊莱娜",
+    "continent": 1,
+    "role": "地图BOSS",
+    "trigger_count": 10,
+    "utf8": "MonItems_UTF8_部署前预检/深潮大祭司·伊莱娜.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/深潮大祭司·伊莱娜.txt",
+    "json": "561怪标准配置JSON/EL-MON-COURT-012.json"
+  },
+  {
+    "monster_id": "EL-MON-COURT-013",
+    "name": "沉没之王·奥德里安",
+    "continent": 1,
+    "role": "守关BOSS",
+    "trigger_count": 9,
+    "utf8": "MonItems_UTF8_部署前预检/沉没之王·奥德里安.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/沉没之王·奥德里安.txt",
+    "json": "561怪标准配置JSON/EL-MON-COURT-013.json"
+  },
+  {
+    "monster_id": "EL-MON-LIM-GRAVE-001",
+    "name": "褪色墓卒",
+    "continent": 2,
+    "role": "普通",
+    "trigger_count": 7,
+    "utf8": "MonItems_UTF8_部署前预检/褪色墓卒.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/褪色墓卒.txt",
+    "json": "561怪标准配置JSON/EL-MON-LIM-GRAVE-001.json"
+  },
+  {
+    "monster_id": "EL-MON-LIM-GRAVE-002",
+    "name": "漂泊腐尸",
+    "continent": 2,
+    "role": "普通",
+    "trigger_count": 7,
+    "utf8": "MonItems_UTF8_部署前预检/漂泊腐尸.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/漂泊腐尸.txt",
+    "json": "561怪标准配置JSON/EL-MON-LIM-GRAVE-002.json"
+  },
+  {
+    "monster_id": "EL-MON-LIM-GRAVE-003",
+    "name": "墓穴尖牙鬼",
+    "continent": 2,
+    "role": "普通",
+    "trigger_count": 7,
+    "utf8": "MonItems_UTF8_部署前预检/墓穴尖牙鬼.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/墓穴尖牙鬼.txt",
+    "json": "561怪标准配置JSON/EL-MON-LIM-GRAVE-003.json"
+  },
+  {
+    "monster_id": "EL-MON-LIM-GRAVE-004",
+    "name": "石肤守墓人",
+    "continent": 2,
+    "role": "普通",
+    "trigger_count": 7,
+    "utf8": "MonItems_UTF8_部署前预检/石肤守墓人.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/石肤守墓人.txt",
+    "json": "561怪标准配置JSON/EL-MON-LIM-GRAVE-004.json"
+  },
+  {
+    "monster_id": "EL-MON-LIM-GRAVE-005",
+    "name": "失乡弩尸",
+    "continent": 2,
+    "role": "普通",
+    "trigger_count": 7,
+    "utf8": "MonItems_UTF8_部署前预检/失乡弩尸.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/失乡弩尸.txt",
+    "json": "561怪标准配置JSON/EL-MON-LIM-GRAVE-005.json"
+  },
+  {
+    "monster_id": "EL-MON-LIM-GRAVE-006",
+    "name": "幽火墓蛾",
+    "continent": 2,
+    "role": "普通",
+    "trigger_count": 7,
+    "utf8": "MonItems_UTF8_部署前预检/幽火墓蛾.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/幽火墓蛾.txt",
+    "json": "561怪标准配置JSON/EL-MON-LIM-GRAVE-006.json"
+  },
+  {
+    "monster_id": "EL-MON-LIM-GRAVE-007",
+    "name": "归树看门犬",
+    "continent": 2,
+    "role": "稀有",
+    "trigger_count": 10,
+    "utf8": "MonItems_UTF8_部署前预检/归树看门犬.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/归树看门犬.txt",
+    "json": "561怪标准配置JSON/EL-MON-LIM-GRAVE-007.json"
+  },
+  {
+    "monster_id": "EL-MON-LIM-GRAVE-008",
+    "name": "腐败树根兽",
+    "continent": 2,
+    "role": "稀有",
+    "trigger_count": 9,
+    "utf8": "MonItems_UTF8_部署前预检/腐败树根兽.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/腐败树根兽.txt",
+    "json": "561怪标准配置JSON/EL-MON-LIM-GRAVE-008.json"
+  },
+  {
+    "monster_id": "EL-MON-LIM-GRAVE-009",
+    "name": "失乡熔炉骑士",
+    "continent": 2,
+    "role": "稀有",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/失乡熔炉骑士.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/失乡熔炉骑士.txt",
+    "json": "561怪标准配置JSON/EL-MON-LIM-GRAVE-009.json"
+  },
+  {
+    "monster_id": "EL-MON-LIM-GRAVE-010",
+    "name": "英雄墓影",
+    "continent": 2,
+    "role": "稀有",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/英雄墓影.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/英雄墓影.txt",
+    "json": "561怪标准配置JSON/EL-MON-LIM-GRAVE-010.json"
+  },
+  {
+    "monster_id": "EL-MON-LIM-GRAVE-011",
+    "name": "溃烂树灵·乌尔德",
+    "continent": 2,
+    "role": "地图BOSS",
+    "trigger_count": 14,
+    "utf8": "MonItems_UTF8_部署前预检/溃烂树灵·乌尔德.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/溃烂树灵·乌尔德.txt",
+    "json": "561怪标准配置JSON/EL-MON-LIM-GRAVE-011.json"
+  },
+  {
+    "monster_id": "EL-MON-LIM-GRAVE-012",
+    "name": "接肢贵胄·格雷姆",
+    "continent": 2,
+    "role": "地图BOSS",
+    "trigger_count": 14,
+    "utf8": "MonItems_UTF8_部署前预检/接肢贵胄·格雷姆.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/接肢贵胄·格雷姆.txt",
+    "json": "561怪标准配置JSON/EL-MON-LIM-GRAVE-012.json"
+  },
+  {
+    "monster_id": "EL-MON-LIM-GATE-001",
+    "name": "葛瑞克步兵",
+    "continent": 2,
+    "role": "普通",
+    "trigger_count": 7,
+    "utf8": "MonItems_UTF8_部署前预检/葛瑞克步兵.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/葛瑞克步兵.txt",
+    "json": "561怪标准配置JSON/EL-MON-LIM-GATE-001.json"
+  },
+  {
+    "monster_id": "EL-MON-LIM-GATE-002",
+    "name": "关卡长枪兵",
+    "continent": 2,
+    "role": "普通",
+    "trigger_count": 7,
+    "utf8": "MonItems_UTF8_部署前预检/关卡长枪兵.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/关卡长枪兵.txt",
+    "json": "561怪标准配置JSON/EL-MON-LIM-GATE-002.json"
+  },
+  {
+    "monster_id": "EL-MON-LIM-GATE-003",
+    "name": "废墟弩手",
+    "continent": 2,
+    "role": "普通",
+    "trigger_count": 7,
+    "utf8": "MonItems_UTF8_部署前预检/废墟弩手.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/废墟弩手.txt",
+    "json": "561怪标准配置JSON/EL-MON-LIM-GATE-003.json"
+  },
+  {
+    "monster_id": "EL-MON-LIM-GATE-004",
+    "name": "风暴战狼",
+    "continent": 2,
+    "role": "普通",
+    "trigger_count": 7,
+    "utf8": "MonItems_UTF8_部署前预检/风暴战狼.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/风暴战狼.txt",
+    "json": "561怪标准配置JSON/EL-MON-LIM-GATE-004.json"
+  },
+  {
+    "monster_id": "EL-MON-LIM-GATE-005",
+    "name": "流放军士",
+    "continent": 2,
+    "role": "普通",
+    "trigger_count": 7,
+    "utf8": "MonItems_UTF8_部署前预检/流放军士.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/流放军士.txt",
+    "json": "561怪标准配置JSON/EL-MON-LIM-GATE-005.json"
+  },
+  {
+    "monster_id": "EL-MON-LIM-GATE-006",
+    "name": "断旗骑兵",
+    "continent": 2,
+    "role": "普通",
+    "trigger_count": 7,
+    "utf8": "MonItems_UTF8_部署前预检/断旗骑兵.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/断旗骑兵.txt",
+    "json": "561怪标准配置JSON/EL-MON-LIM-GATE-006.json"
+  },
+  {
+    "monster_id": "EL-MON-LIM-GATE-007",
+    "name": "黄金重骑",
+    "continent": 2,
+    "role": "稀有",
+    "trigger_count": 10,
+    "utf8": "MonItems_UTF8_部署前预检/黄金重骑.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/黄金重骑.txt",
+    "json": "561怪标准配置JSON/EL-MON-LIM-GATE-007.json"
+  },
+  {
+    "monster_id": "EL-MON-LIM-GATE-008",
+    "name": "失乡骑士",
+    "continent": 2,
+    "role": "稀有",
+    "trigger_count": 9,
+    "utf8": "MonItems_UTF8_部署前预检/失乡骑士.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/失乡骑士.txt",
+    "json": "561怪标准配置JSON/EL-MON-LIM-GATE-008.json"
+  },
+  {
+    "monster_id": "EL-MON-LIM-GATE-009",
+    "name": "军营兽爪官",
+    "continent": 2,
+    "role": "稀有",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/军营兽爪官.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/军营兽爪官.txt",
+    "json": "561怪标准配置JSON/EL-MON-LIM-GATE-009.json"
+  },
+  {
+    "monster_id": "EL-MON-LIM-GATE-010",
+    "name": "关隘战车",
+    "continent": 2,
+    "role": "稀有",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/关隘战车.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/关隘战车.txt",
+    "json": "561怪标准配置JSON/EL-MON-LIM-GATE-010.json"
+  },
+  {
+    "monster_id": "EL-MON-LIM-GATE-011",
+    "name": "大树守卫·罗兰",
+    "continent": 2,
+    "role": "地图BOSS",
+    "trigger_count": 14,
+    "utf8": "MonItems_UTF8_部署前预检/大树守卫·罗兰.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/大树守卫·罗兰.txt",
+    "json": "561怪标准配置JSON/EL-MON-LIM-GATE-011.json"
+  },
+  {
+    "monster_id": "EL-MON-LIM-GATE-012",
+    "name": "黑夜骑兵·莫尔",
+    "continent": 2,
+    "role": "地图BOSS",
+    "trigger_count": 14,
+    "utf8": "MonItems_UTF8_部署前预检/黑夜骑兵·莫尔.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/黑夜骑兵·莫尔.txt",
+    "json": "561怪标准配置JSON/EL-MON-LIM-GATE-012.json"
+  },
+  {
+    "monster_id": "EL-MON-LIM-MIST-001",
+    "name": "雾林野狼",
+    "continent": 2,
+    "role": "普通",
+    "trigger_count": 7,
+    "utf8": "MonItems_UTF8_部署前预检/雾林野狼.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/雾林野狼.txt",
+    "json": "561怪标准配置JSON/EL-MON-LIM-MIST-001.json"
+  },
+  {
+    "monster_id": "EL-MON-LIM-MIST-002",
+    "name": "卢恩巨熊",
+    "continent": 2,
+    "role": "普通",
+    "trigger_count": 7,
+    "utf8": "MonItems_UTF8_部署前预检/卢恩巨熊.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/卢恩巨熊.txt",
+    "json": "561怪标准配置JSON/EL-MON-LIM-MIST-002.json"
+  },
+  {
+    "monster_id": "EL-MON-LIM-MIST-003",
+    "name": "祖灵鹿",
+    "continent": 2,
+    "role": "普通",
+    "trigger_count": 7,
+    "utf8": "MonItems_UTF8_部署前预检/祖灵鹿.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/祖灵鹿.txt",
+    "json": "561怪标准配置JSON/EL-MON-LIM-MIST-003.json"
+  },
+  {
+    "monster_id": "EL-MON-LIM-MIST-004",
+    "name": "腐根树妖",
+    "continent": 2,
+    "role": "普通",
+    "trigger_count": 7,
+    "utf8": "MonItems_UTF8_部署前预检/腐根树妖.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/腐根树妖.txt",
+    "json": "561怪标准配置JSON/EL-MON-LIM-MIST-004.json"
+  },
+  {
+    "monster_id": "EL-MON-LIM-MIST-005",
+    "name": "半兽哨兵",
+    "continent": 2,
+    "role": "普通",
+    "trigger_count": 7,
+    "utf8": "MonItems_UTF8_部署前预检/半兽哨兵.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/半兽哨兵.txt",
+    "json": "561怪标准配置JSON/EL-MON-LIM-MIST-005.json"
+  },
+  {
+    "monster_id": "EL-MON-LIM-MIST-006",
+    "name": "林地毒花",
+    "continent": 2,
+    "role": "普通",
+    "trigger_count": 7,
+    "utf8": "MonItems_UTF8_部署前预检/林地毒花.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/林地毒花.txt",
+    "json": "561怪标准配置JSON/EL-MON-LIM-MIST-006.json"
+  },
+  {
+    "monster_id": "EL-MON-LIM-MIST-007",
+    "name": "卢恩熊王",
+    "continent": 2,
+    "role": "稀有",
+    "trigger_count": 10,
+    "utf8": "MonItems_UTF8_部署前预检/卢恩熊王.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/卢恩熊王.txt",
+    "json": "561怪标准配置JSON/EL-MON-LIM-MIST-007.json"
+  },
+  {
+    "monster_id": "EL-MON-LIM-MIST-008",
+    "name": "小黄金树化身",
+    "continent": 2,
+    "role": "稀有",
+    "trigger_count": 9,
+    "utf8": "MonItems_UTF8_部署前预检/小黄金树化身.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/小黄金树化身.txt",
+    "json": "561怪标准配置JSON/EL-MON-LIM-MIST-008.json"
+  },
+  {
+    "monster_id": "EL-MON-LIM-MIST-009",
+    "name": "猎犬骑士·达瑞威尔",
+    "continent": 2,
+    "role": "稀有",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/猎犬骑士·达瑞威尔.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/猎犬骑士·达瑞威尔.txt",
+    "json": "561怪标准配置JSON/EL-MON-LIM-MIST-009.json"
+  },
+  {
+    "monster_id": "EL-MON-LIM-MIST-010",
+    "name": "永眠祖灵",
+    "continent": 2,
+    "role": "稀有",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/永眠祖灵.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/永眠祖灵.txt",
+    "json": "561怪标准配置JSON/EL-MON-LIM-MIST-010.json"
+  },
+  {
+    "monster_id": "EL-MON-LIM-MIST-011",
+    "name": "提比亚唤船人·赫洛",
+    "continent": 2,
+    "role": "地图BOSS",
+    "trigger_count": 14,
+    "utf8": "MonItems_UTF8_部署前预检/提比亚唤船人·赫洛.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/提比亚唤船人·赫洛.txt",
+    "json": "561怪标准配置JSON/EL-MON-LIM-MIST-011.json"
+  },
+  {
+    "monster_id": "EL-MON-LIM-MIST-012",
+    "name": "雾林熔炉骑士·奥德",
+    "continent": 2,
+    "role": "地图BOSS",
+    "trigger_count": 14,
+    "utf8": "MonItems_UTF8_部署前预检/雾林熔炉骑士·奥德.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/雾林熔炉骑士·奥德.txt",
+    "json": "561怪标准配置JSON/EL-MON-LIM-MIST-012.json"
+  },
+  {
+    "monster_id": "EL-MON-LIM-STORM-001",
+    "name": "风暴鹰",
+    "continent": 2,
+    "role": "普通",
+    "trigger_count": 7,
+    "utf8": "MonItems_UTF8_部署前预检/风暴鹰.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/风暴鹰.txt",
+    "json": "561怪标准配置JSON/EL-MON-LIM-STORM-001.json"
+  },
+  {
+    "monster_id": "EL-MON-LIM-STORM-002",
+    "name": "雷羽战鹰",
+    "continent": 2,
+    "role": "普通",
+    "trigger_count": 7,
+    "utf8": "MonItems_UTF8_部署前预检/雷羽战鹰.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/雷羽战鹰.txt",
+    "json": "561怪标准配置JSON/EL-MON-LIM-STORM-002.json"
+  },
+  {
+    "monster_id": "EL-MON-LIM-STORM-003",
+    "name": "山谷巨人",
+    "continent": 2,
+    "role": "普通",
+    "trigger_count": 7,
+    "utf8": "MonItems_UTF8_部署前预检/山谷巨人.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/山谷巨人.txt",
+    "json": "561怪标准配置JSON/EL-MON-LIM-STORM-003.json"
+  },
+  {
+    "monster_id": "EL-MON-LIM-STORM-004",
+    "name": "风蚀山羊",
+    "continent": 2,
+    "role": "普通",
+    "trigger_count": 7,
+    "utf8": "MonItems_UTF8_部署前预检/风蚀山羊.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/风蚀山羊.txt",
+    "json": "561怪标准配置JSON/EL-MON-LIM-STORM-004.json"
+  },
+  {
+    "monster_id": "EL-MON-LIM-STORM-005",
+    "name": "风暴流寇",
+    "continent": 2,
+    "role": "普通",
+    "trigger_count": 7,
+    "utf8": "MonItems_UTF8_部署前预检/风暴流寇.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/风暴流寇.txt",
+    "json": "561怪标准配置JSON/EL-MON-LIM-STORM-005.json"
+  },
+  {
+    "monster_id": "EL-MON-LIM-STORM-006",
+    "name": "雷痕石蜥",
+    "continent": 2,
+    "role": "普通",
+    "trigger_count": 7,
+    "utf8": "MonItems_UTF8_部署前预检/雷痕石蜥.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/雷痕石蜥.txt",
+    "json": "561怪标准配置JSON/EL-MON-LIM-STORM-006.json"
+  },
+  {
+    "monster_id": "EL-MON-LIM-STORM-007",
+    "name": "山妖统领",
+    "continent": 2,
+    "role": "稀有",
+    "trigger_count": 9,
+    "utf8": "MonItems_UTF8_部署前预检/山妖统领.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/山妖统领.txt",
+    "json": "561怪标准配置JSON/EL-MON-LIM-STORM-007.json"
+  },
+  {
+    "monster_id": "EL-MON-LIM-STORM-008",
+    "name": "战鹰驯兽师",
+    "continent": 2,
+    "role": "稀有",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/战鹰驯兽师.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/战鹰驯兽师.txt",
+    "json": "561怪标准配置JSON/EL-MON-LIM-STORM-008.json"
+  },
+  {
+    "monster_id": "EL-MON-LIM-STORM-009",
+    "name": "熔炉百夫长",
+    "continent": 2,
+    "role": "稀有",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/熔炉百夫长.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/熔炉百夫长.txt",
+    "json": "561怪标准配置JSON/EL-MON-LIM-STORM-009.json"
+  },
+  {
+    "monster_id": "EL-MON-LIM-STORM-010",
+    "name": "死亡仪鸟",
+    "continent": 2,
+    "role": "稀有",
+    "trigger_count": 10,
+    "utf8": "MonItems_UTF8_部署前预检/死亡仪鸟.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/死亡仪鸟.txt",
+    "json": "561怪标准配置JSON/EL-MON-LIM-STORM-010.json"
+  },
+  {
+    "monster_id": "EL-MON-LIM-STORM-011",
+    "name": "风暴君王·奥雷格",
+    "continent": 2,
+    "role": "地图BOSS",
+    "trigger_count": 14,
+    "utf8": "MonItems_UTF8_部署前预检/风暴君王·奥雷格.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/风暴君王·奥雷格.txt",
+    "json": "561怪标准配置JSON/EL-MON-LIM-STORM-011.json"
+  },
+  {
+    "monster_id": "EL-MON-LIM-STORM-012",
+    "name": "恶兆妖鬼·玛尔基特",
+    "continent": 2,
+    "role": "地图BOSS",
+    "trigger_count": 14,
+    "utf8": "MonItems_UTF8_部署前预检/恶兆妖鬼·玛尔基特.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/恶兆妖鬼·玛尔基特.txt",
+    "json": "561怪标准配置JSON/EL-MON-LIM-STORM-012.json"
+  },
+  {
+    "monster_id": "EL-MON-LIM-CASTLE-001",
+    "name": "王城流刑兵",
+    "continent": 2,
+    "role": "普通",
+    "trigger_count": 7,
+    "utf8": "MonItems_UTF8_部署前预检/王城流刑兵.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/王城流刑兵.txt",
+    "json": "561怪标准配置JSON/EL-MON-LIM-CASTLE-001.json"
+  },
+  {
+    "monster_id": "EL-MON-LIM-CASTLE-002",
+    "name": "失乡斧卫",
+    "continent": 2,
+    "role": "普通",
+    "trigger_count": 7,
+    "utf8": "MonItems_UTF8_部署前预检/失乡斧卫.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/失乡斧卫.txt",
+    "json": "561怪标准配置JSON/EL-MON-LIM-CASTLE-002.json"
+  },
+  {
+    "monster_id": "EL-MON-LIM-CASTLE-003",
+    "name": "火药弩兵",
+    "continent": 2,
+    "role": "普通",
+    "trigger_count": 7,
+    "utf8": "MonItems_UTF8_部署前预检/火药弩兵.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/火药弩兵.txt",
+    "json": "561怪标准配置JSON/EL-MON-LIM-CASTLE-003.json"
+  },
+  {
+    "monster_id": "EL-MON-LIM-CASTLE-004",
+    "name": "刀翼战鹰",
+    "continent": 2,
+    "role": "普通",
+    "trigger_count": 7,
+    "utf8": "MonItems_UTF8_部署前预检/刀翼战鹰.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/刀翼战鹰.txt",
+    "json": "561怪标准配置JSON/EL-MON-LIM-CASTLE-004.json"
+  },
+  {
+    "monster_id": "EL-MON-LIM-CASTLE-005",
+    "name": "接肢侍从",
+    "continent": 2,
+    "role": "普通",
+    "trigger_count": 7,
+    "utf8": "MonItems_UTF8_部署前预检/接肢侍从.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/接肢侍从.txt",
+    "json": "561怪标准配置JSON/EL-MON-LIM-CASTLE-005.json"
+  },
+  {
+    "monster_id": "EL-MON-LIM-CASTLE-006",
+    "name": "王城禁卫",
+    "continent": 2,
+    "role": "普通",
+    "trigger_count": 7,
+    "utf8": "MonItems_UTF8_部署前预检/王城禁卫.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/王城禁卫.txt",
+    "json": "561怪标准配置JSON/EL-MON-LIM-CASTLE-006.json"
+  },
+  {
+    "monster_id": "EL-MON-LIM-CASTLE-007",
+    "name": "失乡骑士长",
+    "continent": 2,
+    "role": "稀有",
+    "trigger_count": 10,
+    "utf8": "MonItems_UTF8_部署前预检/失乡骑士长.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/失乡骑士长.txt",
+    "json": "561怪标准配置JSON/EL-MON-LIM-CASTLE-007.json"
+  },
+  {
+    "monster_id": "EL-MON-LIM-CASTLE-008",
+    "name": "接肢狮卫",
+    "continent": 2,
+    "role": "稀有",
+    "trigger_count": 9,
+    "utf8": "MonItems_UTF8_部署前预检/接肢狮卫.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/接肢狮卫.txt",
+    "json": "561怪标准配置JSON/EL-MON-LIM-CASTLE-008.json"
+  },
+  {
+    "monster_id": "EL-MON-LIM-CASTLE-009",
+    "name": "黑焰礼拜官",
+    "continent": 2,
+    "role": "稀有",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/黑焰礼拜官.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/黑焰礼拜官.txt",
+    "json": "561怪标准配置JSON/EL-MON-LIM-CASTLE-009.json"
+  },
+  {
+    "monster_id": "EL-MON-LIM-CASTLE-010",
+    "name": "王城执刑官",
+    "continent": 2,
+    "role": "稀有",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/王城执刑官.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/王城执刑官.txt",
+    "json": "561怪标准配置JSON/EL-MON-LIM-CASTLE-010.json"
+  },
+  {
+    "monster_id": "EL-MON-LIM-CASTLE-011",
+    "name": "接肢兽将·戈德温",
+    "continent": 2,
+    "role": "地图BOSS",
+    "trigger_count": 14,
+    "utf8": "MonItems_UTF8_部署前预检/接肢兽将·戈德温.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/接肢兽将·戈德温.txt",
+    "json": "561怪标准配置JSON/EL-MON-LIM-CASTLE-011.json"
+  },
+  {
+    "monster_id": "EL-MON-LIM-CASTLE-012",
+    "name": "失乡统帅·欧尼尔",
+    "continent": 2,
+    "role": "地图BOSS",
+    "trigger_count": 14,
+    "utf8": "MonItems_UTF8_部署前预检/失乡统帅·欧尼尔.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/失乡统帅·欧尼尔.txt",
+    "json": "561怪标准配置JSON/EL-MON-LIM-CASTLE-012.json"
+  },
+  {
+    "monster_id": "EL-MON-LIM-CASTLE-013",
+    "name": "接肢君王·葛瑞克",
+    "continent": 2,
+    "role": "守关BOSS",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/接肢君王·葛瑞克.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/接肢君王·葛瑞克.txt",
+    "json": "561怪标准配置JSON/EL-MON-LIM-CASTLE-013.json"
+  },
+  {
+    "monster_id": "C03-M001",
+    "name": "荒原拾骨者",
+    "continent": 3,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/荒原拾骨者.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/荒原拾骨者.txt",
+    "json": "561怪标准配置JSON/C03-M001.json"
+  },
+  {
+    "monster_id": "C03-M002",
+    "name": "断旗步兵",
+    "continent": 3,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/断旗步兵.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/断旗步兵.txt",
+    "json": "561怪标准配置JSON/C03-M002.json"
+  },
+  {
+    "monster_id": "C03-M003",
+    "name": "风沙掠夺者",
+    "continent": 3,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/风沙掠夺者.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/风沙掠夺者.txt",
+    "json": "561怪标准配置JSON/C03-M003.json"
+  },
+  {
+    "monster_id": "C03-M004",
+    "name": "铁蹄战马",
+    "continent": 3,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/铁蹄战马.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/铁蹄战马.txt",
+    "json": "561怪标准配置JSON/C03-M004.json"
+  },
+  {
+    "monster_id": "C03-M005",
+    "name": "枯草狼",
+    "continent": 3,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/枯草狼.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/枯草狼.txt",
+    "json": "561怪标准配置JSON/C03-M005.json"
+  },
+  {
+    "monster_id": "C03-M006",
+    "name": "锈甲逃兵",
+    "continent": 3,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/锈甲逃兵.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/锈甲逃兵.txt",
+    "json": "561怪标准配置JSON/C03-M006.json"
+  },
+  {
+    "monster_id": "C03-M007",
+    "name": "西境旗卫",
+    "continent": 3,
+    "role": "稀有",
+    "trigger_count": 10,
+    "utf8": "MonItems_UTF8_部署前预检/西境旗卫.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/西境旗卫.txt",
+    "json": "561怪标准配置JSON/C03-M007.json"
+  },
+  {
+    "monster_id": "C03-M008",
+    "name": "独眼弩将",
+    "continent": 3,
+    "role": "稀有",
+    "trigger_count": 10,
+    "utf8": "MonItems_UTF8_部署前预检/独眼弩将.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/独眼弩将.txt",
+    "json": "561怪标准配置JSON/C03-M008.json"
+  },
+  {
+    "monster_id": "C03-M009",
+    "name": "荒风骑士",
+    "continent": 3,
+    "role": "稀有",
+    "trigger_count": 10,
+    "utf8": "MonItems_UTF8_部署前预检/荒风骑士.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/荒风骑士.txt",
+    "json": "561怪标准配置JSON/C03-M009.json"
+  },
+  {
+    "monster_id": "C03-M010",
+    "name": "战场收尸官",
+    "continent": 3,
+    "role": "稀有",
+    "trigger_count": 10,
+    "utf8": "MonItems_UTF8_部署前预检/战场收尸官.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/战场收尸官.txt",
+    "json": "561怪标准配置JSON/C03-M010.json"
+  },
+  {
+    "monster_id": "C03-M011",
+    "name": "断旗统领·瓦伦",
+    "continent": 3,
+    "role": "地图BOSS",
+    "trigger_count": 14,
+    "utf8": "MonItems_UTF8_部署前预检/断旗统领·瓦伦.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/断旗统领·瓦伦.txt",
+    "json": "561怪标准配置JSON/C03-M011.json"
+  },
+  {
+    "monster_id": "C03-M012",
+    "name": "荒原巨犀·莫赫",
+    "continent": 3,
+    "role": "地图BOSS",
+    "trigger_count": 15,
+    "utf8": "MonItems_UTF8_部署前预检/荒原巨犀·莫赫.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/荒原巨犀·莫赫.txt",
+    "json": "561怪标准配置JSON/C03-M012.json"
+  },
+  {
+    "monster_id": "C03-M013",
+    "name": "海崖盐工",
+    "continent": 3,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/海崖盐工.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/海崖盐工.txt",
+    "json": "561怪标准配置JSON/C03-M013.json"
+  },
+  {
+    "monster_id": "C03-M014",
+    "name": "逐风矛兵",
+    "continent": 3,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/逐风矛兵.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/逐风矛兵.txt",
+    "json": "561怪标准配置JSON/C03-M014.json"
+  },
+  {
+    "monster_id": "C03-M015",
+    "name": "裂羽海鹰",
+    "continent": 3,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/裂羽海鹰.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/裂羽海鹰.txt",
+    "json": "561怪标准配置JSON/C03-M015.json"
+  },
+  {
+    "monster_id": "C03-M016",
+    "name": "潮穴石蜥",
+    "continent": 3,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/潮穴石蜥.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/潮穴石蜥.txt",
+    "json": "561怪标准配置JSON/C03-M016.json"
+  },
+  {
+    "monster_id": "C03-M017",
+    "name": "断索流徒",
+    "continent": 3,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/断索流徒.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/断索流徒.txt",
+    "json": "561怪标准配置JSON/C03-M017.json"
+  },
+  {
+    "monster_id": "C03-M018",
+    "name": "崖边祷徒",
+    "continent": 3,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/崖边祷徒.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/崖边祷徒.txt",
+    "json": "561怪标准配置JSON/C03-M018.json"
+  },
+  {
+    "monster_id": "C03-M019",
+    "name": "风蚀守望者",
+    "continent": 3,
+    "role": "稀有",
+    "trigger_count": 10,
+    "utf8": "MonItems_UTF8_部署前预检/风蚀守望者.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/风蚀守望者.txt",
+    "json": "561怪标准配置JSON/C03-M019.json"
+  },
+  {
+    "monster_id": "C03-M020",
+    "name": "斩浪骑士",
+    "continent": 3,
+    "role": "稀有",
+    "trigger_count": 10,
+    "utf8": "MonItems_UTF8_部署前预检/斩浪骑士.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/斩浪骑士.txt",
+    "json": "561怪标准配置JSON/C03-M020.json"
+  },
+  {
+    "monster_id": "C03-M021",
+    "name": "海雾猎手",
+    "continent": 3,
+    "role": "稀有",
+    "trigger_count": 10,
+    "utf8": "MonItems_UTF8_部署前预检/海雾猎手.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/海雾猎手.txt",
+    "json": "561怪标准配置JSON/C03-M021.json"
+  },
+  {
+    "monster_id": "C03-M022",
+    "name": "雷崖祭司",
+    "continent": 3,
+    "role": "稀有",
+    "trigger_count": 10,
+    "utf8": "MonItems_UTF8_部署前预检/雷崖祭司.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/雷崖祭司.txt",
+    "json": "561怪标准配置JSON/C03-M022.json"
+  },
+  {
+    "monster_id": "C03-M023",
+    "name": "裂风执旗官·卡恩",
+    "continent": 3,
+    "role": "地图BOSS",
+    "trigger_count": 14,
+    "utf8": "MonItems_UTF8_部署前预检/裂风执旗官·卡恩.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/裂风执旗官·卡恩.txt",
+    "json": "561怪标准配置JSON/C03-M023.json"
+  },
+  {
+    "monster_id": "C03-M024",
+    "name": "啸海古翼·塞洛",
+    "continent": 3,
+    "role": "地图BOSS",
+    "trigger_count": 15,
+    "utf8": "MonItems_UTF8_部署前预检/啸海古翼·塞洛.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/啸海古翼·塞洛.txt",
+    "json": "561怪标准配置JSON/C03-M024.json"
+  },
+  {
+    "monster_id": "C03-M025",
+    "name": "驿道苦役",
+    "continent": 3,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/驿道苦役.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/驿道苦役.txt",
+    "json": "561怪标准配置JSON/C03-M025.json"
+  },
+  {
+    "monster_id": "C03-M026",
+    "name": "荒商护卫",
+    "continent": 3,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/荒商护卫.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/荒商护卫.txt",
+    "json": "561怪标准配置JSON/C03-M026.json"
+  },
+  {
+    "monster_id": "C03-M027",
+    "name": "灰篷盗匪",
+    "continent": 3,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/灰篷盗匪.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/灰篷盗匪.txt",
+    "json": "561怪标准配置JSON/C03-M027.json"
+  },
+  {
+    "monster_id": "C03-M028",
+    "name": "驮货尸兵",
+    "continent": 3,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/驮货尸兵.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/驮货尸兵.txt",
+    "json": "561怪标准配置JSON/C03-M028.json"
+  },
+  {
+    "monster_id": "C03-M029",
+    "name": "营火猎犬",
+    "continent": 3,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/营火猎犬.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/营火猎犬.txt",
+    "json": "561怪标准配置JSON/C03-M029.json"
+  },
+  {
+    "monster_id": "C03-M030",
+    "name": "断轮弩手",
+    "continent": 3,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/断轮弩手.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/断轮弩手.txt",
+    "json": "561怪标准配置JSON/C03-M030.json"
+  },
+  {
+    "monster_id": "C03-M031",
+    "name": "火漆追缉者",
+    "continent": 3,
+    "role": "稀有",
+    "trigger_count": 10,
+    "utf8": "MonItems_UTF8_部署前预检/火漆追缉者.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/火漆追缉者.txt",
+    "json": "561怪标准配置JSON/C03-M031.json"
+  },
+  {
+    "monster_id": "C03-M032",
+    "name": "商队叛骑",
+    "continent": 3,
+    "role": "稀有",
+    "trigger_count": 10,
+    "utf8": "MonItems_UTF8_部署前预检/商队叛骑.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/商队叛骑.txt",
+    "json": "561怪标准配置JSON/C03-M032.json"
+  },
+  {
+    "monster_id": "C03-M033",
+    "name": "断路劫首",
+    "continent": 3,
+    "role": "稀有",
+    "trigger_count": 10,
+    "utf8": "MonItems_UTF8_部署前预检/断路劫首.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/断路劫首.txt",
+    "json": "561怪标准配置JSON/C03-M033.json"
+  },
+  {
+    "monster_id": "C03-M034",
+    "name": "黑帐术士",
+    "continent": 3,
+    "role": "稀有",
+    "trigger_count": 10,
+    "utf8": "MonItems_UTF8_部署前预检/黑帐术士.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/黑帐术士.txt",
+    "json": "561怪标准配置JSON/C03-M034.json"
+  },
+  {
+    "monster_id": "C03-M035",
+    "name": "无路佣兵王·赫托",
+    "continent": 3,
+    "role": "地图BOSS",
+    "trigger_count": 14,
+    "utf8": "MonItems_UTF8_部署前预检/无路佣兵王·赫托.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/无路佣兵王·赫托.txt",
+    "json": "561怪标准配置JSON/C03-M035.json"
+  },
+  {
+    "monster_id": "C03-M036",
+    "name": "赤篷巨像·马尔",
+    "continent": 3,
+    "role": "地图BOSS",
+    "trigger_count": 15,
+    "utf8": "MonItems_UTF8_部署前预检/赤篷巨像·马尔.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/赤篷巨像·马尔.txt",
+    "json": "561怪标准配置JSON/C03-M036.json"
+  },
+  {
+    "monster_id": "C03-M037",
+    "name": "残阵兵魂",
+    "continent": 3,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/残阵兵魂.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/残阵兵魂.txt",
+    "json": "561怪标准配置JSON/C03-M037.json"
+  },
+  {
+    "monster_id": "C03-M038",
+    "name": "折戟亡卒",
+    "continent": 3,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/折戟亡卒.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/折戟亡卒.txt",
+    "json": "561怪标准配置JSON/C03-M038.json"
+  },
+  {
+    "monster_id": "C03-M039",
+    "name": "战壕腐尸",
+    "continent": 3,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/战壕腐尸.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/战壕腐尸.txt",
+    "json": "561怪标准配置JSON/C03-M039.json"
+  },
+  {
+    "monster_id": "C03-M040",
+    "name": "无首号手",
+    "continent": 3,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/无首号手.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/无首号手.txt",
+    "json": "561怪标准配置JSON/C03-M040.json"
+  },
+  {
+    "monster_id": "C03-M041",
+    "name": "墓旗守卫",
+    "continent": 3,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/墓旗守卫.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/墓旗守卫.txt",
+    "json": "561怪标准配置JSON/C03-M041.json"
+  },
+  {
+    "monster_id": "C03-M042",
+    "name": "英灵战马",
+    "continent": 3,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/英灵战马.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/英灵战马.txt",
+    "json": "561怪标准配置JSON/C03-M042.json"
+  },
+  {
+    "monster_id": "C03-M043",
+    "name": "百战英魂",
+    "continent": 3,
+    "role": "稀有",
+    "trigger_count": 10,
+    "utf8": "MonItems_UTF8_部署前预检/百战英魂.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/百战英魂.txt",
+    "json": "561怪标准配置JSON/C03-M043.json"
+  },
+  {
+    "monster_id": "C03-M044",
+    "name": "亡阵旗官",
+    "continent": 3,
+    "role": "稀有",
+    "trigger_count": 10,
+    "utf8": "MonItems_UTF8_部署前预检/亡阵旗官.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/亡阵旗官.txt",
+    "json": "561怪标准配置JSON/C03-M044.json"
+  },
+  {
+    "monster_id": "C03-M045",
+    "name": "誓死卫士",
+    "continent": 3,
+    "role": "稀有",
+    "trigger_count": 10,
+    "utf8": "MonItems_UTF8_部署前预检/誓死卫士.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/誓死卫士.txt",
+    "json": "561怪标准配置JSON/C03-M045.json"
+  },
+  {
+    "monster_id": "C03-M046",
+    "name": "祭坛唤魂师",
+    "continent": 3,
+    "role": "稀有",
+    "trigger_count": 10,
+    "utf8": "MonItems_UTF8_部署前预检/祭坛唤魂师.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/祭坛唤魂师.txt",
+    "json": "561怪标准配置JSON/C03-M046.json"
+  },
+  {
+    "monster_id": "C03-M047",
+    "name": "古战将·雷戈",
+    "continent": 3,
+    "role": "地图BOSS",
+    "trigger_count": 14,
+    "utf8": "MonItems_UTF8_部署前预检/古战将·雷戈.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/古战将·雷戈.txt",
+    "json": "561怪标准配置JSON/C03-M047.json"
+  },
+  {
+    "monster_id": "C03-M048",
+    "name": "千军怨灵·阿萨",
+    "continent": 3,
+    "role": "地图BOSS",
+    "trigger_count": 14,
+    "utf8": "MonItems_UTF8_部署前预检/千军怨灵·阿萨.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/千军怨灵·阿萨.txt",
+    "json": "561怪标准配置JSON/C03-M048.json"
+  },
+  {
+    "monster_id": "C03-M049",
+    "name": "古垒戍兵",
+    "continent": 3,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/古垒戍兵.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/古垒戍兵.txt",
+    "json": "561怪标准配置JSON/C03-M049.json"
+  },
+  {
+    "monster_id": "C03-M050",
+    "name": "风沙箭手",
+    "continent": 3,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/风沙箭手.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/风沙箭手.txt",
+    "json": "561怪标准配置JSON/C03-M050.json"
+  },
+  {
+    "monster_id": "C03-M051",
+    "name": "回廊石卫",
+    "continent": 3,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/回廊石卫.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/回廊石卫.txt",
+    "json": "561怪标准配置JSON/C03-M051.json"
+  },
+  {
+    "monster_id": "C03-M052",
+    "name": "地宫掘墓人",
+    "continent": 3,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/地宫掘墓人.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/地宫掘墓人.txt",
+    "json": "561怪标准配置JSON/C03-M052.json"
+  },
+  {
+    "monster_id": "C03-M053",
+    "name": "边墙猎犬",
+    "continent": 3,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/边墙猎犬.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/边墙猎犬.txt",
+    "json": "561怪标准配置JSON/C03-M053.json"
+  },
+  {
+    "monster_id": "C03-M054",
+    "name": "铜门守卒",
+    "continent": 3,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/铜门守卒.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/铜门守卒.txt",
+    "json": "561怪标准配置JSON/C03-M054.json"
+  },
+  {
+    "monster_id": "C03-M055",
+    "name": "古垒百夫长",
+    "continent": 3,
+    "role": "稀有",
+    "trigger_count": 10,
+    "utf8": "MonItems_UTF8_部署前预检/古垒百夫长.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/古垒百夫长.txt",
+    "json": "561怪标准配置JSON/C03-M055.json"
+  },
+  {
+    "monster_id": "C03-M056",
+    "name": "风蚀刑官",
+    "continent": 3,
+    "role": "稀有",
+    "trigger_count": 10,
+    "utf8": "MonItems_UTF8_部署前预检/风蚀刑官.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/风蚀刑官.txt",
+    "json": "561怪标准配置JSON/C03-M056.json"
+  },
+  {
+    "monster_id": "C03-M057",
+    "name": "地宫镇魂者",
+    "continent": 3,
+    "role": "稀有",
+    "trigger_count": 10,
+    "utf8": "MonItems_UTF8_部署前预检/地宫镇魂者.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/地宫镇魂者.txt",
+    "json": "561怪标准配置JSON/C03-M057.json"
+  },
+  {
+    "monster_id": "C03-M058",
+    "name": "边境铜像",
+    "continent": 3,
+    "role": "稀有",
+    "trigger_count": 10,
+    "utf8": "MonItems_UTF8_部署前预检/边境铜像.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/边境铜像.txt",
+    "json": "561怪标准配置JSON/C03-M058.json"
+  },
+  {
+    "monster_id": "C03-M059",
+    "name": "无归守将·布兰",
+    "continent": 3,
+    "role": "地图BOSS",
+    "trigger_count": 14,
+    "utf8": "MonItems_UTF8_部署前预检/无归守将·布兰.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/无归守将·布兰.txt",
+    "json": "561怪标准配置JSON/C03-M059.json"
+  },
+  {
+    "monster_id": "C03-M060",
+    "name": "古垒石王·迦姆",
+    "continent": 3,
+    "role": "地图BOSS",
+    "trigger_count": 14,
+    "utf8": "MonItems_UTF8_部署前预检/古垒石王·迦姆.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/古垒石王·迦姆.txt",
+    "json": "561怪标准配置JSON/C03-M060.json"
+  },
+  {
+    "monster_id": "C03-M061",
+    "name": "金叶哨兵",
+    "continent": 3,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/金叶哨兵.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/金叶哨兵.txt",
+    "json": "561怪标准配置JSON/C03-M061.json"
+  },
+  {
+    "monster_id": "C03-M062",
+    "name": "王树弩卫",
+    "continent": 3,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/王树弩卫.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/王树弩卫.txt",
+    "json": "561怪标准配置JSON/C03-M062.json"
+  },
+  {
+    "monster_id": "C03-M063",
+    "name": "圣露侍从",
+    "continent": 3,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/圣露侍从.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/圣露侍从.txt",
+    "json": "561怪标准配置JSON/C03-M063.json"
+  },
+  {
+    "monster_id": "C03-M064",
+    "name": "镀金战鹰",
+    "continent": 3,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/镀金战鹰.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/镀金战鹰.txt",
+    "json": "561怪标准配置JSON/C03-M064.json"
+  },
+  {
+    "monster_id": "C03-M065",
+    "name": "赐福骑兵",
+    "continent": 3,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/赐福骑兵.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/赐福骑兵.txt",
+    "json": "561怪标准配置JSON/C03-M065.json"
+  },
+  {
+    "monster_id": "C03-M066",
+    "name": "哨垒执炬者",
+    "continent": 3,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/哨垒执炬者.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/哨垒执炬者.txt",
+    "json": "561怪标准配置JSON/C03-M066.json"
+  },
+  {
+    "monster_id": "C03-M067",
+    "name": "黄金树旗卫",
+    "continent": 3,
+    "role": "稀有",
+    "trigger_count": 10,
+    "utf8": "MonItems_UTF8_部署前预检/黄金树旗卫.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/黄金树旗卫.txt",
+    "json": "561怪标准配置JSON/C03-M067.json"
+  },
+  {
+    "monster_id": "C03-M068",
+    "name": "圣律监军",
+    "continent": 3,
+    "role": "稀有",
+    "trigger_count": 10,
+    "utf8": "MonItems_UTF8_部署前预检/圣律监军.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/圣律监军.txt",
+    "json": "561怪标准配置JSON/C03-M068.json"
+  },
+  {
+    "monster_id": "C03-M069",
+    "name": "赐福守门人",
+    "continent": 3,
+    "role": "稀有",
+    "trigger_count": 10,
+    "utf8": "MonItems_UTF8_部署前预检/赐福守门人.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/赐福守门人.txt",
+    "json": "561怪标准配置JSON/C03-M069.json"
+  },
+  {
+    "monster_id": "C03-M070",
+    "name": "哨垒祷告师",
+    "continent": 3,
+    "role": "稀有",
+    "trigger_count": 10,
+    "utf8": "MonItems_UTF8_部署前预检/哨垒祷告师.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/哨垒祷告师.txt",
+    "json": "561怪标准配置JSON/C03-M070.json"
+  },
+  {
+    "monster_id": "C03-M071",
+    "name": "金叶统帅·艾德",
+    "continent": 3,
+    "role": "地图BOSS",
+    "trigger_count": 15,
+    "utf8": "MonItems_UTF8_部署前预检/金叶统帅·艾德.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/金叶统帅·艾德.txt",
+    "json": "561怪标准配置JSON/C03-M071.json"
+  },
+  {
+    "monster_id": "C03-M072",
+    "name": "黄金树化身·洛恩",
+    "continent": 3,
+    "role": "地图BOSS",
+    "trigger_count": 15,
+    "utf8": "MonItems_UTF8_部署前预检/黄金树化身·洛恩.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/黄金树化身·洛恩.txt",
+    "json": "561怪标准配置JSON/C03-M072.json"
+  },
+  {
+    "monster_id": "C03-M073",
+    "name": "西境征服者·戈德里安",
+    "continent": 3,
+    "role": "守关BOSS",
+    "trigger_count": 12,
+    "utf8": "MonItems_UTF8_部署前预检/西境征服者·戈德里安.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/西境征服者·戈德里安.txt",
+    "json": "561怪标准配置JSON/C03-M073.json"
+  },
+  {
+    "monster_id": "C04-M001",
+    "name": "雾脚泥蛙",
+    "continent": 4,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/雾脚泥蛙.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/雾脚泥蛙.txt",
+    "json": "561怪标准配置JSON/C04-M001.json"
+  },
+  {
+    "monster_id": "C04-M002",
+    "name": "苔冠沼鹿",
+    "continent": 4,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/苔冠沼鹿.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/苔冠沼鹿.txt",
+    "json": "561怪标准配置JSON/C04-M002.json"
+  },
+  {
+    "monster_id": "C04-M003",
+    "name": "潮沟芦妖",
+    "continent": 4,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/潮沟芦妖.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/潮沟芦妖.txt",
+    "json": "561怪标准配置JSON/C04-M003.json"
+  },
+  {
+    "monster_id": "C04-M004",
+    "name": "腐雾钳虾",
+    "continent": 4,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/腐雾钳虾.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/腐雾钳虾.txt",
+    "json": "561怪标准配置JSON/C04-M004.json"
+  },
+  {
+    "monster_id": "C04-M005",
+    "name": "烂泽水蛭",
+    "continent": 4,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/烂泽水蛭.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/烂泽水蛭.txt",
+    "json": "561怪标准配置JSON/C04-M005.json"
+  },
+  {
+    "monster_id": "C04-M006",
+    "name": "蒙眼采藕人",
+    "continent": 4,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/蒙眼采藕人.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/蒙眼采藕人.txt",
+    "json": "561怪标准配置JSON/C04-M006.json"
+  },
+  {
+    "monster_id": "C04-M007",
+    "name": "雾纱水巫",
+    "continent": 4,
+    "role": "稀有",
+    "trigger_count": 10,
+    "utf8": "MonItems_UTF8_部署前预检/雾纱水巫.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/雾纱水巫.txt",
+    "json": "561怪标准配置JSON/C04-M007.json"
+  },
+  {
+    "monster_id": "C04-M008",
+    "name": "银腹塘鳄",
+    "continent": 4,
+    "role": "稀有",
+    "trigger_count": 10,
+    "utf8": "MonItems_UTF8_部署前预检/银腹塘鳄.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/银腹塘鳄.txt",
+    "json": "561怪标准配置JSON/C04-M008.json"
+  },
+  {
+    "monster_id": "C04-M009",
+    "name": "腐泽孢母",
+    "continent": 4,
+    "role": "稀有",
+    "trigger_count": 10,
+    "utf8": "MonItems_UTF8_部署前预检/腐泽孢母.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/腐泽孢母.txt",
+    "json": "561怪标准配置JSON/C04-M009.json"
+  },
+  {
+    "monster_id": "C04-M010",
+    "name": "提灯溺客",
+    "continent": 4,
+    "role": "稀有",
+    "trigger_count": 10,
+    "utf8": "MonItems_UTF8_部署前预检/提灯溺客.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/提灯溺客.txt",
+    "json": "561怪标准配置JSON/C04-M010.json"
+  },
+  {
+    "monster_id": "C04-M011",
+    "name": "潮痕猎首·葛弥",
+    "continent": 4,
+    "role": "地图BOSS",
+    "trigger_count": 14,
+    "utf8": "MonItems_UTF8_部署前预检/潮痕猎首·葛弥.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/潮痕猎首·葛弥.txt",
+    "json": "561怪标准配置JSON/C04-M011.json"
+  },
+  {
+    "monster_id": "C04-M012",
+    "name": "沼冠腐龙·弥瑟",
+    "continent": 4,
+    "role": "地图BOSS",
+    "trigger_count": 15,
+    "utf8": "MonItems_UTF8_部署前预检/沼冠腐龙·弥瑟.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/沼冠腐龙·弥瑟.txt",
+    "json": "561怪标准配置JSON/C04-M012.json"
+  },
+  {
+    "monster_id": "C04-M013",
+    "name": "潜碑拾荒者",
+    "continent": 4,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/潜碑拾荒者.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/潜碑拾荒者.txt",
+    "json": "561怪标准配置JSON/C04-M013.json"
+  },
+  {
+    "monster_id": "C04-M014",
+    "name": "藻甲石仆",
+    "continent": 4,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/藻甲石仆.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/藻甲石仆.txt",
+    "json": "561怪标准配置JSON/C04-M014.json"
+  },
+  {
+    "monster_id": "C04-M015",
+    "name": "回廊水弩手",
+    "continent": 4,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/回廊水弩手.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/回廊水弩手.txt",
+    "json": "561怪标准配置JSON/C04-M015.json"
+  },
+  {
+    "monster_id": "C04-M016",
+    "name": "沉钟侍祭",
+    "continent": 4,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/沉钟侍祭.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/沉钟侍祭.txt",
+    "json": "561怪标准配置JSON/C04-M016.json"
+  },
+  {
+    "monster_id": "C04-M017",
+    "name": "祭坛盲鱼",
+    "continent": 4,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/祭坛盲鱼.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/祭坛盲鱼.txt",
+    "json": "561怪标准配置JSON/C04-M017.json"
+  },
+  {
+    "monster_id": "C04-M018",
+    "name": "捧盏泥俑",
+    "continent": 4,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/捧盏泥俑.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/捧盏泥俑.txt",
+    "json": "561怪标准配置JSON/C04-M018.json"
+  },
+  {
+    "monster_id": "C04-M019",
+    "name": "碑林巡潮官",
+    "continent": 4,
+    "role": "稀有",
+    "trigger_count": 10,
+    "utf8": "MonItems_UTF8_部署前预检/碑林巡潮官.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/碑林巡潮官.txt",
+    "json": "561怪标准配置JSON/C04-M019.json"
+  },
+  {
+    "monster_id": "C04-M020",
+    "name": "断链湖狮",
+    "continent": 4,
+    "role": "稀有",
+    "trigger_count": 10,
+    "utf8": "MonItems_UTF8_部署前预检/断链湖狮.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/断链湖狮.txt",
+    "json": "561怪标准配置JSON/C04-M020.json"
+  },
+  {
+    "monster_id": "C04-M021",
+    "name": "蓝焰祷亡者",
+    "continent": 4,
+    "role": "稀有",
+    "trigger_count": 10,
+    "utf8": "MonItems_UTF8_部署前预检/蓝焰祷亡者.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/蓝焰祷亡者.txt",
+    "json": "561怪标准配置JSON/C04-M021.json"
+  },
+  {
+    "monster_id": "C04-M022",
+    "name": "祭池双生螯",
+    "continent": 4,
+    "role": "稀有",
+    "trigger_count": 10,
+    "utf8": "MonItems_UTF8_部署前预检/祭池双生螯.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/祭池双生螯.txt",
+    "json": "561怪标准配置JSON/C04-M022.json"
+  },
+  {
+    "monster_id": "C04-M023",
+    "name": "淹廊判官·摩汶",
+    "continent": 4,
+    "role": "地图BOSS",
+    "trigger_count": 14,
+    "utf8": "MonItems_UTF8_部署前预检/淹廊判官·摩汶.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/淹廊判官·摩汶.txt",
+    "json": "561怪标准配置JSON/C04-M023.json"
+  },
+  {
+    "monster_id": "C04-M024",
+    "name": "无声湖后·塞芙拉",
+    "continent": 4,
+    "role": "地图BOSS",
+    "trigger_count": 15,
+    "utf8": "MonItems_UTF8_部署前预检/无声湖后·塞芙拉.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/无声湖后·塞芙拉.txt",
+    "json": "561怪标准配置JSON/C04-M024.json"
+  },
+  {
+    "monster_id": "C04-M025",
+    "name": "破帆水手",
+    "continent": 4,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/破帆水手.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/破帆水手.txt",
+    "json": "561怪标准配置JSON/C04-M025.json"
+  },
+  {
+    "monster_id": "C04-M026",
+    "name": "缠藻桅猴",
+    "continent": 4,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/缠藻桅猴.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/缠藻桅猴.txt",
+    "json": "561怪标准配置JSON/C04-M026.json"
+  },
+  {
+    "monster_id": "C04-M027",
+    "name": "舱门凿击者",
+    "continent": 4,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/舱门凿击者.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/舱门凿击者.txt",
+    "json": "561怪标准配置JSON/C04-M027.json"
+  },
+  {
+    "monster_id": "C04-M028",
+    "name": "油灯怨影",
+    "continent": 4,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/油灯怨影.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/油灯怨影.txt",
+    "json": "561怪标准配置JSON/C04-M028.json"
+  },
+  {
+    "monster_id": "C04-M029",
+    "name": "墓舱寄居蟹",
+    "continent": 4,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/墓舱寄居蟹.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/墓舱寄居蟹.txt",
+    "json": "561怪标准配置JSON/C04-M029.json"
+  },
+  {
+    "monster_id": "C04-M030",
+    "name": "裹布船尸",
+    "continent": 4,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/裹布船尸.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/裹布船尸.txt",
+    "json": "561怪标准配置JSON/C04-M030.json"
+  },
+  {
+    "monster_id": "C04-M031",
+    "name": "白鳍劫舟客",
+    "continent": 4,
+    "role": "稀有",
+    "trigger_count": 10,
+    "utf8": "MonItems_UTF8_部署前预检/白鳍劫舟客.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/白鳍劫舟客.txt",
+    "json": "561怪标准配置JSON/C04-M031.json"
+  },
+  {
+    "monster_id": "C04-M032",
+    "name": "抱舵老幽魂",
+    "continent": 4,
+    "role": "稀有",
+    "trigger_count": 10,
+    "utf8": "MonItems_UTF8_部署前预检/抱舵老幽魂.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/抱舵老幽魂.txt",
+    "json": "561怪标准配置JSON/C04-M032.json"
+  },
+  {
+    "monster_id": "C04-M033",
+    "name": "棺板伏行者",
+    "continent": 4,
+    "role": "稀有",
+    "trigger_count": 10,
+    "utf8": "MonItems_UTF8_部署前预检/棺板伏行者.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/棺板伏行者.txt",
+    "json": "561怪标准配置JSON/C04-M033.json"
+  },
+  {
+    "monster_id": "C04-M034",
+    "name": "啃锚深渊鱼",
+    "continent": 4,
+    "role": "稀有",
+    "trigger_count": 10,
+    "utf8": "MonItems_UTF8_部署前预检/啃锚深渊鱼.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/啃锚深渊鱼.txt",
+    "json": "561怪标准配置JSON/C04-M034.json"
+  },
+  {
+    "monster_id": "C04-M035",
+    "name": "锁舱船长·奥杜",
+    "continent": 4,
+    "role": "地图BOSS",
+    "trigger_count": 14,
+    "utf8": "MonItems_UTF8_部署前预检/锁舱船长·奥杜.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/锁舱船长·奥杜.txt",
+    "json": "561怪标准配置JSON/C04-M035.json"
+  },
+  {
+    "monster_id": "C04-M036",
+    "name": "亡舟新娘·伊蕾莎",
+    "continent": 4,
+    "role": "地图BOSS",
+    "trigger_count": 15,
+    "utf8": "MonItems_UTF8_部署前预检/亡舟新娘·伊蕾莎.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/亡舟新娘·伊蕾莎.txt",
+    "json": "561怪标准配置JSON/C04-M036.json"
+  },
+  {
+    "monster_id": "C04-M037",
+    "name": "磷火甲板兵",
+    "continent": 4,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/磷火甲板兵.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/磷火甲板兵.txt",
+    "json": "561怪标准配置JSON/C04-M037.json"
+  },
+  {
+    "monster_id": "C04-M038",
+    "name": "船骸骨鸥",
+    "continent": 4,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/船骸骨鸥.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/船骸骨鸥.txt",
+    "json": "561怪标准配置JSON/C04-M038.json"
+  },
+  {
+    "monster_id": "C04-M039",
+    "name": "漏舱舀水鬼",
+    "continent": 4,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/漏舱舀水鬼.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/漏舱舀水鬼.txt",
+    "json": "561怪标准配置JSON/C04-M039.json"
+  },
+  {
+    "monster_id": "C04-M040",
+    "name": "铜铃引魂童",
+    "continent": 4,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/铜铃引魂童.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/铜铃引魂童.txt",
+    "json": "561怪标准配置JSON/C04-M040.json"
+  },
+  {
+    "monster_id": "C04-M041",
+    "name": "密舱蜡尸",
+    "continent": 4,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/密舱蜡尸.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/密舱蜡尸.txt",
+    "json": "561怪标准配置JSON/C04-M041.json"
+  },
+  {
+    "monster_id": "C04-M042",
+    "name": "食梦船蛾",
+    "continent": 4,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/食梦船蛾.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/食梦船蛾.txt",
+    "json": "561怪标准配置JSON/C04-M042.json"
+  },
+  {
+    "monster_id": "C04-M043",
+    "name": "倒吊瞭望手",
+    "continent": 4,
+    "role": "稀有",
+    "trigger_count": 10,
+    "utf8": "MonItems_UTF8_部署前预检/倒吊瞭望手.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/倒吊瞭望手.txt",
+    "json": "561怪标准配置JSON/C04-M043.json"
+  },
+  {
+    "monster_id": "C04-M044",
+    "name": "无面桨官",
+    "continent": 4,
+    "role": "稀有",
+    "trigger_count": 10,
+    "utf8": "MonItems_UTF8_部署前预检/无面桨官.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/无面桨官.txt",
+    "json": "561怪标准配置JSON/C04-M044.json"
+  },
+  {
+    "monster_id": "C04-M045",
+    "name": "舱壁缝合怪",
+    "continent": 4,
+    "role": "稀有",
+    "trigger_count": 10,
+    "utf8": "MonItems_UTF8_部署前预检/舱壁缝合怪.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/舱壁缝合怪.txt",
+    "json": "561怪标准配置JSON/C04-M045.json"
+  },
+  {
+    "monster_id": "C04-M046",
+    "name": "黑帆招魂师",
+    "continent": 4,
+    "role": "稀有",
+    "trigger_count": 10,
+    "utf8": "MonItems_UTF8_部署前预检/黑帆招魂师.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/黑帆招魂师.txt",
+    "json": "561怪标准配置JSON/C04-M046.json"
+  },
+  {
+    "monster_id": "C04-M047",
+    "name": "幽舵大副·赫岚",
+    "continent": 4,
+    "role": "地图BOSS",
+    "trigger_count": 14,
+    "utf8": "MonItems_UTF8_部署前预检/幽舵大副·赫岚.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/幽舵大副·赫岚.txt",
+    "json": "561怪标准配置JSON/C04-M047.json"
+  },
+  {
+    "monster_id": "C04-M048",
+    "name": "百舱吞魂者·沃姆",
+    "continent": 4,
+    "role": "地图BOSS",
+    "trigger_count": 14,
+    "utf8": "MonItems_UTF8_部署前预检/百舱吞魂者·沃姆.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/百舱吞魂者·沃姆.txt",
+    "json": "561怪标准配置JSON/C04-M048.json"
+  },
+  {
+    "monster_id": "C04-M049",
+    "name": "水闸巡守",
+    "continent": 4,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/水闸巡守.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/水闸巡守.txt",
+    "json": "561怪标准配置JSON/C04-M049.json"
+  },
+  {
+    "monster_id": "C04-M050",
+    "name": "涡背鳗犬",
+    "continent": 4,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/涡背鳗犬.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/涡背鳗犬.txt",
+    "json": "561怪标准配置JSON/C04-M050.json"
+  },
+  {
+    "monster_id": "C04-M051",
+    "name": "月河箭蛙",
+    "continent": 4,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/月河箭蛙.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/月河箭蛙.txt",
+    "json": "561怪标准配置JSON/C04-M051.json"
+  },
+  {
+    "monster_id": "C04-M052",
+    "name": "暗径拾珠客",
+    "continent": 4,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/暗径拾珠客.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/暗径拾珠客.txt",
+    "json": "561怪标准配置JSON/C04-M052.json"
+  },
+  {
+    "monster_id": "C04-M053",
+    "name": "渊口盔虾",
+    "continent": 4,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/渊口盔虾.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/渊口盔虾.txt",
+    "json": "561怪标准配置JSON/C04-M053.json"
+  },
+  {
+    "monster_id": "C04-M054",
+    "name": "伏流石鳗",
+    "continent": 4,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/伏流石鳗.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/伏流石鳗.txt",
+    "json": "561怪标准配置JSON/C04-M054.json"
+  },
+  {
+    "monster_id": "C04-M055",
+    "name": "断闸铁卫",
+    "continent": 4,
+    "role": "稀有",
+    "trigger_count": 10,
+    "utf8": "MonItems_UTF8_部署前预检/断闸铁卫.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/断闸铁卫.txt",
+    "json": "561怪标准配置JSON/C04-M055.json"
+  },
+  {
+    "monster_id": "C04-M056",
+    "name": "月痕水咒师",
+    "continent": 4,
+    "role": "稀有",
+    "trigger_count": 10,
+    "utf8": "MonItems_UTF8_部署前预检/月痕水咒师.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/月痕水咒师.txt",
+    "json": "561怪标准配置JSON/C04-M056.json"
+  },
+  {
+    "monster_id": "C04-M057",
+    "name": "渊声诱猎者",
+    "continent": 4,
+    "role": "稀有",
+    "trigger_count": 10,
+    "utf8": "MonItems_UTF8_部署前预检/渊声诱猎者.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/渊声诱猎者.txt",
+    "json": "561怪标准配置JSON/C04-M057.json"
+  },
+  {
+    "monster_id": "C04-M058",
+    "name": "吞灯巨鲶",
+    "continent": 4,
+    "role": "稀有",
+    "trigger_count": 10,
+    "utf8": "MonItems_UTF8_部署前预检/吞灯巨鲶.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/吞灯巨鲶.txt",
+    "json": "561怪标准配置JSON/C04-M058.json"
+  },
+  {
+    "monster_id": "C04-M059",
+    "name": "暗河剑师·罗缇",
+    "continent": 4,
+    "role": "地图BOSS",
+    "trigger_count": 14,
+    "utf8": "MonItems_UTF8_部署前预检/暗河剑师·罗缇.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/暗河剑师·罗缇.txt",
+    "json": "561怪标准配置JSON/C04-M059.json"
+  },
+  {
+    "monster_id": "C04-M060",
+    "name": "渊口老蛟·涅珈",
+    "continent": 4,
+    "role": "地图BOSS",
+    "trigger_count": 14,
+    "utf8": "MonItems_UTF8_部署前预检/渊口老蛟·涅珈.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/渊口老蛟·涅珈.txt",
+    "json": "561怪标准配置JSON/C04-M060.json"
+  },
+  {
+    "monster_id": "C04-M061",
+    "name": "摸壁潜行者",
+    "continent": 4,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/摸壁潜行者.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/摸壁潜行者.txt",
+    "json": "561怪标准配置JSON/C04-M061.json"
+  },
+  {
+    "monster_id": "C04-M062",
+    "name": "砾壳穴龟",
+    "continent": 4,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/砾壳穴龟.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/砾壳穴龟.txt",
+    "json": "561怪标准配置JSON/C04-M062.json"
+  },
+  {
+    "monster_id": "C04-M063",
+    "name": "暗渠滤水蚌",
+    "continent": 4,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/暗渠滤水蚌.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/暗渠滤水蚌.txt",
+    "json": "561怪标准配置JSON/C04-M063.json"
+  },
+  {
+    "monster_id": "C04-M064",
+    "name": "锈闸守渠人",
+    "continent": 4,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/锈闸守渠人.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/锈闸守渠人.txt",
+    "json": "561怪标准配置JSON/C04-M064.json"
+  },
+  {
+    "monster_id": "C04-M065",
+    "name": "秘室灯笼鱼",
+    "continent": 4,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/秘室灯笼鱼.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/秘室灯笼鱼.txt",
+    "json": "561怪标准配置JSON/C04-M065.json"
+  },
+  {
+    "monster_id": "C04-M066",
+    "name": "封门泥塑",
+    "continent": 4,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/封门泥塑.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/封门泥塑.txt",
+    "json": "561怪标准配置JSON/C04-M066.json"
+  },
+  {
+    "monster_id": "C04-M067",
+    "name": "回声盗墓客",
+    "continent": 4,
+    "role": "稀有",
+    "trigger_count": 10,
+    "utf8": "MonItems_UTF8_部署前预检/回声盗墓客.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/回声盗墓客.txt",
+    "json": "561怪标准配置JSON/C04-M067.json"
+  },
+  {
+    "monster_id": "C04-M068",
+    "name": "暗渠缚链僧",
+    "continent": 4,
+    "role": "稀有",
+    "trigger_count": 10,
+    "utf8": "MonItems_UTF8_部署前预检/暗渠缚链僧.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/暗渠缚链僧.txt",
+    "json": "561怪标准配置JSON/C04-M068.json"
+  },
+  {
+    "monster_id": "C04-M069",
+    "name": "抱钥湖尸",
+    "continent": 4,
+    "role": "稀有",
+    "trigger_count": 10,
+    "utf8": "MonItems_UTF8_部署前预检/抱钥湖尸.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/抱钥湖尸.txt",
+    "json": "561怪标准配置JSON/C04-M069.json"
+  },
+  {
+    "monster_id": "C04-M070",
+    "name": "噬门泥怪",
+    "continent": 4,
+    "role": "稀有",
+    "trigger_count": 10,
+    "utf8": "MonItems_UTF8_部署前预检/噬门泥怪.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/噬门泥怪.txt",
+    "json": "561怪标准配置JSON/C04-M070.json"
+  },
+  {
+    "monster_id": "C04-M071",
+    "name": "沉渠守誓者·阿涅",
+    "continent": 4,
+    "role": "地图BOSS",
+    "trigger_count": 15,
+    "utf8": "MonItems_UTF8_部署前预检/沉渠守誓者·阿涅.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/沉渠守誓者·阿涅.txt",
+    "json": "561怪标准配置JSON/C04-M071.json"
+  },
+  {
+    "monster_id": "C04-M072",
+    "name": "封室水镜姬·弥洛",
+    "continent": 4,
+    "role": "地图BOSS",
+    "trigger_count": 15,
+    "utf8": "MonItems_UTF8_部署前预检/封室水镜姬·弥洛.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/封室水镜姬·弥洛.txt",
+    "json": "561怪标准配置JSON/C04-M072.json"
+  },
+  {
+    "monster_id": "C04-M073",
+    "name": "闭潮王·莱弥恩",
+    "continent": 4,
+    "role": "守关BOSS",
+    "trigger_count": 12,
+    "utf8": "MonItems_UTF8_部署前预检/闭潮王·莱弥恩.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/闭潮王·莱弥恩.txt",
+    "json": "561怪标准配置JSON/C04-M073.json"
+  },
+  {
+    "monster_id": "C05-M001",
+    "name": "雾汐游魂",
+    "continent": 5,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/雾汐游魂.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/雾汐游魂.txt",
+    "json": "561怪标准配置JSON/C05-M001.json"
+  },
+  {
+    "monster_id": "C05-M002",
+    "name": "水庭苔甲蟹",
+    "continent": 5,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/水庭苔甲蟹.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/水庭苔甲蟹.txt",
+    "json": "561怪标准配置JSON/C05-M002.json"
+  },
+  {
+    "monster_id": "C05-M003",
+    "name": "月雾提灯侍",
+    "continent": 5,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/月雾提灯侍.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/月雾提灯侍.txt",
+    "json": "561怪标准配置JSON/C05-M003.json"
+  },
+  {
+    "monster_id": "C05-M004",
+    "name": "回廊凝露蛾",
+    "continent": 5,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/回廊凝露蛾.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/回廊凝露蛾.txt",
+    "json": "561怪标准配置JSON/C05-M004.json"
+  },
+  {
+    "monster_id": "C05-M005",
+    "name": "静月执盏者",
+    "continent": 5,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/静月执盏者.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/静月执盏者.txt",
+    "json": "561怪标准配置JSON/C05-M005.json"
+  },
+  {
+    "monster_id": "C05-M006",
+    "name": "祭庭涟影",
+    "continent": 5,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/祭庭涟影.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/祭庭涟影.txt",
+    "json": "561怪标准配置JSON/C05-M006.json"
+  },
+  {
+    "monster_id": "C05-M007",
+    "name": "银雾汲月兽",
+    "continent": 5,
+    "role": "稀有",
+    "trigger_count": 10,
+    "utf8": "MonItems_UTF8_部署前预检/银雾汲月兽.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/银雾汲月兽.txt",
+    "json": "561怪标准配置JSON/C05-M007.json"
+  },
+  {
+    "monster_id": "C05-M008",
+    "name": "镜荷守梦灵",
+    "continent": 5,
+    "role": "稀有",
+    "trigger_count": 10,
+    "utf8": "MonItems_UTF8_部署前预检/镜荷守梦灵.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/镜荷守梦灵.txt",
+    "json": "561怪标准配置JSON/C05-M008.json"
+  },
+  {
+    "monster_id": "C05-M009",
+    "name": "月纱回声女官",
+    "continent": 5,
+    "role": "稀有",
+    "trigger_count": 10,
+    "utf8": "MonItems_UTF8_部署前预检/月纱回声女官.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/月纱回声女官.txt",
+    "json": "561怪标准配置JSON/C05-M009.json"
+  },
+  {
+    "monster_id": "C05-M010",
+    "name": "静潮祷月祭司",
+    "continent": 5,
+    "role": "稀有",
+    "trigger_count": 10,
+    "utf8": "MonItems_UTF8_部署前预检/静潮祷月祭司.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/静潮祷月祭司.txt",
+    "json": "561怪标准配置JSON/C05-M010.json"
+  },
+  {
+    "monster_id": "C05-M011",
+    "name": "雾冠巡庭侯",
+    "continent": 5,
+    "role": "地图BOSS",
+    "trigger_count": 14,
+    "utf8": "MonItems_UTF8_部署前预检/雾冠巡庭侯.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/雾冠巡庭侯.txt",
+    "json": "561怪标准配置JSON/C05-M011.json"
+  },
+  {
+    "monster_id": "C05-M012",
+    "name": "沉月镜池圣母",
+    "continent": 5,
+    "role": "地图BOSS",
+    "trigger_count": 15,
+    "utf8": "MonItems_UTF8_部署前预检/沉月镜池圣母.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/沉月镜池圣母.txt",
+    "json": "561怪标准配置JSON/C05-M012.json"
+  },
+  {
+    "monster_id": "C05-M013",
+    "name": "碎辉穴蜥",
+    "continent": 5,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/碎辉穴蜥.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/碎辉穴蜥.txt",
+    "json": "561怪标准配置JSON/C05-M013.json"
+  },
+  {
+    "monster_id": "C05-M014",
+    "name": "遗迹刻晶奴",
+    "continent": 5,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/遗迹刻晶奴.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/遗迹刻晶奴.txt",
+    "json": "561怪标准配置JSON/C05-M014.json"
+  },
+  {
+    "monster_id": "C05-M015",
+    "name": "晶廊折光蝶",
+    "continent": 5,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/晶廊折光蝶.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/晶廊折光蝶.txt",
+    "json": "561怪标准配置JSON/C05-M015.json"
+  },
+  {
+    "monster_id": "C05-M016",
+    "name": "前庭砾晶守卒",
+    "continent": 5,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/前庭砾晶守卒.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/前庭砾晶守卒.txt",
+    "json": "561怪标准配置JSON/C05-M016.json"
+  },
+  {
+    "monster_id": "C05-M017",
+    "name": "内院辉壳犬",
+    "continent": 5,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/内院辉壳犬.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/内院辉壳犬.txt",
+    "json": "561怪标准配置JSON/C05-M017.json"
+  },
+  {
+    "monster_id": "C05-M018",
+    "name": "圣坛悬晶灵",
+    "continent": 5,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/圣坛悬晶灵.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/圣坛悬晶灵.txt",
+    "json": "561怪标准配置JSON/C05-M018.json"
+  },
+  {
+    "monster_id": "C05-M019",
+    "name": "青曜啮辉兽",
+    "continent": 5,
+    "role": "稀有",
+    "trigger_count": 10,
+    "utf8": "MonItems_UTF8_部署前预检/青曜啮辉兽.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/青曜啮辉兽.txt",
+    "json": "561怪标准配置JSON/C05-M019.json"
+  },
+  {
+    "monster_id": "C05-M020",
+    "name": "棱光长廊术士",
+    "continent": 5,
+    "role": "稀有",
+    "trigger_count": 10,
+    "utf8": "MonItems_UTF8_部署前预检/棱光长廊术士.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/棱光长廊术士.txt",
+    "json": "561怪标准配置JSON/C05-M020.json"
+  },
+  {
+    "monster_id": "C05-M021",
+    "name": "学院前庭晶戟卫",
+    "continent": 5,
+    "role": "稀有",
+    "trigger_count": 10,
+    "utf8": "MonItems_UTF8_部署前预检/学院前庭晶戟卫.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/学院前庭晶戟卫.txt",
+    "json": "561怪标准配置JSON/C05-M021.json"
+  },
+  {
+    "monster_id": "C05-M022",
+    "name": "内院辉核铸像",
+    "continent": 5,
+    "role": "稀有",
+    "trigger_count": 10,
+    "utf8": "MonItems_UTF8_部署前预检/内院辉核铸像.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/内院辉核铸像.txt",
+    "json": "561怪标准配置JSON/C05-M022.json"
+  },
+  {
+    "monster_id": "C05-M023",
+    "name": "裂辉古院监",
+    "continent": 5,
+    "role": "地图BOSS",
+    "trigger_count": 14,
+    "utf8": "MonItems_UTF8_部署前预检/裂辉古院监.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/裂辉古院监.txt",
+    "json": "561怪标准配置JSON/C05-M023.json"
+  },
+  {
+    "monster_id": "C05-M024",
+    "name": "万棱圣坛龙蜥",
+    "continent": 5,
+    "role": "地图BOSS",
+    "trigger_count": 15,
+    "utf8": "MonItems_UTF8_部署前预检/万棱圣坛龙蜥.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/万棱圣坛龙蜥.txt",
+    "json": "561怪标准配置JSON/C05-M024.json"
+  },
+  {
+    "monster_id": "C05-M025",
+    "name": "墨羽抄录仆",
+    "continent": 5,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/墨羽抄录仆.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/墨羽抄录仆.txt",
+    "json": "561怪标准配置JSON/C05-M025.json"
+  },
+  {
+    "monster_id": "C05-M026",
+    "name": "回廊试术生",
+    "continent": 5,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/回廊试术生.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/回廊试术生.txt",
+    "json": "561怪标准配置JSON/C05-M026.json"
+  },
+  {
+    "monster_id": "C05-M027",
+    "name": "封印粉笔灵",
+    "continent": 5,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/封印粉笔灵.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/封印粉笔灵.txt",
+    "json": "561怪标准配置JSON/C05-M027.json"
+  },
+  {
+    "monster_id": "C05-M028",
+    "name": "讲堂缄咒像",
+    "continent": 5,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/讲堂缄咒像.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/讲堂缄咒像.txt",
+    "json": "561怪标准配置JSON/C05-M028.json"
+  },
+  {
+    "monster_id": "C05-M029",
+    "name": "密室卷轴蠹",
+    "continent": 5,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/密室卷轴蠹.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/密室卷轴蠹.txt",
+    "json": "561怪标准配置JSON/C05-M029.json"
+  },
+  {
+    "monster_id": "C05-M030",
+    "name": "学院锁页卫",
+    "continent": 5,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/学院锁页卫.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/学院锁页卫.txt",
+    "json": "561怪标准配置JSON/C05-M030.json"
+  },
+  {
+    "monster_id": "C05-M031",
+    "name": "银规巡课官",
+    "continent": 5,
+    "role": "稀有",
+    "trigger_count": 10,
+    "utf8": "MonItems_UTF8_部署前预检/银规巡课官.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/银规巡课官.txt",
+    "json": "561怪标准配置JSON/C05-M031.json"
+  },
+  {
+    "monster_id": "C05-M032",
+    "name": "封讲禁声师",
+    "continent": 5,
+    "role": "稀有",
+    "trigger_count": 10,
+    "utf8": "MonItems_UTF8_部署前预检/封讲禁声师.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/封讲禁声师.txt",
+    "json": "561怪标准配置JSON/C05-M032.json"
+  },
+  {
+    "monster_id": "C05-M033",
+    "name": "密室倒书客",
+    "continent": 5,
+    "role": "稀有",
+    "trigger_count": 10,
+    "utf8": "MonItems_UTF8_部署前预检/密室倒书客.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/密室倒书客.txt",
+    "json": "561怪标准配置JSON/C05-M033.json"
+  },
+  {
+    "monster_id": "C05-M034",
+    "name": "星墨活页兽",
+    "continent": 5,
+    "role": "稀有",
+    "trigger_count": 10,
+    "utf8": "MonItems_UTF8_部署前预检/星墨活页兽.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/星墨活页兽.txt",
+    "json": "561怪标准配置JSON/C05-M034.json"
+  },
+  {
+    "monster_id": "C05-M035",
+    "name": "七印讲堂监",
+    "continent": 5,
+    "role": "地图BOSS",
+    "trigger_count": 14,
+    "utf8": "MonItems_UTF8_部署前预检/七印讲堂监.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/七印讲堂监.txt",
+    "json": "561怪标准配置JSON/C05-M035.json"
+  },
+  {
+    "monster_id": "C05-M036",
+    "name": "逆页密室导师",
+    "continent": 5,
+    "role": "地图BOSS",
+    "trigger_count": 15,
+    "utf8": "MonItems_UTF8_部署前预检/逆页密室导师.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/逆页密室导师.txt",
+    "json": "561怪标准配置JSON/C05-M036.json"
+  },
+  {
+    "monster_id": "C05-M037",
+    "name": "月尘理卷童",
+    "continent": 5,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/月尘理卷童.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/月尘理卷童.txt",
+    "json": "561怪标准配置JSON/C05-M037.json"
+  },
+  {
+    "monster_id": "C05-M038",
+    "name": "银页栖书鸦",
+    "continent": 5,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/银页栖书鸦.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/银页栖书鸦.txt",
+    "json": "561怪标准配置JSON/C05-M038.json"
+  },
+  {
+    "monster_id": "C05-M039",
+    "name": "禁书噤语灯",
+    "continent": 5,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/禁书噤语灯.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/禁书噤语灯.txt",
+    "json": "561怪标准配置JSON/C05-M039.json"
+  },
+  {
+    "monster_id": "C05-M040",
+    "name": "回廊巡卷傀",
+    "continent": 5,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/回廊巡卷傀.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/回廊巡卷傀.txt",
+    "json": "561怪标准配置JSON/C05-M040.json"
+  },
+  {
+    "monster_id": "C05-M041",
+    "name": "藏书室墨潮蛭",
+    "continent": 5,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/藏书室墨潮蛭.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/藏书室墨潮蛭.txt",
+    "json": "561怪标准配置JSON/C05-M041.json"
+  },
+  {
+    "monster_id": "C05-M042",
+    "name": "满月夹页灵",
+    "continent": 5,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/满月夹页灵.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/满月夹页灵.txt",
+    "json": "561怪标准配置JSON/C05-M042.json"
+  },
+  {
+    "monster_id": "C05-M043",
+    "name": "月相编目师",
+    "continent": 5,
+    "role": "稀有",
+    "trigger_count": 10,
+    "utf8": "MonItems_UTF8_部署前预检/月相编目师.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/月相编目师.txt",
+    "json": "561怪标准配置JSON/C05-M043.json"
+  },
+  {
+    "monster_id": "C05-M044",
+    "name": "禁页蚀字兽",
+    "continent": 5,
+    "role": "稀有",
+    "trigger_count": 10,
+    "utf8": "MonItems_UTF8_部署前预检/禁页蚀字兽.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/禁页蚀字兽.txt",
+    "json": "561怪标准配置JSON/C05-M044.json"
+  },
+  {
+    "monster_id": "C05-M045",
+    "name": "藏卷沉思者",
+    "continent": 5,
+    "role": "稀有",
+    "trigger_count": 10,
+    "utf8": "MonItems_UTF8_部署前预检/藏卷沉思者.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/藏卷沉思者.txt",
+    "json": "561怪标准配置JSON/C05-M045.json"
+  },
+  {
+    "monster_id": "C05-M046",
+    "name": "银书长尾猫",
+    "continent": 5,
+    "role": "稀有",
+    "trigger_count": 10,
+    "utf8": "MonItems_UTF8_部署前预检/银书长尾猫.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/银书长尾猫.txt",
+    "json": "561怪标准配置JSON/C05-M046.json"
+  },
+  {
+    "monster_id": "C05-M047",
+    "name": "无声禁典司",
+    "continent": 5,
+    "role": "地图BOSS",
+    "trigger_count": 14,
+    "utf8": "MonItems_UTF8_部署前预检/无声禁典司.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/无声禁典司.txt",
+    "json": "561怪标准配置JSON/C05-M047.json"
+  },
+  {
+    "monster_id": "C05-M048",
+    "name": "满月万卷君",
+    "continent": 5,
+    "role": "地图BOSS",
+    "trigger_count": 14,
+    "utf8": "MonItems_UTF8_部署前预检/满月万卷君.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/满月万卷君.txt",
+    "json": "561怪标准配置JSON/C05-M048.json"
+  },
+  {
+    "monster_id": "C05-M049",
+    "name": "月影鳞侍",
+    "continent": 5,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/月影鳞侍.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/月影鳞侍.txt",
+    "json": "561怪标准配置JSON/C05-M049.json"
+  },
+  {
+    "monster_id": "C05-M050",
+    "name": "水宫涡纹螺",
+    "continent": 5,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/水宫涡纹螺.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/水宫涡纹螺.txt",
+    "json": "561怪标准配置JSON/C05-M050.json"
+  },
+  {
+    "monster_id": "C05-M051",
+    "name": "月华执扇女使",
+    "continent": 5,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/月华执扇女使.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/月华执扇女使.txt",
+    "json": "561怪标准配置JSON/C05-M051.json"
+  },
+  {
+    "monster_id": "C05-M052",
+    "name": "内殿浮光鲛兵",
+    "continent": 5,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/内殿浮光鲛兵.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/内殿浮光鲛兵.txt",
+    "json": "561怪标准配置JSON/C05-M052.json"
+  },
+  {
+    "monster_id": "C05-M053",
+    "name": "圣殿澄潮祭从",
+    "continent": 5,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/圣殿澄潮祭从.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/圣殿澄潮祭从.txt",
+    "json": "561怪标准配置JSON/C05-M053.json"
+  },
+  {
+    "monster_id": "C05-M054",
+    "name": "月镜游鱼灵",
+    "continent": 5,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/月镜游鱼灵.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/月镜游鱼灵.txt",
+    "json": "561怪标准配置JSON/C05-M054.json"
+  },
+  {
+    "monster_id": "C05-M055",
+    "name": "影潮伏宫兽",
+    "continent": 5,
+    "role": "稀有",
+    "trigger_count": 10,
+    "utf8": "MonItems_UTF8_部署前预检/影潮伏宫兽.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/影潮伏宫兽.txt",
+    "json": "561怪标准配置JSON/C05-M055.json"
+  },
+  {
+    "monster_id": "C05-M056",
+    "name": "月华凝霜乐师",
+    "continent": 5,
+    "role": "稀有",
+    "trigger_count": 10,
+    "utf8": "MonItems_UTF8_部署前预检/月华凝霜乐师.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/月华凝霜乐师.txt",
+    "json": "561怪标准配置JSON/C05-M056.json"
+  },
+  {
+    "monster_id": "C05-M057",
+    "name": "圣殿悬月卫",
+    "continent": 5,
+    "role": "稀有",
+    "trigger_count": 10,
+    "utf8": "MonItems_UTF8_部署前预检/圣殿悬月卫.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/圣殿悬月卫.txt",
+    "json": "561怪标准配置JSON/C05-M057.json"
+  },
+  {
+    "monster_id": "C05-M058",
+    "name": "琉潮白鳍巫",
+    "continent": 5,
+    "role": "稀有",
+    "trigger_count": 10,
+    "utf8": "MonItems_UTF8_部署前预检/琉潮白鳍巫.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/琉潮白鳍巫.txt",
+    "json": "561怪标准配置JSON/C05-M058.json"
+  },
+  {
+    "monster_id": "C05-M059",
+    "name": "月华内殿掌灯君",
+    "continent": 5,
+    "role": "地图BOSS",
+    "trigger_count": 14,
+    "utf8": "MonItems_UTF8_部署前预检/月华内殿掌灯君.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/月华内殿掌灯君.txt",
+    "json": "561怪标准配置JSON/C05-M059.json"
+  },
+  {
+    "monster_id": "C05-M060",
+    "name": "影宫深潮王女",
+    "continent": 5,
+    "role": "地图BOSS",
+    "trigger_count": 14,
+    "utf8": "MonItems_UTF8_部署前预检/影宫深潮王女.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/影宫深潮王女.txt",
+    "json": "561怪标准配置JSON/C05-M060.json"
+  },
+  {
+    "monster_id": "C05-M061",
+    "name": "禁域蓝焰猎犬",
+    "continent": 5,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/禁域蓝焰猎犬.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/禁域蓝焰猎犬.txt",
+    "json": "561怪标准配置JSON/C05-M061.json"
+  },
+  {
+    "monster_id": "C05-M062",
+    "name": "卡利亚断誓侍",
+    "continent": 5,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/卡利亚断誓侍.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/卡利亚断誓侍.txt",
+    "json": "561怪标准配置JSON/C05-M062.json"
+  },
+  {
+    "monster_id": "C05-M063",
+    "name": "回廊折月傀",
+    "continent": 5,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/回廊折月傀.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/回廊折月傀.txt",
+    "json": "561怪标准配置JSON/C05-M063.json"
+  },
+  {
+    "monster_id": "C05-M064",
+    "name": "封印庭银纹卒",
+    "continent": 5,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/封印庭银纹卒.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/封印庭银纹卒.txt",
+    "json": "561怪标准配置JSON/C05-M064.json"
+  },
+  {
+    "monster_id": "C05-M065",
+    "name": "月蚀殿噬辉蛾",
+    "continent": 5,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/月蚀殿噬辉蛾.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/月蚀殿噬辉蛾.txt",
+    "json": "561怪标准配置JSON/C05-M065.json"
+  },
+  {
+    "monster_id": "C05-M066",
+    "name": "圣所守星残灵",
+    "continent": 5,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/圣所守星残灵.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/圣所守星残灵.txt",
+    "json": "561怪标准配置JSON/C05-M066.json"
+  },
+  {
+    "monster_id": "C05-M067",
+    "name": "王室镜刃使",
+    "continent": 5,
+    "role": "稀有",
+    "trigger_count": 10,
+    "utf8": "MonItems_UTF8_部署前预检/王室镜刃使.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/王室镜刃使.txt",
+    "json": "561怪标准配置JSON/C05-M067.json"
+  },
+  {
+    "monster_id": "C05-M068",
+    "name": "禁域缄门法官",
+    "continent": 5,
+    "role": "稀有",
+    "trigger_count": 10,
+    "utf8": "MonItems_UTF8_部署前预检/禁域缄门法官.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/禁域缄门法官.txt",
+    "json": "561怪标准配置JSON/C05-M068.json"
+  },
+  {
+    "monster_id": "C05-M069",
+    "name": "封庭月契巫",
+    "continent": 5,
+    "role": "稀有",
+    "trigger_count": 10,
+    "utf8": "MonItems_UTF8_部署前预检/封庭月契巫.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/封庭月契巫.txt",
+    "json": "561怪标准配置JSON/C05-M069.json"
+  },
+  {
+    "monster_id": "C05-M070",
+    "name": "密殿蚀冠兽",
+    "continent": 5,
+    "role": "稀有",
+    "trigger_count": 10,
+    "utf8": "MonItems_UTF8_部署前预检/密殿蚀冠兽.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/密殿蚀冠兽.txt",
+    "json": "561怪标准配置JSON/C05-M070.json"
+  },
+  {
+    "monster_id": "C05-M071",
+    "name": "月蚀密殿司冕",
+    "continent": 5,
+    "role": "地图BOSS",
+    "trigger_count": 15,
+    "utf8": "MonItems_UTF8_部署前预检/月蚀密殿司冕.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/月蚀密殿司冕.txt",
+    "json": "561怪标准配置JSON/C05-M071.json"
+  },
+  {
+    "monster_id": "C05-M072",
+    "name": "卡利亚圣所摄政灵",
+    "continent": 5,
+    "role": "地图BOSS",
+    "trigger_count": 15,
+    "utf8": "MonItems_UTF8_部署前预检/卡利亚圣所摄政灵.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/卡利亚圣所摄政灵.txt",
+    "json": "561怪标准配置JSON/C05-M072.json"
+  },
+  {
+    "monster_id": "C05-M073",
+    "name": "寒镜终誓王",
+    "continent": 5,
+    "role": "守关BOSS",
+    "trigger_count": 12,
+    "utf8": "MonItems_UTF8_部署前预检/寒镜终誓王.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/寒镜终誓王.txt",
+    "json": "561怪标准配置JSON/C05-M073.json"
+  },
+  {
+    "monster_id": "C06-M001",
+    "name": "熔原灰背兽",
+    "continent": 6,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/熔原灰背兽.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/熔原灰背兽.txt",
+    "json": "561怪标准配置JSON/C06-M001.json"
+  },
+  {
+    "monster_id": "C06-M002",
+    "name": "焦土拾骸兵",
+    "continent": 6,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/焦土拾骸兵.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/焦土拾骸兵.txt",
+    "json": "561怪标准配置JSON/C06-M002.json"
+  },
+  {
+    "monster_id": "C06-M003",
+    "name": "岩河爬鳞者",
+    "continent": 6,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/岩河爬鳞者.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/岩河爬鳞者.txt",
+    "json": "561怪标准配置JSON/C06-M003.json"
+  },
+  {
+    "monster_id": "C06-M004",
+    "name": "祭场执炭徒",
+    "continent": 6,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/祭场执炭徒.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/祭场执炭徒.txt",
+    "json": "561怪标准配置JSON/C06-M004.json"
+  },
+  {
+    "monster_id": "C06-M005",
+    "name": "熔心赤螯虫",
+    "continent": 6,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/熔心赤螯虫.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/熔心赤螯虫.txt",
+    "json": "561怪标准配置JSON/C06-M005.json"
+  },
+  {
+    "monster_id": "C06-M006",
+    "name": "血尘游猎手",
+    "continent": 6,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/血尘游猎手.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/血尘游猎手.txt",
+    "json": "561怪标准配置JSON/C06-M006.json"
+  },
+  {
+    "monster_id": "C06-M007",
+    "name": "赤棘狂战士",
+    "continent": 6,
+    "role": "稀有",
+    "trigger_count": 10,
+    "utf8": "MonItems_UTF8_部署前预检/赤棘狂战士.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/赤棘狂战士.txt",
+    "json": "561怪标准配置JSON/C06-M007.json"
+  },
+  {
+    "monster_id": "C06-M008",
+    "name": "焦脉咒炎师",
+    "continent": 6,
+    "role": "稀有",
+    "trigger_count": 10,
+    "utf8": "MonItems_UTF8_部署前预检/焦脉咒炎师.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/焦脉咒炎师.txt",
+    "json": "561怪标准配置JSON/C06-M008.json"
+  },
+  {
+    "monster_id": "C06-M009",
+    "name": "岩浆负甲兽",
+    "continent": 6,
+    "role": "稀有",
+    "trigger_count": 10,
+    "utf8": "MonItems_UTF8_部署前预检/岩浆负甲兽.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/岩浆负甲兽.txt",
+    "json": "561怪标准配置JSON/C06-M009.json"
+  },
+  {
+    "monster_id": "C06-M010",
+    "name": "灰烬裁决官",
+    "continent": 6,
+    "role": "稀有",
+    "trigger_count": 10,
+    "utf8": "MonItems_UTF8_部署前预检/灰烬裁决官.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/灰烬裁决官.txt",
+    "json": "561怪标准配置JSON/C06-M010.json"
+  },
+  {
+    "monster_id": "C06-M011",
+    "name": "火蚀巨像·巴洛",
+    "continent": 6,
+    "role": "地图BOSS",
+    "trigger_count": 14,
+    "utf8": "MonItems_UTF8_部署前预检/火蚀巨像·巴洛.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/火蚀巨像·巴洛.txt",
+    "json": "561怪标准配置JSON/C06-M011.json"
+  },
+  {
+    "monster_id": "C06-M012",
+    "name": "猩红熔母·瑟芮",
+    "continent": 6,
+    "role": "地图BOSS",
+    "trigger_count": 15,
+    "utf8": "MonItems_UTF8_部署前预检/猩红熔母·瑟芮.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/猩红熔母·瑟芮.txt",
+    "json": "561怪标准配置JSON/C06-M012.json"
+  },
+  {
+    "monster_id": "C06-M013",
+    "name": "腐狱囚徒",
+    "continent": 6,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/腐狱囚徒.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/腐狱囚徒.txt",
+    "json": "561怪标准配置JSON/C06-M013.json"
+  },
+  {
+    "monster_id": "C06-M014",
+    "name": "灼腐行刑兵",
+    "continent": 6,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/灼腐行刑兵.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/灼腐行刑兵.txt",
+    "json": "561怪标准配置JSON/C06-M014.json"
+  },
+  {
+    "monster_id": "C06-M015",
+    "name": "深渊熔壳虫",
+    "continent": 6,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/深渊熔壳虫.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/深渊熔壳虫.txt",
+    "json": "561怪标准配置JSON/C06-M015.json"
+  },
+  {
+    "monster_id": "C06-M016",
+    "name": "内域血菌兽",
+    "continent": 6,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/内域血菌兽.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/内域血菌兽.txt",
+    "json": "561怪标准配置JSON/C06-M016.json"
+  },
+  {
+    "monster_id": "C06-M017",
+    "name": "熔心烙印僧",
+    "continent": 6,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/熔心烙印僧.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/熔心烙印僧.txt",
+    "json": "561怪标准配置JSON/C06-M017.json"
+  },
+  {
+    "monster_id": "C06-M018",
+    "name": "火狱锁门卒",
+    "continent": 6,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/火狱锁门卒.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/火狱锁门卒.txt",
+    "json": "561怪标准配置JSON/C06-M018.json"
+  },
+  {
+    "monster_id": "C06-M019",
+    "name": "瘴焰缝尸匠",
+    "continent": 6,
+    "role": "稀有",
+    "trigger_count": 10,
+    "utf8": "MonItems_UTF8_部署前预检/瘴焰缝尸匠.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/瘴焰缝尸匠.txt",
+    "json": "561怪标准配置JSON/C06-M019.json"
+  },
+  {
+    "monster_id": "C06-M020",
+    "name": "灼骨狱卒长",
+    "continent": 6,
+    "role": "稀有",
+    "trigger_count": 10,
+    "utf8": "MonItems_UTF8_部署前预检/灼骨狱卒长.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/灼骨狱卒长.txt",
+    "json": "561怪标准配置JSON/C06-M020.json"
+  },
+  {
+    "monster_id": "C06-M021",
+    "name": "深渊熔喉兽",
+    "continent": 6,
+    "role": "稀有",
+    "trigger_count": 10,
+    "utf8": "MonItems_UTF8_部署前预检/深渊熔喉兽.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/深渊熔喉兽.txt",
+    "json": "561怪标准配置JSON/C06-M021.json"
+  },
+  {
+    "monster_id": "C06-M022",
+    "name": "赤腐祷刑官",
+    "continent": 6,
+    "role": "稀有",
+    "trigger_count": 10,
+    "utf8": "MonItems_UTF8_部署前预检/赤腐祷刑官.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/赤腐祷刑官.txt",
+    "json": "561怪标准配置JSON/C06-M022.json"
+  },
+  {
+    "monster_id": "C06-M023",
+    "name": "腐败火侯·伊弗",
+    "continent": 6,
+    "role": "地图BOSS",
+    "trigger_count": 14,
+    "utf8": "MonItems_UTF8_部署前预检/腐败火侯·伊弗.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/腐败火侯·伊弗.txt",
+    "json": "561怪标准配置JSON/C06-M023.json"
+  },
+  {
+    "monster_id": "C06-M024",
+    "name": "熔心狱主·塞维拉",
+    "continent": 6,
+    "role": "地图BOSS",
+    "trigger_count": 15,
+    "utf8": "MonItems_UTF8_部署前预检/熔心狱主·塞维拉.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/熔心狱主·塞维拉.txt",
+    "json": "561怪标准配置JSON/C06-M024.json"
+  },
+  {
+    "monster_id": "C06-M025",
+    "name": "龙窟烬鳞兽",
+    "continent": 6,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/龙窟烬鳞兽.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/龙窟烬鳞兽.txt",
+    "json": "561怪标准配置JSON/C06-M025.json"
+  },
+  {
+    "monster_id": "C06-M026",
+    "name": "崎路红狮兵",
+    "continent": 6,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/崎路红狮兵.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/崎路红狮兵.txt",
+    "json": "561怪标准配置JSON/C06-M026.json"
+  },
+  {
+    "monster_id": "C06-M027",
+    "name": "回廊火弩卫",
+    "continent": 6,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/回廊火弩卫.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/回廊火弩卫.txt",
+    "json": "561怪标准配置JSON/C06-M027.json"
+  },
+  {
+    "monster_id": "C06-M028",
+    "name": "龙巢护卵兽",
+    "continent": 6,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/龙巢护卵兽.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/龙巢护卵兽.txt",
+    "json": "561怪标准配置JSON/C06-M028.json"
+  },
+  {
+    "monster_id": "C06-M029",
+    "name": "神殿执矛僧",
+    "continent": 6,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/神殿执矛僧.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/神殿执矛僧.txt",
+    "json": "561怪标准配置JSON/C06-M029.json"
+  },
+  {
+    "monster_id": "C06-M030",
+    "name": "赤鬃巡巢者",
+    "continent": 6,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/赤鬃巡巢者.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/赤鬃巡巢者.txt",
+    "json": "561怪标准配置JSON/C06-M030.json"
+  },
+  {
+    "monster_id": "C06-M031",
+    "name": "龙火驯兽师",
+    "continent": 6,
+    "role": "稀有",
+    "trigger_count": 10,
+    "utf8": "MonItems_UTF8_部署前预检/龙火驯兽师.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/龙火驯兽师.txt",
+    "json": "561怪标准配置JSON/C06-M031.json"
+  },
+  {
+    "monster_id": "C06-M032",
+    "name": "红狮斩翼骑",
+    "continent": 6,
+    "role": "稀有",
+    "trigger_count": 10,
+    "utf8": "MonItems_UTF8_部署前预检/红狮斩翼骑.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/红狮斩翼骑.txt",
+    "json": "561怪标准配置JSON/C06-M032.json"
+  },
+  {
+    "monster_id": "C06-M033",
+    "name": "赤焰鳞甲将",
+    "continent": 6,
+    "role": "稀有",
+    "trigger_count": 10,
+    "utf8": "MonItems_UTF8_部署前预检/赤焰鳞甲将.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/赤焰鳞甲将.txt",
+    "json": "561怪标准配置JSON/C06-M033.json"
+  },
+  {
+    "monster_id": "C06-M034",
+    "name": "龙巢血祭司",
+    "continent": 6,
+    "role": "稀有",
+    "trigger_count": 10,
+    "utf8": "MonItems_UTF8_部署前预检/龙巢血祭司.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/龙巢血祭司.txt",
+    "json": "561怪标准配置JSON/C06-M034.json"
+  },
+  {
+    "monster_id": "C06-M035",
+    "name": "焚翼古龙·阿格纳",
+    "continent": 6,
+    "role": "地图BOSS",
+    "trigger_count": 15,
+    "utf8": "MonItems_UTF8_部署前预检/焚翼古龙·阿格纳.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/焚翼古龙·阿格纳.txt",
+    "json": "561怪标准配置JSON/C06-M035.json"
+  },
+  {
+    "monster_id": "C06-M036",
+    "name": "红狮圣兽·雷奥尼斯",
+    "continent": 6,
+    "role": "地图BOSS",
+    "trigger_count": 16,
+    "utf8": "MonItems_UTF8_部署前预检/红狮圣兽·雷奥尼斯.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/红狮圣兽·雷奥尼斯.txt",
+    "json": "561怪标准配置JSON/C06-M036.json"
+  },
+  {
+    "monster_id": "C06-M037",
+    "name": "碎星狮王·拉塔恩",
+    "continent": 6,
+    "role": "守关BOSS",
+    "trigger_count": 12,
+    "utf8": "MonItems_UTF8_部署前预检/碎星狮王·拉塔恩.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/碎星狮王·拉塔恩.txt",
+    "json": "561怪标准配置JSON/C06-M037.json"
+  },
+  {
+    "monster_id": "C07-M001",
+    "name": "雪原冻角鹿",
+    "continent": 7,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/雪原冻角鹿.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/雪原冻角鹿.txt",
+    "json": "561怪标准配置JSON/C07-M001.json"
+  },
+  {
+    "monster_id": "C07-M002",
+    "name": "霜风放逐兵",
+    "continent": 7,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/霜风放逐兵.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/霜风放逐兵.txt",
+    "json": "561怪标准配置JSON/C07-M002.json"
+  },
+  {
+    "monster_id": "C07-M003",
+    "name": "冻土掘冰徒",
+    "continent": 7,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/冻土掘冰徒.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/冻土掘冰徒.txt",
+    "json": "561怪标准配置JSON/C07-M003.json"
+  },
+  {
+    "monster_id": "C07-M004",
+    "name": "祭场白烛侍",
+    "continent": 7,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/祭场白烛侍.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/祭场白烛侍.txt",
+    "json": "561怪标准配置JSON/C07-M004.json"
+  },
+  {
+    "monster_id": "C07-M005",
+    "name": "苍鬃雪狼",
+    "continent": 7,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/苍鬃雪狼.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/苍鬃雪狼.txt",
+    "json": "561怪标准配置JSON/C07-M005.json"
+  },
+  {
+    "monster_id": "C07-M006",
+    "name": "寒羽巡猎鹰",
+    "continent": 7,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/寒羽巡猎鹰.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/寒羽巡猎鹰.txt",
+    "json": "561怪标准配置JSON/C07-M006.json"
+  },
+  {
+    "monster_id": "C07-M007",
+    "name": "白霜重甲卫",
+    "continent": 7,
+    "role": "稀有",
+    "trigger_count": 10,
+    "utf8": "MonItems_UTF8_部署前预检/白霜重甲卫.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/白霜重甲卫.txt",
+    "json": "561怪标准配置JSON/C07-M007.json"
+  },
+  {
+    "monster_id": "C07-M008",
+    "name": "霜风号角骑",
+    "continent": 7,
+    "role": "稀有",
+    "trigger_count": 10,
+    "utf8": "MonItems_UTF8_部署前预检/霜风号角骑.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/霜风号角骑.txt",
+    "json": "561怪标准配置JSON/C07-M008.json"
+  },
+  {
+    "monster_id": "C07-M009",
+    "name": "冻土晶背熊",
+    "continent": 7,
+    "role": "稀有",
+    "trigger_count": 10,
+    "utf8": "MonItems_UTF8_部署前预检/冻土晶背熊.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/冻土晶背熊.txt",
+    "json": "561怪标准配置JSON/C07-M009.json"
+  },
+  {
+    "monster_id": "C07-M010",
+    "name": "苍白祭司",
+    "continent": 7,
+    "role": "稀有",
+    "trigger_count": 10,
+    "utf8": "MonItems_UTF8_部署前预检/苍白祭司.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/苍白祭司.txt",
+    "json": "561怪标准配置JSON/C07-M010.json"
+  },
+  {
+    "monster_id": "C07-M011",
+    "name": "雪墓巨人·赫洛",
+    "continent": 7,
+    "role": "地图BOSS",
+    "trigger_count": 14,
+    "utf8": "MonItems_UTF8_部署前预检/雪墓巨人·赫洛.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/雪墓巨人·赫洛.txt",
+    "json": "561怪标准配置JSON/C07-M011.json"
+  },
+  {
+    "monster_id": "C07-M012",
+    "name": "苍白鹿王·艾尔维",
+    "continent": 7,
+    "role": "地图BOSS",
+    "trigger_count": 15,
+    "utf8": "MonItems_UTF8_部署前预检/苍白鹿王·艾尔维.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/苍白鹿王·艾尔维.txt",
+    "json": "561怪标准配置JSON/C07-M012.json"
+  },
+  {
+    "monster_id": "C07-M013",
+    "name": "荒境雪壳虫",
+    "continent": 7,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/荒境雪壳虫.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/荒境雪壳虫.txt",
+    "json": "561怪标准配置JSON/C07-M013.json"
+  },
+  {
+    "monster_id": "C07-M014",
+    "name": "冰封流亡者",
+    "continent": 7,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/冰封流亡者.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/冰封流亡者.txt",
+    "json": "561怪标准配置JSON/C07-M014.json"
+  },
+  {
+    "monster_id": "C07-M015",
+    "name": "极昼逐光兽",
+    "continent": 7,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/极昼逐光兽.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/极昼逐光兽.txt",
+    "json": "561怪标准配置JSON/C07-M015.json"
+  },
+  {
+    "monster_id": "C07-M016",
+    "name": "圣域守碑人",
+    "continent": 7,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/圣域守碑人.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/圣域守碑人.txt",
+    "json": "561怪标准配置JSON/C07-M016.json"
+  },
+  {
+    "monster_id": "C07-M017",
+    "name": "永冻霜牙狼",
+    "continent": 7,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/永冻霜牙狼.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/永冻霜牙狼.txt",
+    "json": "561怪标准配置JSON/C07-M017.json"
+  },
+  {
+    "monster_id": "C07-M018",
+    "name": "旷野寒弓手",
+    "continent": 7,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/旷野寒弓手.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/旷野寒弓手.txt",
+    "json": "561怪标准配置JSON/C07-M018.json"
+  },
+  {
+    "monster_id": "C07-M019",
+    "name": "荒境冰甲犀",
+    "continent": 7,
+    "role": "稀有",
+    "trigger_count": 10,
+    "utf8": "MonItems_UTF8_部署前预检/荒境冰甲犀.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/荒境冰甲犀.txt",
+    "json": "561怪标准配置JSON/C07-M019.json"
+  },
+  {
+    "monster_id": "C07-M020",
+    "name": "冰封审判骑",
+    "continent": 7,
+    "role": "稀有",
+    "trigger_count": 10,
+    "utf8": "MonItems_UTF8_部署前预检/冰封审判骑.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/冰封审判骑.txt",
+    "json": "561怪标准配置JSON/C07-M020.json"
+  },
+  {
+    "monster_id": "C07-M021",
+    "name": "极昼白翼鹫",
+    "continent": 7,
+    "role": "稀有",
+    "trigger_count": 10,
+    "utf8": "MonItems_UTF8_部署前预检/极昼白翼鹫.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/极昼白翼鹫.txt",
+    "json": "561怪标准配置JSON/C07-M021.json"
+  },
+  {
+    "monster_id": "C07-M022",
+    "name": "圣域默祷师",
+    "continent": 7,
+    "role": "稀有",
+    "trigger_count": 10,
+    "utf8": "MonItems_UTF8_部署前预检/圣域默祷师.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/圣域默祷师.txt",
+    "json": "561怪标准配置JSON/C07-M022.json"
+  },
+  {
+    "monster_id": "C07-M023",
+    "name": "极昼雪后·芙蕾",
+    "continent": 7,
+    "role": "地图BOSS",
+    "trigger_count": 14,
+    "utf8": "MonItems_UTF8_部署前预检/极昼雪后·芙蕾.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/极昼雪后·芙蕾.txt",
+    "json": "561怪标准配置JSON/C07-M023.json"
+  },
+  {
+    "monster_id": "C07-M024",
+    "name": "永冻圣兽·乌尔",
+    "continent": 7,
+    "role": "地图BOSS",
+    "trigger_count": 15,
+    "utf8": "MonItems_UTF8_部署前预检/永冻圣兽·乌尔.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/永冻圣兽·乌尔.txt",
+    "json": "561怪标准配置JSON/C07-M024.json"
+  },
+  {
+    "monster_id": "C07-M025",
+    "name": "禁域冻喉兽",
+    "continent": 7,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/禁域冻喉兽.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/禁域冻喉兽.txt",
+    "json": "561怪标准配置JSON/C07-M025.json"
+  },
+  {
+    "monster_id": "C07-M026",
+    "name": "雾界迷途兵",
+    "continent": 7,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/雾界迷途兵.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/雾界迷途兵.txt",
+    "json": "561怪标准配置JSON/C07-M026.json"
+  },
+  {
+    "monster_id": "C07-M027",
+    "name": "寒狱锁链卒",
+    "continent": 7,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/寒狱锁链卒.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/寒狱锁链卒.txt",
+    "json": "561怪标准配置JSON/C07-M027.json"
+  },
+  {
+    "monster_id": "C07-M028",
+    "name": "祭坛守烛女",
+    "continent": 7,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/祭坛守烛女.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/祭坛守烛女.txt",
+    "json": "561怪标准配置JSON/C07-M028.json"
+  },
+  {
+    "monster_id": "C07-M029",
+    "name": "圣所白甲卫",
+    "continent": 7,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/圣所白甲卫.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/圣所白甲卫.txt",
+    "json": "561怪标准配置JSON/C07-M029.json"
+  },
+  {
+    "monster_id": "C07-M030",
+    "name": "极寒巡界狼",
+    "continent": 7,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/极寒巡界狼.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/极寒巡界狼.txt",
+    "json": "561怪标准配置JSON/C07-M030.json"
+  },
+  {
+    "monster_id": "C07-M031",
+    "name": "冻雾幻刃客",
+    "continent": 7,
+    "role": "稀有",
+    "trigger_count": 10,
+    "utf8": "MonItems_UTF8_部署前预检/冻雾幻刃客.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/冻雾幻刃客.txt",
+    "json": "561怪标准配置JSON/C07-M031.json"
+  },
+  {
+    "monster_id": "C07-M032",
+    "name": "寒狱冰骨将",
+    "continent": 7,
+    "role": "稀有",
+    "trigger_count": 10,
+    "utf8": "MonItems_UTF8_部署前预检/寒狱冰骨将.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/寒狱冰骨将.txt",
+    "json": "561怪标准配置JSON/C07-M032.json"
+  },
+  {
+    "monster_id": "C07-M033",
+    "name": "祭坛霜钟僧",
+    "continent": 7,
+    "role": "稀有",
+    "trigger_count": 10,
+    "utf8": "MonItems_UTF8_部署前预检/祭坛霜钟僧.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/祭坛霜钟僧.txt",
+    "json": "561怪标准配置JSON/C07-M033.json"
+  },
+  {
+    "monster_id": "C07-M034",
+    "name": "圣所银角兽",
+    "continent": 7,
+    "role": "稀有",
+    "trigger_count": 10,
+    "utf8": "MonItems_UTF8_部署前预检/圣所银角兽.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/圣所银角兽.txt",
+    "json": "561怪标准配置JSON/C07-M034.json"
+  },
+  {
+    "monster_id": "C07-M035",
+    "name": "冰祭审判者·诺薇",
+    "continent": 7,
+    "role": "地图BOSS",
+    "trigger_count": 15,
+    "utf8": "MonItems_UTF8_部署前预检/冰祭审判者·诺薇.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/冰祭审判者·诺薇.txt",
+    "json": "561怪标准配置JSON/C07-M035.json"
+  },
+  {
+    "monster_id": "C07-M036",
+    "name": "极寒圣女·希尔达",
+    "continent": 7,
+    "role": "地图BOSS",
+    "trigger_count": 16,
+    "utf8": "MonItems_UTF8_部署前预检/极寒圣女·希尔达.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/极寒圣女·希尔达.txt",
+    "json": "561怪标准配置JSON/C07-M036.json"
+  },
+  {
+    "monster_id": "C07-M037",
+    "name": "化圣霜王·埃琉斯",
+    "continent": 7,
+    "role": "守关BOSS",
+    "trigger_count": 12,
+    "utf8": "MonItems_UTF8_部署前预检/化圣霜王·埃琉斯.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/化圣霜王·埃琉斯.txt",
+    "json": "561怪标准配置JSON/C07-M037.json"
+  },
+  {
+    "monster_id": "C08-M001",
+    "name": "霜蹄岩羊",
+    "continent": 8,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/霜蹄岩羊.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/霜蹄岩羊.txt",
+    "json": "561怪标准配置JSON/C08-M001.json"
+  },
+  {
+    "monster_id": "C08-M002",
+    "name": "背冰拾荒者",
+    "continent": 8,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/背冰拾荒者.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/背冰拾荒者.txt",
+    "json": "561怪标准配置JSON/C08-M002.json"
+  },
+  {
+    "monster_id": "C08-M003",
+    "name": "冰脊雪猿",
+    "continent": 8,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/冰脊雪猿.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/冰脊雪猿.txt",
+    "json": "561怪标准配置JSON/C08-M003.json"
+  },
+  {
+    "monster_id": "C08-M004",
+    "name": "古道冻骸",
+    "continent": 8,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/古道冻骸.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/古道冻骸.txt",
+    "json": "561怪标准配置JSON/C08-M004.json"
+  },
+  {
+    "monster_id": "C08-M005",
+    "name": "暴雪青隼",
+    "continent": 8,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/暴雪青隼.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/暴雪青隼.txt",
+    "json": "561怪标准配置JSON/C08-M005.json"
+  },
+  {
+    "monster_id": "C08-M006",
+    "name": "祭台霜烛灵",
+    "continent": 8,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/祭台霜烛灵.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/祭台霜烛灵.txt",
+    "json": "561怪标准配置JSON/C08-M006.json"
+  },
+  {
+    "monster_id": "C08-M007",
+    "name": "雾凇引路人",
+    "continent": 8,
+    "role": "稀有",
+    "trigger_count": 10,
+    "utf8": "MonItems_UTF8_部署前预检/雾凇引路人.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/雾凇引路人.txt",
+    "json": "561怪标准配置JSON/C08-M007.json"
+  },
+  {
+    "monster_id": "C08-M008",
+    "name": "冰脊驮碑兽",
+    "continent": 8,
+    "role": "稀有",
+    "trigger_count": 10,
+    "utf8": "MonItems_UTF8_部署前预检/冰脊驮碑兽.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/冰脊驮碑兽.txt",
+    "json": "561怪标准配置JSON/C08-M008.json"
+  },
+  {
+    "monster_id": "C08-M009",
+    "name": "啸峰白魈",
+    "continent": 8,
+    "role": "稀有",
+    "trigger_count": 10,
+    "utf8": "MonItems_UTF8_部署前预检/啸峰白魈.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/啸峰白魈.txt",
+    "json": "561怪标准配置JSON/C08-M009.json"
+  },
+  {
+    "monster_id": "C08-M010",
+    "name": "祭台封誓者",
+    "continent": 8,
+    "role": "稀有",
+    "trigger_count": 10,
+    "utf8": "MonItems_UTF8_部署前预检/祭台封誓者.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/祭台封誓者.txt",
+    "json": "561怪标准配置JSON/C08-M010.json"
+  },
+  {
+    "monster_id": "C08-M011",
+    "name": "雪崩号角·赫罗姆",
+    "continent": 8,
+    "role": "地图BOSS",
+    "trigger_count": 15,
+    "utf8": "MonItems_UTF8_部署前预检/雪崩号角·赫罗姆.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/雪崩号角·赫罗姆.txt",
+    "json": "561怪标准配置JSON/C08-M011.json"
+  },
+  {
+    "monster_id": "C08-M012",
+    "name": "山巅霜祀·伊芙迦",
+    "continent": 8,
+    "role": "地图BOSS",
+    "trigger_count": 16,
+    "utf8": "MonItems_UTF8_部署前预检/山巅霜祀·伊芙迦.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/山巅霜祀·伊芙迦.txt",
+    "json": "561怪标准配置JSON/C08-M012.json"
+  },
+  {
+    "monster_id": "C08-M013",
+    "name": "断峰岩獾",
+    "continent": 8,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/断峰岩獾.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/断峰岩獾.txt",
+    "json": "561怪标准配置JSON/C08-M013.json"
+  },
+  {
+    "monster_id": "C08-M014",
+    "name": "负霜矿奴",
+    "continent": 8,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/负霜矿奴.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/负霜矿奴.txt",
+    "json": "561怪标准配置JSON/C08-M014.json"
+  },
+  {
+    "monster_id": "C08-M015",
+    "name": "碎冰桥弩卒",
+    "continent": 8,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/碎冰桥弩卒.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/碎冰桥弩卒.txt",
+    "json": "561怪标准配置JSON/C08-M015.json"
+  },
+  {
+    "monster_id": "C08-M016",
+    "name": "天桥冰甲虫",
+    "continent": 8,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/天桥冰甲虫.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/天桥冰甲虫.txt",
+    "json": "561怪标准配置JSON/C08-M016.json"
+  },
+  {
+    "monster_id": "C08-M017",
+    "name": "裂谷寒翼蝠",
+    "continent": 8,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/裂谷寒翼蝠.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/裂谷寒翼蝠.txt",
+    "json": "561怪标准配置JSON/C08-M017.json"
+  },
+  {
+    "monster_id": "C08-M018",
+    "name": "祭场残斧魂",
+    "continent": 8,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/祭场残斧魂.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/祭场残斧魂.txt",
+    "json": "561怪标准配置JSON/C08-M018.json"
+  },
+  {
+    "monster_id": "C08-M019",
+    "name": "断冰猎旗手",
+    "continent": 8,
+    "role": "稀有",
+    "trigger_count": 10,
+    "utf8": "MonItems_UTF8_部署前预检/断冰猎旗手.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/断冰猎旗手.txt",
+    "json": "561怪标准配置JSON/C08-M019.json"
+  },
+  {
+    "monster_id": "C08-M020",
+    "name": "天桥踏索客",
+    "continent": 8,
+    "role": "稀有",
+    "trigger_count": 10,
+    "utf8": "MonItems_UTF8_部署前预检/天桥踏索客.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/天桥踏索客.txt",
+    "json": "561怪标准配置JSON/C08-M020.json"
+  },
+  {
+    "monster_id": "C08-M021",
+    "name": "裂谷雪嚎兽",
+    "continent": 8,
+    "role": "稀有",
+    "trigger_count": 10,
+    "utf8": "MonItems_UTF8_部署前预检/裂谷雪嚎兽.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/裂谷雪嚎兽.txt",
+    "json": "561怪标准配置JSON/C08-M021.json"
+  },
+  {
+    "monster_id": "C08-M022",
+    "name": "祭场缄誓巫",
+    "continent": 8,
+    "role": "稀有",
+    "trigger_count": 10,
+    "utf8": "MonItems_UTF8_部署前预检/祭场缄誓巫.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/祭场缄誓巫.txt",
+    "json": "561怪标准配置JSON/C08-M022.json"
+  },
+  {
+    "monster_id": "C08-M023",
+    "name": "裂谷锻峰侯·德鲁伽",
+    "continent": 8,
+    "role": "地图BOSS",
+    "trigger_count": 15,
+    "utf8": "MonItems_UTF8_部署前预检/裂谷锻峰侯·德鲁伽.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/裂谷锻峰侯·德鲁伽.txt",
+    "json": "561怪标准配置JSON/C08-M023.json"
+  },
+  {
+    "monster_id": "C08-M024",
+    "name": "断峰献祭者·维瑟娅",
+    "continent": 8,
+    "role": "地图BOSS",
+    "trigger_count": 16,
+    "utf8": "MonItems_UTF8_部署前预检/断峰献祭者·维瑟娅.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/断峰献祭者·维瑟娅.txt",
+    "json": "561怪标准配置JSON/C08-M024.json"
+  },
+  {
+    "monster_id": "C08-M025",
+    "name": "冰宫雪鸦",
+    "continent": 8,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/冰宫雪鸦.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/冰宫雪鸦.txt",
+    "json": "561怪标准配置JSON/C08-M025.json"
+  },
+  {
+    "monster_id": "C08-M026",
+    "name": "御阶铲雪仆",
+    "continent": 8,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/御阶铲雪仆.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/御阶铲雪仆.txt",
+    "json": "561怪标准配置JSON/C08-M026.json"
+  },
+  {
+    "monster_id": "C08-M027",
+    "name": "外廊冰枪卫",
+    "continent": 8,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/外廊冰枪卫.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/外廊冰枪卫.txt",
+    "json": "561怪标准配置JSON/C08-M027.json"
+  },
+  {
+    "monster_id": "C08-M028",
+    "name": "内廷霜纱侍女",
+    "continent": 8,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/内廷霜纱侍女.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/内廷霜纱侍女.txt",
+    "json": "561怪标准配置JSON/C08-M028.json"
+  },
+  {
+    "monster_id": "C08-M029",
+    "name": "议殿石髯书记",
+    "continent": 8,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/议殿石髯书记.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/议殿石髯书记.txt",
+    "json": "561怪标准配置JSON/C08-M029.json"
+  },
+  {
+    "monster_id": "C08-M030",
+    "name": "王座寒灯侍",
+    "continent": 8,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/王座寒灯侍.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/王座寒灯侍.txt",
+    "json": "561怪标准配置JSON/C08-M030.json"
+  },
+  {
+    "monster_id": "C08-M031",
+    "name": "外廊镜甲将",
+    "continent": 8,
+    "role": "稀有",
+    "trigger_count": 10,
+    "utf8": "MonItems_UTF8_部署前预检/外廊镜甲将.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/外廊镜甲将.txt",
+    "json": "561怪标准配置JSON/C08-M031.json"
+  },
+  {
+    "monster_id": "C08-M032",
+    "name": "内廷缄声女官",
+    "continent": 8,
+    "role": "稀有",
+    "trigger_count": 10,
+    "utf8": "MonItems_UTF8_部署前预检/内廷缄声女官.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/内廷缄声女官.txt",
+    "json": "561怪标准配置JSON/C08-M032.json"
+  },
+  {
+    "monster_id": "C08-M033",
+    "name": "议殿古律巨人",
+    "continent": 8,
+    "role": "稀有",
+    "trigger_count": 10,
+    "utf8": "MonItems_UTF8_部署前预检/议殿古律巨人.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/议殿古律巨人.txt",
+    "json": "561怪标准配置JSON/C08-M033.json"
+  },
+  {
+    "monster_id": "C08-M034",
+    "name": "王座霜冠司礼",
+    "continent": 8,
+    "role": "稀有",
+    "trigger_count": 10,
+    "utf8": "MonItems_UTF8_部署前预检/王座霜冠司礼.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/王座霜冠司礼.txt",
+    "json": "561怪标准配置JSON/C08-M034.json"
+  },
+  {
+    "monster_id": "C08-M035",
+    "name": "议殿白髯公·沃尔格",
+    "continent": 8,
+    "role": "地图BOSS",
+    "trigger_count": 15,
+    "utf8": "MonItems_UTF8_部署前预检/议殿白髯公·沃尔格.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/议殿白髯公·沃尔格.txt",
+    "json": "561怪标准配置JSON/C08-M035.json"
+  },
+  {
+    "monster_id": "C08-M036",
+    "name": "冰宫摄政后·伊瑟芮",
+    "continent": 8,
+    "role": "地图BOSS",
+    "trigger_count": 16,
+    "utf8": "MonItems_UTF8_部署前预检/冰宫摄政后·伊瑟芮.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/冰宫摄政后·伊瑟芮.txt",
+    "json": "561怪标准配置JSON/C08-M036.json"
+  },
+  {
+    "monster_id": "C08-M037",
+    "name": "王庭铸霜卫",
+    "continent": 8,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/王庭铸霜卫.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/王庭铸霜卫.txt",
+    "json": "561怪标准配置JSON/C08-M037.json"
+  },
+  {
+    "monster_id": "C08-M038",
+    "name": "庭阶雪鬃獒",
+    "continent": 8,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/庭阶雪鬃獒.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/庭阶雪鬃獒.txt",
+    "json": "561怪标准配置JSON/C08-M038.json"
+  },
+  {
+    "monster_id": "C08-M039",
+    "name": "内宫白毡侍",
+    "continent": 8,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/内宫白毡侍.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/内宫白毡侍.txt",
+    "json": "561怪标准配置JSON/C08-M039.json"
+  },
+  {
+    "monster_id": "C08-M040",
+    "name": "雪域巡烛官",
+    "continent": 8,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/雪域巡烛官.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/雪域巡烛官.txt",
+    "json": "561怪标准配置JSON/C08-M040.json"
+  },
+  {
+    "monster_id": "C08-M041",
+    "name": "王座负碑巨人",
+    "continent": 8,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/王座负碑巨人.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/王座负碑巨人.txt",
+    "json": "561怪标准配置JSON/C08-M041.json"
+  },
+  {
+    "monster_id": "C08-M042",
+    "name": "王座冰铃童",
+    "continent": 8,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/王座冰铃童.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/王座冰铃童.txt",
+    "json": "561怪标准配置JSON/C08-M042.json"
+  },
+  {
+    "monster_id": "C08-M043",
+    "name": "觐庭裂盔侯",
+    "continent": 8,
+    "role": "稀有",
+    "trigger_count": 10,
+    "utf8": "MonItems_UTF8_部署前预检/觐庭裂盔侯.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/觐庭裂盔侯.txt",
+    "json": "561怪标准配置JSON/C08-M043.json"
+  },
+  {
+    "monster_id": "C08-M044",
+    "name": "内宫织雪妪",
+    "continent": 8,
+    "role": "稀有",
+    "trigger_count": 10,
+    "utf8": "MonItems_UTF8_部署前预检/内宫织雪妪.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/内宫织雪妪.txt",
+    "json": "561怪标准配置JSON/C08-M044.json"
+  },
+  {
+    "monster_id": "C08-M045",
+    "name": "雪域封门将",
+    "continent": 8,
+    "role": "稀有",
+    "trigger_count": 10,
+    "utf8": "MonItems_UTF8_部署前预检/雪域封门将.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/雪域封门将.txt",
+    "json": "561怪标准配置JSON/C08-M045.json"
+  },
+  {
+    "monster_id": "C08-M046",
+    "name": "王座守梦巫",
+    "continent": 8,
+    "role": "稀有",
+    "trigger_count": 10,
+    "utf8": "MonItems_UTF8_部署前预检/王座守梦巫.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/王座守梦巫.txt",
+    "json": "561怪标准配置JSON/C08-M046.json"
+  },
+  {
+    "monster_id": "C08-M047",
+    "name": "内宫冬眠王·格罗尔",
+    "continent": 8,
+    "role": "地图BOSS",
+    "trigger_count": 16,
+    "utf8": "MonItems_UTF8_部署前预检/内宫冬眠王·格罗尔.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/内宫冬眠王·格罗尔.txt",
+    "json": "561怪标准配置JSON/C08-M047.json"
+  },
+  {
+    "monster_id": "C08-M048",
+    "name": "巨人女王·赫芮迦",
+    "continent": 8,
+    "role": "地图BOSS",
+    "trigger_count": 16,
+    "utf8": "MonItems_UTF8_部署前预检/巨人女王·赫芮迦.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/巨人女王·赫芮迦.txt",
+    "json": "561怪标准配置JSON/C08-M048.json"
+  },
+  {
+    "monster_id": "C08-M049",
+    "name": "吞日霜王·乌尔迈",
+    "continent": 8,
+    "role": "守关BOSS",
+    "trigger_count": 12,
+    "utf8": "MonItems_UTF8_部署前预检/吞日霜王·乌尔迈.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/吞日霜王·乌尔迈.txt",
+    "json": "561怪标准配置JSON/C08-M049.json"
+  },
+  {
+    "monster_id": "C09-M001",
+    "name": "金叶角鹿",
+    "continent": 9,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/金叶角鹿.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/金叶角鹿.txt",
+    "json": "561怪标准配置JSON/C09-M001.json"
+  },
+  {
+    "monster_id": "C09-M002",
+    "name": "拾穗旅盗",
+    "continent": 9,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/拾穗旅盗.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/拾穗旅盗.txt",
+    "json": "561怪标准配置JSON/C09-M002.json"
+  },
+  {
+    "monster_id": "C09-M003",
+    "name": "秋风驿卒",
+    "continent": 9,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/秋风驿卒.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/秋风驿卒.txt",
+    "json": "561怪标准配置JSON/C09-M003.json"
+  },
+  {
+    "monster_id": "C09-M004",
+    "name": "驿路驮甲虫",
+    "continent": 9,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/驿路驮甲虫.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/驿路驮甲虫.txt",
+    "json": "561怪标准配置JSON/C09-M004.json"
+  },
+  {
+    "monster_id": "C09-M005",
+    "name": "陵园鎏苔像",
+    "continent": 9,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/陵园鎏苔像.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/陵园鎏苔像.txt",
+    "json": "561怪标准配置JSON/C09-M005.json"
+  },
+  {
+    "monster_id": "C09-M006",
+    "name": "祭坛衔烛鸦",
+    "continent": 9,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/祭坛衔烛鸦.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/祭坛衔烛鸦.txt",
+    "json": "561怪标准配置JSON/C09-M006.json"
+  },
+  {
+    "monster_id": "C09-M007",
+    "name": "落叶占路僧",
+    "continent": 9,
+    "role": "稀有",
+    "trigger_count": 10,
+    "utf8": "MonItems_UTF8_部署前预检/落叶占路僧.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/落叶占路僧.txt",
+    "json": "561怪标准配置JSON/C09-M007.json"
+  },
+  {
+    "monster_id": "C09-M008",
+    "name": "逆风驿骑",
+    "continent": 9,
+    "role": "稀有",
+    "trigger_count": 10,
+    "utf8": "MonItems_UTF8_部署前预检/逆风驿骑.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/逆风驿骑.txt",
+    "json": "561怪标准配置JSON/C09-M008.json"
+  },
+  {
+    "monster_id": "C09-M009",
+    "name": "守陵金颚兽",
+    "continent": 9,
+    "role": "稀有",
+    "trigger_count": 10,
+    "utf8": "MonItems_UTF8_部署前预检/守陵金颚兽.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/守陵金颚兽.txt",
+    "json": "561怪标准配置JSON/C09-M009.json"
+  },
+  {
+    "monster_id": "C09-M010",
+    "name": "古王献梦者",
+    "continent": 9,
+    "role": "稀有",
+    "trigger_count": 10,
+    "utf8": "MonItems_UTF8_部署前预检/古王献梦者.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/古王献梦者.txt",
+    "json": "561怪标准配置JSON/C09-M010.json"
+  },
+  {
+    "monster_id": "C09-M011",
+    "name": "陵园摘冠侯·阿维恩",
+    "continent": 9,
+    "role": "地图BOSS",
+    "trigger_count": 15,
+    "utf8": "MonItems_UTF8_部署前预检/陵园摘冠侯·阿维恩.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/陵园摘冠侯·阿维恩.txt",
+    "json": "561怪标准配置JSON/C09-M011.json"
+  },
+  {
+    "monster_id": "C09-M012",
+    "name": "金叶祭王·萨鲁恩",
+    "continent": 9,
+    "role": "地图BOSS",
+    "trigger_count": 16,
+    "utf8": "MonItems_UTF8_部署前预检/金叶祭王·萨鲁恩.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/金叶祭王·萨鲁恩.txt",
+    "json": "561怪标准配置JSON/C09-M012.json"
+  },
+  {
+    "monster_id": "C09-M013",
+    "name": "矿脉啮岩鼠",
+    "continent": 9,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/矿脉啮岩鼠.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/矿脉啮岩鼠.txt",
+    "json": "561怪标准配置JSON/C09-M013.json"
+  },
+  {
+    "monster_id": "C09-M014",
+    "name": "高原探脉客",
+    "continent": 9,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/高原探脉客.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/高原探脉客.txt",
+    "json": "561怪标准配置JSON/C09-M014.json"
+  },
+  {
+    "monster_id": "C09-M015",
+    "name": "黄金矿道凿工",
+    "continent": 9,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/黄金矿道凿工.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/黄金矿道凿工.txt",
+    "json": "561怪标准配置JSON/C09-M015.json"
+  },
+  {
+    "monster_id": "C09-M016",
+    "name": "旧营提灯尸",
+    "continent": 9,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/旧营提灯尸.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/旧营提灯尸.txt",
+    "json": "561怪标准配置JSON/C09-M016.json"
+  },
+  {
+    "monster_id": "C09-M017",
+    "name": "深井负筐奴",
+    "continent": 9,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/深井负筐奴.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/深井负筐奴.txt",
+    "json": "561怪标准配置JSON/C09-M017.json"
+  },
+  {
+    "monster_id": "C09-M018",
+    "name": "核心晶背虫",
+    "continent": 9,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/核心晶背虫.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/核心晶背虫.txt",
+    "json": "561怪标准配置JSON/C09-M018.json"
+  },
+  {
+    "monster_id": "C09-M019",
+    "name": "矿道哑钟监工",
+    "continent": 9,
+    "role": "稀有",
+    "trigger_count": 10,
+    "utf8": "MonItems_UTF8_部署前预检/矿道哑钟监工.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/矿道哑钟监工.txt",
+    "json": "561怪标准配置JSON/C09-M019.json"
+  },
+  {
+    "monster_id": "C09-M020",
+    "name": "营地熔勺婆",
+    "continent": 9,
+    "role": "稀有",
+    "trigger_count": 10,
+    "utf8": "MonItems_UTF8_部署前预检/营地熔勺婆.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/营地熔勺婆.txt",
+    "json": "561怪标准配置JSON/C09-M020.json"
+  },
+  {
+    "monster_id": "C09-M021",
+    "name": "深层听岩师",
+    "continent": 9,
+    "role": "稀有",
+    "trigger_count": 10,
+    "utf8": "MonItems_UTF8_部署前预检/深层听岩师.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/深层听岩师.txt",
+    "json": "561怪标准配置JSON/C09-M021.json"
+  },
+  {
+    "monster_id": "C09-M022",
+    "name": "核心吞金蜥",
+    "continent": 9,
+    "role": "稀有",
+    "trigger_count": 10,
+    "utf8": "MonItems_UTF8_部署前预检/核心吞金蜥.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/核心吞金蜥.txt",
+    "json": "561怪标准配置JSON/C09-M022.json"
+  },
+  {
+    "monster_id": "C09-M023",
+    "name": "深井断索王·布洛克",
+    "continent": 9,
+    "role": "地图BOSS",
+    "trigger_count": 15,
+    "utf8": "MonItems_UTF8_部署前预检/深井断索王·布洛克.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/深井断索王·布洛克.txt",
+    "json": "561怪标准配置JSON/C09-M023.json"
+  },
+  {
+    "monster_id": "C09-M024",
+    "name": "矿心鎏金母·奥莉莎",
+    "continent": 9,
+    "role": "地图BOSS",
+    "trigger_count": 16,
+    "utf8": "MonItems_UTF8_部署前预检/矿心鎏金母·奥莉莎.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/矿心鎏金母·奥莉莎.txt",
+    "json": "561怪标准配置JSON/C09-M024.json"
+  },
+  {
+    "monster_id": "C09-M025",
+    "name": "陵园剪枝傀",
+    "continent": 9,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/陵园剪枝傀.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/陵园剪枝傀.txt",
+    "json": "561怪标准配置JSON/C09-M025.json"
+  },
+  {
+    "monster_id": "C09-M026",
+    "name": "王碑金翅蛾",
+    "continent": 9,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/王碑金翅蛾.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/王碑金翅蛾.txt",
+    "json": "561怪标准配置JSON/C09-M026.json"
+  },
+  {
+    "monster_id": "C09-M027",
+    "name": "甬道扶棺卒",
+    "continent": 9,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/甬道扶棺卒.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/甬道扶棺卒.txt",
+    "json": "561怪标准配置JSON/C09-M027.json"
+  },
+  {
+    "monster_id": "C09-M028",
+    "name": "壁龛守烛童",
+    "continent": 9,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/壁龛守烛童.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/壁龛守烛童.txt",
+    "json": "561怪标准配置JSON/C09-M028.json"
+  },
+  {
+    "monster_id": "C09-M029",
+    "name": "墓室敛袍侍",
+    "continent": 9,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/墓室敛袍侍.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/墓室敛袍侍.txt",
+    "json": "561怪标准配置JSON/C09-M029.json"
+  },
+  {
+    "monster_id": "C09-M030",
+    "name": "古王陪葬犬",
+    "continent": 9,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/古王陪葬犬.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/古王陪葬犬.txt",
+    "json": "561怪标准配置JSON/C09-M030.json"
+  },
+  {
+    "monster_id": "C09-M031",
+    "name": "王陵问名官",
+    "continent": 9,
+    "role": "稀有",
+    "trigger_count": 10,
+    "utf8": "MonItems_UTF8_部署前预检/王陵问名官.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/王陵问名官.txt",
+    "json": "561怪标准配置JSON/C09-M031.json"
+  },
+  {
+    "monster_id": "C09-M032",
+    "name": "甬道无面近卫",
+    "continent": 9,
+    "role": "稀有",
+    "trigger_count": 10,
+    "utf8": "MonItems_UTF8_部署前预检/甬道无面近卫.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/甬道无面近卫.txt",
+    "json": "561怪标准配置JSON/C09-M032.json"
+  },
+  {
+    "monster_id": "C09-M033",
+    "name": "墓室守印妃",
+    "continent": 9,
+    "role": "稀有",
+    "trigger_count": 10,
+    "utf8": "MonItems_UTF8_部署前预检/墓室守印妃.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/墓室守印妃.txt",
+    "json": "561怪标准配置JSON/C09-M033.json"
+  },
+  {
+    "monster_id": "C09-M034",
+    "name": "墓室食梦金蝉",
+    "continent": 9,
+    "role": "稀有",
+    "trigger_count": 10,
+    "utf8": "MonItems_UTF8_部署前预检/墓室食梦金蝉.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/墓室食梦金蝉.txt",
+    "json": "561怪标准配置JSON/C09-M034.json"
+  },
+  {
+    "monster_id": "C09-M035",
+    "name": "封棺执政·梅尔顿",
+    "continent": 9,
+    "role": "地图BOSS",
+    "trigger_count": 15,
+    "utf8": "MonItems_UTF8_部署前预检/封棺执政·梅尔顿.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/封棺执政·梅尔顿.txt",
+    "json": "561怪标准配置JSON/C09-M035.json"
+  },
+  {
+    "monster_id": "C09-M036",
+    "name": "不醒古王·奥瑞昂",
+    "continent": 9,
+    "role": "地图BOSS",
+    "trigger_count": 16,
+    "utf8": "MonItems_UTF8_部署前预检/不醒古王·奥瑞昂.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/不醒古王·奥瑞昂.txt",
+    "json": "561怪标准配置JSON/C09-M036.json"
+  },
+  {
+    "monster_id": "C09-M037",
+    "name": "圣堂扫金仆",
+    "continent": 9,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/圣堂扫金仆.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/圣堂扫金仆.txt",
+    "json": "561怪标准配置JSON/C09-M037.json"
+  },
+  {
+    "monster_id": "C09-M038",
+    "name": "鎏檐守门士",
+    "continent": 9,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/鎏檐守门士.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/鎏檐守门士.txt",
+    "json": "561怪标准配置JSON/C09-M038.json"
+  },
+  {
+    "monster_id": "C09-M039",
+    "name": "前廊白袍唱者",
+    "continent": 9,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/前廊白袍唱者.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/前廊白袍唱者.txt",
+    "json": "561怪标准配置JSON/C09-M039.json"
+  },
+  {
+    "monster_id": "C09-M040",
+    "name": "祭厅焚香奴",
+    "continent": 9,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/祭厅焚香奴.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/祭厅焚香奴.txt",
+    "json": "561怪标准配置JSON/C09-M040.json"
+  },
+  {
+    "monster_id": "C09-M041",
+    "name": "内殿金面僧",
+    "continent": 9,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/内殿金面僧.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/内殿金面僧.txt",
+    "json": "561怪标准配置JSON/C09-M041.json"
+  },
+  {
+    "monster_id": "C09-M042",
+    "name": "圣坛祷弓手",
+    "continent": 9,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/圣坛祷弓手.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/圣坛祷弓手.txt",
+    "json": "561怪标准配置JSON/C09-M042.json"
+  },
+  {
+    "monster_id": "C09-M043",
+    "name": "前廊裁罪使",
+    "continent": 9,
+    "role": "稀有",
+    "trigger_count": 10,
+    "utf8": "MonItems_UTF8_部署前预检/前廊裁罪使.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/前廊裁罪使.txt",
+    "json": "561怪标准配置JSON/C09-M043.json"
+  },
+  {
+    "monster_id": "C09-M044",
+    "name": "古神食香兽",
+    "continent": 9,
+    "role": "稀有",
+    "trigger_count": 10,
+    "utf8": "MonItems_UTF8_部署前预检/古神食香兽.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/古神食香兽.txt",
+    "json": "561怪标准配置JSON/C09-M044.json"
+  },
+  {
+    "monster_id": "C09-M045",
+    "name": "内殿无声司铎",
+    "continent": 9,
+    "role": "稀有",
+    "trigger_count": 10,
+    "utf8": "MonItems_UTF8_部署前预检/内殿无声司铎.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/内殿无声司铎.txt",
+    "json": "561怪标准配置JSON/C09-M045.json"
+  },
+  {
+    "monster_id": "C09-M046",
+    "name": "圣坛逐光姬",
+    "continent": 9,
+    "role": "稀有",
+    "trigger_count": 10,
+    "utf8": "MonItems_UTF8_部署前预检/圣坛逐光姬.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/圣坛逐光姬.txt",
+    "json": "561怪标准配置JSON/C09-M046.json"
+  },
+  {
+    "monster_id": "C09-M047",
+    "name": "黄金枢机·赛维兰",
+    "continent": 9,
+    "role": "地图BOSS",
+    "trigger_count": 15,
+    "utf8": "MonItems_UTF8_部署前预检/黄金枢机·赛维兰.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/黄金枢机·赛维兰.txt",
+    "json": "561怪标准配置JSON/C09-M047.json"
+  },
+  {
+    "monster_id": "C09-M048",
+    "name": "高原圣母·艾德莉雅",
+    "continent": 9,
+    "role": "地图BOSS",
+    "trigger_count": 15,
+    "utf8": "MonItems_UTF8_部署前预检/高原圣母·艾德莉雅.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/高原圣母·艾德莉雅.txt",
+    "json": "561怪标准配置JSON/C09-M048.json"
+  },
+  {
+    "monster_id": "C09-M049",
+    "name": "外垒铆甲兵",
+    "continent": 9,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/外垒铆甲兵.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/外垒铆甲兵.txt",
+    "json": "561怪标准配置JSON/C09-M049.json"
+  },
+  {
+    "monster_id": "C09-M050",
+    "name": "城前拾箭童",
+    "continent": 9,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/城前拾箭童.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/城前拾箭童.txt",
+    "json": "561怪标准配置JSON/C09-M050.json"
+  },
+  {
+    "monster_id": "C09-M051",
+    "name": "甬道持炬枪卒",
+    "continent": 9,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/甬道持炬枪卒.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/甬道持炬枪卒.txt",
+    "json": "561怪标准配置JSON/C09-M051.json"
+  },
+  {
+    "monster_id": "C09-M052",
+    "name": "驻军庭院炊兵",
+    "continent": 9,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/驻军庭院炊兵.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/驻军庭院炊兵.txt",
+    "json": "561怪标准配置JSON/C09-M052.json"
+  },
+  {
+    "monster_id": "C09-M053",
+    "name": "黄金壁垒号手",
+    "continent": 9,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/黄金壁垒号手.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/黄金壁垒号手.txt",
+    "json": "561怪标准配置JSON/C09-M053.json"
+  },
+  {
+    "monster_id": "C09-M054",
+    "name": "关门锁链卫",
+    "continent": 9,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/关门锁链卫.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/关门锁链卫.txt",
+    "json": "561怪标准配置JSON/C09-M054.json"
+  },
+  {
+    "monster_id": "C09-M055",
+    "name": "甬道潜旗客",
+    "continent": 9,
+    "role": "稀有",
+    "trigger_count": 10,
+    "utf8": "MonItems_UTF8_部署前预检/甬道潜旗客.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/甬道潜旗客.txt",
+    "json": "561怪标准配置JSON/C09-M055.json"
+  },
+  {
+    "monster_id": "C09-M056",
+    "name": "庭院百战旗官",
+    "continent": 9,
+    "role": "稀有",
+    "trigger_count": 10,
+    "utf8": "MonItems_UTF8_部署前预检/庭院百战旗官.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/庭院百战旗官.txt",
+    "json": "561怪标准配置JSON/C09-M056.json"
+  },
+  {
+    "monster_id": "C09-M057",
+    "name": "壁垒鎏甲骑士",
+    "continent": 9,
+    "role": "稀有",
+    "trigger_count": 10,
+    "utf8": "MonItems_UTF8_部署前预检/壁垒鎏甲骑士.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/壁垒鎏甲骑士.txt",
+    "json": "561怪标准配置JSON/C09-M057.json"
+  },
+  {
+    "monster_id": "C09-M058",
+    "name": "罗德尔守门卜者",
+    "continent": 9,
+    "role": "稀有",
+    "trigger_count": 10,
+    "utf8": "MonItems_UTF8_部署前预检/罗德尔守门卜者.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/罗德尔守门卜者.txt",
+    "json": "561怪标准配置JSON/C09-M058.json"
+  },
+  {
+    "monster_id": "C09-M059",
+    "name": "黄金壁垒统帅·罗梵迪",
+    "continent": 9,
+    "role": "地图BOSS",
+    "trigger_count": 16,
+    "utf8": "MonItems_UTF8_部署前预检/黄金壁垒统帅·罗梵迪.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/黄金壁垒统帅·罗梵迪.txt",
+    "json": "561怪标准配置JSON/C09-M059.json"
+  },
+  {
+    "monster_id": "C09-M060",
+    "name": "王门执宪者·赫桑达",
+    "continent": 9,
+    "role": "地图BOSS",
+    "trigger_count": 16,
+    "utf8": "MonItems_UTF8_部署前预检/王门执宪者·赫桑达.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/王门执宪者·赫桑达.txt",
+    "json": "561怪标准配置JSON/C09-M060.json"
+  },
+  {
+    "monster_id": "C09-M061",
+    "name": "鎏日王城之影·阿尔维萨",
+    "continent": 9,
+    "role": "守关BOSS",
+    "trigger_count": 12,
+    "utf8": "MonItems_UTF8_部署前预检/鎏日王城之影·阿尔维萨.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/鎏日王城之影·阿尔维萨.txt",
+    "json": "561怪标准配置JSON/C09-M061.json"
+  },
+  {
+    "monster_id": "C10-M001",
+    "name": "檐沟拾烬徒",
+    "continent": 10,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/檐沟拾烬徒.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/檐沟拾烬徒.txt",
+    "json": "561怪标准配置JSON/C10-M001.json"
+  },
+  {
+    "monster_id": "C10-M002",
+    "name": "斑墙巡灯卒",
+    "continent": 10,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/斑墙巡灯卒.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/斑墙巡灯卒.txt",
+    "json": "561怪标准配置JSON/C10-M002.json"
+  },
+  {
+    "monster_id": "C10-M003",
+    "name": "暗巷伏砖客",
+    "continent": 10,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/暗巷伏砖客.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/暗巷伏砖客.txt",
+    "json": "561怪标准配置JSON/C10-M003.json"
+  },
+  {
+    "monster_id": "C10-M004",
+    "name": "旧街缚铃犬",
+    "continent": 10,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/旧街缚铃犬.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/旧街缚铃犬.txt",
+    "json": "561怪标准配置JSON/C10-M004.json"
+  },
+  {
+    "monster_id": "C10-M005",
+    "name": "闸底淤甲工",
+    "continent": 10,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/闸底淤甲工.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/闸底淤甲工.txt",
+    "json": "561怪标准配置JSON/C10-M005.json"
+  },
+  {
+    "monster_id": "C10-M006",
+    "name": "链轮守栓奴",
+    "continent": 10,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/链轮守栓奴.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/链轮守栓奴.txt",
+    "json": "561怪标准配置JSON/C10-M006.json"
+  },
+  {
+    "monster_id": "C10-M007",
+    "name": "碎檐金羽鸦",
+    "continent": 10,
+    "role": "稀有",
+    "trigger_count": 10,
+    "utf8": "MonItems_UTF8_部署前预检/碎檐金羽鸦.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/碎檐金羽鸦.txt",
+    "json": "561怪标准配置JSON/C10-M007.json"
+  },
+  {
+    "monster_id": "C10-M008",
+    "name": "缄口税契吏",
+    "continent": 10,
+    "role": "稀有",
+    "trigger_count": 10,
+    "utf8": "MonItems_UTF8_部署前预检/缄口税契吏.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/缄口税契吏.txt",
+    "json": "561怪标准配置JSON/C10-M008.json"
+  },
+  {
+    "monster_id": "C10-M009",
+    "name": "巷钟剜影者",
+    "continent": 10,
+    "role": "稀有",
+    "trigger_count": 10,
+    "utf8": "MonItems_UTF8_部署前预检/巷钟剜影者.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/巷钟剜影者.txt",
+    "json": "561怪标准配置JSON/C10-M009.json"
+  },
+  {
+    "monster_id": "C10-M010",
+    "name": "沉闸铜面监工",
+    "continent": 10,
+    "role": "稀有",
+    "trigger_count": 10,
+    "utf8": "MonItems_UTF8_部署前预检/沉闸铜面监工.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/沉闸铜面监工.txt",
+    "json": "561怪标准配置JSON/C10-M010.json"
+  },
+  {
+    "monster_id": "C10-M011",
+    "name": "灰巷的无灯侯",
+    "continent": 10,
+    "role": "地图BOSS",
+    "trigger_count": 16,
+    "utf8": "MonItems_UTF8_部署前预检/灰巷的无灯侯.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/灰巷的无灯侯.txt",
+    "json": "561怪标准配置JSON/C10-M011.json"
+  },
+  {
+    "monster_id": "C10-M012",
+    "name": "千锁闸门统领",
+    "continent": 10,
+    "role": "地图BOSS",
+    "trigger_count": 17,
+    "utf8": "MonItems_UTF8_部署前预检/千锁闸门统领.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/千锁闸门统领.txt",
+    "json": "561怪标准配置JSON/C10-M012.json"
+  },
+  {
+    "monster_id": "C10-M013",
+    "name": "金垢潜渠鼠",
+    "continent": 10,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/金垢潜渠鼠.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/金垢潜渠鼠.txt",
+    "json": "561怪标准配置JSON/C10-M013.json"
+  },
+  {
+    "monster_id": "C10-M014",
+    "name": "污潮捞骨役",
+    "continent": 10,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/污潮捞骨役.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/污潮捞骨役.txt",
+    "json": "561怪标准配置JSON/C10-M014.json"
+  },
+  {
+    "monster_id": "C10-M015",
+    "name": "回廊鸣管蜥",
+    "continent": 10,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/回廊鸣管蜥.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/回廊鸣管蜥.txt",
+    "json": "561怪标准配置JSON/C10-M015.json"
+  },
+  {
+    "monster_id": "C10-M016",
+    "name": "锈槽巡污卒",
+    "continent": 10,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/锈槽巡污卒.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/锈槽巡污卒.txt",
+    "json": "561怪标准配置JSON/C10-M016.json"
+  },
+  {
+    "monster_id": "C10-M017",
+    "name": "中枢盘阀傀",
+    "continent": 10,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/中枢盘阀傀.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/中枢盘阀傀.txt",
+    "json": "561怪标准配置JSON/C10-M017.json"
+  },
+  {
+    "monster_id": "C10-M018",
+    "name": "泄洪窥灯虫",
+    "continent": 10,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/泄洪窥灯虫.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/泄洪窥灯虫.txt",
+    "json": "561怪标准配置JSON/C10-M018.json"
+  },
+  {
+    "monster_id": "C10-M019",
+    "name": "镀金脓潮母",
+    "continent": 10,
+    "role": "稀有",
+    "trigger_count": 10,
+    "utf8": "MonItems_UTF8_部署前预检/镀金脓潮母.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/镀金脓潮母.txt",
+    "json": "561怪标准配置JSON/C10-M019.json"
+  },
+  {
+    "monster_id": "C10-M020",
+    "name": "逆流剥甲人",
+    "continent": 10,
+    "role": "稀有",
+    "trigger_count": 10,
+    "utf8": "MonItems_UTF8_部署前预检/逆流剥甲人.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/逆流剥甲人.txt",
+    "json": "561怪标准配置JSON/C10-M020.json"
+  },
+  {
+    "monster_id": "C10-M021",
+    "name": "七孔哀笛客",
+    "continent": 10,
+    "role": "稀有",
+    "trigger_count": 10,
+    "utf8": "MonItems_UTF8_部署前预检/七孔哀笛客.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/七孔哀笛客.txt",
+    "json": "561怪标准配置JSON/C10-M021.json"
+  },
+  {
+    "monster_id": "C10-M022",
+    "name": "沸淤校阀官",
+    "continent": 10,
+    "role": "稀有",
+    "trigger_count": 10,
+    "utf8": "MonItems_UTF8_部署前预检/沸淤校阀官.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/沸淤校阀官.txt",
+    "json": "561怪标准配置JSON/C10-M022.json"
+  },
+  {
+    "monster_id": "C10-M023",
+    "name": "百喉回廊吞声兽",
+    "continent": 10,
+    "role": "地图BOSS",
+    "trigger_count": 16,
+    "utf8": "MonItems_UTF8_部署前预检/百喉回廊吞声兽.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/百喉回廊吞声兽.txt",
+    "json": "561怪标准配置JSON/C10-M023.json"
+  },
+  {
+    "monster_id": "C10-M024",
+    "name": "鎏污大司闸",
+    "continent": 10,
+    "role": "地图BOSS",
+    "trigger_count": 17,
+    "utf8": "MonItems_UTF8_部署前预检/鎏污大司闸.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/鎏污大司闸.txt",
+    "json": "561怪标准配置JSON/C10-M024.json"
+  },
+  {
+    "monster_id": "C10-M025",
+    "name": "金脉铲痕奴",
+    "continent": 10,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/金脉铲痕奴.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/金脉铲痕奴.txt",
+    "json": "561怪标准配置JSON/C10-M025.json"
+  },
+  {
+    "monster_id": "C10-M026",
+    "name": "王矿负灯鼹",
+    "continent": 10,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/王矿负灯鼹.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/王矿负灯鼹.txt",
+    "json": "561怪标准配置JSON/C10-M026.json"
+  },
+  {
+    "monster_id": "C10-M027",
+    "name": "崩轨拖链卒",
+    "continent": 10,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/崩轨拖链卒.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/崩轨拖链卒.txt",
+    "json": "561怪标准配置JSON/C10-M027.json"
+  },
+  {
+    "monster_id": "C10-M028",
+    "name": "冷砧铆甲匠",
+    "continent": 10,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/冷砧铆甲匠.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/冷砧铆甲匠.txt",
+    "json": "561怪标准配置JSON/C10-M028.json"
+  },
+  {
+    "monster_id": "C10-M029",
+    "name": "裂晶钻颚兽",
+    "continent": 10,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/裂晶钻颚兽.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/裂晶钻颚兽.txt",
+    "json": "561怪标准配置JSON/C10-M029.json"
+  },
+  {
+    "monster_id": "C10-M030",
+    "name": "矿脉听金虫",
+    "continent": 10,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/矿脉听金虫.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/矿脉听金虫.txt",
+    "json": "561怪标准配置JSON/C10-M030.json"
+  },
+  {
+    "monster_id": "C10-M031",
+    "name": "监坑鎏面骑",
+    "continent": 10,
+    "role": "稀有",
+    "trigger_count": 10,
+    "utf8": "MonItems_UTF8_部署前预检/监坑鎏面骑.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/监坑鎏面骑.txt",
+    "json": "561怪标准配置JSON/C10-M031.json"
+  },
+  {
+    "monster_id": "C10-M032",
+    "name": "空炉吐渣鬼",
+    "continent": 10,
+    "role": "稀有",
+    "trigger_count": 10,
+    "utf8": "MonItems_UTF8_部署前预检/空炉吐渣鬼.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/空炉吐渣鬼.txt",
+    "json": "561怪标准配置JSON/C10-M032.json"
+  },
+  {
+    "monster_id": "C10-M033",
+    "name": "黑晶凿梦师",
+    "continent": 10,
+    "role": "稀有",
+    "trigger_count": 10,
+    "utf8": "MonItems_UTF8_部署前预检/黑晶凿梦师.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/黑晶凿梦师.txt",
+    "json": "561怪标准配置JSON/C10-M033.json"
+  },
+  {
+    "monster_id": "C10-M034",
+    "name": "王脉封勘使",
+    "continent": 10,
+    "role": "稀有",
+    "trigger_count": 10,
+    "utf8": "MonItems_UTF8_部署前预检/王脉封勘使.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/王脉封勘使.txt",
+    "json": "561怪标准配置JSON/C10-M034.json"
+  },
+  {
+    "monster_id": "C10-M035",
+    "name": "深井百臂掘王",
+    "continent": 10,
+    "role": "地图BOSS",
+    "trigger_count": 16,
+    "utf8": "MonItems_UTF8_部署前预检/深井百臂掘王.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/深井百臂掘王.txt",
+    "json": "561怪标准配置JSON/C10-M035.json"
+  },
+  {
+    "monster_id": "C10-M036",
+    "name": "地脉熔冠巨像",
+    "continent": 10,
+    "role": "地图BOSS",
+    "trigger_count": 17,
+    "utf8": "MonItems_UTF8_部署前预检/地脉熔冠巨像.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/地脉熔冠巨像.txt",
+    "json": "561怪标准配置JSON/C10-M036.json"
+  },
+  {
+    "monster_id": "C10-M037",
+    "name": "石棺刮蜡侍",
+    "continent": 10,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/石棺刮蜡侍.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/石棺刮蜡侍.txt",
+    "json": "561怪标准配置JSON/C10-M037.json"
+  },
+  {
+    "monster_id": "C10-M038",
+    "name": "眠碑缝尸媪",
+    "continent": 10,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/眠碑缝尸媪.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/眠碑缝尸媪.txt",
+    "json": "561怪标准配置JSON/C10-M038.json"
+  },
+  {
+    "monster_id": "C10-M039",
+    "name": "墓王执幡骨卫",
+    "continent": 10,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/墓王执幡骨卫.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/墓王执幡骨卫.txt",
+    "json": "561怪标准配置JSON/C10-M039.json"
+  },
+  {
+    "monster_id": "C10-M040",
+    "name": "甬道噤歌蛾",
+    "continent": 10,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/甬道噤歌蛾.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/甬道噤歌蛾.txt",
+    "json": "561怪标准配置JSON/C10-M040.json"
+  },
+  {
+    "monster_id": "C10-M041",
+    "name": "寝室抱瓮童",
+    "continent": 10,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/寝室抱瓮童.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/寝室抱瓮童.txt",
+    "json": "561怪标准配置JSON/C10-M041.json"
+  },
+  {
+    "monster_id": "C10-M042",
+    "name": "枕陵掘指尸",
+    "continent": 10,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/枕陵掘指尸.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/枕陵掘指尸.txt",
+    "json": "561怪标准配置JSON/C10-M042.json"
+  },
+  {
+    "monster_id": "C10-M043",
+    "name": "无烛守丧女",
+    "continent": 10,
+    "role": "稀有",
+    "trigger_count": 10,
+    "utf8": "MonItems_UTF8_部署前预检/无烛守丧女.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/无烛守丧女.txt",
+    "json": "561怪标准配置JSON/C10-M043.json"
+  },
+  {
+    "monster_id": "C10-M044",
+    "name": "断碑驮棺兽",
+    "continent": 10,
+    "role": "稀有",
+    "trigger_count": 10,
+    "utf8": "MonItems_UTF8_部署前预检/断碑驮棺兽.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/断碑驮棺兽.txt",
+    "json": "561怪标准配置JSON/C10-M044.json"
+  },
+  {
+    "monster_id": "C10-M045",
+    "name": "王甬秤罪官",
+    "continent": 10,
+    "role": "稀有",
+    "trigger_count": 10,
+    "utf8": "MonItems_UTF8_部署前预检/王甬秤罪官.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/王甬秤罪官.txt",
+    "json": "561怪标准配置JSON/C10-M045.json"
+  },
+  {
+    "monster_id": "C10-M046",
+    "name": "寝门返魂甲",
+    "continent": 10,
+    "role": "稀有",
+    "trigger_count": 10,
+    "utf8": "MonItems_UTF8_部署前预检/寝门返魂甲.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/寝门返魂甲.txt",
+    "json": "561怪标准配置JSON/C10-M046.json"
+  },
+  {
+    "monster_id": "C10-M047",
+    "name": "不葬的甬道王妃",
+    "continent": 10,
+    "role": "地图BOSS",
+    "trigger_count": 16,
+    "utf8": "MonItems_UTF8_部署前预检/不葬的甬道王妃.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/不葬的甬道王妃.txt",
+    "json": "561怪标准配置JSON/C10-M047.json"
+  },
+  {
+    "monster_id": "C10-M048",
+    "name": "枯寝吞碑王",
+    "continent": 10,
+    "role": "地图BOSS",
+    "trigger_count": 16,
+    "utf8": "MonItems_UTF8_部署前预检/枯寝吞碑王.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/枯寝吞碑王.txt",
+    "json": "561怪标准配置JSON/C10-M048.json"
+  },
+  {
+    "monster_id": "C10-M049",
+    "name": "日轮扫阶侍",
+    "continent": 10,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/日轮扫阶侍.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/日轮扫阶侍.txt",
+    "json": "561怪标准配置JSON/C10-M049.json"
+  },
+  {
+    "monster_id": "C10-M050",
+    "name": "金桂驯狮吏",
+    "continent": 10,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/金桂驯狮吏.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/金桂驯狮吏.txt",
+    "json": "561怪标准配置JSON/C10-M050.json"
+  },
+  {
+    "monster_id": "C10-M051",
+    "name": "垂纱持香女",
+    "continent": 10,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/垂纱持香女.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/垂纱持香女.txt",
+    "json": "561怪标准配置JSON/C10-M051.json"
+  },
+  {
+    "monster_id": "C10-M052",
+    "name": "律烛诵壁僧",
+    "continent": 10,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/律烛诵壁僧.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/律烛诵壁僧.txt",
+    "json": "561怪标准配置JSON/C10-M052.json"
+  },
+  {
+    "monster_id": "C10-M053",
+    "name": "前厅捧剑灵",
+    "continent": 10,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/前厅捧剑灵.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/前厅捧剑灵.txt",
+    "json": "561怪标准配置JSON/C10-M053.json"
+  },
+  {
+    "monster_id": "C10-M054",
+    "name": "王座拾辉甲",
+    "continent": 10,
+    "role": "普通",
+    "trigger_count": 8,
+    "utf8": "MonItems_UTF8_部署前预检/王座拾辉甲.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/王座拾辉甲.txt",
+    "json": "561怪标准配置JSON/C10-M054.json"
+  },
+  {
+    "monster_id": "C10-M055",
+    "name": "外庭熔桂狮",
+    "continent": 10,
+    "role": "稀有",
+    "trigger_count": 10,
+    "utf8": "MonItems_UTF8_部署前预检/外庭熔桂狮.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/外庭熔桂狮.txt",
+    "json": "561怪标准配置JSON/C10-M055.json"
+  },
+  {
+    "monster_id": "C10-M056",
+    "name": "内庭七帷掌仪",
+    "continent": 10,
+    "role": "稀有",
+    "trigger_count": 10,
+    "utf8": "MonItems_UTF8_部署前预检/内庭七帷掌仪.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/内庭七帷掌仪.txt",
+    "json": "561怪标准配置JSON/C10-M056.json"
+  },
+  {
+    "monster_id": "C10-M057",
+    "name": "深殿缄律书记",
+    "continent": 10,
+    "role": "稀有",
+    "trigger_count": 10,
+    "utf8": "MonItems_UTF8_部署前预检/深殿缄律书记.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/深殿缄律书记.txt",
+    "json": "561怪标准配置JSON/C10-M057.json"
+  },
+  {
+    "monster_id": "C10-M058",
+    "name": "前厅无声执冠官",
+    "continent": 10,
+    "role": "稀有",
+    "trigger_count": 10,
+    "utf8": "MonItems_UTF8_部署前预检/前厅无声执冠官.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/前厅无声执冠官.txt",
+    "json": "561怪标准配置JSON/C10-M058.json"
+  },
+  {
+    "monster_id": "C10-M059",
+    "name": "碎日门的黄金禁卫",
+    "continent": 10,
+    "role": "地图BOSS",
+    "trigger_count": 17,
+    "utf8": "MonItems_UTF8_部署前预检/碎日门的黄金禁卫.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/碎日门的黄金禁卫.txt",
+    "json": "561怪标准配置JSON/C10-M059.json"
+  },
+  {
+    "monster_id": "C10-M060",
+    "name": "永辉帷后的空王",
+    "continent": 10,
+    "role": "地图BOSS",
+    "trigger_count": 17,
+    "utf8": "MonItems_UTF8_部署前预检/永辉帷后的空王.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/永辉帷后的空王.txt",
+    "json": "561怪标准配置JSON/C10-M060.json"
+  },
+  {
+    "monster_id": "C10-M061",
+    "name": "万冠终审者·萨洛恩",
+    "continent": 10,
+    "role": "守关BOSS",
+    "trigger_count": 12,
+    "utf8": "MonItems_UTF8_部署前预检/万冠终审者·萨洛恩.txt",
+    "gb18030": "MonItems_GB18030_部署前预检/万冠终审者·萨洛恩.txt",
+    "json": "561怪标准配置JSON/C10-M061.json"
+  }
+]

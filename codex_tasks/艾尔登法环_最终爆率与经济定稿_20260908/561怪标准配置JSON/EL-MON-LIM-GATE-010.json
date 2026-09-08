@@ -1,0 +1,182 @@
+{
+  "monster_id": "EL-MON-LIM-GATE-010",
+  "name": "关隘战车",
+  "continent": 2,
+  "map_group_index_zero_based": 1,
+  "role": "稀有",
+  "triggers": [
+    {
+      "trigger_id": "D00349",
+      "kind": "自身专属",
+      "base_denominator": 180,
+      "quantity": 1,
+      "corpse_handling": "use_existing_engine_once",
+      "apply_player_drop_rate": true,
+      "selection": "independent",
+      "item": "破阵军袍"
+    },
+    {
+      "trigger_id": "D00350",
+      "kind": "材料独立候选",
+      "base_denominator": 300,
+      "quantity": 15,
+      "corpse_handling": "use_existing_engine_once",
+      "apply_player_drop_rate": true,
+      "selection": "independent",
+      "item": "风暴石片"
+    },
+    {
+      "trigger_id": "D00351",
+      "kind": "材料独立候选",
+      "base_denominator": 60,
+      "quantity": 2,
+      "corpse_handling": "use_existing_engine_once",
+      "apply_player_drop_rate": true,
+      "selection": "independent",
+      "item": "黄金树芽"
+    },
+    {
+      "trigger_id": "D00352",
+      "kind": "材料独立候选",
+      "base_denominator": 60,
+      "quantity": 2,
+      "corpse_handling": "use_existing_engine_once",
+      "apply_player_drop_rate": true,
+      "selection": "independent",
+      "item": "野兽骨片"
+    },
+    {
+      "trigger_id": "D00353",
+      "kind": "材料独立候选",
+      "base_denominator": 60,
+      "quantity": 1,
+      "corpse_handling": "use_existing_engine_once",
+      "apply_player_drop_rate": true,
+      "selection": "independent",
+      "item": "技能残页"
+    },
+    {
+      "trigger_id": "D00354",
+      "kind": "材料独立候选",
+      "base_denominator": 2500,
+      "quantity": 1,
+      "corpse_handling": "use_existing_engine_once",
+      "apply_player_drop_rate": true,
+      "selection": "independent",
+      "item": "小卢恩"
+    },
+    {
+      "trigger_id": "D00355",
+      "kind": "六神器公共池",
+      "base_denominator": 5000000,
+      "quantity": 1,
+      "corpse_handling": "use_existing_engine_once",
+      "apply_player_drop_rate": true,
+      "selection": "one_weighted",
+      "pool_id": "POOL006",
+      "candidates": [
+        {
+          "item": "玛莲妮亚的大卢恩",
+          "weight": 1
+        },
+        {
+          "item": "拉塔恩的大卢恩",
+          "weight": 1
+        },
+        {
+          "item": "蒙葛特的大卢恩",
+          "weight": 1
+        },
+        {
+          "item": "蒙格的大卢恩",
+          "weight": 1
+        },
+        {
+          "item": "拉卡德的大卢恩",
+          "weight": 1
+        },
+        {
+          "item": "葛瑞克的大卢恩",
+          "weight": 1
+        }
+      ]
+    },
+    {
+      "trigger_id": "D05287",
+      "kind": "制式独立候选",
+      "base_denominator": 6000,
+      "quantity": 1,
+      "corpse_handling": "use_existing_engine_once",
+      "apply_player_drop_rate": true,
+      "selection": "one_weighted",
+      "pool_id": "POOL092",
+      "candidates": [
+        {
+          "item": "卢恩骑士剑",
+          "weight": 1
+        },
+        {
+          "item": "卢恩骑士战甲",
+          "weight": 1
+        },
+        {
+          "item": "卢恩骑士战盔",
+          "weight": 1
+        },
+        {
+          "item": "卢恩骑士项链",
+          "weight": 1
+        },
+        {
+          "item": "卢恩骑士腕甲",
+          "weight": 1
+        },
+        {
+          "item": "卢恩骑士戒指",
+          "weight": 1
+        },
+        {
+          "item": "卢恩骑士腰带",
+          "weight": 1
+        },
+        {
+          "item": "卢恩骑士战靴",
+          "weight": 1
+        },
+        {
+          "item": "黑焰军士刃",
+          "weight": 1
+        },
+        {
+          "item": "黑焰军士战甲",
+          "weight": 1
+        },
+        {
+          "item": "黑焰军士战盔",
+          "weight": 1
+        },
+        {
+          "item": "黑焰军士项链",
+          "weight": 1
+        },
+        {
+          "item": "黑焰军士腕甲",
+          "weight": 1
+        },
+        {
+          "item": "黑焰军士戒指",
+          "weight": 1
+        },
+        {
+          "item": "黑焰军士腰带",
+          "weight": 1
+        },
+        {
+          "item": "黑焰军士战靴",
+          "weight": 1
+        }
+      ]
+    }
+  ],
+  "deployment": "archive_only_until_user_authorizes; verify_stack_parser_before_install"
+}

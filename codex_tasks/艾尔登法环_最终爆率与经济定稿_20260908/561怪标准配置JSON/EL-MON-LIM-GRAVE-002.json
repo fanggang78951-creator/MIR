@@ -1,0 +1,172 @@
+{
+  "monster_id": "EL-MON-LIM-GRAVE-002",
+  "name": "漂泊腐尸",
+  "continent": 2,
+  "map_group_index_zero_based": 0,
+  "role": "普通",
+  "triggers": [
+    {
+      "trigger_id": "D00206",
+      "kind": "自身专属",
+      "base_denominator": 600,
+      "quantity": 1,
+      "corpse_handling": "use_existing_engine_once",
+      "apply_player_drop_rate": true,
+      "selection": "independent",
+      "item": "漂腐寿衣"
+    },
+    {
+      "trigger_id": "D00207",
+      "kind": "材料独立候选",
+      "base_denominator": 500,
+      "quantity": 8,
+      "corpse_handling": "use_existing_engine_once",
+      "apply_player_drop_rate": true,
+      "selection": "independent",
+      "item": "风暴石片"
+    },
+    {
+      "trigger_id": "D00208",
+      "kind": "材料独立候选",
+      "base_denominator": 100,
+      "quantity": 2,
+      "corpse_handling": "use_existing_engine_once",
+      "apply_player_drop_rate": true,
+      "selection": "independent",
+      "item": "野兽骨片"
+    },
+    {
+      "trigger_id": "D00209",
+      "kind": "材料独立候选",
+      "base_denominator": 100,
+      "quantity": 1,
+      "corpse_handling": "use_existing_engine_once",
+      "apply_player_drop_rate": true,
+      "selection": "independent",
+      "item": "技能残页"
+    },
+    {
+      "trigger_id": "D00210",
+      "kind": "材料独立候选",
+      "base_denominator": 4000,
+      "quantity": 1,
+      "corpse_handling": "use_existing_engine_once",
+      "apply_player_drop_rate": true,
+      "selection": "independent",
+      "item": "小卢恩"
+    },
+    {
+      "trigger_id": "D00211",
+      "kind": "六神器公共池",
+      "base_denominator": 20000000,
+      "quantity": 1,
+      "corpse_handling": "use_existing_engine_once",
+      "apply_player_drop_rate": true,
+      "selection": "one_weighted",
+      "pool_id": "POOL006",
+      "candidates": [
+        {
+          "item": "玛莲妮亚的大卢恩",
+          "weight": 1
+        },
+        {
+          "item": "拉塔恩的大卢恩",
+          "weight": 1
+        },
+        {
+          "item": "蒙葛特的大卢恩",
+          "weight": 1
+        },
+        {
+          "item": "蒙格的大卢恩",
+          "weight": 1
+        },
+        {
+          "item": "拉卡德的大卢恩",
+          "weight": 1
+        },
+        {
+          "item": "葛瑞克的大卢恩",
+          "weight": 1
+        }
+      ]
+    },
+    {
+      "trigger_id": "D05267",
+      "kind": "制式独立候选",
+      "base_denominator": 8000,
+      "quantity": 1,
+      "corpse_handling": "use_existing_engine_once",
+      "apply_player_drop_rate": true,
+      "selection": "one_weighted",
+      "pool_id": "POOL091",
+      "candidates": [
+        {
+          "item": "黄金戍卫剑",
+          "weight": 1
+        },
+        {
+          "item": "黄金戍卫战甲",
+          "weight": 1
+        },
+        {
+          "item": "黄金戍卫战盔",
+          "weight": 1
+        },
+        {
+          "item": "黄金戍卫项链",
+          "weight": 1
+        },
+        {
+          "item": "黄金戍卫腕甲",
+          "weight": 1
+        },
+        {
+          "item": "黄金戍卫戒指",
+          "weight": 1
+        },
+        {
+          "item": "黄金戍卫腰带",
+          "weight": 1
+        },
+        {
+          "item": "黄金戍卫战靴",
+          "weight": 1
+        },
+        {
+          "item": "圣树先锋刃",
+          "weight": 1
+        },
+        {
+          "item": "圣树先锋战甲",
+          "weight": 1
+        },
+        {
+          "item": "圣树先锋战盔",
+          "weight": 1
+        },
+        {
+          "item": "圣树先锋项链",
+          "weight": 1
+        },
+        {
+          "item": "圣树先锋腕甲",
+          "weight": 1
+        },
+        {
+          "item": "圣树先锋戒指",
+          "weight": 1
+        },
+        {
+          "item": "圣树先锋腰带",
+          "weight": 1
+        },
+        {
+          "item": "圣树先锋战靴",
+          "weight": 1
+        }
+      ]
+    }
+  ],
+  "deployment": "archive_only_until_user_authorizes; verify_stack_parser_before_install"
+}

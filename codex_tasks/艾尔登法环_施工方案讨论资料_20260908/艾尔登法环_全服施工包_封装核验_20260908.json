@@ -1,0 +1,22 @@
+{
+  "package": "艾尔登法环_全服正式施工总包_V1.0_20260908.zip",
+  "bytes": 13009794,
+  "sha256": "333befce315fee9abd1660f375322266de79108d522b541804be4ae993f9238a",
+  "zip_files": 1730,
+  "outer_manifest_entries": 1728,
+  "inner_manifest_entries": 1724,
+  "crc_errors": 0,
+  "hash_errors": 0,
+  "active_workbooks": 7,
+  "source_workbook_changes": 0,
+  "std_json_count": 561,
+  "utf8_count": 561,
+  "gb18030_count": 561,
+  "data_contract_checks": 30924,
+  "data_contract_failures": 0,
+  "fixture_unit_tests": 18,
+  "fixture_failures": 0,
+  "server_mutations": 0,
+  "github_mutations": 0,
+  "real_engine_verified": false
+}

@@ -1,0 +1,20 @@
+{
+  "triggers": 5351,
+  "source_relations": 5400,
+  "normal_pickup_groups": 46,
+  "plan_hours": 299.5,
+  "checks": 6696,
+  "failed": 0,
+  "qty_changes": 742
+}
+missing []
+C 1 hours 9.0 back 0.0 goldnet/h 1222284754 yuan 14559787 somber 198
+C 2 hours 15.75 back 1.75 goldnet/h 2768552255 yuan 40805173 somber 398
+C 3 hours 25.0 back 3.0 goldnet/h 5267518534 yuan 49676407 somber 577
+C 4 hours 43.75 back 2.0 goldnet/h 14622929463 yuan 152817039 somber 740
+C 5 hours 37.25 back 4.0 goldnet/h 19852316192 yuan 239443816 somber 868
+C 6 hours 35.0 back 2.0 goldnet/h 58960639250 yuan 519706132 somber 1053
+C 7 hours 31.5 back 3.25 goldnet/h 31768687231 yuan 319210292 somber 1324
+C 8 hours 26.25 back 1.0 goldnet/h 11625339841 yuan 105321917 somber 1469
+C 9 hours 33.5 back 3.5 goldnet/h 18139874940 yuan 243518621 somber 1666
+C 10 hours 42.5 back 4.75 goldnet/h 45865956624 yuan 513704941 somber 2095

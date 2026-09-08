@@ -1,0 +1,252 @@
+{
+  "monster_id": "EL-MON-LIM-MIST-012",
+  "name": "雾林熔炉骑士·奥德",
+  "continent": 2,
+  "map_group_index_zero_based": 2,
+  "role": "地图BOSS",
+  "triggers": [
+    {
+      "trigger_id": "D00458",
+      "kind": "自身专属",
+      "base_denominator": 30,
+      "quantity": 1,
+      "corpse_handling": "use_existing_engine_once",
+      "apply_player_drop_rate": true,
+      "selection": "independent",
+      "item": "熔炉古玉"
+    },
+    {
+      "trigger_id": "D00459",
+      "kind": "本图普通兼掉候选",
+      "base_denominator": 30,
+      "quantity": 1,
+      "corpse_handling": "use_existing_engine_once",
+      "apply_player_drop_rate": true,
+      "selection": "one_weighted",
+      "pool_id": "POOL009",
+      "candidates": [
+        {
+          "item": "半兽战勋",
+          "weight": 1
+        },
+        {
+          "item": "毒花巨盾",
+          "weight": 1
+        }
+      ]
+    },
+    {
+      "trigger_id": "D00460",
+      "kind": "材料独立候选",
+      "base_denominator": 150,
+      "quantity": 30,
+      "corpse_handling": "use_existing_engine_once",
+      "apply_player_drop_rate": true,
+      "selection": "independent",
+      "item": "风暴石片"
+    },
+    {
+      "trigger_id": "D00461",
+      "kind": "材料独立候选",
+      "base_denominator": 30,
+      "quantity": 2,
+      "corpse_handling": "use_existing_engine_once",
+      "apply_player_drop_rate": true,
+      "selection": "independent",
+      "item": "黄金树芽"
+    },
+    {
+      "trigger_id": "D00462",
+      "kind": "材料独立候选",
+      "base_denominator": 80,
+      "quantity": 2,
+      "corpse_handling": "use_existing_engine_once",
+      "apply_player_drop_rate": true,
+      "selection": "independent",
+      "item": "接肢王印"
+    },
+    {
+      "trigger_id": "D00463",
+      "kind": "材料独立候选",
+      "base_denominator": 60,
+      "quantity": 1,
+      "corpse_handling": "use_existing_engine_once",
+      "apply_player_drop_rate": true,
+      "selection": "independent",
+      "item": "熔炉角片"
+    },
+    {
+      "trigger_id": "D00464",
+      "kind": "材料独立候选",
+      "base_denominator": 40,
+      "quantity": 2,
+      "corpse_handling": "use_existing_engine_once",
+      "apply_player_drop_rate": true,
+      "selection": "independent",
+      "item": "野兽骨片"
+    },
+    {
+      "trigger_id": "D00465",
+      "kind": "材料独立候选",
+      "base_denominator": 30,
+      "quantity": 1,
+      "corpse_handling": "use_existing_engine_once",
+      "apply_player_drop_rate": true,
+      "selection": "independent",
+      "item": "技能残页"
+    },
+    {
+      "trigger_id": "D00466",
+      "kind": "材料独立候选",
+      "base_denominator": 180,
+      "quantity": 1,
+      "corpse_handling": "use_existing_engine_once",
+      "apply_player_drop_rate": true,
+      "selection": "independent",
+      "item": "宁姆格福誓页"
+    },
+    {
+      "trigger_id": "D00467",
+      "kind": "材料独立候选",
+      "base_denominator": 1200,
+      "quantity": 1,
+      "corpse_handling": "use_existing_engine_once",
+      "apply_player_drop_rate": true,
+      "selection": "independent",
+      "item": "小卢恩"
+    },
+    {
+      "trigger_id": "D00468",
+      "kind": "材料独立候选",
+      "base_denominator": 120,
+      "quantity": 1,
+      "corpse_handling": "use_existing_engine_once",
+      "apply_player_drop_rate": true,
+      "selection": "independent",
+      "item": "大卢恩"
+    },
+    {
+      "trigger_id": "D00469",
+      "kind": "六神器公共池",
+      "base_denominator": 200000,
+      "quantity": 1,
+      "corpse_handling": "use_existing_engine_once",
+      "apply_player_drop_rate": true,
+      "selection": "one_weighted",
+      "pool_id": "POOL006",
+      "candidates": [
+        {
+          "item": "玛莲妮亚的大卢恩",
+          "weight": 1
+        },
+        {
+          "item": "拉塔恩的大卢恩",
+          "weight": 1
+        },
+        {
+          "item": "蒙葛特的大卢恩",
+          "weight": 1
+        },
+        {
+          "item": "蒙格的大卢恩",
+          "weight": 1
+        },
+        {
+          "item": "拉卡德的大卢恩",
+          "weight": 1
+        },
+        {
+          "item": "葛瑞克的大卢恩",
+          "weight": 1
+        }
+      ]
+    },
+    {
+      "trigger_id": "D05301",
+      "kind": "制式独立候选",
+      "base_denominator": 3000,
+      "quantity": 1,
+      "corpse_handling": "use_existing_engine_once",
+      "apply_player_drop_rate": true,
+      "selection": "one_weighted",
+      "pool_id": "POOL093",
+      "candidates": [
+        {
+          "item": "猩红卫士剑",
+          "weight": 1
+        },
+        {
+          "item": "猩红卫士战甲",
+          "weight": 1
+        },
+        {
+          "item": "猩红卫士战盔",
+          "weight": 1
+        },
+        {
+          "item": "猩红卫士项链",
+          "weight": 1
+        },
+        {
+          "item": "猩红卫士腕甲",
+          "weight": 1
+        },
+        {
+          "item": "猩红卫士戒指",
+          "weight": 1
+        },
+        {
+          "item": "猩红卫士腰带",
+          "weight": 1
+        },
+        {
+          "item": "猩红卫士战靴",
+          "weight": 1
+        },
+        {
+          "item": "冻原斗士刃",
+          "weight": 1
+        },
+        {
+          "item": "冻原斗士战甲",
+          "weight": 1
+        },
+        {
+          "item": "冻原斗士战盔",
+          "weight": 1
+        },
+        {
+          "item": "冻原斗士项链",
+          "weight": 1
+        },
+        {
+          "item": "冻原斗士腕甲",
+          "weight": 1
+        },
+        {
+          "item": "冻原斗士戒指",
+          "weight": 1
+        },
+        {
+          "item": "冻原斗士腰带",
+          "weight": 1
+        },
+        {
+          "item": "冻原斗士战靴",
+          "weight": 1
+        }
+      ]
+    },
+    {
+      "trigger_id": "D05335",
+      "kind": "称号卷",
+      "base_denominator": 250,
+      "quantity": 1,
+      "corpse_handling": "use_existing_engine_once",
+      "apply_player_drop_rate": true,
+      "selection": "independent",
+      "item": "[称号]初火铸身"
+    }
+  ],
+  "deployment": "archive_only_until_user_authorizes; verify_stack_parser_before_install"
+}
