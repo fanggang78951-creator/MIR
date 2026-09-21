@@ -1,0 +1,66 @@
+{
+  "schema": "elden_atlas_closure_v1",
+  "date": "2026-09-21",
+  "scope": "专属装备收集图鉴",
+  "entry": {"type":"command","command":"@装备收集","user_cmd_id":92,"npc_required":false},
+  "formal_collection": {
+    "count":619,"collection_id_min":4,"collection_id_max":622,
+    "legacy_test_ids":[1,2,3],"legacy_test_status":"disabled_preserve_identity",
+    "required_item_quantity":1,"consume_item_on_activation":true,
+    "activation_once_per_character":true,"workbook":"33_装备收集图鉴.xlsx","sheet":"收集明细"
+  },
+  "map_group_completion": {
+    "count":46,"classification_mode":"single_level_continent_plus_map_group",
+    "config":"33A_46地图组_收集ID与整页奖励.csv","workbook_sheet":"分类奖励",
+    "grant_once_per_character":true,"extra_consumption":false,
+    "note":"46组精确覆盖619个正式收集ID；不构成跨大陆进入条件。"
+  },
+  "continent_completion": {
+    "count":10,"config":"33B_10大陆全收集_暴击几率奖励.csv",
+    "completion_condition":"该大陆required_collection_ids全部已激活",
+    "grant_once_per_character":true,"extra_consumption":false,
+    "reward_key":"暴击几率","reward_unit":"百分点",
+    "reward_values":[1,1,2,2,2,3,3,3,5,5],"total_reward":27,
+    "forbidden_substitution":["暴击伤害","致命几率","致命伤害"],
+    "adapter_requirement":"必须映射到本项目平台的永久属性适配器“暴击几率”；未解析到真实适配器时预检阻止，禁止改写成其他属性。"
+  },
+  "transaction": {
+    "single_activation_order":[
+      "检查正式收集ID有效且未激活","按装备全名在目标StdItems唯一解析","确认背包拥有至少1件",
+      "原子扣除1件","发放该单件永久奖励","设置该收集ID已激活",
+      "检查所属地图组是否刚刚完成并一次性发放整页奖励",
+      "检查所属大陆是否刚刚完成并一次性发放暴击几率奖励"
+    ],
+    "failure_rule":"任一步失败不得留下部分扣物、部分奖励或错误完成标记。",
+    "repeat_rule":"已激活条目、已结算地图组、已结算大陆再次触发均不得重复扣物或重复领奖。"
+  },
+  "backfill": {
+    "required":true,
+    "when":["安装后首次打开@装备收集","角色登录后的安全重算入口（若平台已有）"],
+    "behavior":[
+      "只读取既有619条激活状态","重新判定46地图组与10大陆完成状态",
+      "缺少地图组完成标记时只补对应一次性奖励，不重复单件奖励",
+      "缺少大陆奖励标记时只补对应暴击几率一次，不再消耗装备",
+      "已经存在完成标记时绝不重复补发"
+    ]
+  },
+  "state_namespace": {
+    "item_logical_key":"atlas.item.<collection_id>",
+    "map_logical_key":"atlas.map.<category_id>",
+    "continent_logical_key":"atlas.continent.<continent_id>.claimed",
+    "hard_precheck":"三类持久状态必须使用互不重叠的实际存储。用户已说明200条上限可扩容，容量不作为设计阻断，但平台仍必须通过冲突预检。"
+  },
+  "hard_prechecks":[
+    "目标服619个正式装备名称均能唯一解析，重复同名或缺失立即阻止",
+    "收集ID4-622唯一且无断裂；1-3只保留停用测试身份",
+    "46分类ID唯一并精确覆盖619个正式收集ID，每个ID只属于一个地图组",
+    "10大陆关联总计619个ID且各自数量为38/61/80/80/80/44/44/56/68/68",
+    "暴击几率永久属性适配器必须真实存在；不允许用暴击伤害替代",
+    "单件、地图组、大陆三类状态实际存储不得冲突",
+    "UserCmd 92在目标服若被占用必须由平台重新分配并同步生成，不得静默覆盖"
+  ],
+  "excluded_from_this_closure":[
+    "8种大陆材料收藏（独立系统，不重复并入619件装备）",
+    "装备回收/材料回收","地图处决与地图韧性","装备本体属性修改"
+  ]
+}
