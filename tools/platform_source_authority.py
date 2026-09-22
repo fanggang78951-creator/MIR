@@ -5,6 +5,7 @@ import hashlib
 import json
 import os
 import re
+import shutil
 import stat
 from dataclasses import dataclass
 from pathlib import Path, PurePosixPath, PureWindowsPath
@@ -46,8 +47,7 @@ def _string_list(data: dict[str, object], name: str) -> list[str]:
     return list(value)
 
 
-def load_policy(path: Path) -> SourcePolicy:
-    data = json.loads(Path(path).read_text(encoding="utf-8"))
+def _policy_from_data(data: object) -> SourcePolicy:
     if not isinstance(data, dict) or data.get("schemaVersion") != 1:
         raise ValueError("source authority policy schemaVersion must be 1")
     maximum = data.get("maxFileBytes")
@@ -81,6 +81,22 @@ def load_policy(path: Path) -> SourcePolicy:
         sensitive_name_patterns=patterns,
         max_file_bytes=maximum,
     )
+
+
+def _policy_to_data(policy: SourcePolicy) -> dict[str, object]:
+    return {
+        "schemaVersion": 1,
+        "includeDirectories": list(policy.include_directories),
+        "rootFiles": list(policy.root_files),
+        "excludeDirectoryNames": sorted(policy.exclude_directory_names),
+        "excludeSuffixes": sorted(policy.exclude_suffixes),
+        "sensitiveNamePatterns": [pattern.pattern for pattern in policy.sensitive_name_patterns],
+        "maxFileBytes": policy.max_file_bytes,
+    }
+
+
+def load_policy(path: Path) -> SourcePolicy:
+    return _policy_from_data(json.loads(Path(path).read_text(encoding="utf-8")))
 
 
 def _sha256(path: Path) -> str:
@@ -239,6 +255,160 @@ def inventory_source(source_root: Path, policy: SourcePolicy) -> dict[str, objec
     }
 
 
+def _inside(root: Path, relative: str) -> Path:
+    base = Path(root).resolve()
+    candidate = (base / Path(relative)).resolve(strict=False)
+    try:
+        candidate.relative_to(base)
+    except ValueError as exc:
+        raise SourceAuthorityError(f"managed path escapes root: {relative}") from exc
+    return candidate
+
+
+def _destination_reparse(root: Path, relative: str) -> bool:
+    base = Path(root).resolve()
+    current = base
+    for part in PurePosixPath(relative).parts:
+        current = current / part
+        if current.exists() and _is_reparse(current):
+            return True
+    return False
+
+
+def plan_bootstrap(
+    source_root: Path, mirror_root: Path, policy: SourcePolicy
+) -> dict[str, object]:
+    source = Path(source_root).resolve()
+    mirror = Path(mirror_root).resolve(strict=False)
+    inventory = inventory_source(source, policy)
+    blockers = list(inventory["blockers"])
+    changes: list[dict[str, object]] = []
+    for entry in inventory["files"]:
+        relative = str(entry["path"])
+        destination = _inside(mirror, relative)
+        destination_hash: str | None = None
+        if _destination_reparse(mirror, relative):
+            blockers.append(
+                {
+                    "code": "destination-reparse-point",
+                    "path": relative,
+                    "message": "destination path contains a reparse point",
+                }
+            )
+            action = "blocked"
+        elif destination.exists():
+            if not destination.is_file():
+                blockers.append(
+                    {
+                        "code": "destination-conflict",
+                        "path": relative,
+                        "message": "destination exists and is not a regular file",
+                    }
+                )
+                action = "blocked"
+            else:
+                destination_hash = _sha256(destination)
+                if destination_hash == entry["sha256"]:
+                    action = "unchanged"
+                else:
+                    blockers.append(
+                        {
+                            "code": "destination-conflict",
+                            "path": relative,
+                            "message": "destination has different content",
+                        }
+                    )
+                    action = "blocked"
+        else:
+            action = "create"
+        changes.append(
+            {
+                "path": relative,
+                "action": action,
+                "sourceSha256": entry["sha256"],
+                "destinationSha256": destination_hash,
+            }
+        )
+    blockers.sort(key=lambda item: (str(item["path"]).casefold(), str(item["code"])))
+    return {
+        "schemaVersion": 1,
+        "mode": "bootstrap-runtime-to-git",
+        "sourceRoot": str(source),
+        "mirrorRoot": str(mirror),
+        "sourceFingerprint": inventory["sourceFingerprint"],
+        "policy": _policy_to_data(policy),
+        "changes": changes,
+        "blockers": blockers,
+        "isNoop": not blockers and all(item["action"] == "unchanged" for item in changes),
+    }
+
+
+def apply_bootstrap(
+    plan: dict[str, object], *, confirmed: bool
+) -> dict[str, object]:
+    if not confirmed:
+        raise SourceAuthorityError("bootstrap confirmation is required")
+    if plan.get("schemaVersion") != 1 or plan.get("mode") != "bootstrap-runtime-to-git":
+        raise SourceAuthorityError("invalid bootstrap plan")
+    if plan.get("blockers"):
+        raise SourceAuthorityError("bootstrap plan has blockers")
+    policy = _policy_from_data(plan.get("policy"))
+    source = Path(str(plan["sourceRoot"]))
+    mirror = Path(str(plan["mirrorRoot"]))
+    current_inventory = inventory_source(source, policy)
+    if current_inventory["sourceFingerprint"] != plan.get("sourceFingerprint"):
+        raise SourceAuthorityError("source changed after bootstrap plan")
+    current_plan = plan_bootstrap(source, mirror, policy)
+    if current_plan["blockers"] or current_plan["changes"] != plan.get("changes"):
+        raise SourceAuthorityError("destination changed after bootstrap plan")
+
+    copied = 0
+    unchanged = 0
+    for change in current_plan["changes"]:
+        action = change["action"]
+        if action == "unchanged":
+            unchanged += 1
+            continue
+        if action != "create":
+            raise SourceAuthorityError(f"unsupported bootstrap action: {action}")
+        relative = str(change["path"])
+        source_path = _inside(source, relative)
+        destination = _inside(mirror, relative)
+        destination.parent.mkdir(parents=True, exist_ok=True)
+        pending = destination.with_name(f".{destination.name}.xydp-copying")
+        if pending.exists():
+            pending.unlink()
+        shutil.copy2(source_path, pending)
+        if _sha256(pending) != change["sourceSha256"]:
+            pending.unlink(missing_ok=True)
+            raise SourceAuthorityError(f"copied file hash mismatch: {relative}")
+        os.replace(pending, destination)
+        if _sha256(destination) != change["sourceSha256"]:
+            raise SourceAuthorityError(f"destination hash mismatch: {relative}")
+        copied += 1
+
+    snapshot = {
+        "schemaVersion": 1,
+        "sourceRoot": str(source.resolve()),
+        "sourceFingerprint": current_inventory["sourceFingerprint"],
+        "files": current_inventory["files"],
+    }
+    canonical = json.dumps(
+        snapshot["files"], ensure_ascii=False, sort_keys=True, separators=(",", ":")
+    )
+    snapshot["snapshotFingerprint"] = hashlib.sha256(canonical.encode("utf-8")).hexdigest()
+    snapshot_path = mirror / "source-authority.snapshot.json"
+    _write_json(snapshot_path, snapshot)
+    return {
+        "schemaVersion": 1,
+        "mode": "bootstrap-runtime-to-git",
+        "copiedFiles": copied,
+        "unchangedFiles": unchanged,
+        "snapshot": str(snapshot_path.resolve()),
+        "sourceFingerprint": current_inventory["sourceFingerprint"],
+    }
+
+
 def _write_json(path: Path, value: object) -> None:
     destination = Path(path)
     destination.parent.mkdir(parents=True, exist_ok=True)
@@ -256,6 +426,19 @@ def _parser() -> argparse.ArgumentParser:
     inventory.add_argument("--source-root", type=Path, required=True)
     inventory.add_argument("--policy", type=Path, required=True)
     inventory.add_argument("--output", type=Path, required=True)
+    bootstrap_plan = subparsers.add_parser(
+        "bootstrap-plan", help="生成一次性E盘到Git镜像引入计划"
+    )
+    bootstrap_plan.add_argument("--source-root", type=Path, required=True)
+    bootstrap_plan.add_argument("--mirror-root", type=Path, required=True)
+    bootstrap_plan.add_argument("--policy", type=Path, required=True)
+    bootstrap_plan.add_argument("--output", type=Path, required=True)
+    bootstrap_apply = subparsers.add_parser(
+        "bootstrap-apply", help="确认执行一次性E盘到Git镜像引入"
+    )
+    bootstrap_apply.add_argument("--plan", type=Path, required=True)
+    bootstrap_apply.add_argument("--policy", type=Path, required=True)
+    bootstrap_apply.add_argument("--yes", action="store_true")
     return parser
 
 
@@ -275,6 +458,31 @@ def main(argv: list[str] | None = None) -> int:
             )
         )
         return 2 if report["blockers"] else 0
+    if args.command == "bootstrap-plan":
+        plan = plan_bootstrap(
+            args.source_root, args.mirror_root, load_policy(args.policy)
+        )
+        _write_json(args.output, plan)
+        print(
+            json.dumps(
+                {
+                    "output": str(args.output.resolve()),
+                    "changes": len(plan["changes"]),
+                    "blockers": len(plan["blockers"]),
+                    "isNoop": plan["isNoop"],
+                },
+                ensure_ascii=False,
+            )
+        )
+        return 2 if plan["blockers"] else 0
+    if args.command == "bootstrap-apply":
+        plan = json.loads(args.plan.read_text(encoding="utf-8"))
+        supplied_policy = _policy_to_data(load_policy(args.policy))
+        if plan.get("policy") != supplied_policy:
+            raise SourceAuthorityError("supplied policy differs from bootstrap plan")
+        result = apply_bootstrap(plan, confirmed=args.yes)
+        print(json.dumps(result, ensure_ascii=False))
+        return 0
     raise AssertionError(args.command)
 
 

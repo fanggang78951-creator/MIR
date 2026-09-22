@@ -9,7 +9,13 @@ import tempfile
 import unittest
 from pathlib import Path
 
-from tools.platform_source_authority import inventory_source, load_policy
+from tools.platform_source_authority import (
+    SourceAuthorityError,
+    apply_bootstrap,
+    inventory_source,
+    load_policy,
+    plan_bootstrap,
+)
 
 
 class InventoryTests(unittest.TestCase):
@@ -138,6 +144,153 @@ class InventoryTests(unittest.TestCase):
             if path.is_file() and not path.is_symlink()
         }
         self.assertEqual(after, before)
+
+
+class BootstrapTests(unittest.TestCase):
+    def setUp(self) -> None:
+        self.temp = tempfile.TemporaryDirectory()
+        self.addCleanup(self.temp.cleanup)
+        self.root = Path(self.temp.name)
+        self.source = self.root / "source"
+        self.mirror = self.root / "mirror"
+        (self.source / "src" / "xydp").mkdir(parents=True)
+        self.mirror.mkdir()
+        self.readme_bytes = b"platform\n"
+        self.app_bytes = b"print('ok')\n"
+        (self.source / "README.md").write_bytes(self.readme_bytes)
+        (self.source / "src" / "xydp" / "app.py").write_bytes(self.app_bytes)
+        os.utime(self.source / "src" / "xydp" / "app.py", ns=(1_700_000_000_000_000_000,) * 2)
+        self.policy_path = self.root / "policy.json"
+        self.policy_path.write_text(
+            json.dumps(
+                {
+                    "schemaVersion": 1,
+                    "includeDirectories": ["src"],
+                    "rootFiles": ["README.md"],
+                    "excludeDirectoryNames": ["__pycache__"],
+                    "excludeSuffixes": [".pyc"],
+                    "sensitiveNamePatterns": [r"(?i)(^|/)\.env$"],
+                    "maxFileBytes": 1024,
+                }
+            ),
+            encoding="utf-8",
+        )
+        self.policy = load_policy(self.policy_path)
+
+    def test_empty_mirror_plans_only_create_actions(self) -> None:
+        plan = plan_bootstrap(self.source, self.mirror, self.policy)
+
+        self.assertEqual([item["action"] for item in plan["changes"]], ["create", "create"])
+        self.assertEqual([item["path"] for item in plan["changes"]], ["README.md", "src/xydp/app.py"])
+        self.assertEqual(plan["blockers"], [])
+        self.assertFalse(plan["isNoop"])
+
+    def test_same_destination_is_unchanged(self) -> None:
+        (self.mirror / "README.md").write_bytes(self.readme_bytes)
+
+        plan = plan_bootstrap(self.source, self.mirror, self.policy)
+
+        self.assertEqual(plan["changes"][0]["action"], "unchanged")
+        self.assertEqual(plan["changes"][1]["action"], "create")
+
+    def test_bootstrap_refuses_to_overwrite_different_destination(self) -> None:
+        (self.mirror / "src" / "xydp").mkdir(parents=True)
+        destination = self.mirror / "src" / "xydp" / "app.py"
+        destination.write_bytes(b"git work\n")
+
+        plan = plan_bootstrap(self.source, self.mirror, self.policy)
+
+        self.assertEqual(plan["blockers"][0]["code"], "destination-conflict")
+        with self.assertRaises(SourceAuthorityError):
+            apply_bootstrap(plan, confirmed=True)
+        self.assertEqual(destination.read_bytes(), b"git work\n")
+
+    def test_bootstrap_requires_confirmation(self) -> None:
+        plan = plan_bootstrap(self.source, self.mirror, self.policy)
+        with self.assertRaisesRegex(SourceAuthorityError, "confirmation"):
+            apply_bootstrap(plan, confirmed=False)
+        self.assertFalse((self.mirror / "README.md").exists())
+
+    def test_bootstrap_copies_bytes_metadata_and_writes_snapshot(self) -> None:
+        source_app = self.source / "src" / "xydp" / "app.py"
+        source_mtime = source_app.stat().st_mtime_ns
+        plan = plan_bootstrap(self.source, self.mirror, self.policy)
+
+        result = apply_bootstrap(plan, confirmed=True)
+
+        mirror_app = self.mirror / "src" / "xydp" / "app.py"
+        self.assertEqual(mirror_app.read_bytes(), self.app_bytes)
+        self.assertEqual(mirror_app.stat().st_mtime_ns, source_mtime)
+        snapshot = json.loads(
+            (self.mirror / "source-authority.snapshot.json").read_text(encoding="utf-8")
+        )
+        self.assertEqual(snapshot["sourceFingerprint"], plan["sourceFingerprint"])
+        self.assertEqual(result["copiedFiles"], 2)
+
+        before_mtime = mirror_app.stat().st_mtime_ns
+        repeated = plan_bootstrap(self.source, self.mirror, self.policy)
+        self.assertTrue(repeated["isNoop"])
+        repeated_result = apply_bootstrap(repeated, confirmed=True)
+        self.assertEqual(repeated_result["copiedFiles"], 0)
+        self.assertEqual(mirror_app.stat().st_mtime_ns, before_mtime)
+
+    def test_source_drift_stops_before_first_write(self) -> None:
+        plan = plan_bootstrap(self.source, self.mirror, self.policy)
+        (self.source / "README.md").write_bytes(b"changed after plan\n")
+
+        with self.assertRaisesRegex(SourceAuthorityError, "source changed"):
+            apply_bootstrap(plan, confirmed=True)
+
+        self.assertFalse((self.mirror / "README.md").exists())
+
+    def test_bootstrap_cli_plans_and_applies_only_with_confirmation(self) -> None:
+        repo = Path(__file__).resolve().parents[1]
+        plan_path = self.root / "bootstrap-plan.json"
+        plan_command = [
+            sys.executable,
+            "tools/platform_source_authority.py",
+            "bootstrap-plan",
+            "--source-root",
+            str(self.source),
+            "--mirror-root",
+            str(self.mirror),
+            "--policy",
+            str(self.policy_path),
+            "--output",
+            str(plan_path),
+        ]
+
+        planned = subprocess.run(
+            plan_command, cwd=repo, text=True, capture_output=True, check=False
+        )
+
+        self.assertEqual(planned.returncode, 0, planned.stdout + planned.stderr)
+        self.assertEqual(len(json.loads(plan_path.read_text(encoding="utf-8"))["changes"]), 2)
+        apply_command = [
+            sys.executable,
+            "tools/platform_source_authority.py",
+            "bootstrap-apply",
+            "--plan",
+            str(plan_path),
+            "--policy",
+            str(self.policy_path),
+        ]
+        unconfirmed = subprocess.run(
+            apply_command, cwd=repo, text=True, capture_output=True, check=False
+        )
+        self.assertNotEqual(unconfirmed.returncode, 0)
+        self.assertFalse((self.mirror / "README.md").exists())
+
+        applied = subprocess.run(
+            [*apply_command, "--yes"],
+            cwd=repo,
+            text=True,
+            capture_output=True,
+            check=False,
+        )
+        self.assertEqual(applied.returncode, 0, applied.stdout + applied.stderr)
+        self.assertEqual((self.mirror / "README.md").read_bytes(), self.readme_bytes)
+        self.assertTrue((self.mirror / "source-authority.snapshot.json").is_file())
 
 
 if __name__ == "__main__":
