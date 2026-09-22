@@ -3,11 +3,13 @@ from __future__ import annotations
 import hashlib
 import json
 import os
+import shutil
 import subprocess
 import sys
 import tempfile
 import unittest
 from pathlib import Path
+from unittest import mock
 
 from tools.platform_source_authority import (
     SourceAuthorityError,
@@ -44,7 +46,7 @@ class InventoryTests(unittest.TestCase):
             json.dumps(policy, ensure_ascii=False, indent=2), encoding="utf-8"
         )
 
-    def make_source_tree(self) -> bool:
+    def make_source_tree(self) -> None:
         (self.source / "src" / "xydp").mkdir(parents=True)
         (self.source / "tests").mkdir()
         (self.source / "packages").mkdir()
@@ -56,18 +58,8 @@ class InventoryTests(unittest.TestCase):
         (self.source / "src" / "__pycache__" / "app.pyc").write_bytes(b"cache")
         (self.source / "packages" / "ignored.pak").write_bytes(b"ignored")
 
-        outside = self.root / "outside"
-        outside.mkdir()
-        (outside / "escaped.py").write_bytes(b"escape")
-        link = self.source / "src" / "linked"
-        try:
-            os.symlink(outside, link, target_is_directory=True)
-        except OSError:
-            return False
-        return True
-
     def test_inventory_is_deterministic_and_blocks_unsafe_entries(self) -> None:
-        link_created = self.make_source_tree()
+        self.make_source_tree()
 
         report = inventory_source(self.source, load_policy(self.policy_path))
 
@@ -86,14 +78,75 @@ class InventoryTests(unittest.TestCase):
             ],
         )
         expected = {"sensitive-name", "file-too-large"}
-        if link_created:
-            expected.add("reparse-point")
         self.assertEqual({item["code"] for item in report["blockers"]}, expected)
         self.assertEqual(report["summary"]["managedFiles"], 2)
         self.assertEqual(report["summary"]["blockers"], len(expected))
 
+    def test_inventory_blocks_nested_reparse_ancestor(self) -> None:
+        (self.source / "nested" / "src").mkdir(parents=True)
+        (self.source / "nested" / "src" / "app.py").write_bytes(b"safe\n")
+        self.write_policy(includeDirectories=["nested/src"], rootFiles=[])
+
+        real_is_reparse = __import__(
+            "tools.platform_source_authority", fromlist=["_is_reparse"]
+        )._is_reparse
+
+        def fake_is_reparse(path: Path) -> bool:
+            return Path(path).name == "nested" or real_is_reparse(Path(path))
+
+        with mock.patch(
+            "tools.platform_source_authority._is_reparse", side_effect=fake_is_reparse
+        ):
+            report = inventory_source(self.source, load_policy(self.policy_path))
+
+        self.assertEqual(report["files"], [])
+        self.assertEqual(
+            report["blockers"],
+            [
+                {
+                    "code": "reparse-point",
+                    "path": "nested",
+                    "message": "managed source path contains a reparse point",
+                }
+            ],
+        )
+
+    def test_inventory_blocks_real_directory_symlink(self) -> None:
+        (self.source / "src").mkdir()
+        outside = self.root / "outside"
+        outside.mkdir()
+        (outside / "escaped.py").write_bytes(b"escape")
+        link = self.source / "src" / "linked"
+        try:
+            os.symlink(outside, link, target_is_directory=True)
+        except OSError as exc:
+            self.skipTest(f"directory symlink unavailable: {exc}")
+        self.write_policy(includeDirectories=["src"], rootFiles=[])
+
+        report = inventory_source(self.source, load_policy(self.policy_path))
+
+        self.assertEqual(report["files"], [])
+        self.assertEqual({item["code"] for item in report["blockers"]}, {"reparse-point"})
+
+    def test_inventory_rejects_symlinked_source_root(self) -> None:
+        self.make_source_tree()
+        alias = self.root / "source-alias"
+        try:
+            os.symlink(self.source, alias, target_is_directory=True)
+        except OSError as exc:
+            self.skipTest(f"directory symlink unavailable: {exc}")
+
+        with self.assertRaisesRegex(SourceAuthorityError, "source root"):
+            inventory_source(alias, load_policy(self.policy_path))
+
     def test_policy_rejects_absolute_and_parent_paths(self) -> None:
-        for bad in [str(self.root.resolve()), "../outside", "src/../../outside"]:
+        for bad in [
+            str(self.root.resolve()),
+            "../outside",
+            "src/../../outside",
+            "D:outside",
+            "file:stream",
+        ]:
             with self.subTest(path=bad):
                 self.write_policy(includeDirectories=[bad])
                 with self.assertRaisesRegex(ValueError, "relative"):
@@ -179,6 +232,33 @@ class InventoryTests(unittest.TestCase):
             if path.is_file() and not path.is_symlink()
         }
         self.assertEqual(after, before)
+
+    def test_inventory_cli_rejects_output_inside_source(self) -> None:
+        self.make_source_tree()
+        protected = self.source / "README.md"
+        before = protected.read_bytes()
+
+        completed = subprocess.run(
+            [
+                sys.executable,
+                "tools/platform_source_authority.py",
+                "inventory",
+                "--source-root",
+                str(self.source),
+                "--policy",
+                str(self.policy_path),
+                "--output",
+                str(protected),
+            ],
+            cwd=Path(__file__).resolve().parents[1],
+            text=True,
+            capture_output=True,
+            check=False,
+        )
+
+        self.assertNotEqual(completed.returncode, 0)
+        self.assertIn("protected root", completed.stderr)
+        self.assertEqual(protected.read_bytes(), before)
 
 
 class BootstrapTests(unittest.TestCase):
@@ -278,6 +358,24 @@ class BootstrapTests(unittest.TestCase):
 
         self.assertFalse((self.mirror / "README.md").exists())
 
+    def test_bootstrap_preserves_destination_created_during_copy(self) -> None:
+        plan = plan_bootstrap(self.source, self.mirror, self.policy)
+        destination = self.mirror / "README.md"
+        real_copy2 = shutil.copy2
+
+        def copy_then_race(source: Path, pending: Path) -> Path:
+            result = real_copy2(source, pending)
+            destination.write_bytes(b"concurrent work\n")
+            return result
+
+        with mock.patch(
+            "tools.platform_source_authority.shutil.copy2", side_effect=copy_then_race
+        ):
+            with self.assertRaisesRegex(SourceAuthorityError, "appeared during bootstrap"):
+                apply_bootstrap(plan, confirmed=True)
+
+        self.assertEqual(destination.read_bytes(), b"concurrent work\n")
+
     def test_bootstrap_cli_plans_and_applies_only_with_confirmation(self) -> None:
         repo = Path(__file__).resolve().parents[1]
         plan_path = self.root / "bootstrap-plan.json"
@@ -326,6 +424,32 @@ class BootstrapTests(unittest.TestCase):
         self.assertEqual(applied.returncode, 0, applied.stdout + applied.stderr)
         self.assertEqual((self.mirror / "README.md").read_bytes(), self.readme_bytes)
         self.assertTrue((self.mirror / "source-authority.snapshot.json").is_file())
+
+    def test_bootstrap_plan_cli_rejects_output_inside_mirror(self) -> None:
+        protected = self.mirror / "plan.json"
+        completed = subprocess.run(
+            [
+                sys.executable,
+                "tools/platform_source_authority.py",
+                "bootstrap-plan",
+                "--source-root",
+                str(self.source),
+                "--mirror-root",
+                str(self.mirror),
+                "--policy",
+                str(self.policy_path),
+                "--output",
+                str(protected),
+            ],
+            cwd=Path(__file__).resolve().parents[1],
+            text=True,
+            capture_output=True,
+            check=False,
+        )
+
+        self.assertNotEqual(completed.returncode, 0)
+        self.assertIn("protected root", completed.stderr)
+        self.assertFalse(protected.exists())
 
 
 class SyncPreflightTests(unittest.TestCase):
@@ -454,6 +578,34 @@ class SyncPreflightTests(unittest.TestCase):
         self.assertEqual(completed.returncode, 2, completed.stdout + completed.stderr)
         self.assertEqual(len(json.loads(output.read_text(encoding="utf-8"))["blockers"]), 3)
         self.assertEqual(self.runtime_state(), before)
+
+    def test_sync_preflight_cli_rejects_output_inside_runtime(self) -> None:
+        protected = self.runtime / "unchanged.txt"
+        before = protected.read_bytes()
+
+        completed = subprocess.run(
+            [
+                sys.executable,
+                "tools/platform_source_authority.py",
+                "sync-preflight",
+                "--mirror-root",
+                str(self.mirror),
+                "--runtime-root",
+                str(self.runtime),
+                "--snapshot",
+                str(self.snapshot_path),
+                "--output",
+                str(protected),
+            ],
+            cwd=Path(__file__).resolve().parents[1],
+            text=True,
+            capture_output=True,
+            check=False,
+        )
+
+        self.assertNotEqual(completed.returncode, 0)
+        self.assertIn("protected root", completed.stderr)
+        self.assertEqual(protected.read_bytes(), before)
 
 
 if __name__ == "__main__":

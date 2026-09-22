@@ -140,7 +140,7 @@ Expected: FAIL，bootstrap接口尚不存在。
 
 - [ ] **Step 3: 实现计划、确认门和原子复制**
 
-计划字段固定包含：`schemaVersion/mode/sourceRoot/mirrorRoot/sourceFingerprint/changes/blockers/isNoop`。每条change包含 `path/action/sourceSha256/destinationSha256`。应用时重新盘点并验证计划指纹，任何漂移在首个写入前停止；逐文件复制到同目录临时文件，`os.replace`后回读SHA。禁止delete和update，只有`create/unchanged`。
+计划字段固定包含：`schemaVersion/mode/sourceRoot/mirrorRoot/sourceFingerprint/changes/blockers/isNoop`。每条change包含 `path/action/sourceSha256/destinationSha256`。应用时重新盘点并验证计划指纹，任何漂移在首个写入前停止；逐文件复制到同目录唯一临时文件，用原子不覆盖硬链接提交并回读SHA，若目标在复制期间出现则保留对方文件并停止。禁止delete和update，只有`create/unchanged`。
 
 应用完成后在镜像根写 `source-authority.snapshot.json`，记录共同基线文件哈希与来源根；该元数据不属于E盘镜像文件集。
 

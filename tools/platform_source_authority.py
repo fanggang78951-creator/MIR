@@ -7,6 +7,7 @@ import os
 import re
 import shutil
 import stat
+import tempfile
 from dataclasses import dataclass
 from pathlib import Path, PurePosixPath, PureWindowsPath
 from typing import Iterable
@@ -34,9 +35,13 @@ def _normalized_relative(value: object, field: str) -> str:
         raise ValueError(f"{field} entries must be non-empty relative paths")
     normalized = value.replace("\\", "/")
     pure = PurePosixPath(normalized)
+    windows = PureWindowsPath(value)
     if (
         pure.is_absolute()
-        or PureWindowsPath(value).is_absolute()
+        or windows.is_absolute()
+        or bool(windows.drive)
+        or bool(windows.root)
+        or ":" in normalized
         or any(part in {"", ".", ".."} for part in pure.parts)
     ):
         raise ValueError(f"{field} entries must be relative paths: {value}")
@@ -147,10 +152,40 @@ def _is_reparse(path: Path) -> bool:
     )
 
 
+def _first_reparse_component(path: Path) -> Path | None:
+    absolute = Path(path).absolute()
+    chain = list(reversed((absolute, *absolute.parents)))
+    for current in chain:
+        if current == Path(current.anchor):
+            continue
+        if current.exists() and _is_reparse(current):
+            return current
+    return None
+
+
+def _managed_source_reparse(root: Path, relative: str) -> str | None:
+    current = Path(root)
+    for part in PurePosixPath(relative).parts:
+        current = current / part
+        if current.exists() and _is_reparse(current):
+            return current.relative_to(root).as_posix()
+    return None
+
+
 def _walk_directory(
     root: Path, relative_root: str, policy: SourcePolicy, blockers: list[dict[str, str]]
 ) -> Iterable[tuple[str, Path]]:
-    start = root / Path(relative_root)
+    reparse = _managed_source_reparse(root, relative_root)
+    if reparse is not None:
+        blockers.append(
+            {
+                "code": "reparse-point",
+                "path": reparse,
+                "message": "managed source path contains a reparse point",
+            }
+        )
+        return
+    start = _inside(root, relative_root)
     if not start.exists():
         blockers.append(
             {
@@ -194,13 +229,29 @@ def _walk_directory(
 
 
 def inventory_source(source_root: Path, policy: SourcePolicy) -> dict[str, object]:
-    root = Path(source_root).resolve()
+    lexical_root = Path(source_root).absolute()
+    root_reparse = _first_reparse_component(lexical_root)
+    if root_reparse is not None:
+        raise SourceAuthorityError(
+            f"source root contains a reparse point: {root_reparse}"
+        )
+    root = lexical_root.resolve()
     if not root.is_dir():
         raise SourceAuthorityError(f"source root is not a directory: {root}")
     blockers: list[dict[str, str]] = []
     candidates: list[tuple[str, Path]] = []
     for relative in policy.root_files:
-        path = root / Path(relative)
+        reparse = _managed_source_reparse(root, relative)
+        if reparse is not None:
+            blockers.append(
+                {
+                    "code": "reparse-point",
+                    "path": reparse,
+                    "message": "managed source path contains a reparse point",
+                }
+            )
+            continue
+        path = _inside(root, relative)
         if not path.exists():
             blockers.append(
                 {
@@ -246,6 +297,16 @@ def inventory_source(source_root: Path, policy: SourcePolicy) -> dict[str, objec
             )
             continue
         seen.add(folded)
+        if _managed_source_reparse(root, relative) is not None:
+            blockers.append(
+                {
+                    "code": "reparse-point",
+                    "path": relative,
+                    "message": "managed source path contains a reparse point",
+                }
+            )
+            continue
+        path = _inside(root, relative)
         if path.suffix.casefold() in policy.exclude_suffixes:
             continue
         if any(pattern.search(relative) for pattern in policy.sensitive_name_patterns):
@@ -420,14 +481,25 @@ def apply_bootstrap(
         source_path = _inside(source, relative)
         destination = _inside(mirror, relative)
         destination.parent.mkdir(parents=True, exist_ok=True)
-        pending = destination.with_name(f".{destination.name}.xydp-copying")
-        if pending.exists():
-            pending.unlink()
-        shutil.copy2(source_path, pending)
-        if _sha256(pending) != change["sourceSha256"]:
+        with tempfile.NamedTemporaryFile(
+            dir=destination.parent,
+            prefix=f".{destination.name}.",
+            suffix=".xydp-copying",
+            delete=False,
+        ) as stream:
+            pending = Path(stream.name)
+        try:
+            shutil.copy2(source_path, pending)
+            if _sha256(pending) != change["sourceSha256"]:
+                raise SourceAuthorityError(f"copied file hash mismatch: {relative}")
+            try:
+                os.link(pending, destination)
+            except FileExistsError as exc:
+                raise SourceAuthorityError(
+                    f"destination appeared during bootstrap: {relative}"
+                ) from exc
+        finally:
             pending.unlink(missing_ok=True)
-            raise SourceAuthorityError(f"copied file hash mismatch: {relative}")
-        os.replace(pending, destination)
         if _sha256(destination) != change["sourceSha256"]:
             raise SourceAuthorityError(f"destination hash mismatch: {relative}")
         copied += 1
@@ -585,6 +657,51 @@ def _write_json(path: Path, value: object) -> None:
     os.replace(pending, destination)
 
 
+def _path_is_within(path: Path, root: Path) -> bool:
+    try:
+        path.relative_to(root)
+    except ValueError:
+        return False
+    return True
+
+
+def _validate_report_output(
+    output: Path,
+    *,
+    protected_roots: Iterable[Path],
+    protected_files: Iterable[Path],
+) -> None:
+    lexical_output = Path(output).absolute()
+    pending_output = lexical_output.with_name(f".{lexical_output.name}.pending")
+    protected_root_pairs = [
+        (Path(root).absolute(), Path(root).resolve(strict=False))
+        for root in protected_roots
+    ]
+    protected_file_pairs = [
+        (Path(path).absolute(), Path(path).resolve(strict=False))
+        for path in protected_files
+    ]
+    for candidate in (lexical_output, pending_output):
+        reparse = _first_reparse_component(candidate.parent)
+        if reparse is not None:
+            raise SourceAuthorityError(
+                f"report output path contains a reparse point: {reparse}"
+            )
+        resolved = candidate.resolve(strict=False)
+        for lexical_root, resolved_root in protected_root_pairs:
+            if _path_is_within(candidate, lexical_root) or _path_is_within(
+                resolved, resolved_root
+            ):
+                raise SourceAuthorityError(
+                    f"report output must be outside protected root: {lexical_root}"
+                )
+        for lexical_file, resolved_file in protected_file_pairs:
+            if candidate == lexical_file or resolved == resolved_file:
+                raise SourceAuthorityError(
+                    f"report output must not overwrite input file: {lexical_file}"
+                )
+
+
 def _parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(description="玄渊平台源码权威盘点与预检")
     subparsers = parser.add_subparsers(dest="command", required=True)
@@ -618,6 +735,11 @@ def _parser() -> argparse.ArgumentParser:
 def main(argv: list[str] | None = None) -> int:
     args = _parser().parse_args(argv)
     if args.command == "inventory":
+        _validate_report_output(
+            args.output,
+            protected_roots=[args.source_root],
+            protected_files=[args.policy],
+        )
         report = inventory_source(args.source_root, load_policy(args.policy))
         _write_json(args.output, report)
         print(
@@ -632,6 +754,11 @@ def main(argv: list[str] | None = None) -> int:
         )
         return 2 if report["blockers"] else 0
     if args.command == "bootstrap-plan":
+        _validate_report_output(
+            args.output,
+            protected_roots=[args.source_root, args.mirror_root],
+            protected_files=[args.policy],
+        )
         plan = plan_bootstrap(
             args.source_root, args.mirror_root, load_policy(args.policy)
         )
@@ -657,6 +784,11 @@ def main(argv: list[str] | None = None) -> int:
         print(json.dumps(result, ensure_ascii=False))
         return 0
     if args.command == "sync-preflight":
+        _validate_report_output(
+            args.output,
+            protected_roots=[args.mirror_root, args.runtime_root],
+            protected_files=[args.snapshot],
+        )
         report = preflight_sync(args.mirror_root, args.runtime_root, args.snapshot)
         _write_json(args.output, report)
         print(
