@@ -1,0 +1,46 @@
+{
+  "schemaVersion": 1,
+  "includeDirectories": [
+    "src",
+    "tests",
+    "tools",
+    "做装备/src",
+    "做装备/tests",
+    "接口",
+    "docs",
+    "templates"
+  ],
+  "rootFiles": [
+    "README.md",
+    "AGENTS.md",
+    ".gitignore",
+    "build.ps1",
+    "run_cli.py",
+    "run_gui.py",
+    "Start_XuanYuanDevPlatform.bat"
+  ],
+  "excludeDirectoryNames": [
+    ".git",
+    ".pytest_cache",
+    "__pycache__",
+    "backup",
+    "backups",
+    "build",
+    "dist",
+    "runtime",
+    "temp",
+    "tmp",
+    "workspace"
+  ],
+  "excludeSuffixes": [
+    ".bak",
+    ".log",
+    ".pyc",
+    ".pyo",
+    ".tmp"
+  ],
+  "sensitiveNamePatterns": [
+    "(?i)(^|/)(\\.env(?:\\..*)?|.*(?:secret|token|password|passwd|api[_-]?key|credential|private[-_]?key).*)$"
+  ],
+  "maxFileBytes": 2097152
+}

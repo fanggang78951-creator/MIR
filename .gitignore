@@ -6,6 +6,11 @@
 !/scripts/**
 !/tools/
 !/tools/**
+!/tests/
+!/tests/**
+!/platform/
+/platform/*
+!/platform/source-authority.json
 !/AI_Codex_Skills/
 !/AI_Codex_Skills/**
 
