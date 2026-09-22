@@ -1,0 +1,117 @@
+玄渊平台——装备等级增加与常驻包接口
+
+一、定位
+
+接口等级：内部 / candidate / resident
+包ID：xy.resident.equipment-level-bonus
+包版本：1.0.0-candidate.1
+适用引擎：翎风/LFM2
+用途：让固定装备和自定义实例装备提供“等级增加+x”，并在登录、穿戴、脱下时按差额重算人物真实等级。
+
+证据边界：
+- 当前服“实例装备+1”的显示、穿戴加级、重复重算不叠加、脱下还原、重新登录重算已经游戏验收。
+- 单件2至10、多件混合相加、全身50封顶与第二个同引擎目标服仍待真实游戏验收。
+- 因此成果包保持candidate，但属于resident集合；不得把它描述为已跨服验证。
+
+二、工作簿与做装备入口
+
+正式共享母表：
+E:\XuanYuanDevPlatform\所需材料表格汇总\09_装备批量生成.xlsx
+
+兼容模板：
+E:\XuanYuanDevPlatform\做装备\templates\XuanYuanItems.xlsx
+
+字段名：等级增加
+位置：攻速突破之后、备注之前
+单件允许值：0至10整数
+全身应有值：固定装备累加值 + 自定义实例装备TextVar41汇总值
+全身封顶：50
+
+做装备工具只允许把固定装备值写入：
+; XY_EQUIP_MAKER_LEVEL_BONUS_ANCHOR
+
+生成片段：
+#IF
+CHECKITEMW 装备名 1
+#ACT
+INC N$XY_LB_FIXED 数值
+
+缺少包受管标记“; XY-LB-V1-BEGIN”或缺少唯一锚点时，做装备必须预检阻止，不得只生成悬浮显示。
+
+三、自定义实例装备显示与汇总契约
+
+CustomItemPropertyTextVarList.txt 第41行必须严格为：
+{人物等级∶|251}+$$2
+
+实例装备写值契约：
+BindType=60
+Value1=41
+Value2=等级增加值
+Value3=0
+
+核心汇总命令：
+GetAllCustomItemValueByTextLine 60 -1 41 N$XY_LB_TMP N$XY_LB_CUSTOM N$XY_LB_TMP
+
+不得把Excel行号、装备Idx或TextVar物理行号当成成果包身份；第41行只是本接口的显示与汇总契约。
+
+四、运行时接口
+
+受管重算入口：
+@XY_LEVEL_BONUS_RECALC_DELAY
+
+核心调用：
+#CALL [\玄渊等级加成\等级加成核心.txt] @XY_LEVEL_BONUS_RECALC
+
+事件接入：
+- PlayLogin：延迟1200毫秒重算。
+- TakeOnEx：延迟150毫秒重算。
+- TakeOffEx：延迟150毫秒重算。
+
+持久变量：U470
+含义：平台核心已经实际施加到人物等级上的装备等级总值，不是装备原始值。
+
+核心算法：
+1. 汇总实例装备TextVar41与固定装备锚点值。
+2. 小于0按0，大于50按50。
+3. 用“应有总值-U470已应用总值”得到差额。
+4. 只对差额执行CHANGELEVEL，避免登录或重复穿脱叠加。
+5. 人物基础等级接近1或500时按引擎边界收缩可施加差额。
+
+禁止事项：
+- 禁止NPC、按钮、玩家命令直接调用内部核心。
+- 禁止另一个脚本写U470或N$XY_LB_*变量。
+- 禁止在已有同路径核心内容不一致时静默覆盖。
+- 禁止保留临时验收标记XY-LV-VERIFY后安装正式包。
+
+五、平台命令
+
+仅安装/更新本包：
+xydp-cli.exe preflight --server <服务端根目录> --package xy.resident.equipment-level-bonus
+xydp-cli.exe install --server <服务端根目录> --package xy.resident.equipment-level-bonus --yes
+
+随常驻基础一起处理：
+xydp-cli.exe resident-preflight --server <服务端根目录>
+xydp-cli.exe resident-install --server <服务端根目录> --yes
+
+回滚：
+xydp-cli.exe rollback --server <服务端根目录> --transaction <事务号> --yes
+
+安装流程固定为detect → preflight → plan → backup → install → verify；回滚按事务收据恢复字节。预检会检查TextVar41占用、变量冲突、临时验收脚本和已有核心内容。
+
+六、写入边界
+
+服务端脚本：是
+数据库：否
+客户端：否
+NPC布局：否
+装备实例运行时数据：文件回滚不能撤销；必须在安装前后按真实装备穿脱验收。
+
+七、首轮真实游戏验收
+
+1. 分别制作等级增加0、1、3、10的装备。
+2. 验证悬浮显示与面板真实等级一致。
+3. 验证1+3+10按14生效，重复穿脱不叠加。
+4. 验证多件合计超过50时只生效50。
+5. 验证脱下逐项还原、全部脱下回到基础等级。
+6. 验证重登后不重复加级，重启后U470与实际等级仍一致。
+7. 在第二个同引擎目标服完成安装与事务回滚后，方可申请将包从candidate提升为verified。

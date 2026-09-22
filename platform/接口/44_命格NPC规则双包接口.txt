@@ -1,0 +1,47 @@
+命格NPC规则双包接口
+接口等级：candidate / 受限
+引擎：翎风/LFM2
+包ID：xy.optional.mingge-npc
+路由：mingge-npc
+工作簿：E:\XuanYuanDevPlatform\所需材料表格汇总\40_命格NPC规则.xlsx
+
+一、用途
+1. 配置系统装备与中文部位、1至8个槽位及开放条件。
+2. 配置单次/多次洗练、元宝/物品/无消耗、前置条件和候选池。
+3. 配置品质权重、连续未出保底、固定周期和命中清零。
+4. 配置羁绊组成、奖励与NPC文案。
+5. 只在目标服现有NPC指定标签加入受管调用，不创建、替换或重排NPC布局。
+
+二、平台页面操作
+1. 打开平台“命格”页。
+2. 在“命格NPC规则包”区域选择40号表和目标服务端。
+3. 点“检查配置”，确认阻止项为空；点“查看修改计划”查看每个文件。
+4. 点“确认注入”，保存页面显示的独立事务号。
+5. 需要撤销时只在本区域填入该事务号并点“独立回滚”。
+
+三、CLI
+预检：
+xydp-cli.exe config-sync-preflight --server "目标服根目录" --file "E:\XuanYuanDevPlatform\所需材料表格汇总\40_命格NPC规则.xlsx"
+
+注入：
+xydp-cli.exe config-sync-install --server "目标服根目录" --file "E:\XuanYuanDevPlatform\所需材料表格汇总\40_命格NPC规则.xlsx" --yes
+
+回滚：
+xydp-cli.exe config-sync-rollback --server "目标服根目录" --transaction "事务号" --route mingge-npc --yes
+
+四、公共接口
+固定版本：XY_MG_API_V1
+状态检测：#CALL [\玄渊命格\命格公共接口.txt] @XY_MG_API_STATUS
+抽取写入：#CALL [\玄渊命格\命格公共接口.txt] @XY_MG_API_DRAW
+槽位读取：#CALL [\玄渊命格\命格公共接口.txt] @XY_MG_API_READ
+属性重算：#CALL [\玄渊命格\命格公共接口.txt] @XY_MG_API_RECALC
+
+五、安全合同
+1. 内容包缺失时，状态检测在GAMEGOLD/TAKE之前停止并提示，不扣费。
+2. NPC规则包只拥有命格NPC规则文件及NPC脚本中的XY-MG-NPC-V1受管块。
+3. 公共桥由任一子包幂等创建；内容包仍存在时，本包回滚不得删除公共桥。
+4. 现有NPC标签不唯一、受管块冲突、人物变量占用或接口版本不符时阻止安装。
+5. 37号mingge-system只保留历史事务回滚，禁止新安装。
+
+六、当前状态
+双包解析、隔离安装顺序、扣费前停止和独立回滚已通过自动测试；当前服未修改。新目标服的真实槽位、扣费、概率、保底、羁绊和重启保持仍待游戏验收，因此状态保持candidate。

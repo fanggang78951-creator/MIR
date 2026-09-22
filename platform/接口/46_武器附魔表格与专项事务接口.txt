@@ -1,0 +1,56 @@
+武器附魔V2表格与专项事务接口
+
+包ID：xy.optional.weapon-enchant
+专项路由：weapon-enchant
+状态：candidate；平台静态完成，当前服本轮零写入，跨服组合待游戏验收
+工作簿：E:\XuanYuanDevPlatform\所需材料表格汇总\42_武器附魔.xlsx
+依赖包：xy.optional.equipment-wash-opening（verified）
+
+一、设计合同
+1. 只允许武器StdMode 5、6；复用已验证装备洗练的大面板、物品框27和普通洗练结果池。
+2. 玩家每点击一次只洗练一次；默认收费100元宝，不提供十连或多次附魔。
+3. 默认权重为现有洗练池94，开天/逐日/烈火的必定暴击和致命一击各1；权重、颜色、收费和启用状态均可编辑。
+4. 结果候选支持增加N行。稳定身份由“词条编码”生成，不依赖Excel行号。
+5. 现有原生洗练属性使用native_bind；技能结果使用skill_damage_runtime；没有真实出口的candidate启用时必须阻止。
+6. 当前预留处决概率、人物等级+X、人物等级上限+X；在实效路由验收前不允许冒充已生效。
+7. 不写SQLite/ApexM2.DB，不修改客户端，不修改依赖包。
+
+二、中文表格
+1. 基础设置：NPC、物品框、元宝消耗、显示前缀、依赖包。
+2. 结果候选：词条编码、显示名称、属性来源、技能/效果、数值、权重、实际概率、颜色、是否启用。
+3. 普通洗练设置：神佑、天赐、圣级、仙级、传说、上古、灵级的开关、分母和颜色。
+4. 词条路由库：legacy_pool、skill_damage_runtime、native_bind和candidate元数据。
+5. 填写说明：增加N行、概率、收费、验收和回滚边界。
+
+三、事务目标
+1. Mir200/Envir/QuestDiary/玄渊武器附魔/武器附魔核心.txt
+2. Mir200/Envir/QuestDiary/玄渊武器附魔/武器附魔运行时.txt
+3. Mir200/Envir/Market_Def/玄渊武器附魔/武器附魔-3.txt
+4. Mir200/Envir/Market_Def/QFunction-0.txt 的独立受管块
+5. Mir200/Envir/MerChant.txt 的唯一注册行
+
+四、依赖门禁
+- EffectImageList.txt 必须已经包含 XY_EquipmentWorkbench.wz。
+- 仙级直出.txt SHA256必须为 04CA49BB6CD51BA3C06EF3F846B81BC21A2DBE3D2183ABB886EB80DA92428F9E。
+- 圣级直出.txt SHA256必须为 608598D30E668194724EB321B05CBD57839A722AED71D3E48F3310A97FB12CEE。
+- 任一缺失或漂移即阻止；V2不会复制或覆盖依赖包。
+
+五、命令
+预检：
+E:\XuanYuanDevPlatform\bin\xydp-cli.exe config-sync-preflight --server D:\MirServer --file "E:\XuanYuanDevPlatform\所需材料表格汇总\42_武器附魔.xlsx"
+
+安装：
+E:\XuanYuanDevPlatform\bin\xydp-cli.exe config-sync-install --server D:\MirServer --file "E:\XuanYuanDevPlatform\所需材料表格汇总\42_武器附魔.xlsx" --yes
+
+回滚：
+E:\XuanYuanDevPlatform\bin\xydp-cli.exe config-sync-rollback --server D:\MirServer --route weapon-enchant --transaction <事务号> --yes
+
+六、验收边界
+- 当前端六条技能结果已由用户验证；新V2组合和任何新目标服仍需用测试武器验收一次。
+- 文件回滚只恢复脚本文件，不恢复已写入玩家武器实例；实例需另行洗回或恢复备份武器。
+- 本轮仅沉淀平台，未运行安装命令，D:\MirServer保持零写入。
+
+七、历史事务（仅供追溯，不代表V2已安装）
+- 旧版初次安装事务：20260829_160453_afd913a8。
+- 旧版整文件花括号修复事务：20260829_183037_0a36c5cb。
+- V2若安装会产生新事务号；不得拿旧事务号作为V2收据。

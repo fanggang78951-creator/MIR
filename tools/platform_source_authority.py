@@ -22,7 +22,10 @@ class SourcePolicy:
     root_files: tuple[str, ...]
     exclude_directory_names: frozenset[str]
     exclude_suffixes: frozenset[str]
+    exclude_relative_paths: frozenset[str]
     sensitive_name_patterns: tuple[re.Pattern[str], ...]
+    content_scan_suffixes: frozenset[str]
+    sensitive_content_patterns: tuple[re.Pattern[str], ...]
     max_file_bytes: int
 
 
@@ -47,6 +50,12 @@ def _string_list(data: dict[str, object], name: str) -> list[str]:
     return list(value)
 
 
+def _optional_string_list(data: dict[str, object], name: str) -> list[str]:
+    if name not in data:
+        return []
+    return _string_list(data, name)
+
+
 def _policy_from_data(data: object) -> SourcePolicy:
     if not isinstance(data, dict) or data.get("schemaVersion") != 1:
         raise ValueError("source authority policy schemaVersion must be 1")
@@ -65,12 +74,24 @@ def _policy_from_data(data: object) -> SourcePolicy:
     excluded_suffixes = frozenset(
         suffix.casefold() for suffix in _string_list(data, "excludeSuffixes")
     )
+    excluded_paths = frozenset(
+        _normalized_relative(item, "excludeRelativePaths").casefold()
+        for item in _optional_string_list(data, "excludeRelativePaths")
+    )
     try:
         patterns = tuple(
             re.compile(pattern) for pattern in _string_list(data, "sensitiveNamePatterns")
         )
+        content_patterns = tuple(
+            re.compile(pattern)
+            for pattern in _optional_string_list(data, "sensitiveContentPatterns")
+        )
     except re.error as exc:
-        raise ValueError(f"invalid sensitiveNamePatterns regex: {exc}") from exc
+        raise ValueError(f"invalid sensitive regex: {exc}") from exc
+    content_suffixes = frozenset(
+        suffix.casefold()
+        for suffix in _optional_string_list(data, "contentScanSuffixes")
+    )
     if len(set(include)) != len(include) or len(set(roots)) != len(roots):
         raise ValueError("policy paths must be unique")
     return SourcePolicy(
@@ -78,7 +99,10 @@ def _policy_from_data(data: object) -> SourcePolicy:
         root_files=roots,
         exclude_directory_names=excluded_dirs,
         exclude_suffixes=excluded_suffixes,
+        exclude_relative_paths=excluded_paths,
         sensitive_name_patterns=patterns,
+        content_scan_suffixes=content_suffixes,
+        sensitive_content_patterns=content_patterns,
         max_file_bytes=maximum,
     )
 
@@ -90,7 +114,12 @@ def _policy_to_data(policy: SourcePolicy) -> dict[str, object]:
         "rootFiles": list(policy.root_files),
         "excludeDirectoryNames": sorted(policy.exclude_directory_names),
         "excludeSuffixes": sorted(policy.exclude_suffixes),
+        "excludeRelativePaths": sorted(policy.exclude_relative_paths),
         "sensitiveNamePatterns": [pattern.pattern for pattern in policy.sensitive_name_patterns],
+        "contentScanSuffixes": sorted(policy.content_scan_suffixes),
+        "sensitiveContentPatterns": [
+            pattern.pattern for pattern in policy.sensitive_content_patterns
+        ],
         "maxFileBytes": policy.max_file_bytes,
     }
 
@@ -205,6 +234,8 @@ def inventory_source(source_root: Path, policy: SourcePolicy) -> dict[str, objec
     seen: set[str] = set()
     for relative, path in sorted(candidates, key=lambda item: item[0].casefold()):
         folded = relative.casefold()
+        if folded in policy.exclude_relative_paths:
+            continue
         if folded in seen:
             blockers.append(
                 {
@@ -236,6 +267,20 @@ def inventory_source(source_root: Path, policy: SourcePolicy) -> dict[str, objec
                 }
             )
             continue
+        if (
+            path.suffix.casefold() in policy.content_scan_suffixes
+            and policy.sensitive_content_patterns
+        ):
+            content = path.read_bytes().decode("latin-1")
+            if any(pattern.search(content) for pattern in policy.sensitive_content_patterns):
+                blockers.append(
+                    {
+                        "code": "sensitive-content",
+                        "path": relative,
+                        "message": "file content matches a sensitive-content rule",
+                    }
+                )
+                continue
         files.append({"path": relative, "bytes": size, "sha256": _sha256(path)})
     files.sort(key=lambda item: str(item["path"]).casefold())
     blockers.sort(key=lambda item: (item["path"].casefold(), item["code"]))

@@ -104,6 +104,40 @@ class InventoryTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "maxFileBytes"):
             load_policy(self.policy_path)
 
+    def test_sensitive_content_is_blocked_without_reading_explicit_exclusions(self) -> None:
+        (self.source / "src" / "xydp").mkdir(parents=True)
+        (self.source / "tools").mkdir()
+        (self.source / "src" / "xydp" / "compat.py").write_text(
+            'PASSWORD = "hardcoded-value"\n', encoding="utf-8"
+        )
+        (self.source / "tools" / "excluded.py").write_text(
+            'PASSWORD = "excluded-value"\n', encoding="utf-8"
+        )
+        self.write_policy(
+            includeDirectories=["src", "tools"],
+            rootFiles=[],
+            excludeRelativePaths=["tools/excluded.py"],
+            contentScanSuffixes=[".py"],
+            maxFileBytes=1024,
+            sensitiveContentPatterns=[
+                r'(?im)\b(?:PASSWORD|PASSWD|API_KEY|TOKEN)\s*=\s*["\'][^"\'\r\n]{4,}["\']'
+            ],
+        )
+
+        report = inventory_source(self.source, load_policy(self.policy_path))
+
+        self.assertEqual(report["files"], [])
+        self.assertEqual(
+            report["blockers"],
+            [
+                {
+                    "code": "sensitive-content",
+                    "path": "src/xydp/compat.py",
+                    "message": "file content matches a sensitive-content rule",
+                }
+            ],
+        )
+
     def test_cli_exit_code_and_source_are_read_only(self) -> None:
         self.make_source_tree()
         before = {

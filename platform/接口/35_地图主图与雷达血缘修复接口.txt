@@ -1,0 +1,28 @@
+地图主图与雷达血缘修复接口
+
+适用场景：小地图内容正确，但主地图轮廓或主题明显不配套。
+
+当前亚坛高原维护命令：
+1. 只读预检
+   cd /d D:\XuanYuanDevPlatform\玄渊界面施工台
+   node scripts\fix-altus-main-minimap-lineage.mjs
+
+2. 事务部署
+   node scripts\fix-altus-main-minimap-lineage.mjs --apply
+
+3. 全端主图/雷达审计
+   npm.cmd run maps:audit-main-minimap
+
+强制规则：
+- 先从目标雷达图库所属供体端的 MiniMap.txt 反查 sourceMapId。
+- 跨 mmap 库迁移必须同时满足槽位相同、源库与目标库 SHA256 完全相同。
+- 同一槽号在不同内容的 mmap 文件里不代表同一张雷达图。
+- 不改逻辑地图号；只替换物理 MAP、配套图库和必要坐标。
+- 修改前备份，失败逐字节回滚，完成后关闭现有 M2 让引擎自动拉起；禁止启动第二个 M2。
+
+亚坛黄金证据：
+- 星辰 MiniMap.txt：xm242 10415。
+- 星辰 mmap10.pak 与目标 mmap12.pak SHA256：6F7887235AA8189E202333EDE81AA80F3835912BB3C1E9F685F77CA8DC9178BA。
+- 主 MAP SHA256：72A91DEC41748C9B2ADA27300F85E95244E0F9D3000BC08C71AF85275FAEB324。
+- 目标逻辑号/物理图/雷达：XY_ALTUS / XYML105 / 20415。
+- NPC / 落点：20,42 / 20,43。

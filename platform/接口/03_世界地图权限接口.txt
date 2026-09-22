@@ -1,0 +1,102 @@
+玄渊平台——世界地图点亮、撤销与传送接口
+
+成果包：xy.ui.world-map 1.0.0-candidate.21，candidate / optional
+状态说明：六个扩展区域已经完成当前服游戏验收，但包仍在 candidate 目录；正式晋级要与发布路径一起处理。
+
+一、每个区域有三类对外契约
+
+1. 点击/传送入口：@XY_WORLD_MAP_<TOKEN>
+   先读取人物权限；未激活显示提示，已激活才 MAPMOVE。
+
+2. QFunction授权入口：@XY_WORLD_MAP_<TOKEN>_GRANT
+   把人物权限设为1并持久保存。
+
+3. QFunction撤销入口：@XY_WORLD_MAP_<TOKEN>_REVOKE
+   把人物权限设为0并持久保存。
+
+CHECK、ALLOW、DENY、BRANCH、STATE、RESERVED_VISUAL 等标签全部是内部实现，不是对外接口。
+
+二、十三个区域完整表
+
+区域名              TOKEN                 权限变量                                      传送落点
+宁姆格福西          NMGF_WEST             XY_WORLD_MAP_NMGF_WEST_ACCESS                 XY_NMGF_WEST 49 49
+宁姆格福            NMGF_MAIN             XY_WORLD_MAP_NMGF_MAIN_ACCESS                 XY_NMGF_MAIN 100 76
+利耶尼亚海域        LYNYA_SEA             XY_WORLD_MAP_LYNYA_SEA_ACCESS                 XY_LYNYA_SEA 117 108
+湖之利耶尼亚        LYNYA_LAKE            XY_WORLD_MAP_LYNYA_LAKE_ACCESS                XY_LYNYA_LAKE 171 92
+盖利德              GAELID                XY_WORLD_MAP_GAELID_ACCESS                    XY_GAELID 136 149
+巨人山顶            GIANT_TOP             XY_WORLD_MAP_GIANT_TOP_ACCESS                 XY_GIANT_TOP 22 30
+法姆·亚兹拉         FARUM                 XY_WORLD_MAP_FARUM_ACCESS                     XY_FARUM 34 88
+化圣雪原            SNOWFIELD             XY_WORLD_MAP_SNOWFIELD_ACCESS                 XY_SNOWFIELD 121 168
+亚坛高原            ALTUS                 XY_WORLD_MAP_ALTUS_ACCESS                     XY_ALTUS 75 99
+王城罗德尔          LEYNDELL              XY_WORLD_MAP_LEYNDELL_ACCESS                  XY_LEYNDELL 96 61
+圣树分支            HALIGTREE             XY_WORLD_MAP_HALIGTREE_ACCESS                 XY_HALIGTREE 187 133
+永恒之城（地下）    ETERNAL_CITY          XY_WORLD_MAP_ETERNAL_CITY_ACCESS              XY_ETERNAL_CITY 56 51
+漂流群岛            DRIFTING_ISLANDS      XY_WORLD_MAP_DRIFTING_ISLANDS_ACCESS          XY_DRIFTING_ISLANDS 50 66
+
+三、QFunction、按钮或同文件任务的正确调用
+
+点亮盖利德：
+
+GOTO @XY_WORLD_MAP_GAELID_GRANT
+
+撤销盖利德：
+
+GOTO @XY_WORLD_MAP_GAELID_REVOKE
+
+模拟玩家点击盖利德区域：
+
+GOTO @XY_WORLD_MAP_GAELID
+
+注意：第三项是点击/传送入口，不是授权入口。
+
+四、独立 NPC 文件的正确授权方式
+
+独立 NPC 不跨文件 GOTO QFunction 标签。赐福点 NPC 直接写同一份人物变量：
+
+CALCVAR HUMAN XY_WORLD_MAP_GAELID_ACCESS = 1
+SAVEVAR HUMAN XY_WORLD_MAP_GAELID_ACCESS XY_WorldMap_GAELID_Access.txt
+
+撤销时：
+
+CALCVAR HUMAN XY_WORLD_MAP_GAELID_ACCESS = 0
+SAVEVAR HUMAN XY_WORLD_MAP_GAELID_ACCESS XY_WorldMap_GAELID_Access.txt
+
+把 GAELID 换成上表 TOKEN 即可。文件名固定为：
+
+XY_WorldMap_<TOKEN>_Access.txt
+
+五、点击入口调用链
+
+世界地图图标/区域
+  -> @XY_WORLD_MAP_<TOKEN>
+  -> LOADVAR HUMAN ...
+  -> CHECKVAR HUMAN ...
+  -> 未授权：DENY提示“传送点尚未激活”
+  -> 已授权：ALLOW执行对应MAPMOVE
+
+未激活区域必须仍可经过、按下和点击；只是不允许传送。
+
+六、变量声明和持久化规则
+
+- 十三个 HUMAN 变量只在 QManage [@MAIN1] 声明并读取一次。
+- 打开地图、点击区域、授权和撤销不得再次执行 VAR。
+- 授权必须同时 CALCVAR 和 SAVEVAR，只修改内存不保存会在重登后丢失。
+- SAVEVAR 文件名必须与 TOKEN 完全一致，尤其 DRIFTING_ISLANDS 不得缩写或拼错。
+- 世界地图包拥有变量占用声明；赐福点 NPC 包只写变量，不重复声明所有权。
+
+七、禁止路线
+
+- 禁止把 MAPMOVE 直接绑到赐福点或未授权图标，否则绕过权限。
+- 禁止使用旧标签 @XY_WORLD_MAP_GRANT_NIMUGEFU。
+- 禁止在 NPC 内重复 VAR HUMAN XY_WORLD_MAP_*。
+- 禁止只改灰/彩图帧而不写持久权限。
+- 禁止调用 *_ALLOW、*_DENY、*_CHECK 作为业务入口。
+- 禁止使用临时聊天命令包当正式任务授权。
+
+八、世界地图静态入口
+
+主界面 CustomButtonID 5 只负责：
+
+GOTO @ButtonClick88
+
+@ButtonClick88 打开世界地图面板；它不是某一地区的授权命令。

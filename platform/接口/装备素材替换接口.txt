@@ -1,0 +1,23 @@
+装备素材替换接口（equipment-graphics）
+
+入口：当前正式平台注册GUI“批量做装备→装备素材替换”；CLI从catalog/current-release.json读取cli.path，禁止随便选择旧EXE。
+配置：所需材料表格汇总/44_装备素材替换.json。
+
+CLI命令：
+<当前CLI> equipment-graphics-preflight --config <配置JSON>
+<当前CLI> equipment-graphics-apply --config <配置JSON>
+<当前CLI> equipment-graphics-rollback --receipt <事务收据JSON>
+<当前CLI> equipment-graphics-verify-launcher --receipt <事务收据JSON>
+
+Python执行核心：xyequip.equipment_graphics.preflight(config_path)、apply(config_path)、rollback(receipt_path)、verify_launcher(receipt_path)。平台GUI与CLI调用同一EquipmentBridge，不执行workspace历史脚本。
+
+前置：中文装备名称唯一存在；素材映射已确认；目标客户端和登录器生成源对应。预检只读，必须能指出缺失文件、编号共用和冲突。
+输出：结构化预检、源/目标指纹、生成产物、差异、恢复材料与事务收据。重复同一任务且目标未漂移应零变更；文件漂移不得盲目覆盖。
+
+模板边界：JJ8020/8021已由用户游戏验收；600槽/416可见+184空、alpha128、40帧内观分组和(-70,-150)为当前JJ模板，不是全部素材常量。WIL保留各帧原尺寸/Placement；静态用已验证BGR24 bottom-up，衣服与武器使用各自内观源。
+
+人工最后一步：用户用配置目标对应的官方MakeGameLogin生成登录器，打开新客户端后调用verify-launcher检查资源没有回退。该核验说明文件状态，不代替游戏视觉验收；平台不操作游戏引擎。
+
+本次平台集成证据目录：wzl编辑/workspace/JJ_platform_integration_20260911。
+已游戏验收原始证据：JJ2115_Astra_20260911及JJ8021_formal_20260911最终收据与交班。
+

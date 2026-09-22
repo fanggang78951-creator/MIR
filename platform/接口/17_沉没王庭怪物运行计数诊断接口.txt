@@ -1,0 +1,100 @@
+沉没王庭怪物运行计数诊断接口
+
+等级：实验室 / 临时诊断
+用途：区分XX102至XX105未创建怪物与怪物已创建但客户端不可见。
+
+一、注册文件
+
+1. Mir200\Envir\Robot_def\AutoRunRobot.txt
+
+#AUTORUN NPC SEC 15 @XYDP_SUNKEN_COURT_COUNT
+
+2. Mir200\Envir\Robot_def\RobotManage.txt
+
+[@XYDP_SUNKEN_COURT_COUNT]
+#ACT
+GetMapMonCount XX102 1 N1
+GetMapMonCount XX103 1 N2
+GetMapMonCount XX104 1 N3
+GetMapMonCount XX105 1 N4
+AddTextListEx ..\QuestDiary\玄渊诊断\沉没王庭怪物计数.txt XX102=<$STR(N1)>|XX103=<$STR(N2)>|XX104=<$STR(N3)>|XX105=<$STR(N4)> 0
+BREAK
+
+二、输出文件
+
+D:\MirServer\Mir200\Envir\QuestDiary\玄渊诊断\沉没王庭怪物计数.txt
+
+每15秒追加一行四张地图的怪物总数，参数1表示排除玩家宝宝。
+
+三、判定规则
+
+- 四图全部为0：MonGen没有在目标地图实例化怪物，继续查刷新配置或怪物数据库可生成性。
+- 任一地图大于0：该地图已有怪物实体，停止修改MonGen，改查Appr、Mon库映射、PAK密码或客户端读取链。
+
+四、安全边界
+
+1. 该接口只读取怪物数量并写独立诊断TXT，不生成、不清除、不移动怪物。
+2. 不占用UserCmd、QFunction标签、个人定时器或现有G变量。
+3. 获得一次有效结果后，必须删除AutoRunRobot注册行和RobotManage标签块，并保留备份与结果证据。
+4. 修改后需由用户关闭M2，让引擎自动拉起；Codex不得操作整套游戏引擎。
+
+五、当前备份
+
+D:\XuanYuanDevPlatform\怪物库\backups\20260804_141305_沉没王庭运行计数诊断
+
+六、2026-08-04诊断结论修订
+
+完整读取“沉没王庭怪物计数.txt”后确认：
+
+- 第1至269行均为 XX102=151|XX103=237|XX104=247|XX105=1。
+- 第270至319行均为 XX102=0|XX103=0|XX104=0|XX105=0。
+- 这证明23条正式MonGen、四个地图号和新增Monster记录曾全部成功实例化，不能再按“始终为0”处理。
+
+原“稻草人对照”无效：写入时使用了PowerShell单引号字符串，文件中形成字面量 `t 而不是真实制表符。M2加载总数仍为3696而非3700，说明4条对照行没有被加载。该次零计数不得用于判定地图绑定或Monster记录有效性。
+
+无效对照已全部撤销，MonGen、RobotManage、AutoRunRobot已用下列备份恢复并完成SHA256一致性验证：
+
+D:\XuanYuanDevPlatform\怪物库\backups\20260804_143315_沉没王庭稻草人对照试验
+
+七、干净重启复核接口
+
+当前只在Robot系统临时注册只读标签：
+
+#AUTORUN NPC SEC 15 @XYDP_SUNKEN_COURT_RESTART_CHECK
+
+输出文件：
+
+D:\MirServer\Mir200\Envir\QuestDiary\玄渊诊断\沉没王庭干净重启复核.txt
+
+备份：
+
+D:\XuanYuanDevPlatform\怪物库\backups\20260804_155743_沉没王庭干净重启复核
+
+当前磁盘MonGen为干净正式版，SHA256为：
+
+F4E555C986171942525ED3F9652FC312A868889992254411B3A488B5CA3AD65C
+
+必须由用户再次关闭M2并等待引擎自动拉起，使M2读取已恢复的干净MonGen和本复核标签。取得有效计数后，立即按155743备份逐字节恢复RobotManage和AutoRunRobot。
+
+八、16:12复核输出修正
+
+16:12启动的M2已正常加载426种怪物和3696条刷新，MonGen无报错。首次编写复核标签时，PowerShell双引号字符串提前展开了$STR，M2内存中的输出模板成为<(N1)>，因此生成的未展开行不属于有效计数证据。
+
+磁盘RobotManage现已修正为真实的<$STR(N1)>至<$STR(N4)>，静态回读通过。RobotManage不支持本轮热读取，现有M2仍继续使用旧模板；必须再次关闭M2让引擎自动拉起后，才可取得最终有效计数。
+
+九、最终运行结论
+
+16:16:33新M2启动，成功加载426种怪物、568张地图和3696条刷怪信息。有效计数最初为四图0，至16:29:32自动变为：
+
+XX102=151|XX103=237|XX104=246|XX105=1
+
+首轮生成耗时约12分59秒。MonGen配置总数分别为151、237、247、1；XX104运行数比配置少1只，但其余三图完全等于配置，且23条正式刷新已整体实例化。可判定地图号、七列格式、Monster数据库和原生MonGen链均有效；用户此前重启后等待8分钟仍看不到怪物，是因为尚未到本端启动后的首轮生成时点。
+
+旧诊断文件采用AddTextListEx末尾参数0，实际为新记录插入文件顶部，因此必须从底部向顶部还原时间线。旧文件底部50次四图0发生在先，顶部269次151/237/247/1发生在后。
+
+磁盘RobotManage和AutoRunRobot已按155743备份逐字节恢复，SHA256分别恢复为：
+
+63A096E3B2818D28D84B19EE9A2E911B83889DF19386295CBE8B9684289264DA
+4D5984E5644E4BBCCB0F088639157A32CE5A4E5565C7FB097937E74CD4D489CB
+
+当前M2内存中的只读计数定时器会运行到下次自然重启，磁盘已无诊断注册；无需为清理诊断立即重启，以免再次等待首轮生成。

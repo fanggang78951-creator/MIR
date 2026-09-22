@@ -15,7 +15,7 @@
 - 只支持翎风/LFM2；正式平台根仍是 `E:\XuanYuanDevPlatform`。
 - GitHub私有仓库保存源码、测试、Schema、功能卡和构建规则，不保存密码、数据库、完整客户端、`bin`、备份、构建缓存或大体积商业素材。
 - 本阶段对E盘只读；任何Git→E盘应用、发布、`current-release.json`切换均不在范围内。
-- 不扫描或输出文件内容；敏感信息安全门只检查相对路径/文件名，并把疑似项列为阻断。
+- 仅以高置信正则在文本类文件内检查硬编码密钥赋值；报告只输出路径和规则，不输出匹配值。相对路径/文件名命中同样阻断。
 - 不跟随符号链接/目录联接；路径必须解析在指定来源根或目标镜像根内。
 - 一次性引入不删除目标镜像文件；目标已有且哈希不同即阻断，不能静默覆盖。
 - JSON输出UTF-8、稳定排序；文件内容逐字节复制，不改编码或换行。
@@ -278,7 +278,7 @@ python tools/platform_source_authority.py sync-preflight `
   --output D:\codex临时工作区\MY-PAK-MIGRATION-20260922\platform-sync-preflight.json
 ```
 
-Expected: `blockers=[]`、`changes=[]`、`isNoop=true`，E盘目录树前后指纹不变。
+Expected: `blockers=[]`；除安全复核明确脱敏的文件为`update-runtime`外，其余管理项均为`unchanged`，且E盘目录树前后指纹不变。本阶段不执行该更新。
 
 - [ ] **Step 5: 验证镜像可导入和测试**
 

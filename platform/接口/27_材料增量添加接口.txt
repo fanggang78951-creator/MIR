@@ -1,0 +1,41 @@
+玄渊平台——材料增量添加接口
+
+一、用途
+
+使用同一张材料母表给任意翎风/LFM2目标服补齐材料。平台只生成目标服尚不存在的材料；已经存在的材料不会重复添加，也不会被母表覆盖。
+
+二、正式输入
+
+D:\XuanYuanDevPlatform\所需材料表格汇总\11_材料批量生成.xlsx
+
+字段：名称、来源编号、重量、价格、颜色。
+新材料固定：StdMode=46、Shape=1、OverLap=2、DuraMax=99999。
+
+三、GUI执行方式
+
+批量做装备 -> 预检材料 -> 确认添加材料
+
+预检报告：
+- material_names：本次真正待新增的材料。
+- skipped_existing：目标服已经存在、因而被跳过的材料。
+- changes：只有 material_names 非空时才包含数据库和 Items.wzl/.wzx 两个客户端图库文件。
+
+四、CLI执行方式
+
+预检：
+D:\XuanYuanDevPlatform\bin\xydp-cli.exe equipment-material-preflight --input D:\XuanYuanDevPlatform\所需材料表格汇总\11_材料批量生成.xlsx --server D:\MirServer --client-data D:\11周年\data
+
+确认添加：
+D:\XuanYuanDevPlatform\bin\xydp-cli.exe equipment-material-apply --input D:\XuanYuanDevPlatform\所需材料表格汇总\11_材料批量生成.xlsx --server D:\MirServer --client-data D:\11周年\data --yes
+
+五、去重规则
+
+1. 目标服存在同名且所有同名定义均为 StdMode=46：直接跳过，不比较、不覆盖重量、价格、颜色、Looks或叠加数。
+2. 目标服不存在名称：进入待新增计划，只验证来源编号在 Items.wzx 中的背包形态。
+3. 目标服存在同名但不是 StdMode=46：预检阻止，避免装备或其他物品与材料重名。
+4. 母表内部名称重复：预检阻止；不得靠行顺序猜测采用哪一行。
+5. 全部材料均已存在：预检成功，changes为空；确认添加只生成 no_changes 收据，不写目标服或客户端。
+
+六、事务规则
+
+预检零写入。正式添加只处理 material_names，并继续执行临时副本生成、数据库完整性检查、预检哈希确认、服务器/客户端原子提交和逐字节回滚。材料事务只涉及 StdItems 与 Items.wzl/.wzx；DnItems和StateItem完全不进入预检、变更计划、备份、提交或回滚。数据库或Items图库在预检后发生变化时仍会安全停止，不会绕过事务门禁。

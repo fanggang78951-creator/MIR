@@ -1,0 +1,127 @@
+47 攻速突破属性、上限与平台非常驻包接口
+
+状态：当前服已游戏验收；平台包为candidate/optional，跨服待验收
+平台根目录：E:\XuanYuanDevPlatform
+包ID：xy.optional.attack-speed-breakthrough
+路由：attack-speed-breakthrough
+配置表：E:\XuanYuanDevPlatform\所需材料表格汇总\43_攻速突破.xlsx
+
+一、冻结引擎合同
+
+装备原生攻速：<$HITSPD>
+含脚本总攻速：<$AttackSpeed>
+突破生效值=min(max(全身攻速突破,0),30)
+个人阈值=min(20+突破生效值,50)
+有效攻速=min(max(装备原生攻速,0),个人阈值,50)
+脚本修正=有效攻速-max(装备原生攻速,0)
+
+正式核心是目标服唯一ChangeSpeed 2出口。所有固定装备与实例装备只贡献突破点数，不得各自生成ChangeSpeed 2。
+
+二、实例装备显示与汇总合同
+
+绑定：60
+TextVar行：40
+TextVar40：{攻速突破∶|251}+$$2
+Value1：固定40，用于选择TextVar40
+Value2：真实突破点数0至30
+Value3：固定0
+实例写法：SetCustomItemValueEx 装备位置 属性槽 = 40 突破点数 0
+汇总写法：GetAllCustomItemValueByTextLine 60 -1 40；必须读取第2个输出变量。
+
+禁止把突破点数写入Value1。Value1=20会误选TextVar20而不显示；Value1=40且把40当数值会误显示突破40。
+
+三、固定装备“做装备”合同
+
+09_装备批量生成.xlsx与做装备兼容模板新增中文列“攻速突破”。
+- 单件只允许非负整数0至30；31及以上直接阻止，不静默钳制。
+- 多件不同名称装备通过CHECKITEMW逐件累加到N$XY_AS_FIXED_BREAK。
+- 实例装备与固定装备最后在统一核心合计，全身突破封顶30。
+- 显示仍写bind60、Value1=40、Value2=真实值、Value3=0，与实效来源一致。
+- 目标服缺少本包受管标记XY-AS-CAP-V1时，做装备预检必须阻止，禁止只生成显示文字。
+
+固定装备唯一扩展锚点：
+; XY_EQUIP_MAKER_ATTACK_SPEED_BREAK_ANCHOR
+
+四、正式重算入口与自动挂钩
+
+统一延迟标签：@XY_AS_FORMAL_RECALC_DELAY
+核心调用：#CALL [\玄渊攻速突破\全身攻速阈值核心.txt] @XY_AS_CAP_RECALC
+
+QFunction自动触发：
+- PlayLogin：保留原延迟1000毫秒兼容入口；
+- TakeOnEx：延迟100毫秒；
+- TakeOffEx：延迟100毫秒。
+
+当前服真实登录入口：
+- `xy.ui.attr-overview`在`QManage.txt [@MAIN1]`等待3000毫秒，再只向当前角色分发QFunction `@PlayLogin`正式链；
+- 本包在`@PlayLogin`中延迟进入`@XY_AS_FORMAL_RECALC_DELAY`，与穿脱装备共用唯一重算入口；
+- 登录时重新读取当前装备原生攻速、洗练普通攻速、固定装备突破与实例装备突破，不写死23、31或任何人物攻速值；
+- 旧`@XY_AS_LOGIN_RECALC_BRIDGE`专用桥已经退役，安装器只清理其精确金样本；不得用`UpdateAbil`代替本接口，因为人物基础能力刷新不会执行唯一`ChangeSpeed 2`攻速出口。
+
+统一延迟标签先把N$XY_AS_FIXED_BREAK清零，再执行全部固定装备受管分支，最后调用唯一核心。不得用每件装备独立重算或独立ChangeSpeed 2。
+
+五、非常驻事务
+
+只读预检：
+E:\XuanYuanDevPlatform\bin\xydp-cli.exe config-sync-preflight --server D:\MirServer --file "E:\XuanYuanDevPlatform\所需材料表格汇总\43_攻速突破.xlsx"
+
+安装（必须先核对预检）：
+E:\XuanYuanDevPlatform\bin\xydp-cli.exe config-sync-install --server D:\MirServer --file "E:\XuanYuanDevPlatform\所需材料表格汇总\43_攻速突破.xlsx" --yes
+
+回滚：
+E:\XuanYuanDevPlatform\bin\xydp-cli.exe config-sync-rollback --server D:\MirServer --route attack-speed-breakthrough --transaction <事务号> --yes
+
+流程固定为detect -> preflight -> plan -> backup -> install/update -> verify -> rollback。安装器只管理正式核心、TextVar40和QFunction受管块；冲突时变化数必须为0。
+
+六、预检冲突规则
+
+必须检查：
+1. TextVar40为空或逐字等于冻结合同；
+2. 核心标签、统一延迟标签和XY-AS受管标记唯一；
+3. N$XY_AS_*变量命名空间没有被其他业务脚本占用；
+4. 本包核心之外没有活动ChangeSpeed 2出口；
+5. QFunction旧金样本挂钩必须内容完整且唯一；
+6. 业务脚本先按BOM、GB18030、UTF-8、UTF-16LE严格探测；仍不可解码时报告精确路径并阻止，禁止无声跳过潜在脚本。
+
+七、明确排除
+
+平台包不得包含UserCmd100至103、@攻速测20/@攻速测40/@攻速测50、测试木剑或任何诊断SENDMSG。
+不修改数据库，不修改客户端，不操作游戏引擎。
+文件回滚不会自动恢复已经生成或改写的玩家装备实例；实例恢复必须另行处理。
+
+八、证据边界
+
+当前服已确认：原生40、突破0时人物面板20；原生70、突破30时人物面板50；Value1=40、Value2=真实突破的TextVar40显示合同正确。
+平台将该证据记为current-server-game-accepted；新目标服仍为candidate，必须重新验收M2无加载错误、登录/穿脱刷新、0/20/30边界、多件叠加和人物面板20/50结果。
+
+九、9号装备表与43号依赖表的职责
+
+- 玩家装备生成、修改始终使用09_装备批量生成.xlsx；不需要、也不应改用43号表填写装备。
+- 43_攻速突破.xlsx只供“脚本配置同步”在每个目标服部署一次底层成果包，属于系统依赖配置表。
+- 09号表出现“目标服尚未安装或受管标记冲突”时，应先部署依赖包，再回到同一份09号表点击“预检修改”。
+- 平台错误提示必须明确写出“继续使用09_装备批量生成.xlsx，无需改用依赖配置表”，防止把系统依赖表误当作装备输入表。
+
+十、当前服安装记录
+
+当前服D:\MirServer已通过正式事务20260830_213158_d3951ff0安装本包；事务只更新攻速核心与QFunction受管块，TextVar40未变化。重复冻结预检blockers=0、changes=0。该文件安装状态不等于新增固定装备已经完成游戏验收。
+
+十一、09号表当前服验收结果
+
+- 2026-08-30，用户明确反馈“验证通过”；本轮09号表依赖报错修复及修改流程在当前服记为已完成。
+- 仍按职责使用：装备生成/修改使用09_装备批量生成.xlsx；43_攻速突破.xlsx仅部署系统依赖。
+
+十二、命格脚本属性复用接口（2026-09-08）
+
+命格P3与命格内容包均可把“攻速突破”作为textline_runtime属性使用：
+- 命格槽位先按候选ID汇总数值；
+- 整件灵玉只生成一条Bind60/TextLine40记录；
+- Value1固定40，Value2为命格汇总值，Value3固定0；
+- 更新装备后调用本接口的@XY_AS_CAP_RECALC；
+- 命格代码不新增阈值判断、不新增ChangeSpeed 2、不复制本包运行时。
+
+目标服缺少本接口核心、TextVar40或唯一XY-AS受管块时，只有使用“攻速突破”的命格内容会被预检阻止；未使用该属性的既有命格不增加此依赖。
+
+命格配置入口：
+- E:\XuanYuanDevPlatform\所需材料表格汇总\39_命格P3颜色导入测试.xlsx
+- E:\XuanYuanDevPlatform\所需材料表格汇总\41_命格内容与多色属性.xlsx
+- 此结论仅适用于当前服D:\MirServer，不自动外推到其他目标服；跨服状态仍为candidate/待验收。

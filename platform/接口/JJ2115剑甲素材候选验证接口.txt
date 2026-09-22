@@ -1,0 +1,56 @@
+2026-09-11 19:52 正式安装完成
+状态：待验证。用户回复已关闭后，最新预检issues=[]，总控执行install_8021_formal.py --apply成功。
+正式结果：漂流尸甲Idx736 Shape1→1403，亲卫王剑Idx785 Shape1→1402；两件Looks和属性均不变。独立核对完整StdItems仅这2字段变化，schema及其它表不变，integrity_check=ok。16个目标文件回读全部匹配候选；两件的背包/地面/内观和600帧动作已安装，正式登录器补丁源同步。
+备份和收据：E:\XuanYuanDevPlatform\wzl编辑\workspace\JJ8021_formal_20260911\formal_install_backups\20260911_195244\receipt.json；其中launcher_before额外保留旧正式登录器和生成Config。独立证据formal_installed_independent_review.json。
+下一步：用户从D:\素材文件夹\LFM2[20260707]\登录器\MakeGameLogin.exe生成正式登录器，确认输出E:\11周年；总控再检查启动后静态库未回退。游戏效果待用户验收，未启停引擎。不得误用动作验证测试生成器。
+2026-09-11 19:23 人物内观方向修正已安装
+状态：待验证。用户截图显示JJ白红人物已读取但上下倒置，明确只调整方向。Terra仅反转StateItem6749的320行BGR24数据；Luna独立确认帧头320x320、(-70,-150)完全不变，行内字节不变，其余7439槽零差异。Astra审查后安装测试data与独立测试生成源StateItem两对，4文件写后hash通过。未改DB、坐标、动作或背包。
+备份/收据：stateitem_alignment/orientation_fix/install_backups/20260911_192306/receipt.json。用户上一轮生成的登录器SHA9A31D7…18332已作为审计基线备份。候选WZL=DDF78EB9F6F1B554AE7287407E52FF9ADC465E1CF105401B53B7F3E1BFAAE180，WZX=CDD261A81476802BBC93F2BCC8F0E827DA02E7429021830C5F34B8BBE6AE84C4。
+经验：此前静态解码预览只按相同错误行序回读，不能证明客户端方向；type6本次游戏证据要求bottom-up。下一步用户重新生成测试登录器并打开，再验证方向与穿戴位置；红圈和背包已验收结论保留。
+
+2026-09-11 19:17 白红衣服人物面板候选已安装
+状态：待验证。用户确认背包与红圈已修复；人物面板旧黑甲在身体左侧，需换JJ白红款式及坐标，不是只挪旧图。
+读取/依据：测试Idx9轻型盔甲男Looks61、StateItem61为84x130 (48,19)；现有6749为旧黑甲72x72 (0,0)。JJ内观000000有320x320和源Placement(-63,-110)，原坐标不能直接套入本端人物面板。源经alpha128处理，保持320尺寸，无缩放；按正常衣服脚底约149校准候选(-70,-150)。候选含完整人物、姿态不同，裸模边缘/头部合成是否正确须游戏验收，不宣称已符合全部合成规则。
+修改：仅测试data/StateItem.wzl+wzx与独立测试登录器补丁源同两文件。type6实际为BGR24，黑色透明；6749回读320x320 (-70,-150)，5446非黑像素。其余7439槽索引及payload一致。Items/DnItems、动作、数据库、引擎、正式端均未改。
+备份/收据：JJ2115_Astra_20260911/stateitem_alignment/install_backups/20260911_191657/receipt.json（四资源及旧登录器、生成Config）。固定源/基线SHA检查，写前备份及写后回读通过。
+证据：stateitem_alignment/generated_stateitem6749_alpha128_x-70_y-150/result.json、stateitem6749_alpha128_readback.json；Terra制作，Luna独立回读，Astra目视审查及安装。
+下一步：用户用同一独立测试MakeGameLogin重新生成并打开登录器；总控核对启动后StateItem候选hash保持，再由用户游戏检验白红衣服面板。旧“衣服不写StateItem”不适用于当前修复，截图已证明本端实际读取。仍保留备份至验收。
+2026-09-11 19:03 新登录器启动后核验通过
+状态：待验证。用户打开新测试登录器后，Terra共享读取Items/DnItems四文件SHA全部仍等新候选；Astra复核收据通过，未再回退旧静态库。运行路径E:\11周年_动作验证\传奇登陆器.exe，PID26568。证据：launcher-startup-verification.json。下一步用户进入游戏检查漂腐寿衣背包图；人物装备栏StateItem旧图仍是独立未完成项。红圈游戏验收已通过。此次仅只读核验及更新同任务交班，无客户端/DB/引擎操作。
+
+2026-09-11 19:00 最新复测与登录器回覆定位
+状态：部分完成。用户已确认红圈修复；漂腐寿衣静态仍旧。
+实测：测试DB Idx804 Looks6749/Shape1401正确；运行路径为动作验证测试端。测试data的Items/DnItems四文件已恢复18:48安装前哈希，而独立登录器生成源四文件仍是新候选。现有测试登录器14:39生成，早于18:48修正；上轮只更新生成源未重建登录器，未闭合启动解包链。不能据磁盘DB推断M2内存，但目前有直接客户端文件回覆证据，不需改DB。
+当前处理：保留JJ8020/背包000049映射；今天复古外观58、Items1/00680属于旧素材任务，禁止覆盖回旧款。官方生成入口为JJ2115_测试登录器生成源_20260911/MakeGameLogin.exe，输出E:\11周年_动作验证，地址127.0.0.1:7000；无已验证CLI且原生窗口控制不可用，已请用户退出客户端并点击生成登录器，完成后先不启动。
+备份：JJ2115_Astra_20260911/launcher_rebuild_backup/20260911_185913（旧登录器/生成配置/StateItem及客户端配置）；Items/DnItems原基线恢复材料仍在install_backups/20260911_184848/test-client。本轮尚未重建或改客户端、DB、引擎。
+验证待办：新EXE指纹与输出时间、四静态与候选一致、StateItem保持原哈希；再启动新EXE后核对四静态不再回退，然后用户验收背包。装备栏StateItem仍独立未完成。证据launcher-reversion-diagnosis.json。
+2026-09-11 Astra总控：游戏反馈与显示修正（当前阶段）
+状态：部分完成。
+用户验收：流刑王刃背包与动作正常；漂腐寿衣动作正常，静态仍旧；两者实心红圈异常。600槽独立WIL播放已有用户证据，不再沿用早期type259动作失败作为当前状态。
+原因与修改：PNG低alpha红色被8位转换当作实心色。Terra生成alpha_cutoff128候选；Astra目视主体保留，Luna独立回读两套600槽，帧序/坐标不变。该处理会减少柔光边缘，不等于保留原始半透明视觉。测试Weapon1400/Human1401 WIL已替换，WIX相同跳过；Items/DnItems仅6749槽换JJ背包000049，静态其它7440槽各零差异。同四静态文件同步独立测试登录器补丁源。未改数据库、M2、正式端或StateItem。
+备份及收据：E:\XuanYuanDevPlatform\wzl编辑\workspace\JJ2115_Astra_20260911\install_backups\20260911_184848。关键文件写前备份，候选/基线固定SHA检查、回读；安装器第2次写后失败模拟恢复通过。先前数据库原始备份继续保留。
+读取与证据：原同任务交班、官方Looks/Shape说明、JJ源代表帧、测试静态槽、生成结果/安装计划；action_alpha128_full600/result.json、readback_acceptance.json、static_looks6749_candidate/other_slots_audit.json、installer_simulation/result.json。
+未解决：图3人物装备栏StateItem6749仍为旧独立衣服图。源内观000000含完整人物及头部，不能无依据直接覆盖；正常StateItem60解码预览上下颠倒，不能当视觉验收黄金。需完成符合本端人物底图的衣服内观适配。不得把背包40像素图或400像素动作帧盲放大代用。
+下一步：用户重开动作验证客户端验证红圈消除、衣服背包图与600帧动作。此次修正游戏效果尚待验证，装备栏项继续处理。执行Terra、核对Luna、总控Astra；重试维护本条唯一任务，不增加交班文件。
+2026-09-11 Astra首套600帧独立WIL已安装测试端（当前阶段）
+状态：待验证。用户授权：“那开始吧，将这两件装备安装到测试端”。
+已安装：E:\11周年_动作验证新增Graphics Weapon/1400.wil+wix、Human/1401.wil+wix；D:\MirServer_动作验证仅Idx851流刑王刃Shape79→1400、Idx804漂腐寿衣Shape31→1401。整表逐列核对其余字段零差异，4文件SHA匹配，integrity_check=ok。
+备份与收据：D:\MirServer_动作验证\_CodexBackups\JJ2115_Astra_WIL600_20260911_182227。未写正式端，未改Looks/属性/公共WZL/登录器，未操作引擎。
+候选来源及执行入口：E:\XuanYuanDevPlatform\wzl编辑\workspace\JJ2115_Astra_20260911\install_test.py；已有deployment-result.json会阻止误重复安装。原始数据库备份保留至本次游戏验证完成。
+下一步：由用户启动动作验证测试服和E:\11周年_动作验证\传奇登陆器.exe，重新获得流刑王刃、漂腐寿衣，验证穿戴、站立、走跑及普通攻击。此阶段是600槽独立WIL游戏对照，不宣称显示通过。先前600槽type259花屏/透明失败结论仍保留。
+
+JJ2115首套候选验证接口，状态：待验证
+E:\XuanYuanDevPlatform\wzl编辑\workspace\JJ2115_Astra_20260911
+制作入口：候选build_jj2115_600_wil_candidate.py；现有输出会拒绝重写，不要直接重复执行。
+用Python312 -B -X utf8运行该候选脚本，仅用于隔离生成；不能作为正式安装命令。
+输入8020/8020衣服各600槽与Placements；输出Resources/Graphics/Weapon/1400.wil+wix、Human/1401.wil+wix。
+总控回读astra-review.json；最小部署及恢复清单test-deployment-plan.json。尚未执行目标数据库变更，未经对应确认不得直接部署。
+2026-09-11 Astra总控复核与首套WIL候选完成（当前阶段）
+状态：部分完成。最新172711版游戏已失败（动作花屏、衣服透明），禁止沿用其“等待游戏验收”结论。
+Luna核实：E:\星辰剑歌的公共Weapon/Hum确为600槽普通动作；指定Resources/Graphics/Weapon/Human目录不存在，不能拿公共600证明独立Graphics600已验证。600帧本身不作为阻断理由。
+Terra完成：仅在JJ2115_Astra_20260911候选目录复制原已验证WIL工具，参数化帧数/来源6位编号；原1200默认模式对原编辑器黄金WIL/WIX逐字节一致。两套JJ600实际输入没有补帧/缩放，源清单不变，输出各416可见/184占位，坐标逐槽一致。
+Astra验收：独立解析1200槽的边界、坐标、输出SHA与源清单通过，已目视衣服回读PNG。候选已备好但游戏未验证、尚未部署。
+待确认最小测试清单：E:\11周年_动作验证新增独立Graphics Weapon/1400.wil+wix、Human/1401.wil+wix共4文件；测试DB仅Idx851流刑王刃Shape79→1400、Idx804漂腐寿衣Shape31→1401。Looks、属性、公共WZL、配置、正式服不改。两个编号无现有引用/文件。具体清单与恢复方案见候选test-deployment-plan.json。
+本轮读写：读取近2天同一交班、原部署收据、源素材、参考端配置/样本、原WIL工具及官方随包说明；仅写候选与总控文档/接口，未操作引擎、数据库或客户端。证据astra-review.json、result.json；原交班备份control-record-before。其余20套映射待用户提供或填写。
+网络对照：已访问官网https://www.lfm2.com/；网上Shape分库常见教程与本地官方《物品和武器的扩展算法》一致，只能提供路由规则，不能代替此端编码与游戏实效。第三方公开WZL读写实现自述读取不完整，未引入其代码。
+

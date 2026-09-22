@@ -1,0 +1,67 @@
+玄渊平台——攻速实测临时计数接口
+
+建立日期：2026-08-30
+状态：临时测试候选；真实游戏计数完成后移除，不属于正式常驻成果包
+适用引擎：翎风 / LFM2
+
+一、用途
+
+用于确认当前目标服在既有M2、网关和客户端速度配置下，攻击速度10/20/30/40/50分别对应的10秒成功物理攻击次数，并据此找出稳定平台点。
+
+本接口不修改伤害、装备属性、M2速度参数或网关参数；只在已有唯一[@Attack]事件中对管理员主动开启的10秒窗口做内存计数，窗口结束仅写一条汇总事件，不逐刀写文件。
+
+二、玩家入口
+
+1. 先输入：@验收开启
+2. 穿上待测武器后输入：@攻速测定 10
+3. 参数依次填写10、20、30、40、50，只作为本轮结果标签。
+4. 命令执行后有3秒准备时间；准备期内持续普通攻击本服已验证的普通高血低防怪物；练功师不进入当前[@Attack]计数，禁止使用。
+5. 收到“开始”提示后自动统计10秒，结束时聊天框显示成功攻击次数。
+
+三、脚本占用
+
+- UserCmd：99
+- 玩家命令：攻速测定
+- QFunction入口：[@UserCmd99]
+- 内部标签：@XY_AS_TEST_PRECHECK、@XY_AS_TEST_BEGIN、@XY_AS_TEST_FINISH
+- HUMAN数字变量：N$XY_AS_TEST_STATE、N$XY_AS_TEST_HITS
+- HUMAN字符变量：S$XY_AS_TEST_LABEL
+- 共享事件：已有唯一[@Attack]，只追加XY-AS-MEASURE-V1受管计数钩子
+
+以上占用只在本轮实测期间有效；其他成果包不得同时复用。
+
+四、后台事件
+
+事件文件：
+D:\MirServer\Mir200\Envir\QuestDiary\玄渊验收\events.txt
+
+开始事件：
+[XY_VERIFY]|ATTACK_SPEED_START|user=玩家|label=10|reported=引擎汇总攻速|seconds=10
+
+结果事件：
+[XY_VERIFY]|ATTACK_SPEED_RESULT|user=玩家|label=10|reported=引擎汇总攻速|hits=成功攻击次数|seconds=10
+
+监视程序：
+E:\XuanYuanDevPlatform\测试后台监视\xy_test_monitor.py
+
+实时运行：
+python E:\XuanYuanDevPlatform\测试后台监视\xy_test_monitor.py --mode watch --server D:\MirServer
+
+五、测试边界
+
+1. 只用普通物理攻击，不用技能、连击、分身、英雄、宝宝或自动挂机。
+2. 始终攻击同一只可触发[@Attack]的普通高血低防怪物，人物、怪物和站位保持不变；禁止使用练功师或全MISS目标。
+3. 除待测武器外，脱下或停用其他可能改变攻速的装备、称号、Buff和脚本状态。
+4. 不使用GM模式或观察模式进行攻击测试；官网/论坛资料明确这两种模式会改变怪物反应，导致调试不准确。
+5. 第一轮不修改M2“游戏速度”、客户端“速度控制”或RunGate参数；先测既有配置的真实结果。
+
+六、安装与移除
+
+本轮安装事务：
+D:\MirServer\AI_Handoff\attack_speed_measure_20260830_003905
+
+备份文件：
+- backup\QFunction-0.txt
+- backup\UserCmd.txt
+
+真实计数完成并形成结论后，应删除XY-AS-MEASURE-V1钩子、命令块和UserCmd 99注册，逐字节验证其余内容与安装前一致，再删除本临时接口文档及事务备份。

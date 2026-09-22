@@ -1,0 +1,171 @@
+; XY-EQUIPMENT-WASH-IMPORT-V1: 固定品质直出词条随机与实例写入。
+[@仙级特殊]
+{
+#IF
+#ACT
+SetUpgradeItem 27
+SetNewItemValue boxitem27 0 = 0
+SetNewItemValue boxitem27 21 = 0
+#CALL [\玄渊实验室\装备洗练\洗练词条随机核心.txt] @XY_WASH_PICK_27
+MOV N$XY_WASH_LINE0 <$STR(N$XY_WASH_PICK_LINE)>
+MOV N$XY_WASH_VALUE0 <$STR(N$XY_WASH_PICK_VALUE)>
+MOV N$XY_WASH_NATIVE0 <$STR(N$XY_WASH_PICK_NATIVE)>
+#IF
+EQUAL N$XY_WASH_NATIVE0 0
+#ACT
+SetNewItemValue boxitem27 0 + <$STR(N$XY_WASH_VALUE0)>
+#IF
+EQUAL N$XY_WASH_NATIVE0 21
+#ACT
+SetNewItemValue boxitem27 21 + <$STR(N$XY_WASH_VALUE0)>
+#CALL [\玄渊实验室\装备洗练\洗练词条随机核心.txt] @XY_WASH_PICK_27
+MOV N$XY_WASH_LINE1 <$STR(N$XY_WASH_PICK_LINE)>
+MOV N$XY_WASH_VALUE1 <$STR(N$XY_WASH_PICK_VALUE)>
+MOV N$XY_WASH_NATIVE1 <$STR(N$XY_WASH_PICK_NATIVE)>
+#IF
+EQUAL N$XY_WASH_NATIVE1 0
+#ACT
+SetNewItemValue boxitem27 0 + <$STR(N$XY_WASH_VALUE1)>
+#IF
+EQUAL N$XY_WASH_NATIVE1 21
+#ACT
+SetNewItemValue boxitem27 21 + <$STR(N$XY_WASH_VALUE1)>
+#CALL [\玄渊实验室\装备洗练\洗练词条随机核心.txt] @XY_WASH_PICK_27
+MOV N$XY_WASH_LINE2 <$STR(N$XY_WASH_PICK_LINE)>
+MOV N$XY_WASH_VALUE2 <$STR(N$XY_WASH_PICK_VALUE)>
+MOV N$XY_WASH_NATIVE2 <$STR(N$XY_WASH_PICK_NATIVE)>
+#IF
+EQUAL N$XY_WASH_NATIVE2 0
+#ACT
+SetNewItemValue boxitem27 0 + <$STR(N$XY_WASH_VALUE2)>
+#IF
+EQUAL N$XY_WASH_NATIVE2 21
+#ACT
+SetNewItemValue boxitem27 21 + <$STR(N$XY_WASH_VALUE2)>
+#CALL [\玄渊实验室\装备洗练\洗练词条随机核心.txt] @XY_WASH_PICK_27
+MOV N$XY_WASH_LINE3 <$STR(N$XY_WASH_PICK_LINE)>
+MOV N$XY_WASH_VALUE3 <$STR(N$XY_WASH_PICK_VALUE)>
+MOV N$XY_WASH_NATIVE3 <$STR(N$XY_WASH_PICK_NATIVE)>
+#IF
+EQUAL N$XY_WASH_NATIVE3 0
+#ACT
+SetNewItemValue boxitem27 0 + <$STR(N$XY_WASH_VALUE3)>
+#IF
+EQUAL N$XY_WASH_NATIVE3 21
+#ACT
+SetNewItemValue boxitem27 21 + <$STR(N$XY_WASH_VALUE3)>
+#CALL [\玄渊实验室\装备洗练\洗练词条随机核心.txt] @XY_WASH_PICK_27
+MOV N$XY_WASH_LINE4 <$STR(N$XY_WASH_PICK_LINE)>
+MOV N$XY_WASH_VALUE4 <$STR(N$XY_WASH_PICK_VALUE)>
+MOV N$XY_WASH_NATIVE4 <$STR(N$XY_WASH_PICK_NATIVE)>
+#IF
+EQUAL N$XY_WASH_NATIVE4 0
+#ACT
+SetNewItemValue boxitem27 0 + <$STR(N$XY_WASH_VALUE4)>
+#IF
+EQUAL N$XY_WASH_NATIVE4 21
+#ACT
+SetNewItemValue boxitem27 21 + <$STR(N$XY_WASH_VALUE4)>
+SetUpgradeItem 27
+SetCustomItemText boxitem27 [装备品质:仙级]
+SetCustomItemTextColor boxitem27 242
+SetCustomItemValue boxitem27 0 = 0
+SetCustomItemAbil boxitem27 0 0 0
+SetCustomItemAbil boxitem27 0 1 0
+SetCustomItemAbil boxitem27 0 2 0
+SetCustomItemAbil boxitem27 0 3 0
+SetCustomItemAbil boxitem27 0 4 0
+SetCustomItemValue boxitem27 1 = 0
+SetCustomItemAbil boxitem27 1 0 0
+SetCustomItemAbil boxitem27 1 1 0
+SetCustomItemAbil boxitem27 1 2 0
+SetCustomItemAbil boxitem27 1 3 0
+SetCustomItemAbil boxitem27 1 4 0
+SetCustomItemValue boxitem27 2 = 0
+SetCustomItemAbil boxitem27 2 0 0
+SetCustomItemAbil boxitem27 2 1 0
+SetCustomItemAbil boxitem27 2 2 0
+SetCustomItemAbil boxitem27 2 3 0
+SetCustomItemAbil boxitem27 2 4 0
+SetCustomItemValue boxitem27 3 = 0
+SetCustomItemAbil boxitem27 3 0 0
+SetCustomItemAbil boxitem27 3 1 0
+SetCustomItemAbil boxitem27 3 2 0
+SetCustomItemAbil boxitem27 3 3 0
+SetCustomItemAbil boxitem27 3 4 0
+SetCustomItemValue boxitem27 4 = 0
+SetCustomItemAbil boxitem27 4 0 0
+SetCustomItemAbil boxitem27 4 1 0
+SetCustomItemAbil boxitem27 4 2 0
+SetCustomItemAbil boxitem27 4 3 0
+SetCustomItemAbil boxitem27 4 4 0
+SetCustomItemValue boxitem27 5 = 0
+SetCustomItemAbil boxitem27 5 0 0
+SetCustomItemAbil boxitem27 5 1 0
+SetCustomItemAbil boxitem27 5 2 0
+SetCustomItemAbil boxitem27 5 3 0
+SetCustomItemAbil boxitem27 5 4 0
+SetCustomItemValue boxitem27 6 = 0
+SetCustomItemAbil boxitem27 6 0 0
+SetCustomItemAbil boxitem27 6 1 0
+SetCustomItemAbil boxitem27 6 2 0
+SetCustomItemAbil boxitem27 6 3 0
+SetCustomItemAbil boxitem27 6 4 0
+SetCustomItemValue boxitem27 7 = 0
+SetCustomItemAbil boxitem27 7 0 0
+SetCustomItemAbil boxitem27 7 1 0
+SetCustomItemAbil boxitem27 7 2 0
+SetCustomItemAbil boxitem27 7 3 0
+SetCustomItemAbil boxitem27 7 4 0
+#IF
+LARGE N$XY_WASH_LINE0 0
+#ACT
+SetCustomItemAbil boxitem27 0 0 242
+SetCustomItemAbil boxitem27 0 1 60
+SetCustomItemAbil boxitem27 0 2 <$STR(N$XY_WASH_LINE0)>
+SetCustomItemAbil boxitem27 0 3 0
+SetCustomItemAbil boxitem27 0 4 9
+SetCustomItemValueEx boxitem27 0 = <$STR(N$XY_WASH_LINE0)> <$STR(N$XY_WASH_VALUE0)> 0
+#IF
+LARGE N$XY_WASH_LINE1 0
+#ACT
+SetCustomItemAbil boxitem27 1 0 242
+SetCustomItemAbil boxitem27 1 1 60
+SetCustomItemAbil boxitem27 1 2 <$STR(N$XY_WASH_LINE1)>
+SetCustomItemAbil boxitem27 1 3 0
+SetCustomItemAbil boxitem27 1 4 9
+SetCustomItemValueEx boxitem27 1 = <$STR(N$XY_WASH_LINE1)> <$STR(N$XY_WASH_VALUE1)> 0
+#IF
+LARGE N$XY_WASH_LINE2 0
+#ACT
+SetCustomItemAbil boxitem27 2 0 242
+SetCustomItemAbil boxitem27 2 1 60
+SetCustomItemAbil boxitem27 2 2 <$STR(N$XY_WASH_LINE2)>
+SetCustomItemAbil boxitem27 2 3 0
+SetCustomItemAbil boxitem27 2 4 9
+SetCustomItemValueEx boxitem27 2 = <$STR(N$XY_WASH_LINE2)> <$STR(N$XY_WASH_VALUE2)> 0
+#IF
+LARGE N$XY_WASH_LINE3 0
+#ACT
+SetCustomItemAbil boxitem27 3 0 242
+SetCustomItemAbil boxitem27 3 1 60
+SetCustomItemAbil boxitem27 3 2 <$STR(N$XY_WASH_LINE3)>
+SetCustomItemAbil boxitem27 3 3 0
+SetCustomItemAbil boxitem27 3 4 9
+SetCustomItemValueEx boxitem27 3 = <$STR(N$XY_WASH_LINE3)> <$STR(N$XY_WASH_VALUE3)> 0
+#IF
+LARGE N$XY_WASH_LINE4 0
+#ACT
+SetCustomItemAbil boxitem27 4 0 242
+SetCustomItemAbil boxitem27 4 1 60
+SetCustomItemAbil boxitem27 4 2 <$STR(N$XY_WASH_LINE4)>
+SetCustomItemAbil boxitem27 4 3 0
+SetCustomItemAbil boxitem27 4 4 9
+SetCustomItemValueEx boxitem27 4 = <$STR(N$XY_WASH_LINE4)> <$STR(N$XY_WASH_VALUE4)> 0
+ChangeItemUpgradeCount boxitem27 = 5
+MOV N$XYEW_W_洗练CD 0
+UpdateItem boxitem27
+CLOSE
+MESSAGEBOX 洗练成功，获得了仙级属性。
+BREAK
+}

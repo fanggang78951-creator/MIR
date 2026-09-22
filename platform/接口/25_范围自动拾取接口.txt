@@ -1,0 +1,71 @@
+玄渊范围自动拾取接口
+
+当前状态：当前D:\MirServer候选已部署，待游戏验证；尚未沉淀为平台成果包。
+
+一、当前登录接口
+
+真实登录事件：
+[@登陆设置]
+
+QManage调用：
+#CALL [\游戏登陆\登陆脚本.txt] @登陆设置
+
+当前受管块：
+; XYDP-NATIVE-AUTO-PICK-RANGE-V1-BEGIN
+#IF
+#ACT
+CloseAutoPickItem
+OpenAutoPickItem 1 0 6 1 0 0 100
+; XYDP-NATIVE-AUTO-PICK-RANGE-V1-END
+
+二、参数含义
+
+OpenAutoPickItem 类型 有效时间 范围 是否秒捡 捡人物丢弃物品 捡人物爆出物品 落物等待毫秒
+
+当前参数：
+- 类型1：只以人物坐标为中心，不开启宝宝范围。
+- 有效时间0：本次在线期间持续有效。
+- 范围6：人物中心6格。
+- 秒捡1：一次捡取范围内全部可捡物品。
+- 人物丢弃0：不捡玩家主动丢弃物。
+- 人物爆出0：不捡玩家死亡爆出的物品。
+- 等待100：物品落地100毫秒后允许捡取。
+
+关闭命令：
+CloseAutoPickItem
+
+三、拾取名单
+
+服务端允许名单：
+D:\MirServer\Mir200\Envir\EnablePickUpItem.txt
+
+当前名单由目标服ApexM2.DB的StdItems.Name按数据库顺序去重生成，共759项，GB18030/CRLF，一行一个精确物品名。
+
+本方案故意不执行EnableUseClientPickItems 1：自动拾取使用服务端允许名单，不依赖玩家内挂是否配置。以后如果改为玩家内挂自选，需要另行设计切换入口，不能直接把两套来源混用。
+
+四、前置条件
+
+- D:\MirServer\Mir200\!setup.txt中EnablePlayerUseClientPickItems=1。
+- MapInfo不得为目标地图添加NoAutoRangePickItem。
+- 新增装备后必须把新物品名补入EnablePickUpItem.txt，否则新物品不会进入范围拾取允许名单。
+
+五、生效方式
+
+由用户自行让M2重载或重启，再重新登录角色。Codex不得启动或操作游戏引擎。
+
+六、回滚
+
+逐字节备份：
+D:\XuanYuanDevPlatform\backups\20260806_192935_auto_pick_range6_before
+
+回滚时恢复：
+- Mir200\Envir\QuestDiary\游戏登陆\登陆脚本.txt
+- Mir200\Envir\EnablePickUpItem.txt
+
+七、验收
+
+1. 重新登录后，人物自己击杀怪物。
+2. 在人物6格内放置多件当前库物品，确认一次全部进入背包。
+3. 在7格外放置物品，确认不会隔空拾取。
+4. 玩家主动丢弃或死亡爆出的物品不应被自动拾取。
+5. 检查M2无OpenAutoPickItem脚本错误，PickUpItemEX等拾取事件无卡顿。

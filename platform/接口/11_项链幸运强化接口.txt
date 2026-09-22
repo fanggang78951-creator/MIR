@@ -1,0 +1,123 @@
+玄渊项链幸运强化接口（候选待验证）
+整理日期：2026-07-31
+引擎：翎风 / LFM2
+状态：候选待游戏验证
+实验室母版：D:\XuanYuanDevPlatform\labs\necklace_luck
+配置母表：D:\XuanYuanDevPlatform\所需材料表格汇总\17_项链幸运强化.xlsx
+
+一、公开入口
+
+1. 玩家打开强化界面
+
+入口是平台生成并注册到MerChant.txt的“项链幸运”NPC，玩家直接点击NPC进入本地`[@MAIN]`。
+NPC脚本必须由本候选生成器生成，禁止由外部NPC或菜单使用`#CALL ... @XY_NECK_LUCK_MAIN`打开界面。翎风跨文件调用可执行即时命令，但不能稳定承载本功能后续的#SAY、GOTO和按钮上下文。
+NPC本地`[@MAIN]`在显示#SAY前也不得`#CALL ... @XY_NECK_LUCK_SYNC`；强化成功或失败后同样不得先跨文件SYNC再返回本地MAIN。两处都必须在NPC文件内部完成判断、幸运同步和界面刷新。
+如以后需要把入口绑定到其他NPC或图标，只允许跳转/打开这个已注册NPC，不得复制强化概率、降级、扣费、人物变量或装备写入逻辑。
+
+2. 当前测试NPC
+
+地图：XY_NMGF_MAIN
+坐标：102,75
+名称：项链幸运
+外观：220
+
+3. 测试人物清零入口（临时、受限）
+
+@XY_NECK_LUCK_TEST_RESET_CONFIRM
+@XY_NECK_LUCK_TEST_RESET_APPLY
+
+这两个标签只允许由项链幸运NPC本地满级页面调用，不是公开命令接口。只有人物U20=8时显示“测试人物清零”；二次确认后清除当前StdMode19项链显示镜像、人物临时幸运、U20、U19和U21，保留U22初始化签名7312001，随后返回+0页面。
+该入口只为清理当前测试人物和验证当前候选强化链而存在。不得由其他NPC、图标或玩家命令直接调用；测试完成后必须从正式候选中移除。
+
+二、受限内部入口
+
+1. 执行一次强化
+
+@XY_NECK_LUCK_UPGRADE
+
+只允许由项链幸运核心自己生成的确认按钮调用。外部NPC、图标和玩家命令不得直接跳过主界面调用。
+
+2. 人物幸运同步到当前项链
+
+#CALL [\玄渊实验室\项链幸运\项链幸运核心.txt] @XY_NECK_LUCK_SYNC
+
+只允许平台受管的 PlayLogin、TakeOn3 事件调用。`TakeOn3`是项链槽专用穿戴事件，禁止再挂到通用`TakeOnEx`代替。装备槽3中的正常项链类型`stdmode=19/20/21`全部允许，装备名称、Shape和原始幸运是否为0均不参与限制。U20是唯一人物真值：StdMode19把U20写入附加位置1作为当前穿戴镜像；StdMode20/21不改写附加位置1，只用`ChangeHumAbility 21`同步人物幸运。
+
+3. 摘下项链时清除实例幸运
+
+#CALL [\玄渊实验室\项链幸运\项链幸运核心.txt] @XY_NECK_LUCK_TAKEOFF
+
+只允许平台受管的 TakeOff3 事件调用。通过 LINKPICKUPITEM 关联刚摘下的物品：StdMode19只清除被摘下物品位置1的显示镜像并执行`UpdateItem -1`；StdMode20/21不改装备字段；三类项链均清除人物临时幸运，但人物保存等级U20绝不清除。
+
+三、人物变量占用
+
+U19：累计强化次数。
+U20：人物项链幸运唯一真值，范围0～8。
+U21：第251次后的额外成功率，单位为百分点。
+U22：一次迁移签名，正确值固定为7312001。
+U23：本次点击开始时的项链幸运档位，提交结果前置为-1。
+U24：本档材料与货币检查结果，只能为0或1。
+U25：本档固定数字随机结果，只能为0、1或提交后的-1。
+U26：本次真实命中的结果令牌；按目标档和成功/失败使用唯一数字，完成提示后清零。
+
+以上变量由本候选独占。其他脚本不得读取、改写或复用。旧U90～U93只允许在U22未标记时读取一次：先继承旧U90，再以当前StdMode19项链可见的1～8点幸运覆盖；写入U22后，NPC和核心永远不得再从装备反推U20。
+U20若出现0～8以外的脏值，主界面和确认按钮必须阻止且不扣资源，不允许猜测修复。
+NPC对话框必须采用明月式本地脚本：`[@MAIN]`、#SAY面板、升级按钮标签和执行标签位于同一个Market_Def NPC文件。禁止再用薄NPC `#CALL` QuestDiary核心后跨文件GOTO面板；该路线只能稳定显示即时MESSAGEBOX，兼容项链会出现点击无响应。
+NPC成品中`#CALL`总数必须为0，且不得复制`[@XY_NECK_LUCK_SYNC]`和`[@XY_NECK_LUCK_TAKEOFF]`。这两个接口只存在于QuestDiary核心，供QFunction登录、佩戴和摘下事件调用。
+每个档位在完成“成功率超过100时封顶”的条件判断后，必须重新写一个独立`#IF`再进入`#SAY`。禁止让#SAY直接跟在封顶判断的#ACT后，否则实际成功率不大于100时整个页面不会显示。
+强化成功/失败必须先把结果写入U20，再把StdMode19装备附加位置1直接设为同一个明确档位；不得用相对`+1/-1`累计，不得在结果分支调用`UpdateItem 3`，也不得读回装备决定人物档位。StdMode20/21只把同一U20结果写入人物幸运属性21。
+概率判定必须编译为固定数字`RANDOMEX 子值 母值`，例如55%只能写`RANDOMEX 55 100`。禁止把动态变量直接传入RANDOMEX，也禁止用`#ELSEACT`承接随机失败。保底U21按0、5、10……编译为固定概率阶梯；随机未命中后顺序落到独立失败标签。
+每次点击只允许一条TRY记录和一条RESULT记录；U19只在结果分支增加一次。主界面不得GOTO档位标签，强化入口不得GOTO TRY/SUCCESS/FAIL标签。必须在同一个`@XY_NECK_LUCK_UPGRADE`中用数字变量U23保存点击前档位，U24检查资源，U25保存固定数字随机结果；每条成功/失败动作必须先将U23置为-1，再写入唯一U26结果令牌、U20和U19。禁止用`N$XY_NL_ClickLevel/ResultDone/Outcome/ResourceOK`承担数值控制。
+翎风中后续新的`#IF/#ACT`会结束前一个档位条件范围。因此装备同步、失败保底、扣费、RESULT日志和玩家提示每一段都必须重新检查本结果对应的U26；禁止在受档位条件的写U20/U19之后使用无令牌的独立#IF/#ACT。
+强化结果在同一U26保护段内执行`SENDMSG 6`、清零U26、`GOTO @MAIN`和`BREAK`，由MAIN按新U20实时刷新下一档。只有在U26已清零且GOTO后紧跟BREAK时允许结果分支刷新，禁止恢复无令牌GOTO。#SAY内容后不得直接写裸BREAK，否则客户端会显示成`关闭BREAK`；需要终止执行时必须放入明确的#ACT动作段。
+项链强化档位、成功率和保底只允许读取U20、XLSX档位概率与U21。强化NPC内严禁使用`CheckLuckPoint`，也不得读取武器槽、武器幸运或全身幸运；玩家是否装备幸运7武器不能改变项链强化概率。登录同步同样只处理U20与项链槽3。战斗事件另行读取U20与武器槽附加幸运，两条链完全隔离。
+
+四、战斗属性接入
+
+幸运13：在 `XY_EQUIP_MAKER_RUNTIME_DAMAGE_COEFFICIENT_ANCHOR` 增加5点伤害系数。
+幸运14及以上：再增加10点，累计增加15点伤害系数。
+幸运15：在 `XY_EXECUTION_LAB_CHANCE_ANCHOR` 增加500BP处决概率。
+实现必须先读取装备栏第3格的StdMode。只有实际佩戴StdMode19/20/21项链时，才允许把人物项链幸运U20与武器槽1的附加位置3幸运相加为`N$XY_NL_TotalLuck`；未佩戴项链时总幸运固定为0，不能仅凭人物永久进度U20触发奖励。武器幸运只允许通过`CHECKITEMADDVALUE 1 3 = 1～7`逐档读取，不得参与强化概率。总幸运13增加5点伤害系数，总幸运14和15均明确增加15点，总幸运15另增加500BP处决。candidate.21的`CheckLuckPoint = 13/14/15`和candidate.22的无项链佩戴门禁计算均已判定为禁止参考。
+幸运12刀刀最高攻击只使用 !setup.txt 的 `MaxLuckMaxPower=12`，禁止另写重复伤害脚本。
+
+五、安装与回滚
+
+预检：
+python D:\XuanYuanDevPlatform\labs\necklace_luck\tools\deploy_candidate.py preflight --server D:\MirServer
+
+安装（M2运行时允许写入，写入后须重载或重启M2）：
+python D:\XuanYuanDevPlatform\labs\necklace_luck\tools\deploy_candidate.py install --server D:\MirServer
+
+回滚：
+python D:\XuanYuanDevPlatform\labs\necklace_luck\tools\deploy_candidate.py rollback --receipt <安装收据完整路径>
+
+工具只识别平台内配置母表，安装前重新校验表格哈希、标签、U变量、锚点、NPC坐标、编码和目标文件。M2运行不再作为阻止项；若文件被实际占用，事务完整失败并回滚。写入后由用户重载或重启M2，工具不会关闭、启动或操作游戏引擎。
+
+六、禁止事项
+
+1. 游戏验收前不得加入 packages\verified 或一键常驻基础。
+2. 不得手工复制核心逻辑到NPC。
+3. 不得把项链幸运改成装备永久绑定；本候选按人物保存。
+4. 战斗绑定不得继续使用任何`CheckLuckPoint`阈值；必须先确认第3格佩戴StdMode19/20/21项链，再使用U20加武器槽真实附加幸运，并对总幸运13、14、15逐档判断。幸运15必须显式包含幸运14档累计15%的伤害系数。
+5. 不得把伤害系数加成写成新的 POWERRATE 出口；只能累加现有 N$XY_RT_DamageCoeff。
+6. 不得在处决链外另建第二套概率系统；只向 N$XY_EXEC_ChanceBP 增加500BP。
+7. 不得按装备名称、Shape、原始幸运数值建立白名单；装备栏第3格的StdMode19/20/21正常项链全部允许。
+8. StdMode20/21严禁写入附加位置1，否则会把人物幸运误写成敏捷或魔法恢复；这两类项链只允许用人物幸运属性21承载。
+9. 禁止恢复任何`@XY_NECK_LUCK_REPAIR`装备反推链；U22迁移完成后，U20只能由强化结果或测试清零入口修改。
+10. 禁止恢复candidate.1～candidate.7。candidate.1～5使用薄NPC；candidate.6/7虽复制了本地面板，但仍在对话链内跨文件SYNC。当前NPC必须做到本地MAIN、面板、结果同步和刷新全链无`#CALL`。
+11. 禁止恢复candidate.8的档位显示结构；8个档位均必须存在独立的`#IF`、`#SAY`连续结构。
+12. 禁止恢复candidate.9的强化结果结构；13条结果入口、5条保底续执行和13条分流后公共结果都必须具有独立无条件入口。
+13. 禁止恢复candidate.10的通用`TakeOnEx/TakeOffEx`钩子。
+14. 禁止恢复candidate.11的即时写后读回保护。
+15. 禁止恢复candidate.12/13的动态变量RANDOMEX与随机ELSEACT分流；当前正确结构是candidate.14固定数字概率阶梯。
+16. candidate.15已经游戏复测判定失败，禁止参考：其`GETITEMADDVALUE`双向真源和结果分支`UpdateItem 3`会触发TakeOn3反写旧值，造成提示2、装备3以及换项链清零。
+17. candidate.16首版已被测试日志判定失败，禁止参考其多层`GOTO TRY/SUCCESS/FAIL`结构；本引擎从目标标签返回后会继续扫描上一级，造成一次TRY对应多个RESULT及U19连续增加。
+18. candidate.17已由游戏日志判定失败：虽然一点击只有一条TRY和一条RESULT，但`N$`控制变量让当前+2误进+0到+1结果，U19不增加并误报范围异常。禁止参考其`N$XY_NL_ClickLevel/ResultDone/Outcome/ResourceOK`数值分流。
+19. candidate.18已由游戏日志判定失败：U23档位分流本身有效，但结果块后续独立#IF/#ACT未绑定原档位，导致U20/U19未变时仍同步装备并写假RESULT；主页面的无条件范围提示也会对合法U20误报。禁止参考其无U26后续动作结构。
+20. candidate.19业务链经用户验证正常，可作为当前逻辑基础；其缺陷仅为结果后不刷新，以及#SAY中的裸BREAK显示为文字，不得保留这两个界面问题。
+21. 强化主体当前唯一可参考结构是candidate.20：继承candidate.19的U20单真值和U23～U26保护链；结果提示后先清零U26，再GOTO MAIN刷新，返回后BREAK。#SAY后无裸BREAK。主页面范围提示只允许`SMALL U20 0`和`LARGE U20 8`两处。强化NPC中不得出现`CheckLuckPoint`，武器幸运不参与强化概率。强化结果禁止`UpdateItem 3`，摘下只允许`UpdateItem -1`。
+22. candidate.21战斗绑定已经游戏复测失败，禁止安装和参考：`CheckLuckPoint = 13/14/15`没有读取到人物U20项链幸运。candidate.22仅在当前测试服验证，改为U20加武器槽附加幸运，并写`NECK_LUCK_COMBAT`测试后台事件；用户确认战斗数值前不得发布为平台成果包。
+23. candidate.22已经验收日志判定失败：摘下白色虎齿项链后仍记录`neck=8、weapon=7、total=15`，说明永久进度U20在未佩戴项链时仍参与战斗。candidate.23增加第3格StdMode19/20/21佩戴门禁，日志确认幸运15实效进入；随后发现空项链槽可能沿用旧StdMode19。candidate.24在读取第3格前先清零StdMode，平台成果包已更新为candidate、optional，摘链空槽仍待最终复验。
+
+24. 平台成果包只包含强化主体、登录/穿脱同步、幸运12配置及13/14/15战斗门禁；左上属性图标显示镜像不属于本包。本包正式NPC已移除`测试人物清零`入口。
+25. candidate.25为平台正式候选清理版：保留candidate.20强化主体与candidate.24空槽门禁；成果包不含`XY_VERIFY`、`NECK_LUCK_COMBAT`测试后台、测试人物清零或左上属性图标。

@@ -1,0 +1,48 @@
+玄渊平台临时文件安全清理接口
+版本：1.0
+状态：platform
+
+一、图形入口
+
+D:\XuanYuanDevPlatform\bin\XuanYuanTempCleaner.exe
+
+默认操作流程：
+
+1. 点击“只读扫描”。
+2. 默认只勾选达到保留天数的 Python/测试缓存。
+3. build、tmp、失败事务残留必须逐项人工复核，程序不会自动勾选。
+4. 点击“隔离已勾选”，再次确认后才会移动文件。
+5. 内容进入 backups\cleanup_quarantine\时间戳，并生成 receipt.json。
+6. 需要撤销时点击“按收据恢复”，选择对应 receipt.json。
+
+二、源码命令行接口
+
+只读扫描：
+
+python D:\XuanYuanDevPlatform\tools\temp-cleaner\run_cleaner.py scan --root D:\XuanYuanDevPlatform --days 14 --output <报告.json>
+
+按报告隔离：
+
+python D:\XuanYuanDevPlatform\tools\temp-cleaner\run_cleaner.py quarantine --plan <报告.json> --candidate-id <候选ID> --yes
+
+按收据恢复：
+
+python D:\XuanYuanDevPlatform\tools\temp-cleaner\run_cleaner.py restore --receipt <receipt.json> --yes
+
+三、硬保护契约
+
+以下类别不得成为普通清理候选：素材库、做装备、玄渊界面施工台、成果包、表格、接口、知识库、迁移资料、证据、输出、测试床、备份、正式EXE、客户端补丁、WZL/WZX编辑资料、NPC脚本、非常驻脚本。
+
+四、事务契约
+
+1. 扫描本身零写入；只有显式导出报告时才写一个JSON。
+2. 不提供永久删除，只移动到平台备份目录内的隔离区。
+3. 扫描后内容、大小、文件数、时间或指纹变化时阻止，要求重新扫描。
+4. 路径越界、链接、重解析点、硬保护目录命中时阻止。
+5. 隔离任一项失败时回退本次已移动项目。
+6. 恢复时原位置存在同名内容则阻止，绝不覆盖。
+
+五、明确不属于此接口的内容
+
+本工具不修改服务端、客户端、数据库、M2、成果包业务脚本或装备/材料素材。它也不会自动清空 build、tmp、outputs、logs、evidence 或 backups。
+

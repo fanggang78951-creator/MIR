@@ -1,0 +1,117 @@
+玄渊平台——UI按钮、动态图标与客户端状态接口
+
+一、背包五个预留按钮
+
+客户端控件                CustomButtonID    当前用途
+DBagCustomButton1         20                随身无限仓库
+DBagCustomButton2         21                装备回收
+DBagCustomButton3         22                材料回收预留，当前没有正式业务包
+DBagCustomButton4         23                功能服务菜单
+DBagCustomButton5         24                预留，当前未分配
+
+所有按钮共用 QFunction 事件 [@CustomButtonClick]，必须先判断 <$CustomButtonID> 再执行自己的分支。
+
+20号固定分支：
+
+#IF
+EQUAL <$CustomButtonID> 20
+#ACT
+OpenStorageView 1
+BREAK
+
+21号固定分支：
+
+#IF
+EQUAL <$CustomButtonID> 21
+#ACT
+GOTO @XY_RECYCLE_COMMAND
+BREAK
+
+23号固定分支：
+
+#IF
+EQUAL <$CustomButtonID> 23
+#ACT
+GOTO @XY_BAG_FUNCTION_SERVICE_PANEL
+BREAK
+
+规则：
+- 20到24不得由其他功能重复占用。
+- 22和24虽然未启用，也属于预留号，不可先斩后奏使用。
+- 客户端控件不存在时，服务端分支不会凭空创建按钮。
+
+二、主界面静态按钮
+
+CustomButtonID 3：左上狂暴黑白静态入口。
+点击后进入 @XY_UI_RAGE_PANEL，再调用狂暴唯一业务接口 @XY_RAGE_NPC_MAIN。
+
+CustomButtonID 5：世界地图静态入口。
+点击后 GOTO @ButtonClick88，打开现有世界地图面板。
+
+规则：
+- 必须接入 [@CustomButtonClick] 和 <$CustomButtonID>。
+- 不得再用 ButtonClick89 透明覆盖静态按钮。
+- 不得把地图入口改成直接 MAPMOVE。
+
+三、左上五个动态图标
+
+按钮号    用途        点击行为                状态/悬浮
+89        狂暴彩色层  业务上仍进入狂暴接口    称号存在时彩色
+90        复活        无操作                  机会与共享CD倒计时
+91        属性A       无操作                  神力、伤害系数、爆伤、怪伤
+92        属性B       无操作                  首刀、尾刀、鞭尸、对怪吸收
+93        属性C       无操作                  韧性、处决概率、处决时间、处决倍数
+
+复活倒计时 Buff ID：190。
+属性A最终坐标：左 246、上 17。
+WIL资源：17（Prguse.wzl）。
+
+资源范围：
+- 狂暴彩色：1776至1778；未激活保留界面静态黑白按钮。
+- 复活彩色：1782至1784；黑白：1785至1787。
+- 属性A：1772至1774。
+- 属性B：1791至1793。
+- 属性C：1794至1796。
+
+四、属性显示刷新接口
+
+外部业务在更新最终变量后，如果需要即时重画：
+
+GOTO @XYDP_ShowAttrBuff
+
+QFunction桥接：
+- @XY_UI_QF_STATUS_REFRESH：完整状态刷新。
+- @XY_UI_QF_EQUIP_REFRESH：装备变化刷新。
+- @XY_UI_RAGE_PANEL：狂暴静态按钮桥接。
+
+上述 XY_UI_QF_* 属于内部桥接，外部功能优先调用 @XYDP_ShowAttrBuff，不要绕过桥接直接复制 UI 脚本。
+
+五、默认属性来源
+
+属性A：
+- 神力倍攻读取 N$倍攻，显示前减100；禁止直读 BindType 40作为实效汇总。
+- 伤害系数读取 BindType 53。
+- 暴击伤害读取 BindType 42。
+- 打怪伤害读取 N$XY_PVE，显示前减100；禁止直读 BindType 41作为实效汇总。
+
+属性B：
+- 首刀、尾刀、鞭尸和对怪吸收从当前已经验收的实效装备分支同源汇总。
+- “对怪吸收”只是图标短名称；装备说明继续使用“对怪伤害吸收”。
+
+属性C：
+- 韧性 BindType 50。
+- 处决概率 BindType 49。
+- 处决倍数 BindType 51。
+- 处决时间 BindType 52。
+
+六、禁止占用
+
+- 旧动态按钮88：旧属性测试路线，禁止恢复；88只保留为世界地图既有脚本标签 @ButtonClick88 的历史编号语义。
+- ButtonClick89透明覆盖：已经验证无效，禁止恢复。
+- XYTEST_ATTR_BUFF_LOGIN：旧测试脚本标签，只允许标记“禁止参考”。
+- 90至93不得附加玩家点击业务；复活和A/B/C只展示状态。
+- Buff ID190不得由其他系统复用。
+
+七、安装边界
+
+UI图标包只显示业务最终值，不承担伤害、爆率、吸收、处决或狂暴扣费逻辑。业务包未安装或最终变量未维护时，图标显示0是正确的保护状态，不能在显示包里伪造实效。

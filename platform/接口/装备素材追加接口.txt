@@ -1,0 +1,24 @@
+装备素材追加接口（已发布：20260914-equipment-graphics-append-v1）
+
+用途：为未绑定装备的剑甲素材执行文件级追加。固定 consumer：equipment-graphics；配置文件：所需材料表格汇总/45_装备素材追加.json；操作值：equipment-graphics-append。
+
+范围：
+1. 静态：分别向客户端和登录器补丁源的 Items、DnItems、StateItem 追加连续槽位。每端旧槽按其本端基线保留；追加槽的图像记录须两端一致。
+2. 动作：只写入已经验证的客户端 Resources/Graphics/Weapon 与 Human 目录，WIL/WIX 成对记录在收据中。
+3. 数据库：不读取、不写入，不绑定 StdItems，不写数据库中的 Looks、Shape、Idx，也不产生装备属性或掉落改动。新增静态槽号和独立动作资源号记录在收据中，供以后绑定前重新预检。
+
+资源字段：
+- resources[].sources.bagImage 与 innerImage 分开填写。Items/DnItems 使用 bagImage；StateItem 使用 innerImage。
+- resources[].static.bagPlacement 与 innerPlacement 分开填写。
+- resources[].action 的 library、kind、frameCount、sourceFrameDigits、treatOneByOneAsEmpty 逐项声明。frameCount 以来源目录清点结果为准。
+- startLooks、expectedResourceCount、reservedShapes、reservedShapesEvidence 和 target.staticTargets 必须按当前候选/目标预检结果填写；来源编号不是服务器 Shape。
+
+调用：沿用同一 CLI/GUI 四项命令或按钮。
+1. equipment-graphics-preflight --config <45号配置>
+2. equipment-graphics-apply --config <45号配置>
+3. equipment-graphics-rollback --receipt <收据>
+4. equipment-graphics-verify-launcher --receipt <收据>
+
+平台的“登录器生成后核验”只核对收据中列出的两端静态资源和客户端动作资源。用户最后按既有官方登录器流程操作；本接口不宣称动作嵌入生成 EXE，也不代替游戏验收。
+
+状态：已发布。预检、安装、回滚、登录器后核验和游戏验收分别记录；未绑定装备时不得标注为装备可穿戴或 game_verified。当前GUI/CLI从catalog/current-release.json解析；本轮21套追加及独立验收见wzl编辑/workspace/JJ21_20260914。

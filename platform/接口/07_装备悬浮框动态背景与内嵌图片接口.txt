@@ -1,0 +1,145 @@
+玄渊平台——装备悬浮框动态背景与内嵌图片接口
+
+一、用途
+
+用于给翎风/LFM2装备悬浮信息增加自动适应内容高度的底板、外框、装备类别竖牌和艾尔登法环动画Logo。
+本接口只控制显示，不修改装备属性、触发逻辑、爆率或战斗计算。
+
+二、唯一正确的动态布局逻辑
+
+1. 悬浮窗真实高度由引擎基础属性、ItemDescList备注和静态Img内容共同决定。
+2. PlayImg可以播放动画，但不会为悬浮窗预留宽度或高度。
+3. 艾尔登法环动画必须使用“静态透明占位图 + 动画覆盖”的组合：
+   \-\<Img:27:10:0:0>\-\<PlayImg:10:19:8:120:0:-82:1>
+4. 第27帧是214x82全黑透明布局占位图，负责保证短装备也有足够宽度，并预留Logo高度。
+5. PlayImg放在占位图下一行，Y=-82，使19-26号动画覆盖在已预留区域中，不产生额外空白。
+6. 石纹底色和公共外框只跟随悬浮窗真实尺寸整体拉伸。
+7. 装备类别竖牌使用原图固定位置，不能整体拉伸。
+8. 物品说明由ItemDescList提供；物品来源、制造者和时间由引擎原生数据提供，禁止硬写来源。
+9. M2特效1的“下”必须为0。负数只会裁剪背景，不能增加悬浮窗高度。
+10. 装备备注由做装备编译器按显示宽度自动断行，默认40显示列，约等于20个中文字符。母表只收自然文本，禁止要求用户填写反斜杠控制符。
+11. 自动生成的每一行均使用ItemDescList官方换行结构并重复颜色索引242；242表示说明文字颜色，不表示宽度。
+
+三、当前正式资源
+
+当前候选：D:\XuanYuanDevPlatform\玄渊界面施工台\artifacts\item-hint-eldenring-v3\candidate.13
+正式WZL：D:\11周年\data\XY_ItemHint.wzl
+正式WZX：D:\11周年\data\XY_ItemHint.wzx
+资源登记：D:\MirServer\Mir200\Envir\EffectImageList.txt
+物品备注：D:\MirServer\Mir200\Envir\ItemDescList.txt
+EffectImageList零基资源序号：10
+
+正式哈希：
+XY_ItemHint.wzl  68A33C07949CF81562D1DE91D17F9F449414FB73D4878050C74340944F2CE3A7
+XY_ItemHint.wzx  EB9075711E346FDACEDCEE667A4CEAEDE16F0B233DBE765142A9E96498295B63
+ItemDescList.txt 069738A1BFE3C0A5DED634B95B9549877C24F5B6A0CC80CD74FE83CED8F238D2
+
+candidate.13共28帧，编号0-27，Provider回读均为type6：
+0      石纹底色，336x620，整体拉伸
+1      公共外框，336x620，透明叠加并整体拉伸
+2-4    历史静态类别牌，保留兼容
+5      制式装备竖牌，固定位置
+6      艾尔登法环静态Logo，214x82，保留兼容
+7-12   稀有专属动画，6帧，160毫秒
+13-18  追梦神器动画，6帧，120毫秒
+19-26  艾尔登法环Logo动画，8帧，120毫秒
+27     透明布局占位图，214x82
+
+稀有专属和追梦神器的6帧均严格限制在制式装备竖牌锚框(209,84)-(257,262)内，尺寸48x178，不允许粒子越出锚框。
+
+四、标签语法
+
+静态图片：
+<Img:图片编号:WIL资源序号:X偏移:Y偏移>
+
+动画图片：
+<PlayImg:F:N:C:T:X:Y:M>
+
+F=资源序号，N=开始图片，C=帧数，T=播放间隔，X/Y=偏移，M=绘制方式。
+M不是“循环开关”，不要按循环参数解释。
+
+备注自动断行：
+1. 用户在XLSX“备注”列填写连续自然文本。
+2. 编译器按中英文显示宽度计算行宽，优先在标点后断开，避免标点出现在下一行开头。
+3. 每个续行由编译器生成新的`\242/`段；ItemDescList仍保持一件物品一条物理记录。
+4. 不提供人工换行覆盖模式；备注中的反斜杠会继续被预检拒绝，避免破坏Img/PlayImg和颜色控制符。
+5. 自动断行只处理说明文字，不触碰最终组合`\-\<Img:27:10:0:0>\-\<PlayImg:10:19:8:120:0:-82:1>`。
+6. 修改已有装备时，`update.py`必须先读取原ItemDesc行；若原行以最终组合结尾，重编译自动分行正文后必须原样追加一次。禁止因重写说明正文而删除最终组合，也禁止重复追加。
+
+回归识别：
+1. 类别竖牌正常但艾尔登法环消失，说明EffectHintBGItems绑定仍在，而ItemDescList最终组合缺失。
+2. 此类问题只需用装备悬浮同步精确修复受影响名称，不需要重建XY_ItemHint.wzl/wzx，也不需要修改M2特效1-5。
+
+当前23条自定义装备必须且只能含一个最终组合：
+\-\<Img:27:10:0:0>\-\<PlayImg:10:19:8:120:0:-82:1>
+
+五、M2最终设置
+
+特效1：XY_ItemHint.wzl，开始0，数量1，整体拉伸，右=-80，下=0，隐藏旧边框背景及分隔线。
+特效2：XY_ItemHint.wzl，开始1，数量1，整体拉伸，透明绘制、顶层绘制，右=-80，下=0。
+特效3：制式装备，开始5，数量1，原图固定位置，透明绘制、顶层绘制，左=-32，上=0。
+特效4：稀有专属，开始7，数量6，速度160，原图固定位置，透明绘制、顶层绘制，左=-32，上=0。
+特效5：追梦神器，开始13，数量6，速度120，原图固定位置，透明绘制、顶层绘制，左=-32，上=0。
+
+物品绑定：
+制式装备：1、2、3
+稀有专属：1、2、4
+追梦神器：1、2、5
+
+每件物品最多绑定三组背景特效。类别动画不能单独绑定，必须同时带公共底板1和公共外框2。
+
+六、唯一部署入口
+
+资源候选默认只读预检：
+& D:\XuanYuanDevPlatform\玄渊界面施工台\scripts\deploy-item-hint-animation-current.ps1
+
+资源候选正式部署：
+& D:\XuanYuanDevPlatform\玄渊界面施工台\scripts\deploy-item-hint-animation-current.ps1 -Apply
+
+物品链路全量只读审计：
+& D:\XuanYuanDevPlatform\玄渊界面施工台\scripts\sync-item-hint-bindings.ps1
+
+单件检查：
+& D:\XuanYuanDevPlatform\玄渊界面施工台\scripts\sync-item-hint-bindings.ps1 -ItemName '失乡战士长剑'
+
+单件修复：
+& D:\XuanYuanDevPlatform\玄渊界面施工台\scripts\sync-item-hint-bindings.ps1 -ItemName '失乡战士长剑' -Apply
+
+批量修复只允许在单件游戏验收通过后执行：
+& D:\XuanYuanDevPlatform\玄渊界面施工台\scripts\sync-item-hint-bindings.ps1 -ItemListPath 'D:\待处理装备名单.txt'
+& D:\XuanYuanDevPlatform\玄渊界面施工台\scripts\sync-item-hint-bindings.ps1 -ItemListPath 'D:\待处理装备名单.txt' -Apply
+
+名单必须为UTF-8文本，每行一个完整装备名称。只有明确需要处理EffectHintBGItems全部已绑定物品时，才使用-AllBoundItems -Apply；不得用它代替160件的精确名单。
+
+资源部署与物品同步不能混为一步。M2特效物品表只决定公共底板、外框和类别竖牌；ItemDescList最终组合负责透明占位和艾尔登法环动画。两条链路都通过，才允许进入M2重载和游戏验收。
+
+资源正式部署前必须由用户关闭客户端和M2。脚本会成对备份WZL/WZX并备份ItemDescList。物品同步脚本默认只读；显式`-Apply`时备份ItemDescList、EffectHintBGItems、EffectHintBG和EffectImageList，并保持CP936/GBK与原换行格式。
+
+旧candidate.8-candidate.12脚本和目录仅作历史证据与回滚，不再作为施工入口，不得重新部署到正式端。
+
+七、回滚
+
+本次已验收版本回滚目录：
+D:\XuanYuanDevPlatform\玄渊界面施工台\backups\item-hint-animation-candidate13_20260728_225122
+
+回滚时必须同时恢复：
+1. XY_ItemHint.wzl
+2. XY_ItemHint.wzx
+3. ItemDescList.txt
+
+WZL/WZX不得拆开恢复。
+
+八、验收标准
+
+1. Provider回读28帧，编号0-27连续，全部type6。
+2. 正式WZL/WZX哈希与candidate.13完全一致。
+3. ItemDescList保持CP936/GBK兼容和CRLF，不出现替换字符。
+4. 23条自定义装备全部含最终组合标签，旧PlayImg单标签为0条。
+5. 短属性装备不丢艾尔登法环Logo，也没有大块留白。
+6. 长属性装备不裁字，物品说明和Logo完整显示。
+7. 制式、稀有、追梦竖牌位置一致，不外飘、不过曝。
+8. 用户已在游戏内验收并确认“很完美”。
+
+九、最终结论
+
+可变高度装备悬浮框的核心不是做一张超长底图，也不是用负“下”撑高，而是让文字决定真实高度、静态透明Img预留动画区域、PlayImg只负责覆盖播放。以后新增Logo动画或底部动画时，必须沿用这一布局合同。

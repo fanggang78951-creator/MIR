@@ -1,0 +1,56 @@
+2026-09-09 更新：09号表支持混合新增和修改。批量做装备的“预检 → 确认生成/修改”与CLI equipment-preflight/equipment-apply按目标数据库逐行分流：已有名称修改，不存在名称新增。预检摘要列明每行动作，整批一个事务。旧“预检修改/确认修改”仍为仅修改入口。修改继续采用最终属性快照（可编辑属性空白清零）；来源编号空白保留原外观，非空沿用原修改换图行为。新装备仍需部位、来源编号。未修改用户表格内容。
+
+以下历史说明中“生成目标同名阻止”仅适用于内部纯create接口，日常混合入口以以上为准。
+
+玄渊平台——装备共享母表生成与修改接口
+
+一、唯一正式输入
+
+E:\XuanYuanDevPlatform\所需材料表格汇总\09_装备批量生成.xlsx
+
+生成和修改共用该文件，但操作类型保持分离。旧 10_装备属性修改.xlsx 只作兼容归档。
+
+二、GUI执行方式
+
+生成：批量做装备 -> 预检 -> 确认生成
+修改：批量做装备 -> 预检修改 -> 确认修改
+
+确认生成只接受 operation=create 的预检计划。
+确认修改只接受 operation=update 的预检计划。
+
+三、CLI执行方式
+
+生成预检：
+E:\XuanYuanDevPlatform\bin\xydp-cli.exe equipment-preflight --server D:\MirServer --client-data E:\11周年\data
+
+确认生成：
+E:\XuanYuanDevPlatform\bin\xydp-cli.exe equipment-apply --server D:\MirServer --client-data E:\11周年\data --yes
+
+修改预检（来源编号全部留空）：
+E:\XuanYuanDevPlatform\bin\xydp-cli.exe equipment-update-preflight --server D:\MirServer
+
+确认修改（来源编号全部留空）：
+E:\XuanYuanDevPlatform\bin\xydp-cli.exe equipment-update-apply --server D:\MirServer --yes
+
+修改表存在来源编号时，在修改命令追加：
+--client-data E:\11周年\data
+
+临时使用其他表格时追加：
+--input <xlsx路径>
+
+四、字段契约
+
+生成：名称、部位、来源编号必填；目标服已有同名装备阻止。来源编号就是最终 Looks；平台只读校验 Items/StateItem/DnItems 三套同号帧，不复制、不修改 WZL/WZX，允许多件装备共用同一 Looks。
+修改：名称必须存在；部位可空，非空必须匹配真实 StdMode。
+修改来源编号空：保留旧 Looks、Shape 和三套静态图。
+修改来源编号非空：克隆 Items/StateItem/DnItems 三套来源帧，更新 Looks，保留 Shape/StdMode。
+持久：表格不提供该列；生成和修改固定 DuraMax=60000。兼容旧表的持久值一律忽略。
+修改属性：XLSX 是最终属性快照；可编辑属性空白即最终清零。
+
+五、事务接口
+
+预检只在临时副本执行，不修改目标服或客户端。
+新建事务只提交服务器数据库、三表和脚本；客户端图库只读校验，六文件哈希与字节保持不变。
+修改换图事务同时覆盖服务器文件与客户端六个图库；数据库或任一图库锁定、哈希变化、临时校验失败或提交失败时整次回滚。
+修改换图时，同批相同来源编号只导入一次；当前 Looks 三套帧与来源逐字节一致时不追加。
+收据记录 operation、DuraMax=60000、source_id、old/new Looks、处理动作和回滚路径；新建动作固定为 reuse_source_id，修改换图另记六图库哈希。
