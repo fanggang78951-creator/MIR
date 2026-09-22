@@ -384,9 +384,9 @@ def _destination_reparse(root: Path, relative: str) -> bool:
 def plan_bootstrap(
     source_root: Path, mirror_root: Path, policy: SourcePolicy
 ) -> dict[str, object]:
-    source = Path(source_root).resolve()
+    inventory = inventory_source(source_root, policy)
+    source = Path(str(inventory["sourceRoot"]))
     mirror = Path(mirror_root).resolve(strict=False)
-    inventory = inventory_source(source, policy)
     blockers = list(inventory["blockers"])
     changes: list[dict[str, object]] = []
     for entry in inventory["files"]:

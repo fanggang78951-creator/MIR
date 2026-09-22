@@ -300,6 +300,16 @@ class BootstrapTests(unittest.TestCase):
         self.assertEqual(plan["blockers"], [])
         self.assertFalse(plan["isNoop"])
 
+    def test_bootstrap_plan_rejects_symlinked_source_root(self) -> None:
+        alias = self.root / "source-alias"
+        try:
+            os.symlink(self.source, alias, target_is_directory=True)
+        except OSError as exc:
+            self.skipTest(f"directory symlink unavailable: {exc}")
+
+        with self.assertRaisesRegex(SourceAuthorityError, "source root"):
+            plan_bootstrap(alias, self.mirror, self.policy)
+
     def test_same_destination_is_unchanged(self) -> None:
         (self.mirror / "README.md").write_bytes(self.readme_bytes)
 
