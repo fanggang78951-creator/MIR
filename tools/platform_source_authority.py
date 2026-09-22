@@ -409,6 +409,127 @@ def apply_bootstrap(
     }
 
 
+def _load_snapshot(path: Path) -> dict[str, object]:
+    data = json.loads(Path(path).read_text(encoding="utf-8"))
+    if not isinstance(data, dict) or data.get("schemaVersion") != 1:
+        raise SourceAuthorityError("invalid source authority snapshot schema")
+    files = data.get("files")
+    if not isinstance(files, list):
+        raise SourceAuthorityError("snapshot files must be a list")
+    seen: set[str] = set()
+    for item in files:
+        if not isinstance(item, dict):
+            raise SourceAuthorityError("snapshot file entry must be an object")
+        try:
+            relative = _normalized_relative(item.get("path"), "snapshot files")
+        except ValueError as exc:
+            raise SourceAuthorityError(str(exc)) from exc
+        if relative.casefold() in seen:
+            raise SourceAuthorityError(f"duplicate snapshot relative path: {relative}")
+        seen.add(relative.casefold())
+        digest = item.get("sha256")
+        size = item.get("bytes")
+        if not isinstance(digest, str) or not re.fullmatch(r"[0-9a-f]{64}", digest):
+            raise SourceAuthorityError(f"invalid snapshot sha256: {relative}")
+        if not isinstance(size, int) or isinstance(size, bool) or size < 0:
+            raise SourceAuthorityError(f"invalid snapshot byte count: {relative}")
+        item["path"] = relative
+    canonical = json.dumps(files, ensure_ascii=False, sort_keys=True, separators=(",", ":"))
+    expected = hashlib.sha256(canonical.encode("utf-8")).hexdigest()
+    if data.get("snapshotFingerprint") != expected:
+        raise SourceAuthorityError("snapshot fingerprint does not match file records")
+    return data
+
+
+def _managed_hash(root: Path, relative: str) -> str | None:
+    if _destination_reparse(root, relative):
+        raise SourceAuthorityError(f"managed path contains a reparse point: {relative}")
+    path = _inside(root, relative)
+    if not path.exists():
+        return None
+    if not path.is_file():
+        raise SourceAuthorityError(f"managed path is not a regular file: {relative}")
+    return _sha256(path)
+
+
+def preflight_sync(
+    mirror_root: Path, runtime_root: Path, snapshot_path: Path
+) -> dict[str, object]:
+    mirror = Path(mirror_root).resolve()
+    runtime = Path(runtime_root).resolve()
+    if not mirror.is_dir():
+        raise SourceAuthorityError(f"mirror root is not a directory: {mirror}")
+    if not runtime.is_dir():
+        raise SourceAuthorityError(f"runtime root is not a directory: {runtime}")
+    snapshot = _load_snapshot(snapshot_path)
+    changes: list[dict[str, object]] = []
+    blockers: list[dict[str, str]] = []
+    files = sorted(snapshot["files"], key=lambda item: str(item["path"]).casefold())
+    for item in files:
+        relative = str(item["path"])
+        baseline = str(item["sha256"])
+        mirror_hash = _managed_hash(mirror, relative)
+        runtime_hash = _managed_hash(runtime, relative)
+        if mirror_hash is None:
+            action = "blocked"
+            blockers.append(
+                {
+                    "code": "mirror-missing",
+                    "path": relative,
+                    "message": "managed Git mirror file is missing",
+                }
+            )
+        elif runtime_hash is None:
+            action = "create-runtime"
+        elif mirror_hash == baseline and runtime_hash == baseline:
+            action = "unchanged"
+        elif mirror_hash != baseline and runtime_hash == baseline:
+            action = "update-runtime"
+        elif mirror_hash == baseline and runtime_hash != baseline:
+            action = "blocked"
+            blockers.append(
+                {
+                    "code": "runtime-drift",
+                    "path": relative,
+                    "message": "runtime changed while Git mirror stayed at baseline",
+                }
+            )
+        elif mirror_hash == runtime_hash:
+            action = "converged"
+        else:
+            action = "blocked"
+            blockers.append(
+                {
+                    "code": "three-way-conflict",
+                    "path": relative,
+                    "message": "Git mirror and runtime changed differently from baseline",
+                }
+            )
+        changes.append(
+            {
+                "path": relative,
+                "action": action,
+                "baselineSha256": baseline,
+                "mirrorSha256": mirror_hash,
+                "runtimeSha256": runtime_hash,
+            }
+        )
+    blockers.sort(key=lambda item: (item["path"].casefold(), item["code"]))
+    no_write_actions = {"unchanged", "converged"}
+    return {
+        "schemaVersion": 1,
+        "mode": "git-to-runtime-preflight",
+        "mirrorRoot": str(mirror),
+        "runtimeRoot": str(runtime),
+        "snapshotFingerprint": snapshot["snapshotFingerprint"],
+        "changes": changes,
+        "blockers": blockers,
+        "isNoop": not blockers and all(
+            str(item["action"]) in no_write_actions for item in changes
+        ),
+    }
+
+
 def _write_json(path: Path, value: object) -> None:
     destination = Path(path)
     destination.parent.mkdir(parents=True, exist_ok=True)
@@ -439,6 +560,13 @@ def _parser() -> argparse.ArgumentParser:
     bootstrap_apply.add_argument("--plan", type=Path, required=True)
     bootstrap_apply.add_argument("--policy", type=Path, required=True)
     bootstrap_apply.add_argument("--yes", action="store_true")
+    sync_preflight = subparsers.add_parser(
+        "sync-preflight", help="Git镜像到E盘运行副本三方只读预检"
+    )
+    sync_preflight.add_argument("--mirror-root", type=Path, required=True)
+    sync_preflight.add_argument("--runtime-root", type=Path, required=True)
+    sync_preflight.add_argument("--snapshot", type=Path, required=True)
+    sync_preflight.add_argument("--output", type=Path, required=True)
     return parser
 
 
@@ -483,6 +611,21 @@ def main(argv: list[str] | None = None) -> int:
         result = apply_bootstrap(plan, confirmed=args.yes)
         print(json.dumps(result, ensure_ascii=False))
         return 0
+    if args.command == "sync-preflight":
+        report = preflight_sync(args.mirror_root, args.runtime_root, args.snapshot)
+        _write_json(args.output, report)
+        print(
+            json.dumps(
+                {
+                    "output": str(args.output.resolve()),
+                    "changes": len(report["changes"]),
+                    "blockers": len(report["blockers"]),
+                    "isNoop": report["isNoop"],
+                },
+                ensure_ascii=False,
+            )
+        )
+        return 2 if report["blockers"] else 0
     raise AssertionError(args.command)
 
 

@@ -15,6 +15,7 @@ from tools.platform_source_authority import (
     inventory_source,
     load_policy,
     plan_bootstrap,
+    preflight_sync,
 )
 
 
@@ -291,6 +292,134 @@ class BootstrapTests(unittest.TestCase):
         self.assertEqual(applied.returncode, 0, applied.stdout + applied.stderr)
         self.assertEqual((self.mirror / "README.md").read_bytes(), self.readme_bytes)
         self.assertTrue((self.mirror / "source-authority.snapshot.json").is_file())
+
+
+class SyncPreflightTests(unittest.TestCase):
+    def setUp(self) -> None:
+        self.temp = tempfile.TemporaryDirectory()
+        self.addCleanup(self.temp.cleanup)
+        self.root = Path(self.temp.name)
+        self.mirror = self.root / "mirror"
+        self.runtime = self.root / "runtime"
+        self.mirror.mkdir()
+        self.runtime.mkdir()
+        self.baseline = b"baseline\n"
+        self.snapshot_path = self.mirror / "source-authority.snapshot.json"
+        self.paths = [
+            "unchanged.txt",
+            "git-change.txt",
+            "runtime-change.txt",
+            "converged.txt",
+            "conflict.txt",
+            "runtime-missing.txt",
+            "mirror-missing.txt",
+        ]
+        for relative in self.paths:
+            if relative != "mirror-missing.txt":
+                (self.mirror / relative).write_bytes(self.baseline)
+            if relative != "runtime-missing.txt":
+                (self.runtime / relative).write_bytes(self.baseline)
+        (self.mirror / "git-change.txt").write_bytes(b"git\n")
+        (self.runtime / "runtime-change.txt").write_bytes(b"runtime\n")
+        (self.mirror / "converged.txt").write_bytes(b"same-new\n")
+        (self.runtime / "converged.txt").write_bytes(b"same-new\n")
+        (self.mirror / "conflict.txt").write_bytes(b"git-side\n")
+        (self.runtime / "conflict.txt").write_bytes(b"runtime-side\n")
+        (self.runtime / "bin").mkdir()
+        (self.runtime / "bin" / "large.exe").write_bytes(b"unmanaged")
+        files = [
+            {
+                "path": relative,
+                "bytes": len(self.baseline),
+                "sha256": hashlib.sha256(self.baseline).hexdigest(),
+            }
+            for relative in self.paths
+        ]
+        canonical = json.dumps(
+            files, ensure_ascii=False, sort_keys=True, separators=(",", ":")
+        )
+        self.snapshot_path.write_text(
+            json.dumps(
+                {
+                    "schemaVersion": 1,
+                    "sourceRoot": str(self.runtime),
+                    "sourceFingerprint": hashlib.sha256(canonical.encode("utf-8")).hexdigest(),
+                    "snapshotFingerprint": hashlib.sha256(canonical.encode("utf-8")).hexdigest(),
+                    "files": files,
+                },
+                indent=2,
+            ),
+            encoding="utf-8",
+        )
+
+    def runtime_state(self) -> dict[str, tuple[bytes, int]]:
+        return {
+            path.relative_to(self.runtime).as_posix(): (
+                path.read_bytes(),
+                path.stat().st_mtime_ns,
+            )
+            for path in self.runtime.rglob("*")
+            if path.is_file()
+        }
+
+    def test_three_way_matrix_and_unmanaged_files_are_ignored(self) -> None:
+        before = self.runtime_state()
+
+        report = preflight_sync(self.mirror, self.runtime, self.snapshot_path)
+
+        actions = {entry["path"]: entry["action"] for entry in report["changes"]}
+        self.assertEqual(
+            actions,
+            {
+                "conflict.txt": "blocked",
+                "converged.txt": "converged",
+                "git-change.txt": "update-runtime",
+                "mirror-missing.txt": "blocked",
+                "runtime-change.txt": "blocked",
+                "runtime-missing.txt": "create-runtime",
+                "unchanged.txt": "unchanged",
+            },
+        )
+        self.assertEqual(
+            {item["code"] for item in report["blockers"]},
+            {"mirror-missing", "runtime-drift", "three-way-conflict"},
+        )
+        self.assertFalse(report["isNoop"])
+        self.assertNotIn("bin/large.exe", actions)
+        self.assertEqual(self.runtime_state(), before)
+
+    def test_sync_preflight_rejects_unsafe_snapshot_path(self) -> None:
+        snapshot = json.loads(self.snapshot_path.read_text(encoding="utf-8"))
+        snapshot["files"][0]["path"] = "../escape.txt"
+        self.snapshot_path.write_text(json.dumps(snapshot), encoding="utf-8")
+        with self.assertRaisesRegex(SourceAuthorityError, "relative"):
+            preflight_sync(self.mirror, self.runtime, self.snapshot_path)
+
+    def test_sync_preflight_cli_is_read_only_and_returns_two_for_blockers(self) -> None:
+        before = self.runtime_state()
+        output = self.root / "sync-report.json"
+        completed = subprocess.run(
+            [
+                sys.executable,
+                "tools/platform_source_authority.py",
+                "sync-preflight",
+                "--mirror-root",
+                str(self.mirror),
+                "--runtime-root",
+                str(self.runtime),
+                "--snapshot",
+                str(self.snapshot_path),
+                "--output",
+                str(output),
+            ],
+            cwd=Path(__file__).resolve().parents[1],
+            text=True,
+            capture_output=True,
+            check=False,
+        )
+        self.assertEqual(completed.returncode, 2, completed.stdout + completed.stderr)
+        self.assertEqual(len(json.loads(output.read_text(encoding="utf-8"))["blockers"]), 3)
+        self.assertEqual(self.runtime_state(), before)
 
 
 if __name__ == "__main__":
