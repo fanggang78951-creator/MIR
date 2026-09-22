@@ -1,0 +1,139 @@
+玄渊平台——怪物资料与正确补丁本地库一键植入接口 V3
+建立日期：2026-08-04
+当前修订：2026-09-09（供体迁移后的本地PAK归档恢复）
+适用引擎：翎风 / LFM2
+活动目录：E:\XuanYuanDevPlatform\怪物库
+活动索引：E:\XuanYuanDevPlatform\怪物库\catalog.sqlite（schema_version=3）
+GUI 页面：怪物库
+
+一、接口目标
+
+从明月供体只读提取每一条有效 Monster 数据行，把完整 26 字段资料、正确 Mon
+动作补丁、资源哈希、槽位、PAK密码和可选预览统一沉淀到平台本地“怪物库”。
+以后选择一批怪物库编号，即可把 Monster 数据行和对应客户端补丁作为同一事务
+植入目标服务端与客户端。
+
+本接口不生成爆率、刷怪、地图脚本或技能脚本。
+
+二、唯一正确的外观映射
+
+    library_no = Appr // 10 + 1
+    slot_no    = Appr % 10
+
+游戏实测与现有原生资源共同确认：
+
+    Appr215  -> Mon22，槽位5
+    Appr1052 -> Mon106，槽位2
+    Appr1230 -> Mon124，槽位0
+    Appr1800 -> Mon181，槽位0
+
+旧公式 `Appr // 10` 已列为禁止规则。任何扫描、去重、预览、补丁复制和测试都必须
+调用同一个 `appr_to_library()`，不得各自重写公式。
+
+三、本地库保存内容
+
+catalog.sqlite 的 monsters 表每行代表供体 Monster 表中的一只怪物，主要保存：
+
+1. monster_id：平台本地稳定库编号，GUI多选和CLI调用都使用它；
+2. monster_name、Appr、Race、RaceImg、等级、经验、HP、命中等显示字段；
+3. monster_json：供体 Monster 表完整 26 字段；
+4. library_no、slot_no：正确动作图库与槽位；
+5. source_kind：完整PAK，或成对WZL/WZX；
+6. 本地资源路径、SHA-256、PAK密码；
+7. sidecar桥接得到的预览路径。
+
+assets 目录按资源内容哈希保存完整图库。PNG/BMP 动作资料只作原始帧归档与编号
+依据，不在未验证资源坐标和帧序时擅自重编码为运行补丁。
+
+四、扫描与本地化
+
+GUI：
+
+    怪物库 -> 扫描明月并重建怪物库
+
+CLI：
+
+    bin\xydp-cli.exe monster-library-scan `
+      --donor-db <明月ApexM2.DB> `
+      --donor-wzl-data <明月WZL-data> `
+      --donor-pak-data <明月PAK-data> `
+      --donor-pak-rules <明月pak.txt> `
+      --server <用于显示去重状态的目标服> `
+      --client-data <目标客户端data>
+
+扫描只读供体，不写目标。PAK只有在密码规则唯一时才进入活动库；否则优先使用
+同号完整WZL/WZX，仍不完整则标记“已跳过”。PAK密码被保存到本地 catalog，后续
+植入不依赖供体 pak.txt 继续存在。
+
+若供体 pak.txt 保留的是迁移前的绝对路径、该路径已失效，扫描会优先使用供体目录
+中的同号 PAK；供体目录也缺失时，只可回退到本怪物库 assets/pak 中唯一且同名的
+已归档 PAK。存在多个同号归档文件时必须标记冲突，不能猜测选择其中一个。
+
+五、预览桥接
+
+PAK预览继续复用玄渊界面施工台导出的 `*.sidecar.json`。sidecar中的 Mon 号必须是
+按正确公式得到的真实图库号。每个槽位按360帧区间选择首张可用图；预览缺失只影响
+界面缩略图，不影响完整动作补丁植入。
+
+六、一键植入事务
+
+GUI：
+
+    怪物库 -> 选择库编号 -> 预检选中 -> 一键植入
+
+CLI：
+
+    bin\xydp-cli.exe monster-library-preflight --monster-id <编号> `
+      --server <服务端> --client-data <客户端data> [--generator-login-dir <实际登录器目录>]
+
+    bin\xydp-cli.exe monster-library-apply --monster-id <编号> `
+      --server <服务端> --client-data <客户端data> [--generator-login-dir <实际登录器目录>] --yes
+
+同一事务最多包含四类变化：
+
+1. 目标 `Mud2\DB\ApexM2.DB` 的 Monster 新增行；
+2. 目标客户端 data 的完整 PAK 或成对 WZL/WZX；
+3. 使用PAK时目标 `登录器\pak.txt` 的唯一密码登记。
+4. 实际 MakeGameLogin 目录 `pak.txt` 缺失的 Mon 规则；只追加、不删除、不改已有规则。
+
+平台默认自动定位：
+
+    D:\素材文件夹\LFM2[20260707]\登录器
+
+若环境变化，可用环境变量 `XYDP_MAKEGAMELOGIN_DIR` 或CLI参数
+`--generator-login-dir <目录>` 指定；GUI不要求用户重复填写该路径。
+
+提交前后均检查SHA-256和SQLite完整性。实际登录器同名PAK已有不同密码时预检阻止。
+任何一步失败，已提交的服务端、客户端和生成器规则按备份逆序恢复。
+
+七、去重与冲突规则
+
+1. 目标 Monster 表已有同名怪物：跳过，不迁移、不覆盖；
+2. 目标只占用了相同Appr但名称不同：允许新增，不能把“Appr已用”当成同名怪物；
+3. 多只怪物共用一个Mon图库或同一模型库编号：补丁只复制一次，数据库行分别新增；
+4. 目标已有字节相同补丁：复用，不重复复制；
+5. 目标同号补丁内容不同：跳过该图库，禁止覆盖；
+6. 目标PAK与WZL/WZX同号混装：禁止；
+7. 目标pak.txt同名登记密码不同：禁止覆盖；
+8. M2Server.exe正在运行：预检阻止数据库植入，必须由用户手动关闭M2后重试。
+
+八、回滚
+
+GUI：怪物库 -> 输入事务号 -> 逐字节回滚
+
+CLI：
+
+    bin\xydp-cli.exe monster-library-rollback --transaction <事务号> --yes
+
+回滚前先确认目标文件仍是该事务提交后的哈希；如果玩家或其他工具之后修改过文件，
+平台停止回滚，不覆盖后续改动。
+
+九、明确不在本接口范围内
+
+1. 爆率表与神器脚本；
+2. MonGen.txt刷怪位置、数量、首刷与刷新间隔；
+3. MapInfo、地图连接和NPC；
+4. 怪物技能脚本或自定义AI；
+5. 自动改名、自动平衡属性或覆盖本端同名怪物。
+
+以上内容必须走各自独立任务和预检，不得混入怪物库事务。

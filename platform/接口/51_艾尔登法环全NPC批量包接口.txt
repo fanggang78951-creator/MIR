@@ -1,0 +1,71 @@
+玄渊平台——艾尔登法环全NPC批量包接口
+整理日期：2026-09-21
+当前状态：candidate，已部署到当前测试目标，待游戏实测
+
+一、唯一入口
+
+GUI：脚本配置同步 -> NPC 批量包
+
+核心类：
+- src\xydp\npc_bundle.py::NpcBundleService
+- src\xydp\config_sync.py::ConfigSyncService.preflight_bundle/install_bundle
+
+不建立第二套NPC生成器。各业务分别调用现有初始营地、技能强化、成长装备、项链幸运、图鉴、回收、合成、洗练/开光和武器附魔核心。
+
+二、默认目标
+
+- 服务端：D:\MirServer
+- 客户端：E:\11周年
+- 登录器：D:\素材文件夹\LFM2[20260707]\登录器
+- 平台母库：E:\XuanYuanDevPlatform
+
+三、CLI
+
+零写入预检：
+python run_cli.py config-sync-bundle-preflight --source <ZIP或已解压目录>
+
+单事务安装：
+python run_cli.py config-sync-bundle-install --source <ZIP或已解压目录> --yes
+
+逐字节回滚：
+python run_cli.py config-sync-bundle-rollback --transaction <事务号> --yes
+
+需要非默认目标时，显式传入 --server、--client、--launcher。
+
+四、统一预检输出
+
+- 原始ZIP/目录的SHA-256。
+- 每份工作簿的完整相对路径；同名21/22/34表不互相覆盖。
+- 所有NPC的最终地图、坐标、外观和是否复用旧NPC。
+- 称号原编号、实际编号和复用状态。
+- 各子模块blockers/warnings及最终文件变更。
+- 服务端、客户端、登录器三作用域的前后哈希。
+
+五、固定范围
+
+本轮纳入：初始营地、5条技能链、255档神印、20转、100级贯穿称号、6条两级独立称号、16个合成NPC/38条配方、大陆洗练与开光、8个魂魄任务、战灰刻印、项链幸运、图鉴和装备回收。
+
+固定排除：40_命格NPC规则、独立材料回收、地图、怪物和地图素材。初始营地旧转生入口保持停用。
+
+六、事务与状态
+
+- 所有子模块先在影子服串行编译；任一blocker会使整批零写入。
+- 安装只使用一个总事务，同时备份server/client/launcher。
+- 安装前再校验原ZIP哈希和每个目标文件的预检前字节。
+- 平台不启动、停止或操作M2。
+- 安装成功只记为“已部署待游戏实测”；全部游戏验收前不更新catalog/current-release.json。
+
+七、当前实例证据
+
+原ZIP SHA-256：c05f7b49b43ffe232bc714ccb11ce15f10f5559aeb15d5550be46c8936ab2456
+统一预检：blockers=0，最终90个文件变更（服务端84、客户端2、登录器4）。
+临时克隆完整事务回滚：90/90安装回读一致，90/90回滚后逐字节一致。
+正式批量安装事务：20260921_070557_81f6bd1d；备份位于E:\XuanYuanDevPlatform\backups\20260921_070557_81f6bd1d。
+共享QFunction固定顺序校正事务：20260921_074233_b28ea29f；只移动4处完整装备收集受管块，前后22个受管块的内容摘要完全一致。
+!setup受管行CRLF校正事务：20260921_083126_5b42ced3；只恢复两个说明开关行的CRLF，文件哈希回到施工前原始值，既有1处历史LF未触碰。
+安装后整包复检：blockers=0、changes=0；报告位于D:\codex临时工作区\elden-npc-v21\bundle-postinstall-preflight.json。
+冻结候选：20260921-elden-npc-v21-candidate4，published=false，游戏状态为待验证。
+候选GUI SHA-256：1210eb2e06aaa77fc1fb6c2842688c9f497f77e0aa365deda88d1847dec883ed。
+候选CLI SHA-256：10a6267cba6ac1048dc4e76362e561ddfb8120ea189dcd637b891dcbef452c28。
+完整回归：平台946项通过（2项按环境条件跳过），做装备177项通过；GUI/CLI源码溯源、冻结身份、项目总览和GUI冷启动冒烟全部通过。
+catalog\current-release.json保持原SHA-256 12cff8a2659614f9c5719f7121fb8ae21cf69fa453351f31670324fa2878b419，未正式发布。

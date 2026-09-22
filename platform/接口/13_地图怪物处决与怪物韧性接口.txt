@@ -1,0 +1,57 @@
+玄渊地图怪物处决与怪物韧性接口（处决测试页表格驱动）
+
+整理日期：2026-07-31
+引擎：翎风 / LFM2
+状态：地图0双向数值已游戏验收；lab.10真实XX地图号平台事务候选
+
+一、唯一配置入口
+
+E:\XuanYuanDevPlatform\所需材料表格汇总\13_地图怪物处决规则.csv
+
+字段：
+- map_id：服务端真实逻辑地图编号；当前地图使用XX加数字格式，例如XX346，必须保留XX。平台同时兼容历史纯数字地图号。
+- enabled：0关闭、1启用该地图双向规则。
+- required_toughness：玩家抵抗怪物处决的地图门槛。
+- base_chance_bp：怪物处决玩家的基础概率，100BP=1%。
+- monster_execution_toughness：地图怪物抵抗玩家处决的韧性，允许0～10000；每1点减少玩家10BP处决概率。
+- 中文说明：只供人阅读，不参与脚本计算。
+
+二、执行方式
+
+打开平台“处决测试”页，选择测试服，先点“预检导入”，确认报告中的规则表路径、哈希、地图数量、地图编号和修改文件，再确认导入。旧D盘独立编译命令已停用，不得作为正式入口。
+
+处决本体与地图规则使用同一事务；写入前逐字节备份。重复标签、重复地图、非法数值、缺少锚点、预检后目标变化或安装后手改都会停止。
+
+三、内部标签和变量
+
+@XYDP_ExecutionLoadMapRule
+用途：登录和EnterMap后先清零旧地图状态，再按当前地图读取规则。不是NPC或玩家公开入口。
+
+[@StruckDamage]
+用途：怪物攻击玩家方向；只读取required_toughness、base_chance_bp和玩家韧性。
+
+xy.lab.execution.map-monster-toughness受管块
+用途：玩家攻击怪物方向；位于原处决AttackDamage的PVE随机触发位置，只把N$XY_EXEC_PVEMapEffectiveBP写回N$XY_EXEC_EffectiveBP，供原档位、增伤和持续时间链继续计算。
+
+占用变量：
+- N$XY_EXEC_MONSTER_MapPVEToughness：当前地图怪物韧性。
+- N$XY_EXEC_PVEMapEffectiveBP：玩家对当前地图怪物的有效处决概率。
+
+四、公式
+
+怪物→玩家：基础概率×(地图门槛-玩家韧性)/地图门槛，最低0。
+玩家→怪物：玩家处决概率BP-地图怪物韧性×10，限制0～10000BP。
+
+地图0当前值：玩家门槛100、怪物基础处决10%、地图怪物韧性60。玩家处决10%打怪时实际4%，并按4%档计算增伤和时间。
+
+五、严格隔离规则
+
+1. monster_execution_toughness只允许进入NOT CHECKCURRTARGETRACE = 0的PVE分支，不得进入PVP。
+2. required_toughness和base_chance_bp只用于怪物攻击玩家，不得反向减少玩家PVE处决。
+3. 未配置地图或enabled=0时，地图怪物韧性必须清零，恢复玩家原始PVE处决概率。
+4. 当前仍保留在“处决测试”专项页，不进入常驻基础；lab.10安装链复验通过后再晋级verified。
+5. 工具不会启动、关闭或重载M2和翎风引擎；写入后由用户自行重载测试。
+
+六、测试与回滚
+
+重点验证玩家处决5%、10%、20%在地图0怪物韧性60时分别得到0%、4%、14%，同时验证PVP和怪物处决玩家逻辑不变。回滚时逐字节恢复最近execution_map_rules_before目录中的QFunction-0.txt。

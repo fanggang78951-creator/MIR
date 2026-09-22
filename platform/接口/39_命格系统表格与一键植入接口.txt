@@ -1,0 +1,108 @@
+玄渊平台——命格系统表格与一键植入接口
+整理日期：2026-08-23
+适用引擎：翎风 / LFM2
+包 ID：xy.optional.mingge-system
+状态：candidate，待游戏验证
+
+补充边界（2026-08-25）：本文件描述的37号表仍使用 image_gradient 图片标签后端。新建的 native_segments 原生分段多色能力是独立的离线候选生成器，见“40_命格原生多色离线候选接口.txt”；它不改变本文件的一键植入、资源生成或回滚合同。
+
+一、唯一入口与边界
+
+命格系统只允许由已登记文档 37_命格系统.xlsx 经“脚本配置同步”安装，登记 ID 为 mingge_system，consumer / route 为 mingge-system。
+xy.optional.mingge-system 只是可发现、无可执行文件的 candidate 描述包；其 operations、preflight_checks、post_checks 全为空。普通成果包安装入口不得使用，也不得另建第二套命格命令。
+
+二、GUI 路线
+
+1. 打开“脚本配置同步”。
+2. 只选择 E:\XuanYuanDevPlatform\所需材料表格汇总\37_命格系统.xlsx。
+3. 点击“预检所选文件”，审核 blockers、warnings、changes 和来源哈希。
+4. 预检无 blocker 后点击“确认植入”，保存返回的事务号。
+
+三、CLI（三条现有命令）
+
+只读预检：
+bin\xydp-cli.exe config-sync-preflight --server D:\NewMirServer --client D:\Client --file E:\XuanYuanDevPlatform\所需材料表格汇总\37_命格系统.xlsx
+
+确认植入：
+bin\xydp-cli.exe config-sync-install --server D:\NewMirServer --client D:\Client --file E:\XuanYuanDevPlatform\所需材料表格汇总\37_命格系统.xlsx --yes
+
+事务回滚：
+bin\xydp-cli.exe config-sync-rollback --server D:\NewMirServer --transaction <事务号> --route mingge-system --yes
+
+禁止使用或新增 mingge-preflight、mingge-install、mingge-rollback 等第二套命令。
+
+四、37 号表的七张工作表
+
+1. 系统设置：NPC、脚本目录、地图、坐标、外观、目标装备、装备位、槽位数、保底和数据版本。
+2. 槽位开放：1～8 槽的名称、启用状态、等级条件和永久开放状态。
+3. 词条定义：八个词条 ID、槽位、名称、启用状态和显示顺序。
+4. 品质属性：各词条在绿、橙、红、彩品质下的属性键、数值、单位和悬浮文案。
+5. 品质规则：累计阈值、周期彩色、红/橙概率和绿色兜底的有序状态机。
+6. 洗练消耗：单抽、十连等模式的消耗类型、准确名称和数量。
+7. 品质样式：字体、字号、画布、描边及各品质颜色或渐变。
+
+工作簿必须恰好包含以上七张表；缺表、多表、表头漂移或规则不完整均阻止。
+
+五、固定装备与只读检查
+
+- 目标装备固定为“鞭尸灵玉”，工作簿不得改成其他名称。
+- 目标服 ApexM2.DB 的 StdItems 必须准确命中唯一一行 Name=鞭尸灵玉 且 StdMode=90；数据库只读检查，本系统不写 StdItems。
+- 工作簿必须固定装备位=17；任何其他装备位均阻止且 changes 为空。
+- MapInfo 必须已登记工作簿指定地图；客户端 data 目录、必需服务端文件和资源对必须完整。
+- 预检只读；来源文件或目标字节在安装确认前发生变化时必须重新预检。
+
+六、受管文件
+
+服务端受管目标：
+- Mir200\!Setup.txt
+- Mir200\Envir\MerChant.txt
+- Mir200\Envir\MapQuest_Def\QManage.txt
+- Mir200\Envir\Market_Def\QFunction-0.txt
+- Mir200\Envir\CustomItemPropertyTextVarList.txt
+- Mir200\Envir\EffectImageList.txt
+- Mir200\Envir\Market_Def\<表格脚本目录>\<NPC>-<地图>.txt
+- Mir200\Envir\QuestDiary\玄渊命格\命格核心.txt
+- Mir200\Envir\QuestDiary\玄渊命格\命格显示.txt
+- Mir200\Envir\QuestDiary\玄渊命格\命格属性.txt
+- Mir200\Envir\QuestDiary\玄渊命格\platform-state.json
+
+客户端受管目标：
+- data\XY_MingGeLabels_<配置哈希前8位>.wzl
+- data\XY_MingGeLabels_<配置哈希前8位>.wzx
+
+只读依赖包括 Mir200\Envir\MapInfo.txt、Mud2\DB\ApexM2.DB 以及既有命格对话框资源；它们不是本表可随意覆盖的普通受管输出。
+
+六点一、引擎“自定义装备属性”界面的等价落盘合同
+
+本系统必须按翎风引擎“选项 → 自定义装备属性”界面保存后的语义生成文件，不得只凭脚本命令猜测显示效果：
+
+1. !Setup.txt 中 CustomItemPropertyCheck1～7 固定为 0，仅关闭原生基础属性行的客户端直显；CustomItemPropertyBindName1～7 保留原本名称，绑定本身仍可用于属性生效。
+2. CustomItemPropertyCheck60 固定为 1，CustomItemPropertyBindName60 固定为 <TEXT:$$1>，60号只承担命格短标签图片显示。
+3. 每槽真实属性写入1～8行；每槽短标签写入9～16行。两组均必须 SetCustomItemAbil 类型4=9，等价于界面模块“自定义属性”。
+4. 真实属性行使用1～7号引擎属性绑定并写入真实数值；短标签行统一绑定60，只写入图片变量序号，不得承担真实属性。
+5. CustomItemPropertyTextVarList.txt 必须逐词条使用独立帧：绿0～7、橙8～15、红16～23、彩24～31；不得按品质让八槽共用同一帧。
+6. PlayImg 的X/Y偏移固定为0/0；悬浮正文写在备注参数中。禁止用负X偏移把词条图片绘制到称号、装备栏等相邻界面。
+7. 上述Check1～7属于引擎全局显示开关；目标服若另有系统依赖原生1～7行直显，预检或人工审查必须先确认取舍，不能误认为只影响“鞭尸灵玉”。
+
+七、安装、重载与游戏验收
+
+安装必须使用预检返回的同一计划，由 MingGeService 事务化 staging、哈希复核和原子替换；任一写入失败必须逆序恢复，不留下半成品。
+安装完成后必须重载 M2 脚本，再在独立测试服验证 NPC 可见和可交互、单抽/十连、保底、自选、八槽开放、鞭尸灵玉装备位17读取、属性显示、穿脱刷新、换图、死亡复活和重登保持。
+Task 8 不操作真实服务端、客户端、M2 或游戏引擎；未完成上述游戏验收前状态始终为待游戏验证，不得写 verified。
+
+命格核心与命格显示属于 QuestDiary 的可执行 #CALL 目标。编译结果必须采用本端已验证的整文件封装：入口标签下一行是独立“{”，文件最后一个非空行是独立“}”，全部业务标签位于这一对花括号内部。缺少该封装会使 M2 报“script error, load fail”，并表现为龙魂觉醒 NPC 点击无反应；NPC 入口、QManage 与 QFunction 不得引用未封装的 QuestDiary 目标。
+
+八、回滚要求
+
+1. 必须保留安装事务号，并使用：
+   bin\xydp-cli.exe config-sync-rollback --server D:\NewMirServer --transaction <事务号> --route mingge-system --yes
+2. 回滚前必须核对所有安装后文件哈希；任一受管文件被人工修改时整体阻止，不得部分回滚或猜测覆盖。
+3. 回滚成功后必须逐字节恢复旧文件、删除本事务新建的客户端资源对，并保持原 receipt.json 不变、另写 rollback.json。
+4. 回滚后再次重载 M2 脚本，复核旧功能和旧资源恢复。
+
+九、禁止
+
+- 禁止从成果包库普通安装入口直接安装本描述包。
+- 禁止绕过 37_命格系统.xlsx 直接拼接脚本或复制 Task 3 payload 模板到目标服。
+- 禁止修改 package payload；它是既有编译模板与属性注册表，不属于 Task 8 写入范围。
+- 禁止把静态校验、M2 加载或候选部署写成游戏验收通过。

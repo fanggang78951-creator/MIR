@@ -1,0 +1,13 @@
+可拖动装备操作台通用接口（正式标准）
+
+已验收实现：xy.optional.equipment-wash-opening 1.0.0。
+
+固定规则：
+1. 独立WZL/WZX成对进入客户端data，并在EffectImageList唯一登记。
+2. OPENMERCHANTBIGDLG使用可移动参数1。
+3. ITEMBOX必须放在#SAY后的第一个元素，使其相对原点定位。
+4. 标题、说明、按钮全部使用<&Text>绝对坐标；禁止普通<Text>承担大画布布局。
+5. @ItemIntoBoxN只BREAK，禁止重开大对话框或#SAY刷新。
+6. 装备实例使用boxitemN修改并UpdateItem boxitemN刷新。
+
+验收经验：candidate.5的普通<Text>会逐项累加向右偏移，禁止参考；candidate.6的ITEMBOX首元素+<&Text>为正式正确逻辑。

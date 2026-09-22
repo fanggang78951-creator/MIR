@@ -1,0 +1,29 @@
+2026-09-08 当前状态：诊断事务已恢复并由20260908-r2正式洗练候选替换。以下为追溯接口，不得再次执行该旧恢复命令。当前制作与部署使用接口25及最新总控交班。
+
+洗练故障无消耗诊断与恢复接口（临时，不是正式业务能力）
+唯一任务：20260907_1541_平台总控与可靠部署；当前状态：待验证。
+正式r1 / 1.2.0-candidate.2真实游戏失败：扣费后“洗练词条生成失败，请联系管理员。”。
+常规洗练部署暂停，禁止用接口25覆盖诊断；先取得引擎调用观测，再修复和重新验收。
+
+诊断包：xy.diagnostic.wash-call-context-20260908 / 0.1.0-candidate.1。
+平台CLI：E:\XuanYuanDevPlatform\bin\xydp-cli-20260908-r1.exe；SHA256 d0279f9bf8b643ad7c01b92daed26fb4df648122e58f5424d7cf4f05b4e93b7b。
+候选root：E:\XuanYuanDevPlatform\workspace\governance-20260907\wash-call-context-20260908\probe-platform；manifest与两脚本SHA见 E:\XuanYuanDevPlatform\evidence\project-governance-20260907\wash-call-context-20260908\probe\package-plan.json。
+本次事务：20260908_085138_c7c0326c；收据：E:\XuanYuanDevPlatform\workspace\governance-20260907\wash-call-context-20260908\probe-platform\backups\20260908_085138_c7c0326c\receipt.json。
+目标：D:\MirServer；临时替换Mir200/Envir/Market_Def/玄渊实验室/装备洗练-XY_NMGF_MAIN.txt，新增Mir200/Envir/QuestDiary/玄渊实验室/装备洗练/洗练调用诊断核心.txt。NPC注册、坐标和其他洗练/开光脚本未改。
+仅执行MOV独立诊断变量、固定条件及CALL/GOTO/延迟/对话；无货币、物品、数据库或角色业务读写。收费入口停用。
+
+实际安装命令（已完成，禁止重复执行）：
+  "E:\XuanYuanDevPlatform\bin\xydp-cli-20260908-r1.exe" --root "E:\XuanYuanDevPlatform\workspace\governance-20260907\wash-call-context-20260908\probe-platform" install --server "D:\MirServer" --package xy.diagnostic.wash-call-context-20260908 --yes
+本包采用旧NPC精确SHA和新文件不存在双门禁；重复安装应阻止，不声称幂等零变更。
+
+用户操作：由用户完成M2重读，重新打开原洗练NPC，应看到“洗练暂时停用”“开始无消耗检测”；不放装备，点击一次，约2秒后提供A/B/C/D/E/L全部数字或完整截图。如仍看到收费洗练页，停止点击并反馈。
+数值解释：E:\XuanYuanDevPlatform\workspace\governance-20260907\wash-call-context-20260908\probe-candidate\探针审核说明.txt。不得将静态模型假设当作引擎实测。
+
+唯一受控恢复入口（总控执行，用户先保证M2停止）：
+  "C:\Users\Administrator\AppData\Local\Programs\Python\Python312\python.exe" -B -X utf8 "E:\XuanYuanDevPlatform\workspace\governance-20260907\wash-call-context-20260908\control\probe_delivery.py" recover-real
+禁止直接调用通用CLI rollback：当前通用回滚会从不完整收据历史重建installed.json，丢失已有登记。
+包装器要求manifest/payload/wrapper/source指纹、两个目标afterSHA、收据及备份beforeSHA、全部state文件/集合保持一致；取得平台目标互斥锁，恢复原NPC、移除本次新核心，并原样恢复installed.json，保留且标记回滚的新审计收据。
+备份与阶段journal：E:\XuanYuanDevPlatform\evidence\project-governance-20260907\wash-call-context-20260908\probe\pre-deployment-backup。有漂移时先查差异，禁止强制覆盖；不确定的中断阶段会阻止盲目重跑。
+
+验证：实际r1 CLI隔离预检/安装/重复阻止通过；原NPC/安装登记/此前state字节恢复通过；actual receipt篡改阻止与metadata阶段故障注入续做通过。真实引擎探针结果仍待用户操作。
+该恢复不退还此前扣除的元宝，也不能还原已被游戏脚本修改的物品实例。未操作M2、游戏引擎或数据库。

@@ -1,0 +1,79 @@
+玄渊平台——命格原生多色P1隔离安装接口
+整理日期：2026-08-26
+适用引擎：当前翎风/LFM2正式端
+接口等级：实验室/受限
+状态：P1单候选游戏视觉与数值验收已完成；新写文字小退/重登持久化待验证
+
+一、用途
+
+本接口只把38号表中的固定候选tiebi-defence-5-p1接到一个可预检、可事务安装、可精确回滚的管理员游戏验收入口。它用于闭合“【铁壁命格·测试】+防御+5+原生多色”单件黄金样本，不是正式命格洗练或一般候选安装器。
+
+二、固定合同
+
+候选ID：tiebi-defence-5-p1
+目标装备：鞭尸灵玉
+中文部位：灵玉
+装备位置：17（平台内部映射，用户表格不填写代码）
+真实属性：属性行17、颜色250、绑定1、显示位置17、点数模式0、模块9、防御值5/0/0
+显示片段：命格名称249、防御250、正号69、数值69
+玩家命令：@命格平台验收
+UserCmd编号：97
+QFunction受管标识：XY-MG-NATIVE-P1
+独立脚本：D:\MirServer\Mir200\Envir\QuestDiary\玄渊验收\命格平台单件验收.txt
+
+三、GUI
+
+平台页：命格原生多色 → P1隔离游戏验收
+操作顺序：
+1. 选择38号表和服务端根目录。
+2. 候选ID保持tiebi-defence-5-p1。
+3. 点击“P1预检”，确认只有三个目标文件且阻止项为空。
+4. 点击“安装隔离测试”，确认后生成事务收据。
+5. 游戏验收失败或不再需要时，在文件未漂移的前提下点击“精确回滚”。
+
+四、CLI
+
+源码环境：
+python -m xydp.cli --root E:\XuanYuanDevPlatform mingge-native-test-preflight --input E:\XuanYuanDevPlatform\所需材料表格汇总\38_命格原生多色候选.xlsx --candidate tiebi-defence-5-p1 --server D:\MirServer
+
+确认安装：
+python -m xydp.cli --root E:\XuanYuanDevPlatform mingge-native-test-install --input E:\XuanYuanDevPlatform\所需材料表格汇总\38_命格原生多色候选.xlsx --candidate tiebi-defence-5-p1 --server D:\MirServer --yes
+
+精确回滚：
+python -m xydp.cli --root E:\XuanYuanDevPlatform mingge-native-test-rollback --transaction <事务ID> --server D:\MirServer --yes
+
+五、写入边界
+
+只允许变更：
+- Mir200\Envir\UserCmd.txt
+- Mir200\Envir\Market_Def\QFunction-0.txt
+- Mir200\Envir\QuestDiary\玄渊验收\命格平台单件验收.txt
+
+安装器明确不直接写：ApexM2.DB、人物Mir.DB、客户端、登录器、EffectImageList、WZL/WZX、旧37号命格目录、95/96验收脚本。游戏运行时由M2通过LockUpdateItem/UpdateItem更新当前物品实例；“安装器不直写数据库”不得解释为“运行命令不会改变实例持久数据”。
+
+六、阻止与回滚
+
+以下任一情况阻止：候选不唯一、第二属性、非防御5、非灵玉17、非鞭尸灵玉、UserCmd97冲突、QFunction受管块漂移、预检后工作簿或目标文件变化、既有隔离脚本内容不匹配。
+
+每次新安装的收据位于E:\XuanYuanDevPlatform\backups\mingge-native-test\<事务ID>。回滚前逐个核对安装后哈希；发现并发修改时拒绝覆盖。旧文件按备份逐字节恢复，新文件按收据删除。事务20260826_021238_58a3da3d已完成游戏验收，其回滚材料按项目清理规则删除；后续新安装会生成新事务和新收据。
+
+七、生效与游戏验收
+
+平台不会操作引擎。安装后由用户关闭M2并等待GameCenter自动拉起；再穿戴同一件已实测防御+5的鞭尸灵玉，输入@命格平台验收。
+
+脚本会在按钮出现前、点击后、最终写入前反复核对管理员、装备名、位置17及250/1/17/0/0/5/0/0。本轮已确认：写前与写后真实属性行完全一致；人物防御写前、写后均为0-3150；悬浮框同一行显示红色【铁壁命格·测试】、绿色“防御”和黄色“+5”，且未出现可见控制串。新写文字的小退/重登持久化未在本轮执行，仍须单独验证。
+
+八、证据等级
+
+平台源码、表格、事务安装和回滚能力：静态文件确认。
+真实防御+5、四段异色能力以及本P1最终同屏和数值不重复：已实测确认。
+本P1新写文字的小退/重登持久化、多属性、八部位：待验证。
+后台构造资格：仅本P1隔离测试可后台构造；一般候选、正式玩家物品、人物Mir.DB直写禁止。
+
+九、本轮游戏证据
+
+SCR-GAME-013：写入前门禁，候选tiebi-defence-5-p1、当前文字为空、真实属性行250/1/17/0/0/5/0/0。
+SCR-GAME-014：写入前人物防御0-3150。
+SCR-GAME-015：写入后读回【铁壁命格·测试】，真实属性行仍为250/1/17/0/0/5/0/0。
+SCR-GAME-016：写入后人物防御仍为0-3150，没有重复叠加。
+SCR-GAME-017：鞭尸灵玉同屏显示红色命格名称、绿色属性名和黄色+5。

@@ -1,0 +1,251 @@
+玄渊地图外显与多层传送表格接口
+最后更新：2026-08-18
+
+一、接口定位
+
+本接口用于把“地图外显名 + 原生双向坐标连接 + MapEffect 动画”固化为施工台可重复执行的 XLSX 事务工程。
+传送由 MapInfo 原生坐标连接完成，MapEffect 只显示动画，二者不得互相替代。
+
+二、平台入口
+
+界面：玄渊界面施工台 -> 地图库 -> 右栏“地图外显与多层传送”
+材料表：E:\XuanYuanDevPlatform\所需材料表格汇总\08_地图外显与多层传送.xlsx（也可选择 Downloads 中的本轮施工版）
+默认目标：D:\MirServer / E:\11周年
+当前程序：E:\XuanYuanDevPlatform\玄渊界面施工台\dist\XYUIWorkbench-0.1.0-portable.exe
+运行时根目录由便携程序位置自动解析，界面必须回显“平台根目录：E:\XuanYuanDevPlatform”；禁止在 renderer 中写死盘符。
+
+Electron bridge：
+  inspectLayeredMapWorkbook
+  deployLayeredMapWorkbook
+  rollbackLatestLayeredMapWorkbook
+
+IPC：
+  maps:inspect-layered-workbook
+  maps:deploy-layered-workbook
+  maps:rollback-layered-workbook
+
+正式施工授权字符串：
+  AUTHORIZED_LAYERED_MAP_WORKBOOK_DEPLOYMENT
+
+正式施工必须通过平台 M2 停止门禁。禁止启动第二个 M2；只能关闭现有 M2，等待引擎自动拉起。
+
+二点一、新地图组默认自动接口（2026-08-20）
+
+入口：地图库 -> 批量地图 -> 地图清单 / 地图组计划。
+规划器生成的 schemaVersion=1 地图组 JSON 可直接作为批量地图输入，不再要求先装地图、再到本面板重复选择 XLSX。
+
+同一次批量队列的最后一批自动执行以下内容：
+  1. 地图资源与雷达按批量防黑屏门禁安装。
+  2. 写入最终外显名。
+  3. 写入 MapInfo 原生双向连接与防反弹落点。
+  4. 复用 current XY_FloorPortal，写入上下层 MapEffect。
+  5. 合并历史受管系列并写入唯一 Startup 聚合。
+  6. 同事务更新 MapDesc1.dat 类型 0/1 中文出口。
+
+地图组 JSON 必须包含：
+  groups[].seriesId / name / maps[] / links[]
+  maps[]：sourceMapId / targetMapNumber / displayName
+  links[]：aMapId / aTriggerX/Y / aAnimation / 可选 aLandingX/Y / bMapId / bTriggerX/Y / bAnimation / 可选 bLandingX/Y
+
+严格规则：
+  - 任一来源地图未扫描到或被阻止，整份地图组计划不进入施工。
+  - 系列ID、来源地图、目标地图不得重复；连接只能引用当前计划内地图。
+  - 每组至少两张地图，连接数必须等于地图数减一。
+  - 每批最多 50 张；最后一批即使只有 1 张也必须允许完成自动接口事务。
+  - 最后一批接口失败时，当前批和本次队列此前批次按回执倒序回滚。
+  - 结果必须回显“传送门与中文出口已同步”，否则保持失败/待处理，不得冒充完成。
+
+内部实现复用现有 XLSX 严格解析器：平台把 JSON 计划转为内存矩阵并调用同一 deployLayeredMapWorkbook 内核，因此自动入口与 XLSX 入口具有相同的坐标、历史钩子、MapDesc1、备份和回滚门禁。
+XLSX 面板继续保留，专用于已安装地图补做、坐标修正和既有系列维护。
+
+三、工作簿契约
+
+填写说明：只读说明。
+地图外显名称：状态、地图号、外显名称、备注。
+双向楼层连接：状态、系列ID、A地图、A触发X/Y、A动画、A落点X/Y、B地图、B触发X/Y、B动画、B落点X/Y、备注。
+状态只允许可安装、忽略、待配置。待配置形成阻止项；忽略不施工。
+落点留空时按下、右、上、左选择第一格有效位置，并在预检回显。
+
+四、脚本接口
+
+每个系列继续生成独立受管脚本，作为坐标与效果命令的可审计档案：
+  QuestDiary\玄渊地图\多层地图\<SERIES_ID>.txt
+
+唯一聚合启动脚本：
+  QuestDiary\玄渊地图\多层地图\XY_LAYERED_ALL_STARTUP.txt
+  标签：@XY_LAYERED_ALL_STARTUP
+  QManage 的 Startup 只允许保留以下一条平台调用：
+  #CALL [\玄渊地图\多层地图\XY_LAYERED_ALL_STARTUP.txt] @XY_LAYERED_ALL_STARTUP
+
+启动聚合契约：
+  平台部署前扫描上述受管脚本目录，将现存系列与本次表格系列按文件名合并。
+  本次同名系列覆盖旧内容；所有 MapEffect 命令逐行去重后写入唯一聚合脚本。
+  聚合脚本禁止出现 #CALL、GOTO 或其他嵌套跳转。
+  旧版逐系列 @XY_LAYERED_<SERIES_ID>_STARTUP 调用必须从 QManage 受管块中移除。
+  不允许只把本次表格系列当成完整清单，防止旧地图传送门消失。
+
+启动钩子完整性门禁：
+  1. 施工前统计现存受管脚本和本次表格生成脚本的并集及唯一 MapEffect 数量。
+  2. 成果包 post_checks 必须验证唯一聚合脚本存在、标签存在且 QManage 只有一条聚合调用。
+  3. 安装事务完成后独立回读 QManage；缺少聚合调用、重复调用或残留任一逐系列调用都视为失败。
+  4. 聚合脚本的 MapEffect 数量必须与预检去重结果一致，且不得含 #CALL/GOTO。
+  5. 任一门禁失败时自动回滚事务并恢复施工前候选成果包；“零变化”也必须执行同一回读。
+
+2026-08-18 根因修复：
+  旧版把每个系列都作为一个外部 #CALL 写入 QManage。45 个系列加漂流群岛旧调用后，
+  引擎在第 21 次外部标签跳转处把 @XY_LAYERED_MIST_MOON_COURT_STARTUP 判为脚本死循环。
+  雾月王庭脚本本身没有 GOTO/#CALL；真正原因是 Startup 外部跳转数量过多。
+  当前版将 45 个系列、242 条 MapEffect 收敛为一条聚合调用，避免再次触发引擎防死循环保护。
+
+已确认根因：
+  同一工作簿长期使用同一 package id；旧实现却只用本次表格系列重建同包 event_hook，导致同包旧系列被覆盖。
+  2026-08-08 首次修复只进入源码/临时构建，没有同步替换日常便携版，用户继续运行旧程序后再次复发。
+  因此必须同时满足“历史脚本反向恢复、完整性门禁、当前/前一版均为安全发布物”，不能只补回一次 QManage。
+
+跨工作簿钩子接管契约（2026-08-17）：
+  1. 工作簿绝对路径参与 package id；复制、改名或从 Downloads 选择新表会产生新的 package id。
+  2. 平台必须在预检阶段读取 QManage 中 `xy.maps.layered-workbook.* / Startup` 的现有受管钩子所有者。
+  3. 仅存在一个历史所有者时，新成果包通过 `legacy_package_ids` 原位接管旧钩子，再写入“历史脚本 + 本次表格”的唯一调用并集；禁止在旧钩子旁新增第二块。
+  4. 同时存在两个或更多历史所有者时，严格预检直接阻止，不进入施工事务。
+  5. 施工后仍执行独立完整性门禁；每个 `@XY_LAYERED_*_STARTUP` 在 QManage 中必须恰好出现一次。
+
+沉没王庭启动标签：
+  @XY_LAYERED_SUNKEN_COURT_STARTUP
+
+引擎已验证 MapEffect 参数顺序：
+  MapEffect 地图号 X Y 图库序号 起始图片 帧数 -1 播放间隔 0 0
+
+示例只说明参数，不允许手工固定图库序号：
+  MapEffect XX113 118 109 <EffectImageList动态序号> 12 12 -1 70 0 0
+
+五、坐标连接接口
+
+MapInfo 使用以下格式：
+  来源地图 X,Y -> 目标地图 X,Y
+
+到达点必须与反向触发点错开，避免落地反弹。当前沉没王庭链路：
+  XX102 82,25 -> XX103 18,94
+  XX103 18,93 -> XX102 82,26
+  XX103 86,25 -> XX104 27,83
+  XX104 27,82 -> XX103 86,26
+  XX104 94,20 -> XX105 10,47
+  XX105 10,46 -> XX104 94,21
+
+六、效果资源契约
+
+资源文件：XY_FloorPortal.wzl / XY_FloorPortal.wzx
+current 指针：library\effect-packs\xy-floor-portal\current.json -> 1.2.0
+当前 1.2.0：128x160，偏移 -64,-104，入口锚点 64,104 为石盘中心
+上一层：0-11，金白光环向上升腾
+下一层：12-23，黑金漩涡向下收束
+播放：12帧、70ms、无限循环
+EffectImageList 序号必须由平台读取现端后动态分配，不允许文档或脚本写死。
+
+尺寸、偏移、帧数和间隔必须从 manifest 读取，不得固定 64x96。
+同名美术换版接口：
+  cd /d E:\XuanYuanDevPlatform\玄渊界面施工台
+  npm.cmd run effects:deploy-floor-portal-v3
+  npm.cmd run effects:deploy-floor-portal-v3 -- --Apply
+第一条只读预检，第二条在关闭游戏客户端后备份并成对替换 WZL/WZX。库名、帧段、帧数和 EffectImageList 序号不变时，不改地图脚本且不重启 M2。
+
+七、安全边界
+
+1. 不修改 QFunction、属性系统、地图玩法和供体资源。
+2. 不覆盖不同内容的同名 WZL/WZX。
+3. MapInfo、EffectImageList、QManage、目标系列脚本和实际需要写入的客户端资源在施工前备份。
+4. 任一地图缺失、坐标越界、服务端/客户端 MAP 哈希不一致、触发点冲突或效果帧回读失败时零写入。
+5. 静态施工成功后状态仍为待验证，必须完成 M2 日志和游戏内双向链路验收。
+6. 重复部署必须返回零变化；回滚必须跳过零变化回执并恢复最近真实事务。
+7. 该入口不新增 NPC、不搬地图、不修改 QFunction 或属性系统。
+8. 优先使用当前 `E:\XuanYuanDevPlatform\玄渊界面施工台\dist\XYUIWorkbench-0.1.0-portable.exe`。发布目录只保留当前版与前一安全版；更早便携版禁止用于地图表格部署。
+
+八、当前修复与发布证据
+
+旧钩子恢复事务：20260810_230235_8ae3669d
+事务备份：D:\XuanYuanDevPlatform\backups\20260810_230235_8ae3669d
+恢复回执：D:\XuanYuanDevPlatform\玄渊界面施工台\reports\layered-map-workbooks\xy.maps.layered-workbook.ab2c470cda82-20260810150237.json
+硬化源码备份：D:\XuanYuanDevPlatform\backups\20260811_001942_layered_hook_integrity_hardening
+当前版 SHA256：A8D2A75CB9A78D473C91C284CC853EA67BFDF20F4E47BDCF68ECCC9FD44A850D
+前一安全版 SHA256：85A593DB7DD75B157721AE1A10E6C1094F634B8CCC96DC1B2362FD8BD7B5B922
+聚合修复事务：20260818_120934_5c4e366d
+聚合修复回执：E:\XuanYuanDevPlatform\玄渊界面施工台\reports\layered-map-workbooks\xy.maps.layered-workbook.e6aea1f9d10e-20260818040938.json
+验证：专项 17/17、全量 Vitest 232/232、typecheck、build、portable 打包和真实端 242 条 MapEffect 聚合回读通过。
+状态：平台与正式端修复已完成；`2026-08-18.12-24.txt` 已确认脚本死循环为 0。游戏内旧传送门显示仍待用户抽查。
+
+九、主题多层地图只读规划接口（2026-08-14）
+
+火山红色主题：
+  cd /d E:\XuanYuanDevPlatform\玄渊界面施工台
+  npm.cmd run maps:plan-mingyue-volcanic
+
+冰雪主题：
+  cd /d E:\XuanYuanDevPlatform\玄渊界面施工台
+  npm.cmd run maps:plan-mingyue-ice
+
+冰雪专题输出：
+  reports\mingyue-ice-groups-20260814\ice-layered-map-groups.json
+  reports\mingyue-ice-groups-20260814\ice-layered-map-groups.csv
+  reports\mingyue-ice-groups-20260814\ice-layered-map-groups.md
+  E:\XuanYuanDevPlatform\所需材料表格汇总\08_地图外显与多层传送_冰雪风格7组_20260814.xlsx
+
+规划命令只读 MAP、MiniMap 和既有候选报告，不写目标服务端/客户端。
+规划完成后仍必须通过 inspectLayeredMapWorkbook 严格预检；只有用户明确授权后才允许 deployLayeredMapWorkbook。
+冰雪分组允许 SmTiles 缺省，但出现时必须与 Tiles/Objects 主图库同号；禁止只凭地图名跨图库拼组。
+当前冰雪入口输出 7 组/29 张。末层优先使用较小像素尺寸；同尺寸原生连续图仅在最大连通面积较此前最大层收束至少8%时允许入组。两张不足三层且图库不完全一致的孤立冰雪图不得强行拼组。
+
+十、2026-08-17 迁盘修复
+
+现象：XLSX 严格预检通过，但点击“确认一键部署”后底部状态栏出现 `python D:\XuanYuanDevPlatform\run_cli.py` 不存在，目标端零写入。
+根因：地图表格 renderer 将 `platformRoot` 固定为 D 盘；平台与客户端迁到 E 盘后，正式部署阶段仍调用旧路径。预检由施工台内部完成，因此会造成“预检成功、部署像没反应”的错觉。
+修复：主进程从 `PORTABLE_EXECUTABLE_DIR / PORTABLE_EXECUTABLE_FILE / app.getAppPath / currentDir / cwd` 的有限父目录中寻找同时包含 `run_cli.py` 与 `玄渊界面施工台` 的平台根目录；预检、部署、回滚统一调用该运行时根目录。页面增加只读根目录回显。
+门禁：找不到根目录时明确报错并停止，禁止回退到旧 D 盘常量；目标服务端和客户端仍由用户输入及本机记忆决定。
+
+十一、2026-08-18 MapDesc1 原生中文出口标注
+
+作用：
+  MapInfo 原生坐标连接负责白色门图标与传送。
+  客户端 data\MapDesc1.dat 负责大地图和雷达上的中文目的地名称。
+
+原生行格式：
+  来源地图外显名称,X,Y,目标地图外显名称,颜色,类型
+
+类型：
+  0 = 大地图
+  1 = 雷达小地图
+
+黄金样例：
+  沉没王庭外围,82,25,沉没王庭内庭,$33FFFF,0
+  沉没王庭外围,82,25,沉没王庭内庭,$33FFFF,1
+
+关键规则：
+1. 第一列必须使用 MapInfo 注册行中的来源地图外显名称，禁止写 XX102 等逻辑地图号。
+2. 第四列使用连接目标地图的最终外显名称；同一工作簿本轮改名时，先应用改名再生成 MapDesc1。
+3. 每个受管触发点必须同时生成类型 0 和类型 1 两行。
+4. 类型 0 放在唯一的“;=================小地图显示============================”标记之前；类型 1 放在该标记之后。
+5. 文件保持 GB18030/CP936 兼容编码与 CRLF；禁止 UTF-8 BOM 和裸 LF。
+6. 平台扫描现存多层地图系列脚本，与当前表格连接合并后统一生成，不得只覆盖本次工作簿而删除历史出口标注。
+7. 平台状态写入目标客户端 .xydp\layered-map-mapdesc.json；该文件记录受管行，只用于下次安全替换、去重和回滚。
+8. MapDesc1.dat 和状态文件必须与 MapInfo、脚本、QManage 一起进入同一候选包事务；任一哈希回读失败整批回滚。
+9. 相同表格重复部署必须返回 UNCHANGED，不得追加重复行。
+10. MapDesc1 变化后必须完全退出旧客户端并重新进入；只按 Tab 不会重新读取。无需重新生成登录器，除非同一任务还修改了登录器内嵌资源或规则。
+
+当前正式事务：
+  事务号：20260818_145851_a7abfb2a
+  工作簿触发点：190
+  历史与本次合并受管触发点：242
+  MapDesc1 记录：484（类型 0/1 各 242）
+  重复部署：UNCHANGED
+  用户黄金样例：已实机确认出现中文目的地名称。
+
+十二、2026-08-30 高清传送门候选部署接口
+
+用途：仅替换独立 XY_FloorPortal 图库中的逻辑编号 0-23，不修改 MapInfo、EffectImageList、地图脚本或 M2。
+当前候选版本：1.4.2-candidate；256x320；偏移 -128,-220；上壹层 0-11；下壹层 12-23。1.4.2只重做文字层：使用楷体 simkai.ttf，三字可见高度统一为34像素，上层视觉轴x128、下层视觉轴x122；文字位置12帧固定不移动，动画改为笔画内部斜向流光与定点星芒明暗变化。文字区域之外逐像素保持1.4.1不变，圆法阵不重绘。
+
+只读预检：
+  powershell -NoProfile -ExecutionPolicy Bypass -File "E:\XuanYuanDevPlatform\玄渊界面施工台\scripts\deploy-floor-portal-hd-v5.ps1" -CandidateVersion "1.4.2-candidate"
+
+确认客户端完全关闭后安装：
+  powershell -NoProfile -ExecutionPolicy Bypass -File "E:\XuanYuanDevPlatform\玄渊界面施工台\scripts\deploy-floor-portal-hd-v5.ps1" -CandidateVersion "1.4.2-candidate" -Apply
+
+脚本要求现用 WZL/WZX 均可独占写入；安装前成对备份，临时副本和安装后均校验 SHA256，任一步失败自动恢复。静态安装后仍为 candidate，必须经过游戏内上下层动画、文字中心和透明边缘验收才能晋级 current。

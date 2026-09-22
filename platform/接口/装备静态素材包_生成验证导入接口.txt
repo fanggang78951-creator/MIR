@@ -1,0 +1,40 @@
+玄渊装备静态素材包接口
+
+当前素材包：
+D:\XuanYuanDevPlatform\做装备\assets\equipment-icons\玄渊三十套九部位_270件_v1
+
+追加素材包：
+D:\XuanYuanDevPlatform\做装备\assets\equipment-icons\玄渊五套生肖星曜九部位_45件_v1
+
+五套包使用同一套命令；它包含 5 套、45 件，已在 D:\11周年\data 使用 6201-6245 完成三库追加。导入器会读取三库当前数量，以最大数量为共同基线；只有 StateItem 或 DnItems 落后时才补齐不带图的零偏移占位槽，随后再追加同一组 45 个编号。材料流程只写 Items，不适用本装备包。
+
+生肖槽位素材包：
+D:\XuanYuanDevPlatform\做装备\assets\equipment-icons\玄渊十二星宫生肖槽位_12件_v1
+
+该包为 12 个生肖槽位专用星宫图标，已在同一客户端追加 `6246-6257`。它同样要求 Items、StateItem、DnItems 三库使用同一编号；代码表按槽位序号读取，不创建生肖属性或脚本。
+
+五套生肖槽位合并包：
+D:\XuanYuanDevPlatform\做装备\assets\equipment-icons\玄渊五套十二星宫生肖槽位_60件_v1
+
+该包总计 5 套×12 件=60 件。第一套复用 `6246-6257`，本次只追加第2至第5套的48件，正式编号为 `6258-6305`。三库仍必须使用同一编号；合并代码表是 `生肖槽位五套代码表.xlsx`。
+
+本次实际接口命令：
+python D:\XuanYuanDevPlatform\做装备\assets\equipment-icons\玄渊五套十二星宫生肖槽位_60件_v1\tools\verify-five-zodiac-material.py --root D:\XuanYuanDevPlatform\做装备\assets\equipment-icons\玄渊五套十二星宫生肖槽位_60件_v1
+python D:\XuanYuanDevPlatform\做装备\assets\equipment-icons\玄渊五套十二星宫生肖槽位_60件_v1\tools\import-static-equipment-pack.py --asset-root D:\XuanYuanDevPlatform\做装备\assets\equipment-icons\玄渊五套十二星宫生肖槽位_60件_v1 --client-data D:\11周年\data --apply
+
+注意：导入前必须关闭 WZL 编辑器和客户端，否则 Windows 可能拒绝替换 WZL 文件。导入器会备份六个目标文件并回读验证。
+
+1. 重新生成全部素材
+python D:\XuanYuanDevPlatform\做装备\assets\equipment-icons\玄渊三十套九部位_270件_v1\tools\build-material.py --root D:\XuanYuanDevPlatform\做装备\assets\equipment-icons\玄渊三十套九部位_270件_v1
+
+2. 检查数量、位深、尺寸和透明边缘
+python D:\XuanYuanDevPlatform\做装备\assets\equipment-icons\玄渊三十套九部位_270件_v1\tools\verify-material.py --root D:\XuanYuanDevPlatform\做装备\assets\equipment-icons\玄渊三十套九部位_270件_v1
+
+3. 只读预检并生成完整临时图库
+python D:\XuanYuanDevPlatform\做装备\assets\equipment-icons\玄渊三十套九部位_270件_v1\tools\import-static-equipment-pack.py --asset-root D:\XuanYuanDevPlatform\做装备\assets\equipment-icons\玄渊三十套九部位_270件_v1 --client-data D:\11周年\data
+
+4. 正式事务导入
+执行前必须保存并关闭 Wzl编辑器。
+python D:\XuanYuanDevPlatform\做装备\assets\equipment-icons\玄渊三十套九部位_270件_v1\tools\import-static-equipment-pack.py --asset-root D:\XuanYuanDevPlatform\做装备\assets\equipment-icons\玄渊三十套九部位_270件_v1 --client-data D:\11周年\data --apply
+
+正式导入自动备份 Items/StateItem/DnItems 六个 WZL/WZX，失败自动回滚，成功后生成 evidence/id-mapping.json；用户交付使用按套装分组的装备素材套装代码表.xlsx，不再生成 TXT 代码表。

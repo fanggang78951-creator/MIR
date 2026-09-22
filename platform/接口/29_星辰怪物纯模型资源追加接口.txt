@@ -1,0 +1,38 @@
+接口名称：星辰怪物纯模型资源追加
+状态：暂停使用；2026-08-13确认旧验证只覆盖数据库与单PAK静态一致性，没有覆盖RaceImg=156的SmartMonster依赖链
+
+最高优先级纠偏：
+- 对RaceImg=156怪物，禁止再把Appr推导出的单一MonXX当作完整模型入库，也禁止把preview_state=missing的记录标记ready。
+- 必须先读取供体同名SmartMonster INI，解析ActionFile/EffectFile等全部资源号，经供体EffectImageList还原真实依赖，再为目标端独立换名、重新编号并重写INI。
+- 当前catalog.sqlite没有保存INI、多资源依赖及目标编号重定位的字段，因此本接口不能保证星辰自定义怪物可显示；正式追加命令暂停，待依赖闭包结构重构后恢复。
+
+目标：
+从 D:\MirServer10 与 D:\星辰剑歌 中仅提取怪物外观、动作图库和显示必需元数据，追加到玄渊平台怪物库；不写目标服务端、客户端、爆率、刷怪或地图。
+
+命令：
+1. 只读预检：
+python D:\XuanYuanDevPlatform\tools\import_star_monster_visual_pack.py --dry-run
+
+2. 正式追加：
+python D:\XuanYuanDevPlatform\tools\import_star_monster_visual_pack.py
+
+输入：
+- 星辰候选库：D:\XuanYuanDevPlatform\outputs\star-monster-visual-scan-20260812\怪物库\catalog.sqlite
+- 活动怪物库：D:\XuanYuanDevPlatform\怪物库\catalog.sqlite
+- 本轮图库：Mon111.pak、Mon113.pak
+
+安全门禁：
+- 活动怪物库已占用 Mon111 或 Mon113 时停止。
+- 来源 PAK 与候选库 SHA256 不一致时停止。
+- 正式追加前备份 catalog.sqlite。
+- 复制完整 PAK，复制后逐文件 SHA256 回读。
+- SQLite 临时副本事务写入，通过 PRAGMA integrity_check 后原子替换。
+
+属性策略：
+- 保留 Appr、Race、RaceImg 及动作控制字段，用于正确显示动作。
+- 名称仅作为“星辰模型”标签。
+- 等级、经验、血量、防御、攻击、命中等供体战斗数值全部中和。
+- 不写 D:\MirServer10、D:\星辰剑歌、D:\MirServer 或 D:\11周年\data。
+
+回滚：
+把回执中的 backup_catalog 覆盖回 D:\XuanYuanDevPlatform\怪物库\catalog.sqlite；新增资源文件没有活动索引后不会参与平台随机选模。

@@ -1,0 +1,72 @@
+接口名称：星辰 type2 地图独立图库换号与普通雷达批量验收
+接口等级：内部 / 平台维护
+状态：接口已修正；XX362/XX363游戏验收通过，XX364-XX370已部署待重新生成登录器和游戏验收
+
+用途
+当供体 type2 MAP 使用的 PAK/WZL 与当前客户端同名冲突时，将 MAP 内 Tiles、SmTiles、Objects 图库号换到未占用高位号。已证伪“原始 PAK 改名并沿用密码令牌”的生产路线：目标端无同图游戏验收证据时，必须完整导出源 PAK，再按 MAP 图片号 N 对应 WZL 槽位 N-1 构建目标 WZL/WZX。
+
+工作目录
+D:\XuanYuanDevPlatform\玄渊界面施工台
+
+只预检
+node .\scripts\deploy-star-registered-remap.mjs
+
+原始换号清单部署（仅建立 MAP/图库映射，不代表客户端资源兼容完成）
+node .\scripts\deploy-star-registered-remap.mjs --apply
+
+XX364-XX370保序候选构建
+node .\scripts\build-star-xx364-370-wzl-candidate.mjs
+
+XX364-XX370只预检
+node .\scripts\deploy-star-xx364-370-wzl-candidate.mjs
+
+XX364-XX370确认部署
+node .\scripts\deploy-star-xx364-370-wzl-candidate.mjs --apply
+
+实现文件
+src\main\maps\map-raw-library-remap.ts
+scripts\deploy-star-registered-remap.mjs
+
+硬限制
+1. 只支持经 inspectMapFile 确认为 type2/14 字节的地图。
+2. type0 固定基础 Tiles/SmTiles 不可换号。
+3. 目标 MAP、资源名或 MapInfo 地图号已存在时整批阻止。
+4. 不写 MiniMap；雷达另行绑定。
+5. 部署后必须重新生成登录器并做游戏主地图验收。
+6. 明月服原生直接复用路径优先，本接口不得替代或改写该路径。
+7. MAP图片号为1基且0表示无图；WZL/完整导出槽位为0基，兼容构建必须使用N-1，禁止改写MAP图片号。
+8. 偏移同时从图片同级TXT和Placements子目录读取。
+9. Provider输出使用独占构建锁；正式写入前检查目标客户端、目标MakeGameLogin和Wzl编辑器占用，存在占用则零写入阻止。
+
+当前回执
+D:\MirServer\_XY_MAP_INSTALLS\star-remap-21-20260811154633-01a742ed.json
+D:\XuanYuanDevPlatform\玄渊界面施工台\reports\star-xx364-370-wzl-candidate-20260812.json
+D:\XuanYuanDevPlatform\玄渊界面施工台\reports\star-xx364-370-wzl-deployment-20260812.json
+
+星辰200图普通雷达槽位晋级
+工作目录：D:\XuanYuanDevPlatform\玄渊界面施工台
+
+只生成计划：
+npm.cmd run maps:promote-star-radar -- --mode plan
+
+确认XX383单图匹配门禁后批量晋级：
+npm.cmd run maps:promote-star-radar -- --mode apply --authorization AUTHORIZED_STAR_RADAR_PROMOTION --accepted-map XX383
+
+静态回读：
+npm.cmd run maps:promote-star-radar -- --mode verify
+
+固定五图小地图存在性抽样回填：
+npm.cmd run maps:promote-star-radar -- --mode accept-samples --authorization AUTHORIZED_STAR_RADAR_SAMPLE_ACCEPTANCE --samples XX422,XX462,XX502,XX542,XX582 --result minimap-visible
+
+抽样边界
+1. 回填前必须重新核对200条MiniMap映射、MiniMap.txt SHA256和mmap12.pak SHA256。
+2. 用户只确认“有小地图”时，回执不得写成“与主地图匹配”。
+3. 固定五图抽样完成不等于200张逐图验收，回执必须保留范围声明。
+4. 已完成状态再次运行verify必须保持completed-sampled，不能倒退为待抽样。
+
+当前抽样回执
+D:\MirServer\_XY_MAP_INSTALLS\map-minimap-batch-sampling-20260813020226-4dffc1e4.json
+
+回滚依据
+D:\codex交班记录\备份\20260811154633_星辰21图独立换库
+D:\codex交班记录\备份\20260812030349_星辰XX364_370WZL修复

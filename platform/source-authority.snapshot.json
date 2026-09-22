@@ -1,0 +1,1783 @@
+{
+  "schemaVersion": 1,
+  "sourceRoot": "E:\\XuanYuanDevPlatform",
+  "sourceFingerprint": "19836cfc24a70af03c525ca6213762898c6a090c36ea0d98a995ecfc3eabf6f1",
+  "files": [
+    {
+      "path": ".gitignore",
+      "bytes": 59,
+      "sha256": "67b33d19a4634697fb81e90c1c205f462c97bfebd3af676296296b3d329b8ccc"
+    },
+    {
+      "path": "AGENTS.md",
+      "bytes": 5212,
+      "sha256": "d92c28c13a4bc9fb05fae978ba9eb8864d7c6812265465addaf867b3e6c9dca3"
+    },
+    {
+      "path": "build.ps1",
+      "bytes": 967,
+      "sha256": "bdb03914dda8ece829c3f971278b84ca1dace64f598bbf3d7c4a7d0d39fc49df"
+    },
+    {
+      "path": "docs/plans/2026-08-30-attack-speed-breakthrough-platform-design.md",
+      "bytes": 2503,
+      "sha256": "65f62cb9e6351d1afe0c78035e14deda582f67ad703593f72d8b7d6205aafc34"
+    },
+    {
+      "path": "docs/plans/2026-08-30-attack-speed-breakthrough-platform-implementation.md",
+      "bytes": 1516,
+      "sha256": "cc862503f235bf960fe6014562f21dbfda75828b6707a00d13cadc9846c7b115"
+    },
+    {
+      "path": "docs/plans/2026-08-30-weapon-enchant-v2-design.md",
+      "bytes": 3761,
+      "sha256": "d4cd5dbb4279b6587599c8f6dcdabe57eb5f596edbb7a65489d5e22b41ae5206"
+    },
+    {
+      "path": "docs/plans/2026-08-30-weapon-enchant-v2-implementation.md",
+      "bytes": 2212,
+      "sha256": "78f784afdcb975c63852337c8c8e77df69171e19e3fbd10bdf37f8679090e976"
+    },
+    {
+      "path": "docs/plans/2026-09-10-完整武器衣服动作素材实施计划.md",
+      "bytes": 5958,
+      "sha256": "e75b3242e389d7ccee384ac3c46567af9c9ce3f2076b95da6ddff0601f1635f1"
+    },
+    {
+      "path": "docs/specs/2026-09-10-完整武器衣服动作素材设计.md",
+      "bytes": 3493,
+      "sha256": "7951c4d3a80256f9b403dd1a56960103d5bbc16ce8c31036030bcbc270baf01e"
+    },
+    {
+      "path": "docs/superpowers/plans/2026-07-10-third-party-equipment-platform-implementation.md",
+      "bytes": 24361,
+      "sha256": "ca6f4dbcda8cffb2a0b285c1c60e746b3591bfdecae30f60193a013f2d970407"
+    },
+    {
+      "path": "docs/superpowers/plans/2026-07-11-combat-runtime-refresh.md",
+      "bytes": 5819,
+      "sha256": "5e1a1270125cad052761ccaffd868d3e3aba17a4f68150936a24e53d3b96b6bd"
+    },
+    {
+      "path": "docs/superpowers/plans/2026-07-11-wzx-unequal-library-counts-implementation.md",
+      "bytes": 2864,
+      "sha256": "453f5db88d9c5804c9e7291a6b71c48e0c3baf5987daea27b83cfb6e1d8e34c5"
+    },
+    {
+      "path": "docs/superpowers/plans/2026-07-11-xlsx-driven-equipment-generation.md",
+      "bytes": 11200,
+      "sha256": "3b1df6aa2ce15da2cdd5029e6756994de6810406009ac82592cec4dea0100084"
+    },
+    {
+      "path": "docs/superpowers/plans/2026-07-13-nonresident-script-v2-implementation.md",
+      "bytes": 12201,
+      "sha256": "e9127f606ff7e59e8d1ac2554ecae939652a38c41f93e2eec21800e5ebca28c9"
+    },
+    {
+      "path": "docs/superpowers/plans/2026-08-23-monster-library-v3-engine-closure.md",
+      "bytes": 36908,
+      "sha256": "f4b20da8e7fe3070ac87adfe43cc2a3aeeb189ff391bca5cc9534034b7117a16"
+    },
+    {
+      "path": "docs/superpowers/plans/2026-09-08-mingge-unbounded-properties.md",
+      "bytes": 8445,
+      "sha256": "a79df8ef766964d8724ac756cb41ffde3b9cf648c1c5dd045cc6837d37390229"
+    },
+    {
+      "path": "docs/superpowers/plans/2026-09-09-monster-library-rebuild.md",
+      "bytes": 3730,
+      "sha256": "a40eb31dca6b33077474227142ce258ac48d12a3a309e35268fd49baebec48d5"
+    },
+    {
+      "path": "docs/superpowers/specs/2026-07-10-empty-server-equipment-shared-files-design.md",
+      "bytes": 1106,
+      "sha256": "c7506ddbae2d28b566a228888935edea8360f168c74b5d6485c2964c60b4637e"
+    },
+    {
+      "path": "docs/superpowers/specs/2026-07-10-third-party-equipment-platform-design.md",
+      "bytes": 11089,
+      "sha256": "e6e6643b1dd0dd0137598efa9599d1f9c6fae7c47709e6b9fbfca27bd9d13057"
+    },
+    {
+      "path": "docs/superpowers/specs/2026-07-11-wzx-unequal-library-counts-design.md",
+      "bytes": 1246,
+      "sha256": "7ab964e6209a8e99c40f2e8006a93d2ad137d4175b6fa37f1e9022cdc56bf7d8"
+    },
+    {
+      "path": "docs/superpowers/specs/2026-07-11-xlsx-driven-equipment-generation-design.md",
+      "bytes": 4067,
+      "sha256": "4000665b97a9fdb207aab73aa796fa3a342b6e8acdf5b900b27a8f263b03d4fc"
+    },
+    {
+      "path": "docs/superpowers/specs/2026-07-13-nonresident-script-v2-design.md",
+      "bytes": 7229,
+      "sha256": "a870af61104f3167fda80ae9a4c4d6f8b867a0308b4686ef637adbbb30e656da"
+    },
+    {
+      "path": "docs/superpowers/specs/2026-07-24-damage-coefficient-design.md",
+      "bytes": 7267,
+      "sha256": "50449e262e14159e5ebe74705239ec136e5a64f85908b5d0a9f1eef5d9d61e67"
+    },
+    {
+      "path": "docs/superpowers/specs/2026-08-23-monster-library-v3-engine-closure-design.md",
+      "bytes": 16634,
+      "sha256": "edc142501d2164271842dbdbf3b1ae9248b05a2d35a6962da9778f0654fe4d14"
+    },
+    {
+      "path": "docs/superpowers/specs/2026-09-08-mingge-unbounded-properties-design.md",
+      "bytes": 7377,
+      "sha256": "39ed628de1ba155f7f73b4e1392385cec5b52928c039cd75e1344da9bf1df65d"
+    },
+    {
+      "path": "docs/superpowers/specs/2026-09-09-monster-library-rebuild-design.md",
+      "bytes": 3656,
+      "sha256": "b3a31a4277da0f30581445f88a714f24b2cdc09a92b66bdb26b5e5231d424793"
+    },
+    {
+      "path": "docs/平台派单与验收操作规程.md",
+      "bytes": 3388,
+      "sha256": "dcd0f0687ea4e537ace7b7a329e090457eee5e3522c0df456bc102b007dafec4"
+    },
+    {
+      "path": "docs/项目总控与交班规则.txt",
+      "bytes": 3570,
+      "sha256": "9d7375bd5674d4264b78a3202d3856f56e994e58df04355486c59068a2c023e8"
+    },
+    {
+      "path": "README.md",
+      "bytes": 26236,
+      "sha256": "d48a0c5d703a07c92f5fd891fc452f01afae0abb4be55dd1918b3c60802b5ffb"
+    },
+    {
+      "path": "run_cli.py",
+      "bytes": 633,
+      "sha256": "14bb493915518471fcf8f350abb2fd5721e841a644708108c231317580fd8ce6"
+    },
+    {
+      "path": "run_gui.py",
+      "bytes": 370,
+      "sha256": "5c0ff262954403db9bc4e2b91fed506f4eaf5b2d1f55e1bd37a790f12235f9da"
+    },
+    {
+      "path": "src/xydp/__init__.py",
+      "bytes": 69,
+      "sha256": "adc33d60f739d5606f3e6b276b566869feb363c38aa12c940c84e8f3431e7cdc"
+    },
+    {
+      "path": "src/xydp/artifact_library.py",
+      "bytes": 12582,
+      "sha256": "36aa1bb5585c1591a4176c1a50e435333f0ad86d056e9c63ffa8bce4abbef965"
+    },
+    {
+      "path": "src/xydp/attack_speed_breakthrough.py",
+      "bytes": 20352,
+      "sha256": "cb1b1071e331bf47a834610750b795d99f5dff559464662bb654427dd9cf24dd"
+    },
+    {
+      "path": "src/xydp/attribute_panel.py",
+      "bytes": 12178,
+      "sha256": "8c0a4e1192aec99892581eecaa8b5b782270fdd9aeadb6764487669282cc7f65"
+    },
+    {
+      "path": "src/xydp/cli.py",
+      "bytes": 66096,
+      "sha256": "5558d7c54c2b52a8240096ef0e6fe96852d4e76dfb4d7aa22d269c923e5fd912"
+    },
+    {
+      "path": "src/xydp/config_sync.py",
+      "bytes": 23722,
+      "sha256": "f15b592a52376dbeba737079532eff1d786ecd667aa42f045182af65147b4c54"
+    },
+    {
+      "path": "src/xydp/configpatch.py",
+      "bytes": 5656,
+      "sha256": "f8a20e0ae89c1cd8db78bfb47f75408d47a45fe5cbf01dddec28cd4ab6c1dc3f"
+    },
+    {
+      "path": "src/xydp/elden_bundle_features.py",
+      "bytes": 92648,
+      "sha256": "ba8c870446de91897ef947fc4b91886806c47199072ba9c78229402d933b1833"
+    },
+    {
+      "path": "src/xydp/encoding.py",
+      "bytes": 1225,
+      "sha256": "76d2031be1355a2376e239feab5f10fb437856da78a6a1216fdb67efd82bc4d1"
+    },
+    {
+      "path": "src/xydp/equipment_aura.py",
+      "bytes": 72023,
+      "sha256": "2a995872d9c30d8c02f42746e954044af92d9855207901bcc77140454c443d3d"
+    },
+    {
+      "path": "src/xydp/equipment_bridge.py",
+      "bytes": 4847,
+      "sha256": "35357f3dca22b5910d32773bdd31916f743b6ad65fe042ca9e30414be8baa816"
+    },
+    {
+      "path": "src/xydp/equipment_collection.py",
+      "bytes": 67933,
+      "sha256": "dc6ba9042e98076d306c370ca7196908bf3537dc8013356672ec28da10e2c81c"
+    },
+    {
+      "path": "src/xydp/equipment_collection_test_reset.py",
+      "bytes": 7221,
+      "sha256": "3465b63346d621c26262d48f22d4286d5875c965ddf4d67f34ca5f1038425a71"
+    },
+    {
+      "path": "src/xydp/equipment_wash.py",
+      "bytes": 58272,
+      "sha256": "391ea689f0861b080bd2da1dbbc7e623388583e000ca7083b72e7c0353afbf85"
+    },
+    {
+      "path": "src/xydp/execution_lab.py",
+      "bytes": 10837,
+      "sha256": "bbd69c6e3f31c5ca0b3f03d897d1c087aa9f743fc03e41c922c1a36ce1bbf09b"
+    },
+    {
+      "path": "src/xydp/execution_map_rules.py",
+      "bytes": 12466,
+      "sha256": "0bbc0b16e916acf228e8371611bfd65e3659edbcdf654ac77f02b54f7a421b58"
+    },
+    {
+      "path": "src/xydp/growth_stage.py",
+      "bytes": 16686,
+      "sha256": "4b1098e587f78b77ee2a5efbc099cfbf29fdacf5df525e14626969aa7e1c5883"
+    },
+    {
+      "path": "src/xydp/gui.py",
+      "bytes": 200714,
+      "sha256": "32ed8b4bc4e2778492f7e2a0ecf2af3bea180698bbe45bc17d2d7963ad2f3886"
+    },
+    {
+      "path": "src/xydp/importer.py",
+      "bytes": 4764,
+      "sha256": "48ad859bfb8a45981ca63589820df66a1f2c96d297c185c985311dd8915726c4"
+    },
+    {
+      "path": "src/xydp/initial_camp.py",
+      "bytes": 101068,
+      "sha256": "4ba132e0d3ab6d75552975fbb3b60c6b1aa08409da1953717d78811cbcf6fe44"
+    },
+    {
+      "path": "src/xydp/installer.py",
+      "bytes": 43702,
+      "sha256": "b6ad3118b3805cb8d44be77bcca4d53dcbae5aa386741ac7c731ce67a66fae9d"
+    },
+    {
+      "path": "src/xydp/item_synthesis.py",
+      "bytes": 36757,
+      "sha256": "256f1bd86fe25f3684e66850356d86d040d2c8d22de48702b2887be394a5adf1"
+    },
+    {
+      "path": "src/xydp/king_mode_complete.py",
+      "bytes": 62822,
+      "sha256": "ee65bd8b7c4ddb0c996b20a0d1c132bba22d58474783ecc4daf473d77bebcf00"
+    },
+    {
+      "path": "src/xydp/king_mode_flow.py",
+      "bytes": 41159,
+      "sha256": "26b2cea2ce0a881d678f52f96ede473df4eaa542a6922d07fa97c612d25c5706"
+    },
+    {
+      "path": "src/xydp/manifest.py",
+      "bytes": 3546,
+      "sha256": "942eeddc7006d90c918dc99fb4f51e96993f539e951d2ab01f6ea9c0e541b1d0"
+    },
+    {
+      "path": "src/xydp/material_phase_a.py",
+      "bytes": 21196,
+      "sha256": "a0bef4aad7820fd257f6253a4bb1b752ab933a418be48a41f249f28d65755100"
+    },
+    {
+      "path": "src/xydp/migration.py",
+      "bytes": 2059,
+      "sha256": "b154ad2db0437abadc4839279f1cfbe632f0d4b60cbe917e5a4e2f034183e261"
+    },
+    {
+      "path": "src/xydp/mingge.py",
+      "bytes": 99169,
+      "sha256": "a4c285c121f5a49706bda49bcaa45015501399accc776da6b5b4e6fb57a086d5"
+    },
+    {
+      "path": "src/xydp/mingge_dual.py",
+      "bytes": 82491,
+      "sha256": "46fa3d367eab88e241ab228960f715899b4bb3e44971a5ac45f2a2380085e853"
+    },
+    {
+      "path": "src/xydp/mingge_image.py",
+      "bytes": 6767,
+      "sha256": "66abe2d59db48b5e3e129571beafa33d9ab6b8584a5701834d65f776fcf8e085"
+    },
+    {
+      "path": "src/xydp/mingge_native.py",
+      "bytes": 72470,
+      "sha256": "12d39b96f2f120a0e0d53e5734608e932a341ae6a26091228eaf117bebd06dd1"
+    },
+    {
+      "path": "src/xydp/mingge_native_install.py",
+      "bytes": 22252,
+      "sha256": "865012540e918273f4a671c4338325d7aa21357068abc91c4fe114b4bcb2d81b"
+    },
+    {
+      "path": "src/xydp/mingge_native_p2_install.py",
+      "bytes": 142458,
+      "sha256": "510865c89ca347f2ae8e0932ac1c94a7a882f8cd7b633785c728751a8934cda8"
+    },
+    {
+      "path": "src/xydp/mingge_native_p3_color_install.py",
+      "bytes": 58154,
+      "sha256": "6f830503062cdf9de0763448140b17a42feeaaf458c2417337070b33f8ca1a54"
+    },
+    {
+      "path": "src/xydp/monster_catalog_v3.py",
+      "bytes": 13468,
+      "sha256": "67f1e373ed4443ccafd0714653756c1e34f4e7cf8edd33a34f1d7408798a7760"
+    },
+    {
+      "path": "src/xydp/monster_engine.py",
+      "bytes": 17048,
+      "sha256": "98e06f42d302c3a3689ee4acfaf6d52d94577b90fc1b61c783a75e99753c9477"
+    },
+    {
+      "path": "src/xydp/monster_library.py",
+      "bytes": 89093,
+      "sha256": "d87b32432d432600703b84ce3b61784cfbff2ad4694357bb731616c1c3c849b0"
+    },
+    {
+      "path": "src/xydp/monster_login_integration.py",
+      "bytes": 5917,
+      "sha256": "8afeb8431f6f776b9201d554cd939f30ba7e915d273c94e9354c42eda7209898"
+    },
+    {
+      "path": "src/xydp/monster_smart_transaction.py",
+      "bytes": 16807,
+      "sha256": "376169a8bead0cff8596e8c650da441f353dfc65b556a22d1a2e809031f7ed21"
+    },
+    {
+      "path": "src/xydp/monster_workbook.py",
+      "bytes": 30180,
+      "sha256": "98c622d60837f000b1ae3528c63839c0439682e812eec95da738128113e8bc74"
+    },
+    {
+      "path": "src/xydp/npc_bundle.py",
+      "bytes": 54247,
+      "sha256": "03dffe9aa18864b9023dc6331ce84e5afb09d94361e1d9ac3bf798f91535a6c0"
+    },
+    {
+      "path": "src/xydp/npc_editor.py",
+      "bytes": 34994,
+      "sha256": "96d27c326b2bdec9882bf07219dba8cdcc0b08c90e1bc108bb0be89335d205a8"
+    },
+    {
+      "path": "src/xydp/optional_presets.py",
+      "bytes": 3702,
+      "sha256": "3060299192a48f7aec7e7ecac66835c6818150b806a786d74d46dc7b047a9e93"
+    },
+    {
+      "path": "src/xydp/optional_scripts.py",
+      "bytes": 9470,
+      "sha256": "4e509812b65c1aad6667022803a787c7dd9c1140ab590c6d90d47aa31519e0b7"
+    },
+    {
+      "path": "src/xydp/project_overview.py",
+      "bytes": 20883,
+      "sha256": "8a9580b7e2b0aa9f01720e99c4877dd070a2e5098b538a16ad3caa8819405fdf"
+    },
+    {
+      "path": "src/xydp/project_overview_gui.py",
+      "bytes": 11181,
+      "sha256": "42ec4065e370fb4189dec5ca1ebce6fb8a84c437690dd82d3c40513bd7d53126"
+    },
+    {
+      "path": "src/xydp/recycle_config.py",
+      "bytes": 75981,
+      "sha256": "05ed8d66b2d111f44ef1dc181b96e1d0b566bbf2fdd27ea4b76f8d9d4d791850"
+    },
+    {
+      "path": "src/xydp/release_identity.py",
+      "bytes": 3009,
+      "sha256": "b7cfe05f02d581534b51e38e09d0a8fcbc63fcd2880cf575428ed88964d93797"
+    },
+    {
+      "path": "src/xydp/repository.py",
+      "bytes": 1800,
+      "sha256": "537d4069abf3685be7f26e9c85fc144973e1fa4eecdb98278f9ae9224b0b673f"
+    },
+    {
+      "path": "src/xydp/resident.py",
+      "bytes": 1487,
+      "sha256": "1934793c2ad2e8f9bfdac4ca2729392cd051026ddecba87f606214ab931f5fa3"
+    },
+    {
+      "path": "src/xydp/runtime.py",
+      "bytes": 248,
+      "sha256": "f604b76fd823b31b177d82016fd3bd99b65acd54b9849b4af196bab38c950dcb"
+    },
+    {
+      "path": "src/xydp/runtime_feedback.py",
+      "bytes": 4089,
+      "sha256": "0ee64b03f467b1b405612729736144823669e1ea13120e3f678a7747246f513c"
+    },
+    {
+      "path": "src/xydp/seal_title.py",
+      "bytes": 59005,
+      "sha256": "4aa7fe8a37fb71ec976c2107f3d5bf461ec57ef125402d7e172ce6fd42640be4"
+    },
+    {
+      "path": "src/xydp/skill_upgrade.py",
+      "bytes": 22751,
+      "sha256": "ca95f90829fbe99aa188c8735751f3ba04fe0fb5bbc9d58957bade61b899b332"
+    },
+    {
+      "path": "src/xydp/sqlitepatch.py",
+      "bytes": 11400,
+      "sha256": "ba5d9eae64a256f4ceb890b13d3ca8b00c137dd22229675b1687a650a2cb7b68"
+    },
+    {
+      "path": "src/xydp/storage_paths.py",
+      "bytes": 1212,
+      "sha256": "86cafb067c6d9cf79faabf255853e1699d8b4fa23757296b89c5c217df72a1dc"
+    },
+    {
+      "path": "src/xydp/target.py",
+      "bytes": 2683,
+      "sha256": "67c2261d92c795c10a3abad2eae314eee04e39563a646060c13111e51d8a6117"
+    },
+    {
+      "path": "src/xydp/target_lock.py",
+      "bytes": 2790,
+      "sha256": "2e6d8d81902197fc8527e0438a705a2b88617efbfdaa998ebc665e04d1d879f5"
+    },
+    {
+      "path": "src/xydp/textpatch.py",
+      "bytes": 34975,
+      "sha256": "6f990c7ac42074a8ca1e3b8a0d1dc98bd70b7298f995f4e8c35275cf6a874a4a"
+    },
+    {
+      "path": "src/xydp/user_documents.py",
+      "bytes": 2351,
+      "sha256": "2228bc79c223cc1ad42f5627d4b7ec086c3c0eb97156e7f3e5758d5e68646dfd"
+    },
+    {
+      "path": "src/xydp/validator.py",
+      "bytes": 13548,
+      "sha256": "650e2e7121b037817b3bf025c8f3386d09cbad4706646474d875322607cb8271"
+    },
+    {
+      "path": "src/xydp/weapon_enchant.py",
+      "bytes": 52739,
+      "sha256": "2885ba0e44bef4b0f9e6497f6927741b54e1646c9ccb9a9f5b6250732ff4d892"
+    },
+    {
+      "path": "Start_XuanYuanDevPlatform.bat",
+      "bytes": 118,
+      "sha256": "e3368be484ad703a5dafa0d8227e5b244199134320c631b1f6e0099117a439d5"
+    },
+    {
+      "path": "templates/package/manifest.json",
+      "bytes": 366,
+      "sha256": "fc0d1854c106339268efd32e70e2c38ad65e77869ecccf77327fa57b13be8708"
+    },
+    {
+      "path": "templates/package/README.md",
+      "bytes": 272,
+      "sha256": "f4cfcde6754627e7f517a480e16b64adb41f901f29e2a3e03c60ae47322950b7"
+    },
+    {
+      "path": "tests/baseline_mingge_20260823.txt",
+      "bytes": 65145,
+      "sha256": "e7fe0d9fe230e379fb280f32974267d96c9d28458a69c6983581c689b18b1952"
+    },
+    {
+      "path": "tests/fixtures/equipment_collection_sample.xlsx",
+      "bytes": 74727,
+      "sha256": "ba0f455f2571d22d1b852677e33fe4c5a689bc19f065a632c95aaa3d24679902"
+    },
+    {
+      "path": "tests/fixtures/equipment_wash_current/Mir200/Envir/CustomItemPropertyTextVarList.txt",
+      "bytes": 2349,
+      "sha256": "e2fadaa5079a5e4acfcad28458591c308e368d1af774e4982c4f69e59c81067c"
+    },
+    {
+      "path": "tests/fixtures/equipment_wash_current/Mir200/Envir/EffectImageList.txt",
+      "bytes": 591,
+      "sha256": "731fa92fc84fcc3634dcac92f0200172443d429a194f7f98eb31f0a561dc6e47"
+    },
+    {
+      "path": "tests/fixtures/equipment_wash_current/Mir200/Envir/MapInfo.txt",
+      "bytes": 127968,
+      "sha256": "4123b8242486d21771e18f205b64d0bf50e33bc6d4968f406f15329ca3de1f4f"
+    },
+    {
+      "path": "tests/fixtures/equipment_wash_current/Mir200/Envir/Market_Def/QFunction-0.txt",
+      "bytes": 991731,
+      "sha256": "04b0fd85eeecdf6786768d200d8296a1ef64fd3a0f30b1808193359b0901c1a1"
+    },
+    {
+      "path": "tests/fixtures/equipment_wash_current/Mir200/Envir/Market_Def/玄渊实验室/装备开光-XY_NMGF_MAIN.txt",
+      "bytes": 39288,
+      "sha256": "8bb71e8b6fa85562c9612c7ba5d64352c4d21978293ba455fa0696b5383dcaa2"
+    },
+    {
+      "path": "tests/fixtures/equipment_wash_current/Mir200/Envir/Market_Def/玄渊实验室/装备洗练-XY_NMGF_MAIN.txt",
+      "bytes": 13741,
+      "sha256": "b4b643be532f255d9cf553ea11d4ed65767e1b5c414d379b628e4481e91ef59b"
+    },
+    {
+      "path": "tests/fixtures/equipment_wash_current/Mir200/Envir/MerChant.txt",
+      "bytes": 11671,
+      "sha256": "716a35a173db175306be83a8f7fdb857d4810d8f9894d2723e1723611a3b0ee2"
+    },
+    {
+      "path": "tests/fixtures/equipment_wash_current/Mir200/Envir/QuestDiary/玄渊实验室/装备洗练/仙级直出.txt",
+      "bytes": 5777,
+      "sha256": "dc497eaac25de3ab45dc45e9bc938723cafbb4d6f8d54254134b9870dfce934b"
+    },
+    {
+      "path": "tests/fixtures/equipment_wash_current/Mir200/Envir/QuestDiary/玄渊实验室/装备洗练/圣级直出.txt",
+      "bytes": 6511,
+      "sha256": "c23cdd20e8250f096d02ed7b26c3ebefff1bbe9ea541228bf27c9ce176af583b"
+    },
+    {
+      "path": "tests/fixtures/equipment_wash_current/Mir200/Envir/QuestDiary/玄渊实验室/装备洗练/天赐开光.txt",
+      "bytes": 7237,
+      "sha256": "40aa3511eb552a1ca3858b00392eafab045aa48402339016850ae5c4b7d95528"
+    },
+    {
+      "path": "tests/fixtures/equipment_wash_current/Mir200/Envir/QuestDiary/玄渊实验室/装备洗练/洗练词条实效核心.txt",
+      "bytes": 2900,
+      "sha256": "1b10c09cb0e85e26ca87a51370e0b1eae96324813b9e451d74abda4a34762581"
+    },
+    {
+      "path": "tests/fixtures/equipment_wash_current/Mir200/Envir/QuestDiary/玄渊实验室/装备洗练/洗练词条随机核心.txt",
+      "bytes": 7576,
+      "sha256": "aba3d9d2d25c95fe6ec102c75f3120e9373849186075b1c701160e54c77ea8dc"
+    },
+    {
+      "path": "tests/fixtures/equipment_wash_current/Mir200/Envir/QuestDiary/玄渊实验室/装备洗练/神佑开光.txt",
+      "bytes": 7979,
+      "sha256": "3f85806ddcc1055eb4a5372005e71cdcad003b9dac50326cf0feba4384f9ba91"
+    },
+    {
+      "path": "tests/fixtures/equipment_wash_current/Mir200/Envir/QuestDiary/玄渊攻速突破/全身攻速阈值核心.txt",
+      "bytes": 1380,
+      "sha256": "bfac5877b9d47a6520088bb1dab68fdab52759b067100a100ec9c99afebca64c"
+    },
+    {
+      "path": "tests/fixtures/item_synthesis_invalid_currency.xlsx",
+      "bytes": 33395,
+      "sha256": "196beba65b90d0a65e9fe59a0cfc98a649902cb8776d6456c43c350a994f515e"
+    },
+    {
+      "path": "tests/fixtures/item_synthesis_sample.xlsx",
+      "bytes": 33393,
+      "sha256": "b05d8b3a8020248e46c96458064b77169bf9ef80ac4cf25b396dfe93f916903d"
+    },
+    {
+      "path": "tests/fixtures/mingge/missing-sheet.xlsx",
+      "bytes": 10041,
+      "sha256": "13c1a7f30c0c6951dc65c796c9ccbe33984ab59b04c4220f9ff2e25b685acd38"
+    },
+    {
+      "path": "tests/fixtures/mingge/valid.xlsx",
+      "bytes": 11257,
+      "sha256": "22ee68860a49c03646a3e4b476623361cbb3454ea1c650eecf4e6556d62d52be"
+    },
+    {
+      "path": "tests/monster_v3_fixtures.py",
+      "bytes": 2782,
+      "sha256": "7bf3f2cff36cb7ed1205ff7a85f7dd4a7a24d02de769b2b6fd9bec27cd216e06"
+    },
+    {
+      "path": "tests/post_task1_mingge_20260823.txt",
+      "bytes": 65145,
+      "sha256": "5867910ba3b4634da42daa0f86b5ba8de62c5d6a528098c5700d98002dc12858"
+    },
+    {
+      "path": "tests/test_app_tools.py",
+      "bytes": 10698,
+      "sha256": "419a4602d560c10aeb78045784139760553c7620a6f3596ba28f6c507e9edfcd"
+    },
+    {
+      "path": "tests/test_artifact_library.py",
+      "bytes": 7358,
+      "sha256": "a32ed61ffffc9004d4c8aad91c5e2ff3b4dbe0083c785ca498038fd776fdef93"
+    },
+    {
+      "path": "tests/test_attack_speed_breakthrough.py",
+      "bytes": 14147,
+      "sha256": "a43bb05a658abc5939a95d0ed8c6d134566dbc62790d19e229b5647f16715bb7"
+    },
+    {
+      "path": "tests/test_attr_overview_package.py",
+      "bytes": 12972,
+      "sha256": "ff58f8f745b47251f2d946bd12dc9cbfb209407408c047e5ddf42422614ae559"
+    },
+    {
+      "path": "tests/test_auto_basic_skills_package.py",
+      "bytes": 4231,
+      "sha256": "6d137880438e0717de70d6126b8acc3c09b2c22af8d7e79eea2b89341834a2f0"
+    },
+    {
+      "path": "tests/test_bag_function_service_package.py",
+      "bytes": 5687,
+      "sha256": "7914017a315c435c55cb37f0328c9a2550420e584eebb112b9379752d73c67c5"
+    },
+    {
+      "path": "tests/test_builtin_packages.py",
+      "bytes": 16783,
+      "sha256": "5680fa4088e011077617ecabf7f4e16e1a5c7d0f480b46b68691fd852e416db8"
+    },
+    {
+      "path": "tests/test_config_merge_operation.py",
+      "bytes": 8888,
+      "sha256": "33719619ae7e876b68be0b27a708383cbc48613b496ad9516f8487ee638b80e0"
+    },
+    {
+      "path": "tests/test_config_sync.py",
+      "bytes": 18285,
+      "sha256": "3069abcdc90392c689f4f6ddb247b7a0ce050955a3f0026d123aeb131210f2dc"
+    },
+    {
+      "path": "tests/test_configurable_attr_panel.py",
+      "bytes": 11770,
+      "sha256": "79aed55c285f41c8fbe5011ab7dcd4455d0075b990c627b3941d06fda90b1ad0"
+    },
+    {
+      "path": "tests/test_damage_coefficient_package.py",
+      "bytes": 3384,
+      "sha256": "1ea92bd8576bf44ee18576730adab55e5bd81154cfa6022e67fd1ab0c2b188b0"
+    },
+    {
+      "path": "tests/test_deploy_star_monster13_smartmonster.py",
+      "bytes": 4315,
+      "sha256": "f5cb7fe8850f4beb65bb038849fc07eb8bc23773391a5a2f901497f04126769b"
+    },
+    {
+      "path": "tests/test_dual_transaction_safety.py",
+      "bytes": 7855,
+      "sha256": "58b5c2b5de7c17ea3b3e292842da34d8f21d8c8f4c14a40e76beecf682fdc27a"
+    },
+    {
+      "path": "tests/test_elden_bundle_features.py",
+      "bytes": 9592,
+      "sha256": "02a80ab2c47b1f365a3d2f84cc7163e17ded5c47033e6404c75251e77c6b6da9"
+    },
+    {
+      "path": "tests/test_equipment_aura.py",
+      "bytes": 11851,
+      "sha256": "a29ab2d2677c02301175620031e5084ddc6fb6bfb72211d800bd09d00e97934c"
+    },
+    {
+      "path": "tests/test_equipment_bridge.py",
+      "bytes": 7813,
+      "sha256": "29dc87f36acf58aa3be3bae4a599241ecfb60c54f39fcedd75712f68d41adc1c"
+    },
+    {
+      "path": "tests/test_equipment_collection.py",
+      "bytes": 28232,
+      "sha256": "5766903e7e7de1931b0ff17c949e5db2b395751995fa66a44e88488a2706eb31"
+    },
+    {
+      "path": "tests/test_equipment_collection_test_reset.py",
+      "bytes": 2528,
+      "sha256": "da216a1a6d08b338393618b49e69ba79c88f38ed68e8916f99fcbc749b2728d9"
+    },
+    {
+      "path": "tests/test_equipment_graphics_append_registration.py",
+      "bytes": 3394,
+      "sha256": "d65e373596a3b1ce2c1d69ed46585192594205723cec6a23881afe4aeb98ace1"
+    },
+    {
+      "path": "tests/test_equipment_graphics_append_wiring.py",
+      "bytes": 2723,
+      "sha256": "3533d53109a6b99829e3d01a5e7cd59fd70d23d08c7736c2730d9621c66d8e78"
+    },
+    {
+      "path": "tests/test_equipment_graphics_wiring.py",
+      "bytes": 5988,
+      "sha256": "1e5af17e39be3440dace812815994e7e08bf04fedfdd61f1906d63b9317cbd95"
+    },
+    {
+      "path": "tests/test_equipment_level_bonus_package.py",
+      "bytes": 9211,
+      "sha256": "547d9d46f207302c1aff5241e0b0318a4496d6105c14501315e4e35a88ceefbb"
+    },
+    {
+      "path": "tests/test_equipment_wash_commit_guard.py",
+      "bytes": 5316,
+      "sha256": "1cbbf1bc1ed5942f658997604bd40cddfc951d067fe2921a1e4737a56df2a489"
+    },
+    {
+      "path": "tests/test_equipment_wash_deployment.py",
+      "bytes": 14132,
+      "sha256": "3272b24cc8aa573a0a71333b81aff9a9f6549142d53fdfa693d483484c70101c"
+    },
+    {
+      "path": "tests/test_equipment_wash_import.py",
+      "bytes": 4465,
+      "sha256": "0590fd01c47e64321cafe3af29d122e4804b7fde527e64671517519f369f03b4"
+    },
+    {
+      "path": "tests/test_equipment_wash_opening_package.py",
+      "bytes": 5738,
+      "sha256": "0279bb50db84b2ca671bc4f131a24d90415b80099eb68357e77b3b0c653b0740"
+    },
+    {
+      "path": "tests/test_equipment_wash_regressions.py",
+      "bytes": 2208,
+      "sha256": "e7dadb8f3455ab43e98d482d300606b92af9b3ba85afa655c2afc7a27560f109"
+    },
+    {
+      "path": "tests/test_equipment_wash_runtime_flow.py",
+      "bytes": 11245,
+      "sha256": "d5ba7842273696d34062632ccb7dfd233a20dbcf0790ee325f8316a17e0e982d"
+    },
+    {
+      "path": "tests/test_equipment_wash_temporary_state.py",
+      "bytes": 3918,
+      "sha256": "dc0255bf338bce68ea612453834461566d7a21db9bf198421e85478864a0c97f"
+    },
+    {
+      "path": "tests/test_event_hook_validation.py",
+      "bytes": 1961,
+      "sha256": "ff77504ace3e123b51c9f1960b8a98de94c75d708c81c0acd9eeb52327170a1b"
+    },
+    {
+      "path": "tests/test_execution_lab.py",
+      "bytes": 20685,
+      "sha256": "bebf98e98e235b9839a6030a7d720ac5746acf172aae872906b4a0086ea6e142"
+    },
+    {
+      "path": "tests/test_frozen_provenance.py",
+      "bytes": 9043,
+      "sha256": "e00dfb8749227a421fd80e231bade1a0a498ed8da918519a0a09728be3042e23"
+    },
+    {
+      "path": "tests/test_graphics_transaction_contract.py",
+      "bytes": 10552,
+      "sha256": "82884e16848cd852f75c29b6f010a55786d1b7de7fad955f77a9c83e38f201f9"
+    },
+    {
+      "path": "tests/test_growth_stage.py",
+      "bytes": 8447,
+      "sha256": "d3a4ec9906b23ac9a8b4e67554dbc98aec62985b0c53577e00faa7bc37f104b7"
+    },
+    {
+      "path": "tests/test_indexed_text_line_operation.py",
+      "bytes": 6671,
+      "sha256": "ff1346303b15f34f0dedad3c3225b90b2af79ce4f50f6594a6d62f18321a5352"
+    },
+    {
+      "path": "tests/test_initial_bag_200_package.py",
+      "bytes": 4107,
+      "sha256": "d4e4d9970ea0ba2903f4b86235fcd3298ccb8fc95cea064ded7c11a9f93012d5"
+    },
+    {
+      "path": "tests/test_initial_camp.py",
+      "bytes": 44258,
+      "sha256": "edcf6b97e95b0547daf55b5397058314ff22423d953ec7f367c5183f1bf2219d"
+    },
+    {
+      "path": "tests/test_item_synthesis.py",
+      "bytes": 12846,
+      "sha256": "7bb4cbc7dde808609d390e500d47eb58de28d251e93838aa034a3e0f72dd782f"
+    },
+    {
+      "path": "tests/test_king_mode_complete.py",
+      "bytes": 8730,
+      "sha256": "0ac336bc58f976cbaaa747bb90b55c1e333d7ea1b85d636296ab0cb59b2f1f5e"
+    },
+    {
+      "path": "tests/test_king_mode_packages.py",
+      "bytes": 8072,
+      "sha256": "b1e1729cd3f4c650b801e51a1e1731f41ae758657d79c6a19d6190127d4312b4"
+    },
+    {
+      "path": "tests/test_magic_skill_update_operation.py",
+      "bytes": 7715,
+      "sha256": "50b33ade1935f7e16249fe146341384d07bf7b291747d1cd01f9000971b28315"
+    },
+    {
+      "path": "tests/test_managed_anchor_hook.py",
+      "bytes": 5853,
+      "sha256": "1a986dbe5e258db388d09655f216e51b0562ea84472e6a3b68d002b70742f38d"
+    },
+    {
+      "path": "tests/test_manifest_repository.py",
+      "bytes": 5434,
+      "sha256": "f8fae401a58eedba7af2ec226fcdf129bee2fb37c24c9ab92456c5475fb8184b"
+    },
+    {
+      "path": "tests/test_material_phase_a.py",
+      "bytes": 4859,
+      "sha256": "2e94fd6f683929260a4875b69022f74716a446a2e98d86dbd17a46dbe20b63f7"
+    },
+    {
+      "path": "tests/test_material_recycle_routing.py",
+      "bytes": 3209,
+      "sha256": "a2c90bc33097e71c1a8b8b68f6d32e88a21950c5d11c49634e0c4a9f25ecad32"
+    },
+    {
+      "path": "tests/test_mingge.py",
+      "bytes": 109100,
+      "sha256": "bafa36b4a9a168a94a859098443f79743b17d5edfa6d4da8a6336471de3b4f1c"
+    },
+    {
+      "path": "tests/test_mingge_dual.py",
+      "bytes": 31015,
+      "sha256": "584d7669a4bca18492edc37d689714d28d0e89b3700d66991dfff54dffa81e53"
+    },
+    {
+      "path": "tests/test_mingge_dual_routes.py",
+      "bytes": 6059,
+      "sha256": "676dd52a83f7846a998ebdd1e76656ce9a4ac1c0ef3a16387559afda40330113"
+    },
+    {
+      "path": "tests/test_mingge_native.py",
+      "bytes": 42709,
+      "sha256": "055d8eeae4d655398f2d03d94f252e3ae6368e73402d7eb5a7ccad8ec2142bb6"
+    },
+    {
+      "path": "tests/test_mingge_native_gui.py",
+      "bytes": 1060,
+      "sha256": "dc5f4588758b9e4ecaa28b2ca1b63d3372a78ce1058da2bf788e46648da2f767"
+    },
+    {
+      "path": "tests/test_mingge_native_install.py",
+      "bytes": 11967,
+      "sha256": "c71e16df7268a48fcdf0202a2fce0839b63aec41e747f140e1b3d6aa05929ef1"
+    },
+    {
+      "path": "tests/test_mingge_native_p2_install.py",
+      "bytes": 140842,
+      "sha256": "25d0002cdb4f8fb829d6124dca3f5ba5882c4ea6b78de1cd102de2789267f0e3"
+    },
+    {
+      "path": "tests/test_mingge_native_p3_color_install.py",
+      "bytes": 48017,
+      "sha256": "40b51c4b0cd1795141c5dc479cd236f56f73675efa30fdf6ae7265eaa4ffe895"
+    },
+    {
+      "path": "tests/test_monster_catalog_v3.py",
+      "bytes": 14419,
+      "sha256": "b1c451f14a4dfb21dd3d003e9df7bbd77bf26e3668aa0541cd900db91e96318b"
+    },
+    {
+      "path": "tests/test_monster_cli_v3.py",
+      "bytes": 5537,
+      "sha256": "e479f668aa2fe25e0ee2fc5c3e1e38e937f8af09a7204f515e96e461645091c0"
+    },
+    {
+      "path": "tests/test_monster_damage_absorb_package.py",
+      "bytes": 5244,
+      "sha256": "c007b7424f73e8ceb3ea453b06cdf9342e5a2110121c74af3df33ecd628339d1"
+    },
+    {
+      "path": "tests/test_monster_engine.py",
+      "bytes": 9224,
+      "sha256": "923377ecfdf9fbe5f52d48e780d7a88d8e232a6596457cbafdf0e415626e96b4"
+    },
+    {
+      "path": "tests/test_monster_gui_default_paths.py",
+      "bytes": 11132,
+      "sha256": "523a654ad4adfbc3ea89a7e1cc2d0bdf63139bf3249e6bba9738eeea9275ee4a"
+    },
+    {
+      "path": "tests/test_monster_library.py",
+      "bytes": 72822,
+      "sha256": "4cbf1a7256952ba95ab30c115b936095b3d3ae2b33b49f41f75d30e9c408dcb8"
+    },
+    {
+      "path": "tests/test_monster_login_integration.py",
+      "bytes": 9250,
+      "sha256": "bb84d7b6681e87f262e86820685388436c56152a1e15d819f47c549dd548b023"
+    },
+    {
+      "path": "tests/test_monster_smart_transaction.py",
+      "bytes": 15263,
+      "sha256": "6b5b5b72f0832e24ec2779427d91c4870075a7a6fe02f8fd5f3681d736354a94"
+    },
+    {
+      "path": "tests/test_monster_workbook.py",
+      "bytes": 37355,
+      "sha256": "35f1ad76f458217424ad96784fd557f354e3e91d8ccd1f44dcedc834b386080a"
+    },
+    {
+      "path": "tests/test_necklace_luck_bundle.py",
+      "bytes": 1583,
+      "sha256": "49b54d5a0d16e0bb524be82d486b97b337d62d87c04dfd95b3e8f4f5c97b4e6e"
+    },
+    {
+      "path": "tests/test_nonresident_v2_packages.py",
+      "bytes": 12326,
+      "sha256": "8f5d65ba4e52c16029ecdca955aca66a6d9a89eb44c8d029666188e0c097053a"
+    },
+    {
+      "path": "tests/test_npc_bundle.py",
+      "bytes": 11688,
+      "sha256": "cbc5adcd30ebb2a649efd8aae04f3fb8e2462bd539c631eb51e9c227b732ef29"
+    },
+    {
+      "path": "tests/test_npc_bundle_installer.py",
+      "bytes": 2458,
+      "sha256": "ab747964ca61bef1511b0f095cccf4f6404665afcbaca33cdce82e4cbb5f5c06"
+    },
+    {
+      "path": "tests/test_npc_editor.py",
+      "bytes": 12310,
+      "sha256": "1c015261f7002d0c082a0cb11e6f31597c1b3aed79088d6f253760aa86fb78e4"
+    },
+    {
+      "path": "tests/test_optional_single_entry.py",
+      "bytes": 7858,
+      "sha256": "b7cdebf4c0f251374f5f699450ebe6760c579525efcd005df07749bf70b27c8a"
+    },
+    {
+      "path": "tests/test_planner_transaction.py",
+      "bytes": 23198,
+      "sha256": "79697849e86fdcb931bf3aaa7e3ce6d53ee76da9b30c7394a03c312b7f938b46"
+    },
+    {
+      "path": "tests/test_player_facing_language.py",
+      "bytes": 4493,
+      "sha256": "d6e90bc43cbf021af3e260ffac267ed6ef334a566392bb9b64c6cf2c3eca8b10"
+    },
+    {
+      "path": "tests/test_project_overview.py",
+      "bytes": 11458,
+      "sha256": "9894fca6e4b64c511525ff23dda7b7be47c8b3f6e48562b69efaa52903a7776a"
+    },
+    {
+      "path": "tests/test_project_overview_equipment_graphics.py",
+      "bytes": 4124,
+      "sha256": "f9aab5692a9d45da670df388bfe0631c9808ed7f51b4db1ebf805d92f9a69386"
+    },
+    {
+      "path": "tests/test_project_overview_gui.py",
+      "bytes": 2531,
+      "sha256": "b315b9a62aeb419be50c8adedb59ff63c9657bfcc7b91858014ed784002a2b08"
+    },
+    {
+      "path": "tests/test_recycle_bag_entry_package.py",
+      "bytes": 5022,
+      "sha256": "bbc43a164c02257c57f3fd1f0860806be3f95f48de1189b36558018e918fc23f"
+    },
+    {
+      "path": "tests/test_recycle_candidate_package.py",
+      "bytes": 5902,
+      "sha256": "bd3abbc9cd3492f4482208f92041d0f0ebf194b05b403725c29d70cd85b96cb8"
+    },
+    {
+      "path": "tests/test_recycle_config.py",
+      "bytes": 27649,
+      "sha256": "68dfe2fbaaf8e75fccc20c66cbe524ed0249ef20729c8b6175d36c38214d4e3d"
+    },
+    {
+      "path": "tests/test_recycle_enhancements_packages.py",
+      "bytes": 6432,
+      "sha256": "e17f8cb73c152a7f58398b9f2b3b69b413080dba011967b21194c23e9e508742"
+    },
+    {
+      "path": "tests/test_release_identity.py",
+      "bytes": 3640,
+      "sha256": "134a14ce1b8ce63eb1b4f1f4b96578f0980dfb1b8839351dd3b7480283003301"
+    },
+    {
+      "path": "tests/test_resident_and_optional_scripts.py",
+      "bytes": 9102,
+      "sha256": "b3fe7ecde4f1dd2991b0e36005d7f3ca495dfc6f216d537fe2401457ba716638"
+    },
+    {
+      "path": "tests/test_runtime_feedback.py",
+      "bytes": 1971,
+      "sha256": "94bde6229226ffb76a1836db2ec63769c7d69759349af9721925b3b970224eb7"
+    },
+    {
+      "path": "tests/test_seal_title.py",
+      "bytes": 25213,
+      "sha256": "816da135554f3518510cc2ee6224352b975909972b259fa7d8468674556dc877"
+    },
+    {
+      "path": "tests/test_skill_upgrade_package.py",
+      "bytes": 9013,
+      "sha256": "43675fdd1936770362df57dccc4afffac31950825dea19931174afdc0a571f8e"
+    },
+    {
+      "path": "tests/test_skill_upgrade_v21.py",
+      "bytes": 2540,
+      "sha256": "78b3c7f5a5efdf47f3da7869ca0f8e47aac7ba0f2b91e6fb1265ebc447acda54"
+    },
+    {
+      "path": "tests/test_sqlite_and_anchor_operations.py",
+      "bytes": 7824,
+      "sha256": "640b5848502695b51352be12c2694025534b8532af7729823f0cc2f5533e0fa9"
+    },
+    {
+      "path": "tests/test_storage_bag_entry_package.py",
+      "bytes": 4976,
+      "sha256": "9900e3fb0e5b1dbfacf13dd1b438b5ccbe4b40c239b36d9ce5bfe5b52f306385"
+    },
+    {
+      "path": "tests/test_storage_paths.py",
+      "bytes": 2131,
+      "sha256": "c406295373f3eea4c396d88f6ea4f6b7328cec43eff2a35237390bf6c1595b59"
+    },
+    {
+      "path": "tests/test_sustain_package.py",
+      "bytes": 9244,
+      "sha256": "62a88eea69defd408af8dd6817b2a4081373e889803d7eef3e469f0aa2ef2751"
+    },
+    {
+      "path": "tests/test_target_and_text.py",
+      "bytes": 21928,
+      "sha256": "00d33b21e949962f59b572f4becd44b7960da1bcf9f79b718b2f1cbfff89550b"
+    },
+    {
+      "path": "tests/test_user_documents.py",
+      "bytes": 5298,
+      "sha256": "0905530624757db3796d24eea462d6684891896f3734ea041171660550586189"
+    },
+    {
+      "path": "tests/test_wash_diagnostic_location.py",
+      "bytes": 398,
+      "sha256": "c523f463c43dc70ca1a2e9657e2a0ce1e7abb5d686606fc6833690c169345102"
+    },
+    {
+      "path": "tests/test_weapon_enchant.py",
+      "bytes": 24342,
+      "sha256": "f0ef956cf38235debd05a614da73dd3e8c9492b69ee384805c30b8f514b41801"
+    },
+    {
+      "path": "tests/test_world_map_variable_init.py",
+      "bytes": 2287,
+      "sha256": "2d2b9937c6cd7482fe52160c875af138adaabee8cab9e2f1871549850682a99a"
+    },
+    {
+      "path": "tests/wash_runtime_model.py",
+      "bytes": 7281,
+      "sha256": "c159671f1483eac67a97936468d15deead8655ae66f526d8c2310c6e1f98abe2"
+    },
+    {
+      "path": "tools/audit_monster_pak_export.py",
+      "bytes": 9916,
+      "sha256": "ce028f41d44caeac9f353b186a6b753a4d4b7fda479e4ab73a668f4ce911903a"
+    },
+    {
+      "path": "tools/build_monster_workbook.py",
+      "bytes": 16257,
+      "sha256": "0ad5dfe4563a09ede138f995ec0c8a9a80096c38e53548abbf9d8bd024831830"
+    },
+    {
+      "path": "tools/build_platform_release.py",
+      "bytes": 8698,
+      "sha256": "2f76e1019423df6e5cbcca8185271be50425916515657a80e0116d51c38622ee"
+    },
+    {
+      "path": "tools/build_weapon_enchant_workbook.mjs",
+      "bytes": 8431,
+      "sha256": "b16ab66a0ef48ff5c4c37e858c498f2ac09e3c8af969c66a3f17cd1de46fa7b1"
+    },
+    {
+      "path": "tools/deploy_star_mon113_116_wzl_fix.py",
+      "bytes": 20061,
+      "sha256": "841531fa4c979ed49145fc5e0ca5e682abc7eafa0b8645327947184538270566"
+    },
+    {
+      "path": "tools/deploy_star_monster10_smartmonster.py",
+      "bytes": 32328,
+      "sha256": "26e20aef3f03da3ce96998a47872fb012eabb18f2546424b590d938685925fbe"
+    },
+    {
+      "path": "tools/deploy_star_monster13_smartmonster.py",
+      "bytes": 32492,
+      "sha256": "d6a8952310cd8669f5424a11ff92b85fa36ecf4481240254c4f4f494dce12442"
+    },
+    {
+      "path": "tools/deploy_star_monsters_to_jewelry_shop.py",
+      "bytes": 16711,
+      "sha256": "e758bfb0ecb0b0990dafd4babde16a96f0612f7392d35363f53185c5a270610f"
+    },
+    {
+      "path": "tools/generate_builtin_packages.py",
+      "bytes": 20256,
+      "sha256": "5c76276eefe65af368c4250b830814bcd3fc9607fa4f8edf9904cd4b2abbfbea"
+    },
+    {
+      "path": "tools/prepare_star_monster_pak_compat_repack.py",
+      "bytes": 9427,
+      "sha256": "86569a85a7f222f16f0e1f07e8431206de38575f1e79ba718ff670038acba2f1"
+    },
+    {
+      "path": "tools/prioritize_star_mon_pak_rules.py",
+      "bytes": 11292,
+      "sha256": "c2270d9330b38f46123b423aadcc3719537a797779479093e1fba6a55232883f"
+    },
+    {
+      "path": "tools/Start-VerifiedPlatform.ps1",
+      "bytes": 2028,
+      "sha256": "46d0eb935775d18ef42458721f0889a878ddfe94aec9a06d40f0abca954cad9a"
+    },
+    {
+      "path": "tools/temp-cleaner/build_cleaner.ps1",
+      "bytes": 2051,
+      "sha256": "78666a1f7db1f4dd0fe0cbff54ed19ecbd965ee7193cee3316bf2d90388ffd7f"
+    },
+    {
+      "path": "tools/temp-cleaner/cleaner_core.py",
+      "bytes": 18457,
+      "sha256": "42965f842536d4a95bacba679eef6d9d813984c097c7d8940064b6f5fdb17078"
+    },
+    {
+      "path": "tools/temp-cleaner/cleaner_gui.py",
+      "bytes": 11344,
+      "sha256": "8fff06ffb546158428474df63c3f704d029e8a03b8045e59bf1dc55cc3a2fbde"
+    },
+    {
+      "path": "tools/temp-cleaner/README.md",
+      "bytes": 1121,
+      "sha256": "240a2b2de5590c5e5723e457f9481dc22a62480b6650f88176fa012d196f50fb"
+    },
+    {
+      "path": "tools/temp-cleaner/run_cleaner.py",
+      "bytes": 2585,
+      "sha256": "13e83f5a009b86533ff7e53e35572e758d354a79399d5711a21eadf6a5bffb4a"
+    },
+    {
+      "path": "tools/temp-cleaner/scan_platform_inventory.ps1",
+      "bytes": 1792,
+      "sha256": "e42df5157e15c08c4b2305cb99192ca83d3b7b5496f4045e2d41ec15e1972638"
+    },
+    {
+      "path": "tools/temp-cleaner/tests/test_cleaner.py",
+      "bytes": 3543,
+      "sha256": "fba8f8e7f556da5901fce1d0c62588d8f4d17d4fa0fc292b1ba8fe395ce51faa"
+    },
+    {
+      "path": "tools/temp-cleaner/tests/test_portable_exe.py",
+      "bytes": 2188,
+      "sha256": "32077c6cc18f7d3d771b77dd27b87e2d5c83ff7c7a1d41f0b1c6f48555d5f4ce"
+    },
+    {
+      "path": "tools/verify_equipment_wash_import.py",
+      "bytes": 5944,
+      "sha256": "12bb0dec5dc2fd5ba6d9abef63230a2f4904b3163ab4a58af1fc528c282c9d72"
+    },
+    {
+      "path": "tools/verify_frozen_provenance.py",
+      "bytes": 12060,
+      "sha256": "86133e6483f45982dbf0e945cd1d7b8962d8f4ca905d3335e2929158decb40e3"
+    },
+    {
+      "path": "tools/verify_monster_workbook_release.py",
+      "bytes": 11547,
+      "sha256": "ece9429311d6bae776bfea300ce60031941eafed5a7e3e2193d9b1af881ab41d"
+    },
+    {
+      "path": "tools/verify_wash_direct_repair.py",
+      "bytes": 4762,
+      "sha256": "18de910c582a2639450842eaed3bedadc36905c78bfe6203c56543936904f296"
+    },
+    {
+      "path": "tools/verify_weapon_enchant_workbook.mjs",
+      "bytes": 1369,
+      "sha256": "9ab4cf9282186ca4e5259d7f223c569676a386efdb7bc6a2f01f55e97b17dae6"
+    },
+    {
+      "path": "做装备/src/xyequip/__init__.py",
+      "bytes": 117,
+      "sha256": "1e236f350e15acd1489fb18aa1ddd4d1aaabb86c5630ae5212e46ebfcfaabb7a"
+    },
+    {
+      "path": "做装备/src/xyequip/batch.py",
+      "bytes": 9649,
+      "sha256": "6a983d70abe67b9de5c3b89f52ae2a63b1be68f4854ed53bf1b5b74a3e0d1007"
+    },
+    {
+      "path": "做装备/src/xyequip/equipment_graphics/__init__.py",
+      "bytes": 24321,
+      "sha256": "b6e1edc755dac3de34ff4d0a4537debd9ea5b3fa225f0d75d2bd39a25bf3a6a8"
+    },
+    {
+      "path": "做装备/src/xyequip/equipment_graphics/action_wil.py",
+      "bytes": 5159,
+      "sha256": "204adf0339f073239fce739f7abccf90bfccf3da6fb80868422111735a8e5237"
+    },
+    {
+      "path": "做装备/src/xyequip/equipment_graphics/append.py",
+      "bytes": 17820,
+      "sha256": "929e2b7fd0509948f8cf276cba034b187810b2d50af6e35210b5b3991899b997"
+    },
+    {
+      "path": "做装备/src/xyequip/equipment_graphics/builder.py",
+      "bytes": 3828,
+      "sha256": "48208e613186f1431c440f9fc4dc9dfadd6f8f1c9c9ba88deceaf21e72f84d4b"
+    },
+    {
+      "path": "做装备/src/xyequip/equipment_graphics/data/human_header_palette.bin",
+      "bytes": 1080,
+      "sha256": "b30b1d96d340868c7cc2ec821adedf21426ce3c2afc5372c09e77fdd6a2d304c"
+    },
+    {
+      "path": "做装备/src/xyequip/equipment_graphics/data/weapon_header_palette.bin",
+      "bytes": 1080,
+      "sha256": "b30b1d96d340868c7cc2ec821adedf21426ce3c2afc5372c09e77fdd6a2d304c"
+    },
+    {
+      "path": "做装备/src/xyequip/equipment_graphics/data/wix_header.bin",
+      "bytes": 48,
+      "sha256": "2890453ed8aa338d67cefe1c93bf3f5e076c90ad132bdf8c01d213a404f427a7"
+    },
+    {
+      "path": "做装备/src/xyequip/equipment_graphics/static_wzl.py",
+      "bytes": 7161,
+      "sha256": "084f99ad48e3b3e8ef3a2c88fdd7bd7f7c289fc87ef504b0e06ff678b25ce64a"
+    },
+    {
+      "path": "做装备/src/xyequip/equipment_graphics/transaction.py",
+      "bytes": 15322,
+      "sha256": "ec585c9b38616dc41fe47c93d31738e27c5cef403190f88a5b536b0436bbf588"
+    },
+    {
+      "path": "做装备/src/xyequip/equipment_graphics/wil_wix.py",
+      "bytes": 12982,
+      "sha256": "0d52fbdb7e966ec7fef983a52e17a951ba5cde094f0a94af33ee12b727abb1be"
+    },
+    {
+      "path": "做装备/src/xyequip/installer.py",
+      "bytes": 17347,
+      "sha256": "36830e75a55325e807763f723accf6ed64bda462375d9de78d43cd25936d869e"
+    },
+    {
+      "path": "做装备/src/xyequip/item_hint.py",
+      "bytes": 12300,
+      "sha256": "af88639f907f1d2cef730bc05fcdbfa3cad999081cf6b554c3bcc5caf8645811"
+    },
+    {
+      "path": "做装备/src/xyequip/legacy/__init__.py",
+      "bytes": 55,
+      "sha256": "cd97073c18e6597f9898a1b47575f48705da9df05eddceb8a679e838b755245b"
+    },
+    {
+      "path": "做装备/src/xyequip/legacy/xy_batch_equip_maker.py",
+      "bytes": 16093,
+      "sha256": "2ebcfab9b24ca3f220bf0ecce8fc331466363613e1c68f25aabe492130bd9b0b"
+    },
+    {
+      "path": "做装备/src/xyequip/legacy/xy_equip_maker.py",
+      "bytes": 98367,
+      "sha256": "fc744c3e5dce6f897c2102e2faa863d9929dd4b2afeffb3b005606c9ca6346d3"
+    },
+    {
+      "path": "做装备/src/xyequip/materials.py",
+      "bytes": 3210,
+      "sha256": "a26f3f806cfc392202c424b9ca0abfefb789bd7590f341799b962f4f34845ad6"
+    },
+    {
+      "path": "做装备/src/xyequip/paths.py",
+      "bytes": 3734,
+      "sha256": "2d676e2a2058692da33541c792920d79176534a7c8b8bd4cb9d02ae45d8b8663"
+    },
+    {
+      "path": "做装备/src/xyequip/planner.py",
+      "bytes": 23308,
+      "sha256": "6c9cdaa64ae921495b8006080be0d2fad5e379c272a8bd5ac90423de65c51aab"
+    },
+    {
+      "path": "做装备/src/xyequip/resources/__init__.py",
+      "bytes": 62,
+      "sha256": "49ca26bcb65c9f9ff16fb7471fa9e33ef9e92f5bb6264a3eafa8434098ccb311"
+    },
+    {
+      "path": "做装备/src/xyequip/resources/action_resource_bundle.py",
+      "bytes": 14624,
+      "sha256": "9aa47362ee941d618570d8b0a14f74fe7375a278f2b6f186e461ce7ba4075c39"
+    },
+    {
+      "path": "做装备/src/xyequip/resources/clone_wzl_frame_raw.py",
+      "bytes": 12416,
+      "sha256": "d5bdfbf9422462b1f9996b3eca6ddcb31b0dc966ab2a1418af8c2c0cdfa4a714"
+    },
+    {
+      "path": "做装备/src/xyequip/resources/equipment_asset_replacement.py",
+      "bytes": 14037,
+      "sha256": "5472b67e13a6936ab6b21e9de0f011cdb611aaf46683e97fa1007536ab1ecada"
+    },
+    {
+      "path": "做装备/src/xyequip/resources/import_complete_weapon_clothing.py",
+      "bytes": 11638,
+      "sha256": "d15e22c975dd7941a5320edf49e156e77325a9bde3c193a62a0ac4aa378ba292"
+    },
+    {
+      "path": "做装备/src/xyequip/resources/stage_equipment_asset_replacement.py",
+      "bytes": 12414,
+      "sha256": "6993969ece4aff8c3f43aac9827cc3a48ad20f8a4ad781d6e17dca15585f2218"
+    },
+    {
+      "path": "做装备/src/xyequip/resources/static_icon_from_wzl.py",
+      "bytes": 15074,
+      "sha256": "c9598371d31c446c939c1c8c904084cfb1bf32e68e1bd9c312b4c0271865c910"
+    },
+    {
+      "path": "做装备/src/xyequip/source.py",
+      "bytes": 374,
+      "sha256": "fbc5112dc2980e9bc35f498e654a332359afc88162e8e84bf056283f990e7fe3"
+    },
+    {
+      "path": "做装备/src/xyequip/target.py",
+      "bytes": 2630,
+      "sha256": "edcf6541e7f3975b684815ca2b221b082070e02bc9a97d0fe70d1dbef19851a3"
+    },
+    {
+      "path": "做装备/src/xyequip/transaction.py",
+      "bytes": 446,
+      "sha256": "1a419daf0d57c8a79841f2d3934e7618a1ccc0356e71ad870285eef41d397f6b"
+    },
+    {
+      "path": "做装备/src/xyequip/update.py",
+      "bytes": 25569,
+      "sha256": "7e9cd42ddab285eb2d1f0b8a6d08bcbffe80161e0dfdba5a49ee206ec6cb7b2d"
+    },
+    {
+      "path": "做装备/tests/test_action_resource_bundle.py",
+      "bytes": 8862,
+      "sha256": "205436a19521347d7edae0914642742dc7a4e7b4203c4b2206c2f85cac2e3dcc"
+    },
+    {
+      "path": "做装备/tests/test_attack_speed_breakthrough_property.py",
+      "bytes": 4428,
+      "sha256": "dd09123a246a0a01fa7cab8c8e1bb4f0f6b075571b641347c188753a40cc9804"
+    },
+    {
+      "path": "做装备/tests/test_complete_weapon_clothing_import.py",
+      "bytes": 3625,
+      "sha256": "49a4b65fa8b4169ece33cd1b06e87781e5f7c28d3e749b2b43a3e99ee59f7f87"
+    },
+    {
+      "path": "做装备/tests/test_equipment_asset_replacement_plan.py",
+      "bytes": 7959,
+      "sha256": "76cf3b978c07c68650105604d361814b3f0e72411feb801cf83ecd0b79dedf91"
+    },
+    {
+      "path": "做装备/tests/test_equipment_batch_and_native.py",
+      "bytes": 27645,
+      "sha256": "ad49a000b9fa13d0e8e10d1db0d13192028239cf9be15760137ae109b03dbc92"
+    },
+    {
+      "path": "做装备/tests/test_equipment_graphics.py",
+      "bytes": 8250,
+      "sha256": "6c2e78dc1b0390c14bf74f9c7cfa0cbb7e6add6f058ce2ef7f488b348ebe250d"
+    },
+    {
+      "path": "做装备/tests/test_equipment_graphics_append.py",
+      "bytes": 9923,
+      "sha256": "a6a0274b4724263e7abb852053d8340c562a44b43d59d3a908fff3c4e0f16a87"
+    },
+    {
+      "path": "做装备/tests/test_equipment_level_bonus_property.py",
+      "bytes": 4265,
+      "sha256": "5ba4c89b904a6db2badaa8e3d06b29fc96f87d0d0a582754d6a34673e5aabea2"
+    },
+    {
+      "path": "做装备/tests/test_equipment_paths.py",
+      "bytes": 2607,
+      "sha256": "a62b3aa7b36f0f9243d4e5acdfb5050e7c7765412e3a0eab0a986725ee440178"
+    },
+    {
+      "path": "做装备/tests/test_equipment_preflight.py",
+      "bytes": 35680,
+      "sha256": "d6e3016f464ede74e60ed020bb4065394b463919537fd2bca3db5fcbf4f5cd1d"
+    },
+    {
+      "path": "做装备/tests/test_equipment_resources.py",
+      "bytes": 14971,
+      "sha256": "c63304e3452ba4dd4fc57849793ae5ff0eee48a416cde602d3f82123b7902c99"
+    },
+    {
+      "path": "做装备/tests/test_equipment_transaction.py",
+      "bytes": 31113,
+      "sha256": "a245c8b5098b817aaf31697066b9deb4fc14c056ac74abcdb32e119da72d3d50"
+    },
+    {
+      "path": "做装备/tests/test_item_hint.py",
+      "bytes": 7723,
+      "sha256": "3f32b448bd58902dfddb39f5f1b8667face3f6dc7c48c32f18fa80ccf4dc6f3b"
+    },
+    {
+      "path": "做装备/tests/test_legacy_contract.py",
+      "bytes": 8989,
+      "sha256": "15140f5ec2b5b58cfb00fb0a574901b66d50aa6df9172cdf40c5d24def6c4bfb"
+    },
+    {
+      "path": "做装备/tests/test_material_batch.py",
+      "bytes": 21167,
+      "sha256": "9f54fec1511d197dcee8e56e24b2333c8c2247d47ca1882e3d759f2d621b5ebd"
+    },
+    {
+      "path": "做装备/tests/test_migrated_core_parity.py",
+      "bytes": 3924,
+      "sha256": "5562b2fe8adbc7214217f942410f538a3bf8cbdf7e2915690763a29c57ae9ba9"
+    },
+    {
+      "path": "做装备/tests/test_mixed_equipment_workbook.py",
+      "bytes": 5242,
+      "sha256": "8e6dfadb047504f2138ee62bac7d1c31a1a7263d2dadb4ee11c2020e688436ba"
+    },
+    {
+      "path": "做装备/tests/test_shared_equipment_workbook_contract.py",
+      "bytes": 13949,
+      "sha256": "9c4e9be8e92d80de9c8776bc53936b10d77b81048457c4d9370556676fb95b18"
+    },
+    {
+      "path": "做装备/tests/test_special_equipment_slots.py",
+      "bytes": 8890,
+      "sha256": "a51e337125c7cbf16e04cdef0802e5d4029dbc952198f62d50a705a0c7ef9453"
+    },
+    {
+      "path": "做装备/tests/test_stage_equipment_asset_replacement.py",
+      "bytes": 3634,
+      "sha256": "6a64997f830416c2b17be62e92413d74911cd5410c687818ee5ef7f324da3d58"
+    },
+    {
+      "path": "做装备/tests/test_static_wzl.py",
+      "bytes": 3132,
+      "sha256": "ba08d57d2eb426d214b367657db4b580faadf99ddca84c2d3f501a35ab08419c"
+    },
+    {
+      "path": "做装备/tests/test_xlsx_contract.py",
+      "bytes": 3824,
+      "sha256": "cf77b7d0dde493aa65ca304032d8d91b08ce47fab10fb6b4e7fe25fe7747bb77"
+    },
+    {
+      "path": "接口/00_先看这里_接口总索引.txt",
+      "bytes": 15300,
+      "sha256": "adfbf88172a4107a003176e0afe2be826313ddda5f304c002d05ab28c3ffe480"
+    },
+    {
+      "path": "接口/01_玩家命令与NPC脚本接口.txt",
+      "bytes": 10485,
+      "sha256": "f6d20f69b21712971b524bc21dae87743bda8e8cd8075caaf14136fe750d26a5"
+    },
+    {
+      "path": "接口/02_UI按钮和图标接口.txt",
+      "bytes": 4210,
+      "sha256": "942d17962e4203d07bf134d0cf279dd35caf0de4f3149d288b7c17683c3c6347"
+    },
+    {
+      "path": "接口/03_世界地图权限接口.txt",
+      "bytes": 4497,
+      "sha256": "b8dec8329e0d511035b23d70b09f48fabf88bbc1d58993c6281eed9a8480ee73"
+    },
+    {
+      "path": "接口/04_战斗重算与做装备锚点.txt",
+      "bytes": 10413,
+      "sha256": "790bcfb4fd618c6e520caf3ddee02266992bd1d98c304254ad15720234e5f28a"
+    },
+    {
+      "path": "接口/05_事件接入和内部占用接口.txt",
+      "bytes": 8540,
+      "sha256": "9c62c54e9fd14a861fa73d8119d54563cb234e357950f4198f66ef70031c8935"
+    },
+    {
+      "path": "接口/06_GPT接入标准与禁止参考.txt",
+      "bytes": 4866,
+      "sha256": "6ddb7f3841493e61d18d448a97ea658cff762367d930495f75be00e5af830fed"
+    },
+    {
+      "path": "接口/07_装备悬浮框动态背景与内嵌图片接口.txt",
+      "bytes": 8194,
+      "sha256": "a99ce92c7616944e3e23bb84d87bb6f7143d5c63afb33d1facbc17fc0d873dcf"
+    },
+    {
+      "path": "接口/08_初始之地七NPC材料表与装备兑换接口.txt",
+      "bytes": 10938,
+      "sha256": "1de65fb334a339b70db55a36ce7b85fa90f46bd3872e7ff9776d10d02a2252af"
+    },
+    {
+      "path": "接口/09_多层地图与上下层传送门接口.txt",
+      "bytes": 15860,
+      "sha256": "8559833a4b3720978f528131409ab8ece4898282df85a01d8673a1c8c9c5126f"
+    },
+    {
+      "path": "接口/09_赞助称号显示与实效验收接口.txt",
+      "bytes": 4301,
+      "sha256": "5679c26830dda2510a3b24d8121d3819cc515776b6de312cb4c14ad44e86a88c"
+    },
+    {
+      "path": "接口/10_主动选择配置文件同步接口.txt",
+      "bytes": 3658,
+      "sha256": "751a4ac90b7409e4a3277fd60d9e27c0dd9568910cc71b2a065e513e5ffcd17c"
+    },
+    {
+      "path": "接口/11_项链幸运强化接口.txt",
+      "bytes": 13235,
+      "sha256": "6c21d6f778fc0f23be5b3c19601e7d772d9804e9fd884997813a08c80c39755c"
+    },
+    {
+      "path": "接口/12_测试后台监视与XY_VERIFY事件接口.txt",
+      "bytes": 3934,
+      "sha256": "be992f3b142d91617607678d1d3a810211ee447710fe288f01d907817d215599"
+    },
+    {
+      "path": "接口/13_地图怪物处决与怪物韧性接口.txt",
+      "bytes": 3273,
+      "sha256": "2a3428853015ed4f0a5f64a85578b9f6e0806b0e8472b4e0b8e3e0b7d2f94d11"
+    },
+    {
+      "path": "接口/14_怪物视觉与动作帧批量迁移接口.txt",
+      "bytes": 3253,
+      "sha256": "ecbc0e1edd68f37d707bbb5ba4382dca57070aadb54e51e290e334ee35e104e9"
+    },
+    {
+      "path": "接口/15_怪物外观本地库与一键植入接口.txt",
+      "bytes": 1226,
+      "sha256": "b81b1e0750e173700293b8fedaadd5e0019ec6262010138a3b0dbd448f861f2f"
+    },
+    {
+      "path": "接口/16_处决重甲跪地视觉候选接口.txt",
+      "bytes": 1709,
+      "sha256": "de11846269911b57a7361cf13cc3ac18c15f85f9817759249457d2caf9415c48"
+    },
+    {
+      "path": "接口/17_沉没王庭怪物运行计数诊断接口.txt",
+      "bytes": 4865,
+      "sha256": "afc978f394f4047ac26f2d1451c184032f8f5245b937f7ddae0614948f0f0ab9"
+    },
+    {
+      "path": "接口/18_失乡者三图启动首刷计数接口.txt",
+      "bytes": 3857,
+      "sha256": "4543feee68c5c38154634b76f34c847827a4bffd6c67bddb3c12f4718c0eed13"
+    },
+    {
+      "path": "接口/19_怪物资料与补丁本地库一键植入接口.txt",
+      "bytes": 5868,
+      "sha256": "6de7e60f78bd61e58f7f7a95120224a1a61b2a51f0eef7d190c44364ce8c9ed1"
+    },
+    {
+      "path": "接口/20_怪物批量生成表一键植入接口.txt",
+      "bytes": 5997,
+      "sha256": "82f3776c32f53b37dc8afe805c30cdc43b4b1625096a2aafc83bc5c0c4e576ab"
+    },
+    {
+      "path": "接口/21_转生神力重算候选接口.txt",
+      "bytes": 4183,
+      "sha256": "fe635f3dc95081a7fa682b2f9bfcea35f622d9a0ea6ef2953baad3f02a9f6d04"
+    },
+    {
+      "path": "接口/22_第一大陆漂流群岛魂魄任务接口.txt",
+      "bytes": 3500,
+      "sha256": "7fa930b394745bb10ec9c8307b1817912b44e419111adabe495cc8edffeae43b"
+    },
+    {
+      "path": "接口/23_NPC自定义对话框背景接口.txt",
+      "bytes": 2142,
+      "sha256": "7cb978b2d91a199a9f067b1c40790e8caf2304633ad4ca99a20f14d9a6e5c6af"
+    },
+    {
+      "path": "接口/24_装备回收表格配置接口.txt",
+      "bytes": 9926,
+      "sha256": "4253bf72bff6ab694aa24db840ef2abcd93f3b28856de80a342b68870e47e82b"
+    },
+    {
+      "path": "接口/25_范围自动拾取接口.txt",
+      "bytes": 2432,
+      "sha256": "d33dc0779de665bd7dbf4fe4846d66ab18ccef637f527f87e8264ce1d8d4fff9"
+    },
+    {
+      "path": "接口/25_装备共享母表生成修改接口.txt",
+      "bytes": 3394,
+      "sha256": "98348c4bb41dc9e6921fc49fbc34a372af9a59c30d1af4b5cad5c36665888972"
+    },
+    {
+      "path": "接口/25_装备洗练与开光接口.txt",
+      "bytes": 2662,
+      "sha256": "f8c84a0ef63819661bb6ef13df4de82fd537e5ad1ed2cb7ababc1e31f31b0f69"
+    },
+    {
+      "path": "接口/26_可拖动装备操作台接口.txt",
+      "bytes": 743,
+      "sha256": "e081dec903354f415e9c54baa0cb8c4e69c92c7b5692c21927a25b7dd9da53a1"
+    },
+    {
+      "path": "接口/26_自动挂机与四点巡航候选接口.txt",
+      "bytes": 4319,
+      "sha256": "e860526bd636974c1026e15c32607ff462b31079ab7df54cee7111b1576ff692"
+    },
+    {
+      "path": "接口/27_材料增量添加接口.txt",
+      "bytes": 2331,
+      "sha256": "ab9835c92f005465c70215c32608f6571c79cf2d45837c227473dff7d9a29c05"
+    },
+    {
+      "path": "接口/28_65材料双事务接口.txt",
+      "bytes": 2747,
+      "sha256": "7b86ae21f5580d8f0c06e06e0ad853a4fcc39987a558777abb0e0143f3294f93"
+    },
+    {
+      "path": "接口/28_神印基础与称号晋升接口.txt",
+      "bytes": 6543,
+      "sha256": "aab63b83ffe10ee98ab5510e6a6ec664c174bdef9e702dec7fd1f1e217b4f9e9"
+    },
+    {
+      "path": "接口/29_小偷葛托克随机活动接口.txt",
+      "bytes": 2911,
+      "sha256": "7e137412553819457d210111edf4912e4c18e2f9c6a4679ae1460ada1e67d119"
+    },
+    {
+      "path": "接口/29_星辰怪物纯模型资源追加接口.txt",
+      "bytes": 2232,
+      "sha256": "9d82e13cf4534d917f16ec1fd4219f99e830e18e073a9b86ddd6485ea30b0bee"
+    },
+    {
+      "path": "接口/30_做装备特殊部位_背包神器与称号卷接口.txt",
+      "bytes": 2137,
+      "sha256": "b0a9b8e04bcd820051d43563d07b832bfc59d16a807b5ed8a31f1b088d903dfd"
+    },
+    {
+      "path": "接口/30_星辰怪首饰店一键生成接口.txt",
+      "bytes": 8654,
+      "sha256": "f3b701a6dd5100c6b1c97e243e0a1d6259f5ef75978c0375df0e0767da507866"
+    },
+    {
+      "path": "接口/31_成长装备大陆分段NPC接口.txt",
+      "bytes": 4614,
+      "sha256": "91c158458490007d1512db42a0bbdfffd2af217c6eee618de1f729798ddba580"
+    },
+    {
+      "path": "接口/32_平台临时文件安全清理接口.txt",
+      "bytes": 2027,
+      "sha256": "e717dd507df66aa1dd88974c58ed586cec22a82339ea51ecb153294e3e3811d5"
+    },
+    {
+      "path": "接口/33_装备收集图鉴接口.txt",
+      "bytes": 11455,
+      "sha256": "dbd02844be409603a45cbd6b83b7c6445212783c7e3f6d58dc8355ab3576568e"
+    },
+    {
+      "path": "接口/34_星辰地图独立图库换号接口.txt",
+      "bytes": 3532,
+      "sha256": "f4e5368a5575b02f4cefa241f8129a9233d5a4ac037e45752e74a2ce5229af2f"
+    },
+    {
+      "path": "接口/34_通用物品合成接口.txt",
+      "bytes": 3105,
+      "sha256": "c902c4a3e97ecc9c1dd4142f3d4cfc3cada8fe55bb4b0830ed45b118e84d0e8a"
+    },
+    {
+      "path": "接口/35_地图主图与雷达血缘修复接口.txt",
+      "bytes": 1263,
+      "sha256": "03115eb39d51d84925057b8dba6f271390476afa64b50901a9b1d459fb9c7819"
+    },
+    {
+      "path": "接口/36_星辰200图PAK遮蔽批量修复接口.txt",
+      "bytes": 2172,
+      "sha256": "a1e1d9f290a27f646bfd0abe532c00f61398b69682c18e1e7fbd1a4194cc5ecc"
+    },
+    {
+      "path": "接口/37_祖玛教主动态副本接口.txt",
+      "bytes": 2048,
+      "sha256": "3ca600041d7463874391a75df7850428340daa61d0012f32bdd082cedf9e66d0"
+    },
+    {
+      "path": "接口/38_装备范围光环接口.txt",
+      "bytes": 2483,
+      "sha256": "31be822612570ade0c9a067e01dc2a2ee301f8deabfa546bedbcf612cfb59cce"
+    },
+    {
+      "path": "接口/39_命格系统表格与一键植入接口.txt",
+      "bytes": 7512,
+      "sha256": "69a1421f2a17ae7c465960461a09ff5abbf7e83d9ed0da949c9cb5b4c5a4881b"
+    },
+    {
+      "path": "接口/40_命格原生多色离线候选接口.txt",
+      "bytes": 10898,
+      "sha256": "632814087957eb03214161b7b74a67f4e4ecf8edcf2601512be0efdaa133f06d"
+    },
+    {
+      "path": "接口/41_命格原生多色P1隔离安装接口.txt",
+      "bytes": 4781,
+      "sha256": "9d89dfa27d465c2f66f080eec55760b5d7dce8f94f84df4ddf69a8c2b284790c"
+    },
+    {
+      "path": "接口/42_命格原生多色P2三属性隔离安装接口.txt",
+      "bytes": 13519,
+      "sha256": "efddce175b20f899f18476fc7f170da866e6048935d6df4c2e8751b7fb443c8f"
+    },
+    {
+      "path": "接口/43_命格P3颜色表格导入测试接口.txt",
+      "bytes": 17917,
+      "sha256": "133ed94426e4326381c40b3d44cecebe43c8eed0a0df9d8f5bd34dc5ac49c3b3"
+    },
+    {
+      "path": "接口/44_命格NPC规则双包接口.txt",
+      "bytes": 2536,
+      "sha256": "7e9c3c253d4888a34b800e090283d2d09ff7f060de472c2c2b95593c6f701669"
+    },
+    {
+      "path": "接口/45_命格内容与多色属性双包接口.txt",
+      "bytes": 6952,
+      "sha256": "75acef09cbbcfb4884e095f490c57bcb87ac39f166aabcd0345db20211735a9f"
+    },
+    {
+      "path": "接口/46_攻速实测临时计数接口.txt",
+      "bytes": 3081,
+      "sha256": "260acf0e056238571cf9f764a085bf367b77410a7536d8168e0320e2c14c684c"
+    },
+    {
+      "path": "接口/46_武器附魔表格与专项事务接口.txt",
+      "bytes": 3507,
+      "sha256": "12a99aae5a2f68fcb8c9765884499c9261591f91de8e8997e59fc0d68aac8635"
+    },
+    {
+      "path": "接口/47_攻速突破属性与上限接口.txt",
+      "bytes": 7235,
+      "sha256": "26e9409cef854c744e2021b464ad7f5811333052c4bd9beff6887eee55c93af4"
+    },
+    {
+      "path": "接口/48_装备等级增加与常驻包接口.txt",
+      "bytes": 4309,
+      "sha256": "de121f8d3daaccaab748f506962b3c4cdd2a0d8e5cccb460988a10842bb0a08f"
+    },
+    {
+      "path": "接口/49_平台功能卡与总控派单接口.txt",
+      "bytes": 3010,
+      "sha256": "ad60d0c32518168ba398fdbe441d080a517e5f10cf02073f506efd1a15af0b5b"
+    },
+    {
+      "path": "接口/50_洗练故障无消耗诊断与恢复接口.txt",
+      "bytes": 3904,
+      "sha256": "e185817e86cbc3aec35f8d6b96fd27b3e4d96ae79fdad79855994a4c7273e61c"
+    },
+    {
+      "path": "接口/51_艾尔登法环全NPC批量包接口.txt",
+      "bytes": 3768,
+      "sha256": "896abff6325a10cecba5e6f2a8850f7f56f4f866ec71abd5944d7b2d3285d0bf"
+    },
+    {
+      "path": "接口/JJ2115剑甲素材候选验证接口.txt",
+      "bytes": 11476,
+      "sha256": "57ab610f5c274b58b46b58b83f247c62c9551e71e27e45c3409ff31be6074e64"
+    },
+    {
+      "path": "接口/接口清单.json",
+      "bytes": 53643,
+      "sha256": "d5336d59b30c7873a65efdfdccce0f81fcdfe4f7b97ae89c2d53bdb167bce2d4"
+    },
+    {
+      "path": "接口/装备素材替换接口.txt",
+      "bytes": 1896,
+      "sha256": "b15c84a0bff6efb5fc5add3f0d0440975c745a1dde2d8b7e79d0374e73fdb61a"
+    },
+    {
+      "path": "接口/装备素材追加接口.txt",
+      "bytes": 2215,
+      "sha256": "7b83af5f7eb2a4ab932b445e241a9639165ab86b1b7b34b66e201a74c09cf5eb"
+    },
+    {
+      "path": "接口/装备静态素材包_生成验证导入接口.txt",
+      "bytes": 3510,
+      "sha256": "e15b701ed33a470de29951a5d107001c96a15f75c8d0f37bf8e279390f0df818"
+    }
+  ],
+  "snapshotFingerprint": "19836cfc24a70af03c525ca6213762898c6a090c36ea0d98a995ecfc3eabf6f1"
+}

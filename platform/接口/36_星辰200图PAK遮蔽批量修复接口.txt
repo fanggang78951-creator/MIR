@@ -1,0 +1,47 @@
+接口名称：星辰 200 图 PAK 遮蔽批量修复
+接口等级：内部 / 平台维护
+状态：已完成；132 张正式部署、静态复审归零，用户使用新登录器抽样确认正常
+
+用途
+处理星辰最低风险 200 图中“目标客户端同名旧 PAK 优先读取，遮蔽正确 WZL/WZX”导致的主地图花屏。接口按目标 MAP 当前真实引用抽取正确帧，生成共享紧凑 WZL/WZX，并同时重写 MAP 图库号与图片号。
+
+工作目录
+D:\XuanYuanDevPlatform\玄渊界面施工台
+
+生成候选，正式端零写入
+npm.cmd run maps:repair-star-render-shadow-batch
+
+确认关闭 M2、客户端、MakeGameLogin、WZL 编辑器后正式部署
+npm.cmd run maps:repair-star-render-shadow-batch -- --apply
+
+部署后静态复审
+npm.cmd run maps:repair-star-render-shadow-batch -- --verify
+
+回滚最近部署
+npm.cmd run maps:repair-star-render-shadow-batch -- --rollback-latest
+
+实现文件
+src\main\maps\map-raw-library-remap.ts
+scripts\repair-star-easiest-200-render-shadow-batch.mjs
+scripts\audit-star-easiest-200-render-shadow.mjs
+
+硬门禁
+1. 只处理当前审计明确列出的冲突 MAP 和 WZL/WZX，不扫描或改写无关地图。
+2. 每个紧凑库最多 32760 帧；MAP 图片号为 1 基，Provider 源帧为 0 基。
+3. MAP 必须同时重映射图库号和图片号，并保留 0x8000 阻挡位。
+4. 旧 PAK 与 pak.txt 必须保持原 SHA256。
+5. 客户端/服务端 MAP 必须同哈希；候选、备份、部署和复审任一步失败自动回滚。
+6. 正式部署前必须通过 M2、客户端、MakeGameLogin、WZL 编辑器进程门禁。
+7. 明月已验收地图路线不使用本接口。
+
+当前成果
+132 张 MAP；12 对共享隔离 WZL/WZX；修复后 200 图风险地图 0、冲突图库 0、冲突引用 0。
+
+回执
+D:\MirServer\_XY_MAP_INSTALLS\star-render-shadow-batch-20260815014038-e0803f12.json
+
+回滚目录
+C:\Users\Administrator\AppData\Local\XuanYuanDevPlatform\star-shadow-batch\backups\20260815014038_星辰132图遮蔽修复
+
+游戏验收
+2026-08-15 用户使用新登录器抽样确认正常。该结论是已知花屏地图抽样通过，不写成 132/132 逐图逐格检查。

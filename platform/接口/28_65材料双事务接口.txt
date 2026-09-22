@@ -1,0 +1,60 @@
+玄渊平台——材料图标与数据库双事务接口
+
+一、用途
+
+把“材料背包图标”和“材料StdItems记录”拆成两个互不混写、可独立回滚的事务。
+材料只写 Items.wzl/.wzx，不写 DnItems、StateItem，也不按可穿戴装备同步三库。
+
+二、实现
+
+模块：E:\XuanYuanDevPlatform\src\xydp\material_phase_a.py
+测试：E:\XuanYuanDevPlatform\tests\test_material_phase_a.py
+收据：E:\XuanYuanDevPlatform\logs\material-phase-a\*.json
+备份：E:\XuanYuanDevPlatform\backups\material-phase-a\<事务号>
+
+三、图标事务
+
+预检：
+$env:PYTHONPATH='E:\XuanYuanDevPlatform\src'
+python -m xydp.material_phase_a icon-preflight --manifest <图标清单.json> --client-data E:\11周年\data
+
+应用：
+python -m xydp.material_phase_a icon-apply --manifest <图标清单.json> --client-data E:\11周年\data
+
+规则：
+1. 清单必须按Idx 907—971连续65项，名称和文件唯一，library只能是Items。
+2. 在平台备份目录的临时副本中调用已验收WZL Provider逐项append。
+3. 预检后正式Items双文件哈希发生变化则停止。
+4. 提交后逐项export回读；按翎风type6的黑底透明键比较客户端实际可见RGB。
+5. 任一项失败，Items.wzl/.wzx两文件恢复写前字节。
+
+四、数据库事务
+
+预检：
+python -m xydp.material_phase_a db-preflight --manifest <材料入库.json> --database D:\MirServer\Mud2\DB\ApexM2.DB
+
+应用：
+python -m xydp.material_phase_a db-apply --manifest <材料入库.json> --database D:\MirServer\Mud2\DB\ApexM2.DB
+
+规则：
+1. 必须在图标事务回读后，把实际Looks回填入清单。
+2. 907—971必须全空；793/794/802必须存在；972—983必须全空。
+3. 只在平台临时数据库副本中参数化写入，完整回读及integrity_check通过后原子替换正式数据库。
+4. 新材料固定StdMode=46、Shape=1、DuraMax=99999、OverLap=2、Price=0、Stock=5。
+5. 保护材料全字段或预留位状态发生变化时整批恢复。
+
+五、回滚
+
+python -m xydp.material_phase_a rollback --receipt <收据.json>
+
+回滚前会核对当前正式目标仍等于该事务写后哈希；若已被后续修改则拒绝覆盖。
+
+六、本批真实事务
+
+图标事务：XYMI-20260822-013718-C9646062，Items Looks 6398—6462，65/65逐项回读。
+数据库事务：XYMD-20260822-014350-1C7690A1，StdItems Idx 907—971，65/65字段回读。
+数据库SHA256：619C32B497530F46251FD962A71E7D8329905EE37EA5EBBCB4BF4E1E3AE41F61 → F683DF3AE187489ACDB482F9E6D703C5600F45F67A7F9FAC0C762EBCAA7B348B。
+
+七、验证边界
+
+本接口证明平台素材与数据库回读通过，不代表M2加载或游戏内显示已验收。执行时不得为验证而启动、关闭或重启游戏引擎。

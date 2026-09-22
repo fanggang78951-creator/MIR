@@ -1,0 +1,75 @@
+赞助称号显示与实效验收接口（当前游戏端已验收，已沉淀平台母版）
+
+一、NPC 内部入口
+
+标签：@XY_SPONSOR_STATUS
+位置：D:\MirServer\Mir200\Envir\Market_Def\玄渊运营\赞助称号-xycamp.txt
+调用方式：在赞助称号 NPC 主菜单点击“查看当前赞助属性”。
+用途：按 CHECKFENGHAO 从高到低检测赞助4档至赞助1档，并显示当前档位及表格属性。
+说明：这是 NPC 内部标签，不是公共 QFunction 命令，其他脚本不得直接占用同名标签。
+
+二、属性总览刷新接口
+
+调用格式：
+#CALL [\玄渊功能\非常驻\属性总览\玄渊三属性按钮.txt] @XY_UI_STATUS_REFRESH
+
+当前调用点：每档赞助称号授予成功并确认后。
+作用：立即刷新左上属性图标中的伤害系数、韧性、处决概率。
+限制：基础爆率、最大爆率和韧性的完整运行时重算仍以重新登录为验收边界；不得在 NPC 中复制第二套战斗公式。
+
+三、称号属性说明文件
+
+当前客户端：D:\11周年\data\fenghao.dat
+格式：称号名称=说明文字
+当前登记：赞助1档、赞助2档、赞助3档、赞助4档。
+说明文字必须与 03_赞助称号.xlsx 以及 QFunction 受管实效块保持一致。
+
+非连击界面兼容文件：D:\MirServer\Mir200\Envir\ItemDescList.txt
+用途：为不读取 fenghao.dat 的称号界面提供同值物品备注。
+规则：两份显示说明只负责展示，不参与属性计算，严禁在其中增加第二套实效逻辑。
+
+四、属性来源
+
+赞助1档：处决概率5%，韧性20，基础爆率100%，最大爆率3%，伤害系数5%。
+赞助2档：处决概率6%，韧性30，基础爆率200%，最大爆率3%，伤害系数6%。
+赞助3档：处决概率8%，韧性40，基础爆率300%，最大爆率5%，伤害系数10%。
+赞助4档：处决概率10%，韧性50，基础爆率500%，最大爆率10%，伤害系数15%。
+
+五、实效链
+
+伤害系数：QFunction 的 XY_EQUIP_MAKER_RUNTIME_DAMAGE_COEFFICIENT_ANCHOR。
+基础爆率：QFunction 的 XY_EQUIP_MAKER_RUNTIME_DROP_ANCHOR 与 XY_EQUIP_MAKER_DROP_ANCHOR。
+最大爆率：QFunction 的 XY_EQUIP_MAKER_RUNTIME_DROP_MAX_ANCHOR 与 XY_EQUIP_MAKER_DROP_ANCHOR。
+处决概率：QFunction 的 XY_EXECUTION_LAB_CHANCE_ANCHOR。
+韧性：QFunction 的 XY_EXECUTION_LAB_TOUGHNESS_ANCHOR。
+
+六、验收顺序
+
+1. 重新加载脚本或由用户自行重启 M2；Codex 不操作游戏引擎。
+2. 完全退出并重新打开客户端，使 fenghao.dat 重新载入。
+3. 点击赞助 NPC 的“查看当前赞助属性”，必须识别当前档位。
+4. 查看称号说明，必须显示五项属性及准确数值。
+5. 查看左上属性A、属性C图标，伤害系数、韧性、处决概率必须包含赞助加成。
+6. 重新登录后验证伤害系数、爆率乘区、处决概率和韧性实效。
+7. 当前游戏端已验收通过；平台母版仍需保持candidate，等待独立新服完成全链验收后再晋级verified。
+
+七、平台母版位置与状态
+
+当前游戏端于2026-07-30由用户确认“验证通过”。本次通过内容已经沉淀到平台，历史待验证表述不再作为当前状态。
+
+1. 初始之地生成核心：
+D:\XuanYuanDevPlatform\src\xydp\initial_camp.py
+版本：xy.initial-camp.seven-npcs 1.5.0-candidate.1
+职责：从03_赞助称号.xlsx生成NPC属性清单、升级链、@XY_SPONSOR_STATUS、QFunction唯一实效锚点、ItemDescList和客户端fenghao.dat，并纳入同一服务端/客户端事务。
+
+2. 左上属性总览：
+D:\XuanYuanDevPlatform\packages\candidate\xy.ui.attr-overview
+版本：2.0.6-candidate.1
+职责：通过声明式title_additions读取赞助称号，把伤害系数显示在属性A，把韧性和处决概率显示在属性C。只负责显示，不承载实效。
+
+3. 公共刷新调用仍固定为：
+#CALL [\玄渊功能\非常驻\属性总览\玄渊三属性按钮.txt] @XY_UI_STATUS_REFRESH
+
+4. 新服植入要求同时选择服务端和客户端根目录。平台事务会备份并原子写入两侧文件，回滚也同时逐字节恢复。
+
+5. 成果包仍保留candidate状态，因为“当前游戏端验收通过”不等于“任意独立新服完整安装、M2启动、游戏验收和回滚四证齐全”。不得擅自改为verified。

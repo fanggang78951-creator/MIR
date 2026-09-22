@@ -1,0 +1,150 @@
+玄渊平台——命格原生多色P2三属性隔离安装接口
+整理日期：2026-08-26
+适用引擎：当前翎风 / LFM2 20260707基线
+状态：已完成 / game_validation_complete
+分类：实验室受限接口
+
+一、用途
+
+本接口把38号表的固定候选tiebi-vitality-p2接到独立的管理员游戏验收入口，用于一次闭合“单件最多3条原生直接属性、离散多色文字、穿脱与重登持久化”。它不是正式洗练、八部位、支付、随机、保底或数据库写入入口。
+
+固定候选：
+- 目标测试装备：鞭尸灵玉；中文部位：灵玉；装备位置：17。
+- 命格名称：【三元命格·测试】。
+- 行17：防御+5，绑定1，250/1/17/0/0/5/0/0；状态=已实测确认。
+- 行18：生命值+100，绑定6，250/6/18/0/0/100/0/0；状态=已实测确认。
+- 行19：魔法值+100，绑定7，250/7/19/0/0/100/0/0；状态=已实测确认。
+- 显示文字：红色命格名、绿色/第四色属性名、橙色正号和数值、白色分隔符。
+
+生命值与魔法值的绑定号先按翎风官方“自定义属性说明书”作为工作假设进入成品；任何代码、表格或收据不得把这两项自动升级为“已实测确认”。只有本端游戏验收通过后，另增游戏证据。
+
+官方页面：
+https://www.5cq.com/help/翎风/topics/游戏引擎反外挂系统/游戏功能详解/自定义属性说明书.htm
+
+本地网页快照：
+D:\codex交班记录\翎风引擎知识库\证据原件\网上资料\20260826_P2三属性\官方_自定义属性说明书_20260826.htm
+SHA256=42D317DE781D322A78885F75CA00944B12EE81786FF119C6815E0B78C8E4D87E
+
+二、GUI入口
+
+平台页：命格原生多色 → P2三属性隔离验收
+
+1. P2预检：只读38号表、目标M2Server.exe、三条本地证据记录（两个唯一快照路径）和目标服三个固定脚本文件，展示候选规范哈希、引擎/证据状态、阻止项、警告和精确文件变化。
+2. 安装三属性测试：必须先通过当前预检并二次确认。
+3. 精确回滚文件：只回滚本事务的三个脚本文件；绝不宣称恢复已经由M2修改的测试物品实例。
+4. 只读检查封印/状态：验证schema3受保护coordination、独立manifest、HMAC链式日志、全部备份和三个目标的before/after/unknown分类；检查不推进事务状态。受限intent-prefix只在显式恢复入口的当前逐文件意图门禁内判定，不作为普通inspect输出类别。
+5. 中断事务恢复回滚：准备期仅允许零业务写的ABORTED/closed；业务期按当前代、归属、journal尾锚和三个排他目标分类继续。RECOVERY_REQUIRED只在三目标全before时做terminal-only收尾，after、prefix或unknown均零覆盖停止。
+
+三、CLI
+
+预检：
+python -m xydp.cli --root E:\XuanYuanDevPlatform mingge-native-p2-test-preflight --input E:\XuanYuanDevPlatform\所需材料表格汇总\38_命格原生多色候选.xlsx --candidate tiebi-vitality-p2 --server D:\MirServer
+
+安装：
+python -m xydp.cli --root E:\XuanYuanDevPlatform mingge-native-p2-test-install --input E:\XuanYuanDevPlatform\所需材料表格汇总\38_命格原生多色候选.xlsx --candidate tiebi-vitality-p2 --server D:\MirServer --yes
+
+回滚文件：
+python -m xydp.cli --root E:\XuanYuanDevPlatform mingge-native-p2-test-rollback --transaction <事务ID> --server D:\MirServer --yes
+
+中断事务只读恢复预检：
+python -m xydp.cli --root E:\XuanYuanDevPlatform mingge-native-p2-test-recover-preflight --transaction <事务ID> --server D:\MirServer
+
+边界：该只读命令只适用于已经生成并封印manifest的事务。如果进程恰好在coordination预留后、manifest写入前中断，它会失败关闭并提示缺少manifest/HMAC；不得删除事务目录或手改coordination。此时只能在平台内部重新验证business_write_started=false、journal sequence/head为空、pending为空且三个目标仍全为before后，执行下方显式rollback；条件不满足时恢复命令自身必须拒绝。
+
+中断事务恢复回滚：
+python -m xydp.cli --root E:\XuanYuanDevPlatform mingge-native-p2-test-recover --transaction <事务ID> --server D:\MirServer --strategy rollback --yes
+
+仅当三个目标已全部精确等于安装后哈希、只是最终状态事件缺失时，才允许补记完成：
+python -m xydp.cli --root E:\XuanYuanDevPlatform mingge-native-p2-test-recover --transaction <事务ID> --server D:\MirServer --strategy finalize-install --yes
+
+正式构建后可把“python -m xydp.cli”替换为“bin\xydp-cli.exe”。
+
+冻结构建门禁：GUI 与 CLI 的 PyInstaller onefile 都必须把当前
+`src\xydp\mingge_native_p2_install.py` 和 `src\xydp\cli.py` 作为数据文件放入
+同一解包路径 `xydp`。每份产物构建后必须执行
+`python tools\verify_frozen_provenance.py --artifact <EXE> --source-root src`。验证器直接
+读取 PyInstaller CArchive 的原始有序 TOC，不使用已去重的字典判定唯一性；统一
+路径分隔符，拒绝空段、`.`、`..`、绝对/驱动器路径、Windows 尾点/尾空格和
+casefold 提取路径碰撞。两份必需路径都必须且只能对应一个原始记录、类型必须为
+实际落盘数据 `b`，并与当前源码逐字节相等；任一门禁失败时构建非零退出，不得进入
+预检或安装。
+
+四、精确写入范围
+
+安装器只允许以下三个固定目标：
+- Mir200\Envir\UserCmd.txt：追加“命格平台三属性验收<TAB>98”。
+- Mir200\Envir\Market_Def\QFunction-0.txt：追加XY-MG-NATIVE-P2独立受管块。
+- Mir200\Envir\QuestDiary\玄渊验收\命格平台三属性验收.txt：新增固定验收脚本。
+
+安装器不直写ApexM2.DB、人物Mir.DB、客户端、登录器、EffectImageList、WZL/WZX、旧37号命格目录或P1脚本。玩家执行命令后，M2会更新当前测试物品的持久实例数据；这与“安装器不直写数据库”是两个层次。
+
+五、运行时门禁
+
+- 入口、点击后、最终写入前分别重新核对管理员、位置17、<$JADE>=鞭尸灵玉和属性行17至19；最终阶段使用新变量，不复用上一步读值。
+- 首次写入只接受：行17精确等于P1黄金值，行18/19八项读值全0。
+- 若三行已精确等于P2成品，只报告already，不重复写入。
+- 其他状态全部阻止；不得覆盖未知正式物品实例。
+- 唯一写段必须连续执行一对LockUpdateItem/UpdateItem；禁止进入@RecalcAbilitys，禁止扣费、随机、数据库、发物品、延迟和登录/穿脱钩子。
+- 写后立即读回三行并与预期逐项比较；异常时要求隔离或废弃测试物品。
+
+当前端不能可靠读回隐藏type4=9，因此“行18/19全0”只表示可读字段为空，不承诺未知正式物品的隐藏字段级精确回滚。本接口只允许可废弃测试实例。
+
+六、文件事务与回滚
+
+- 安装前固定候选ID、命格名、属性、片段、色号、编译脚本、工作簿和三目标文件全部参与哈希门禁。
+- 当前冻结候选规范SHA256=fc80d75fb151974cc1155acd11cb4b90a662d864092609bc19c0e1aa32e85c52；编译脚本SHA256=a4cd8376bb5a341ab1ac254c5926246a085084e34118fcc72949db9157ac260f。
+- 目标M2Server.exe必须匹配当前版本4.0.0.0及SHA256=6B23758A704D29AB57DA0F9F673A64854DCBD531CE9D6C36741702BC678A8F27；本P2工作假设禁止跨版本套用。
+- 目标路径逐级拒绝符号链接、目录联接和重解析点。
+- P1与P2共用按服务端根隔离的Windows全局Named Mutex；进程退出后由系统释放，不依赖残留锁文件。
+- 当前可信控制面由schema3受保护coordination、HMAC manifest、链式journal和固定三目标共同组成。coordination绑定当前transaction/generation、合法上一代closed owner、setup/business-write/owner状态、journal sequence/head/phase及pending event；receipt.json只供GUI和用户阅读。
+- 平台先验证当前代、冻结plan、三目标和全部备份。HMAC密钥为32字节随机值，经Windows DPAPI LocalMachine保护；密钥与coordination文件ACL仅允许SYSTEM和Administrators。
+- 安装、回滚和恢复全程持有拒绝delete-share和reparse的父目录、目标叶及备份叶Win32 handle。存在目标在同一排他handle内分类、truncate、写入、flush和读回；缺失目标只允许CREATE_NEW；原缺失目标回滚时以同一handle的FileDispositionInfo删除。
+- 每个journal事件签名当前generation、固定index对应的relative path、source hash和source length。pending事件必须先通过当前代、固定index/relative、非负且非bool的length基础合同，才可写普通journal或推进coordination；截尾、断链、未锚定尾、错代和错误字段均失败关闭。
+- 准备期只有business_write_started=false、journal sequence/head为空且无pending、三个目标仍精确等于reservation before时，才允许strategy=rollback幂等中止为ABORTED/closed；该状态不得finalize-install。
+- 每个业务文件写入前锚定WRITE_INTENT，写后同句柄校验并锚定WRITE_DONE；三个目标全部after后才允许INSTALLED。回滚只使用已持有且验证过的备份字节，逆序锚定ROLLBACK_INTENT/ROLLBACK_DONE；逐文件source只接受exact-before、exact-after或manifest after payload的精确前缀，INTENT/DONE必须同代、同index、同relative、同source hash/length和同intended-before配对。
+- recovery rollback对四种生产RECOVERY_REQUIRED动作UNKNOWN_TARGET_DRIFT、AUTO_RECOVERY_FAILED、ROLLBACK_DRIFT、ROLLBACK_VERIFY_FAILED统一只允许“三目标全exact-before”的terminal-only收尾；任一after、intent-prefix或unknown均零覆盖拒绝，绝不重新进入业务回滚。finalize-install是独立显式例外，只在三目标全exact-after时补记/协调INSTALLED，不写业务文件。
+- pending_closed和RECOVERY_REQUIRED可在ROLLBACK_COMPLETE、ordinary owner closed、coordination closed三个持久化边界幂等重入；上一代closed owner只在新代reservation前精确验证并由schema3封印，未绑定或替换owner失败关闭。
+- 任一manifest/journal/coordination篡改、备份缺失、错action/hash/index/relative/source-pair、旧代、目标漂移或归属不匹配均零覆盖停止。文件回滚与物品实例恢复分开报告；本接口没有实例恢复承诺。
+
+事务目录：
+E:\XuanYuanDevPlatform\backups\mingge-native-p2-test\<事务ID>
+
+密钥目录（不在源码、事务或备份目录内）：
+%ProgramData%\XuanYuanDevPlatform\secrets\mingge-p2-hmac.key.dpapi
+
+七、游戏验收
+
+平台安装后Codex不操作引擎。由用户关闭M2并等待GameCenter自动拉起，然后：
+
+1. 穿戴P1已验收的同一件鞭尸灵玉；确认行17仍是黄金值，行18/19为空。
+2. 记录写入前人物防御、最大生命、最大魔法。
+3. 输入@命格平台三属性验收，只点击一次写入按钮；截图写后读回面板。
+4. 对比人物面板：防御应保持+5，最大生命应增加100，最大魔法应增加100。
+5. 悬浮灵玉：命格名、防御+5、生命值+100、魔法值+100应同屏多色显示，不出现控制串或重复数值。
+6. 取下/重穿一次并复核三项；小退重登后再次复核人物面板、三行读回和悬浮文字。
+
+只有上述六步通过后，P2才可升级为“已实测确认”。在此之前状态始终是部分完成/game_validation_pending。
+
+八、禁止扩大
+
+- 不扩八部位、不接支付、不接正式洗练、不接随机/保底。
+- 不把绑定40至55脚本属性混入P2黄金候选。
+- 不因P2成功删除或降级image_gradient彩色图片标签能力；本地PNG真渐变后端永久独立保留。
+- 不修改P1黄金样本和旧37号路线。
+
+九、2026-08-26游戏验收进度
+
+1. SCR-GAME-018确认首次写入前行17命中P1黄金值、行18/19为空；SCR-GAME-019确认写后行17至19精确等于本接口目标值。
+2. SCR-GAME-020确认【三元命格·测试】、防御+5、生命值+100、魔法值+100同屏多色显示，无可见控制串或重复值。
+3. 用户现场确认生命值与魔法值均真实生效；取下并重新穿戴后，防御、生命、魔法三项仍全部生效。
+4. 第七节第1至5步及第6步的穿脱部分已经通过；小退重登后的面板、精确候选识别和悬浮文字尚未验证。
+5. 本节记录的是2026-08-26 20:26历史状态：当时为部分完成/game_validation_pending；已由第十节最终验收结论取代。
+
+十、2026-08-26最终游戏验收
+
+1. SCR-GAME-021确认小退重登后同一鞭尸灵玉仍显示【三元命格·测试】、防御+5、生命值+100、魔法值+100，多色悬浮保持。
+2. SCR-GAME-022确认重登后再次执行命令进入“当前三行已精确等于P2候选，未重复写入”分支。
+3. 用户明确确认小退重登后三项人物属性无变化；此前穿脱重算已经通过。
+4. 固定tiebi-vitality-p2六步验收链至此完成，状态升级为已完成/game_validation_complete；独立终审Critical/Important/Minor=0/0/0。
+5. 该状态只覆盖鞭尸灵玉、位置17、行17至19绑定1/6/7和固定5/100/100组合，不授权一般表格候选安装、其他装备、八部位、随机、品质、支付、保底或正式洗练。
+6. 当前正式事务仍为INSTALLED/active。现有接口没有“验收完成后只关闭事务但保留已安装脚本”的操作，禁止手删事务、active owner或coordination；后续P3颜色测试设计必须先明确继承或安全退役路径。

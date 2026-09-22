@@ -1,0 +1,34 @@
+【已废弃 / 禁止参考】怪物外观本地库 V1
+
+废弃日期：2026-08-04
+废弃原因：V1 使用了错误映射 `library_no = Appr // 10`，并且只复制客户端图库、
+不保存或植入 Monster 数据行。该路线会把 Appr1230 错配成 Mon123.Pak。
+
+已经游戏实测确认的正确映射是：
+
+    library_no = Appr // 10 + 1
+    slot_no    = Appr % 10
+
+例如：
+
+    Appr215  -> Mon22，槽位5
+    Appr1052 -> Mon106，槽位2
+    Appr1230 -> Mon124，槽位0
+    Appr1800 -> Mon181，槽位0
+
+本文件只保留为禁止清单，不能再据此开发、扫描或植入。
+当前唯一权威接口：
+
+    D:\XuanYuanDevPlatform\接口\19_怪物资料与补丁本地库一键植入接口.txt
+
+当前 GUI 页：怪物库
+当前活动目录：D:\XuanYuanDevPlatform\怪物库
+旧 V1 catalog 已转存到：怪物库\deprecated\<时间>\catalog-v1-wrong-appr-div10.sqlite
+
+禁止事项：
+
+1. 禁止恢复 `Appr // 10`。
+2. 禁止把“客户端出现Mon文件”等同于“Monster数据库已有怪物”。
+3. 禁止只复制补丁却声称怪物已经生成。
+4. 禁止覆盖目标服同名 Monster 行。
+5. 禁止把本文件中的旧页面名称“怪物外观库”恢复为活动入口。

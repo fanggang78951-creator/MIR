@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "id": "xy.example",
+  "version": "1.0.0",
+  "display_name": "示例成果包",
+  "status": "candidate",
+  "engine": "LFM2",
+  "bundle": null,
+  "dependencies": [],
+  "parameters": {},
+  "claims": {"labels": [], "variables": [], "maps": [], "npcs": []},
+  "operations": [],
+  "preflight_checks": [],
+  "post_checks": [],
+  "evidence": []
+}

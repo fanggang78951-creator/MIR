@@ -1,0 +1,70 @@
+{
+  "schemaVersion": 1,
+  "includeDirectories": [
+    "src",
+    "tests",
+    "tools",
+    "做装备/src",
+    "做装备/tests",
+    "接口",
+    "docs",
+    "templates"
+  ],
+  "rootFiles": [
+    "README.md",
+    "AGENTS.md",
+    ".gitignore",
+    "build.ps1",
+    "run_cli.py",
+    "run_gui.py",
+    "Start_XuanYuanDevPlatform.bat"
+  ],
+  "excludeDirectoryNames": [
+    ".git",
+    ".pytest_cache",
+    "__pycache__",
+    "backup",
+    "backups",
+    "build",
+    "dist",
+    "runtime",
+    "temp",
+    "tmp",
+    "workspace"
+  ],
+  "excludeSuffixes": [
+    ".bak",
+    ".log",
+    ".pyc",
+    ".pyo",
+    ".tmp"
+  ],
+  "excludeRelativePaths": [
+    "tools/deploy_star_mon113_116_compat_pak.py",
+    "tools/import_star_monster_visual_pack.py",
+    "tools/probe_star_monster_raceimg_compat.py",
+    "tools/repair_star_mon113_116_native_pak.py"
+  ],
+  "sensitiveNamePatterns": [
+    "(?i)(^|/)(\\.env(?:\\..*)?|.*(?:secret|token|password|passwd|api[_-]?key|credential|private[-_]?key).*)$"
+  ],
+  "contentScanSuffixes": [
+    ".bat",
+    ".cfg",
+    ".csv",
+    ".ini",
+    ".json",
+    ".md",
+    ".mjs",
+    ".ps1",
+    ".py",
+    ".txt",
+    ".xml",
+    ".yaml",
+    ".yml"
+  ],
+  "sensitiveContentPatterns": [
+    "(?im)\\b(?:PASSWORD|PASSWD|API_KEY|TOKEN)\\s*=\\s*[\"'][^\"'\\r\\n]{4,}[\"']"
+  ],
+  "maxFileBytes": 2097152
+}

@@ -1,0 +1,142 @@
+玄渊平台——战斗重算、装备生成器与受管锚点契约
+
+一、用途
+
+本文件给平台维护者、做装备生成器和新战斗成果包使用。普通 NPC、玩家命令和 UI 按钮不要直接调用这些锚点。
+
+核心原则：
+- XLSX 是装备属性唯一母表。
+- 做装备工具只把已声明属性写入相应锚点。
+- 战斗成果包负责计算实效，UI包只显示最终值。
+- 锚点缺失、重复或受管块被手改时整次预检阻止，不能猜位置追加。
+
+二、正式战斗重算标签
+
+@XYDP_RecalcPower
+所属包：xy.combat.power 1.1.1 verified/resident
+用途：登录、穿戴、脱下后重算神力倍攻及打怪显示基础。
+
+@XYDP_RecalcBlast
+所属包：xy.combat.blast 1.1.1 verified/resident
+用途：重算最终暴击伤害。
+
+@XYDP_RecalcDrop
+所属包：xy.combat.drop 1.2.0 verified/resident
+用途：重算普通爆率、最大爆率和最终爆率乘区。
+
+@XYDP_RecalcMonsterAbsorb
+所属包：xy.combat.monster-damage-absorb 1.0.0 verified/resident
+用途：重算对怪伤害吸收候选值、上限与最终值。
+
+@XYDP_MonsterAbsorbTick
+所属包同上；内部定时维持标签，不允许做玩家/NPC入口。
+
+@XYDP_RecalcSustain
+所属包：xy.combat.sustain 1.2.0-candidate.1 candidate/resident
+用途：登录、穿戴、脱下后重算百分比吸血汇总值，并检测是否需要启停固定回血定时器。
+
+@XY_LEVEL_BONUS_RECALC_DELAY
+所属包：xy.resident.equipment-level-bonus 1.0.0-candidate.1 candidate/resident
+用途：登录、穿戴、脱下后汇总固定装备与实例装备“等级增加”，按应有值与U470已应用值的差额调整人物真实等级。仅供平台事件链调用。
+
+[@Attack] 中的 xy.combat.sustain 受管钩子
+所属包同上；仅在当前目标为怪物且玩家未满血时，用 `CALCPERCENT <$PKPOWER> 吸血总百分比` 计算本次回血并执行 `HumanHP +`。不得加入BREAK，不得扩展到PVP。
+
+[@OnTimer19]
+所属包同上；QManage 内部个人定时器事件，每1秒按XLSX生成的固定数值直接执行回血，不允许做玩家/NPC入口或被其他包复用。
+
+调用等级：以上重算标签仅供平台事件链和受管装备集成。新功能若改变对应业务变量，应优先在自己的成果包中声明依赖并由平台插入调用，不要手工复制重算正文。
+
+三、正式做装备锚点
+
+锚点名                                           写入属性/用途
+XY_EQUIP_MAKER_POWER_ANCHOR                      神力倍攻、打怪伤害显示汇总
+XY_EQUIP_MAKER_ATTACK_ANCHOR                     打怪伤害、固定切割、首刀、尾刀
+XY_EQUIP_MAKER_BLAST_ANCHOR                      暴击伤害静态重算
+XY_EQUIP_MAKER_DROP_ANCHOR                       爆率、最大爆率静态重算
+XY_EQUIP_MAKER_CORPSE_ANCHOR                     鞭尸概率
+XY_EQUIP_MAKER_MONSTER_ABSORB_ANCHOR             对怪伤害吸收
+XY_EQUIP_MAKER_MONSTER_ABSORB_CAP_ANCHOR         伤害吸收上限
+XY_EQUIP_MAKER_RUNTIME_POWER_ANCHOR              攻击前神力即时汇总
+XY_EQUIP_MAKER_RUNTIME_BLAST_ANCHOR              攻击前暴击伤害即时汇总
+XY_EQUIP_MAKER_RUNTIME_DROP_ANCHOR               攻击前普通爆率即时汇总
+XY_EQUIP_MAKER_RUNTIME_DROP_MAX_ANCHOR           攻击前最大爆率即时汇总
+XY_EQUIP_MAKER_RUNTIME_DAMAGE_COEFFICIENT_ANCHOR 攻击前伤害系数即时汇总
+XY_EQUIP_MAKER_LIFESTEAL_ANCHOR                  百分比吸血汇总（QFunction）
+XY_EQUIP_MAKER_HP_REGEN_ACTIVE_ANCHOR            回血装备穿戴检测（QFunction）
+XY_EQUIP_MAKER_HP_REGEN_TICK_ANCHOR              每件装备固定回血值（QManage）
+XY_EQUIP_MAKER_ATTACK_SPEED_BREAK_ANCHOR         固定装备攻速突破累加（QFunction统一重算标签内）
+XY_EQUIP_MAKER_LEVEL_BONUS_ANCHOR                固定装备等级增加累加（QFunction统一重算标签内）
+
+包级内部锚点：XY_DAMAGE_COEFFICIENT_PACKAGE_ANCHOR
+用途：让伤害系数正式包接在唯一攻击倍率链上；不是装备属性插槽。
+
+四、处决实验室锚点
+
+当前做装备 profile 已声明：
+
+XY_EXECUTION_LAB_CHANCE_ANCHOR       处决概率
+XY_EXECUTION_LAB_TOUGHNESS_ANCHOR    韧性
+XY_EXECUTION_LAB_PVE_BONUS_ANCHOR    处决倍率（仅PVE装备增量）
+XY_EXECUTION_LAB_PVE_DURATION_ANCHOR 处决时间（仅PVE装备增量）
+
+这些锚点的宿主当前位于 labs\execution\packages\candidate\xy.lab.execution，而不是主成果包库的正式处决包。
+使用规则：只有目标服已通过平台“处决实验室”安装了对应宿主，且预检能唯一找到四个锚点时才允许生成处决装备。没有宿主时必须阻止，禁止把锚点盲目追加到 QFunction 尾部。
+
+五、XLSX脚本属性与显示位
+
+属性                BindType/显示方式    实效锚点
+神力倍攻            40，仅显示镜像       POWER + RUNTIME_POWER
+打怪伤害            41，仅显示镜像       POWER + ATTACK
+暴击伤害            42                   BLAST + RUNTIME_BLAST
+固定切割            43                   ATTACK
+爆率                44                   DROP + RUNTIME_DROP
+最大爆率            45                   DROP + RUNTIME_DROP_MAX
+首刀斩杀            46                   ATTACK
+尾刀斩杀            47                   ATTACK
+鞭尸概率            48                   CORPSE
+处决概率            49                   EXECUTION_LAB_CHANCE
+韧性                50                   EXECUTION_LAB_TOUGHNESS
+处决倍率            51                   EXECUTION_LAB_PVE_BONUS
+处决时间            52                   EXECUTION_LAB_PVE_DURATION
+伤害系数            53                   RUNTIME_DAMAGE_COEFFICIENT
+对怪伤害吸收        ItemDesc说明         MONSTER_ABSORB
+伤害吸收上限        ItemDesc说明         MONSTER_ABSORB_CAP
+吸血                54                   LIFESTEAL
+每秒回血            55                   HP_REGEN_ACTIVE + HP_REGEN_TICK
+攻速突破            60/TextVar40         ATTACK_SPEED_BREAK；Value1=40，Value2=真实值，Value3=0
+等级增加            60/TextVar41         LEVEL_BONUS；Value1=41，Value2=真实值，Value3=0
+
+40至55已登记的自定义属性位以及共用BindType60的TextVar40/41只用于实例悬浮显示与对应业务核心汇总，不得再由其他锚点重复累加造成双倍叠加。固定装备实效以CHECKITEMW受管分支为准，实例装备实效以各自唯一TextVar汇总核心为准。
+
+六、关键数值语义
+
+- 最大爆率是独立乘区：最终爆率=(100+普通爆率加成)*(100+最大爆率加成)/100；两项都+500%得到3600，即36倍。
+- 伤害系数10表示独立乘区+10%，由唯一攻击倍率链与神力相乘。
+- 处决概率10表示10%；韧性10表示10点。
+- 处决倍率和处决时间只增加PVE处决效果，不进入PVP。
+- 对怪伤害吸收默认上限60%；装备“伤害吸收上限”最多再提高25%，最终最高85%，但提高上限本身不增加实际吸收。
+- 吸血10表示对怪攻击后按本次实际攻击伤害`<$PKPOWER>`的10%恢复自身生命；使用共享`[@Attack]`中的`CALCPERCENT + HumanHP`即时路线，不使用`ChangeState 10`持续状态，固定点数武器吸血路线也不属于本属性。
+- 每秒回血100表示存活时每1秒恢复100点固定生命；不按最大生命百分比换算。QFunction只负责穿戴检测和`SetOnTimer 19 1`，QManage按装备直接执行`HumanHP + 100`。不同名称装备逐项相加，不通过动态变量传值。
+
+七、生成器接入标准
+
+1. 生成和修改只读取正式共享母表 E:\XuanYuanDevPlatform\所需材料表格汇总\09_装备批量生成.xlsx；templates\XuanYuanItems.xlsx 仅作兼容回退，旧 XuanYuanItems_Update.xlsx 不再作为输入。
+2. 属性定义只读取当前 profiles\script_properties.json，不读 legacy_archive。
+3. 每个非空脚本属性必须同时有显示声明、实效 outlet 和现存唯一锚点。
+4. 写入内容必须位于平台受管块内，并带装备名注释，重复生成幂等。
+5. 不允许在表格未填写时从装备名称猜属性。
+6. 实验室锚点不可当正式常驻锚点使用，除非对应实验室成果已明确安装并验收。
+7. 吸血和每秒回血依赖 xy.combat.sustain；该包游戏验收前保持 candidate，但属于“一键安装常驻基础”的 resident 集合。
+8. 旧 `XY_EQUIP_MAKER_HP_REGEN_ANCHOR` 和 `N$XY_SUS_HPPerSec` 路线已退役；升级只允许平台按成果包声明删除其严格五行旧受管块，手写内容仍然阻止覆盖。
+9. 新装备必须填写来源编号；生成和修改装备均固定 DuraMax=60000。修改来源留空时保留 Looks/Shape，填写时只同步 Items/StateItem/DnItems 三套静态图和 Looks，不允许改变 Shape/StdMode。
+10. “攻速突破”只允许0至30整数，依赖candidate/optional包xy.optional.attack-speed-breakthrough；目标QFunction缺少XY-AS-CAP-V1受管块时必须阻止。不同装备只向N$XY_AS_FIXED_BREAK累加，最终由唯一攻速核心统一封顶并执行ChangeSpeed 2。
+11. “等级增加”只允许0至10整数，依赖candidate/resident包xy.resident.equipment-level-bonus；目标QFunction缺少XY-LB-V1受管块时必须阻止。不同固定装备只向N$XY_LB_FIXED累加，实例装备由TextVar41汇总，最终统一封顶50并按U470差额执行CHANGELEVEL。
+
+八、固定装备处决属性图标同步（2026-09-09）
+
+1. 做装备生成或覆盖包含“处决概率、处决倍率、处决时间”的固定装备时，同一事务必须同时修改QFunction和属性总览脚本：Mir200/Envir/QuestDiary/玄渊功能/非常驻/属性总览/玄渊三属性按钮.txt。
+2. 三项图标分支必须由当前装备的script_attrs动态派生，分别累加N$XY_UI_C_Value02、N$XY_UI_C_Value04、N$XY_UI_C_Value03；不得再依赖人工维护的第二份装备名单。
+3. 属性总览脚本缺失、洗练汇总标记不唯一或处决图标锚点重复时，预检必须阻止且保持零写入。
+4. 覆盖同名装备时先删除该装备旧的XY-ATTR-PANEL受管块，再根据当前表格值重建；重复生成不得重复累计。
+5. 洗练TextLine47、48、49及既有Bind49、51、52读取保持不变。固定装备处决实效仍使用四个处决实验室锚点，图标同步不得改变战斗数值、概率公式或PVE/PVP边界。

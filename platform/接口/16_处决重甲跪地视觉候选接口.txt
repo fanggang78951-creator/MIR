@@ -1,0 +1,37 @@
+处决重甲跪地视觉候选接口
+
+状态：待游戏验证；仅供处决核心内部调用，当前禁止当作独立正式成果发布。
+
+脚本文件：
+\玄渊实验室\处决\处决重甲跪地外观.txt
+
+接口一：
+@XY_EXEC_VISUAL_APPLY
+调用方式：
+#CALL [\玄渊实验室\处决\处决重甲跪地外观.txt] @XY_EXEC_VISUAL_APPLY
+作用：保存玩家当前时装衣服唯一 ID 和显示状态，临时穿戴男女对应的零属性重甲跪地时装，并强制显示时装外观。
+当前调用点：QManage 的 @XYDP_ExecutionApplySlow，紧随 ChangeSpeed 1 -10。
+
+接口二：
+@XY_EXEC_VISUAL_CLEAR
+调用方式：
+#CALL [\玄渊实验室\处决\处决重甲跪地外观.txt] @XY_EXEC_VISUAL_CLEAR
+作用：取下并删除临时时装，按唯一 ID 恢复玩家原时装衣服实例，再恢复原时装显示状态并清理临时变量。
+当前调用点：
+- QManage 的 @XYDP_ExecutionClearSlow；
+- QFunction 中处决的 PlayOffLine、PlayDie、PlayLogin 三个受管钩子。
+
+资源契约：
+- 数据库物品：玄渊处决重甲跪地男、玄渊处决重甲跪地女；
+- StdMode：男 66、女 67；
+- Shape：306；
+- dress.txt：306 -> XYExecKneel，Offset 0；
+- 客户端库：data\XYExecKneel.wzl、data\XYExecKneel.wzx；
+- 人物库：600 帧，八方向，身体层；武器层不在该库内。
+
+保护规则：
+- N$XY_EXEC_VisualActive=1 时重复 APPLY 立即退出；
+- 背包不足两个空位时不切换外观，处决实效继续；
+- 临时物品必须保持零战斗属性，禁止加入装备属性生成链；
+- CLEAR 必须在处决减速清除、死亡、离线、登录路径同时保留；
+- 未经游戏验收不得修改平台正式处决包。

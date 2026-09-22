@@ -1,0 +1,101 @@
+第一大陆·漂流群岛魂魄任务接口
+状态：候选，待游戏内验收
+成果包ID：xy.quest.drifting-islands-souls
+成果包目录：D:\XuanYuanDevPlatform\packages\candidate\xy.quest.drifting-islands-souls
+
+一、NPC注册接口
+
+1. 拾骸女·梅芙
+脚本路径：玄渊任务/漂流群岛/拾骸女_梅芙
+地图坐标：XX113 116 104
+外观：226（复用当前客户端已验证外观，不覆盖NPC补丁）
+
+2. 断誓骑士·罗恩
+脚本路径：玄渊任务/漂流群岛/断誓骑士_罗恩
+地图坐标：XX329 78 55
+外观：222（复用当前客户端已验证外观，不覆盖NPC补丁）
+
+3. 无冠史官·塞蕾
+脚本路径：玄渊任务/漂流群岛/无冠史官_塞蕾
+地图坐标：XX104 85 23
+外观：220（复用当前客户端已验证外观，不覆盖NPC补丁）
+
+三个NPC均由成果包通过平台的 exclusive_unique_line 接口注册到 MerChant.txt。以后需要迁移坐标或外观时，只修改成果包清单并走平台升级事务；不得手工追加第二条同脚本路径注册。
+
+二、任务完成契约
+
+每个任务以对应称号作为一次性完成标记：
+
+- 海岸亡魂：海岸拾魂者
+- 风暴遗誓：风暴断誓者
+- 沉王终曲：沉王终结者
+
+提交顺序固定为：
+
+1. 检查是否已经拥有称号；已有时禁止重复提交。
+2. 同时检查本任务全部材料，每种数量1。
+3. 先执行 GIVEFENGHAO 授予称号。
+4. 用 CHECKFENGHAO 回读确认授予成功。
+5. 只有确认成功后，才逐项 TAKE 扣除材料。
+6. 授予失败时材料零扣除。
+
+禁止改成“先扣材料再授予称号”，禁止另建完成变量与称号形成双状态。
+
+三、属性接口
+
+三个称号均由 StdItems 的 StdMode=70 原生字段提供：
+
+- 攻击30-30
+- 魔法30-30
+- 道术30-30
+
+称号Shape固定占用40、41、42。三个称号可以同时拥有，累计攻魔道90-90。
+
+韧性不另建第二套系统，统一接入：
+
+锚点：XY_EXECUTION_LAB_TOUGHNESS_ANCHOR
+变量：N$XY_EXEC_Toughness
+
+成果包受管内容：
+
+#IF
+CHECKFENGHAO 海岸拾魂者
+#ACT
+INC N$XY_EXEC_Toughness 20
+
+#IF
+CHECKFENGHAO 风暴断誓者
+#ACT
+INC N$XY_EXEC_Toughness 20
+
+#IF
+CHECKFENGHAO 沉王终结者
+#ACT
+INC N$XY_EXEC_Toughness 20
+
+三个称号同时拥有时累计韧性60。不得在NPC脚本中直接MOV或INC韧性变量，也不得复制处决核心。
+
+四、安装与回滚
+
+GUI：成果包库中选择“第一大陆·漂流群岛魂魄任务”，生成预检报告后确认安装。
+
+CLI预检：
+xydp-cli.exe preflight --server D:\MirServer --client D:\11周年 --package xy.quest.drifting-islands-souls
+
+CLI安装：
+xydp-cli.exe install --server D:\MirServer --client D:\11周年 --package xy.quest.drifting-islands-souls --yes
+
+当前正式事务：20260806_002655_cc0e3f8a
+当前备份：D:\XuanYuanDevPlatform\backups\20260806_002655_cc0e3f8a
+
+回滚必须使用平台安装历史或：
+xydp-cli.exe rollback --server D:\MirServer --transaction 20260806_002655_cc0e3f8a --yes
+
+五、验收标准
+
+1. M2启动无脚本加载错误，三个NPC在指定地图坐标出现并可点击。
+2. 材料不足时零扣除、无称号；材料刚好足够时只扣各1个。
+3. 每个任务完成后获得正确称号，重复点击不再显示提交按钮且不重复扣材料。
+4. 单个称号提供攻魔道30-30、韧性20；三个称号累计攻魔道90-90、韧性60。
+5. 客户端称号说明与实际属性一致。
+6. 验收通过后才能把成果包从candidate晋级verified。

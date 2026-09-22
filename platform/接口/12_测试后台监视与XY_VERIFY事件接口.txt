@@ -1,0 +1,114 @@
+玄渊平台——测试后台监视与 XY_VERIFY 事件接口
+状态：平台开发工具 / 当前服务端候选接入
+更新时间：2026-07-31
+
+一、用途
+
+该接口让候选脚本把“实际执行到了哪里、当时变量是多少、最终结果是什么”写入专用事件文件，供平台监视器和 Codex 读取。
+
+监视器母版：
+D:\XuanYuanDevPlatform\测试后台监视\xy_test_monitor.py
+
+事件文件：
+D:\MirServer\Mir200\Envir\QuestDiary\玄渊验收\events.txt
+
+二、玩家命令
+
+[公开测试命令]
+@验收开启
+对应 UserCmd 47 / QFunction [@UserCmd47]。
+设置 N$XY_VERIFY_ON=1，并写入 ON 事件。
+
+[公开测试命令]
+@验收关闭
+对应 UserCmd 48 / QFunction [@UserCmd48]。
+先写入 OFF 事件，再设置 N$XY_VERIFY_ON=0。
+
+[公开测试命令]
+@验收状态
+对应 UserCmd 49 / QFunction [@UserCmd49]。
+显示当前状态；开启时写入 STATUS 事件和当前主要测试变量。
+
+占用声明：
+- UserCmd：47、48、49
+- HUMAN数字变量：N$XY_VERIFY_ON
+- QFunction标签：@UserCmd47、@UserCmd48、@UserCmd49
+
+三、通用写入格式
+
+QFunction 或 Market_Def 脚本中：
+
+#IF
+EQUAL N$XY_VERIFY_ON 1
+#ACT
+AddTextListEx ..\QuestDiary\玄渊验收\events.txt [XY_VERIFY]|事件名|user=<$USERNAME>|字段A=值|字段B=值 0
+
+事件名要求：
+- 只用大写英文字母、数字和下划线。
+- 同一功能统一前缀，例如 NECK_LUCK_TRY、NECK_LUCK_RESULT。
+
+字段要求：
+- 使用 key=value。
+- 字段之间使用 | 分隔。
+- key只用小写英文字母、数字和下划线。
+- 不得写入密码、礼包码、账号密钥或私密聊天内容。
+
+四、共享事件当前接入
+
+QFunction [@TakeOnEx]：
+开启验收时写入 TAKEON，包含玩家、装备名、地图和坐标。
+
+QFunction [@TakeOffEx]：
+开启验收时写入 TAKEOFF，包含玩家、装备名、地图和坐标。
+
+禁止默认在 [@AttackDamage] 逐刀写入。攻击事件频率高，只有专项伤害测试确有需要时才可临时接入，并必须限制玩家、目标或采样次数。
+
+五、专项脚本接入标准
+
+一个带随机判定、扣费或升级结果的脚本，至少上报：
+
+1. ENTER 或 TRY：操作前等级、关键变量、目标档位和预期概率。
+2. BLOCK：阻止原因，例如材料不足、装备不符、状态冲突。
+3. RESULT：success/fail、操作后等级、实际扣除和最终变量。
+
+上报块只能观察，不得改变：
+- 条件判断；
+- 随机概率；
+- 资源扣除；
+- 属性发放；
+- 成功失败结果；
+- 业务标签跳转。
+
+六、项链幸运当前事件
+
+NECK_LUCK_TRY：
+user、level、attempts、pity。
+
+NECK_LUCK_RESULT：
+user、result、after、attempts、pity。
+
+后台根据 level 计算下一档基础概率，再加 pity，最高100%。该计算只用于报告说明，不反向修改游戏脚本。
+
+七、Codex读取标准
+
+生成当前快照：
+python D:\XuanYuanDevPlatform\测试后台监视\xy_test_monitor.py --mode scan --server D:\MirServer
+
+实时监视：
+python D:\XuanYuanDevPlatform\测试后台监视\xy_test_monitor.py --mode watch --server D:\MirServer
+
+优先读取：
+D:\XuanYuanDevPlatform\测试后台监视\reports\当前测试后台.md
+
+需要逐条核对时再读取：
+D:\XuanYuanDevPlatform\测试后台监视\reports\当前测试后台.json
+D:\XuanYuanDevPlatform\测试后台监视\reports\实时测试事件.jsonl
+
+八、安全规则
+
+1. 监视器只读，不得启动、关闭或控制引擎、M2与客户端。
+2. 上报接口安装前必须检查 UserCmd、标签和受管块占用。
+3. 修改共享事件前必须备份，发现重复标签时阻止。
+4. 写入失败必须完整回滚，不能留下半个命令或半个事件块。
+5. 测试事件文件只属于诊断数据，不得参与正式业务状态判断。
+6. 测试后台的结果属于运行证据，不等同于游戏内最终验收；画面、手感和实际伤害仍需玩家确认。

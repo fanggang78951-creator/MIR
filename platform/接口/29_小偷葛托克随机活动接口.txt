@@ -1,0 +1,92 @@
+小偷葛托克随机怪物活动接口（称号卷候选，已安装，待游戏验证）
+
+一、活动入口
+
+Robot定时入口：
+
+@XY_GOSTOC_TICK
+
+注册位置：Mir200\Envir\Robot_def\AutoRunRobot.txt
+
+#AutoRun NPC MIN 1 @XY_GOSTOC_TICK
+
+机器人每分钟检查一次。首次读取新变量后约1分钟触发；之后每120分钟触发一轮。
+
+二、怪物与飘屏
+
+活动目标是怪物，不是NPC。
+Monster名称：小偷葛托克。
+数值模板：大盗白八。
+
+活动直接MONGENEX独立怪物“小偷葛托克”，不再使用ChangeMapMonNameEx临时改名。
+
+首次飘屏固定：
+SendNewLineMsg 0 251 0 16 120 5 0 小偷葛托克出现在了宁姆格福。
+
+重复飘屏固定：
+SendNewLineMsg 0 251 0 16 120 5 0 [活动进行中] 小偷葛托克仍藏身于宁姆格福。
+
+不得在广播中透露随机到的具体子地图。第一个参数必须为0，后续样式参数固定为251 0 16 120 5 0；不得改回SENDMSG普通聊天广播。
+
+三、称号卷接口
+
+掉落物品：[称号]小偷葛托克
+掉落率：1/100（1%）
+掉落文件：Mir200\Envir\MonItems\小偷葛托克.txt
+数据库类型：StdMode31
+触发编号：Anicount 83
+脚本入口：@StdModeFunc83
+
+首次使用执行：
+GIVEFENGHAO 小偷葛托克
+
+如果玩家已有同名称号，脚本把已消耗的[称号]小偷葛托克返还背包，不重复授予。
+
+四、称号实效
+
+称号名称：小偷葛托克
+数据库类型：StdMode70
+称号Shape：2
+称号Looks：10
+攻击：99-99
+魔法：99-99
+道术：99-99
+
+装备回收增加66%接入既有变量：
+N$XY_RecycleEquipBonus
+
+手动回收锚点：
+; XY_EQUIP_MAKER_RECYCLE_BONUS_QFUNCTION_ANCHOR
+
+自动回收锚点：
+; XY_EQUIP_MAKER_RECYCLE_BONUS_QMANAGE_ANCHOR
+
+两个入口都只执行：玩家拥有称号时，INC N$XY_RecycleEquipBonus 66。不得另建第二套回收系统。
+
+五、显示文件
+
+服务端说明：Mir200\Envir\ItemDescList.txt
+客户端称号说明：D:\11周年\data\fenghao.dat
+
+显示内容与实效统一为攻魔道99-99、回收增加66%。
+
+六、状态变量
+
+G910：活动状态。
+G911：随机地图序号0至4。
+G912：本轮剩余分钟。
+G913：首次初始化标记。
+G914：距下一轮累计分钟。
+G915：重复飘屏计时。
+
+七、安全与当前状态
+
+候选安装器默认仅预检：
+D:\XuanYuanDevPlatform\labs\thief_gostoc_monster\deploy_candidate.ps1
+
+正式写入必须显式执行-Apply，并在写入前备份ApexM2.DB、RobotManage、QFunction、QManage、ItemDescList、fenghao.dat和掉落文件状态。失败自动恢复。
+
+本次事务已于2026-08-10 19:34写入当前服，备份目录：
+D:\XuanYuanDevPlatform\backups\20260810_193406_小偷葛托克称号卷
+
+称号卷Idx=883，称号Idx=884。数据库完整性、标签/锚点唯一性、GB18030/CRLF、提交哈希、重复预检幂等和隔离逐字节回滚均通过；游戏验收前不得晋级正式成果包。
