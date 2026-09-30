@@ -1,0 +1,38 @@
+{
+  "status": "P3A_DOUBLE_CLOSURE_TARGET_LOCKED_NOT_DEPLOYABLE",
+  "date": "2026-09-30",
+  "combat": {
+    "continuous_inheritance": true,
+    "c1_exception": true,
+    "c2_c10_p70_guardian_target_seconds": 600
+  },
+  "economy": {
+    "self_supply_center": 0.35,
+    "self_supply_band": [
+      0.3,
+      0.4
+    ],
+    "market_multi_gap_center": 0.65,
+    "currency_high_value_material_share": 0.3,
+    "currency_equipment_recycle_share": 0.05,
+    "total_yuan_demand": 66429930,
+    "self_yuan_target": 23278397,
+    "market_yuan_gap": 43151533,
+    "material_unit_demand": 21655,
+    "material_unit_self_target": 7586,
+    "material_unit_market_gap": 14069
+  },
+  "c2_growth_cost_restored": {
+    "yuan": 2880000,
+    "somber": 5500,
+    "chains": [
+      "圣律真言LV1-10",
+      "黄金之心LV1-10"
+    ]
+  },
+  "old_full_self_route": "diagnostic_only",
+  "engine_script_assumption": "correct_execution_no_bug_hunting_as_mainline_gate",
+  "dream_probability_changed": false,
+  "war_ash_changed": false,
+  "gameplay_data_deployed": false
+}
