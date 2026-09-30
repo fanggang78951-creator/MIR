@@ -1,0 +1,510 @@
+{
+  "来源聊天标题": "阅读NPC制作使用手册",
+  "来源聊天ID": "019fa9ab-e75d-7f21-8571-e7c2b6956b4e",
+  "范围": "2026-09-21～2026-09-28 UTC+8",
+  "现服核对日期": "2026-09-30",
+  "撤下登记": [
+    {
+      "登记入口": "玄渊成长/神印修行",
+      "地图": "XY_NMGF_MAIN",
+      "原名称": "锻体",
+      "当前仍登记": false
+    },
+    {
+      "登记入口": "玄渊法环/神印/C03",
+      "地图": "XY_NMGF_WEST",
+      "原名称": "神印修行·宁姆格福西域",
+      "当前仍登记": false
+    },
+    {
+      "登记入口": "玄渊法环/神印/C04",
+      "地图": "XY_LYNYA_SEA",
+      "原名称": "神印修行·利耶尼亚海域",
+      "当前仍登记": false
+    },
+    {
+      "登记入口": "玄渊法环/神印/C05",
+      "地图": "XY_LYNYA_LAKE",
+      "原名称": "神印修行·湖之利耶尼亚",
+      "当前仍登记": false
+    },
+    {
+      "登记入口": "玄渊法环/神印/C06",
+      "地图": "XY_GAELID",
+      "原名称": "神印修行·盖利德",
+      "当前仍登记": false
+    },
+    {
+      "登记入口": "玄渊法环/神印/C07",
+      "地图": "XY_SNOWFIELD",
+      "原名称": "神印修行·化圣雪原",
+      "当前仍登记": false
+    },
+    {
+      "登记入口": "玄渊法环/神印/C08",
+      "地图": "XY_GIANT_TOP",
+      "原名称": "神印修行·巨人山顶",
+      "当前仍登记": false
+    },
+    {
+      "登记入口": "玄渊法环/神印/C09",
+      "地图": "XY_ALTUS",
+      "原名称": "神印修行·亚坛高原",
+      "当前仍登记": false
+    },
+    {
+      "登记入口": "玄渊法环/神印/C10",
+      "地图": "XY_LEYNDELL",
+      "原名称": "神印修行·王城罗德尔",
+      "当前仍登记": false
+    },
+    {
+      "登记入口": "玄渊法环/洗练/C03",
+      "地图": "XY_NMGF_WEST",
+      "原名称": "装备洗练",
+      "当前仍登记": false
+    },
+    {
+      "登记入口": "玄渊法环/洗练/C04",
+      "地图": "XY_LYNYA_SEA",
+      "原名称": "装备洗练",
+      "当前仍登记": false
+    },
+    {
+      "登记入口": "玄渊法环/洗练/C05",
+      "地图": "XY_LYNYA_LAKE",
+      "原名称": "装备洗练",
+      "当前仍登记": false
+    },
+    {
+      "登记入口": "玄渊法环/洗练/C06",
+      "地图": "XY_GAELID",
+      "原名称": "装备洗练",
+      "当前仍登记": false
+    },
+    {
+      "登记入口": "玄渊法环/洗练/C07",
+      "地图": "XY_SNOWFIELD",
+      "原名称": "装备洗练",
+      "当前仍登记": false
+    },
+    {
+      "登记入口": "玄渊法环/洗练/C08",
+      "地图": "XY_GIANT_TOP",
+      "原名称": "装备洗练",
+      "当前仍登记": false
+    },
+    {
+      "登记入口": "玄渊法环/洗练/C09",
+      "地图": "XY_ALTUS",
+      "原名称": "装备洗练",
+      "当前仍登记": false
+    },
+    {
+      "登记入口": "玄渊法环/洗练/C10",
+      "地图": "XY_LEYNDELL",
+      "原名称": "装备洗练",
+      "当前仍登记": false
+    },
+    {
+      "登记入口": "玄渊法环/开光/C03",
+      "地图": "XY_NMGF_WEST",
+      "原名称": "装备开光",
+      "当前仍登记": false
+    },
+    {
+      "登记入口": "玄渊法环/开光/C04",
+      "地图": "XY_LYNYA_SEA",
+      "原名称": "装备开光",
+      "当前仍登记": false
+    },
+    {
+      "登记入口": "玄渊法环/开光/C05",
+      "地图": "XY_LYNYA_LAKE",
+      "原名称": "装备开光",
+      "当前仍登记": false
+    },
+    {
+      "登记入口": "玄渊法环/开光/C06",
+      "地图": "XY_GAELID",
+      "原名称": "装备开光",
+      "当前仍登记": false
+    },
+    {
+      "登记入口": "玄渊法环/开光/C07",
+      "地图": "XY_SNOWFIELD",
+      "原名称": "装备开光",
+      "当前仍登记": false
+    },
+    {
+      "登记入口": "玄渊法环/开光/C08",
+      "地图": "XY_GIANT_TOP",
+      "原名称": "装备开光",
+      "当前仍登记": false
+    },
+    {
+      "登记入口": "玄渊法环/开光/C09",
+      "地图": "XY_ALTUS",
+      "原名称": "装备开光",
+      "当前仍登记": false
+    },
+    {
+      "登记入口": "玄渊法环/开光/C10",
+      "地图": "XY_LEYNDELL",
+      "原名称": "装备开光",
+      "当前仍登记": false
+    }
+  ],
+  "历史清单对当前SHA256": [
+    {
+      "历史清单": "D:\\codex临时工作区\\npc-dialog-refresh-20260924\\evidence\\candidate-manifest.json",
+      "现服路径": "D:\\MirServer\\Mir200\\Envir\\MerChant.txt",
+      "历史安装后SHA256": "4e44eeb854817665dd9d149b5816922ffbe09e0e1f3971f6b8dc89e18a81d1e9",
+      "当前SHA256": "3bf611c97bb25b1c66ae866c242b3a3023c8ac3a798fe79119abd7cea82fa742",
+      "一致": false
+    },
+    {
+      "历史清单": "D:\\codex临时工作区\\npc-dialog-refresh-20260924\\evidence\\candidate-manifest.json",
+      "现服路径": "D:\\MirServer\\Mir200\\Envir\\EffectImageList.txt",
+      "历史安装后SHA256": "70fc556499dd91a6ae6073b04ab0a22e800cb5055b81c4e52022bfbb34e48dac",
+      "当前SHA256": "1034ae4d5f2737f066eef4c3d003eccac62d11c73753dc744f71a536ca3f91ef",
+      "一致": false
+    },
+    {
+      "历史清单": "D:\\codex临时工作区\\npc-dialog-refresh-20260924\\evidence\\candidate-manifest.json",
+      "现服路径": "D:\\MirServer\\Mir200\\Envir\\Market_Def\\玄渊法环\\称号\\贯穿\\C01-XY_DRIFTING_ISLANDS.txt",
+      "历史安装后SHA256": "ff4329ddd5766fca3db706d0a3482ffe9e0249d996022018301d113da17a5b6d",
+      "当前SHA256": "ff4329ddd5766fca3db706d0a3482ffe9e0249d996022018301d113da17a5b6d",
+      "一致": true
+    },
+    {
+      "历史清单": "D:\\codex临时工作区\\npc-dialog-refresh-20260924\\evidence\\candidate-manifest.json",
+      "现服路径": "D:\\MirServer\\Mir200\\Envir\\Market_Def\\玄渊法环\\合成\\C02_拾荒匠·阿砾-XY_NMGF_MAIN.txt",
+      "历史安装后SHA256": "6de93e8782cbb5c50c7a378cb9104d3dad542d546399de9a51f7683eb5f97b0a",
+      "当前SHA256": "1938fe54018224e097cd3f7b7ecfb6a7f31d3f0e26b13eb325d201a85bd7b240",
+      "一致": false
+    },
+    {
+      "历史清单": "D:\\codex临时工作区\\npc-dialog-refresh-20260924\\evidence\\candidate-manifest.json",
+      "现服路径": "D:\\MirServer\\Mir200\\Envir\\Market_Def\\玄渊法环\\合成\\C02_风暴工匠·洛克-XY_NMGF_MAIN.txt",
+      "历史安装后SHA256": "7a2754c04133b9c210dc04a42100f9bca0000bdd3708ec9667f730fd220fe386",
+      "当前SHA256": "c60d0fb2450a7d683237e57757ad794606a1703bf91c9f9f96578069e935ad8b",
+      "一致": false
+    },
+    {
+      "历史清单": "D:\\codex临时工作区\\npc-dialog-refresh-20260924\\evidence\\candidate-manifest.json",
+      "现服路径": "D:\\MirServer\\Mir200\\Envir\\Market_Def\\玄渊法环\\合成\\C03_断路铁匠·赫恩-XY_NMGF_WEST.txt",
+      "历史安装后SHA256": "a951b301aaa8358b6851a1bf52d074f1f5318f02bab52aa47d08aed44931ab88",
+      "当前SHA256": "b2c195a63c380357e79e4e079408dd352f80fc9c859d254fe9559d348bc45aac",
+      "一致": false
+    },
+    {
+      "历史清单": "D:\\codex临时工作区\\npc-dialog-refresh-20260924\\evidence\\candidate-manifest.json",
+      "现服路径": "D:\\MirServer\\Mir200\\Envir\\Market_Def\\玄渊法环\\合成\\C03_星核校准师·西境-XY_NMGF_WEST.txt",
+      "历史安装后SHA256": "5567ed9dc8b550908bee472e55b66929981f8d3094e1e2e48278ac610428f30b",
+      "当前SHA256": "5c58f5a447ec3fb9221e171c2f9aadcfdee34ef21804b3529da6a8b3b1649250",
+      "一致": false
+    },
+    {
+      "历史清单": "D:\\codex临时工作区\\npc-dialog-refresh-20260924\\evidence\\candidate-manifest.json",
+      "现服路径": "D:\\MirServer\\Mir200\\Envir\\Market_Def\\玄渊法环\\合成\\C04_沉潮铸师·伊芙-XY_LYNYA_SEA.txt",
+      "历史安装后SHA256": "32c6c1d4f3d42ee30ed522d03e70405184602c1452f5b818427cf536447489f6",
+      "当前SHA256": "b4864851465fd99ee43a92817f00fa3d329ae90c7a95f1a6d1e1b1e9c3b09d3a",
+      "一致": false
+    },
+    {
+      "历史清单": "D:\\codex临时工作区\\npc-dialog-refresh-20260924\\evidence\\candidate-manifest.json",
+      "现服路径": "D:\\MirServer\\Mir200\\Envir\\Market_Def\\玄渊法环\\合成\\C05_星核校准师·湖月-XY_LYNYA_LAKE.txt",
+      "历史安装后SHA256": "fd037f559c8f06b68345ab6c0345e76a27e47a568d203a118b82dc600f0ae915",
+      "当前SHA256": "5021cb3fa11b8ae69269ed6824c58bc4c97245fae2b2a5023ddf10660fcb9973",
+      "一致": false
+    },
+    {
+      "历史清单": "D:\\codex临时工作区\\npc-dialog-refresh-20260924\\evidence\\candidate-manifest.json",
+      "现服路径": "D:\\MirServer\\Mir200\\Envir\\Market_Def\\玄渊法环\\合成\\C05_辉石调律师·蕾娜-XY_LYNYA_LAKE.txt",
+      "历史安装后SHA256": "76ec5c817d584df6a804de33c67768677a2e826a15c75719771f0588521b65d3",
+      "当前SHA256": "46df4801220d03c1d7e89f626f9d5f5907ff629f3e6d5fae1661a0553229857c",
+      "一致": false
+    },
+    {
+      "历史清单": "D:\\codex临时工作区\\npc-dialog-refresh-20260924\\evidence\\candidate-manifest.json",
+      "现服路径": "D:\\MirServer\\Mir200\\Envir\\Market_Def\\玄渊法环\\合成\\C06_红狮残匠·伯伦-XY_GAELID.txt",
+      "历史安装后SHA256": "34859fb208eaee16d97d0ead1e20bb32dc3fdc3f5c19f5e82bf32ac999c47bbc",
+      "当前SHA256": "80bdee4a8a6a16292f34d94ddd39bed45c0600e0ac513d83ee15828be592f4f3",
+      "一致": false
+    },
+    {
+      "历史清单": "D:\\codex临时工作区\\npc-dialog-refresh-20260924\\evidence\\candidate-manifest.json",
+      "现服路径": "D:\\MirServer\\Mir200\\Envir\\Market_Def\\玄渊法环\\合成\\C07_星核校准师·圣雪-XY_SNOWFIELD.txt",
+      "历史安装后SHA256": "7d6f2858c4243225b7a874af17c130a547ea2bf842af8b45d3e09b2be6113d86",
+      "当前SHA256": "c951a6e4e0640697ccb760135851dba029080f95b7f75c284c933b528a80594b",
+      "一致": false
+    },
+    {
+      "历史清单": "D:\\codex临时工作区\\npc-dialog-refresh-20260924\\evidence\\candidate-manifest.json",
+      "现服路径": "D:\\MirServer\\Mir200\\Envir\\Market_Def\\玄渊法环\\合成\\C07_白金裁缝·弥雅-XY_SNOWFIELD.txt",
+      "历史安装后SHA256": "4d01f023ab7532a56f3c50a2b8e6a3eb044e3a7ddde32fb0cc2374793355c354",
+      "当前SHA256": "205b378b45ac96cf880e78d62b1867df276db40e31e045136d9b21365c947334",
+      "一致": false
+    },
+    {
+      "历史清单": "D:\\codex临时工作区\\npc-dialog-refresh-20260924\\evidence\\candidate-manifest.json",
+      "现服路径": "D:\\MirServer\\Mir200\\Envir\\Market_Def\\玄渊法环\\合成\\C08_炉火遗民·冈特-XY_GIANT_TOP.txt",
+      "历史安装后SHA256": "66898b4b144444c8874538360633e72ec0771b8688708517d7d4f4f4d250394e",
+      "当前SHA256": "53637dcc9445b1f953bf780879d176c57934dcf3fe2633ac735707f9c9415818",
+      "一致": false
+    },
+    {
+      "历史清单": "D:\\codex临时工作区\\npc-dialog-refresh-20260924\\evidence\\candidate-manifest.json",
+      "现服路径": "D:\\MirServer\\Mir200\\Envir\\Market_Def\\玄渊法环\\合成\\C09_星核校准师·黄金律-XY_ALTUS.txt",
+      "历史安装后SHA256": "e8de504e0c77693a68426d7324697c4ee505f0d6665cfcaadc2cdd70834d432d",
+      "当前SHA256": "060e9e29fdcd38ad9ccca7c0d7136be581882d714c54df3a2789acc811b305cb",
+      "一致": false
+    },
+    {
+      "历史清单": "D:\\codex临时工作区\\npc-dialog-refresh-20260924\\evidence\\candidate-manifest.json",
+      "现服路径": "D:\\MirServer\\Mir200\\Envir\\Market_Def\\玄渊法环\\合成\\C09_黄金铸师·亚德-XY_ALTUS.txt",
+      "历史安装后SHA256": "d0cb426e00f7dc871b747c702145bf408c56ab2cf7a45ad6e6f9539414e08e0a",
+      "当前SHA256": "11e0fe2ab8c8afb171ac74c5b70b7ea8114e649869d5367cfd2446434723ed50",
+      "一致": false
+    },
+    {
+      "历史清单": "D:\\codex临时工作区\\npc-dialog-refresh-20260924\\evidence\\candidate-manifest.json",
+      "现服路径": "D:\\MirServer\\Mir200\\Envir\\Market_Def\\玄渊法环\\合成\\C10_旧王秘匣师·萨芙-XY_LEYNDELL.txt",
+      "历史安装后SHA256": "59c5fb0d0a358dd7cbd296bed0f702a7754182d0dec5b2d2033a4f28a572c2c2",
+      "当前SHA256": "fb6be29ff29b51a22fbbb40ec143ef417cfecadd9348ba3284a1dcdadcdf981e",
+      "一致": false
+    },
+    {
+      "历史清单": "D:\\codex临时工作区\\npc-dialog-refresh-20260924\\evidence\\candidate-manifest.json",
+      "现服路径": "D:\\MirServer\\Mir200\\Envir\\Market_Def\\玄渊法环\\合成\\C10_王宫兵械长·奥德-XY_LEYNDELL.txt",
+      "历史安装后SHA256": "534385fea53b61a22fb587b2b51c2cd3ae59694c706a0c38e123b4692cb3bed7",
+      "当前SHA256": "1b5fba88290a1fe95e3e2b16add837d9dc8423bd03d3ce861668ded335305e99",
+      "一致": false
+    },
+    {
+      "历史清单": "D:\\codex临时工作区\\npc-dialog-refresh-20260924\\evidence\\candidate-manifest.json",
+      "现服路径": "D:\\MirServer\\Mir200\\Envir\\Market_Def\\玄渊运营\\赞助称号-xycamp.txt",
+      "历史安装后SHA256": "9479649c86af8993f06b7fcbca4e23e0dfb279985781aab114202cb0632e23c1",
+      "当前SHA256": "879637918f0d4adc8ce3a52fd92423f5eb9ab15a85f7968e293eb6269177b77a",
+      "一致": false
+    },
+    {
+      "历史清单": "D:\\codex临时工作区\\npc-dialog-refresh-20260924\\evidence\\candidate-manifest.json",
+      "现服路径": "D:\\MirServer\\Mir200\\Envir\\Market_Def\\玄渊运营\\狂暴之力-xycamp.txt",
+      "历史安装后SHA256": "6658f1613f7a54236387ef3e269a4cd53b217be29a2f2f667027ae616d0ac13f",
+      "当前SHA256": "1f201ab075006fef8f60c39d7b08226724df5bc6fff7476395109103a6c8dbff",
+      "一致": false
+    },
+    {
+      "历史清单": "D:\\codex临时工作区\\npc-dialog-refresh-20260924\\evidence\\candidate-manifest.json",
+      "现服路径": "D:\\MirServer\\Mir200\\Envir\\Market_Def\\玄渊运营\\沙城捐献-xycamp.txt",
+      "历史安装后SHA256": "0b26704c6e23e4b60fe62ee858016ad3c97b709c6414f5e0466ab62759a15499",
+      "当前SHA256": "74080b3a598a24efdde6aac6c1d1a36b181e475e61a9dd0c138bf0fcd9016272",
+      "一致": false
+    },
+    {
+      "历史清单": "D:\\codex临时工作区\\npc-dialog-refresh-20260924\\visual-revision\\manifest.json",
+      "现服路径": "D:\\MirServer\\Mir200\\Envir\\Market_Def\\玄渊运营\\狂暴之力-xycamp.txt",
+      "历史安装后SHA256": "35105c3374512e1efee30fa9d423c4a33c2d46bcb735359d714283b81a068e1d",
+      "当前SHA256": "1f201ab075006fef8f60c39d7b08226724df5bc6fff7476395109103a6c8dbff",
+      "一致": false
+    },
+    {
+      "历史清单": "D:\\codex临时工作区\\npc-dialog-refresh-20260924\\visual-revision\\manifest.json",
+      "现服路径": "D:\\MirServer\\Mir200\\Envir\\Market_Def\\玄渊运营\\沙城捐献-xycamp.txt",
+      "历史安装后SHA256": "27a88db69f744d5df4a7c2a8559920b84d0fc08743bd283e738d8ec680f18290",
+      "当前SHA256": "74080b3a598a24efdde6aac6c1d1a36b181e475e61a9dd0c138bf0fcd9016272",
+      "一致": false
+    },
+    {
+      "历史清单": "D:\\codex临时工作区\\npc-dialog-refresh-20260924\\visual-revision\\manifest.json",
+      "现服路径": "D:\\MirServer\\Mir200\\Envir\\Market_Def\\玄渊运营\\赞助称号-xycamp.txt",
+      "历史安装后SHA256": "59e8ac50a6bc7bbb70ed2abbacee4865e0c116ec6c3f84aff535293fda7b5878",
+      "当前SHA256": "879637918f0d4adc8ce3a52fd92423f5eb9ab15a85f7968e293eb6269177b77a",
+      "一致": false
+    },
+    {
+      "历史清单": "D:\\codex临时工作区\\npc-dialog-refresh-20260924\\layout-revision\\manifest.json",
+      "现服路径": "D:\\MirServer\\Mir200\\Envir\\Market_Def\\玄渊法环\\合成\\C02_拾荒匠·阿砾-XY_NMGF_MAIN.txt",
+      "历史安装后SHA256": "1938fe54018224e097cd3f7b7ecfb6a7f31d3f0e26b13eb325d201a85bd7b240",
+      "当前SHA256": "1938fe54018224e097cd3f7b7ecfb6a7f31d3f0e26b13eb325d201a85bd7b240",
+      "一致": true
+    },
+    {
+      "历史清单": "D:\\codex临时工作区\\npc-dialog-refresh-20260924\\layout-revision\\manifest.json",
+      "现服路径": "D:\\MirServer\\Mir200\\Envir\\Market_Def\\玄渊法环\\合成\\C02_风暴工匠·洛克-XY_NMGF_MAIN.txt",
+      "历史安装后SHA256": "c60d0fb2450a7d683237e57757ad794606a1703bf91c9f9f96578069e935ad8b",
+      "当前SHA256": "c60d0fb2450a7d683237e57757ad794606a1703bf91c9f9f96578069e935ad8b",
+      "一致": true
+    },
+    {
+      "历史清单": "D:\\codex临时工作区\\npc-dialog-refresh-20260924\\layout-revision\\manifest.json",
+      "现服路径": "D:\\MirServer\\Mir200\\Envir\\Market_Def\\玄渊法环\\合成\\C03_断路铁匠·赫恩-XY_NMGF_WEST.txt",
+      "历史安装后SHA256": "b2c195a63c380357e79e4e079408dd352f80fc9c859d254fe9559d348bc45aac",
+      "当前SHA256": "b2c195a63c380357e79e4e079408dd352f80fc9c859d254fe9559d348bc45aac",
+      "一致": true
+    },
+    {
+      "历史清单": "D:\\codex临时工作区\\npc-dialog-refresh-20260924\\layout-revision\\manifest.json",
+      "现服路径": "D:\\MirServer\\Mir200\\Envir\\Market_Def\\玄渊法环\\合成\\C04_沉潮铸师·伊芙-XY_LYNYA_SEA.txt",
+      "历史安装后SHA256": "b4864851465fd99ee43a92817f00fa3d329ae90c7a95f1a6d1e1b1e9c3b09d3a",
+      "当前SHA256": "b4864851465fd99ee43a92817f00fa3d329ae90c7a95f1a6d1e1b1e9c3b09d3a",
+      "一致": true
+    },
+    {
+      "历史清单": "D:\\codex临时工作区\\npc-dialog-refresh-20260924\\layout-revision\\manifest.json",
+      "现服路径": "D:\\MirServer\\Mir200\\Envir\\Market_Def\\玄渊法环\\合成\\C05_辉石调律师·蕾娜-XY_LYNYA_LAKE.txt",
+      "历史安装后SHA256": "46df4801220d03c1d7e89f626f9d5f5907ff629f3e6d5fae1661a0553229857c",
+      "当前SHA256": "46df4801220d03c1d7e89f626f9d5f5907ff629f3e6d5fae1661a0553229857c",
+      "一致": true
+    },
+    {
+      "历史清单": "D:\\codex临时工作区\\npc-dialog-refresh-20260924\\layout-revision\\manifest.json",
+      "现服路径": "D:\\MirServer\\Mir200\\Envir\\Market_Def\\玄渊法环\\合成\\C06_红狮残匠·伯伦-XY_GAELID.txt",
+      "历史安装后SHA256": "80bdee4a8a6a16292f34d94ddd39bed45c0600e0ac513d83ee15828be592f4f3",
+      "当前SHA256": "80bdee4a8a6a16292f34d94ddd39bed45c0600e0ac513d83ee15828be592f4f3",
+      "一致": true
+    },
+    {
+      "历史清单": "D:\\codex临时工作区\\npc-dialog-refresh-20260924\\layout-revision\\manifest.json",
+      "现服路径": "D:\\MirServer\\Mir200\\Envir\\Market_Def\\玄渊法环\\合成\\C07_白金裁缝·弥雅-XY_SNOWFIELD.txt",
+      "历史安装后SHA256": "205b378b45ac96cf880e78d62b1867df276db40e31e045136d9b21365c947334",
+      "当前SHA256": "205b378b45ac96cf880e78d62b1867df276db40e31e045136d9b21365c947334",
+      "一致": true
+    },
+    {
+      "历史清单": "D:\\codex临时工作区\\npc-dialog-refresh-20260924\\layout-revision\\manifest.json",
+      "现服路径": "D:\\MirServer\\Mir200\\Envir\\Market_Def\\玄渊法环\\合成\\C08_炉火遗民·冈特-XY_GIANT_TOP.txt",
+      "历史安装后SHA256": "53637dcc9445b1f953bf780879d176c57934dcf3fe2633ac735707f9c9415818",
+      "当前SHA256": "53637dcc9445b1f953bf780879d176c57934dcf3fe2633ac735707f9c9415818",
+      "一致": true
+    },
+    {
+      "历史清单": "D:\\codex临时工作区\\npc-dialog-refresh-20260924\\layout-revision\\manifest.json",
+      "现服路径": "D:\\MirServer\\Mir200\\Envir\\Market_Def\\玄渊法环\\合成\\C09_黄金铸师·亚德-XY_ALTUS.txt",
+      "历史安装后SHA256": "11e0fe2ab8c8afb171ac74c5b70b7ea8114e649869d5367cfd2446434723ed50",
+      "当前SHA256": "11e0fe2ab8c8afb171ac74c5b70b7ea8114e649869d5367cfd2446434723ed50",
+      "一致": true
+    },
+    {
+      "历史清单": "D:\\codex临时工作区\\npc-dialog-refresh-20260924\\layout-revision\\manifest.json",
+      "现服路径": "D:\\MirServer\\Mir200\\Envir\\Market_Def\\玄渊法环\\合成\\C10_旧王秘匣师·萨芙-XY_LEYNDELL.txt",
+      "历史安装后SHA256": "fb6be29ff29b51a22fbbb40ec143ef417cfecadd9348ba3284a1dcdadcdf981e",
+      "当前SHA256": "fb6be29ff29b51a22fbbb40ec143ef417cfecadd9348ba3284a1dcdadcdf981e",
+      "一致": true
+    },
+    {
+      "历史清单": "D:\\codex临时工作区\\npc-dialog-refresh-20260924\\layout-revision\\manifest.json",
+      "现服路径": "D:\\MirServer\\Mir200\\Envir\\Market_Def\\玄渊法环\\合成\\C10_王宫兵械长·奥德-XY_LEYNDELL.txt",
+      "历史安装后SHA256": "1b5fba88290a1fe95e3e2b16add837d9dc8423bd03d3ce861668ded335305e99",
+      "当前SHA256": "1b5fba88290a1fe95e3e2b16add837d9dc8423bd03d3ce861668ded335305e99",
+      "一致": true
+    },
+    {
+      "历史清单": "D:\\codex临时工作区\\npc-dialog-refresh-20260924\\layout-revision\\manifest.json",
+      "现服路径": "D:\\MirServer\\Mir200\\Envir\\Market_Def\\玄渊法环\\称号\\独立\\C01-XY_DRIFTING_ISLANDS.txt",
+      "历史安装后SHA256": "11c1fd6f2bde9a88abf45fc5bc900bee7d170f9c062c5f922dd3172e1e253565",
+      "当前SHA256": "11c1fd6f2bde9a88abf45fc5bc900bee7d170f9c062c5f922dd3172e1e253565",
+      "一致": true
+    },
+    {
+      "历史清单": "D:\\codex临时工作区\\npc-dialog-refresh-20260924\\layout-revision\\manifest.json",
+      "现服路径": "D:\\MirServer\\Mir200\\Envir\\Market_Def\\玄渊运营\\赞助称号-xycamp.txt",
+      "历史安装后SHA256": "cf7911b91e58cc260e644e60feaa79ac0c4fbe2877253b3c3f9b6614156e5469",
+      "当前SHA256": "879637918f0d4adc8ce3a52fd92423f5eb9ab15a85f7968e293eb6269177b77a",
+      "一致": false
+    },
+    {
+      "历史清单": "D:\\codex临时工作区\\npc-dialog-refresh-20260924\\layout-revision\\manifest.json",
+      "现服路径": "D:\\MirServer\\Mir200\\Envir\\Market_Def\\玄渊法环\\任务\\C02_QUEST_5-XX144.txt",
+      "历史安装后SHA256": "9021e8932889e64af32edd64bbeb609a6ddfd1308209f8e0d2a41a0d36d14c27",
+      "当前SHA256": "9021e8932889e64af32edd64bbeb609a6ddfd1308209f8e0d2a41a0d36d14c27",
+      "一致": true
+    },
+    {
+      "历史清单": "D:\\codex临时工作区\\npc-dialog-refresh-20260924\\ring-display-revision\\manifest.json",
+      "现服路径": "D:\\MirServer\\Mir200\\Envir\\Market_Def\\玄渊法环\\合成\\星辉法环-XY_NMGF_MAIN.txt",
+      "历史安装后SHA256": "916da1e810fa79d0a208b55f711ded5f19c24b84faedf946d36a6243c19c83cc",
+      "当前SHA256": "916da1e810fa79d0a208b55f711ded5f19c24b84faedf946d36a6243c19c83cc",
+      "一致": true
+    },
+    {
+      "历史清单": "D:\\codex临时工作区\\npc-dialog-refresh-20260924\\ring-display-revision\\manifest.json",
+      "现服路径": "D:\\MirServer\\Mir200\\Envir\\Market_Def\\玄渊法环\\合成\\C03_星核校准师·西境-XY_NMGF_WEST.txt",
+      "历史安装后SHA256": "5c58f5a447ec3fb9221e171c2f9aadcfdee34ef21804b3529da6a8b3b1649250",
+      "当前SHA256": "5c58f5a447ec3fb9221e171c2f9aadcfdee34ef21804b3529da6a8b3b1649250",
+      "一致": true
+    },
+    {
+      "历史清单": "D:\\codex临时工作区\\npc-dialog-refresh-20260924\\ring-display-revision\\manifest.json",
+      "现服路径": "D:\\MirServer\\Mir200\\Envir\\Market_Def\\玄渊法环\\合成\\C05_星核校准师·湖月-XY_LYNYA_LAKE.txt",
+      "历史安装后SHA256": "5021cb3fa11b8ae69269ed6824c58bc4c97245fae2b2a5023ddf10660fcb9973",
+      "当前SHA256": "5021cb3fa11b8ae69269ed6824c58bc4c97245fae2b2a5023ddf10660fcb9973",
+      "一致": true
+    },
+    {
+      "历史清单": "D:\\codex临时工作区\\npc-dialog-refresh-20260924\\ring-display-revision\\manifest.json",
+      "现服路径": "D:\\MirServer\\Mir200\\Envir\\Market_Def\\玄渊法环\\合成\\C07_星核校准师·圣雪-XY_SNOWFIELD.txt",
+      "历史安装后SHA256": "c951a6e4e0640697ccb760135851dba029080f95b7f75c284c933b528a80594b",
+      "当前SHA256": "c951a6e4e0640697ccb760135851dba029080f95b7f75c284c933b528a80594b",
+      "一致": true
+    },
+    {
+      "历史清单": "D:\\codex临时工作区\\npc-dialog-refresh-20260924\\ring-display-revision\\manifest.json",
+      "现服路径": "D:\\MirServer\\Mir200\\Envir\\Market_Def\\玄渊法环\\合成\\C09_星核校准师·黄金律-XY_ALTUS.txt",
+      "历史安装后SHA256": "060e9e29fdcd38ad9ccca7c0d7136be581882d714c54df3a2789acc811b305cb",
+      "当前SHA256": "060e9e29fdcd38ad9ccca7c0d7136be581882d714c54df3a2789acc811b305cb",
+      "一致": true
+    }
+  ],
+  "现服定向检查": {
+    "25条撤下入口仍未登记": true,
+    "法环最后修正5文件全部相同": true,
+    "狂暴坐标20,24": true,
+    "捐献坐标20,29": true,
+    "狂暴捐献普通对话框": true,
+    "狂暴奖励为灵符50": true,
+    "狂暴开启灵符100": true,
+    "饥饿三项关闭": true,
+    "登录13调用两次100ms": true
+  },
+  "核对文件SHA256": {
+    "D:\\MirServer\\Mir200\\Envir\\MerChant.txt": "3bf611c97bb25b1c66ae866c242b3a3023c8ac3a798fe79119abd7cea82fa742",
+    "D:\\codex临时工作区\\npc-dialog-refresh-20260924\\backups\\install-20260924-012937\\MerChant.txt": "1422a3851122029aa78e3521e300fa735df2771b73f0c2ec1d113ac93a2f3d9b",
+    "D:\\codex临时工作区\\npc-dialog-refresh-20260924\\candidate\\MerChant.txt": "4e44eeb854817665dd9d149b5816922ffbe09e0e1f3971f6b8dc89e18a81d1e9",
+    "D:\\codex临时工作区\\npc-dialog-refresh-20260924\\evidence\\candidate-manifest.json": "8b269f67eeba601071000f436a3e6eebb9be7e2b0414b3f28e6867388ce50a7b",
+    "D:\\MirServer\\Mir200\\Envir\\EffectImageList.txt": "1034ae4d5f2737f066eef4c3d003eccac62d11c73753dc744f71a536ca3f91ef",
+    "D:\\MirServer\\Mir200\\Envir\\Market_Def\\玄渊法环\\称号\\贯穿\\C01-XY_DRIFTING_ISLANDS.txt": "ff4329ddd5766fca3db706d0a3482ffe9e0249d996022018301d113da17a5b6d",
+    "D:\\MirServer\\Mir200\\Envir\\Market_Def\\玄渊法环\\合成\\C02_拾荒匠·阿砾-XY_NMGF_MAIN.txt": "1938fe54018224e097cd3f7b7ecfb6a7f31d3f0e26b13eb325d201a85bd7b240",
+    "D:\\MirServer\\Mir200\\Envir\\Market_Def\\玄渊法环\\合成\\C02_风暴工匠·洛克-XY_NMGF_MAIN.txt": "c60d0fb2450a7d683237e57757ad794606a1703bf91c9f9f96578069e935ad8b",
+    "D:\\MirServer\\Mir200\\Envir\\Market_Def\\玄渊法环\\合成\\C03_断路铁匠·赫恩-XY_NMGF_WEST.txt": "b2c195a63c380357e79e4e079408dd352f80fc9c859d254fe9559d348bc45aac",
+    "D:\\MirServer\\Mir200\\Envir\\Market_Def\\玄渊法环\\合成\\C03_星核校准师·西境-XY_NMGF_WEST.txt": "5c58f5a447ec3fb9221e171c2f9aadcfdee34ef21804b3529da6a8b3b1649250",
+    "D:\\MirServer\\Mir200\\Envir\\Market_Def\\玄渊法环\\合成\\C04_沉潮铸师·伊芙-XY_LYNYA_SEA.txt": "b4864851465fd99ee43a92817f00fa3d329ae90c7a95f1a6d1e1b1e9c3b09d3a",
+    "D:\\MirServer\\Mir200\\Envir\\Market_Def\\玄渊法环\\合成\\C05_星核校准师·湖月-XY_LYNYA_LAKE.txt": "5021cb3fa11b8ae69269ed6824c58bc4c97245fae2b2a5023ddf10660fcb9973",
+    "D:\\MirServer\\Mir200\\Envir\\Market_Def\\玄渊法环\\合成\\C05_辉石调律师·蕾娜-XY_LYNYA_LAKE.txt": "46df4801220d03c1d7e89f626f9d5f5907ff629f3e6d5fae1661a0553229857c",
+    "D:\\MirServer\\Mir200\\Envir\\Market_Def\\玄渊法环\\合成\\C06_红狮残匠·伯伦-XY_GAELID.txt": "80bdee4a8a6a16292f34d94ddd39bed45c0600e0ac513d83ee15828be592f4f3",
+    "D:\\MirServer\\Mir200\\Envir\\Market_Def\\玄渊法环\\合成\\C07_星核校准师·圣雪-XY_SNOWFIELD.txt": "c951a6e4e0640697ccb760135851dba029080f95b7f75c284c933b528a80594b",
+    "D:\\MirServer\\Mir200\\Envir\\Market_Def\\玄渊法环\\合成\\C07_白金裁缝·弥雅-XY_SNOWFIELD.txt": "205b378b45ac96cf880e78d62b1867df276db40e31e045136d9b21365c947334",
+    "D:\\MirServer\\Mir200\\Envir\\Market_Def\\玄渊法环\\合成\\C08_炉火遗民·冈特-XY_GIANT_TOP.txt": "53637dcc9445b1f953bf780879d176c57934dcf3fe2633ac735707f9c9415818",
+    "D:\\MirServer\\Mir200\\Envir\\Market_Def\\玄渊法环\\合成\\C09_星核校准师·黄金律-XY_ALTUS.txt": "060e9e29fdcd38ad9ccca7c0d7136be581882d714c54df3a2789acc811b305cb",
+    "D:\\MirServer\\Mir200\\Envir\\Market_Def\\玄渊法环\\合成\\C09_黄金铸师·亚德-XY_ALTUS.txt": "11e0fe2ab8c8afb171ac74c5b70b7ea8114e649869d5367cfd2446434723ed50",
+    "D:\\MirServer\\Mir200\\Envir\\Market_Def\\玄渊法环\\合成\\C10_旧王秘匣师·萨芙-XY_LEYNDELL.txt": "fb6be29ff29b51a22fbbb40ec143ef417cfecadd9348ba3284a1dcdadcdf981e",
+    "D:\\MirServer\\Mir200\\Envir\\Market_Def\\玄渊法环\\合成\\C10_王宫兵械长·奥德-XY_LEYNDELL.txt": "1b5fba88290a1fe95e3e2b16add837d9dc8423bd03d3ce861668ded335305e99",
+    "D:\\MirServer\\Mir200\\Envir\\Market_Def\\玄渊运营\\赞助称号-xycamp.txt": "879637918f0d4adc8ce3a52fd92423f5eb9ab15a85f7968e293eb6269177b77a",
+    "D:\\MirServer\\Mir200\\Envir\\Market_Def\\玄渊运营\\狂暴之力-xycamp.txt": "1f201ab075006fef8f60c39d7b08226724df5bc6fff7476395109103a6c8dbff",
+    "D:\\MirServer\\Mir200\\Envir\\Market_Def\\玄渊运营\\沙城捐献-xycamp.txt": "74080b3a598a24efdde6aac6c1d1a36b181e475e61a9dd0c138bf0fcd9016272",
+    "D:\\codex临时工作区\\npc-dialog-refresh-20260924\\visual-revision\\manifest.json": "cdf56900868cfdfd4997f940188e0716d113d179e440ca7a5d95678a84bf4f6f",
+    "D:\\codex临时工作区\\npc-dialog-refresh-20260924\\layout-revision\\manifest.json": "6b89edec900d8583d6f7f696bcd127f4aef5336c2a48c4c723bd08de58074a7c",
+    "D:\\MirServer\\Mir200\\Envir\\Market_Def\\玄渊法环\\称号\\独立\\C01-XY_DRIFTING_ISLANDS.txt": "11c1fd6f2bde9a88abf45fc5bc900bee7d170f9c062c5f922dd3172e1e253565",
+    "D:\\MirServer\\Mir200\\Envir\\Market_Def\\玄渊法环\\任务\\C02_QUEST_5-XX144.txt": "9021e8932889e64af32edd64bbeb609a6ddfd1308209f8e0d2a41a0d36d14c27",
+    "D:\\codex临时工作区\\npc-dialog-refresh-20260924\\ring-display-revision\\manifest.json": "17256e6049c884c357c3a18291d3a271439c4263fa84a92df9a738401339cc7a",
+    "D:\\MirServer\\Mir200\\Envir\\Market_Def\\玄渊法环\\合成\\星辉法环-XY_NMGF_MAIN.txt": "916da1e810fa79d0a208b55f711ded5f19c24b84faedf946d36a6243c19c83cc",
+    "D:\\MirServer\\Mir200\\Envir\\MapQuest_def\\QManage.txt": "b7c5dc51707725024d99383063334df31ad921ec665c759739eedf5c3606041b",
+    "D:\\MirServer\\Mir200\\!Setup.txt": "10a424ece2f4f77c873cdac3be0ef32a4780ee5887c4d546769964568ebbc7e0",
+    "D:\\MirServer\\Mir200\\Envir\\Market_Def\\QFunction-0.txt": "fa8cede738c58ee16d84dd87666659e0ae65143777d5bce65ba5bafa7678819a",
+    "D:\\MirServer\\Mir200\\Envir\\QuestDiary\\玄渊功能\\狂暴\\狂暴NPC接口.txt": "e91c84b907706385c4460470aa7d7a98f7bda5f3613667df365cb7fc0db7b5e0"
+  },
+  "目标写入": false,
+  "游戏统一验收": "未取得"
+}
