@@ -1,0 +1,177 @@
+2026-10-18 Native Control 1.1.12：固定共享后继函数只读取证
+仍为同一技能adapter=m2、command=m2-event-evidence和固定profile=custom-monster-summon-v1；最低版本1.1.12。
+在原3个handler之外，仅补固定RVA0xFD1F30的512字节callee；VA由现场actualBase计算，不开放地址/长度参数。
+在原有完整243条published表校验中记录该地址的全部匹配方法名，0/1/多均如实；0只表示本表内未找到。callee不是第四个DFM handler。
+真实100端身份前后核验、跨页只读采集及REA/Ghidra实际callee指令/512字节回读通过；原三个片段832字节并集亦一致。
+权威4份raw bins覆盖两段1344字节；17408字节标准静态DLL的其余15040字节.text为CC合成填充，仍只导出3个原handler。
+未执行或LoadLibrary，不触发GUI/事件，不修改REA策略、正式端或GlobalVal；完整函数与片段外调用/分支未知，业务规则由调用窗口验证。
+合同：C:\Users\Administrator\.agents\skills\xuanyuan-native-control\references\event-evidence.md
+正式冻结来源：E:\XuanYuanDevPlatform\wzl编辑\evidence\20261015_native_control_tool\v1.1.12；旧窗口/游戏/业务验收不计为本轮新增验收。
+
+2026-10-18 Native Control 1.1.11：REA/Ghidra静态载体兼容修复
+同一技能入口adapter=m2、command=m2-event-evidence；固定profile=custom-monster-summon-v1，事件命令最低版本1.1.11。
+修正1.1.10非可执行PE被REA拒绝的问题：输出code-entry-snippets.analysis.dll，标准AMD64 PE32+ DLL，仅供静态分析，严禁执行或LoadLibrary。
+REA 6.5.0 / Ghidra 12.1.4真实导入成功，三个事件入口指令读取15/49/34条；832字节回读与原始bin并集一致，载体offset已实读核验。
+三个512字节bin仍为权威；导出名称为合成分析辅助，3264字节CC填充非原始指令；原PEoffset仍为null，完整函数及片段外调用未知。
+本轮离线修复已有采集，不新增进程读取、不触发GUI或业务实验、不修改REA/客户端策略；采集目标白名单及只读后端保持原合同。
+合同：C:\Users\Administrator\.agents\skills\xuanyuan-native-control\references\event-evidence.md
+正式冻结来源：E:\XuanYuanDevPlatform\wzl编辑\evidence\20261015_native_control_tool\v1.1.11；旧窗口/游戏/业务验收不计为本轮新增验收。
+
+2026-10-18 Native Control 1.1.10：受限Delphi事件只读取证
+同一技能入口新增adapter=m2、command=m2-event-evidence；固定profile=custom-monster-summon-v1。
+唯一目标D:\Mirserver100\Mir200\M2Server.exe，现场PID/路径/原版SHA核验；禁止正式端与任意地址/长度参数。
+仅被动读取已映射主模块固定DFM/VMT与三个处理函数入口片段，不改变保护、不注入、不触发GUI、不修改业务；GlobalVal.ini只观测。
+合同：C:\Users\Administrator\.agents\skills\xuanyuan-native-control\references\event-evidence.md
+输出为DFM→VMT→published方法表地址关系及最小原始代码片段，运行内存来源与原PE文件offset分开；不宣称派生开关或当前实例事件指针已证实。
+正式冻结来源：E:\XuanYuanDevPlatform\wzl编辑\evidence\20261015_native_control_tool\v1.1.10；旧窗口/游戏/业务验收不计为本轮新增验收。
+
+2026-10-18 Native Control 1.1.9：原生窗口字段与菜单接口已发布
+同一工具新增window-observe/window-action，支持原版M2/GameCenter/MakeGameLogin/WZL窗口的观察、控件设值、选项、标签页、按钮、菜单、关闭及自绘区域单次键鼠操作。
+固定EXE：E:\XuanYuanDevPlatform\wzl编辑\bin\XuanYuanNativeControlTool\XuanYuanNativeControlTool.exe
+统一调用：python -X utf8 "C:\Users\Administrator\.agents\skills\xuanyuan-native-control\scripts\invoke.py" --adapter m2|engine|launcher|editor --request 请求.json
+完整合同与字段保存/重读/回读链：C:\Users\Administrator\.agents\skills\xuanyuan-native-control\references\window.md
+inspect已增加hwnd；窗口请求绑定现场PID/完整路径/原版SHA256/精确窗口，以及120秒内观察回执SHA。每请求一个动作，未知弹窗和超时不自动确认或重发。
+字段无需逐个加入engine-parameter；旧人数间隔合同保留。本次新增验收使用实验端独立怪物的名称X/Y及类型，实际原生保存、完整INI差分、怪物库重读ACK、GUI回读与精确恢复。
+通用window-action可操作任务中明确授权的正式原生窗口；不会自动授予业务改值、启停、发布、资源覆盖等权限。旧高层命令限制不变，game接口继续只作用于原LabClient。
+原始资源工具1.0.1未替换。正式冻结来源与本轮证据：E:\XuanYuanDevPlatform\wzl编辑\evidence\20261015_native_control_tool\v1.1.9
+
+2026-10-18 统一技能与Native Control 1.1.8已安装
+用户级唯一技能：C:\Users\Administrator\.agents\skills\xuanyuan-native-control\SKILL.md
+新窗口调用：$xuanyuan-native-control 后接具体目标。
+CLI：python -X utf8 "C:\Users\Administrator\.agents\skills\xuanyuan-native-control\scripts\invoke.py" --capabilities
+任务：同一脚本 --adapter game|m2|engine|launcher|resource --request UTF-8请求JSON路径
+技能路由两个已有EXE；Native Control新增game-inspect/game-observe/game-input，原11条合同保留。
+实时版本/EXE指纹/冻结源码权威以固定工具tool.manifest.json为准，本次源码来源为E:\XuanYuanDevPlatform\wzl编辑\evidence\20261015_native_control_tool\v1.1.8\frozen-source。
+未替换共享施工src，未合入1.1.7参数往返或1.2.0整套候选；资源工具1.0.1原EXE保持。
+游戏绑定已验证LabClient，先现场枚举、观察并看图，每请求一个动作；键鼠/状态验证见技能references/game.md。
+已有任务授权可复用；技能不会扩大引擎/生产写权限。其他适配器仍遵守各自旧合同。
+通过路由器串行；外层被强制终止后先查后端进程和当前状态，不重发。
+本次证据：E:\XuanYuanDevPlatform\wzl编辑\evidence\20261015_native_control_tool\v1.1.8\README.md
+
+登录器副本生成与引擎只读调用接口
+
+2026-10-17补充：稳定入口仍为1.1.6；新增1.1.7测试端单字段往返候选，未替换固定EXE。用户授权直接使用D:\Mirserver100，原生610→611→610秒、两次保存/重开GUI回读及原始!Setup完整字节恢复已通过，不重读、不启停。仅engine-parameter-cycle和console-user-count-interval，正常宿主隐藏M2通过精确参数菜单WM_COMMAND打开，保存仍使用精确可见参数窗。180项测试及10模块冻结绑定通过。正式M2当次未运行，正式配置[Server] ViewHackMessage仍为FLASE；正式参数写入仍禁用，不能把测试收据当权限。候选源码、请求合同和证据见E:\XuanYuanDevPlatform\wzl编辑\evidence\20261015_native_control_tool\v1.1.7-candidate；GitHub通过snapshot-manifest.parameterCycleCandidateIncrement进入。原始INI和失败收据仅本地保存，不上传。
+
+唯一实现：E:\XuanYuanDevPlatform\wzl编辑\src\wzl_blackbox\native_control.py
+调用工具：E:\XuanYuanDevPlatform\wzl编辑\bin\XuanYuanNativeControlTool\XuanYuanNativeControlTool.exe
+参数权威：E:\XuanYuanDevPlatform\wzl编辑\docs\native-control-tool.md
+版本与指纹权威：工具目录tool.manifest.json
+
+共享入口后续变化：收尾观察固定EXE为匹配自身manifest的1.1.5（6489B93C…EEB1CB5），不是本批14验收对象，未含14标题快照修正，未覆盖或合并。复现本接口14沙盒合同须用14 Release的6F536E16…BF7440C独立文件；当前固定入口不能盲用或继承本批原生通过结论。
+
+2026-10-16本批合同1.1.4（现用安装以tool.manifest.json为准）：m2-client-build限禁网Windows沙盒C:\NativeDirectoryLab与exportKind=custom-monsters；调用端预算至少600秒。完整请求见docs\native-control-client-chain.md；从新窗口准备环境见tools\native-sandbox\README.md及该目录WSB、stack-entry.ps1、Invoke-ClientChain.ps1。原生窗体caption采用单次Win32快照，不依赖目标控件文本响应；PID/存活/未知窗口门禁保持。分阶段runner最多600秒进程等待+5秒流回收，超时失败回执124、不强杀、不重发。只支持已明确指纹的合法已配置输入，不是任意原始端自动制包。WIL更新不生成Client.dat；原生怪物DAT再交原版登录器保存生成。输入绑定、PE和源保护须回读成功；在线下发、全部参数、游戏效果未验收，正式服写入仍拒绝。
+1.1.2不包含下述1.2.0未发布整套引擎功能；旧引擎/权限模块未变，当前不执行历史宿主最小端启停。冻结源码及新EXE验证范围看manifest，不把后续施工源码当成已发布版本。
+
+XuanYuanNativeControlTool.exe capabilities
+XuanYuanNativeControlTool.exe run --request 完整JSON路径
+XuanYuanNativeControlTool.exe run --request -
+
+schemaVersion=1。
+command=launcher-save / launcher-build：arguments包含sourceDirectory及尚不存在的outputRoot，policy.allowedWriteRoots显式授权任务目录；只写副本，不直接部署。
+command=inspect：arguments包含当前pid及expectedExecutable；只读核验进程路径和窗口/菜单/控件。
+
+1.1.0增补：engine-preflight、engine-controller-start/stop、m2-start/stop、m2-reload、engine-parameter仅作用于D:\codex临时工作区中的已审计独立最小副本；正式服仍只读。arguments含labRoot，操作既有进程另含实时pid，写操作须policy.allowedWriteRoots。精确端口、版本、参数范围和限制以同一native-control-tool.md及native_engine.py为准。
+engine-parameter当前只支持console-user-count-interval（秒），含expectedValue及value，原版GUI保存并重开回读。m2-reload含target，支持qfunction/qmanage/items/skills/monsters/npcs/parameters；parameters只确认已支持字段回读，不声称其他字段效果。
+1.1.0阶段未开放整套engine-start/stop。旧DBServer（SHA256=86868707C18D36D044109BF913535F37BB85B40318F04F5510089E4A8A708AE7）及后来在禁网沙盒补测的当前DBServer（SHA256=06DA830E181A7DFDD913A4D322422AD01C755C8A105CA69AE08A7716C25DC6BE）都实测出现宽监听，两个版本的证据分别保留，不在宿主继续整套测试。
+正式生成器和客户端文件不写入；生成物的游戏测试、正式部署仍属于原具体业务任务。
+
+1.2.0未发布候选增补（1.1.2固定EXE不可调用）：engine-start/engine-stop只允许实际禁网WDAG来宾的固定C:\NativeLab或C:\NativeDirectoryLab；每次检查实际用户名、非回环IPv4/IPv6地址及默认路由。D盘最小副本和正式服均拒绝整套命令。arguments.labRoot与policy.allowedWriteRoots均指定同一固定来宾根；stop还必须传启动回执中的当前控制台pid。仍是原工具，不新增控制器/守护或第二配置源。
+实际验证数量及候选/发布状态以同目录manifest和绑定的verification报告为准，不继承旧候选的176项/35项结论。启动须七组件唯一PID、M2实际监听合同及初始化/IDS/DB连接日志；停止须七组件全部正常退出、控制台恢复启动按钮并正常退出。任意菜单/任意参数和正式服写入仍不开放。
+完整副本先由原版“自动设置服务器目录”配置并重开，保留业务脚本；每次返回明确的retainedLegacyPaths遗留警告。资源/登录器副本与引擎来宾的准备前提、新窗口下载和SHA验证方式见同一文档“新的本地Codex窗口”。GitHub不是远控通道，不分发原版或正式数据库。
+沙盒通过微软原生wsb list/exec/stop管理；准确命令、运行库前提、9文件指纹、输入/输出映射与活动线程确认框原理见同一native-control-tool.md的1.2.0节。副本测试和游戏验收严格分开。
+
+2026-10-16未发布源码维护：sandbox_environment改用Windows原生GetUnicastIpAddressTable/GetIpForwardTable2/GetUserNameW逐次查询，仍同时拒绝非WDAG、非回环IPv4/IPv6、默认路由及查询错误；不缓存、不放宽禁网策略。原因是旧PowerShell查询每动作9至12秒且出现30秒超时。控制台单独退出复用prepare_form及沙盒线程活动窗口校验，宿主仍要求前台。当前固定Control1.1.2没有替换，以上只在临时沙盒采集程序验证，不能从该说明推断整套1.2.0已发布或正式服有写权限。
+
+2026-10-16沙盒会话恢复实测：wsb start仅创建环境；须wsb connect并等待ExistingLogin实际命令退出码0，connect成功本身不是会话就绪。自动LogonCommand可能延迟执行，不能因目录未出现就重复启动准备脚本；当前任务stack-entry已补独占锁、runId/阶段收据、已有副本拒绝和失败退出码，来宾75/76拒绝均未覆盖旧标记，完整修改后冷启动仍待端到端验证。M2启动仍须实际监听合同、无阻塞主窗及当次初始化标记；不只凭文件日志成功行放行。参数重读未收到确认时不得自动重发，也不能推断指令未执行。最新分层知识见本地LF-M2-020和GitHub的engineFieldVerificationIncrement；Control1.1.2固定EXE未改变，偶发启动/重读超时未宣称根治。
+
+2026-10-16后续超时定位（未发布源码）：关闭参数页后可见主窗的线程活动窗口可能为空，单纯restore实测无效，标准激活成功；原prepare_form仅对空活动窗口尝试set_focus，重新核验精确活动窗口及程序身份，另一非空活动窗口时仍拒绝。独立复现的参数重读确实发送并在15000ms返回1460，约3秒后恢复响应，没有重发；据实测将原同步完成确认预算校准为60000ms并清除陈旧错误码，仍单次发送、超时不自动重试。启动90秒及所有就绪条件未改；本次冷启动准备已端到端成功，但M2间歇启动超时仍待失败条件证据，不宣称根治。最新证据从GitHub的engineTimeoutDiagnosisIncrement进入；七项字段实验未重跑，固定Control1.1.2及正式服不动。
+
+2026-10-16剩余字段续验（未发布源码）：本次标准SetForegroundWindow也曾返回false，不能把重新激活视为可靠通用解法。已用原版实测区分原生菜单与按钮：精确主窗WM_COMMAND在无活动窗时可直接送达，参数窗由M2自己激活；按钮BM_CLICK仍要求精确活动对话框。原prepare_form增加仅供本工具菜单调用的direct_menu模式，限实际禁网WDAG、精确自有主窗可见/可用/无模态阻塞，另一非空活动窗拒绝；PID/路径/指纹/菜单唯一可用和宿主前台规则保留，不改系统前台锁、不伪造输入或活动状态。新源码226项测试通过，固定1.1.2不替换。人数间隔输入范围1..3600只是工具校验范围，不表示新版M2所有数值重读后均保持：本样本2秒保存后即按2秒输出，但重读回读不保持；60秒的保存/重读/回读通过，完整周期证据以engineFieldVerificationIncrement为准。不能据两个点推定最小值或任意值均有效。
+
+2026-10-19 Native Control 1.1.13：原版文件对话框子框识别修复
+同一工具/同一技能入口，window-observe/window-action请求字段和身份/回执/互斥不变。文件对话框内部带WS_CHILD的#32770保留在forms/controls中，但不再作为独立owned modal阻挡父文件框；不按零宽/面积放行，真正的owned modal继续阻止父窗输入，普通child form输入保护保持。
+最终EXE实测：可见“打开”框含零宽WS_CHILD时截图成功；文件名set-text同步ACK及回读通过；打开任务WZL后重新观察原版主窗显示0/1799。475测试/162子测试通过，13冻结模块匹配。没有重验M2/游戏业务效果。
+原有恢复限制保留：若动作关闭了调用前的原前台HWND，可能已投递/关闭但因无法恢复该前台而返回失败。此时查outputRoot/failure.json并重新观察现场；失败不等于未动作，绝不自动重发，不能把该命令称整体成功。
+资源批处理继续adapter=resource、Native Resource1.0.1。当前PAK237导出、三张55x55尾部追加/原版回读、供体1905及WZL追加回读通过，源文件未变；旧TimeoutError本轮未复现，根因未确认，未修改Resource代码。导入图inputRgbEqual=false，不能称无损或透明显示已验收。资源输出只在任务副本，业务安装另行授权。
+
+2026-10-19 Native Control 1.1.14：TRzButtonEdit设值支持
+仍调用统一正式入口invoke.py，adapter=launcher/editor/m2/engine与window-observe/window-action合同不变。原set-text类白名单新增TRzButtonEdit；先新观察取得当前controlHwnd/expectedText，再以expectedClass=TRzButtonEdit和任务批准的value提交。沿原同步WM_SETTEXT及WM_GETTEXT回读，保留120秒回执/指纹/原值/父窗/owner/样式/可见启用/焦点与恢复校验，不新增路径旁路或自动选择按钮。readbackVerified=true仅说明控件回读；原生保存、完整落盘差异与重新加载由业务任务验证。
+完整491测试/162子测试通过，新增16例及相关139例通过，13冻结模块一致；产品仅白名单及VERSION变化。本轮未读取或操作PID30716及大画布，真实TfrmGUI路径设值由原施工窗口继续验收，不将边界测试当作实窗验收。
+close协议未改。ui14的actionAttempted=true/posted后才发生观察准入错误，原窗口已确认close实际执行；不要重发。隐藏TfrmGUI可能被后置forms过滤，错误不代表输入前拒绝；同样保留关闭原前台后的恢复失败限制。失败时检查failure.json、重新观察，不自动补点击。
+
+2026-10-19 Native Control 1.1.15：固定版本 LoginSrv 窗口支持
+仍使用统一 invoke.py，LoginSrv 走 adapter=engine，沿用 window-observe/window-action 请求，不新增命令、适配器或业务参数接口。LoginSrv.exe 指纹复用 native_engine.STACK_BINARIES 权威项；当前支持 SHA256 为 1CC15D5A3848E2EB3DD2FB52947331527D8708C165F3266D5AC7DA80C8D9BC57。
+嵌入 GameCenter 的 LoginSrv 回执 hosting.kind 为 GameCenterHostedLoginSrv；M2 继续为 GameCenterHostedM2。只接受同根原版 GameCenter TfrmMain 和完整现场父级链，链上 PID 只能属于目标与宿主。独立 LoginSrv 的 hosting 为 null；独立窗仅在原观察准入合同可枚举时使用 show，其他隐藏类未验证；隐藏嵌入主窗须先观察 GameCenter 并选择实际宿主页。窗口或页签变化后重新观察，历史 PID/HWND 不作调用依据。
+可按现场原生控件使用既有设值、按钮、菜单与回读操作。工具不内置二级密码开关语义，不假设修改单个 INI 键等价于原生保存。业务窗口负责备份、原生保存、完整落盘差异、重新加载回读及实际业务验收；账号、口令和数据库不属于本次工具回归输入。
+本次完成单元及 Win32 边界模拟回归、冻结模块一致性与正式统一入口能力查询；未启动旧服务端 seed、未操作正式 LoginSrv 窗口、未测试真实基础设置保存、未重启组件，也未修改正式业务配置。通过测试不代表二级密码业务已取消。原 close 恢复限制保留，失败时先查 failure.json 和现场，不自动重发。
+
+2026-10-19 Native Control 1.1.16：固定 DBServer/RunGate/SelGate 窗口支持
+仍使用统一 invoke.py 的 adapter=engine 和 window-observe/window-action，原 JSON 请求、回执、桌面互斥和动作合同不变。不新增工具、适配器、解析器、业务参数或日志/网关分配表接口；原窗口截图、原生可枚举文字与已有菜单/控件动作供具体任务按现场读取，自绘表格不保证有结构化文本。
+三个 EXE 均从 native_engine.STACK_BINARIES 取得唯一权威指纹。当前 DBServer.exe 为 06DA830E181A7DFDD913A4D322422AD01C755C8A105CA69AE08A7716C25DC6BE，拒绝旧 BINARIES 的 8686 版本；RunGate.exe 为 F6494D1A560D9D7D4B2A7BB8EAAEB24D4B38ECE39A84D0630E35E0C3CE23FDC4；SelGate.exe 为 4A707773A3AB6CBC93A0C0239B8DCED39EFDD07F31D70DBF50F417EC022E3E55。未将 LoginGate 或 LogServer 加入原窗口白名单。
+新增 hosting.kind 分别为 GameCenterHostedDBServer、GameCenterHostedRunGate、GameCenterHostedSelGate；原 M2/LoginSrv kind 保持。只接受各目标同根、固定版本 GameCenter 的 TfrmMain 与完整现场父窗链，链上仅允许目标和宿主两个 PID。目标控件仍须同 PID，回执、前台、焦点和未选宿主页保护不变。隐藏嵌入窗先观察 GameCenter 并选择实际宿主页，再单独观察目标；独立窗仅在原观察准入合同可枚举时可用 show，其他隐藏类未验证。历史 PID/HWND 仅追溯，使用前重新枚举。
+本轮为工具维护与离线回归，未操作正式窗口、未执行网关设置/选择网关或其他菜单、未重载或启停服务、未另开服务或沙盒、未读取账号/人物库或凭据、未改业务配置，也未触生成器大画布。单元及 Win32 边界模拟、冻结模块和正式入口查询结果见同目录 manifest 绑定证据；真实三组件窗口内容/日志/网关表尚由业务窗口继续只读验收。工具发布不能证明选角故障根因或已经修复，不把一次连接或 TIME_WAIT 当故障结论。原 close 恢复限制保留，失败先查证据和现场，不自动重发动作。
+
+2026-10-19 Native Control 1.1.17：TJvInspectorEdit 设值支持
+仍调用统一 invoke.py，MakeGameLogin 属性编辑用 adapter=launcher 和原 window-observe/window-action。仅原 set-text 编辑类白名单新增精确 TJvInspectorEdit，不新增命令、适配器、按键、内存写入或控制实现。请求字段不变：从新观察取得实际控件 HWND、expectedClass=TJvInspectorEdit 和 expectedText，value 为本任务授权值；历史 HWND 不得直接输入。
+沿原同步 WM_SETTEXT ACK 及 WM_GETTEXT 回读，保留新观察回执/哈希/120秒时效、固定EXE与进程、目标/控件类与原值、父窗/owner/style、可见启用、同PID控件、焦点和恢复校验。回执 readbackVerified=true 只证明编辑框文字匹配；不证明 TJvInspector 已提交业务属性。属性提交、离开编辑后重观察、原生保存、完整落盘差异、重新加载属性回读与游戏验收，由原施工窗口按具体任务完成，不能把控件输入成功当作人物面板已保存或安装。
+本轮只检查已有离线观察中的类身份、任务生成器EXE静态指纹，并做模拟OS边界回归/冻结一致性/正式入口查询；没有操作任务生成器实例或画布、正式端、M2或客户端，没有修改或安装任何业务文件。实际 TJvInspector 属性提交和保存未在维护窗口重验。测试计数及发布状态见同目录 manifest 绑定证据；原 close 与前台恢复限制不变，失败先查 failure.json 和现场，不自动重发。
+
+2026-10-19 Native Control 1.1.18：原失败回执 guardEvidence
+统一 invoke.py、适配器、window-observe/window-action 请求与输入能力不变，TJvInspectorEdit 支持保留。只在既有 failure.json 附加 guardEvidence，不新增探针、诊断命令、按键或业务接口。原进程/窗口/回执/权限/父链/同PID/焦点和恢复校验不放宽。
+guardEvidence 记录最近一次原生窗口守卫的 stage、pointScreen、requestedClientPoint、targetHwnd/targetRootHwnd、既有 clientOrigin/clientSize、requireMembership、firstFailedCheck，以及按原短路顺序实际读到的 foregroundBefore、pointRoot、foregroundAfter；未执行的查询记 null。stage 区分 initial-center、fresh-center、pre-move、post-move、capture-before、capture-after；同一原派发前检查在 key 未移动时标为 pre-input，不增加检查次数。未到守卫时 stage 及未观测字段为 null；若最近守卫通过而后续因身份等其他错误失败，firstFailedCheck 为 null，不能把它误读成守卫失配。firstFailedCheck 非空时对应 foregroundBefore、pointRoot、foregroundAfter、observationMembership 或 inputMembership。pointerMoveAttempted/pointerMoveVerified 只记录原请求中的目标光标移动是否调用及成功返回，不包含 finally 的恢复移动，不新增光标查询。
+三项根窗口比较、原祖先/同PID检查的查询顺序、次数、立即拒绝与错误文本/类型保留；证据只复用原查询返回，不事后补查冒充失败瞬间，不自动重发。该补充帮助区分前台变化、点命中根不同及守卫阶段，不代表已证明或修复 DPI、遮挡或屏幕范围根因。
+actionAttempted=false 只表示尚未进入该动作的派发，不能据此笼统说没有激活或移动；点击的 down/up 未执行仍可能已经 move，随后执行恢复。visual-click 的 actionAttempted=true 且 dispatch.mode=SendInput/accepted=true 表明点击已发送；若随后标题随对象选择变化，原身份复核仍可拒绝，失败不等于点击未发生。例如既有 character-basiccanvas59 正是派发后身份复核错误，不能自动重发。搜索选中树节点也不能证明 Inspector 已加载或几何已提交。业务属性、原生保存、完整差异、重开回读与游戏验收继续由具体任务完成。
+本轮仅模拟边界回归、冻结核验与正式入口查询，未操作任务画布、目标窗口、正式端、M2或客户端，未保存/安装业务文件或启停引擎。真实现场失配仍需施工窗口基于新观察按既有授权安排单次动作并检查回执；测试计数和状态以 manifest 绑定证据为准。
+
+2026-10-20 Native Control 1.1.19：TJvInspectorMemo 与多行标题
+仍用统一 invoke.py 的 adapter=launcher、原 window-observe/window-action 与 set-text 请求。编辑类白名单仅新增精确 TJvInspectorMemo；不能把它当 TJvInspectorEdit 或相似类，也不新增控制器、命令、按键、消息路径或直接业务二进制修改。每次先新观察取得当前目标/控件及原值，历史PID/HWND仅追溯。
+既有派发按控件原生样式选路径：带 ES_MULTILINE 位的编辑框使用原 EM_SETSEL(0,-1)→EM_REPLACESEL(1,value) 通知序列；单行分支仍用同步 WM_SETTEXT。随后沿原 WM_GETTEXT 回读并逐字比较。当前离线 TJvInspectorMemo 样式含多行位，所以实际适用前者；并非新增或改成纯 WM_SETTEXT。同步消息、单次动作、原值、回执/指纹/时效、进程/父链/同PID/类/样式/可见启用/焦点/恢复、长度/NUL/截断拒绝均保留，1.1.18 guardEvidence 不变。
+value 可包含中文及实际LF或CRLF换行，标准JSON示例：
+{"value": "装\n备"}
+{"value": "装\r\n备"}
+请求与回读不自动转义、trim或规范化换行；不能把两个字符的反斜杠加n当实际换行。若原版控件规范化LF/CRLF导致与请求不符，原精确回读仍拒绝，不自动重发；业务窗口检查实际回读再使用原生格式。Windows多行标题可优先按CRLF示例提交。
+模拟OS消息测试只证明原文派发及同步文字回读路径，不证明真实 Memo 已完成换行规范化、Inspector标题提交、原生保存、资源安装或游戏显示。属性提交、离开编辑后新观察、原生保存、完整差异、重开回读与游戏验收由原施工窗口完成。本维护未操作任务画布、实时生成器、正式端、M2或客户端，未保存或安装任何业务文件。失败先查failure.json、guardEvidence和现场，不自动重发；工具发布不代表人物面板已修复。
+
+2026-10-20 Native Control 1.1.20：原生 tooltip 模态误分类修复
+仍用同一 invoke.py、adapter=launcher/engine/m2/editor 与原 window-observe/window-action。仅修原 snapshot 的 blockingWindows 判定：同PID已枚举窗中，精确 class=tooltips_class32 且带 WS_POPUP 的标准提示窗不再作为独立模态阻塞；forms 及其类、owner、parent、style等元数据完整保留。不增加探针/API/消息、请求字段、控制器或关闭提示的自动动作。微软标准tooltip说明其带WS_POPUP及WS_EX_TOOLWINDOW：https://learn.microsoft.com/en-us/windows/win32/controls/tooltip-styles
+本例anchor-dress20/21原blockingWindows仅有tooltips_class32；SysShadow只在forms、parent/owner均0，未参与本轮阻塞，故未新增SysShadow豁免。近似类名、大小写变体、非WS_POPUP同名窗、未知owned popup、自定义警告及真实#32770仍按原规则判断，不按面积小、空标题或目标enabled就泛化放行。WS_CHILD文件框子窗的既有区分保持，目标禁用、未恢复、真正模态、进程/父链/同PID、观察回执/哈希/时效、前台/焦点/点归属及恢复校验均不变。
+原截图和动作守卫不变：提示窗若实际覆盖截图中心或操作点，原WindowFromPoint/归属检查仍可拒绝，不提供穿透点击。此修复只消除错误的模态列表项，不保证任何遮挡情形下都可继续。1.1.18 guardEvidence及1.1.19 Memo精确多行回读保留。
+使用新工具后先重新window-observe并实际查看截图，再按原任务发单次动作；历史PID/HWND和旧观察不可直接复用。不自动ESC、关闭气泡、点击、重试或确认弹窗，失败先查failure.json/guardEvidence和新现场；actionAttempted=true不等于未输入。
+本轮通过离线观察证据、模拟OS边界回归、冻结源一致性和正式入口能力查询验证；未操作任务画布、实时生成器、M2、客户端或业务文件，未验证现场tooltip解除后的业务操作。真实新观察、属性提交、原生保存、重开回读与游戏验收由原施工窗口继续。测试计数和发布状态以manifest绑定证据为准。
+
+2026-10-22 Native Control 1.1.21：微端服务器与微端网关
+复用唯一已安装 invoke.py，二者都用 adapter=engine 和原 inspect/window-observe/window-action，不新增控制器、适配器、整引擎命令或长期调用入口。仅固定版本 UpdateServer_x64.exe（AMD64，SHA256 2FE71E3C8ED9FD113A392EBC50D603396412DEBD6DEC6CBCEEFC785646055DE2）与 MirUpdateGate.exe（x86，SHA256 2F12AB71F0D35D4259F96C2CCBA77F5DC8239BF0B3705654457F59D27CFB26B5）纳入原窗口适配；不泛化到其他同名版本。按现场完整路径、当前PID、HWND、实际类名/标题和指纹绑定两个独立顶层窗口，不适用 GameCenter 跨进程宿主例外。
+先用已有 inspect 请求（schemaVersion=1、command=inspect、arguments={pid,expectedExecutable}）核对实际路径、返回的 executableSha256 和当前原生窗。inspect 是只读枚举，保留旧的有限控件筛选；它不产生完整控件树、截图或动作观察回执，不能作为后续输入绑定。完整读取仍用 window-observe：arguments 含 pid/hwnd/expectedExecutable/expectedSha256/expectedClass/expectedTitle/outputRoot，policy.allowedWriteRoots 限本任务；以当前窗口实际值替换，不直接复用历史PID/HWND。
+字段沿原 set-text 和原值/精确类名回读；本候选只增补精确 TRzEdit、TRzMaskEdit 原生编辑类，并为 TRzCheckBox 观察 check 状态，不包含任意相似类。TRzPageControl 不纳入普通 select-tab；TRzBitBtn、TRzCheckBox 不纳入 button 动作。本轮实窗发现：截图可见三页而通用TCM返回tabs=[]，BM_CLICK虽有ACK却未触发这些自绘按钮/复选框的业务动作，不能把ACK当已点击或已保存。它们按当次目标截图显式提交原有 visual-click，再用新快照的 check/截图和文件差分验证；原标准控件的既有动作合同保持。此路径是调用任务基于新观察选择的明确单次动作，不是button/select-tab失败后的自动fallback、重发或伪造类名。网关有“日志/配置/关于”、条目地址/端口/关键字、组别、添加/修改和基本设置保存；静态控件名/事件及一次设值成功不证明完整字段落盘、重开或业务验收。
+服务器设置页、所有文件的 Pak 页/筛选/载入密码与保存，都按实窗可枚举的原生控件、完整菜单或当前截图执行单次动作；不虚构逐行列表接口。出现原生文件框后从 forms 绑定该框的新观察，用原 Edit 文件名设值及“打开”按钮；不得绕过真实模态继续对父窗输入。保存后比较本任务授权文件的完整差分，再按业务流程重开/重载并回读，输入ACK、控件文字或单次保存点击都不等价落盘/下载/解密验收。
+日志 TMemo/TRzMemo 等仅在原生窗口文字可读时随 controls.text 返回，textTruncated=true 表示不完整，不能称全量日志。自绘树、列表或网格可能只有截图，没有结构化逐行内容；按本次实窗证据记录覆盖，不把空文字当空列表，不新增全量日志或任意内存读取接口。
+原模态、WS_CHILD、禁用目标、进程/窗口指纹、同PID/父链、原值、观察哈希/120秒时效、焦点/点归属及恢复保护和 guardEvidence 保持；不自动确认弹窗、关闭气泡或重发。没有新增微端专用启停命令；生命周期操作仅限具体任务明确授权的本机测试实例，启动副本需独立配置、工作目录、资源目录和不冲突的loopback端口，并核对实际监听及恢复。此适配不授权改当前业务配置、重启现有服务、操作整引擎/远端或覆盖公共资源与登录器配置。
+真实密码表只由获授权的业务任务按文件路径交给原生导入，不为排错读取、粘贴或在消息/普通日志中回显密码。完整观察可能含控件文字和截图，本节不承诺按业务含义自动脱敏；敏感证据及完整文件差分须由具体任务保护。本轮工具测试只使用公开合成数据，不复用真实 ui8 密码表，也不把空表/合成导入当有效 Pak 解密、真实密码或业务下载验收。
+本轮隔离服务器副本已实测设置页的复选框、TEdit、Combo 设值、原生保存和重开字段回读。完整 INI 差分包括应用将 MaxPreAllocatedMemoryCount 从16钳制为4096（初始界面即显示4096），以及4项 LogData 目标变更；这项原生保存写回已纳入差分记录，不能只凭预期字段判断保存范围。
+所有文件的 AllFiles/Wzl/Pak 页切换和筛选后的行隐藏/恢复已实测。明文单元格经 F2 出现 TEdit，设公开合成密码后按 ENTER 提交，再用原生 Save 生成165字节 pak.txt；重开后 Pak 密文列可见且落盘哈希一致，完整哈希见绑定证据。这仅验证该合成单元格的编辑、保存与重开，不证明有效 Pak 解密或业务下载。
+TXT 载入的原生文件框打开、文件名设值和“打开”已实测，但两个非空合成样本（相对路径|明文、原生完整路径|密文）均匹配0项，Save 仍禁用。非空 TXT 导入的匹配/应用语义尚未验收，不能称密码导入完成；本轮未读取真实密码表。
+网关隔离副本已实测 TRzMaskEdit 设值、select-combo 选择高防组，以及 visual-click 修改/保存触发原生成功提示并落盘。基本设置重开后 GatePort=17090、ShowLog check=1，实际监听127.0.0.1:17090；原生日志返回2行且未截断。高防组条目重开后端口18081、组别 selectedIndex=1 已回读。关键字却实测出现首字符变化：首次 NC211 重开为 C211；最终保存文件为 NC211B，重开树和 TRzMaskEdit 均为 C211B，因此关键字持久化未通过。原值不符时 guard 拒绝有效，不能绕过该保护或把保存成功提示当关键字持久化成功。
+候选测试仅临时绑定已安装 router 的同代码副本，正式调用仍是 C:\Users\Administrator\.agents\skills\xuanyuan-native-control\scripts\invoke.py；不新增永久入口。本节记录上述隔离副本的实测覆盖和明确限制，未验收的非空 TXT 导入语义、关键字持久化、有效 Pak 解密及业务下载不能据编译或模拟测试宣称通过；正式发布状态和每项真实窗口覆盖以正式 manifest 绑定证据为准。
+
+
+## Native Control 1.1.22：派发后设置窗隐藏的结果
+
+普通表单准入、snapshot、宿主/版本指纹与输入守卫保持原规则。一个动作在派发前已核验的独立表单，派发后不再出现在可观察表单名单中、但HWND仍存在时，仅在两次匹配的PID、路径、SHA256、进程创建时间、class/title、parent/owner/style与root元数据均确认其隐藏后，返回受限生命周期结果。前态hosted、WS_CHILD、标题截断、身份漂移或采样不稳定仍拒绝；只忽略WS_VISIBLE位变化。
+
+结果中`target=null`、`targetClosed=false`、`targetLifecycle.state='hidden'`；真实销毁为`targetClosed=true`及`state='destroyed'`。`dispatch`/handler ACK与生命周期分别记录，`businessSaveVerified`保持false。需要编辑/下拉/页签值回读却无法取得控件时仍失败，不把窗口隐藏当作参数保存成功。
+
+`continuation.requiresFreshObservation=true`与`candidateForms`只给下一步线索，不授予输入。候选可以包含隐藏的TfrmMain；须以其当前PID/HWND/class/title做新的window-observe，隐藏主窗需用该新观察再明确show。不得把结果中的主窗截图替换成target、消费隐藏结果回执自动续发动作或重发确定。超时/未知ACK仍查failure.json及现场，不自动重试。
+
+本修复不支持新的GameCenter指纹，不启停引擎，也不证明业务配置已保存或原生防护实际生效。实际发布以正式manifest为准。
+
+
+Native Control 1.1.23：GameCenter宿主类名兼容修复
+继续使用原invoke.py及m2/engine的window-observe/window-action；不新增控制器或业务接口。宿主仅接受TfrmMain、TFrmMain两个精确类名，其他大小写及未知类仍拒绝。固定SHA、同根路径、PID/创建时间、完整父链、可见启用、观察回执、焦点和输入归属校验保留；观察后在两类名间变化仍使旧回执失效。
+本轮为类名准入缺陷离线回归及同源发布，未操作业务GUI、重读QFunction、启用检测或启停引擎。主窗宿主关系、菜单重读与业务效果由原任务使用新观察继续验证，不因class修复宣称业务成功。1.1.22隐藏后置回执协议保持；旧m2-reload隔离根限制保持。
+
+
+Native Control 1.1.24：原window-action新增minimize
+仍使用原invoke.py，DBServer用adapter=engine。先对DBServer自身PID/HWND/完整EXE及SHA做新的window-observe，实际核对该窗口截图与hosting；随后以该回执和SHA提交window-action，action仅为{"kind":"minimize"}（可选原settleMs）。不可把GameCenter父窗回执或跨PID标题栏坐标当作DBServer凭据。
+仅对可见、启用、未最小化、无模态阻挡且有完整标题栏、系统菜单和最小化框样式的已验证窗口派发一次WM_SYSCOMMAND/SC_MINIMIZE；发送目标是该窗口自身HWND，不能用宿主rootHwnd代替。固定指纹、同根、PID/创建时间、宿主与父链、新观察/原值及焦点/点位保护保留。原前台若就是待最小化的独立窗口则派发前拒绝，避免恢复前台与维持最小化冲突。
+ACK只表示处理返回，必须核对实际IsIconic状态及窗口身份；恢复原前台和鼠标后再次核验仍最小化，readbackVerified=true才表示UI最小化回读通过。程序忽略命令、窗口消失/身份变化或恢复撤销最小化均失败，不自动重发。最小化后screenshot可为null；这不代表关闭，更不代表服务停止、落盘保存或业务重读。恢复窗口沿原show动作及新观察合同。
+本轮只做离线Win32边界回归、冻结源及发布核验，没有操作现场DBServer、重读物品/QFunction、启用检测或启停组件。现场最小化、遮挡解除与业务效果由原任务继续验收。996仍暂停。

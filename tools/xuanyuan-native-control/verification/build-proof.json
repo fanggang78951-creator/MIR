@@ -1,0 +1,114 @@
+{
+  "schemaVersion": 1,
+  "tool": "xuanyuan-native-control",
+  "version": "1.1.24",
+  "entrypoint": "XuanYuanNativeControlTool.exe",
+  "executableSha256": "E2C53964430D3D005C1E37EAB15D65EC05BE9440DF74830A2D122264157C9EA2",
+  "commands": [
+    "inspect",
+    "launcher-save",
+    "launcher-build",
+    "engine-preflight",
+    "engine-controller-start",
+    "engine-controller-stop",
+    "m2-start",
+    "m2-stop",
+    "m2-reload",
+    "engine-parameter",
+    "m2-client-build",
+    "game-inspect",
+    "game-observe",
+    "game-input",
+    "window-observe",
+    "window-action",
+    "m2-event-evidence"
+  ],
+  "sourceBindings": [
+    {
+      "module": "wzl_blackbox",
+      "path": "D:\\codex临时工作区\\20261026_原生网关防护审计\\工具修复\\minimize-1.1.24\\src\\wzl_blackbox\\__init__.py",
+      "sha256": "BD2506C48552C1426C955A1D2D1A2C945322C8CE2D9EC1585FB5065A8EED201C",
+      "frozenCodeMatches": true
+    },
+    {
+      "module": "wzl_blackbox.diff",
+      "path": "D:\\codex临时工作区\\20261026_原生网关防护审计\\工具修复\\minimize-1.1.24\\src\\wzl_blackbox\\diff.py",
+      "sha256": "07D5B4562DD496DC2C1E7BDC8234CA0BAE242A29FFCE7A41874902BFFF33780B",
+      "frozenCodeMatches": true
+    },
+    {
+      "module": "wzl_blackbox.inspector",
+      "path": "D:\\codex临时工作区\\20261026_原生网关防护审计\\工具修复\\minimize-1.1.24\\src\\wzl_blackbox\\inspector.py",
+      "sha256": "154CEB87370382BC57E1428D1C948FB14DCA8464E2872FCC6E39722DEA8F75F3",
+      "frozenCodeMatches": true
+    },
+    {
+      "module": "wzl_blackbox.native_control",
+      "path": "D:\\codex临时工作区\\20261026_原生网关防护审计\\工具修复\\minimize-1.1.24\\src\\wzl_blackbox\\native_control.py",
+      "sha256": "A157B8473B34E5A654C6FEA8D3592239C8C4A1D76B3FF5887202DCF04A1219F4",
+      "frozenCodeMatches": true
+    },
+    {
+      "module": "wzl_blackbox.native_control_entry",
+      "path": "D:\\codex临时工作区\\20261026_原生网关防护审计\\工具修复\\minimize-1.1.24\\src\\wzl_blackbox\\native_control_entry.py",
+      "sha256": "6F60C054997EC3B66F7C10CA87ECE70B41D923D2DB3F3835D9C275A8E0B15F7B",
+      "frozenCodeMatches": true
+    },
+    {
+      "module": "wzl_blackbox.native_editor",
+      "path": "D:\\codex临时工作区\\20261026_原生网关防护审计\\工具修复\\minimize-1.1.24\\src\\wzl_blackbox\\native_editor.py",
+      "sha256": "B8EC714D4EEE371BC3E58CD20827E8906D6DD3A9B16872F5F1D83E11BD2CE697",
+      "frozenCodeMatches": true
+    },
+    {
+      "module": "wzl_blackbox.native_engine",
+      "path": "D:\\codex临时工作区\\20261026_原生网关防护审计\\工具修复\\minimize-1.1.24\\src\\wzl_blackbox\\native_engine.py",
+      "sha256": "98DBC64930BF592EEBE03088CBDA100AC1A311139C2400769432627DEC51F3BE",
+      "frozenCodeMatches": true
+    },
+    {
+      "module": "wzl_blackbox.native_events",
+      "path": "D:\\codex临时工作区\\20261026_原生网关防护审计\\工具修复\\minimize-1.1.24\\src\\wzl_blackbox\\native_events.py",
+      "sha256": "10E8035A339EC51B58F461522714C46016422E908F13720A4321E68560D19791",
+      "frozenCodeMatches": true
+    },
+    {
+      "module": "wzl_blackbox.native_game",
+      "path": "D:\\codex临时工作区\\20261026_原生网关防护审计\\工具修复\\minimize-1.1.24\\src\\wzl_blackbox\\native_game.py",
+      "sha256": "696EFA44884AA3047A0A9BD202462AB2EE4C66D6D1760EBB7C3E63F0FC32FA23",
+      "frozenCodeMatches": true
+    },
+    {
+      "module": "wzl_blackbox.native_window",
+      "path": "D:\\codex临时工作区\\20261026_原生网关防护审计\\工具修复\\minimize-1.1.24\\src\\wzl_blackbox\\native_window.py",
+      "sha256": "9C7C3C2ABBEF124EB19D7BB3217394404969F2A5B418493FAEADE9AADC1B2CAE",
+      "frozenCodeMatches": true
+    },
+    {
+      "module": "wzl_blackbox.policy",
+      "path": "D:\\codex临时工作区\\20261026_原生网关防护审计\\工具修复\\minimize-1.1.24\\src\\wzl_blackbox\\policy.py",
+      "sha256": "0AEB961A9B7460C862C0BE4992AA76E77A183EA6D3D540C43283FD8017197F8F",
+      "frozenCodeMatches": true
+    },
+    {
+      "module": "wzl_blackbox.transaction",
+      "path": "D:\\codex临时工作区\\20261026_原生网关防护审计\\工具修复\\minimize-1.1.24\\src\\wzl_blackbox\\transaction.py",
+      "sha256": "A18F0E4ED72F63C1BC20419331AF8F2D60E0CCD2D0C89771D01784F8E080335F",
+      "frozenCodeMatches": true
+    },
+    {
+      "module": "wzl_blackbox.type6",
+      "path": "D:\\codex临时工作区\\20261026_原生网关防护审计\\工具修复\\minimize-1.1.24\\src\\wzl_blackbox\\type6.py",
+      "sha256": "71E51B2680B38E57844BBE2208D1DAA5A33E7F390AF109EB91263AABD1EC5A5A",
+      "frozenCodeMatches": true
+    }
+  ],
+  "sourceAuthority": "D:\\codex临时工作区\\20261026_原生网关防护审计\\工具修复\\minimize-1.1.24",
+  "changedProductModules": [
+    "native_control.py",
+    "native_window.py"
+  ],
+  "allFrozenCodeMatches": true,
+  "gameAcceptancePerformed": false,
+  "nativeHiddenLifecycleAcceptance": false
+}

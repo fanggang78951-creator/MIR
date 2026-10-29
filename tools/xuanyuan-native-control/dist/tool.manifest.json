@@ -1,0 +1,162 @@
+{
+  "schemaVersion": 1,
+  "tool": "xuanyuan-native-control",
+  "version": "1.1.24",
+  "entrypoint": "XuanYuanNativeControlTool.exe",
+  "executableSha256": "E2C53964430D3D005C1E37EAB15D65EC05BE9440DF74830A2D122264157C9EA2",
+  "size": 18116348,
+  "commands": [
+    "inspect",
+    "launcher-save",
+    "launcher-build",
+    "engine-preflight",
+    "engine-controller-start",
+    "engine-controller-stop",
+    "m2-start",
+    "m2-stop",
+    "m2-reload",
+    "engine-parameter",
+    "m2-client-build",
+    "game-inspect",
+    "game-observe",
+    "game-input",
+    "window-observe",
+    "window-action",
+    "m2-event-evidence"
+  ],
+  "sourceAuthority": "E:\\XuanYuanDevPlatform\\wzl编辑\\evidence\\20261015_native_control_tool\\v1.1.24",
+  "sourceBindings": [
+    {
+      "module": "wzl_blackbox",
+      "path": "E:\\XuanYuanDevPlatform\\wzl编辑\\evidence\\20261015_native_control_tool\\v1.1.24\\frozen-source\\__init__.py",
+      "sha256": "BD2506C48552C1426C955A1D2D1A2C945322C8CE2D9EC1585FB5065A8EED201C",
+      "frozenCodeMatches": true
+    },
+    {
+      "module": "wzl_blackbox.diff",
+      "path": "E:\\XuanYuanDevPlatform\\wzl编辑\\evidence\\20261015_native_control_tool\\v1.1.24\\frozen-source\\diff.py",
+      "sha256": "07D5B4562DD496DC2C1E7BDC8234CA0BAE242A29FFCE7A41874902BFFF33780B",
+      "frozenCodeMatches": true
+    },
+    {
+      "module": "wzl_blackbox.inspector",
+      "path": "E:\\XuanYuanDevPlatform\\wzl编辑\\evidence\\20261015_native_control_tool\\v1.1.24\\frozen-source\\inspector.py",
+      "sha256": "154CEB87370382BC57E1428D1C948FB14DCA8464E2872FCC6E39722DEA8F75F3",
+      "frozenCodeMatches": true
+    },
+    {
+      "module": "wzl_blackbox.native_control",
+      "path": "E:\\XuanYuanDevPlatform\\wzl编辑\\evidence\\20261015_native_control_tool\\v1.1.24\\frozen-source\\native_control.py",
+      "sha256": "A157B8473B34E5A654C6FEA8D3592239C8C4A1D76B3FF5887202DCF04A1219F4",
+      "frozenCodeMatches": true
+    },
+    {
+      "module": "wzl_blackbox.native_control_entry",
+      "path": "E:\\XuanYuanDevPlatform\\wzl编辑\\evidence\\20261015_native_control_tool\\v1.1.24\\frozen-source\\native_control_entry.py",
+      "sha256": "6F60C054997EC3B66F7C10CA87ECE70B41D923D2DB3F3835D9C275A8E0B15F7B",
+      "frozenCodeMatches": true
+    },
+    {
+      "module": "wzl_blackbox.native_editor",
+      "path": "E:\\XuanYuanDevPlatform\\wzl编辑\\evidence\\20261015_native_control_tool\\v1.1.24\\frozen-source\\native_editor.py",
+      "sha256": "B8EC714D4EEE371BC3E58CD20827E8906D6DD3A9B16872F5F1D83E11BD2CE697",
+      "frozenCodeMatches": true
+    },
+    {
+      "module": "wzl_blackbox.native_engine",
+      "path": "E:\\XuanYuanDevPlatform\\wzl编辑\\evidence\\20261015_native_control_tool\\v1.1.24\\frozen-source\\native_engine.py",
+      "sha256": "98DBC64930BF592EEBE03088CBDA100AC1A311139C2400769432627DEC51F3BE",
+      "frozenCodeMatches": true
+    },
+    {
+      "module": "wzl_blackbox.native_events",
+      "path": "E:\\XuanYuanDevPlatform\\wzl编辑\\evidence\\20261015_native_control_tool\\v1.1.24\\frozen-source\\native_events.py",
+      "sha256": "10E8035A339EC51B58F461522714C46016422E908F13720A4321E68560D19791",
+      "frozenCodeMatches": true
+    },
+    {
+      "module": "wzl_blackbox.native_game",
+      "path": "E:\\XuanYuanDevPlatform\\wzl编辑\\evidence\\20261015_native_control_tool\\v1.1.24\\frozen-source\\native_game.py",
+      "sha256": "696EFA44884AA3047A0A9BD202462AB2EE4C66D6D1760EBB7C3E63F0FC32FA23",
+      "frozenCodeMatches": true
+    },
+    {
+      "module": "wzl_blackbox.native_window",
+      "path": "E:\\XuanYuanDevPlatform\\wzl编辑\\evidence\\20261015_native_control_tool\\v1.1.24\\frozen-source\\native_window.py",
+      "sha256": "9C7C3C2ABBEF124EB19D7BB3217394404969F2A5B418493FAEADE9AADC1B2CAE",
+      "frozenCodeMatches": true
+    },
+    {
+      "module": "wzl_blackbox.policy",
+      "path": "E:\\XuanYuanDevPlatform\\wzl编辑\\evidence\\20261015_native_control_tool\\v1.1.24\\frozen-source\\policy.py",
+      "sha256": "0AEB961A9B7460C862C0BE4992AA76E77A183EA6D3D540C43283FD8017197F8F",
+      "frozenCodeMatches": true
+    },
+    {
+      "module": "wzl_blackbox.transaction",
+      "path": "E:\\XuanYuanDevPlatform\\wzl编辑\\evidence\\20261015_native_control_tool\\v1.1.24\\frozen-source\\transaction.py",
+      "sha256": "A18F0E4ED72F63C1BC20419331AF8F2D60E0CCD2D0C89771D01784F8E080335F",
+      "frozenCodeMatches": true
+    },
+    {
+      "module": "wzl_blackbox.type6",
+      "path": "E:\\XuanYuanDevPlatform\\wzl编辑\\evidence\\20261015_native_control_tool\\v1.1.24\\frozen-source\\type6.py",
+      "sha256": "71E51B2680B38E57844BBE2208D1DAA5A33E7F390AF109EB91263AABD1EC5A5A",
+      "frozenCodeMatches": true
+    }
+  ],
+  "documentSourceBindings": [
+    {
+      "target": "C:\\Users\\Administrator\\.agents\\skills\\xuanyuan-native-control\\SKILL.md",
+      "source": "E:\\XuanYuanDevPlatform\\wzl编辑\\evidence\\20261015_native_control_tool\\v1.1.24\\documents\\0-SKILL.md",
+      "sha256": "6BBF306FD592E027008E7E6D1A3EC1A79A4ABC7EB4767D233350AF1076BDB1D1"
+    },
+    {
+      "target": "C:\\Users\\Administrator\\.agents\\skills\\xuanyuan-native-control\\references\\window.md",
+      "source": "E:\\XuanYuanDevPlatform\\wzl编辑\\evidence\\20261015_native_control_tool\\v1.1.24\\documents\\1-window.md",
+      "sha256": "28C355D04412E300C780946172DF96966EB99E7E05295E9E898DFF062F8D01EC"
+    },
+    {
+      "target": "E:\\XuanYuanDevPlatform\\wzl编辑\\docs\\native-control-tool.md",
+      "source": "E:\\XuanYuanDevPlatform\\wzl编辑\\evidence\\20261015_native_control_tool\\v1.1.24\\documents\\2-native-control-tool.md",
+      "sha256": "65A5BDA89E42328A17D4C9D0FC50E9B5AF999CB8168A4D1ECAC0DFDF74E04C2C"
+    },
+    {
+      "target": "E:\\XuanYuanDevPlatform\\接口\\登录器副本生成与引擎只读调用接口.txt",
+      "source": "E:\\XuanYuanDevPlatform\\wzl编辑\\evidence\\20261015_native_control_tool\\v1.1.24\\documents\\3-登录器副本生成与引擎只读调用接口.txt",
+      "sha256": "C5A0C412299C12FF9AD1E0C8A014D4DF11C0CEB92ED478E53012F1CFE911F06D"
+    }
+  ],
+  "verification": "E:\\XuanYuanDevPlatform\\wzl编辑\\evidence\\20261015_native_control_tool\\v1.1.24\\verification\\verification.json",
+  "unitTests": 820,
+  "unitSubtests": 162,
+  "unitTestsPassed": true,
+  "nativeWindowScope": "M2, GameCenter, fixed LoginSrv/DBServer/RunGate/SelGate, fixed UpdateServer_x64/MirUpdateGate, MakeGameLogin and original WZL/PAK editor; explicit process, binary and current form",
+  "nativeWindowMinimize": {
+    "status": "offline_minimize_ui_regression_verified",
+    "version": "1.1.24",
+    "tests": 820,
+    "subtests": 162,
+    "executableSha256": "E2C53964430D3D005C1E37EAB15D65EC05BE9440DF74830A2D122264157C9EA2",
+    "allFrozenCodeMatches": true,
+    "frozenModules": 13,
+    "actionKind": "minimize",
+    "dispatch": "WM_SYSCOMMAND/SC_MINIMIZE to selected HWND",
+    "readback": "IsIconic after action and after recovery",
+    "otherGuardsUnchanged": true,
+    "liveGuiAcceptancePerformed": false,
+    "businessSaveVerified": false,
+    "qfunctionReloadPerformed": false,
+    "detectorEnabled": false,
+    "engineProcessesStartedOrStopped": false,
+    "gameAcceptancePerformed": false
+  },
+  "nativeWindowLifecycle": {
+    "status": "preserved_in_code_not_retested",
+    "previousVersion": "1.1.23",
+    "businessSaveVerified": false
+  },
+  "wholeEngineStartStop": false,
+  "legacyNativeGuiRetestedInThisVersion": false,
+  "gameAcceptancePerformed": false
+}

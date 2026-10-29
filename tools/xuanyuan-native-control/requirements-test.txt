@@ -1,0 +1,6 @@
+pytest==9.2.0
+pytest-subtests==0.15.0
+Pillow==13.0.0
+pywinauto==0.6.9
+pywin32==312
+psutil==7.2.2

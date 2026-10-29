@@ -1,0 +1,15 @@
+{
+  "version": "1.1.24",
+  "date": "2026-10-29",
+  "testsPassed": 820,
+  "subtestsPassed": 162,
+  "frozenModulesMatched": 13,
+  "sourceFilesMatchFormalManifest": true,
+  "gitIndexExactBytesVerified": true,
+  "executableSha256": "E2C53964430D3D005C1E37EAB15D65EC05BE9440DF74830A2D122264157C9EA2",
+  "formalInstallModified": false,
+  "includes996": false,
+  "includes125Candidate": false,
+  "guiInputPerformed": false,
+  "notes": "Original source and documents retain exact bytes, including original mixed line endings and whitespace."
+}

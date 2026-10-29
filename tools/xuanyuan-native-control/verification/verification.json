@@ -1,0 +1,19 @@
+{
+  "status": "offline_minimize_ui_regression_verified",
+  "version": "1.1.24",
+  "tests": 820,
+  "subtests": 162,
+  "executableSha256": "E2C53964430D3D005C1E37EAB15D65EC05BE9440DF74830A2D122264157C9EA2",
+  "allFrozenCodeMatches": true,
+  "frozenModules": 13,
+  "actionKind": "minimize",
+  "dispatch": "WM_SYSCOMMAND/SC_MINIMIZE to selected HWND",
+  "readback": "IsIconic after action and after recovery",
+  "otherGuardsUnchanged": true,
+  "liveGuiAcceptancePerformed": false,
+  "businessSaveVerified": false,
+  "qfunctionReloadPerformed": false,
+  "detectorEnabled": false,
+  "engineProcessesStartedOrStopped": false,
+  "gameAcceptancePerformed": false
+}
